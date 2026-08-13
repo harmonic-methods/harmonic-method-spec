@@ -1,0 +1,14 @@
+{
+  "name": "harmonic-composition-kit",
+  "version": "1.0.0",
+  "description": "Machine-readable specs and agent skills for Harmonic Composition.",
+  "type": "module",
+  "private": true,
+  "license": "SEE LICENSE IN README.md",
+  "scripts": {
+    "validate": "node tools/validate.mjs"
+  },
+  "devDependencies": {
+    "yaml": "^2.8.1"
+  }
+}
