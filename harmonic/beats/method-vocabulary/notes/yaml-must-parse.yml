@@ -1,0 +1,11 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-008
+  type: constraint
+  attached_to: K-B-003
+  beat_version: K-BV-003.1
+  content: >
+    Every spec file must parse as YAML. Prefer block form for field definitions:
+    inside a flow mapping, `type: enum [active, archived]` terminates the value
+    early, because `[` and `,` are structural there and only inert in a block
+    scalar.

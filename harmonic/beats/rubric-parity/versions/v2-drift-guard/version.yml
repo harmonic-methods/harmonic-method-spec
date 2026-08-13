@@ -1,0 +1,23 @@
+# Beat Version — conformant to specs/beat-version.yml (v1.0.0)
+beat_version:
+  id: K-BV-002.2
+  beat: K-B-002
+  title: Canonical drift guard
+  status: active
+  summary: >
+    A change to the canonical rubric should fail loudly rather than silently
+    desync the published kit. A fingerprint over both canonical dimension
+    tables, anchors included, now fails in the reference implementation's test
+    suite whenever either table moves, and the failure names the re-translation
+    steps in order: re-review the skills, publish the kit, then update the hash.
+  scope: >
+    In: the fingerprint over both dimension tables, an assertion that anchor
+    coverage is actually included so the guard cannot go quietly anchor-blind,
+    and a failure message that prevents a reflexive hash bump.
+    Out: fingerprinting the surrounding prompt text — it embeds shared style
+    constants that churn for unrelated reasons, and failures that frequent would
+    train exactly the reflex the guard exists to prevent. Also out: generating
+    the kit's text from canonical, which would overwrite the translation.
+  # Known gap, tracked for a later version: the guard fires when canonical
+  # moves, but nothing catches a direct edit to the kit's own skill files. A
+  # kit-side check needs test tooling this repository does not yet have.

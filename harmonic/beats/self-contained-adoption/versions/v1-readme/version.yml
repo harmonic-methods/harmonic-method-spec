@@ -1,0 +1,18 @@
+# Beat Version — conformant to specs/beat-version.yml (v1.0.0)
+beat_version:
+  id: K-BV-004.1
+  beat: K-B-004
+  title: A front door for the repository
+  status: archived
+  summary: >
+    README.md is currently one line, so the first thing a visitor sees tells
+    them nothing about what this is or whether it is for them. This gives the
+    repository a front door: what Harmonic Composition is, what the six specs and
+    two skills are for, how to score something without an account, and where
+    the kit stops and a system of record begins.
+  scope: >
+    In: README.md only — orientation, a map of the specs and skills, one worked
+    scoring invocation a reader can copy, and an honest statement of the kit's
+    limits.
+    Out: a documentation site, tutorial or migration content, contribution
+    guidelines, and any change to spec or skill text.

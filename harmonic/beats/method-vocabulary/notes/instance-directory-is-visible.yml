@@ -1,0 +1,19 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-013
+  type: decision
+  attached_to: K-B-003
+  content: >
+    A system's entities live in a visible directory named `harmonic/`, both here
+    and in an adopter's repository. Not `system/`, and not a hidden `.harmonic/`,
+    `.system/`, or `.hm/`.
+  rationale: >
+    `system/` read like a missing entity spec sitting beside `specs/`, which
+    defines entities rather than holding instances — and no `specs/system.yml`
+    exists to disambiguate it. Hiding it was rejected on the method's own terms:
+    decision lineage exists to be found, ripgrep skips dot-directories unless
+    passed --hidden, and many glob patterns miss them, so the record would be
+    invisible to exactly the agent sweeps meant to read it. `.github/` and
+    `.claude/` survive being hidden only because tools hardcode those paths;
+    nothing hardcodes this one. Architecture decision records are the closest
+    existing convention and are conventionally visible for the same reason.

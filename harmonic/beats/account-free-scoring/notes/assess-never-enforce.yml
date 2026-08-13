@@ -1,0 +1,8 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-004
+  type: constraint
+  attached_to: K-B-001
+  content: >
+    The skills assess; they never enforce. Gates, approvals, and recorded
+    lineage belong to the system of record, not to this repository.
