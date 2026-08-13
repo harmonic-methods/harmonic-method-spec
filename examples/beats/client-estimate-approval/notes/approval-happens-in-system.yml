@@ -1,0 +1,12 @@
+# Example — a conformant Note, showing the optional beat_version narrowing:
+# the decision belongs to the Beat, but it was made while planning v1.
+# See specs/note.yml (v1.0.0).
+note:
+  id: EX-N-002
+  type: decision
+  attached_to: EX-B-001
+  beat_version: EX-BV-001.1
+  content: >
+    Approval happens in-system (send-and-approve), not by email thread.
+  rationale: >
+    Email approvals broke lineage; the record must hold the approval itself.

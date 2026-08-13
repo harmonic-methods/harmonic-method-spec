@@ -1,0 +1,20 @@
+# Beat Version — conformant to specs/beat-version.yml (v1.0.0)
+beat_version:
+  id: K-BV-003.2
+  beat: K-B-003
+  title: Conformance check for the repository's own artifacts
+  status: archived
+  summary: >
+    A machine-readable vocabulary is worth little if the repository's own files
+    quietly stop conforming to it. `npm run validate` now checks every entity
+    file against the specs — required fields, lifecycle enums, decision
+    rationale, the agreement between each child's back-reference and the
+    directory it sits in, reference resolution, and vocabulary the kit does not
+    define. It runs over both the kit's own system and the worked example.
+  scope: >
+    In: the checker, a package.json carrying one dev dependency and the script,
+    and a gitignore. Consumers still need nothing installed — the dependency is
+    for contributors running the check, not for reading or vendoring the repo.
+    Out: checking the rubric text in skills/, which is prose rather than entity
+    data and is tracked separately under rubric-parity; any gate, CI wiring, or
+    published check record.

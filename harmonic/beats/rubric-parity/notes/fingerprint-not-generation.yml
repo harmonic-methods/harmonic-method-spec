@@ -1,0 +1,9 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-003
+  type: constraint
+  attached_to: K-B-002
+  beat_version: K-BV-002.2
+  content: >
+    Parity is verified by fingerprint, never by generation. A generator would
+    overwrite the deliberate translation on every run.

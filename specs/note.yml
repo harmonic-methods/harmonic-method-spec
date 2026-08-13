@@ -1,0 +1,39 @@
+# Harmonic Composition spec — Note
+# spec_version: 1.0.0
+entity: note
+summary: >
+  Typed knowledge attached to the entity it informs. Notes are the decision
+  and context lineage: why things are the way they are, preserved where the
+  work happens rather than in disconnected documents.
+fields:
+  id: {type: string, required: true}
+  type:
+    type: enum [context, assumption, constraint, guidance, decision]
+    required: true
+    descriptions:
+      context: Background a contributor or agent needs to act well here.
+      assumption: Something believed true but not verified; carries risk until validated.
+      constraint: A boundary that must be respected (technical, legal, commercial).
+      guidance: How to approach work in this area; standards and preferences.
+      decision: A choice that was made, with its rationale — the core lineage type.
+  content: {type: string, required: true}
+  rationale:
+    type: string
+    required_when: type == decision
+    description: Why this decision was made; decisions without reasoning are not lineage.
+  attached_to:
+    type: reference
+    required: true
+    description: The Org, system, or Beat this knowledge belongs to.
+  beat_version:
+    type: reference
+    required: false
+    description: >
+      The Beat Version this Note arose from or applies to, when it is narrower
+      than the Beat. The Note still belongs to the Beat: a Beat Version is a
+      passing step and gets archived, while the knowledge outlives it.
+rules:
+  - Notes are preserved, not overwritten; superseding is a new Note referencing the old.
+  - Decisions cite what they supersede when they change course.
+  - A Note never attaches to a Beat Version. Knowledge that outlives the step
+    belongs to the Beat; use beat_version to record which step produced it.

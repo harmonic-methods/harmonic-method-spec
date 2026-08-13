@@ -1,0 +1,24 @@
+# Harmonic Composition spec — Revision
+# spec_version: 1.0.0
+entity: revision
+summary: >
+  A tracked change executing part of a Beat Version. Medium-agnostic: a code
+  change with a linked pull request, a process change with a linked procedure,
+  a document change with a linked draft. The Revision carries the reasoning.
+fields:
+  id: {type: string, required: true}
+  beat_version: {type: reference, required: true}
+  title: {type: string, required: true}
+  description: {type: string, required: true, description: What changed and why.}
+  status:
+    type: enum [active, archived]
+    required: true
+  evidence:
+    type: reference
+    required: false
+    description: >
+      Link to the change artifact (pull request, procedure document, runbook
+      diff). Optional in the spec; implementations may require it per medium.
+rules:
+  - A Revision belongs to exactly one Beat Version (reassignment is a recorded event).
+  - The reasoning for the change lives with the Revision, not only in the artifact.

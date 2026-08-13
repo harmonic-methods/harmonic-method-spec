@@ -1,0 +1,8 @@
+# Example — a conformant Note. See specs/note.yml (v1.0.0).
+note:
+  id: EX-N-001
+  type: constraint
+  attached_to: EX-B-001
+  content: >
+    Estimates must be approved by the client before any Revision against this
+    Beat begins.

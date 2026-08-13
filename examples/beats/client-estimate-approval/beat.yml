@@ -1,0 +1,17 @@
+# Example — a conformant Beat. See specs/beat.yml (v1.0.0).
+beat:
+  id: EX-B-001
+  title: Client estimate approval flow
+  status: open
+  coda:
+    statement: >
+      Every estimate a client receives is generated from the governed record,
+      approved in one place, and traceable from the number quoted to the
+      decisions behind it — so scoping stops being archaeology.
+    parent: EX-SYS-CODA  # the system Coda this ladders to
+  description: >
+    The capability by which estimates and statements of work are produced,
+    sent, and approved by the client, with the approval and its reasoning
+    recorded against the engagement.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

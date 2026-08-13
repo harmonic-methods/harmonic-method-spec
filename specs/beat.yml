@@ -1,0 +1,39 @@
+# Harmonic Composition spec — Beat
+# spec_version: 1.0.0
+entity: beat
+summary: >
+  The canonical unit of capability. A Beat names a durable capability or
+  process of the system being improved — medium-agnostic: software capability,
+  operational process, or organizational practice.
+fields:
+  id: {type: string, required: true}
+  title:
+    type: string
+    required: true
+    description: Names the capability, not a task ("Client approval flow", not "Fix approvals").
+  coda:
+    type: coda
+    required: true
+    description: The outcome this Beat exists to serve; ladders to the parent Coda.
+  description:
+    type: string
+    required: true
+    description: What the capability is, its boundaries, and why it exists.
+  status:
+    type: enum [open, closed]
+    required: true
+    description: Binary lifecycle — open (active, being worked or operated) or closed.
+  versions:
+    type: list<beat_version>
+    description: The Beat's evolution over time. See beat-version.yml.
+  notes:
+    type: list<note>
+    description: The typed knowledge attached to this capability. See note.yml.
+quality:
+  rubric: beat_quality  # see skills/beat-quality-check/SKILL.md
+  dimensions: [Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome]
+  scale: 1-5 per dimension
+  reference_gate: >
+    The reference implementation requires a fresh passing check (>=4/5) before a
+    Beat may be decomposed into Beat Versions. The gate threshold is an
+    implementation choice; the rubric is the spec.

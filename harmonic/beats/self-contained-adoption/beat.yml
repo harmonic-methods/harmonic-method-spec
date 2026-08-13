@@ -1,0 +1,18 @@
+# Beat — conformant to specs/beat.yml (v1.0.0)
+beat:
+  id: K-B-004
+  title: Self-contained adoption path
+  status: open
+  coda:
+    statement: >
+      A newcomer who lands on this repository understands what Harmonic Composition
+      is, applies one of its rubrics to their own work, and decides whether to
+      go further — all without leaving the repository or talking to anyone.
+    parent: K-CODA
+  description: >
+    The capability by which the repository explains and demonstrates itself:
+    what the method is for, what each spec and skill does, a worked example to
+    pattern-match against, and an honest account of where the kit stops and a
+    system of record begins.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

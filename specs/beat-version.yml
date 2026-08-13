@@ -1,0 +1,35 @@
+# Harmonic Composition spec — Beat Version
+# spec_version: 1.0.0
+entity: beat_version
+summary: >
+  A planned step in a Beat's evolution toward its Coda. Beats change through
+  Beat Versions; each version is a bounded, testable increment of the capability.
+fields:
+  id: {type: string, required: true}
+  beat: {type: reference, required: true, description: The parent Beat.}
+  title: {type: string, required: true}
+  summary:
+    type: string
+    required: true
+    description: >
+      What this step delivers and why. With scope, the prose the plan_quality
+      rubric scores — acceptance criteria, assumptions, and dependencies belong
+      here or in attached Notes.
+  scope:
+    type: string
+    required: true
+    description: What this step includes and excludes — bounded on purpose.
+  status:
+    type: enum [active, archived]
+    required: true
+  revisions:
+    type: list<revision>
+    description: The tracked changes that execute this version. See revision.yml.
+quality:
+  rubric: plan_quality  # see skills/plan-quality-check/SKILL.md
+  dimensions: [Scoped, Directional, Testable, Traceable, Assignable, Risk-aware]
+  scale: 1-5 per dimension
+  reference_gate: >
+    The reference implementation gates the first Revision on a passing plan
+    check for the Beat Version. The gate is an implementation choice; the
+    rubric is the spec.

@@ -1,0 +1,14 @@
+# Example — a conformant Revision, showing that the change artifact need not be
+# code. See specs/revision.yml (v1.0.0).
+revision:
+  id: EX-R-001
+  beat_version: EX-BV-001.1
+  title: Approval recorded against the engagement, not the inbox
+  status: archived
+  description: >
+    Replaced the email-thread approval step with an in-record approve/decline
+    that captures the outcome, the timestamp, and the approver. The reasoning
+    for the change is here rather than only in the artifact: approvals that
+    lived in inboxes could not be traced back to what was quoted.
+  evidence: >
+    Revised client engagement procedure, section 4 — Estimate approval.
