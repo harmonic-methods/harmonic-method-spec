@@ -1,0 +1,27 @@
+# Harmonic Composition spec — Coda
+# spec_version: 1.0.0
+entity: coda
+summary: >
+  The strategic outcome an entity exists to serve. Codas form a hierarchy:
+  an organization Coda, initiative/system Codas beneath it, and Beat Codas
+  beneath those — so every step of work provably ladders up to strategy.
+attached_to: [organization, system, beat]
+fields:
+  statement:
+    type: string
+    required: true
+    description: >
+      Where this entity is headed and why, written as a resolved future state —
+      not a task list. The Coda is spec-as-resolved-state: decomposition flows
+      down from it, and alignment is measured against it.
+  parent:
+    type: reference
+    required: false
+    description: >
+      The Coda one level up (a Beat Coda points to its system Coda; a system
+      Coda points to the organization Coda). Root Codas omit this.
+rules:
+  - A Beat without a Coda cannot be decomposed into Beat Versions.
+  - Alignment ("harmonization") is assessed against the Coda chain, not against
+    individual documents.
+  - Changing a Coda is a recorded decision; the prior statement is preserved.

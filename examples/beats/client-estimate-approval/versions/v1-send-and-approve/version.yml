@@ -1,0 +1,14 @@
+# Example — a conformant Beat Version. See specs/beat-version.yml (v1.0.0).
+beat_version:
+  id: EX-BV-001.1
+  beat: EX-B-001
+  title: Send-and-approve v1
+  status: active
+  summary: >
+    A client receives an estimate generated from the governed record and
+    approves or declines it in one place, with the outcome, timestamp, and
+    approver recorded against the engagement.
+  scope: >
+    In: generate an estimate from the governed record, send it to a named client
+    contact, and record approve or decline with a timestamp and the approver.
+    Out: revised estimates, partial approvals, and e-signature integration.
