@@ -84,7 +84,7 @@ Dimension definitions reconciled against the reference implementation's canonica
   Until now the content was, by default, all rights reserved, which contradicted
   the stated invitation to practice and extend the method freely.
 - **tools/validate.mjs**: a conformance check over every entity file in both
-  `system/` and `examples/` — required fields, lifecycle enums, decision
+  `harmonic/` and `examples/` — required fields, lifecycle enums, decision
   rationale, each child's back-reference matching its directory, reference
   resolution, and vocabulary the kit does not define. Adds a private
   `package.json` with one dev dependency and a `.gitignore`; consumers still
@@ -102,7 +102,7 @@ Dimension definitions reconciled against the reference implementation's canonica
   Deliberately excluded: a `checks/` directory. No check entity is specified,
   two recorded constraints say the kit assesses without recording, and a stored
   score cannot signal that it predates the text it judged.
-- **examples/**: restructured to mirror `system/` exactly, so the worked example
+- **examples/**: restructured to mirror `harmonic/` exactly, so the worked example
   is what a reader would copy. Fixed two defects in it along the way — its Notes
   were missing the required `id`, and its scope cited "Movement data", an entity
   of the reference implementation that no spec here defines.
