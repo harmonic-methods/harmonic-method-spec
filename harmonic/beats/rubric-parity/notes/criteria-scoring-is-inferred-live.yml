@@ -1,0 +1,20 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-019
+  type: assumption
+  attached_to: K-B-002
+  beat_version: K-BV-002.3
+  content: >
+    That criteria-based scoring is live in the reference implementation, rather
+    than planned, is inferred rather than verified. The evidence is indirect:
+    every per-dimension score in its current checks is a whole number, which is
+    what a band computed from a ratio produces and what a model asked to judge
+    holistically does not reliably produce. The canonical prompt constants were
+    not read — the source lives in a repository this pass could not open.
+    Validate by reading the rubric prompts directly, or by confirming with the
+    reference implementation's team; until then, treat the band mapping in both
+    skills as matching a decision record rather than matching shipped code.
+  rationale: >
+    The whole change rests on this being true. An inference load-bearing enough
+    to reshape both published rubrics belongs in the record with its validation
+    state visible, not buried in the reasoning that produced it.

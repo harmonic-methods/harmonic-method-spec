@@ -14,6 +14,13 @@ beat_version:
     criteria trace alongside the band. The Beat rubric is also re-pointed at its
     canonical name, beat_coda_quality, with a warning that the name it used to
     carry now belongs to a different reading.
+
+    Done when: (1) neither skill instructs the reader to choose a number, and
+    both state the ratio-to-band mapping in canonical's terms; (2) both output
+    formats require the criteria and their answers, so a band can be audited;
+    (3) the Beat rubric's name and the reclaimed-name hazard appear in the
+    skill, in beat.yml, and in a Note; (4) no dimension, red flag, or anchor
+    text differs from v1.0.0; (5) npm run validate prints conformant.
   scope: >
     In: the scoring section of both skills, the output formats that must carry
     the criteria trace, the rubric pointer and scale line in beat.yml, the scale
