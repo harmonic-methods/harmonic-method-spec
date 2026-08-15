@@ -1,0 +1,35 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-021
+  type: constraint
+  attached_to: K-B-002
+  beat_version: K-BV-002.4
+  content: >
+    There is no fingerprint test in the reference implementation. K-BV-002.2
+    records one as delivered — "a fingerprint over both canonical dimension
+    tables, anchors included, now fails in the reference implementation's test
+    suite whenever either table moves" — and AGENTS.md repeated the claim to
+    contributors. Canonical was read directly: no test hashes, snapshots, or
+    otherwise fingerprints either dimension table. What exists is a set of
+    targeted assertions — a dimension count of seven on the Beat table, a few
+    named red flags, terminology invariants — and a separate consistency test
+    that only compares the drop_quality metadata array against its schema enum.
+    The plan rubric's anchors are not asserted by any test at all, so the
+    anchor-blindness K-BV-002.2 scoped in as a thing to prevent is the actual
+    present state, and it is total rather than partial.
+
+    The question of whether the guard fired for the seventh plan dimension does
+    not arise: there is no guard, and no seventh dimension. Canonical's plan
+    rubric is still six dimensions with no completeness. The completeness
+    dimension found in canonical belongs to build_quality, a different check.
+
+    Neither side has a mechanism. Canonical can move its rubric with a green
+    suite, and the kit can be hand-edited with a green validator. Parity rests
+    entirely on someone opening both.
+  rationale: >
+    Filed as a constraint rather than a correction to K-BV-002.2 because Notes
+    are preserved, not rewritten, and because the gap is a standing condition on
+    all future parity work rather than a one-time error. Whether K-BV-002.2
+    should be archived and re-planned against what actually shipped is a call
+    for whoever owns the Beat; this Note is the evidence that the question is
+    open.

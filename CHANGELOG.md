@@ -2,23 +2,37 @@
 
 ## v1.1.0 — 2026-08-15
 
-Scoring method reconciled against the reference implementation, which replaced
-holistic scoring with binary criteria and a computed band. The dimension
-definitions, red flags, and anchors are unchanged on both sides.
+Scoring method changed from holistic judgment to binary criteria and a computed
+band. The dimension definitions, red flags, and anchors are unchanged on both
+sides — diffed against canonical, anchor by anchor, and confirmed.
+
+**This method is the kit's own and is ahead of the reference implementation**,
+which still asks its model for a number per dimension. Canonical's decision
+record specifies the same mapping but the work has not shipped; an earlier draft
+of this release described the method as already canonical, on an inference that
+turned out to be false. A band produced by these skills will not reproduce
+against a canonical check run today.
 
 - **Both skills**: a dimension score is no longer chosen by the agent. Each
   dimension is decomposed into 3-4 binary criteria, answered yes / no /
   cannot-determine, and the 1-5 band is the success rate over the criteria
   answered — `yes / (yes + no)`, cannot-determine excluded from the denominator,
   bands `<0.20 → 1`, `<0.40 → 2`, `<0.60 → 3`, `<0.80 → 4`, `>= 0.80 → 5`.
-  Canonical made the move because "score this 1-5" is interpreted differently by
-  different models, and by the same model twice; the kit's own Coda — a 4 here
-  means a 4 there — could not survive the difference.
+  The reason is that "score this 1-5" is interpreted differently by different
+  models, and by the same model twice; the kit's own Coda — a 4 here means a 4
+  there — could not survive the difference. Canonical's decision record
+  `N-4E09-3024` reaches the same conclusion and fixes the same thresholds.
 - **Both skills**: output formats now carry the criteria trace, so a band can be
   audited rather than taken on faith.
 - **plan-quality-check**: the per-dimension anchors keep their canonical wording
   and gain a second job — they are the richest source for the criteria an agent
-  derives. They are no longer scored against holistically.
+  derives. They are no longer scored against holistically here; in canonical
+  they still are.
+- **AGENTS.md**: corrected. It told contributors that a fingerprint test in the
+  reference implementation fails when canonical moves. No such test exists —
+  canonical's rubric tests assert a dimension count and a few named red flags,
+  and read the anchors nowhere. Nothing catches this drift on either side, so
+  re-checking by hand is the whole mechanism.
 - **beat-quality-check**: re-pointed at the canonical rubric's current name,
   `beat_coda_quality`. It was `beat_quality`, and the plain name has been
   reclaimed for a different check — whether a capability is actually so, rather

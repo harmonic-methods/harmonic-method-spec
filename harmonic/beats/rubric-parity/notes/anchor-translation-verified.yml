@@ -1,0 +1,28 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-022
+  type: context
+  attached_to: K-B-002
+  beat_version: K-BV-002.4
+  content: >
+    Both dimension tables were diffed against canonical, anchor by anchor, at
+    the first opportunity since v1.0.0. No dimension, red flag, or anchor is
+    missing, added, reordered, or changed in meaning. Every textual difference
+    is the declared translation of K-N-001, in four families: the reference
+    implementation's private vocabulary for a release grouping and for the level
+    above a Beat, both neutralized; its entity naming, where the plan anchors
+    still name the change artifact though the check now grades a Beat Version;
+    its field names (description and Scope field to summary and Scope); and
+    software job titles in four anchors — a
+    developer, a QA engineer, an engineer, and a new team member become whoever
+    picks it up, someone who did not write the plan, one owner, and someone new
+    to the work. Two beat-side phrases neutralize the same way: UI rewrite to
+    implementation rewrite, and agency work to work.
+
+    None were changed by this reconciliation, and none should be reverted —
+    each is the medium-agnostic reading the kit exists to publish. The
+    Revision-to-Beat-Version substitution is arguably ahead of canonical, whose
+    anchor prose still names the entity the check stopped grading.
+
+    Recorded so the next parity pass does not re-derive the list, and so a
+    future reader does not mistake a translated anchor for drift.

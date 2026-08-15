@@ -1,0 +1,37 @@
+# Beat Version — conformant to specs/beat-version.yml (v1.1.0)
+beat_version:
+  id: K-BV-002.4
+  beat: K-B-002
+  title: Parity claims checked against canonical source
+  status: active
+  summary: >
+    Every parity claim the kit makes about the reference implementation had been
+    made without reading it. Canonical source was opened and each claim tested.
+    Two failed. Criteria-based scoring is not shipped there — its rubric prompts
+    still ask the model for a number per dimension, with no criteria, no ratio,
+    no band mapping and no threshold constant — so the skills were describing
+    their own method as canonical's. And the fingerprint guard that AGENTS.md
+    told contributors would catch canonical drift does not exist in any form.
+
+    The scoring method stays, because reverting it would restore the holistic
+    instruction the kit's Coda cannot survive; what goes is the attribution.
+    Both skills now name the method as the kit's own and ahead of canonical, and
+    warn that a band produced here will not reproduce against a canonical run.
+    AGENTS.md now tells contributors the truth: nothing catches this drift on
+    either side, and re-checking by hand is the entire mechanism.
+
+    Done when: (1) neither skill claims canonical scores from criteria, and both
+    state the divergence where a reader meets the scoring section; (2) AGENTS.md
+    no longer promises a canonical-side guard; (3) the superseded assumption,
+    the missing guard, and the anchor-diff result are each recorded as Notes;
+    (4) no dimension, red flag, or anchor text changes; (5) npm run validate
+    prints conformant.
+  scope: >
+    In: the scoring sections and rubric-source preambles of both skills, the
+    parity paragraph in AGENTS.md, and Notes recording the verification result,
+    the absent drift guard, and the anchor-by-anchor diff.
+    Out: the dimension definitions, red flags, and anchors — diffed against
+    canonical and confirmed unchanged in meaning, every difference being the
+    declared translation. Also out: reverting the criteria method, archiving or
+    re-planning K-BV-002.2 against what actually shipped, and the canonical
+    moves still in flight, which were re-checked and remain unmerged.

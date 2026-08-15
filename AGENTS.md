@@ -36,8 +36,16 @@ rubric definitions in the Harmonica reference implementation. They are a
 deliberate translation — different vocabulary, medium-agnostic — not a copy.
 
 Do not edit a dimension, red flag, or anchor here without checking it against
-canonical. A fingerprint test in the reference implementation fails when
-canonical moves, but nothing catches an edit made on this side.
+canonical — by opening canonical, every time. **Nothing catches this drift on
+either side.** The reference implementation has no fingerprint test over its
+dimension tables; its rubric tests assert a dimension count and a handful of
+named red flags, and no test reads the anchors at all. An earlier version of
+this file promised a canonical-side guard that does not exist. Re-checking by
+hand is the whole mechanism.
+
+`skills/plan-quality-check` also runs a scoring method canonical has not
+shipped. Parity there is by decision record, not by code — see
+`harmonic/beats/rubric-parity/notes/criteria-scoring-is-kit-originated.yml`.
 
 Do not copy the skills into `.claude/skills/` or any other agent's directory
 either. That is a second copy to keep in sync, which is the failure this

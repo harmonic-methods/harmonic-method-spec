@@ -8,9 +8,14 @@ description: Score a Harmonic Composition Beat across the seven published qualit
 You are scoring a **Beat** — the Harmonic Composition unit of durable capability —
 against the published rubric. Spec: `specs/beat.yml` (v1.1.0).
 
-The dimension definitions, red flags, scoring bands, and check rules below
-follow the reference implementation's canonical rubric for a Beat's *definition*,
-named `beat_coda_quality`. Score against them as written; do not paraphrase them.
+The dimension definitions, red flags, and check rules below follow the
+reference implementation's canonical rubric for a Beat's *definition*, named
+`beat_coda_quality`. Score against them as written; do not paraphrase them.
+
+**The scoring method below is the kit's own, and is ahead of canonical.** The
+reference implementation still asks the model for a per-dimension number
+directly. Its decision record commits to criteria-based scoring, but that has
+not shipped. See `notes/criteria-scoring-is-kit-originated.yml`.
 
 **On the name.** That rubric was `beat_quality` until the reference
 implementation renamed it for what it grades. The plain name has been reclaimed
@@ -28,10 +33,16 @@ the context was missing.
 
 ## Scoring: answer criteria, compute the band
 
-Do not pick a number. The reference implementation stopped asking the model to
-score a dimension holistically, because "score this 1-5" is read differently by
-different models — and by the same model twice. You answer factual questions;
-arithmetic produces the score.
+Do not pick a number. "Score this 1-5" is read differently by different models —
+and by the same model twice — so a holistic band cannot carry the kit's Coda,
+which is that a 4 here means a 4 there. You answer factual questions; arithmetic
+produces the score.
+
+This is a deliberate divergence from the reference implementation, which still
+asks its model to name the number. Canonical's own decision record
+(`N-4E09-3024`) reaches the same conclusion and specifies the same mapping; the
+kit has adopted it first. A band produced here is therefore not
+reproducible against a canonical check run today.
 
 For each dimension:
 
@@ -54,10 +65,11 @@ evidence: a band with nothing behind it is the holistic guess this method
 exists to remove.
 
 The kit publishes the method and the dimension definitions the criteria are
-derived from. The reference implementation authors its own criteria wording per
-dimension, against its own entities; that wording is not mirrored here. Two
-runs may therefore phrase criteria differently while landing on the same band —
-the dimension definitions and the band mapping are what must agree.
+derived from, not a fixed criteria list. Two runs may therefore phrase criteria
+differently while landing on the same band — the dimension definitions and the
+band mapping are what must agree. Should the reference implementation ship its
+own per-dimension criteria wording, that wording will still not be mirrored
+here: it is authored against its own entities, and this kit is a translation.
 
 ## What a band means
 

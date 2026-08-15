@@ -12,6 +12,12 @@ The dimension definitions, red flags, scoring anchors, and check rules below
 follow the reference implementation's canonical `plan_quality` rubric prompt.
 Score against them as written; do not paraphrase them.
 
+**The scoring method below is the kit's own, and is ahead of canonical.** The
+reference implementation still asks the model for a per-dimension number
+directly, scored holistically against these same anchors. Its decision record
+commits to criteria-based scoring, but that has not shipped. See
+`notes/criteria-scoring-is-kit-originated.yml`.
+
 This is NOT a build quality check (that evaluates the change itself). This
 evaluates how well the Beat Version *definition* is written — is it a good,
 clear, executable unit of work?
@@ -35,10 +41,16 @@ A good Beat Version:
 
 ## Scoring: answer criteria, compute the band
 
-Do not pick a number. The reference implementation stopped asking the model to
-score a dimension holistically, because "score this 1-5" is read differently by
-different models — and by the same model twice. You answer factual questions;
-arithmetic produces the score.
+Do not pick a number. "Score this 1-5" is read differently by different models —
+and by the same model twice — so a holistic band cannot carry the kit's Coda,
+which is that a 4 here means a 4 there. You answer factual questions; arithmetic
+produces the score.
+
+This is a deliberate divergence from the reference implementation, which still
+asks its model to name the number. Canonical's own decision record
+(`N-4E09-3024`) reaches the same conclusion and specifies the same mapping; the
+kit has adopted it first. A band produced here is therefore not reproducible
+against a canonical check run today.
 
 For each dimension:
 
@@ -60,17 +72,18 @@ Report the criteria and their answers alongside the band. The trace is the
 evidence: a band with nothing behind it is the holistic guess this method
 exists to remove.
 
-The per-dimension anchors below now do two jobs: they say what each band looks
+The per-dimension anchors below do two jobs here: they say what each band looks
 like, and they are the richest source for the criteria you derive — an anchor
 that names an observable property ("explicit in/out boundaries", "one owner,
-1-2 weeks") converts to a criterion directly. They are no longer scored against
-holistically.
+1-2 weeks") converts to a criterion directly. In canonical they are still scored
+against holistically; the anchor text is shared, the use made of it is not.
 
 The kit publishes the method and the dimension definitions the criteria are
-derived from. The reference implementation authors its own criteria wording per
-dimension, against its own entities; that wording is not mirrored here. Two
-runs may therefore phrase criteria differently while landing on the same band —
-the dimension definitions, anchors, and band mapping are what must agree.
+derived from, not a fixed criteria list. Two runs may therefore phrase criteria
+differently while landing on the same band — the dimension definitions, anchors,
+and band mapping are what must agree. Should the reference implementation ship
+its own per-dimension criteria wording, that wording will still not be mirrored
+here: it is authored against its own entities, and this kit is a translation.
 
 ## What a band means
 

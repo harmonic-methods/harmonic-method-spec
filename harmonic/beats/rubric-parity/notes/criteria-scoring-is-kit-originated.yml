@@ -1,0 +1,42 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-020
+  type: decision
+  attached_to: K-B-002
+  beat_version: K-BV-002.4
+  content: >
+    Supersedes K-N-019, which recorded criteria-based scoring as inferred-live
+    in the reference implementation. The inference was checked against canonical
+    source and is false. Canonical's beat and plan rubric prompts both still
+    instruct the model to emit "score": <1-5> per dimension and to "Score each
+    dimension 1-5"; neither carries criteria, a ratio, a band mapping, or a
+    CANNOT_DETERMINE answer, and no per-check-type threshold constant exists.
+    The overall score is a plain mean of the model's own numbers. The evidence
+    that produced the inference — whole-number dimension scores — is equally
+    what a model asked for an integer band returns, so it never distinguished
+    the two designs.
+
+    Canonical's decision record N-4E09-3024 does specify exactly the mapping
+    both skills carry, and its Beat Version bv-fdcdf4ec (B-211) plans the work,
+    but that increment has not shipped: its single Revision has no pull request
+    in any state.
+
+    The kit keeps the criteria method rather than reverting to holistic scoring,
+    and stops attributing it to canonical. Both skills now state that the method
+    is the kit's own and ahead of the reference implementation, and that a band
+    produced here is not reproducible against a canonical run today.
+  rationale: >
+    Two bad options and a third. Reverting would restore a holistic instruction
+    the kit's own Coda cannot survive — a 4 here meaning a 4 there is the
+    promise, and holistic scoring is what breaks it. Keeping the false
+    attribution would make the skills lie about their source, which is worse
+    than the drift they exist to prevent. Keeping the method while naming it as
+    the kit's own divergence costs only the parity claim, which was never true.
+
+    This does contradict the rule invoked one Beat Version earlier, when the
+    unmerged beat_version_quality rename was deliberately not mirrored. The
+    distinction is direction of harm: mirroring an unmerged rename would point
+    agents at a check name that resolves to nothing, while running a better
+    scoring method early degrades only cross-implementation comparability, and
+    only until canonical catches up. Recorded here because the next parity pass
+    will find the two decisions side by side and should see why they differ.
