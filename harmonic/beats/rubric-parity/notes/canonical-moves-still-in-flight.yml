@@ -1,0 +1,18 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-018
+  type: context
+  attached_to: K-B-002
+  beat_version: K-BV-002.3
+  content: >
+    Three canonical moves were known but deliberately not mirrored at this pass,
+    because they had not landed in the reference implementation: the plan rubric
+    is being renamed to beat_version_quality and gains a seventh dimension,
+    completeness, which verifies a planned increment against the codebase; a new
+    advisory reading grades a Revision on whether it is ready to land, across
+    five dimensions; and the sensitive-data scan leaves the check family
+    entirely, on the rule that checks grade while scans detect. The first is the
+    one that changes a published rubric here — six dimensions become seven, and
+    the overall average moves for every Beat Version scored.
+  rationale: >
+    Recorded so the next parity pass starts from a list rather than a rediscovery.

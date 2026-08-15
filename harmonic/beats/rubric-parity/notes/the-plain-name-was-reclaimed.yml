@@ -1,0 +1,18 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-017
+  type: constraint
+  attached_to: K-B-002
+  beat_version: K-BV-002.3
+  content: >
+    The Beat rubric this kit mirrors is named beat_coda_quality in the reference
+    implementation. It was beat_quality, and the plain name has since been
+    reclaimed for a different check — a realization reading that asks whether a
+    capability is actually so, not whether it is well defined. Anyone
+    reconciling this kit against canonical must read beat_coda_quality. Reading
+    beat_quality returns a rubric this kit does not publish and never scored.
+  rationale: >
+    A rename that frees a name for something else is worse than a rename that
+    retires one: the old pointer keeps resolving, silently, to the wrong rubric.
+    Recorded as a constraint rather than a decision because it binds every
+    future parity pass, not just this one.

@@ -102,6 +102,12 @@ canonical rubrics, so a score here means what a score there means. Both skills
 tell the reader not to paraphrase the anchors, because that is how a rubric
 quietly stops meaning the same thing.
 
+Neither skill lets the agent pick a number. A dimension is decomposed into
+binary criteria the agent answers from the text in front of it, and the 1-5
+band is the success rate over those answers — the same move the reference
+implementation made when it found that "score this 1-5" meant something
+different to every model, and to the same model twice.
+
 ## Laying out a system
 
     harmonic/coda.yml                                    the system Coda

@@ -1,5 +1,5 @@
 # Harmonic Composition spec — Beat Version
-# spec_version: 1.0.0
+# spec_version: 1.1.0
 entity: beat_version
 summary: >
   A planned step in a Beat's evolution toward its Coda. Beats change through
@@ -28,7 +28,10 @@ fields:
 quality:
   rubric: plan_quality  # see skills/plan-quality-check/SKILL.md
   dimensions: [Scoped, Directional, Testable, Traceable, Assignable, Risk-aware]
-  scale: 1-5 per dimension
+  scale: >
+    1-5 per dimension, not chosen but computed: 3-4 binary criteria per
+    dimension, band from the success rate over the criteria answered.
+    See the skill for the ratio-to-band mapping.
   reference_gate: >
     The reference implementation gates the first Revision on a passing plan
     check for the Beat Version. The gate is an implementation choice; the

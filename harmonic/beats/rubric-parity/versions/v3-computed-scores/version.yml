@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat-version.yml (v1.1.0)
+beat_version:
+  id: K-BV-002.3
+  beat: K-B-002
+  title: Scores are computed, not chosen
+  status: active
+  summary: >
+    The canonical rubrics stopped asking a model to name a number. A dimension
+    is now decomposed into binary criteria, and its 1-5 band is the success rate
+    over the criteria answered — a mapping fixed in code rather than a judgment
+    made in prose. Both published skills carried the older holistic instruction,
+    which meant a 4 here and a 4 there had stopped being the same claim. Both
+    now instruct the criteria method and the band mapping, and report the
+    criteria trace alongside the band. The Beat rubric is also re-pointed at its
+    canonical name, beat_coda_quality, with a warning that the name it used to
+    carry now belongs to a different reading.
+  scope: >
+    In: the scoring section of both skills, the output formats that must carry
+    the criteria trace, the rubric pointer and scale line in beat.yml, the scale
+    line in beat-version.yml, and the README paragraph describing what a score
+    means. Out: the dimension definitions, red flags, and anchors — canonical
+    left them untouched, so this kit does too. Also out: the canonical criteria
+    wording itself, which is authored against the reference implementation's own
+    entities, and the renames still in flight there — plan_quality to
+    beat_version_quality with a seventh dimension, and a new advisory reading
+    over a Revision. Mirroring an unmerged rename is the same desync running the
+    other way.

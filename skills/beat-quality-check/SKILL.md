@@ -1,16 +1,23 @@
 ---
 name: beat-quality-check
-description: Score a Harmonic Composition Beat across the seven published quality dimensions (Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a Beat.
+description: Score a Harmonic Composition Beat across the seven published quality dimensions (Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome), 1-5 each from binary criteria, with reasoning and improvement guidance. Use when asked to check, grade, or improve a Beat.
 ---
 
 # Beat Quality Check
 
 You are scoring a **Beat** — the Harmonic Composition unit of durable capability —
-against the published rubric. Spec: `specs/beat.yml` (v1.0.0).
+against the published rubric. Spec: `specs/beat.yml` (v1.1.0).
 
-The dimension definitions, red flags, scoring scale, and check rules below
-follow the reference implementation's canonical `beat_quality` rubric prompt.
-Score against them as written; do not paraphrase them.
+The dimension definitions, red flags, scoring bands, and check rules below
+follow the reference implementation's canonical rubric for a Beat's *definition*,
+named `beat_coda_quality`. Score against them as written; do not paraphrase them.
+
+**On the name.** That rubric was `beat_quality` until the reference
+implementation renamed it for what it grades. The plain name has been reclaimed
+for a different check — a *realization* reading that asks whether the capability
+is actually so, not whether it is well defined. This skill mirrors the
+definition check only. When reconciling against canonical, read
+`beat_coda_quality`; reading `beat_quality` now gets you the wrong rubric.
 
 ## Inputs
 The Beat's title, Coda, and description. If available: its sibling Beats (for
@@ -19,7 +26,40 @@ Strategically Aligned), and any Notes attached to the Beat. If siblings or
 parent Coda are unavailable, score those dimensions from the Beat alone and say
 the context was missing.
 
-## Scoring scale
+## Scoring: answer criteria, compute the band
+
+Do not pick a number. The reference implementation stopped asking the model to
+score a dimension holistically, because "score this 1-5" is read differently by
+different models — and by the same model twice. You answer factual questions;
+arithmetic produces the score.
+
+For each dimension:
+
+1. Derive 3-4 binary criteria from that dimension's definition and red flag
+   below. Each must be factual and observable in the Beat as written —
+   answerable by anyone reading the same text, not a matter of taste.
+2. Answer each YES, NO, or CANNOT_DETERMINE. Use CANNOT_DETERMINE only when the
+   input needed is genuinely absent (no sibling Beats supplied, no parent Coda),
+   never when the answer is merely unflattering.
+3. Take the success rate over the criteria you could answer:
+   `ratio = yes / (yes + no)`. CANNOT_DETERMINE is excluded from the
+   denominator — it neither helps nor hurts — and is reported separately.
+4. Map the ratio to the dimension's band:
+
+       ratio < 0.20 → 1        ratio < 0.60 → 3        ratio >= 0.80 → 5
+       ratio < 0.40 → 2        ratio < 0.80 → 4
+
+Report the criteria and their answers alongside the band. The trace is the
+evidence: a band with nothing behind it is the holistic guess this method
+exists to remove.
+
+The kit publishes the method and the dimension definitions the criteria are
+derived from. The reference implementation authors its own criteria wording per
+dimension, against its own entities; that wording is not mirrored here. Two
+runs may therefore phrase criteria differently while landing on the same band —
+the dimension definitions and the band mapping are what must agree.
+
+## What a band means
 
 1 = Critical gap — dimension is not addressed at all
 2 = Weak — dimension is partially addressed with significant issues
@@ -75,8 +115,9 @@ the context was missing.
 
 ## Output format
 
-For each dimension: score, one-sentence justification, and (for any score below
-5) the single most useful improvement. Then:
+For each dimension: the criteria with their YES / NO / CANNOT_DETERMINE
+answers, the resulting ratio and band, a one-sentence justification, and (for
+any band below 5) the single most useful improvement. Then:
 
 - **Overall**: average of the seven, one decimal.
 - **Verdict**: the reference implementation treats >= 4 as passing; report

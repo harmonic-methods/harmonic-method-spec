@@ -1,5 +1,5 @@
 # Harmonic Composition spec — Beat
-# spec_version: 1.0.0
+# spec_version: 1.1.0
 entity: beat
 summary: >
   The canonical unit of capability. A Beat names a durable capability or
@@ -30,9 +30,16 @@ fields:
     type: list<note>
     description: The typed knowledge attached to this capability. See note.yml.
 quality:
-  rubric: beat_quality  # see skills/beat-quality-check/SKILL.md
+  # Named beat_quality until the reference implementation renamed the check for
+  # what it grades. The plain name now belongs to a different reading — whether
+  # the capability is so, not whether it is well defined — which this kit does
+  # not specify.
+  rubric: beat_coda_quality  # see skills/beat-quality-check/SKILL.md
   dimensions: [Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome]
-  scale: 1-5 per dimension
+  scale: >
+    1-5 per dimension, not chosen but computed: 3-4 binary criteria per
+    dimension, band from the success rate over the criteria answered.
+    See the skill for the ratio-to-band mapping.
   reference_gate: >
     The reference implementation requires a fresh passing check (>=4/5) before a
     Beat may be decomposed into Beat Versions. The gate threshold is an

@@ -1,5 +1,40 @@
 # Changelog
 
+## v1.1.0 — 2026-08-15
+
+Scoring method reconciled against the reference implementation, which replaced
+holistic scoring with binary criteria and a computed band. The dimension
+definitions, red flags, and anchors are unchanged on both sides.
+
+- **Both skills**: a dimension score is no longer chosen by the agent. Each
+  dimension is decomposed into 3-4 binary criteria, answered yes / no /
+  cannot-determine, and the 1-5 band is the success rate over the criteria
+  answered — `yes / (yes + no)`, cannot-determine excluded from the denominator,
+  bands `<0.20 → 1`, `<0.40 → 2`, `<0.60 → 3`, `<0.80 → 4`, `>= 0.80 → 5`.
+  Canonical made the move because "score this 1-5" is interpreted differently by
+  different models, and by the same model twice; the kit's own Coda — a 4 here
+  means a 4 there — could not survive the difference.
+- **Both skills**: output formats now carry the criteria trace, so a band can be
+  audited rather than taken on faith.
+- **plan-quality-check**: the per-dimension anchors keep their canonical wording
+  and gain a second job — they are the richest source for the criteria an agent
+  derives. They are no longer scored against holistically.
+- **beat-quality-check**: re-pointed at the canonical rubric's current name,
+  `beat_coda_quality`. It was `beat_quality`, and the plain name has been
+  reclaimed for a different check — whether a capability is actually so, rather
+  than whether it is well defined — which this kit does not publish. Reading
+  `beat_quality` to reconcile now returns the wrong rubric.
+- **specs/beat.yml**: `quality.rubric` follows the rename; `quality.scale` on
+  both entity specs states that the band is computed rather than chosen. Both
+  specs promoted to `1.1.0`.
+- **Not mirrored, by choice**: canonical's own per-dimension criteria wording,
+  which is authored against its entities rather than the medium-agnostic method
+  this kit publishes; and three moves not yet landed there — the plan rubric's
+  rename to `beat_version_quality` with a seventh dimension, `completeness`; a
+  new advisory readiness reading over a Revision; and the sensitive-data scan
+  leaving the check family. Mirroring an unmerged rename is the same desync
+  running the other way. Recorded in `harmonic/beats/rubric-parity/notes/`.
+
 ## v1.0.0 — 2026-08-11
 
 Dimension definitions reconciled against the reference implementation's canonical

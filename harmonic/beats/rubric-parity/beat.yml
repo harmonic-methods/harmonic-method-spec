@@ -11,7 +11,9 @@ beat:
     parent: K-CODA
   description: >
     The capability by which the kit's published rubrics stay faithful to the
-    canonical beat_quality and plan_quality definitions they mirror. The kit is
+    canonical definitions they mirror — the reference implementation's rubric
+    for a Beat's definition and its rubric for a Beat Version's plan, named
+    there under whatever names those checks currently carry. The kit is
     a translation rather than a copy — it renames entities the reference
     implementation exposes differently, omits entities it does not define, and
     stays medium-agnostic — so parity is maintained deliberately and re-checked

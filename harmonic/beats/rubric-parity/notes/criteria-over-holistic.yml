@@ -1,0 +1,22 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-016
+  type: decision
+  attached_to: K-B-002
+  beat_version: K-BV-002.3
+  content: >
+    A dimension score is computed from binary criteria rather than chosen: 3-4
+    factual criteria per dimension, each answered yes, no, or cannot-determine;
+    ratio = yes / (yes + no), with cannot-determine excluded from the
+    denominator; bands <0.20 to 1, <0.40 to 2, <0.60 to 3, <0.80 to 4, and 0.80
+    or above to 5. The kit mirrors the method and the band mapping, not the
+    reference implementation's per-dimension criteria wording.
+  rationale: >
+    Holistic scoring is the source of the disagreement the kit's Coda promises
+    to prevent — "score this 1-5" is interpreted differently by different models
+    and by the same model twice, so a 4 stops being a shared claim. Binary
+    criteria narrow the model to factual judgment and leave the arithmetic to a
+    fixed mapping. The criteria wording is not mirrored because canonical
+    authors it against its own entities; the kit is medium-agnostic, so it
+    publishes the dimension definitions the criteria are derived from and lets
+    the agent phrase them for the system in front of it.

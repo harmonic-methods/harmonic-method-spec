@@ -1,12 +1,12 @@
 ---
 name: plan-quality-check
-description: Score a Harmonic Composition Beat Version plan across the six published plan-quality dimensions (Scoped, Directional, Testable, Traceable, Assignable, Risk-aware), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a plan or Beat Version before work begins.
+description: Score a Harmonic Composition Beat Version plan across the six published plan-quality dimensions (Scoped, Directional, Testable, Traceable, Assignable, Risk-aware), 1-5 each from binary criteria, with reasoning and improvement guidance. Use when asked to check, grade, or improve a plan or Beat Version before work begins.
 ---
 
 # Plan Quality Check
 
 You are scoring a **Beat Version** — a planned step in a Beat's evolution —
-against the published rubric. Spec: `specs/beat-version.yml` (v1.0.0).
+against the published rubric. Spec: `specs/beat-version.yml` (v1.1.0).
 
 The dimension definitions, red flags, scoring anchors, and check rules below
 follow the reference implementation's canonical `plan_quality` rubric prompt.
@@ -33,7 +33,46 @@ A good Beat Version:
 - Is traceable to its parent Beat with documented decisions
 - Can be assigned to one person or pair end-to-end
 
-## Scoring scale
+## Scoring: answer criteria, compute the band
+
+Do not pick a number. The reference implementation stopped asking the model to
+score a dimension holistically, because "score this 1-5" is read differently by
+different models — and by the same model twice. You answer factual questions;
+arithmetic produces the score.
+
+For each dimension:
+
+1. Derive 3-4 binary criteria from that dimension's definition, red flag, and
+   anchors below. Each must be factual and observable in the Beat Version as
+   written — answerable by anyone reading the same text, not a matter of taste.
+2. Answer each YES, NO, or CANNOT_DETERMINE. Use CANNOT_DETERMINE only when the
+   input needed is genuinely absent (no parent Beat supplied, no Notes
+   provided), never when the answer is merely unflattering.
+3. Take the success rate over the criteria you could answer:
+   `ratio = yes / (yes + no)`. CANNOT_DETERMINE is excluded from the
+   denominator — it neither helps nor hurts — and is reported separately.
+4. Map the ratio to the dimension's band:
+
+       ratio < 0.20 → 1        ratio < 0.60 → 3        ratio >= 0.80 → 5
+       ratio < 0.40 → 2        ratio < 0.80 → 4
+
+Report the criteria and their answers alongside the band. The trace is the
+evidence: a band with nothing behind it is the holistic guess this method
+exists to remove.
+
+The per-dimension anchors below now do two jobs: they say what each band looks
+like, and they are the richest source for the criteria you derive — an anchor
+that names an observable property ("explicit in/out boundaries", "one owner,
+1-2 weeks") converts to a criterion directly. They are no longer scored against
+holistically.
+
+The kit publishes the method and the dimension definitions the criteria are
+derived from. The reference implementation authors its own criteria wording per
+dimension, against its own entities; that wording is not mirrored here. Two
+runs may therefore phrase criteria differently while landing on the same band —
+the dimension definitions, anchors, and band mapping are what must agree.
+
+## What a band means
 
 1 = Critical gap — dimension is not addressed at all
 2 = Weak — dimension is partially addressed with significant issues
@@ -153,10 +192,11 @@ A good Beat Version:
 
 ## Output format
 
-Same shape as the Beat check: per-dimension score + justification + top
-improvement; overall average of the six, one decimal; pass/fail against the
-reference >= 4 threshold (an implementation choice); and, below threshold, a
-proposed revision marked for human ratification.
+Same shape as the Beat check: per-dimension criteria with their answers, the
+resulting ratio and band, a justification, and the top improvement; overall
+average of the six, one decimal; pass/fail against the reference >= 4 threshold
+(an implementation choice); and, below threshold, a proposed revision marked for
+human ratification.
 
 Dimension order: scoped, directional, testable, traceable, assignable, riskAware.
 
