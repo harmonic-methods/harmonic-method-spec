@@ -1,11 +1,12 @@
-# Harmonic Composition Kit
+# Harmonic Method Kit
 
-> Machine-readable specs and agent skills for Harmonic Composition — the founding
-> framework of the Harmonic Methods family, for improving systems with explicit
-> intent, preserved context, and decision lineage. Composition covers a single
-> system; Harmonic Orchestration and Harmonic Portfolio Management are separate
-> frameworks and are not covered here. Open to practice with any tools; Harmonica
-> (harmonica.io), by Codazen, is the reference implementation.
+> Machine-readable specs and agent skills for the Harmonic Method — a single
+> method for improving systems with explicit intent, preserved context, and
+> decision lineage, applied here at system altitude. Coda, Beat, Beat Version,
+> Revision, and Note are the same primitives at beat/track and portfolio
+> altitude too — altitude is recursion, not a separate framework. Open to
+> practice with any tools; Harmonica (harmonica.io), by Codazen, is the
+> reference implementation.
 > Full documentation: https://harmonicmethods.com
 
 ## Specs

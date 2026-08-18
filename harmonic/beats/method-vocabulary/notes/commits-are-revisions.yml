@@ -7,7 +7,7 @@ note:
     In a git-hosted system, the commit is the Revision. This repository records
     no Revision files of its own; work is bound to its plan by naming the Beat
     Version in the commit message. `specs/revision.yml` stays — Revision is a
-    Composition primitive — and the worked example keeps one, because its
+    Harmonic Method primitive — and the worked example keeps one, because its
     evidence is a procedure document rather than a commit.
   rationale: >
     A Revision does three jobs: point at the change artifact, hold the reasoning,

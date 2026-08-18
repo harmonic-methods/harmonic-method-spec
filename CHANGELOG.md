@@ -1,5 +1,37 @@
 # Changelog
 
+## v1.1.0 — 2026-08-17
+
+Renamed from Harmonic Composition Kit to Harmonic Method Kit, following the
+organization-level collapse of the three-framework structure (Harmonic
+Composition, Harmonic Orchestration, Harmonic Portfolio Management) into one
+named method — the Harmonic Method — with four functions (Composer,
+Orchestrator, Conductor, Producer) scoped by altitude rather than split across
+frameworks. See K-BV-003.3.
+
+- **package.json / package-lock.json**: `name` changed to
+  `harmonic-method-kit`.
+- **README.md / llms.txt**: title and framing updated. Dropped "founding
+  framework of the Harmonic Methods family" and the enumeration of Harmonic
+  Orchestration and Harmonic Portfolio Management as separate frameworks;
+  added a line naming the four functions and stating that beat/track and
+  portfolio altitude reuse this kit's same primitives rather than needing a
+  separate kit. Clone URL updated to `harmonic-method-kit.git`.
+- **specs/*.yml**: header comment on all six spec files changed from
+  "Harmonic Composition spec" to "Harmonic Method spec". No field, type, or
+  rule changes — the entity model is unchanged.
+- **skills/beat-quality-check, skills/plan-quality-check**: `description`
+  frontmatter and body prose changed from "Harmonic Composition Beat[...]" to
+  "Harmonic Method Beat[...]". No dimension, anchor, or scoring-rule changes.
+- **harmonic/coda.yml and every Beat Coda that named the framework**:
+  "Harmonic Composition" replaced with "the Harmonic Method" in prose.
+- **harmonic/beats/method-vocabulary/notes/commits-are-revisions.yml**: "a
+  Composition primitive" corrected to "a Harmonic Method primitive".
+
+Not renamed: the "Harmonic Composition" language in the v1.0.0 entry below
+describes what was true at that release and stays as written — a changelog
+records history, not the current name.
+
 ## v1.0.0 — 2026-08-11
 
 Dimension definitions reconciled against the reference implementation's canonical

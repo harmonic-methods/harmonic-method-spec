@@ -5,7 +5,7 @@ beat:
   status: open
   coda:
     statement: >
-      A newcomer who lands on this repository understands what Harmonic Composition
+      A newcomer who lands on this repository understands what the Harmonic Method
       is, applies one of its rubrics to their own work, and decides whether to
       go further — all without leaving the repository or talking to anyone.
     parent: K-CODA

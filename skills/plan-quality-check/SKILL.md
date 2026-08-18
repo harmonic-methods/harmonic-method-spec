@@ -1,6 +1,6 @@
 ---
 name: plan-quality-check
-description: Score a Harmonic Composition Beat Version plan across the six published plan-quality dimensions (Scoped, Directional, Testable, Traceable, Assignable, Risk-aware), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a plan or Beat Version before work begins.
+description: Score a Harmonic Method Beat Version plan across the six published plan-quality dimensions (Scoped, Directional, Testable, Traceable, Assignable, Risk-aware), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a plan or Beat Version before work begins.
 ---
 
 # Plan Quality Check
