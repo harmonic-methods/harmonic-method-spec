@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-016
+  type: decision
+  attached_to: K-B-003
+  beat_version: K-BV-003.3
+  content: >
+    "Harmonic Composition" is retired as a named framework. The kit now speaks
+    of "the Harmonic Method," singular, per the canonical org-level Harmonic
+    Method notebook. "Harmonic Orchestration" and "Harmonic Portfolio
+    Management" are likewise retired as separately named frameworks — they
+    were never shipped, and the altitude model (system / beat-track /
+    portfolio) replaces the family structure they implied.
+  rationale: >
+    The three-framework boundaries leaked in practice at the organization
+    level: cadence spanned all three, and the docs had to apologize that two
+    families of terms didn't nest. An orchestra is one institution with
+    several leadership roles, not three methodologies — the four functions
+    (Composer, Orchestrator, Conductor, Producer) are constant, and altitude is
+    a property of the work, not a framework boundary. This kit's own scope is
+    unchanged: it still covers only the system-altitude entity model and
+    rubrics. What changed is the name it operates under and the removal of
+    language that implied sibling frameworks this kit does not, and never did,
+    cover.

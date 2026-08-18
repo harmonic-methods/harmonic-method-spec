@@ -5,7 +5,7 @@ beat:
   status: open
   coda:
     statement: >
-      An agent handed this repository can work in Harmonic Composition correctly —
+      An agent handed this repository can work in the Harmonic Method correctly —
       naming the right entity, attaching knowledge to the right place, and
       respecting the lifecycle rules — without a human translating the method
       into prose first.

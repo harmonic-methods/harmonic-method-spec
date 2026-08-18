@@ -1,11 +1,11 @@
 ---
 name: beat-quality-check
-description: Score a Harmonic Composition Beat across the seven published quality dimensions (Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a Beat.
+description: Score a Harmonic Method Beat across the seven published quality dimensions (Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a Beat.
 ---
 
 # Beat Quality Check
 
-You are scoring a **Beat** — the Harmonic Composition unit of durable capability —
+You are scoring a **Beat** — the Harmonic Method's unit of durable capability —
 against the published rubric. Spec: `specs/beat.yml` (v1.0.0).
 
 The dimension definitions, red flags, scoring scale, and check rules below

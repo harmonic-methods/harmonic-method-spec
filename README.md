@@ -1,14 +1,16 @@
-# Harmonic Composition Kit
+# Harmonic Method Kit
 
-Machine-readable specs and agent skills for **Harmonic Composition** — the
-founding framework of the Harmonic Methods family, for improving systems with
-explicit intent, preserved context, and decision lineage. Open to practice with
-any tools.
+Machine-readable specs and agent skills for **the Harmonic Method** — a single
+method for improving systems with explicit intent, preserved context, and
+decision lineage. Open to practice with any tools.
 
-Composition covers a single system: Coda, Beats, Beat Versions, Revisions, and
-Notes. Harmonic Orchestration (across systems and agents) and Harmonic Portfolio
-Management (across the wider landscape) are separate frameworks in the family and
-are not covered here.
+The method defines four functions that act on intent — Composer, Orchestrator,
+Conductor, Producer — each scoped to an altitude rather than split into
+separate frameworks. This kit covers the entity model at system altitude: Coda,
+Beats, Beat Versions, Revisions, and Notes. The same primitives recur at beat/
+track altitude (a discrete piece of work) and portfolio altitude (the set of
+systems); altitude is recursion, not a different method, so this kit's specs
+and rubrics apply there too, unchanged.
 
 Full documentation is at [harmonicmethods.com](https://harmonicmethods.com).
 Harmonica ([harmonica.io](https://harmonica.io)), by Codazen, is the reference
@@ -22,8 +24,8 @@ might be a pull request, a procedure document, or a runbook diff.
 
 ### 1. Score something, with nothing installed
 
-    git clone https://github.com/harmonic-methods/composition-kit.git
-    cd composition-kit
+    git clone https://github.com/harmonic-methods/harmonic-method-kit.git
+    cd harmonic-method-kit
 
 Then point any agent at a rubric and a file:
 

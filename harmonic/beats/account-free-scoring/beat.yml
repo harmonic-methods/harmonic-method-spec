@@ -5,7 +5,7 @@ beat:
   status: open
   coda:
     statement: >
-      Someone evaluating Harmonic Composition can score a real Beat or a real plan
+      Someone evaluating the Harmonic Method can score a real Beat or a real plan
       using nothing but this repository and an agent, and trust the result
       enough to act on it.
     parent: K-CODA
