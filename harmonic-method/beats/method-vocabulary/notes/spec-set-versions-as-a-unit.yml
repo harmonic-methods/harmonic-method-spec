@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml
+note:
+  id: K-N-029
+  type: decision
+  attached_to: K-B-003
+  beat_version: K-BV-003.5
+  content: >
+    The specs version as one set, under a single number held in
+    `specs/spec-set.yml`. Every spec file declares that same version as a parsed
+    field and the checker fails on disagreement. An implementation declares
+    conformance to one version of the normative surface, never to a version per
+    file.
+  rationale: >
+    Per-file versions would make an implementation pin six numbers and would
+    invite the set to fragment — a Beat spec at 2.1.0 against a Note spec at
+    1.3.0 says nothing useful about what an implementation actually conforms to,
+    while the entities are only meaningful in relation to each other anyway. The
+    version is duplicated across seven files rather than held in one, which
+    normally violates this repository's rule against a second copy of a fact.
+    It is allowed here on the same ground as a child entity's back-reference to
+    its parent: the duplication is deliberate, it buys something real — a
+    vendored spec file that still identifies itself — and the checker makes drift
+    impossible rather than merely unlikely. The rule is that redundancy is
+    acceptable when it is enforced, never when it is only intended.

@@ -1,0 +1,36 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: K-BV-003.5
+  beat: K-B-003
+  title: Make the spec set's version machine-readable
+  status: active
+  summary: >
+    The specs carried their version in a YAML comment, so nothing could parse
+    it and no implementation could pin to it — which makes a claim of canonical
+    authority unaddressable. A manifest at `specs/spec-set.yml` now holds the
+    one authoritative version for the whole normative surface, each spec file
+    declares that same version as a parsed field, and the checker fails when any
+    of them disagree. The set versions as a unit: an implementation declares
+    conformance to one number, not to six. The version moves to 2.0.0, because
+    the `rubric:` field values changed and anything keying off the old ones
+    breaks. The tooling's version stream is separated from the standard's, and
+    the checker now catches the tooling version going stale — it was two
+    releases behind.
+  scope: >
+    In: the manifest; a parsed `spec_version` field on every spec file
+    replacing the comment; checker rules asserting the manifest parses, carries
+    semver, and agrees with every spec; a checker rule comparing the tooling
+    version against the newest changelog entry; and removal of the version
+    parenthetical from the 55 instance-file headers and two skill bodies that
+    restated it.
+    Out: declaring which files form the normative surface — a manifest field
+    listing them would duplicate what the directory already says, and the
+    normative boundary is a separate decision. Also out: per-instance
+    conformance versions. A file recording which spec version it was written
+    against has real value, but as a checked field, never as a comment that goes
+    stale silently in 55 places.
+    Risks accepted and stated: bumping to 2.0.0 is a conformance-breaking
+    declaration; stripping the parenthetical trades per-file provenance for
+    provenance that cannot rot; and the tooling-version rule assumes the working
+    tree sits at the newest changelog heading, which is a release convention
+    this repository has not written down anywhere else.

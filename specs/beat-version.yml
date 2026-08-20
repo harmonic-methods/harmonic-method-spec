@@ -1,6 +1,6 @@
 # Harmonic Method spec — Beat Version
-# spec_version: 1.0.0
 entity: beat_version
+spec_version: 2.0.0
 summary: >
   A planned step in a Beat's evolution toward its Coda. Beats change through
   Beat Versions; each version is a bounded, testable increment of the capability.

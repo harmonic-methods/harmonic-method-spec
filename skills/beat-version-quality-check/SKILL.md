@@ -6,7 +6,7 @@ description: Score a Harmonic Method Beat Version plan across the six published 
 # Plan Quality Check
 
 You are scoring a **Beat Version** — a planned step in a Beat's evolution —
-against the published rubric. Spec: `specs/beat-version.yml` (v1.0.0).
+against the published rubric. Spec: `specs/beat-version.yml`.
 
 The dimension definitions, red flags, scoring anchors, and check rules below
 follow the reference implementation's canonical `beat_version_quality` rubric prompt.

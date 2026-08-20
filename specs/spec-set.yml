@@ -1,0 +1,16 @@
+# Harmonic Method — spec set manifest
+#
+# The single authority for the version of the normative surface. An
+# implementation declares conformance to this one number, not to a version per
+# file; the specs move as a set. Every file in this directory carries the same
+# value as a parsed `spec_version` field, and `npm run validate` fails when any
+# of them disagree.
+#
+# This is NOT the tooling's version. `package.json` versions the checker, which
+# releases on its own cadence — a checker fix must never bump what an
+# implementation pins.
+#
+# No list of spec files appears here. The directory is the list, which is the
+# same rule every entity in this method follows.
+manifest: spec_set
+spec_version: 2.0.0

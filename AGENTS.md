@@ -22,6 +22,21 @@ request.
   use the same name in their own repositories.
 - There is no `checks/` directory, by design. The kit assesses without recording.
 
+## Versions
+
+`specs/spec-set.yml` holds the one version of the normative surface. Every spec
+file repeats it as a parsed `spec_version` field and `npm run validate` fails on
+disagreement, so change it in the manifest and the specs together. An
+implementation pins that number.
+
+`package.json` versions the checker, on its own cadence — a checker fix must
+never bump what an implementation pins. The validator asserts it matches the
+newest `## vX.Y.Z` changelog heading.
+
+Do not write a spec version anywhere else. Not into an instance file's header
+comment, not into a skill body, not into prose. Fifty-five files used to, and
+every one went stale on the same day.
+
 ## Vocabulary
 
 `specs/function.yml` declares `concept:` rather than `entity:`. Nothing

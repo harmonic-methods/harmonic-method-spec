@@ -94,6 +94,7 @@ possible to say which of the five nobody is currently holding.
 | [specs/revision.yml](specs/revision.yml) | a tracked change executing a Beat Version |
 | [specs/note.yml](specs/note.yml) | typed knowledge attached to what it informs |
 | [specs/function.yml](specs/function.yml) | the five accountabilities the work is held through |
+| [specs/spec-set.yml](specs/spec-set.yml) | the version of the set above, which an implementation pins |
 
 ## The rubrics
 

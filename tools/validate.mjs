@@ -35,15 +35,58 @@ const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
 const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
 const NOTE_TYPES = ['context', 'assumption', 'constraint', 'guidance', 'decision'];
 
-/** Every spec must parse — a machine-readable spec that does not is worthless. */
+const SEMVER = /^\d+\.\d+\.\d+$/;
+const MANIFEST = 'specs/spec-set.yml';
+
+/**
+ * Every spec must parse — a machine-readable spec that does not is worthless —
+ * and every spec must declare the same version as the manifest. The specs move
+ * as a set, so an implementation pins one number rather than one per file. A
+ * version living only in a comment is what this replaces: unparseable, and it
+ * had gone stale in 55 files.
+ */
 function checkSpecs() {
   console.log('== specs ==');
-  const specs = ls('specs').map((f) => `specs/${f}`);
+
+  let setVersion;
+  try {
+    const m = load(MANIFEST);
+    if (m?.manifest !== 'spec_set') fail(`${MANIFEST}: expected 'manifest: spec_set'`);
+    setVersion = m?.spec_version;
+    if (!SEMVER.test(String(setVersion))) fail(`${MANIFEST}: spec_version '${setVersion}' is not semver`);
+  } catch (e) {
+    fail(`${MANIFEST}: ${e.message}`);
+  }
+
+  const specs = ls('specs').map((f) => `specs/${f}`).filter((p) => p !== MANIFEST);
   let ok = 0;
   for (const p of specs) {
-    try { load(p); ok++; } catch (e) { fail(`${p}: ${e.message}`); }
+    let doc;
+    try { doc = load(p); ok++; } catch (e) { fail(`${p}: ${e.message}`); continue; }
+    if (doc?.spec_version === undefined) {
+      fail(`${p}: no parsed 'spec_version' field — a version in a comment cannot be checked`);
+    } else if (setVersion !== undefined && doc.spec_version !== setVersion) {
+      fail(`${p}: spec_version '${doc.spec_version}' disagrees with ${MANIFEST} '${setVersion}'`);
+    }
   }
-  console.log(`  ${ok}/${specs.length} parsed`);
+  console.log(`  ${ok}/${specs.length} parsed, spec set ${setVersion ?? '(unknown)'}`);
+}
+
+/**
+ * The tooling versions separately from the standard: a checker fix must never
+ * bump what an implementation pins. Nothing kept the tooling version honest,
+ * and it had drifted two releases behind the changelog.
+ */
+function checkToolingVersion() {
+  console.log('== tooling version ==');
+  let pkg;
+  try { pkg = JSON.parse(read('package.json')); } catch (e) { return fail(`package.json: ${e.message}`); }
+  const latest = read('CHANGELOG.md').match(/^## v(\d+\.\d+\.\d+)/m)?.[1];
+  if (!latest) return fail('CHANGELOG.md: no "## vX.Y.Z" heading found');
+  if (pkg.version !== latest) {
+    fail(`package.json version '${pkg.version}' != newest CHANGELOG entry 'v${latest}'`);
+  }
+  console.log(`  package.json ${pkg.version}, newest changelog entry v${latest}`);
 }
 
 /** Validates one system tree. Used for both `harmonic-method/` and `examples/`. */
@@ -179,6 +222,7 @@ function checkVocabulary(roots) {
 }
 
 checkSpecs();
+checkToolingVersion();
 checkTree('harmonic-method', 'K-CODA');
 checkTree('examples', 'EX-SYS-CODA');
 checkVocabulary(['harmonic-method', 'examples']);

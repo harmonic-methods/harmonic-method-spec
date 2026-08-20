@@ -1,4 +1,4 @@
-# Example — a conformant Beat. See specs/beat.yml (v1.0.0).
+# Example — a conformant Beat. See specs/beat.yml.
 beat:
   id: EX-B-001
   title: Client estimate approval flow

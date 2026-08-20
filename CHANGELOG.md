@@ -29,6 +29,24 @@ inverts.
   runbook and there is no codebase to probe, so generalizing or omitting it is
   a translation decision, deliberately not taken in this release. Averages from
   the two rubrics are not directly comparable until it is. See K-N-028.
+- **The spec set is now versioned machine-readably**, at **spec 2.0.0**. New
+  `specs/spec-set.yml` holds the single authoritative version; every spec file
+  declares it as a parsed `spec_version` field, replacing a YAML comment nothing
+  could read; and `npm run validate` fails when any of them disagree. **Pin this
+  number** — it is what conformance is declared against. The bump to 2.0.0 is
+  breaking: the `rubric:` field values changed with the check renames above, so
+  anything keying off `beat_quality` or `plan_quality` breaks. See K-BV-003.5
+  and K-N-029.
+- **The tooling now versions separately from the standard.** `package.json`
+  covers the checker, on its own cadence, so a checker fix never bumps what an
+  implementation pins. It had drifted two releases behind the changelog; the
+  validator now asserts it matches the newest changelog heading, and caught that
+  on its first run.
+- **The spec version is removed from 55 instance-file headers and both skill
+  bodies.** They named a version in a comment, which would have gone stale on
+  this release — and a stale version comment does worse than misinform, it
+  asserts conformance to a spec the file was never checked against. Headers now
+  name the spec and stop. See K-N-030.
 - **Correction**: the drift guard described as shipped in K-BV-002.2's summary
   was never built — no fingerprint, hash, or snapshot over either dimension
   table exists in the reference implementation. The summary now says so. Real

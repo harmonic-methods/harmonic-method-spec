@@ -1,5 +1,5 @@
 # Example — a conformant Revision, showing that the change artifact need not be
-# code. See specs/revision.yml (v1.0.0).
+# code. See specs/revision.yml.
 revision:
   id: EX-R-001
   beat_version: EX-BV-001.1

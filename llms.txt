@@ -15,6 +15,7 @@
 - specs/beat-version.yml: Beat Version — a planned step in a Beat's evolution
 - specs/revision.yml: Revision — a tracked change executing a Beat Version
 - specs/note.yml: Note — typed knowledge (context, assumption, constraint, guidance, decision)
+- specs/spec-set.yml: the one version of the normative surface; every spec repeats it as a parsed spec_version field and the checker enforces agreement. Pin this number, not the repository tag — package.json versions the checker separately.
 - specs/function.yml: Function — the five accountabilities (Composer, Orchestrator, Conductor, Producer, Promoter); a concept, not an instantiable entity, and not a field on any entity
 
 ## Skills

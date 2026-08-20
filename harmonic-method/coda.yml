@@ -1,5 +1,5 @@
 # The kit's own system Coda — the outcome this repository exists to serve.
-# Conformant to specs/coda.yml (v1.0.0). Root Coda: omits parent.
+# Conformant to specs/coda.yml. Root Coda: omits parent.
 coda:
   id: K-CODA
   statement: >

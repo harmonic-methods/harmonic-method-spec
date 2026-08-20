@@ -1,4 +1,4 @@
-# Beat Version — conformant to specs/beat-version.yml (v1.0.0)
+# Beat Version — conformant to specs/beat-version.yml
 beat_version:
   id: K-BV-005.1
   beat: K-B-005

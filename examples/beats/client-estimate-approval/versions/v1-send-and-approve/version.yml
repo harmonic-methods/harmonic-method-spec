@@ -1,4 +1,4 @@
-# Example — a conformant Beat Version. See specs/beat-version.yml (v1.0.0).
+# Example — a conformant Beat Version. See specs/beat-version.yml.
 beat_version:
   id: EX-BV-001.1
   beat: EX-B-001
