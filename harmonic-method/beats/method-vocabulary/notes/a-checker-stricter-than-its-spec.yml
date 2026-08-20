@@ -1,0 +1,29 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-057
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.14
+  content: >
+    A checker stricter than the spec it enforces is a defect in the checker, not
+    a stricter reading of the method. When the two disagree, the spec is the
+    standard and the checker is an implementation of it — the same relationship
+    every other implementation has. Fix the checker, or change the spec
+    deliberately and record why; never let the gap stand, because the checker is
+    what people will believe.
+  rationale: >
+    Two instances so far, both silent and both consequential. An identifier was
+    required by the checker while the spec never declared the field, so real
+    enforced behaviour had no normative statement behind it. And a Beat with no
+    planned step was rejected while the spec listed steps as optional — which
+    quietly forbade the one state the decomposition gate exists to govern, a
+    Beat scored and not yet decomposed. The second is the more instructive: the
+    rule looked like diligence, it read as "don't leave a Beat unplanned", and
+    its actual effect was to make the method's own sequence impossible to follow
+    or observe. Nobody noticed until someone tried to follow the sequence
+    deliberately.
+
+    The asymmetry worth remembering is that a checker too lax fails visibly the
+    first time something wrong gets through, while a checker too strict fails
+    invisibly — it forces a workaround, the workaround becomes the habit, and the
+    habit looks like the method.

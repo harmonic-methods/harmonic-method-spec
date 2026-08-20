@@ -1,0 +1,32 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.14
+  beat: HM-B-003
+  title: The checker stops requiring what the spec does not
+  status: active
+  summary: >
+    A Beat's list of planned steps is optional in the spec and was mandatory in
+    the checker, which failed any Beat carrying none. The consequence was not
+    cosmetic: the method requires a Beat to pass its quality check before being
+    decomposed, and the tree could not hold a Beat in the state that gate governs
+    — scored, and not yet decomposed — so a Beat and its first step always had to
+    arrive together and the gate could never be observed. The checker now reports
+    an undecomposed Beat instead of rejecting it. This is the same class of
+    divergence as an identifier the checker demanded while the spec never
+    declared it.
+  scope: >
+    In: the zero-step rejection, replaced by a line in the tree summary naming
+    the Beat as carrying no planned step; the Note recording why a checker
+    stricter than its spec is a defect in the checker rather than a stricter
+    reading of the method; and the undecomposed Beat that proved it, which is
+    carried here rather than separately because a fix to a rejection needs the
+    case it was rejecting, and that Beat is it. Also in: marking the previous
+    step delivered, which belongs in the next substantive step's scope.
+    Out: any change to what a Beat requires. The spec already says a Beat needs
+    a title, a Coda, a description, and a status, and says nothing about needing
+    a plan — that was already the method's position and is not being revisited
+    here.
+    Out also: enforcing the decomposition gate itself. Whether a Beat passed its
+    check before being decomposed is not visible from the tree, because this
+    repository records no check results by design, so the gate stays a discipline
+    the guide states and no tool can confirm.

@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.3.0 — 2026-08-20 (unreleased)
+
+- **The checker stops requiring what the spec does not.** `specs/beat.yml` lists
+  a Beat's planned steps as optional; the checker rejected any Beat carrying
+  none. The effect was not cosmetic: the method requires a Beat to pass its
+  quality check *before* being decomposed, and the tree could not hold a Beat in
+  the state that gate governs — scored, not yet decomposed — so a Beat and its
+  first step always had to arrive together and the gate could never be observed.
+  An undecomposed Beat is now reported rather than rejected. Same class of
+  divergence as an identifier the checker demanded while the spec never declared
+  it. See HM-BV-003.14 and HM-N-057, on why a checker stricter than its spec is a
+  defect in the checker.
+- **`HM-B-006`, conformance anyone can execute (new Beat, not yet decomposed).**
+  Scored 4.0 against the published Beat rubric, and the weak dimension —
+  Harmonious at 3 — was fixed before decomposition rather than after: the Beat
+  now names the standing constraint it is held against, that reading, applying,
+  and vendoring must continue to install nothing. HM-N-056 draws that boundary:
+  publishing a command is permitted, requiring it is not.
+- **No change to the spec set**, which stays at 1.1.0.
+
 ## v1.2.1 — 2026-08-20
 
 - **The delivered-marking lag is settled, and the rule that keeps it settled is

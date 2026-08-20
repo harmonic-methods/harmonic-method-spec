@@ -223,7 +223,11 @@ function checkTree(root, codaId) {
       }
       versions.push(`${v.id} ${v.status}${revisions.length ? ` [${revisions.join(' ')}]` : ''}`);
     }
-    if (versions.length === 0) fail(`${root}/beats/${slug}/: no versions — a Beat with no planned step is not in flight`);
+    // Not a failure: specs/beat.yml does not require `versions`, and a Beat that
+    // has been scored but not yet decomposed is the exact state the decomposition
+    // gate governs. Rejecting it made that state unrepresentable and forced a
+    // Beat and its first step to arrive together.
+    const versionSummary = versions.length ? versions.join(', ') : '(none — not yet decomposed)';
 
     const notes = [];
     for (const nf of ls(`${root}/beats/${slug}/notes`)) {
@@ -243,7 +247,7 @@ function checkTree(root, codaId) {
     }
 
     console.log(`  ${b.id}  ${slug}/`);
-    console.log(`    versions: ${versions.join(', ')}`);
+    console.log(`    versions: ${versionSummary}`);
     console.log(`    notes:    ${notes.join(', ') || '(none)'}`);
   }
 
