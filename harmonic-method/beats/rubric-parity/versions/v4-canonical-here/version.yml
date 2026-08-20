@@ -1,0 +1,29 @@
+# Beat Version — conformant to specs/beat-version.yml (v1.0.0)
+beat_version:
+  id: K-BV-002.4
+  beat: K-B-002
+  title: This repository becomes canonical for the primitives and the rubrics
+  status: active
+  summary: >
+    Until now the reference implementation held the canonical definitions and
+    this repository mirrored them, which put the published standard downstream
+    of one vendor's TypeScript and left it silently behind when that TypeScript
+    moved. The direction inverts. This repository is the source of truth for the
+    entity primitives — fields, required-ness, lifecycle enums, and the rules
+    governing them — and for the rubric dimensions, red flags, and anchors. The
+    reference implementation conforms to it at a pinned tag, and stays canonical
+    only for what a published standard has no business fixing: its own literal
+    unions, its gate thresholds, and everything it computes. AGENTS.md is
+    rewritten to instruct contributors accordingly, and the Beat's own
+    description is corrected, since it described the kit as a mirror.
+  scope: >
+    In: the AGENTS.md sections covering rubric ownership and how to record work;
+    the parent Beat's description and Coda, which asserted mirroring; the
+    decision Notes recording the inversion and narrowing the earlier
+    "canonical stays TypeScript" decision to types only; and the rule
+    distinguishing an implementation extension from a conformance failure.
+    Out: building the conformance test on the reference implementation's side —
+    that is work in the other repository, and it is what makes this real rather
+    than declared. Also out: any change to a dimension, anchor, field, or
+    lifecycle enum. Ownership moving is not license to edit; the first edit made
+    under the new direction should be a deliberate one, recorded on its own.

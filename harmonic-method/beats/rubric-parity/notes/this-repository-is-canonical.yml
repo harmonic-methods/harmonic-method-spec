@@ -1,0 +1,31 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-025
+  type: decision
+  attached_to: K-B-002
+  beat_version: K-BV-002.4
+  content: >
+    This repository is canonical for the entity primitives and for the rubric
+    dimensions, red flags, and anchors. The reference implementation conforms to
+    it at a pinned tag rather than defining it. This supersedes the mirroring
+    premise in [K-N-001], which cast the kit as a translation of canonical
+    definitions held elsewhere, and narrows [K-N-002] to what its reasoning
+    actually supports: the TypeScript literal unions stay in the reference
+    implementation, because they derive compile-time exhaustiveness checks that
+    a shared file format cannot. Dimension prose and anchors carry no
+    compile-time role and move here.
+  rationale: >
+    A standard downstream of one vendor's source tree is not a standard, and the
+    arrangement had already failed in the way that predicts: the reference
+    implementation renamed both checks and added a seventh dimension, and the
+    published kit sat behind, unaware, behind a drift guard that had been
+    described as shipped and never built. Inverting the direction also fixes the
+    gap the old arrangement could not close — a guard that fires when canonical
+    moves cannot catch an edit made on the kit's own side, whereas a conformance
+    test on the implementation's side catches divergence in either direction,
+    because there is now only one direction that matters. The translation is
+    also already better than what it mirrored: the reference implementation's
+    Beat Version anchors still say "After this Revision ships" from when that
+    rubric graded Revisions, while this repository says Beat Version. A naive
+    re-sync toward the old canonical would have regressed the published text,
+    which is the clearest possible sign the arrow was pointing the wrong way.

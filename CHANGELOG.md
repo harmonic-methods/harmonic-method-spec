@@ -1,5 +1,39 @@
 # Changelog
 
+## v2.0.0 — 2026-08-20 (unreleased)
+
+**Breaking.** Two published paths change, and the direction of authority
+inverts.
+
+- **This repository is now canonical** for the entity primitives and for the
+  rubric dimensions, red flags, and anchors. Harmonica is the reference
+  implementation and conforms at a pinned tag; it stays canonical only for its
+  own TypeScript literal unions, its gate thresholds, and everything it
+  computes. AGENTS.md is rewritten accordingly, and `rubric-parity`'s Beat
+  description — which asserted mirroring — is corrected. See K-BV-002.4 and
+  K-N-025. The conformance test on Harmonica's side is not built yet; until it
+  is, this is declared rather than enforced.
+- **`skills/beat-quality-check` → `skills/beat-coda-quality-check`** and
+  **`skills/plan-quality-check` → `skills/beat-version-quality-check`**,
+  following the reference implementation's renames of `beat_quality` and
+  `plan_quality`, both of which survive there only as deprecated aliases. The
+  `rubric:` fields in `specs/beat.yml` and `specs/beat-version.yml` follow.
+  **No dimension, anchor, red flag, or check rule changed** — the Beat rubric's
+  seven dimensions and the Beat Version rubric's six are byte-identical. Anyone
+  who vendored either skill at its old path, including the `.claude/skills/`
+  placement README recommends, must re-copy. See K-BV-002.3 and K-N-027.
+- **Known divergence, unresolved**: the reference implementation's Beat Version
+  rubric carries a seventh dimension, `completeness`, which probes a codebase
+  for how much of the planned capability exists. This repository stays at six.
+  A method-level version has to work where the medium is a procedure or a
+  runbook and there is no codebase to probe, so generalizing or omitting it is
+  a translation decision, deliberately not taken in this release. Averages from
+  the two rubrics are not directly comparable until it is. See K-N-028.
+- **Correction**: the drift guard described as shipped in K-BV-002.2's summary
+  was never built — no fingerprint, hash, or snapshot over either dimension
+  table exists in the reference implementation. The summary now says so. Real
+  drift went undetected behind that claim. See K-N-026.
+
 ## v1.2.0 — 2026-08-20
 
 Adds the method's accountability model and renames the instance directory. See

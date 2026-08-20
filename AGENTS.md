@@ -34,15 +34,36 @@ and "Movement" belong to the reference implementation and are not defined here �
 the validator rejects them in entity files. Prefer block form in YAML: inside a
 flow mapping, `type: enum [a, b]` terminates the value early.
 
-## The rubrics are mirrored, not owned
+## This repository is canonical
 
-`skills/beat-quality-check` and `skills/plan-quality-check` mirror canonical
-rubric definitions in the Harmonica reference implementation. They are a
-deliberate translation — different vocabulary, medium-agnostic — not a copy.
+This repository is the source of truth for two things: the **entity
+primitives** — the fields, required-ness, lifecycle enums, and rules in
+`specs/` — and the **rubric dimensions, red flags, and anchors** in `skills/`.
+Harmonica is the reference implementation. It conforms to this repository at a
+pinned tag; it does not define what it conforms to.
 
-Do not edit a dimension, red flag, or anchor here without checking it against
-canonical. A fingerprint test in the reference implementation fails when
-canonical moves, but nothing catches an edit made on this side.
+Harmonica stays canonical for what a published standard has no business
+fixing: its own TypeScript literal unions (which derive compile-time
+exhaustiveness checks), its gate thresholds, and everything it computes —
+scores, drift, similarity, coherence.
+
+So editing a dimension, anchor, red flag, field, or enum here **changes the
+standard**. It is a decision Note plus a version bump, never a tidy-up, and
+every implementation has to follow it.
+
+Distinguish two cases when comparing against an implementation:
+
+- An **extension** is allowed. Harmonica defines entities this repository does
+  not — Teamspace, Movement, Drop, Deliverable, Work Item, Track, Check,
+  Notebook — and may score dimensions the method omits. None of that is a
+  conformance problem.
+- A **contradiction** is a conformance failure, and it fails on the
+  implementation's side: a required field it lacks, an enum value it renamed, a
+  dimension whose anchor text differs from the one published here.
+
+Do not trust the drift guard. It was described as shipped in a Beat Version
+summary and was never built, and real drift went undetected behind that claim —
+see the Notes under `rubric-parity/`.
 
 Do not copy the skills into `.claude/skills/` or any other agent's directory
 either. That is a second copy to keep in sync, which is the failure this
@@ -61,6 +82,12 @@ message instead:
     Add fingerprint guard over canonical rubric
 
     Beat-Version: K-BV-002.2
+
+Exactly one `Beat-Version:` trailer per commit. A Revision belongs to exactly
+one Beat Version, and the commit is the Revision — so a commit carrying two
+trailers is a non-conformant Revision, and a change spanning two Beat Versions
+is two commits. When a Beat Version's work has merged, set its status to
+`archived`; nothing computes that for you here.
 
 `specs/revision.yml` still defines the entity, and `examples/` keeps one, because
 a Revision is the only record that exists when the change artifact is a procedure

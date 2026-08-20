@@ -5,16 +5,17 @@ beat:
   status: open
   coda:
     statement: >
-      A score produced by this kit means the same thing as a score produced by
-      the reference implementation, so a team can start locally and move into
-      Harmonica later without re-learning what a 4 is.
+      A score produced from this repository means the same thing as a score
+      produced by any conforming implementation, so a team can start locally and
+      move into a system of record later without re-learning what a 4 is.
     parent: K-CODA
   description: >
-    The capability by which the kit's published rubrics stay faithful to the
-    canonical beat_quality and plan_quality definitions they mirror. The kit is
-    a translation rather than a copy — it renames entities the reference
-    implementation exposes differently, omits entities it does not define, and
-    stays medium-agnostic — so parity is maintained deliberately and re-checked
-    whenever the canonical rubric moves.
+    The capability by which the rubric dimensions, red flags, and anchors
+    published here remain the definition every implementation scores against.
+    This repository holds them; an implementation conforms to it at a pinned
+    version. Keeping that true means the published text stays medium-agnostic
+    rather than assuming software, extensions an implementation adds are
+    distinguished from contradictions it introduces, and a change made here is
+    recognized as a change to the standard rather than a local edit.
   # notes: see ./notes/ — the directory is the list.
   # versions: see ./versions/ — the directory is the list.
