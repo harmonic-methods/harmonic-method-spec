@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.7
+  beat: HM-B-003
+  title: Name the altitude above a system consistently
+  status: active
+  summary: >
+    Two normative spec files named the same altitude differently: the Coda spec
+    placed an organization above a system, while the function spec and the
+    reader-facing material said portfolio. Portfolio wins, and organization
+    leaves the method. The method's claim is that altitude is recursion, and a
+    portfolio — the set of systems — contains portfolios, while an organization
+    does not contain organizations in any sense the method can use. An
+    organization names who owns the work, which is a different axis from how much
+    work is in view, and conflating the two was what let the inconsistency sit
+    unnoticed in the canonical surface.
+  scope: >
+    In: the Coda spec's summary, its attachment list, and its parent-field
+    description; and the inputs contract of the Beat Coda rubric, which named the
+    same altitude by the retired word. The rubric's scoring scale, dimension
+    table, and check rules are untouched, so no digest moves.
+    Out: tenancy, ownership, and data isolation, which the retired word was
+    partly standing in for. An implementation needs all three and the method
+    specifies none of them — they are extensions, and an implementation that adds
+    a tenancy boundary above portfolio altitude is conformant, not divergent.
+    Out also: any level above portfolio. Portfolio recurses, so a portfolio of
+    portfolios is a portfolio at a higher altitude and needs no separate name.

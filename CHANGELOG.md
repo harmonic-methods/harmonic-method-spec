@@ -37,6 +37,16 @@ inverts.
   generically. The README and `llms.txt` keep one attribution line each, and the
   trademark notice keeps the marks: provenance and legal notice are not
   instruction. See HM-N-035.
+- **The altitude above a system is a `portfolio`.** `specs/coda.yml` placed an
+  *organization* there while `specs/function.yml` and the README said
+  *portfolio* — two normative files naming one altitude differently. Portfolio
+  wins and organization leaves the method: altitude is recursion, and a
+  portfolio contains portfolios while an organization does not. An altitude
+  answers how much work is in view; an organization answers who owns it, which is
+  a different axis. Tenancy, ownership, and legal structure are now explicitly
+  unspecified — an implementation adding a boundary above portfolio altitude is
+  extending the method, not diverging from it. No rubric text changed, so no
+  digest moved. See HM-BV-003.7 and HM-N-037.
 - **Identifiers move from `K-` to `HM-`.** All 159 across 57 files. `K-` stood
   for "kit", which this repository has outgrown. The worked example keeps `EX-`,
   because an adopter picks their own prefix. Commit trailers written before this

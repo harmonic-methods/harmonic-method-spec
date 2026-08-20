@@ -14,7 +14,7 @@ Score against them as written; do not paraphrase them.
 
 ## Inputs
 The Beat's title, Coda, and description. If available: its sibling Beats (for
-Distinctive and Harmonious), the parent system/organization Coda (for
+Distinctive and Harmonious), the parent system/portfolio Coda (for
 Strategically Aligned), and any Notes attached to the Beat. If siblings or
 parent Coda are unavailable, score those dimensions from the Beat alone and say
 the context was missing.

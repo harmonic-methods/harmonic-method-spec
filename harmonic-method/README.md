@@ -6,7 +6,7 @@ capabilities this repository delivers, the actual work in flight against them,
 and the actual decisions behind it.
 
 A directory like this one holds a **system**: the level `specs/coda.yml` places
-between an organization and a Beat. "Project" is the reference implementation's
+between a portfolio and a Beat. "Project" is the reference implementation's
 word for roughly the same level; it does not appear in these specs.
 
 It is called `harmonic-method/` rather than `system/` so it reads as an instance rather
@@ -35,8 +35,8 @@ Notes attach to the **Beat**, never to a Beat Version, and may name the Beat
 Version they arose from via the optional `beat_version` field. A version gets
 archived; the knowledge it produced does not.
 
-The system Coda is a root Coda and omits `parent`. The organization Coda above
-it belongs to the publisher and is deliberately not asserted here.
+The system Coda is a root Coda and omits `parent`. The portfolio Coda above it
+belongs to the publisher and is deliberately not asserted here.
 
 ## What this deliberately is not
 

@@ -70,7 +70,7 @@ nothing here enforces anything — see [What this is not](#what-this-is-not).
 ## The model
 
 A **Coda** is the outcome an entity exists to serve, written as a resolved
-future state. Codas nest — organization, system, Beat — so every step of work
+future state. Codas nest — portfolio, system, Beat — so every step of work
 ladders up to strategy.
 
 A **Beat** is a durable capability. It is never rewritten wholesale; it evolves
