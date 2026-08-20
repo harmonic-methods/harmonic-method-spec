@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-035
+  type: constraint
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.6
+  content: >
+    Instructional and normative text in this repository names no specific
+    implementation. Say "an implementation" or "the reference implementation".
+    Two exceptions, both deliberate: the README and the agent-facing entry point
+    each carry one attribution line naming a reference implementation, and the
+    trademark notice names the marks. Provenance and legal notice are not
+    instruction.
+  rationale: >
+    A standard that teaches itself in one vendor's vocabulary trains every reader
+    to treat that vendor's choices as the method, which is how a standard becomes
+    documentation for a product. The distinction that keeps the exceptions honest
+    is whether the reference is load-bearing: a reader following the contributor
+    guide must not need to know what any particular implementation calls a
+    release grouping, whereas a reader deciding whether to adopt the method is
+    entitled to know that something implements it. Naming entities from one
+    implementation as the examples of an allowed extension was the worst case of
+    this — it made a conformance rule unreadable to anyone using a different
+    system, which is precisely the audience the rule exists for.

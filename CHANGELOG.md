@@ -6,13 +6,12 @@
 inverts.
 
 - **This repository is now canonical** for the entity primitives and for the
-  rubric dimensions, red flags, and anchors. Harmonica is the reference
-  implementation and conforms at a pinned tag; it stays canonical only for its
-  own TypeScript literal unions, its gate thresholds, and everything it
-  computes. AGENTS.md is rewritten accordingly, and `rubric-parity`'s Beat
-  description — which asserted mirroring — is corrected. See K-BV-002.4 and
-  K-N-025. The conformance test on Harmonica's side is not built yet; until it
-  is, this is declared rather than enforced.
+  rubric dimensions, red flags, and anchors. An implementation conforms at a
+  pinned tag; it stays canonical only for its own type declarations, its gate
+  thresholds, and everything it computes. AGENTS.md is rewritten accordingly, and `rubric-parity`'s Beat
+  description — which asserted mirroring — is corrected. See HM-BV-002.4 and
+  HM-N-025. The conformance test on the implementation's side is not built yet;
+  until it is, this is declared rather than enforced.
 - **`skills/beat-quality-check` → `skills/beat-coda-quality-check`** and
   **`skills/plan-quality-check` → `skills/beat-version-quality-check`**,
   following the reference implementation's renames of `beat_quality` and
@@ -21,22 +20,37 @@ inverts.
   **No dimension, anchor, red flag, or check rule changed** — the Beat rubric's
   seven dimensions and the Beat Version rubric's six are byte-identical. Anyone
   who vendored either skill at its old path, including the `.claude/skills/`
-  placement README recommends, must re-copy. See K-BV-002.3 and K-N-027.
-- **Known divergence, unresolved**: the reference implementation's Beat Version
-  rubric carries a seventh dimension, `completeness`, which probes a codebase
-  for how much of the planned capability exists. This repository stays at six.
-  A method-level version has to work where the medium is a procedure or a
-  runbook and there is no codebase to probe, so generalizing or omitting it is
-  a translation decision, deliberately not taken in this release. Averages from
-  the two rubrics are not directly comparable until it is. See K-N-028.
+  placement README recommends, must re-copy. See HM-BV-002.3 and HM-N-027.
+- **The Beat Version rubric stays at six dimensions.** The reference
+  implementation scores a seventh, `completeness`, which probes a codebase for
+  how much of the planned capability exists. The method omits it: it is not
+  medium-agnostic, and more importantly it does not belong in a rubric that
+  scores how well a plan is *written*. Every other dimension can be scored the
+  moment the plan exists, which is when the rubric is meant to be used; a
+  dimension measuring what has been built cannot, and mixing them makes a score
+  depend on when it was run. Assessing realized-against-planned belongs to a
+  cadence anchor. See HM-BV-002.6 and HM-N-036, superseding HM-N-028.
+- **Instructional text names no specific implementation.** The contributor guide
+  explained conformance in one product's vocabulary and used its entity names as
+  the examples of an allowed extension — which made a conformance rule unreadable
+  to the very audience it exists for. It now speaks of an implementation
+  generically. The README and `llms.txt` keep one attribution line each, and the
+  trademark notice keeps the marks: provenance and legal notice are not
+  instruction. See HM-N-035.
+- **Identifiers move from `K-` to `HM-`.** All 159 across 57 files. `K-` stood
+  for "kit", which this repository has outgrown. The worked example keeps `EX-`,
+  because an adopter picks their own prefix. Commit trailers written before this
+  change name `K-` Beat Versions; substitute `HM-` and they resolve. History was
+  deliberately not rewritten — a trailer records what was named at the time. See
+  HM-BV-003.6 and HM-N-034.
 - **The spec set is now versioned machine-readably**, at **spec 2.0.0**. New
   `specs/spec-set.yml` holds the single authoritative version; every spec file
   declares it as a parsed `spec_version` field, replacing a YAML comment nothing
   could read; and `npm run validate` fails when any of them disagree. **Pin this
   number** — it is what conformance is declared against. The bump to 2.0.0 is
   breaking: the `rubric:` field values changed with the check renames above, so
-  anything keying off `beat_quality` or `plan_quality` breaks. See K-BV-003.5
-  and K-N-029.
+  anything keying off `beat_quality` or `plan_quality` breaks. See HM-BV-003.5
+  and HM-N-029.
 - **The tooling now versions separately from the standard.** `package.json`
   covers the checker, on its own cadence, so a checker fix never bumps what an
   implementation pins. It had drifted two releases behind the changelog; the
@@ -46,7 +60,7 @@ inverts.
   bodies.** They named a version in a comment, which would have gone stale on
   this release — and a stale version comment does worse than misinform, it
   asserts conformance to a spec the file was never checked against. Headers now
-  name the spec and stop. See K-N-030.
+  name the spec and stop. See HM-N-030.
 - **The rubric drift guard is built.** `skills/fingerprints.yml` holds a digest
   per rubric over the sections that define what a score means — the scoring
   scale, the dimension table, and the check rules — and `npm run validate` fails
@@ -56,19 +70,19 @@ inverts.
   text still contains scoring anchors, which caught a real gap on its first run:
   the original design covered only the dimension table, leaving the Beat Coda
   rubric's shared scoring scale entirely unguarded. Every rule was verified by
-  making it fail. See K-BV-002.5, K-N-032, and K-N-033.
-- **K-BV-002.2 is archived unbuilt.** Its design assumed the definitions lived
+  making it fail. See HM-BV-002.5, HM-N-032, and HM-N-033.
+- **HM-BV-002.2 is archived unbuilt.** Its design assumed the definitions lived
   elsewhere, which the inverted direction of authority made obsolete. The gap it
   named — nothing catching an edit on this side — is what replaced it.
-- **Correction**: the drift guard described as shipped in K-BV-002.2's summary
+- **Correction**: the drift guard described as shipped in HM-BV-002.2's summary
   was never built — no fingerprint, hash, or snapshot over either dimension
   table exists in the reference implementation. The summary now says so. Real
-  drift went undetected behind that claim. See K-N-026.
+  drift went undetected behind that claim. See HM-N-026.
 
 ## v1.2.0 — 2026-08-20
 
 Adds the method's accountability model and renames the instance directory. See
-K-BV-005.1 and K-BV-003.4.
+HM-BV-005.1 and HM-BV-003.4.
 
 - **specs/function.yml** (new): the five functions — Composer, Orchestrator,
   Conductor, Producer, Promoter — each with what it owns, how it fails, and its
@@ -91,7 +105,7 @@ K-BV-005.1 and K-BV-003.4.
   Harmonic Method notebook". No such notebook exists in the reference
   implementation, so the clause was a false claim about provenance and was
   removed rather than superseded. The decision it documents is unchanged. See
-  K-N-023 for why that is a removal and the four-to-five function change is a
+  HM-N-023 for why that is a removal and the four-to-five function change is a
   supersession.
 - **No spec, rubric, or entity-field changes.** Beat, Beat Version, Revision,
   Note, and Coda are untouched, and every dimension and anchor in both skills is
@@ -104,7 +118,7 @@ organization-level collapse of the three-framework structure (Harmonic
 Composition, Harmonic Orchestration, Harmonic Portfolio Management) into one
 named method — the Harmonic Method — with four functions (Composer,
 Orchestrator, Conductor, Producer) scoped by altitude rather than split across
-frameworks. See K-BV-003.3.
+frameworks. See HM-BV-003.3.
 
 - **package.json / package-lock.json**: `name` changed to
   `harmonic-method-kit`.
@@ -221,7 +235,7 @@ Dimension definitions reconciled against the reference implementation's canonica
 - **README.md**: replaced the one-line placeholder with the repository's front
   door — orientation, the entity model, a spec table, both rubrics and their
   dimensions, a copyable scoring invocation, the system layout rule, and an
-  explicit statement of what the kit does not do. This closes K-BV-004.1, whose
+  explicit statement of what the kit does not do. This closes HM-BV-004.1, whose
   scope it was written against.
 - **Beat Versions are directories too**, each holding `version.yml` and an
   optional `revisions/`. `revisions: list<revision>` was already a field of

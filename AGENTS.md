@@ -54,13 +54,13 @@ flow mapping, `type: enum [a, b]` terminates the value early.
 This repository is the source of truth for two things: the **entity
 primitives** — the fields, required-ness, lifecycle enums, and rules in
 `specs/` — and the **rubric dimensions, red flags, and anchors** in `skills/`.
-Harmonica is the reference implementation. It conforms to this repository at a
-pinned tag; it does not define what it conforms to.
+The reference implementation conforms to this repository at a pinned tag; it
+does not define what it conforms to, and neither does any other implementation.
 
-Harmonica stays canonical for what a published standard has no business
-fixing: its own TypeScript literal unions (which derive compile-time
-exhaustiveness checks), its gate thresholds, and everything it computes —
-scores, drift, similarity, coherence.
+An implementation stays canonical for what a published standard has no business
+fixing: its own type declarations (which may derive compile-time exhaustiveness
+checks), its gate thresholds, and everything it computes — scores, drift,
+similarity, coherence.
 
 So editing a dimension, anchor, red flag, field, or enum here **changes the
 standard**. It is a decision Note plus a version bump, never a tidy-up, and
@@ -68,9 +68,9 @@ every implementation has to follow it.
 
 Distinguish two cases when comparing against an implementation:
 
-- An **extension** is allowed. Harmonica defines entities this repository does
-  not — Teamspace, Movement, Drop, Deliverable, Work Item, Track, Check,
-  Notebook — and may score dimensions the method omits. None of that is a
+- An **extension** is allowed. An implementation will define entities this
+  repository does not — release groupings, commercial containers, work items,
+  check records — and may score dimensions the method omits. None of that is a
   conformance problem.
 - A **contradiction** is a conformance failure, and it fails on the
   implementation's side: a required field it lacks, an enum value it renamed, a
