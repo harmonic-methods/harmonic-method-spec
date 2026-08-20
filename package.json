@@ -6,7 +6,8 @@
   "private": true,
   "license": "SEE LICENSE IN README.md",
   "scripts": {
-    "validate": "node tools/validate.mjs"
+    "validate": "node tools/validate.mjs",
+    "fingerprint": "node tools/write-fingerprints.mjs"
   },
   "devDependencies": {
     "yaml": "^2.8.1"

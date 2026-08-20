@@ -20,6 +20,8 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
+import { rubricSkills, rubricText, digest, anchorCount } from './rubric-fingerprint.mjs';
+
 const KIT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 let failures = 0;
@@ -70,6 +72,51 @@ function checkSpecs() {
     }
   }
   console.log(`  ${ok}/${specs.length} parsed, spec set ${setVersion ?? '(unknown)'}`);
+}
+
+/**
+ * The dimension tables are canonical here, so an edit to one changes the
+ * standard. A digest per rubric makes that edit impossible to make silently.
+ * Anchor coverage is asserted separately, so the guard cannot pass over a
+ * section that no longer contains a rubric at all.
+ */
+function checkRubricFingerprints() {
+  console.log('== rubric fingerprints ==');
+  let stored;
+  try {
+    const f = load('skills/fingerprints.yml');
+    if (f?.manifest !== 'rubric_fingerprints') fail("skills/fingerprints.yml: expected 'manifest: rubric_fingerprints'");
+    stored = f?.fingerprints ?? {};
+  } catch (e) {
+    return fail(`skills/fingerprints.yml: ${e.message}`);
+  }
+
+  const skills = rubricSkills();
+  if (skills.length === 0) return fail('no rubric skill carries a dimension section');
+
+  for (const skill of skills) {
+    const section = rubricText(skill);
+    const anchors = anchorCount(section);
+    if (anchors === 0) {
+      fail(`skills/${skill}: normative sections carry no scoring anchors — a fingerprint over them would guard nothing`);
+      continue;
+    }
+    const actual = digest(section);
+    if (stored[skill] === undefined) {
+      fail(`skills/fingerprints.yml: no digest recorded for '${skill}'`);
+    } else if (stored[skill] !== actual) {
+      fail(
+        `skills/${skill}: rubric text changed — this edits the published standard.\n` +
+        `       Do not update the digest first. Confirm the edit was intended, record the\n` +
+        `       decision, decide whether the spec set version moves, then run: npm run fingerprint`,
+      );
+    } else {
+      console.log(`  ${skill}  ${anchors} anchors, digest matches`);
+    }
+  }
+  for (const recorded of Object.keys(stored)) {
+    if (!skills.includes(recorded)) fail(`skills/fingerprints.yml: digest recorded for '${recorded}', which is not a rubric skill`);
+  }
 }
 
 /**
@@ -222,6 +269,7 @@ function checkVocabulary(roots) {
 }
 
 checkSpecs();
+checkRubricFingerprints();
 checkToolingVersion();
 checkTree('harmonic-method', 'K-CODA');
 checkTree('examples', 'EX-SYS-CODA');

@@ -47,6 +47,19 @@ inverts.
   this release — and a stale version comment does worse than misinform, it
   asserts conformance to a spec the file was never checked against. Headers now
   name the spec and stop. See K-N-030.
+- **The rubric drift guard is built.** `skills/fingerprints.yml` holds a digest
+  per rubric over the sections that define what a score means — the scoring
+  scale, the dimension table, and the check rules — and `npm run validate` fails
+  when any of them change, with a message that names what to verify before
+  regenerating rather than presenting regeneration as the fix. `npm run
+  fingerprint` regenerates deliberately. The checker also asserts the covered
+  text still contains scoring anchors, which caught a real gap on its first run:
+  the original design covered only the dimension table, leaving the Beat Coda
+  rubric's shared scoring scale entirely unguarded. Every rule was verified by
+  making it fail. See K-BV-002.5, K-N-032, and K-N-033.
+- **K-BV-002.2 is archived unbuilt.** Its design assumed the definitions lived
+  elsewhere, which the inverted direction of authority made obsolete. The gap it
+  named — nothing catching an edit on this side — is what replaced it.
 - **Correction**: the drift guard described as shipped in K-BV-002.2's summary
   was never built — no fingerprint, hash, or snapshot over either dimension
   table exists in the reference implementation. The summary now says so. Real

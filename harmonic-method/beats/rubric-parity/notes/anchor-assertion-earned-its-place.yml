@@ -1,0 +1,15 @@
+# Note — conformant to specs/note.yml
+note:
+  id: K-N-033
+  type: guidance
+  attached_to: K-B-002
+  beat_version: K-BV-002.5
+  content: >
+    Every rule in this guard was verified by making it fail before being
+    believed: an edited anchor, an edited red flag, and a digest recorded for a
+    rubric that does not exist each produced the expected failure, and the tree
+    was restored after each. Do the same for any rule added later. This
+    repository has already shipped one guard that was described as working and
+    was never built, and the anchor assertion caught a real gap in its own first
+    run — an unverified guard is indistinguishable from an absent one, and it is
+    worse, because it is trusted.

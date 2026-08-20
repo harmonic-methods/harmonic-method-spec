@@ -76,9 +76,16 @@ Distinguish two cases when comparing against an implementation:
   implementation's side: a required field it lacks, an enum value it renamed, a
   dimension whose anchor text differs from the one published here.
 
-Do not trust the drift guard. It was described as shipped in a Beat Version
-summary and was never built, and real drift went undetected behind that claim —
-see the Notes under `rubric-parity/`.
+A digest over each rubric's normative sections — the scoring scale, the
+dimension table, and the check rules — makes an edit to any of them fail the
+check. When it fails, do not regenerate first. Confirm the edit was intended,
+record the decision, decide whether the spec set version moves, and only then:
+
+    npm run fingerprint
+
+The digest that preceded this one was described as shipped in a Beat Version
+summary and had never been built, and real drift went undetected behind the
+claim. Verify a new rule by making it fail before trusting it.
 
 Do not copy the skills into `.claude/skills/` or any other agent's directory
 either. That is a second copy to keep in sync, which is the failure this

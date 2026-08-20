@@ -3,7 +3,7 @@ beat_version:
   id: K-BV-002.2
   beat: K-B-002
   title: Canonical drift guard
-  status: active
+  status: archived
   summary: >
     A change to the rubric on either side should fail loudly rather than
     silently desync the two. The plan is a fingerprint over both dimension
@@ -20,6 +20,6 @@ beat_version:
     constants that churn for unrelated reasons, and failures that frequent would
     train exactly the reflex the guard exists to prevent. Also out: generating
     the kit's text from canonical, which would overwrite the translation.
-  # Known gap, tracked for a later version: the guard fires when canonical
-  # moves, but nothing catches a direct edit to the kit's own skill files. A
-  # kit-side check needs test tooling this repository does not yet have.
+  # Archived unbuilt. The design assumed definitions held elsewhere, which the
+  # inverted direction of authority made obsolete; the gap it names — nothing
+  # catching an edit on this side — is what replaced it, and that is now built.
