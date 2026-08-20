@@ -1,6 +1,6 @@
-# The kit as a system
+# This repository as a system
 
-This directory is the kit described in its own vocabulary. The Beats, Beat
+This directory is this repository described in its own vocabulary. The Beats, Beat
 Versions, and Notes here are not illustrations — they are the actual
 capabilities this repository delivers, the actual work in flight against them,
 and the actual decisions behind it.

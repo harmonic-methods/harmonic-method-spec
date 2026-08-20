@@ -1,6 +1,6 @@
-# Harmonic Method Kit
+# The Harmonic Method
 
-> Machine-readable specs and agent skills for the Harmonic Method — a single
+> The specification and agent skills for the Harmonic Method — a single
 > method for improving systems with explicit intent, preserved context, and
 > decision lineage, applied here at system altitude. Coda, Beat, Beat Version,
 > Revision, and Note are the same primitives at beat/track and portfolio
@@ -35,11 +35,11 @@ Version they arose from via the optional beat_version field.
 - harmonic-method/beats/<slug>/versions/<v>/version.yml: a planned step
 - harmonic-method/beats/<slug>/versions/<v>/revisions/: the changes executing it
 
-There is no checks/ directory by design: the kit assesses but does not record,
+There is no checks/ directory by design: this repository assesses but does not record,
 and no check entity is specified.
 
-## The kit's own system
-The kit described in its own vocabulary — real capabilities, real work in
+## This repository's own system
+This repository described in its own vocabulary — real capabilities, real work in
 flight, and the real decisions behind it, not illustrations.
 - harmonic-method/: the Beats this repository delivers, their planned steps, and the
   Notes recording why each choice was made

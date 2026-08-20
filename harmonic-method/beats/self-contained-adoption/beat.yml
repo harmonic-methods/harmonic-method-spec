@@ -12,7 +12,7 @@ beat:
   description: >
     The capability by which the repository explains and demonstrates itself:
     what the method is for, what each spec and skill does, a worked example to
-    pattern-match against, and an honest account of where the kit stops and a
+    pattern-match against, and an honest account of where this repository stops and a
     system of record begins.
   # notes: see ./notes/ — the directory is the list.
   # versions: see ./versions/ — the directory is the list.

@@ -37,6 +37,20 @@ inverts.
   generically. The README and `llms.txt` keep one attribution line each, and the
   trademark notice keeps the marks: provenance and legal notice are not
   instruction. See HM-N-035.
+- **This repository stops calling itself a kit.** The word appeared about thirty
+  times in present tense, including as the title of both entry points and the
+  opening line of the contributor guide. It was accurate for a starter set of
+  files and became misleading for a conformance target. The replacement names
+  both halves — this repository publishes the specification and ships the tooling
+  to apply it — because the normative specs sit alongside a checker, a worked
+  example, and two skills, and not separating them was deliberate. The package
+  `name` becomes `harmonic-method-spec`. Historical entries and archived Beat
+  Version prose keep the word, which was true when written. See HM-BV-004.3 and
+  HM-N-041.
+  - Not included: renaming the repository on the host, renaming a local clone,
+    and choosing the published command-line package name. A repository name and
+    an invocable command name are not the same thing, and the latter belongs with
+    the tooling.
 - **`specs/bar.yml` and `specs/downbeat.yml` (new)** — the cadence entities, and
   the Conductor's structural instrument. The method already named the
   accountability that decisions stay in force and the discipline of routine

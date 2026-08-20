@@ -1,15 +1,15 @@
 /**
- * Conformance check for the kit's own artifacts.
+ * Conformance check for this repository's own artifacts.
  *
  * Validates every entity file in a system tree against the specs in `specs/`:
  * required fields, lifecycle enums, decision rationale, the agreement between a
  * child's back-reference and the directory it sits in, and reference
- * resolution. Also rejects vocabulary this kit does not define.
+ * resolution. Also rejects vocabulary these specs do not define.
  *
  * Scope note: this checks the *entity* files. It does not check the rubric text
  * in `skills/` — a hand-edit to a dimension anchor is still unguarded here. The
  * reference implementation's fingerprint test catches canonical-side drift; the
- * kit side of that gap is tracked in
+ * local side of that gap is tracked in
  * harmonic-method/beats/rubric-parity/versions/v2-drift-guard/.
  *
  * Run with: npm run validate
@@ -23,13 +23,13 @@ import { parse } from 'yaml';
 import { checkCommitTrailers } from './commit-discipline.mjs';
 import { rubricSkills, rubricText, digest, anchorCount } from './rubric-fingerprint.mjs';
 
-const KIT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 let failures = 0;
 const fail = (m) => { console.log(`  FAIL ${m}`); failures++; };
-const read = (p) => readFileSync(join(KIT, p), 'utf8');
+const read = (p) => readFileSync(join(ROOT, p), 'utf8');
 const load = (p) => parse(read(p));
-const ls = (p) => (existsSync(join(KIT, p)) ? readdirSync(join(KIT, p)) : []);
+const ls = (p) => (existsSync(join(ROOT, p)) ? readdirSync(join(ROOT, p)) : []);
 
 // Required fields, per the specs each entity is declared in.
 const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
@@ -171,7 +171,7 @@ function checkTree(root, codaId) {
 
   for (const slug of ls(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
-    if (!existsSync(join(KIT, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
+    if (!existsSync(join(ROOT, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
 
     let b;
     try { b = load(beatPath)?.beat; } catch (e) { fail(`${beatPath}: ${e.message}`); continue; }
@@ -192,7 +192,7 @@ function checkTree(root, codaId) {
     for (const vslug of ls(`${root}/beats/${slug}/versions`)) {
       const vDir = `${root}/beats/${slug}/versions/${vslug}`;
       const vPath = `${vDir}/version.yml`;
-      if (!existsSync(join(KIT, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
+      if (!existsSync(join(ROOT, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
 
       let v;
       try { v = load(vPath)?.beat_version; } catch (e) { fail(`${vPath}: ${e.message}`); continue; }
@@ -280,7 +280,7 @@ function checkVocabulary(roots) {
   ];
   for (const p of files) {
     const m = read(p).match(stray);
-    if (m) fail(`${p}: uses "${m[0]}" — not an entity this kit defines`);
+    if (m) fail(`${p}: uses "${m[0]}" — not an entity these specs define`);
   }
   console.log(`  ${files.length} files checked`);
 }

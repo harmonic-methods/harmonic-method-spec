@@ -1,6 +1,7 @@
 # Working in this repository
 
-This kit publishes a method and the agent skills that apply it. What lands here
+This repository publishes the specification of a method and the agent skills that
+apply it. What lands here
 gets read by other agents as instruction, so precision matters more than speed.
 
 ## Before proposing any change
@@ -20,7 +21,8 @@ request.
   archived; the knowledge it produced does not.
 - A system's entities live in `harmonic-method/`, visible rather than hidden. Adopters
   use the same name in their own repositories.
-- There is no `checks/` directory, by design. The kit assesses without recording.
+- There is no `checks/` directory, by design. This repository assesses without
+  recording.
 
 ## Versions
 
@@ -127,8 +129,8 @@ document rather than a commit.
 ## Where things are explained
 
 - `README.md` — for humans: what the method is and how to apply it.
-- `llms.txt` — for agents *consuming* the kit: what it contains.
-- This file — for agents *contributing* to the kit: how to work in it.
+- `llms.txt` — for agents *consuming* the specification: what it contains.
+- This file — for agents *contributing* to it: how to work in it.
 
 Keep them non-overlapping. Three documents describing the same thing is exactly
 the drift this repository exists to prevent.

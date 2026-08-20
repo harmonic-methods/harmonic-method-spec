@@ -1,4 +1,4 @@
-# The kit's own system Coda — the outcome this repository exists to serve.
+# The system Coda — the outcome this repository exists to serve.
 # Conformant to specs/coda.yml. Root Coda: omits parent.
 coda:
   id: HM-CODA

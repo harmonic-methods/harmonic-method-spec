@@ -1,15 +1,15 @@
-# Harmonic Method Kit
+# The Harmonic Method
 
-Machine-readable specs and agent skills for **the Harmonic Method** — a single
+The specification and agent skills for **the Harmonic Method** — a single
 method for improving systems with explicit intent, preserved context, and
 decision lineage. Open to practice with any tools.
 
 The method defines five functions that act on intent — Composer, Orchestrator,
 Conductor, Producer, Promoter — each scoped to an altitude rather than split
-into separate frameworks. This kit covers those functions and the entity model
+into separate frameworks. This repository covers those functions and the entity model
 at system altitude: Coda, Beats, Beat Versions, Revisions, and Notes. The same primitives recur at beat/
 track altitude (a discrete piece of work) and portfolio altitude (the set of
-systems); altitude is recursion, not a different method, so this kit's specs
+systems); altitude is recursion, not a different method, so these specs
 and rubrics apply there too, unchanged.
 
 Full documentation is at [harmonicmethods.com](https://harmonicmethods.com).
@@ -24,8 +24,8 @@ might be a pull request, a procedure document, or a runbook diff.
 
 ### 1. Score something, with nothing installed
 
-    git clone https://github.com/harmonic-methods/harmonic-method-kit.git
-    cd harmonic-method-kit
+    git clone https://github.com/harmonic-methods/harmonic-method-spec.git
+    cd harmonic-method-spec
 
 Then point any agent at a rubric and a file:
 
@@ -63,7 +63,7 @@ Write the Coda first, as a resolved future state rather than a task list — a B
 without a Coda cannot be decomposed, by rule. Then add one Beat Version for the
 next step and score it with `beat-version-quality-check` before any work starts.
 
-Two caveats going in. The conformance checker below is currently kit-internal: it
+Two caveats going in. The conformance checker below is currently internal: it
 hardcodes this repository's own roots, so it will not check your tree yet. And
 nothing here enforces anything — see [What this is not](#what-this-is-not).
 
@@ -146,15 +146,15 @@ resolution, decision rationale:
     npm install && npm run validate
 
 That is the only thing here with a dependency, and it is for contributors. Using
-the kit — reading the specs, applying a rubric, vendoring the files — installs
+this repository — reading the specs, applying a rubric, vendoring the files — installs
 nothing.
 
 ## What this is not
 
-The kit **assesses but does not enforce**. It records no scores, gates nothing,
+This repository **assesses but does not enforce**. It records no scores, gates nothing,
 and keeps no audit trail — there is no history of who changed a Beat or when,
 and a score produced here cannot tell you whether it predates the text it
-judged. Those properties belong to a system of record. Use the kit to apply the
+judged. Those properties belong to a system of record. Use these specs to apply the
 method wherever you already work, or to self-review before anything is tracked;
 don't present its output as an official Check to anyone who would rely on it as
 one.
