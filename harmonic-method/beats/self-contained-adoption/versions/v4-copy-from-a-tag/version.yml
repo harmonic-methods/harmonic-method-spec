@@ -1,0 +1,26 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-004.4
+  beat: HM-B-004
+  title: Make the copy-from-a-tag instruction true
+  status: active
+  summary: >
+    The front page has always told a reader to copy from a tag rather than from
+    the trunk, so they know which spec set version they hold. No tag has ever
+    existed, so the instruction has been false since it was written and the only
+    thing a reader could do was the thing it warns against. This marks the
+    changelog's newest entry released and cuts the first tag, whose annotation
+    names the spec set version its tree carries. It also closes the promise the
+    machine-readable version was built to support: a number an implementation
+    can pin is only useful if there is something to pin it to.
+  scope: >
+    In: removing the unreleased marker from the changelog's newest entry, and
+    the annotated tag itself.
+    Out: a second tag series for the spec set. One tag whose tree carries the
+    manifest answers both questions, and two series would undo the clarity the
+    separated version streams were meant to give.
+    Out also: recording anywhere that a tag now exists. Whether one exists is
+    answered by asking the repository, and an earlier rule forbids restating a
+    derivable fact in prose no checker can reach. The decision that expires on
+    the first tag already states its own condition, so it needs no amendment to
+    stay accurate.
