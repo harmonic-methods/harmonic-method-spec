@@ -83,6 +83,16 @@ that breaks something real. See HM-BV-003.11.
     and HM-N-049.
   - **Each instrument now names the function it serves**, and the index states
     that the Producer and Promoter have none, deliberately. See HM-N-047.
+- **The derivable-facts rule now extends past the checker's reach.** Two rules
+  already governed restated facts inside the tree — a count goes in no prose
+  because the directory answers it, and a version lives in one checked place.
+  Both assumed the checker could reach the text. A pull request body cannot be
+  reached, and a version and a commit count restated in one went stale within the
+  hour, caught by a reader rather than by anything automatic. Outside the tree the
+  rule is not "one authority" but "no copy". Recorded with a second rule from the
+  same incident: a programmatic replacement asserts that it matched, and a remote
+  surface is verified by reading it back — two silent no-op edits in one sitting
+  earned it. See HM-BV-003.12, HM-N-050, and HM-N-051.
 - **The criteria-scoring proposal is recorded as an open question.** An unmerged
   branch proposes computing a dimension's band from binary factual criteria
   instead of asking a reader to match a description to a band. It targets the

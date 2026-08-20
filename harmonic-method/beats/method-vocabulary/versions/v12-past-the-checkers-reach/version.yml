@@ -1,0 +1,26 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.12
+  beat: HM-B-003
+  title: Extend the derivable-facts rule past the checker's reach
+  status: active
+  summary: >
+    Two recorded rules already govern restated facts inside the tree: a count
+    goes in no prose because the directory answers it, and a version lives in one
+    checked place because a comment cannot be checked. Both rest on the checker
+    being able to reach the text. A pull request body, a commit message, an issue,
+    a release announcement — none of those are reachable, and a version and a
+    commit count restated in a pull request body had gone stale in exactly the way
+    the earlier rules were written to prevent. The rule for unreachable surfaces
+    cannot be "keep one authority and enforce agreement"; it has to be "do not
+    state the fact at all". Recorded alongside a second rule from the same
+    incident: a programmatic replacement asserts that it matched, and a remote
+    surface is verified by reading it back.
+  scope: >
+    In: two guidance Notes, and the contributor guide's section on recording
+    work.
+    Out: any attempt to check these mechanically. A pull request body is outside
+    the tree by definition, and building tooling to lint it would be a checker
+    for prose written elsewhere — the honest instrument here is a rule a
+    contributor can follow, stated once, with its failure history attached so it
+    reads as evidence rather than as fussiness.

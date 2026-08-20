@@ -124,6 +124,17 @@ stay short.
 When a Beat Version's work has merged, set its status to `archived`; nothing
 computes that for you here.
 
+Keep derivable facts out of prose the checker cannot reach — a pull request body,
+a commit message, an issue. No commit counts, no file counts, no versions: a
+command answers each of them, and a stale number there is caught by a reader or
+not at all. Inside the tree a restatement is fine where a check enforces
+agreement; outside it, there is no check. Prose whose purpose is to state the
+fact — a changelog entry naming a version — is the authority, not a copy.
+
+When editing text with a script, assert that every replacement matched. A
+replacement that finds nothing changes nothing and reports nothing. For a remote
+surface, verify by reading it back rather than by trusting what was sent.
+
 `specs/revision.yml` still defines the entity, and `examples/` keeps one, because
 a Revision is the only record that exists when the change artifact is a procedure
 document rather than a commit.

@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-050
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.12
+  content: >
+    Do not state a derivable fact in prose the checker cannot reach — a pull
+    request body, a commit message, an issue, a release announcement. No commit
+    counts, no file counts, no spec or package versions. Every one of those is
+    answered by a command: the host counts commits on a request, `ls` counts
+    files, and the spec set manifest holds the version.
+
+    Inside the tree the rule is different and softer, because enforcement
+    exists: a restated fact is allowed where a checker makes disagreement
+    impossible, which is why every spec file may repeat the set version. See
+    [HM-N-029]. Where no checker reaches, the same restatement has no safety net
+    at all, so the answer is not one authority but no copy.
+
+    The exception is prose whose purpose is to state the fact. A changelog entry
+    announcing a version must name it — that entry is the authority, not a copy
+    of one. The test is whether the sentence would still exist if the fact were
+    removed.
+  rationale: >
+    This is the third instance of one failure. A spec count was restated in five
+    places and was wrong from the first release. A spec version was restated in
+    fifty-five file headers, every one of which would have gone stale in a single
+    release. Then a version and a commit count restated in a pull request body
+    went stale within an hour, and were caught by a reader rather than by
+    anything automatic — which is the whole difference. Inside the tree a stale
+    restatement eventually fails the check and someone is forced to look at it.
+    Outside, it sits in the most-read description of the work, contradicting a
+    correct statement further down the same page, until a human happens to
+    notice. The cost of following this rule is that a reader runs a command to
+    learn a number, which is not a cost worth three occurrences of the same
+    error. See [HM-N-024] and [HM-N-030] for the in-tree forms of the same rule.

@@ -1,0 +1,25 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-051
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.12
+  content: >
+    A programmatic text replacement must assert that it matched. A replacement
+    whose target is absent changes nothing and reports nothing, which is
+    indistinguishable from having worked. When the surface being edited is
+    remote, verify by reading it back from the surface rather than from the local
+    copy that was sent.
+  rationale: >
+    Two failures in one sitting, both silent. A stream editor invocation used a
+    word-boundary escape the platform's implementation does not support: it
+    matched nothing across fifty-seven files, exited zero, and was caught only
+    because the result was inspected afterward. Then a script rewriting a pull
+    request body mixed asserted and unasserted replacements; the one that
+    differed by a single word — "change" where the text said "move" — silently
+    did nothing, and the contradiction it left sat at the top of the description
+    until a reader found it. The asserted replacements in the same script all
+    worked, which is what makes the mixture dangerous: partial success reads as
+    success. This is [HM-N-033] applied to edits rather than to guards. An
+    unverified action is indistinguishable from a completed one, and the
+    verification costs one line.
