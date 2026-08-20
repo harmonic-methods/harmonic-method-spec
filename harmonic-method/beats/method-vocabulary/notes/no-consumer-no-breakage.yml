@@ -1,0 +1,29 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-045
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.11
+  content: >
+    A change that would be breaking against a version nobody could pin is
+    released as a minor step, not a major one. Two `rubric:` field values were
+    renamed and two published paths moved in this cycle; the spec set takes a
+    minor step regardless. The test is whether a compatibility promise existed to
+    break, not whether the shape of the change resembles one that usually does.
+    Here none did: no tag exists in this repository, local or remote, so nothing
+    was ever released, and the spec set version lived in a YAML comment until
+    this cycle, so it could not be pinned even in principle.
+  rationale: >
+    Numbering the first releasable version as a major would spend the major line
+    on an audience of nobody, and leave the next genuine break — one that
+    invalidates a real implementation's conformance — reaching for a number that
+    already implies the reader survived one. Semantic versioning encodes a
+    promise to consumers; with no consumers there is no promise, and applying the
+    rule mechanically would communicate a disruption that did not occur. The
+    honest signal is a minor step plus a changelog that says plainly what moved
+    and why it broke nobody. Note the ordering that makes this safe: the version
+    became pinnable and the number was settled in the same unreleased cycle, so
+    the first version anyone can depend on is also the first one that means
+    anything. That will not be true next time — once a tag exists, a rename of a
+    field value is a major, and this Note is not a precedent for deciding
+    otherwise.

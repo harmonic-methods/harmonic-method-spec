@@ -1,10 +1,26 @@
 # Changelog
 
-## v2.0.0 — 2026-08-20 (unreleased)
+## v1.2.0 — 2026-08-20 (unreleased)
 
-**Breaking.** Two published paths change, and the direction of authority
-inverts.
+The direction of authority inverts, and two published paths move. Nothing here
+was ever released — there is no tag in this repository — so the path and field
+changes below break no existing consumer, and the spec set takes a minor step
+rather than a major one. The major line stays available for the first change
+that breaks something real. See HM-BV-003.11.
 
+**Spec set 1.1.0.** This is the number an implementation pins.
+
+- **The first releasable version stays in the 1.x line.** The work had been
+  numbered as a major on the reasoning that two field values changed. Nothing
+  could have been keying off them — no tag exists, so nothing was ever released,
+  and the version was not machine-readable until this cycle. A promise that could
+  not be made cannot be broken, so the spec set takes a minor step and the two
+  unreleased entries dated the same day merge into this one. Once a tag exists
+  this reasoning expires: a renamed field value is a major from then on. See
+  HM-BV-003.11 and HM-N-045.
+  - Separately a gap: the front page tells a reader to copy from a tag, and there
+    is no tag to copy from. Creating one is a release action, not a change to the
+    tree.
 - **This repository is now canonical** for the entity primitives and for the
   rubric dimensions, red flags, and anchors. An implementation conforms at a
   pinned tag; it stays canonical only for its own type declarations, its gate
@@ -114,14 +130,14 @@ inverts.
   change name `K-` Beat Versions; substitute `HM-` and they resolve. History was
   deliberately not rewritten — a trailer records what was named at the time. See
   HM-BV-003.6 and HM-N-034.
-- **The spec set is now versioned machine-readably**, at **spec 2.0.0**. New
+- **The spec set is now versioned machine-readably**, at **spec 1.1.0**. New
   `specs/spec-set.yml` holds the single authoritative version; every spec file
   declares it as a parsed `spec_version` field, replacing a YAML comment nothing
   could read; and `npm run validate` fails when any of them disagree. **Pin this
-  number** — it is what conformance is declared against. The bump to 2.0.0 is
-  breaking: the `rubric:` field values changed with the check renames above, so
-  anything keying off `beat_quality` or `plan_quality` breaks. See HM-BV-003.5
-  and HM-N-029.
+  number** — it is what conformance is declared against. Two `rubric:` field
+  values changed with the check renames above, which would be breaking if
+  anything had been able to pin the previous version; nothing could, because it
+  lived in a comment. See HM-BV-003.5 and HM-N-029.
 - **The tooling now versions separately from the standard.** `package.json`
   covers the checker, on its own cadence, so a checker fix never bumps what an
   implementation pins. It had drifted two releases behind the changelog; the
@@ -149,8 +165,6 @@ inverts.
   was never built — no fingerprint, hash, or snapshot over either dimension
   table exists in the reference implementation. The summary now says so. Real
   drift went undetected behind that claim. See HM-N-026.
-
-## v1.2.0 — 2026-08-20
 
 Adds the method's accountability model and renames the instance directory. See
 HM-BV-005.1 and HM-BV-003.4.

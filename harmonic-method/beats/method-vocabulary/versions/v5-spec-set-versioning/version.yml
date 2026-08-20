@@ -11,9 +11,10 @@ beat_version:
     one authoritative version for the whole normative surface, each spec file
     declares that same version as a parsed field, and the checker fails when any
     of them disagree. The set versions as a unit: an implementation declares
-    conformance to one number, not to six. The version moves to 2.0.0, because
-    the `rubric:` field values changed and anything keying off the old ones
-    breaks. The tooling's version stream is separated from the standard's, and
+    conformance to one number, not to six. The version takes a minor step: two
+    `rubric:` field values changed, but nothing could have been keying off them,
+    because no release was ever tagged and the version was not machine-readable
+    until now. The tooling's version stream is separated from the standard's, and
     the checker now catches the tooling version going stale — it was two
     releases behind.
   scope: >
@@ -29,8 +30,7 @@ beat_version:
     conformance versions. A file recording which spec version it was written
     against has real value, but as a checked field, never as a comment that goes
     stale silently in 55 places.
-    Risks accepted and stated: bumping to 2.0.0 is a conformance-breaking
-    declaration; stripping the parenthetical trades per-file provenance for
+    Risks accepted and stated: stripping the parenthetical trades per-file provenance for
     provenance that cannot rot; and the tooling-version rule assumes the working
     tree sits at the newest changelog heading, which is a release convention
     this repository has not written down anywhere else.
