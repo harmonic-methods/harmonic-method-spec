@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.2.1 — 2026-08-20
+
+- **The delivered-marking lag is settled, and the rule that keeps it settled is
+  written down.** HM-N-053 claimed the lag was bounded at one; it was two, because
+  two release increments merged back to back and neither closed its predecessor —
+  so the claim was already false when the first tag was cut. The bound is not a
+  property of the lag but of a habit nobody had recorded. Closing the previous
+  step now belongs in the **next substantive step's scope**, never in a step whose
+  only purpose is bookkeeping — that is the regress HM-N-053 itself warned about,
+  arriving disguised as diligence. See HM-BV-004.5 and HM-N-055.
+- **No change to the spec set**, which stays at 1.1.0. Nothing normative moved.
+
 ## v1.2.0 — 2026-08-20
 
 The direction of authority inverts, and two published paths move. Nothing here

@@ -126,8 +126,10 @@ flight without shipping — superseded, descoped, dropped — set `withdrawn` an
 why in a decision Note. Nothing computes either for you here.
 
 This always lags by one: the commit that marks a step delivered belongs to a step
-of its own, which stays `active` until it merges in turn. The lag is bounded at
-one and is not a defect to chase.
+of its own, which stays `active` until it merges in turn. Keep the lag at one by
+putting "mark the previous step delivered" in the **next substantive step's
+scope**. Do not create a step whose only purpose is bookkeeping — that is the
+regress, and skipping the habit for two cycles is how a backlog starts.
 
 Keep derivable facts out of prose the checker cannot reach — a pull request body,
 a commit message, an issue. No commit counts, no file counts, no versions: a

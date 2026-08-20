@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.13
   beat: HM-B-003
   title: A bounded step's status says what happened to it
-  status: active
+  status: delivered
   summary: >
     A Beat Version and a Revision each had a binary status of active or
     archived, which collapsed the most common question anyone asks about a past
