@@ -11,13 +11,15 @@ beat_version:
     Composition and read as a bare adjective afterward — an adopter seeing it
     in their own repository had no way to tell what it was an instance of. Also
     strips a citation from a decision Note pointing at a canonical notebook
-    that does not exist.
+    that does not exist, and corrects a "six entity specs" count the kit
+    asserted in five places while holding five.
   scope: >
     In: the directory rename; every path reference in README.md, llms.txt,
     AGENTS.md, examples/README.md, the instance directory's own README, the
     conformance checker's hardcoded roots and comments, and the CI workflow
-    comment; the superseding Note for the naming decision; and removal of the
-    phantom citation.
+    comment; the superseding Note for the naming decision; removal of the
+    phantom citation; and correction of the spec count wherever it was
+    restated.
     Out: the CHANGELOG's historical entries, which record the path as it was at
     each release, and the archived Beat Version prose that describes what a
     past step did. History is not restated to match the present.

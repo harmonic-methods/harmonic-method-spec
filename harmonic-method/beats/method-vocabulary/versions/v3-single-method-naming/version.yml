@@ -15,8 +15,8 @@ beat_version:
     model and rubrics are unchanged; this kit still covers system altitude
     only.
   scope: >
-    In: README, llms.txt, CHANGELOG, package.json/package-lock.json, the six
-    spec file headers, both skill files, and every Coda/Note prose reference
+    In: README, llms.txt, CHANGELOG, package.json/package-lock.json, every
+    spec file header, both skill files, and every Coda/Note prose reference
     to "Harmonic Composition". Out: the entity fields, the rubric dimensions
     and anchors, and any expansion of scope to beat/track or portfolio
     altitude — this Beat Version is a rename, not a scope change.

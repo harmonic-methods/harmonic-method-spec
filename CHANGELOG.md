@@ -49,7 +49,7 @@ frameworks. See K-BV-003.3.
   added a line naming the four functions and stating that beat/track and
   portfolio altitude reuse this kit's same primitives rather than needing a
   separate kit. Clone URL updated to `harmonic-method-kit.git`.
-- **specs/*.yml**: header comment on all six spec files changed from
+- **specs/*.yml**: header comment on every spec file changed from
   "Harmonic Composition spec" to "Harmonic Method spec". No field, type, or
   rule changes — the entity model is unchanged.
 - **skills/beat-quality-check, skills/plan-quality-check**: `description`
