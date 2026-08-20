@@ -1,6 +1,6 @@
 {
   "name": "harmonic-method-spec",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Machine-readable specs and agent skills for the Harmonic Method.",
   "type": "module",
   "private": true,

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.4
   beat: HM-B-004
   title: Make the copy-from-a-tag instruction true
-  status: active
+  status: delivered
   summary: >
     The front page has always told a reader to copy from a tag rather than from
     the trunk, so they know which spec set version they hold. No tag has ever

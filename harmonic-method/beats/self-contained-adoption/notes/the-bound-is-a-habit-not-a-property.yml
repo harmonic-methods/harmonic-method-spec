@@ -1,0 +1,30 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-055
+  type: guidance
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.5
+  content: >
+    Closing the previous step belongs in the scope of the next substantive step.
+    Never create a step whose only purpose is to close another one. This refines
+    [HM-N-053], which stated the delivered-marking lag was bounded at one: the
+    bound is not a property of the lag, it is a property of that habit, and the
+    claim was already false when written — two release increments had merged back
+    to back and neither closed its predecessor.
+  rationale: >
+    The earlier Note got the diagnosis right and the mechanism missing. It
+    correctly named the two failure modes at either extreme — marking a step
+    delivered before it is, which falsifies the record, and an unbounded regress
+    of steps that exist only to close previous ones — and then asserted a bound
+    without saying what holds it. Nothing did, so within two cycles the lag was
+    two and the Note was wrong about the repository it described.
+
+    Folding the close into the next substantive step's scope costs a line and
+    holds the bound for free, because there is always a next step and it always
+    has a scope. The alternative that looks tidier — a dedicated bookkeeping
+    step each cycle — is the regress the earlier Note warned about, arriving
+    disguised as diligence.
+
+    Worth stating plainly: a claim about a bound is a claim about behaviour, and
+    behaviour needs either a mechanism or a written habit. This one had neither,
+    and it took two cycles and a release to notice.

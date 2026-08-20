@@ -1,0 +1,26 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-004.5
+  beat: HM-B-004
+  title: Each step closes the one before it
+  status: active
+  summary: >
+    A Note recorded a cycle ago claims the delivered-marking lag is bounded at
+    one. It was two: two release increments merged back to back and neither
+    marked its predecessor delivered, so the claim was already false when the
+    first tag was cut. The bound is not a property of the lag — it is a property
+    of a habit nobody had written down. Both merged steps are marked delivered,
+    and the rule that keeps the bound true is stated: closing the previous step
+    belongs in the scope of the next substantive one, not in a step whose only
+    purpose is bookkeeping. A step that exists to close a step is the beginning
+    of the regress the original Note warned against.
+  scope: >
+    In: the delivered status of the two steps whose work has merged; the
+    contributor guide's instruction; and a Note refining the earlier claim about
+    the bound rather than restating it.
+    Out: a checker rule. Whether a step's work has merged is not visible from the
+    tree — that is exactly why the guide has to say it and nothing can enforce
+    it — and inferring it from commit trailers would report a step delivered the
+    moment it was first mentioned, which is when it starts rather than finishes.
+    Out also: marking this step delivered, which is the lag itself and is the
+    point.
