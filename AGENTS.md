@@ -108,8 +108,17 @@ message instead:
 Exactly one `Beat-Version:` trailer per commit. A Revision belongs to exactly
 one Beat Version, and the commit is the Revision — so a commit carrying two
 trailers is a non-conformant Revision, and a change spanning two Beat Versions
-is two commits. When a Beat Version's work has merged, set its status to
-`archived`; nothing computes that for you here.
+is two commits. `npm run validate` enforces this over the commits your branch
+adds, and skips when the base ref is absent. Set `HM_BASE_REF` if your base is
+not `main`.
+
+If a commit already in history breaks the rule, name it in
+`tools/trailer-exceptions.txt` with the reason rather than rewriting it — the
+evidence of what happened is worth more than a clean check. That file is meant to
+stay short.
+
+When a Beat Version's work has merged, set its status to `archived`; nothing
+computes that for you here.
 
 `specs/revision.yml` still defines the entity, and `examples/` keeps one, because
 a Revision is the only record that exists when the change artifact is a procedure

@@ -1,0 +1,25 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.9
+  beat: HM-B-003
+  title: Check that each commit binds exactly one Beat Version
+  status: active
+  summary: >
+    The method says a Revision belongs to exactly one Beat Version, and in a
+    git-hosted system the commit is the Revision — so a commit carrying two
+    bindings is a non-conformant Revision. Nothing enforced it, and the rule was
+    broken twice in one sitting from the same cause: a script that failed partway
+    while the staging command ran anyway. The checker now reads the commits this
+    branch adds and fails on any that bind two Beat Versions or none. A defect
+    already in history is excused by name in a file that states the reason,
+    rather than rewritten out of existence.
+  scope: >
+    In: the trailer check over the branch's own commits, a named-exception file,
+    a soft skip when the base ref is absent so a shallow clone or a fork is not
+    reported as a discipline failure, and the contributor guide.
+    Out: the three other checks considered alongside this one. Detecting a scope
+    statement edited after the first commit citing it is worth building and needs
+    a design that survives a rebase. Detecting a Beat Version left active after
+    its work merged needs merge state the checker cannot see locally. Grepping
+    for published path strings before a rename is a pre-flight tool, not a
+    conformance rule, and belongs with the command-line tooling.

@@ -20,6 +20,7 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
+import { checkCommitTrailers } from './commit-discipline.mjs';
 import { rubricSkills, rubricText, digest, anchorCount } from './rubric-fingerprint.mjs';
 
 const KIT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -117,6 +118,22 @@ function checkRubricFingerprints() {
   for (const recorded of Object.keys(stored)) {
     if (!skills.includes(recorded)) fail(`skills/fingerprints.yml: digest recorded for '${recorded}', which is not a rubric skill`);
   }
+}
+
+/**
+ * The commit is the Revision, and a Revision belongs to exactly one Beat
+ * Version. Nothing enforced that, and the rule was broken twice in one sitting
+ * from the same cause — a script that failed partway while `git add -A` ran
+ * anyway.
+ */
+function checkCommitDiscipline() {
+  console.log('== commit discipline ==');
+  let result;
+  try { result = checkCommitTrailers(); } catch (e) { return fail(`git: ${e.message}`); }
+  if (result.skipped) return console.log(`  skipped — ${result.skipped}`);
+  for (const p of result.problems) fail(p);
+  const excused = result.excused ? `, ${result.excused} excused` : '';
+  if (result.problems.length === 0) console.log(`  ${result.checked} commit(s) each bind one Beat Version${excused}`);
 }
 
 /**
@@ -271,6 +288,7 @@ function checkVocabulary(roots) {
 checkSpecs();
 checkRubricFingerprints();
 checkToolingVersion();
+checkCommitDiscipline();
 checkTree('harmonic-method', 'HM-CODA');
 checkTree('examples', 'EX-SYS-CODA');
 checkVocabulary(['harmonic-method', 'examples']);
