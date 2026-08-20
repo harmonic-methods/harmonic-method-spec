@@ -78,9 +78,11 @@ Distinguish two cases when comparing against an implementation:
   implementation's side: a required field it lacks, an enum value it renamed, a
   dimension whose anchor text differs from the one published here.
 
-A digest over each rubric's normative sections — the scoring scale, the
-dimension table, and the check rules — makes an edit to any of them fail the
-check. When it fails, do not regenerate first. Confirm the edit was intended,
+A digest over each instrument's normative sections — the scoring scale, the
+dimension table, the checks, and the check rules — makes an edit to any of them
+fail the check. Adding an instrument whose normative section has a new heading
+means adding that heading to `NORMATIVE_SECTIONS` in
+`tools/rubric-fingerprint.mjs`, or the instrument ships unguarded. When it fails, do not regenerate first. Confirm the edit was intended,
 record the decision, decide whether the spec set version moves, and only then:
 
     npm run fingerprint

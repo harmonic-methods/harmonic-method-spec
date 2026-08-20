@@ -1,0 +1,27 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-047
+  type: decision
+  attached_to: HM-B-001
+  beat_version: HM-BV-001.2
+  content: >
+    Each published instrument names the function it serves, in its own text and
+    in the reader-facing index: the Beat rubric serves the Composer, the Beat
+    Version rubric the Orchestrator, and the Coda reconciliation the Conductor.
+    The Producer and the Promoter have no instrument, and the index says so
+    rather than leaving the gap to be noticed.
+  rationale: >
+    Publishing five accountabilities and three instruments without connecting
+    them leaves the accountability model decorative — a reader can name the five
+    functions and still not know which of them any given skill helps discharge.
+    The mapping was already latent and only needed stating: coherence,
+    distinctiveness and boundaries are the Composer's concerns, and they are
+    exactly what the Beat rubric scores; sizing, sequencing and dependencies are
+    the Orchestrator's, and exactly what the plan rubric scores. Naming it also
+    makes the absences legible. A Producer instrument would need Value Velocity
+    defined closely enough to assess without computing it, which the method
+    deliberately leaves to an implementation; a Promoter instrument would put
+    apparatus on the function resting on the thinnest evidence of the five. Both
+    are better as stated gaps than as instruments built to complete a set — a
+    five-of-five table would imply an evidential basis that two of the entries
+    do not have.

@@ -8,9 +8,12 @@ description: Score a Harmonic Method Beat across the seven published quality dim
 You are scoring a **Beat** — the Harmonic Method's unit of durable capability —
 against the published rubric. Spec: `specs/beat.yml`.
 
-The dimension definitions, red flags, scoring scale, and check rules below
-follow the reference implementation's canonical `beat_coda_quality` rubric prompt.
-Score against them as written; do not paraphrase them.
+This instrument serves the **Composer** — the accountability for architectural
+coherence, that the system holds together as one intelligible thing.
+
+The dimension definitions, red flags, scoring scale, and check rules below are
+canonical in this repository. Score against them as written; do not paraphrase
+them.
 
 ## Inputs
 The Beat's title, Coda, and description. If available: its sibling Beats (for

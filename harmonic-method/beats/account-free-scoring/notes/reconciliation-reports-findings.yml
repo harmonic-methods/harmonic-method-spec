@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-046
+  type: decision
+  attached_to: HM-B-001
+  beat_version: HM-BV-001.2
+  content: >
+    The Conductor's instrument reports findings, not a score. It answers each
+    named check pass, diverged, or cannot-determine, cites the text that decided
+    it, and emits no band, percentage, or average.
+  rationale: >
+    The other two instruments grade how well something is written, which is a
+    question of degree and where a band carries real information. "Is what we
+    decided still true" is not a question of degree — a chain with one broken
+    link is broken, and a reader given 3.7 out of 5 for alignment learns nothing
+    they can act on and cannot tell which link failed. An average would actively
+    conceal the finding: seven passing checks and one contradicted Coda would
+    score well, and the one thing worth knowing would be the thing the number
+    hid. This is the same reason a single convergence reading across a portfolio
+    was rejected. A cannot-determine answer also has no honest place on a band,
+    and collapsing it into a low score would misreport a missing input as a
+    defect while collapsing it into a high one would hide it entirely — so the
+    instrument reports it as its own category and names the input that was
+    absent.

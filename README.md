@@ -105,22 +105,27 @@ possible to say which of the five nobody is currently holding.
 | [specs/function.yml](specs/function.yml) | the five accountabilities the work is held through |
 | [specs/spec-set.yml](specs/spec-set.yml) | the version of the set above, which an implementation pins |
 
-## The rubrics
+## The instruments
 
-Two skills score work against the published quality dimensions. Both are written
-to be read literally by an agent.
+Three skills assess work against the published definitions. Each serves one
+function, and each is written to be read literally by an agent.
 
-- [skills/beat-coda-quality-check](skills/beat-coda-quality-check/SKILL.md) — scores a
-  Beat 1-5 across seven dimensions: Distinctive, Harmonious, Substantial,
-  Durable, Clear, Strategically Aligned, Business Outcome.
-- [skills/beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) — scores a
-  Beat Version plan 1-5 across six: Scoped, Directional, Testable, Traceable,
-  Assignable, Risk-aware.
+| Instrument | Function | What it asks |
+| --- | --- | --- |
+| [beat-coda-quality-check](skills/beat-coda-quality-check/SKILL.md) | Composer | Is this capability well defined? Seven dimensions, 1-5: Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome. |
+| [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
+| [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Eight checks over a Coda chain, reported as findings rather than a score. |
 
-The dimension definitions and anchors mirror the reference implementation's
-canonical rubrics, so a score here means what a score there means. Both skills
-tell the reader not to paraphrase the anchors, because that is how a rubric
-quietly stops meaning the same thing.
+The Producer and the Promoter have no instrument yet, deliberately. The
+Producer's would need Value Velocity defined closely enough to assess without
+computing it; the Promoter's rests on the newest and thinnest evidence of the
+five, and should not carry more apparatus than the others until that changes.
+
+The dimension definitions and anchors are canonical here, so a score means the
+same thing wherever it is produced. Each instrument tells the reader not to
+paraphrase them, because that is how a definition quietly stops meaning the same
+thing. A digest over each one's normative text fails the conformance check if any
+of it is edited without acknowledgement.
 
 ## Laying out a system
 

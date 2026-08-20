@@ -10,3 +10,4 @@ manifest: rubric_fingerprints
 fingerprints:
   beat-coda-quality-check: ffb0825449efb53618e6bf9d247e0ff708611a8e247f8764f23d0041f5783b17
   beat-version-quality-check: d3e162b84788c04bc763090b171aac1da0be33b0261de38a8552a58ea80ccd55
+  coda-alignment-check: d6984702419d1a6b4180fa278418ec0d9fa4e53c7e0adb11480cc018a9f38b0f

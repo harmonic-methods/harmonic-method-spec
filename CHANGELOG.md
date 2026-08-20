@@ -53,6 +53,27 @@ that breaks something real. See HM-BV-003.11.
   generically. The README and `llms.txt` keep one attribution line each, and the
   trademark notice keeps the marks: provenance and legal notice are not
   instruction. See HM-N-035.
+- **`skills/coda-alignment-check` (new)** — an instrument for the Conductor. Two
+  instruments graded how well something is *written*; none asked whether what was
+  decided is still true, which is the accountability the method singles out as
+  most often unstaffed. Eight checks over a Coda chain: does it resolve, does each
+  Coda serve the one above it, does the parent cover the child, is it a resolved
+  state, is it specific enough to judge against, does anything recorded already
+  contradict it, has it moved since it was anchored, and are the decisions under
+  it still in force.
+  - **It reports findings, not a score.** A chain with one broken link is broken,
+    and an average would conceal which link — the same reason a portfolio-wide
+    convergence reading was rejected. `cannot-determine` is its own category, so
+    a missing input is never reported as agreement. See HM-N-046.
+  - **The digest guard is generalized** to cover a findings instrument as well as
+    a band rubric: normative-section detection is no longer specific to a
+    dimension table, and the substance assertion counts enumerated checks as well
+    as scoring anchors. Both existing digests were verified unchanged, proving the
+    generalization did not quietly redefine what is covered. The new instrument
+    was nearly published outside the guard entirely — `AGENTS.md` now says that
+    adding an instrument with a new normative heading means registering it.
+  - **Each instrument now names the function it serves**, and the index states
+    that the Producer and Promoter have none, deliberately. See HM-N-047.
 - **The criteria-scoring proposal is recorded as an open question.** An unmerged
   branch proposes computing a dimension's band from binary factual criteria
   instead of asking a reader to match a description to a band. It targets the

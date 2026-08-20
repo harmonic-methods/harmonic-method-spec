@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
 
 import { checkCommitTrailers } from './commit-discipline.mjs';
-import { rubricSkills, rubricText, digest, anchorCount } from './rubric-fingerprint.mjs';
+import { normativeSkills, normativeText, digest, normativeItemCount } from './rubric-fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -92,14 +92,14 @@ function checkRubricFingerprints() {
     return fail(`skills/fingerprints.yml: ${e.message}`);
   }
 
-  const skills = rubricSkills();
-  if (skills.length === 0) return fail('no rubric skill carries a dimension section');
+  const skills = normativeSkills();
+  if (skills.length === 0) return fail('no skill carries a normative section');
 
   for (const skill of skills) {
-    const section = rubricText(skill);
-    const anchors = anchorCount(section);
-    if (anchors === 0) {
-      fail(`skills/${skill}: normative sections carry no scoring anchors — a fingerprint over them would guard nothing`);
+    const section = normativeText(skill);
+    const items = normativeItemCount(section);
+    if (items < 3) {
+      fail(`skills/${skill}: normative sections enumerate fewer than 3 items — a fingerprint over them would guard nothing`);
       continue;
     }
     const actual = digest(section);
@@ -112,11 +112,11 @@ function checkRubricFingerprints() {
         `       decision, decide whether the spec set version moves, then run: npm run fingerprint`,
       );
     } else {
-      console.log(`  ${skill}  ${anchors} anchors, digest matches`);
+      console.log(`  ${skill}  ${items} normative items, digest matches`);
     }
   }
   for (const recorded of Object.keys(stored)) {
-    if (!skills.includes(recorded)) fail(`skills/fingerprints.yml: digest recorded for '${recorded}', which is not a rubric skill`);
+    if (!skills.includes(recorded)) fail(`skills/fingerprints.yml: digest recorded for '${recorded}', which carries no normative section`);
   }
 }
 

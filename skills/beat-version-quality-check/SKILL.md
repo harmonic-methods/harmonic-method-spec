@@ -8,9 +8,12 @@ description: Score a Harmonic Method Beat Version plan across the six published 
 You are scoring a **Beat Version** — a planned step in a Beat's evolution —
 against the published rubric. Spec: `specs/beat-version.yml`.
 
-The dimension definitions, red flags, scoring anchors, and check rules below
-follow the reference implementation's canonical `beat_version_quality` rubric prompt.
-Score against them as written; do not paraphrase them.
+This instrument serves the **Orchestrator** — the accountability that work
+moves: sequencing, sizing, and the handoffs between everyone doing it.
+
+The dimension definitions, red flags, scoring anchors, and check rules below are
+canonical in this repository. Score against them as written; do not paraphrase
+them.
 
 This is NOT a build quality check (that evaluates the change itself). This
 evaluates how well the Beat Version *definition* is written — is it a good,
