@@ -137,7 +137,7 @@ of it is edited without acknowledgement.
 
 One rule all the way down: an entity is a directory, its children are
 subdirectories, and no file carries an inline child list. Notes attach to the
-Beat rather than to a Beat Version — a version gets archived, the knowledge it
+Beat rather than to a Beat Version — a version ends, the knowledge it
 produced does not — and may name the version they arose from.
 
 - [examples/](examples/) — one conformant Beat in this layout, deliberately

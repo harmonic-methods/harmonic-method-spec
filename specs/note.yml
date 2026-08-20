@@ -31,7 +31,7 @@ fields:
     description: >
       The Beat Version this Note arose from or applies to, when it is narrower
       than the Beat. The Note still belongs to the Beat: a Beat Version is a
-      passing step and gets archived, while the knowledge outlives it.
+      passing step and ends, while the knowledge outlives it.
 rules:
   - Notes are preserved, not overwritten; superseding is a new Note referencing the old.
   - Decisions cite what they supersede when they change course.

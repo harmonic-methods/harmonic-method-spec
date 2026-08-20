@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.3
   beat: HM-B-004
   title: Stop calling this a kit
-  status: active
+  status: delivered
   summary: >
     The repository called itself a kit roughly thirty times in present tense —
     the README and agent-facing entry point opened with it as a title, the

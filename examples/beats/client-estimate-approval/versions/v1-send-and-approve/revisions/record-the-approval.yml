@@ -4,7 +4,7 @@ revision:
   id: EX-R-001
   beat_version: EX-BV-001.1
   title: Approval recorded against the engagement, not the inbox
-  status: archived
+  status: delivered
   description: >
     Replaced the email-thread approval step with an in-record approve/decline
     that captures the outcome, the timestamp, and the approver. The reasoning

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.6
   beat: HM-B-003
   title: Rename the instance ID prefix from K- to HM-
-  status: active
+  status: delivered
   summary: >
     Every entity in this repository's own system carried a `K-` prefix, short
     for "kit" — a name the repository has outgrown now that it holds the

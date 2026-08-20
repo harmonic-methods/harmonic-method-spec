@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.1
   beat: HM-B-003
   title: The entity specs at 1.0.0
-  status: archived
+  status: delivered
   summary: >
     Coda, Beat, Beat Version, Revision, and Note are each published as
     a machine-readable spec carrying fields, required-ness, lifecycle enums, and

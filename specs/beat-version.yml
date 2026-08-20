@@ -20,8 +20,15 @@ fields:
     required: true
     description: What this step includes and excludes — bounded on purpose.
   status:
-    type: enum [active, archived]
+    type: enum [active, delivered, withdrawn]
     required: true
+    descriptions:
+      active: In flight — planned, and neither finished nor set down.
+      delivered: The planned step shipped.
+      withdrawn: >
+        Left flight without shipping — superseded, descoped, or dropped. Why it
+        was withdrawn is rationale and belongs in a decision Note, not in this
+        field.
   revisions:
     type: list<revision>
     description: The tracked changes that execute this version. See revision.yml.

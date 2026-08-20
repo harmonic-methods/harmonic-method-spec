@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-005.1
   beat: HM-B-005
   title: The five functions published as a spec
-  status: active
+  status: delivered
   summary: >
     The kit published an entity model with no account of who answers for it,
     while its own README asserted four functions and named them in passing.

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.4
   beat: HM-B-003
   title: Rename the instance directory to harmonic-method/
-  status: active
+  status: delivered
   summary: >
     The directory holding a system's entities is renamed from `harmonic/` to
     `harmonic-method/`, matching the name of the method it holds instances of.

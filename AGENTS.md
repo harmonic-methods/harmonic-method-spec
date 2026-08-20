@@ -18,7 +18,7 @@ request.
   list, so there is nothing to keep in sync.
 - Notes attach to a Beat, never to a Beat Version. Use the optional
   `beat_version` field to record which step a Note came from. A version gets
-  archived; the knowledge it produced does not.
+  delivered or withdrawn; the knowledge it produced outlives either.
 - A system's entities live in `harmonic-method/`, visible rather than hidden. Adopters
   use the same name in their own repositories.
 - There is no `checks/` directory, by design. This repository assesses without
@@ -121,8 +121,13 @@ If a commit already in history breaks the rule, name it in
 evidence of what happened is worth more than a clean check. That file is meant to
 stay short.
 
-When a Beat Version's work has merged, set its status to `archived`; nothing
-computes that for you here.
+When a Beat Version's work has merged, set its status to `delivered`. If it left
+flight without shipping — superseded, descoped, dropped — set `withdrawn` and say
+why in a decision Note. Nothing computes either for you here.
+
+This always lags by one: the commit that marks a step delivered belongs to a step
+of its own, which stays `active` until it merges in turn. The lag is bounded at
+one and is not a defect to chase.
 
 Keep derivable facts out of prose the checker cannot reach — a pull request body,
 a commit message, an issue. No commit counts, no file counts, no versions: a

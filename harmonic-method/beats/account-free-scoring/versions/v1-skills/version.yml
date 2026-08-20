@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-001.1
   beat: HM-B-001
   title: Both rubrics published as agent skills
-  status: archived
+  status: delivered
   summary: >
     The two quality rubrics ship as invocable skills, each carrying the full
     dimension set, the shared scale, the check rules, and an output format an

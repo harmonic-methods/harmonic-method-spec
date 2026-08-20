@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.7
   beat: HM-B-002
   title: Park the criteria-scoring proposal for validation
-  status: active
+  status: delivered
   summary: >
     An unmerged branch proposes replacing holistic band-matching in both rubrics
     with criteria-based scoring: binary factual criteria per dimension, and a

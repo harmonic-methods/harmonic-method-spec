@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.10
   beat: HM-B-003
   title: Make the commit guard actually run in continuous integration
-  status: active
+  status: delivered
   summary: >
     The commit-discipline check skips when it cannot find a base ref, so a
     shallow clone or a fork is not reported as a discipline failure. The

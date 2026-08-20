@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.5
   beat: HM-B-002
   title: Guard the published dimension tables against an undeliberate edit
-  status: active
+  status: delivered
   summary: >
     The drift guard was planned against the old direction of authority — a
     fingerprint that fired when definitions held elsewhere moved — and was never

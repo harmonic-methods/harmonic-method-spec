@@ -83,6 +83,27 @@ that breaks something real. See HM-BV-003.11.
     and HM-N-049.
   - **Each instrument now names the function it serves**, and the index states
     that the Producer and Promoter have none, deliberately. See HM-N-047.
+- **A bounded step's status now says what happened to it.** A Beat Version and a
+  Revision each carried `active` or `archived`, which collapsed the first
+  question anyone asks about a past step: was it done, or dropped? Both now carry
+  **`active`, `delivered`, or `withdrawn`**, with `archived` retired and no alias.
+  The clearest case here is a Beat Version whose design was obsoleted before
+  anything was built — it read "archived", indistinguishable from the twenty-six
+  that shipped, and now reads `withdrawn`.
+  - The binary was inherited from an implementation where it pairs with a label
+    derived from source-control state, so `archived` never has to mean abandoned
+    there. Copied without the derivation, the word carried meaning it cannot
+    hold — and deriving it is unavailable, because a git-hosted system keeps no
+    Revision record to derive from.
+  - **A Beat keeps `open`/`closed`** and the asymmetry is deliberate: a durable
+    capability is operated and retired, never delivered. A bounded step genuinely
+    ends one of two ways, which is why a Beat Version and a Revision share an
+    enum with each other and not with the thing they serve.
+  - Three values, not four. Superseded, descoped and abandoned answer *why*, which
+    is rationale and belongs in a decision Note.
+  - Breaking, and shipped as a minor deliberately: no tag exists yet, so this is
+    the last moment it costs a minor rather than a major. See HM-BV-003.13,
+    HM-N-052, and HM-N-053 on the one-step lag this leaves.
 - **The derivable-facts rule now extends past the checker's reach.** Two rules
   already governed restated facts inside the tree — a count goes in no prose
   because the directory answers it, and a version lives in one checked place.

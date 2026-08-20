@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-052
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.13
+  content: >
+    A Beat Version and a Revision each carry active, delivered, or withdrawn.
+    The previous binary of active or archived is retired with no alias. A Beat
+    keeps open and closed and does not gain the new values.
+  rationale: >
+    "Archived" means set aside, and delivered work is the opposite of set aside
+    — so the binary collapsed the first question anyone asks about a past step:
+    was it done, or was it dropped? The clearest case in this repository is a
+    Beat Version whose design was obsoleted before anything was built. Under the
+    binary it read "archived", indistinguishable from the twenty-six steps that
+    shipped; it now reads withdrawn, which is what happened.
+
+    The binary was inherited rather than chosen. In the implementation it is
+    paired with a label derived from source-control state, so archived never has
+    to mean abandoned there — the derivation supplies the difference. Copied
+    here without the derivation, the word carried meaning it cannot hold, and
+    deriving it is not available either: a git-hosted system keeps no Revision
+    record to derive from, by an earlier decision, so the distinction has to be
+    asserted or lost.
+
+    Three values and not four. Superseded, descoped, and abandoned all answer
+    *why* a step was withdrawn, which is rationale, and rationale belongs in a
+    decision Note that cites what it replaced — putting it in an enum would
+    duplicate the lineage badly and invite an ever-growing list.
+
+    A Beat is deliberately left asymmetric. It is a durable capability with no
+    terminal success state: it is operated and eventually retired, never
+    delivered. A bounded step genuinely ends one of two ways, which is why a
+    Beat Version and a Revision share an enum with each other and not with the
+    thing they serve.
