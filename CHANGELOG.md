@@ -2,6 +2,21 @@
 
 ## v1.3.0 — 2026-08-20 (unreleased)
 
+- **The checker takes a root.** `node tools/validate.mjs <path>` now checks any
+  tree, not only this repository's. With no path it self-checks exactly as before.
+  The front page no longer has to admit that the checker cannot check your tree.
+  - **Deciding what does not travel was the substance.** Checked anywhere:
+    required fields, lifecycle values, decision rationale, reference resolution,
+    and each child's agreement with its directory — what the specs require.
+    Not checked elsewhere: the forbidden-vocabulary sweep, the instrument
+    digests, the version agreement, the commit trailers. Those are disciplines
+    this repository keeps on itself, and running the vocabulary sweep on an
+    adopter's tree would fail them for writing ordinary English. A repository may
+    hold itself to more than it asks of others, and the tool has to tell the two
+    apart or the stricter set silently becomes the standard. See HM-BV-006.1 and
+    HM-N-058.
+  - The root Coda's identifier is read from the tree rather than asserted; only
+    this repository knows its own.
 - **The checker stops requiring what the spec does not.** `specs/beat.yml` lists
   a Beat's planned steps as optional; the checker rejected any Beat carrying
   none. The effect was not cosmetic: the method requires a Beat to pass its

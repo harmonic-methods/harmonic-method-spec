@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.14
   beat: HM-B-003
   title: The checker stops requiring what the spec does not
-  status: active
+  status: delivered
   summary: >
     A Beat's list of planned steps is optional in the spec and was mandatory in
     the checker, which failed any Beat carrying none. The consequence was not

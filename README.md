@@ -63,9 +63,16 @@ Write the Coda first, as a resolved future state rather than a task list — a B
 without a Coda cannot be decomposed, by rule. Then add one Beat Version for the
 next step and score it with `beat-version-quality-check` before any work starts.
 
-Two caveats going in. The conformance checker below is currently internal: it
-hardcodes this repository's own roots, so it will not check your tree yet. And
-nothing here enforces anything — see [What this is not](#what-this-is-not).
+One caveat going in: nothing here enforces anything — see
+[What this is not](#what-this-is-not). The conformance checker will check your
+tree, though. From a clone of this repository:
+
+    node tools/validate.mjs /path/to/your/harmonic-method
+
+It checks what the specs require — fields, lifecycle values, decision rationale,
+reference resolution, and that each child agrees with the directory holding it.
+It does not apply the disciplines this repository keeps on itself, so a Beat of
+yours may use any vocabulary it likes.
 
 ## The model
 
@@ -148,7 +155,9 @@ produced does not — and may name the version they arose from.
 To check a tree against the specs — required fields, lifecycle enums, reference
 resolution, decision rationale:
 
-    npm install && npm run validate
+    npm install
+    npm run validate                                  # this repository
+    node tools/validate.mjs /path/to/your/tree         # yours
 
 That is the only thing here with a dependency, and it is for contributors. Using
 this repository — reading the specs, applying a rubric, vendoring the files — installs
