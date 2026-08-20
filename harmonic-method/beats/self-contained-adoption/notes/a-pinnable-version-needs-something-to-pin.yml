@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-054
+  type: context
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.4
+  content: >
+    Two halves of one promise were built a cycle apart. The spec set version
+    became machine-readable and checked, so an implementation could declare what
+    it conforms to — and there was still nothing to conform to, because no tag
+    existed and the only thing a reader could copy was the moving trunk the front
+    page warns against. Copying from the trunk means holding a version that
+    changes under you, which is precisely the drift the number was introduced to
+    prevent. The first tag closes the gap.
+  rationale: >
+    Recorded because the sequence is instructive rather than embarrassing: the
+    mechanism landed before the thing it enables, and in between, the repository
+    published an instruction it could not satisfy and a version nobody could
+    hold. Both halves looked complete on their own. A reader inspecting only the
+    manifest would have concluded that pinning worked, and a reader following
+    only the front page would have gone looking for a tag. That pattern — a
+    capability that appears finished from either side of a missing join — is
+    worth recognizing, and it is the same shape as a guard that runs everywhere
+    except where it is enforced.

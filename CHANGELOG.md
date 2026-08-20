@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.2.0 — 2026-08-20 (unreleased)
+## v1.2.0 — 2026-08-20
 
 The direction of authority inverts, and two published paths move. Nothing here
 was ever released — there is no tag in this repository — so the path and field
