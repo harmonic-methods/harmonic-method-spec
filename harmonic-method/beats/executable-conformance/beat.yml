@@ -1,0 +1,27 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-006
+  title: Conformance anyone can execute
+  status: open
+  coda:
+    statement: >
+      Anyone holding a tree in this method's shape, or building a system that
+      claims to implement it, can verify that claim themselves with one command
+      — against a pinned version of the standard, without asking whoever
+      publishes it.
+    parent: HM-CODA
+  description: >
+    The capability by which conformance stops being a property only this
+    repository can check. Two things have to become executable by someone else:
+    validating any tree of entities against the specs, and checking a declared
+    implementation model against them — allowing what an implementation adds and
+    failing only what it contradicts. The boundary with the vocabulary
+    capability is that the vocabulary publishes the definitions and verifies this
+    repository's own conformance to them; this one makes that verification
+    runnable by anyone, against anything, at a version they choose.
+    It is held against a standing constraint it must not break: reading the
+    specs, applying an instrument, or vendoring any of it installs nothing, and
+    that has to remain true. Verification is the one thing allowed to require a
+    runtime, and only for whoever chooses to run it.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

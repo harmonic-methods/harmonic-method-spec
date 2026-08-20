@@ -1,0 +1,29 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-056
+  type: constraint
+  attached_to: HM-B-006
+  content: >
+    Publishing a command is permitted; requiring it is not. Reading the specs,
+    applying an instrument, copying a skill, or vendoring any part of this
+    repository must continue to install nothing. Only verification may require a
+    runtime, and only for the person who chooses to verify. Any change that makes
+    the published command a prerequisite for using the method breaks this and is
+    out of bounds regardless of what it enables.
+  rationale: >
+    [HM-N-011] kept this repository flat to preserve exactly one property: the
+    whole thing can be read or vendored with nothing installed. That decision
+    deferred packaging for lack of a second target and named an interface server
+    as explicitly not a target, while leaving a command line unaddressed — so
+    this is not a reversal, but it is close enough to one that the boundary needs
+    stating before any work starts rather than being discovered in review.
+
+    The distinction that keeps both true is who is asking. A reader evaluating
+    the method, an agent handed a rubric, and an adopter copying a spec file are
+    all served by files, and files stay sufficient for them. Someone who wants a
+    machine to confirm a whole tree, or an implementer who wants continuous
+    integration to fail when their model diverges, has already accepted a
+    toolchain by the nature of what they are asking for. Serving the second
+    without taxing the first is the whole design constraint here, and the failure
+    mode to watch is drift: a note in the front page saying "run this first", or
+    an instrument that stops being readable prose.

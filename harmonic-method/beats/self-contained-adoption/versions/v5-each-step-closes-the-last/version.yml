@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.5
   beat: HM-B-004
   title: Each step closes the one before it
-  status: active
+  status: delivered
   summary: >
     A Note recorded a cycle ago claims the delivered-marking lag is bounded at
     one. It was two: two release increments merged back to back and neither

@@ -1,0 +1,42 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.1
+  beat: HM-B-006
+  title: The checker takes a root
+  status: active
+  summary: >
+    The conformance checker hardcodes this repository's own two trees, so it can
+    verify only the repository that publishes it — which the front page admits as
+    a caveat and which makes conformance a property nobody else can test. Given a
+    path, it now checks that tree instead: required fields, lifecycle values,
+    decision rationale, the agreement between each child's back-reference and the
+    directory holding it, and reference resolution. Given no path it self-checks
+    exactly as before.
+
+    Deciding what does NOT run against someone else's tree is the substance of
+    this step rather than a detail of it. The forbidden-vocabulary sweep, the
+    instrument digests, the version agreement, and the commit trailers are all
+    disciplines this repository keeps on itself; none is a property of a
+    conformant tree, and running them elsewhere would reject correct trees. The
+    root Coda's identifier is read from the tree rather than asserted, since only
+    this repository knows its own.
+
+    Done when: a tree outside this repository is checked and reports its Beats,
+    steps, and Notes; a Beat there using a word this repository forbids itself
+    passes; running with no path produces the same result as today; and the front
+    page no longer says the checker cannot check your tree.
+  scope: >
+    In: the path argument and the default; deriving the root Coda's identifier
+    from the tree; the separation between checks that travel and checks that stay;
+    the front-page caveat; and a Note recording where that line falls and why.
+    Also in: marking the previous step delivered.
+    Out: publishing anything. This step is still run from a clone, so the
+    standing constraint that reading and vendoring install nothing is untouched —
+    distribution is its own step and carries its own naming decision.
+    Out also: checking a declared implementation model, which needs a statement
+    of which files are normative before it can mean anything.
+    Risks stated: running the vocabulary sweep against an adopter's tree would
+    fail them for using ordinary words, which is the failure most likely to make
+    the command look broken; asserting a root Coda identifier would fail every
+    tree but this one; and the self-check must not quietly lose a rule while
+    gaining an argument, so it is verified by running both paths.

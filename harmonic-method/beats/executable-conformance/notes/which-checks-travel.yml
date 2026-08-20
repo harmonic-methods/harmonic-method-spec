@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-058
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.1
+  content: >
+    Checked against any tree: required fields, lifecycle values, decision
+    rationale, reference resolution, and the agreement between a child's
+    back-reference and the directory holding it. Those are what the specs
+    require, so they are what conformance means.
+
+    Not checked against another tree: the forbidden-vocabulary sweep, the
+    instrument digests, the version agreement between the manifest and the specs,
+    and the commit trailers. Each is a discipline this repository keeps on itself,
+    and none is a property the specs demand of a tree. The root Coda's identifier
+    is read from the tree rather than compared to an expected value, since only
+    this repository knows its own.
+  rationale: >
+    The vocabulary sweep is the case that settles the principle. It rejects
+    several ordinary English nouns that name containers these specs decline to
+    define — a useful guard on a document whose job is to avoid importing an
+    implementation's vocabulary, and an obvious injustice to an adopter whose
+    organization genuinely uses one of those words. Running it on their tree
+    would fail them for writing plain English, and would be the fastest way to
+    make the checker look broken to the first person who tried it.
+
+    This Note cannot quote its own best example without failing the check it is
+    describing, which is the neatest available proof that the sweep belongs to
+    this repository and not to the method. The first draft named the word and was
+    rejected.
+
+    Generalized: a repository may hold itself to more than it asks of others, and
+    the two must be told apart in the tool or the stricter set silently becomes
+    the standard. That is the same failure as a checker stricter than its own
+    spec, one level up — there the tool outran the specs, here it would outrun
+    what conformance means. A check travels only if a spec requires it.

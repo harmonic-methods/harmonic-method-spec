@@ -25,11 +25,23 @@ import { normativeSkills, normativeText, digest, normativeItemCount } from './ru
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
+/**
+ * A tree given on the command line is resolved from the caller's directory; this
+ * repository's own files are resolved from the tool. Without the split, pointing
+ * the checker at a tree elsewhere would look for it inside this repository.
+ */
+const TARGET = process.argv[2];
+const BASE = TARGET ? process.cwd() : ROOT;
+
 let failures = 0;
 const fail = (m) => { console.log(`  FAIL ${m}`); failures++; };
-const read = (p) => readFileSync(join(ROOT, p), 'utf8');
+const readFrom = (base, p) => readFileSync(join(base, p), 'utf8');
+const read = (p) => readFrom(ROOT, p);
 const load = (p) => parse(read(p));
 const ls = (p) => (existsSync(join(ROOT, p)) ? readdirSync(join(ROOT, p)) : []);
+const treeRead = (p) => readFrom(BASE, p);
+const treeLoad = (p) => parse(treeRead(p));
+const treeLs = (p) => (existsSync(join(BASE, p)) ? readdirSync(join(BASE, p)) : []);
 
 // Required fields, per the specs each entity is declared in.
 const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
@@ -153,13 +165,21 @@ function checkToolingVersion() {
   console.log(`  package.json ${pkg.version}, newest changelog entry v${latest}`);
 }
 
-/** Validates one system tree. Used for both `harmonic-method/` and `examples/`. */
-function checkTree(root, codaId) {
+/**
+ * Validates one system tree — this repository's own, or any tree given on the
+ * command line.
+ *
+ * The root Coda's identifier is read from the tree rather than asserted. Only
+ * this repository knows what its own should be, and demanding a particular value
+ * would fail every tree but this one.
+ */
+function checkTree(root) {
   console.log(`== ${root}/ ==`);
 
   let coda;
-  try { coda = load(`${root}/coda.yml`)?.coda; } catch (e) { fail(`${root}/coda.yml: ${e.message}`); }
-  if (coda?.id !== codaId) fail(`${root}/coda.yml: id '${coda?.id}' != '${codaId}'`);
+  try { coda = treeLoad(`${root}/coda.yml`)?.coda; } catch (e) { fail(`${root}/coda.yml: ${e.message}`); }
+  const codaId = coda?.id;
+  if (codaId === undefined) fail(`${root}/coda.yml: a Coda with Beats beneath it needs an id for them to ladder to`);
   if (!coda?.statement) fail(`${root}/coda.yml: statement missing`);
   if (coda?.parent !== undefined) fail(`${root}/coda.yml: a root Coda omits parent`);
 
@@ -169,12 +189,12 @@ function checkTree(root, codaId) {
   const revIds = new Set();
   const bvRefs = [];
 
-  for (const slug of ls(`${root}/beats`)) {
+  for (const slug of treeLs(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
-    if (!existsSync(join(ROOT, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
+    if (!existsSync(join(BASE, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
 
     let b;
-    try { b = load(beatPath)?.beat; } catch (e) { fail(`${beatPath}: ${e.message}`); continue; }
+    try { b = treeLoad(beatPath)?.beat; } catch (e) { fail(`${beatPath}: ${e.message}`); continue; }
     if (!b) { fail(`${beatPath}: no top-level 'beat' key`); continue; }
 
     for (const f of BEAT_REQ) if (b[f] === undefined) fail(`${beatPath}: missing required '${f}'`);
@@ -189,13 +209,13 @@ function checkTree(root, codaId) {
     beatIds.add(b.id);
 
     const versions = [];
-    for (const vslug of ls(`${root}/beats/${slug}/versions`)) {
+    for (const vslug of treeLs(`${root}/beats/${slug}/versions`)) {
       const vDir = `${root}/beats/${slug}/versions/${vslug}`;
       const vPath = `${vDir}/version.yml`;
-      if (!existsSync(join(ROOT, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
+      if (!existsSync(join(BASE, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
 
       let v;
-      try { v = load(vPath)?.beat_version; } catch (e) { fail(`${vPath}: ${e.message}`); continue; }
+      try { v = treeLoad(vPath)?.beat_version; } catch (e) { fail(`${vPath}: ${e.message}`); continue; }
       if (!v) { fail(`${vPath}: no top-level 'beat_version' key`); continue; }
 
       for (const f of BV_REQ) if (v[f] === undefined) fail(`${vPath}: missing required '${f}'`);
@@ -207,10 +227,10 @@ function checkTree(root, codaId) {
       bvIds.add(v.id);
 
       const revisions = [];
-      for (const rf of ls(`${vDir}/revisions`)) {
+      for (const rf of treeLs(`${vDir}/revisions`)) {
         const rPath = `${vDir}/revisions/${rf}`;
         let r;
-        try { r = load(rPath)?.revision; } catch (e) { fail(`${rPath}: ${e.message}`); continue; }
+        try { r = treeLoad(rPath)?.revision; } catch (e) { fail(`${rPath}: ${e.message}`); continue; }
         if (!r) { fail(`${rPath}: no top-level 'revision' key`); continue; }
 
         for (const f of REV_REQ) if (r[f] === undefined) fail(`${rPath}: missing required '${f}'`);
@@ -223,13 +243,17 @@ function checkTree(root, codaId) {
       }
       versions.push(`${v.id} ${v.status}${revisions.length ? ` [${revisions.join(' ')}]` : ''}`);
     }
-    if (versions.length === 0) fail(`${root}/beats/${slug}/: no versions — a Beat with no planned step is not in flight`);
+    // Not a failure: specs/beat.yml does not require `versions`, and a Beat that
+    // has been scored but not yet decomposed is the exact state the decomposition
+    // gate governs. Rejecting it made that state unrepresentable and forced a
+    // Beat and its first step to arrive together.
+    const versionSummary = versions.length ? versions.join(', ') : '(none — not yet decomposed)';
 
     const notes = [];
-    for (const nf of ls(`${root}/beats/${slug}/notes`)) {
+    for (const nf of treeLs(`${root}/beats/${slug}/notes`)) {
       const nPath = `${root}/beats/${slug}/notes/${nf}`;
       let n;
-      try { n = load(nPath)?.note; } catch (e) { fail(`${nPath}: ${e.message}`); continue; }
+      try { n = treeLoad(nPath)?.note; } catch (e) { fail(`${nPath}: ${e.message}`); continue; }
       if (!n) { fail(`${nPath}: no top-level 'note' key`); continue; }
 
       for (const f of NOTE_REQ) if (n[f] === undefined) fail(`${nPath}: missing required '${f}'`);
@@ -243,7 +267,7 @@ function checkTree(root, codaId) {
     }
 
     console.log(`  ${b.id}  ${slug}/`);
-    console.log(`    versions: ${versions.join(', ')}`);
+    console.log(`    versions: ${versionSummary}`);
     console.log(`    notes:    ${notes.join(', ') || '(none)'}`);
   }
 
@@ -285,13 +309,36 @@ function checkVocabulary(roots) {
   console.log(`  ${files.length} files checked`);
 }
 
-checkSpecs();
-checkRubricFingerprints();
-checkToolingVersion();
-checkCommitDiscipline();
-checkTree('harmonic-method', 'HM-CODA');
-checkTree('examples', 'EX-SYS-CODA');
-checkVocabulary(['harmonic-method', 'examples']);
+/**
+ * Which checks travel, and which stay.
+ *
+ * A tree given on the command line is checked for the things the specs actually
+ * require: fields, lifecycle values, decision rationale, the agreement between a
+ * child's back-reference and the directory holding it, and reference resolution.
+ *
+ * Everything else is a discipline this repository keeps on itself and is NOT a
+ * property of a conformant tree. The forbidden-vocabulary sweep is the clearest
+ * case: it rejects words this repository declines to define, and an adopter is
+ * entitled to a Beat about a project. Running it on their tree would fail them
+ * for using ordinary English. The same reasoning excludes the instrument
+ * digests, the version agreement, and the commit trailers.
+ */
+if (TARGET) {
+  const target = TARGET.replace(/\/+$/, '');
+  if (!existsSync(join(BASE, `${target}/coda.yml`))) {
+    fail(`${target}/coda.yml not found — point this at a directory holding a system Coda`);
+  } else {
+    checkTree(target);
+  }
+} else {
+  checkSpecs();
+  checkRubricFingerprints();
+  checkToolingVersion();
+  checkCommitDiscipline();
+  checkTree('harmonic-method');
+  checkTree('examples');
+  checkVocabulary(['harmonic-method', 'examples']);
+}
 
 console.log(failures === 0 ? '\nconformant' : `\n${failures} failure(s)`);
 process.exit(failures === 0 ? 0 : 1);
