@@ -26,6 +26,6 @@ jobs:
         env:
           # On a pull request compare against its own base; on a push to main the
           # range is empty, which is correct — those commits were checked already.
-          HM_BASE_REF: ${{ github.base_ref && format('origin/{0}', github.base_ref) || 'main' }}
+          HM_BASE_REF: ${{ github.base_ref && format('origin/{0}', github.base_ref) || 'origin/main' }}
           # A missing base ref must fail here rather than skip.
           HM_REQUIRE_BASE: '1'
