@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.1
   beat: HM-B-006
   title: The checker takes a root
-  status: active
+  status: delivered
   summary: >
     The conformance checker hardcodes this repository's own two trees, so it can
     verify only the repository that publishes it — which the front page admits as

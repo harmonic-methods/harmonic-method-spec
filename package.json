@@ -1,15 +1,32 @@
 {
-  "name": "harmonic-method-spec",
+  "name": "harmonic-method",
   "version": "1.3.0",
-  "description": "Machine-readable specs and agent skills for the Harmonic Method.",
+  "description": "Verify a tree against the Harmonic Method — the specification, its instruments, and the checker.",
   "type": "module",
-  "private": true,
   "license": "SEE LICENSE IN README.md",
+  "bin": {
+    "harmonic-method": "bin/hm.mjs",
+    "hm": "bin/hm.mjs"
+  },
+  "files": [
+    "bin/",
+    "tools/",
+    "specs/",
+    "skills/",
+    "LICENSE",
+    "LICENSE-CONTENT",
+    "TRADEMARKS.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harmonic-methods/harmonic-method-spec.git"
+  },
+  "homepage": "https://harmonicmethods.com",
+  "dependencies": {
+    "yaml": "^2.8.1"
+  },
   "scripts": {
     "validate": "node tools/validate.mjs",
     "fingerprint": "node tools/write-fingerprints.mjs"
-  },
-  "devDependencies": {
-    "yaml": "^2.8.1"
   }
 }

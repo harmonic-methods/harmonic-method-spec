@@ -2,6 +2,35 @@
 
 ## v1.3.0 — 2026-08-20 (unreleased)
 
+- **The checker is now a publishable command.** `hm validate <path>`, with a
+  second binary named for the package so that running it without installing
+  resolves. `hm --version` prints the spec set version and the package version
+  separately, because they move separately and only one is what conformance is
+  declared against. The command dispatches to the checker rather than
+  reimplementing it, so the two cannot diverge.
+  - **Three names diverge on purpose**: the repository is named for the artifact,
+    the package for the method, and the command for the identifier prefix every
+    Beat, step and Note here already carries — an association a reader already
+    has, rather than an invented abbreviation. The short name was taken on the
+    registry, which only ruled it out as a package name: a binary name needs no
+    registry uniqueness. A registry scope is reserved and
+    deliberately not used for the command: a scope guarantees a name forever,
+    which matters for what an implementation depends on and less for what a person
+    types, and it lengthens the very form a standing constraint requires be kept
+    comfortable. Owning a scope does not reserve the unscoped name — separate
+    namespaces, and only the unscoped one can be taken by someone else. See
+    HM-N-059.
+  - **A real defect caught only by installing from a packed archive**: the parser
+    both the command and the checker import at runtime was declared as a
+    development dependency, so the package worked here and would have crashed on
+    first use once installed. Verify a package by installing it, never by reading
+    its manifest. See HM-N-060.
+  - **Not published.** That needs credentials and is a release action. Scoring
+    this step against its Coda returns only adequate for exactly that reason, and
+    the shortfall is recorded rather than absorbed — a packaged command nobody can
+    install is inert. Third time a mechanism has landed a cycle ahead of what
+    makes it usable, after a pinnable version with nothing to pin and an entry
+    claiming release with no tag. See HM-BV-006.2.
 - **The checker takes a root.** `node tools/validate.mjs <path>` now checks any
   tree, not only this repository's. With no path it self-checks exactly as before.
   The front page no longer has to admit that the checker cannot check your tree.

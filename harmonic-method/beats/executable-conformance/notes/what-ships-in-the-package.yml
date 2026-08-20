@@ -1,0 +1,29 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-060
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.2
+  content: >
+    The package ships the command, the checker, the specs, the instruments, and
+    the licence and trademark files. It does not ship this repository's own system
+    or the worked example. The parser the command reads at runtime is a
+    dependency, not a development dependency.
+  rationale: >
+    The specs and instruments ship because someone who has installed the command
+    has already accepted a runtime, and having the standard beside the tool that
+    enforces it costs little and saves a second fetch. This does not make
+    installing a way to obtain them: they remain files in a repository anyone can
+    read or vendor, which a standing constraint requires.
+
+    This repository's own system and the worked example stay out. Both exist to be
+    read in place, alongside the reasoning that produced them, and a copy inside
+    an installed package would be a second copy of a record whose whole value is
+    being the only one.
+
+    The dependency correction is worth recording because it was a real defect
+    caught only by installing from a packed archive. The parser was declared as a
+    development dependency while both the command and the checker import it at
+    runtime, so the package worked in the repository and would have crashed on
+    first use once installed. Inspection would not have found it; running it from
+    outside did. Verify a package by installing it, never by reading its manifest.
