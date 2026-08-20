@@ -1,5 +1,37 @@
 # Changelog
 
+## v1.2.0 — 2026-08-20
+
+Adds the method's accountability model and renames the instance directory. See
+K-BV-005.1 and K-BV-003.4.
+
+- **specs/function.yml** (new): the five functions — Composer, Orchestrator,
+  Conductor, Producer, Promoter — each with what it owns, how it fails, and its
+  discipline, plus the rules that govern them. Declares `concept:` rather than
+  `entity:`: nothing instantiates a Function, and no entity spec gains a field
+  naming one. Promoter is newly named; the other four are unchanged in
+  substance. Value Velocity is named as the Producer's instrument and defined in
+  one line, with its computation left to the implementation.
+- **README.md / llms.txt**: corrected from four functions to five, and both now
+  list `specs/function.yml`. README gains a paragraph on functions as
+  accountabilities rather than titles.
+- **`harmonic/` renamed to `harmonic-method/`**, in this repository and as the
+  recommended name in an adopter's. The old name was chosen while the method was
+  still called Harmonic Composition and read as a bare adjective afterward. Path
+  references updated in README.md, llms.txt, AGENTS.md, examples/README.md, the
+  instance directory's README, `tools/validate.mjs`, and the CI workflow comment.
+  The historical entries below keep the path as it was at each release.
+- **harmonic-method/beats/method-vocabulary/notes/single-method-not-a-family.yml**:
+  removed the attribution of the single-method rename to a "canonical org-level
+  Harmonic Method notebook". No such notebook exists in the reference
+  implementation, so the clause was a false claim about provenance and was
+  removed rather than superseded. The decision it documents is unchanged. See
+  K-N-023 for why that is a removal and the four-to-five function change is a
+  supersession.
+- **No spec, rubric, or entity-field changes.** Beat, Beat Version, Revision,
+  Note, and Coda are untouched, and every dimension and anchor in both skills is
+  byte-identical.
+
 ## v1.1.0 — 2026-08-17
 
 Renamed from Harmonic Composition Kit to Harmonic Method Kit, following the

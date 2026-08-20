@@ -1,0 +1,21 @@
+# Beat — conformant to specs/beat.yml (v1.0.0)
+beat:
+  id: K-B-005
+  title: Named accountability functions
+  status: open
+  coda:
+    statement: >
+      A team reading this repository can say who answers for each of the five
+      things that determine whether work succeeds — and can see plainly which
+      of them nobody is currently holding.
+    parent: K-CODA
+  description: >
+    The capability by which the method's accountability model is published
+    alongside its entity model: the five functions — Composer, Orchestrator,
+    Conductor, Producer, Promoter — each with what it owns, how it fails, and
+    the discipline it requires. Functions are accountabilities rather than
+    titles, held by people or by agents under a person's accountability, and
+    constant across altitude. They are deliberately not fields on any entity;
+    this Beat publishes the vocabulary, not a staffing record.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

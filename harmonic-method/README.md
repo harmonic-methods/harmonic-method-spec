@@ -9,7 +9,7 @@ A directory like this one holds a **system**: the level `specs/coda.yml` places
 between an organization and a Beat. "Project" is the reference implementation's
 word for roughly the same level; it does not appear in these specs.
 
-It is called `harmonic/` rather than `system/` so it reads as an instance rather
+It is called `harmonic-method/` rather than `system/` so it reads as an instance rather
 than as a missing entity spec sitting beside `specs/`, and it is deliberately
 not hidden — decision lineage exists to be found, and `rg` skips dot-directories
 unless asked. Adopters use the same name in their own repositories.

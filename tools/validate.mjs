@@ -10,7 +10,7 @@
  * in `skills/` — a hand-edit to a dimension anchor is still unguarded here. The
  * reference implementation's fingerprint test catches canonical-side drift; the
  * kit side of that gap is tracked in
- * harmonic/beats/rubric-parity/versions/v2-drift-guard/.
+ * harmonic-method/beats/rubric-parity/versions/v2-drift-guard/.
  *
  * Run with: npm run validate
  */
@@ -46,7 +46,7 @@ function checkSpecs() {
   console.log(`  ${ok}/${specs.length} parsed`);
 }
 
-/** Validates one system tree. Used for both `harmonic/` and `examples/`. */
+/** Validates one system tree. Used for both `harmonic-method/` and `examples/`. */
 function checkTree(root, codaId) {
   console.log(`== ${root}/ ==`);
 
@@ -179,9 +179,9 @@ function checkVocabulary(roots) {
 }
 
 checkSpecs();
-checkTree('harmonic', 'K-CODA');
+checkTree('harmonic-method', 'K-CODA');
 checkTree('examples', 'EX-SYS-CODA');
-checkVocabulary(['harmonic', 'examples']);
+checkVocabulary(['harmonic-method', 'examples']);
 
 console.log(failures === 0 ? '\nconformant' : `\n${failures} failure(s)`);
 process.exit(failures === 0 ? 0 : 1);

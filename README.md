@@ -4,10 +4,10 @@ Machine-readable specs and agent skills for **the Harmonic Method** — a single
 method for improving systems with explicit intent, preserved context, and
 decision lineage. Open to practice with any tools.
 
-The method defines four functions that act on intent — Composer, Orchestrator,
-Conductor, Producer — each scoped to an altitude rather than split into
-separate frameworks. This kit covers the entity model at system altitude: Coda,
-Beats, Beat Versions, Revisions, and Notes. The same primitives recur at beat/
+The method defines five functions that act on intent — Composer, Orchestrator,
+Conductor, Producer, Promoter — each scoped to an altitude rather than split
+into separate frameworks. This kit covers those functions and the entity model
+at system altitude: Coda, Beats, Beat Versions, Revisions, and Notes. The same primitives recur at beat/
 track altitude (a discrete piece of work) and portfolio altitude (the set of
 systems); altitude is recursion, not a different method, so this kit's specs
 and rubrics apply there too, unchanged.
@@ -56,8 +56,8 @@ holding, and re-copy to update.
 
 Copy [examples/](examples/) as the starting shape and rename it:
 
-    harmonic/coda.yml                          where the system is headed
-    harmonic/beats/<your-capability>/beat.yml   the capability itself
+    harmonic-method/coda.yml                          where the system is headed
+    harmonic-method/beats/<your-capability>/beat.yml   the capability itself
 
 Write the Coda first, as a resolved future state rather than a task list — a Beat
 without a Coda cannot be decomposed, by rule. Then add one Beat Version for the
@@ -79,6 +79,13 @@ Beat Version is delivered by one or more **Revisions**, the tracked changes that
 actually execute it. **Notes** carry the typed knowledge — context, constraints,
 guidance, decisions — that explains why any of it is the way it is.
 
+Cutting across all of it are the five **functions** — Composer, Orchestrator,
+Conductor, Producer, Promoter. They are accountabilities rather than titles: one
+person may hold several, an agent may hold one under a named person's
+accountability, and the set does not change with altitude. Nothing instantiates
+a function and no entity carries one as a field; naming them is what makes it
+possible to say which of the five nobody is currently holding.
+
 | Spec | Entity |
 | --- | --- |
 | [specs/coda.yml](specs/coda.yml) | the strategic outcome an entity serves |
@@ -86,6 +93,7 @@ guidance, decisions — that explains why any of it is the way it is.
 | [specs/beat-version.yml](specs/beat-version.yml) | a planned step in a Beat's evolution |
 | [specs/revision.yml](specs/revision.yml) | a tracked change executing a Beat Version |
 | [specs/note.yml](specs/note.yml) | typed knowledge attached to what it informs |
+| [specs/function.yml](specs/function.yml) | the five accountabilities the work is held through |
 
 ## The rubrics
 
@@ -106,11 +114,11 @@ quietly stops meaning the same thing.
 
 ## Laying out a system
 
-    harmonic/coda.yml                                    the system Coda
-    harmonic/beats/<slug>/beat.yml                       a Beat
-    harmonic/beats/<slug>/notes/*.yml                    its knowledge
-    harmonic/beats/<slug>/versions/<v>/version.yml       a planned step
-    harmonic/beats/<slug>/versions/<v>/revisions/*.yml   the changes executing it
+    harmonic-method/coda.yml                                    the system Coda
+    harmonic-method/beats/<slug>/beat.yml                       a Beat
+    harmonic-method/beats/<slug>/notes/*.yml                    its knowledge
+    harmonic-method/beats/<slug>/versions/<v>/version.yml       a planned step
+    harmonic-method/beats/<slug>/versions/<v>/revisions/*.yml   the changes executing it
 
 One rule all the way down: an entity is a directory, its children are
 subdirectories, and no file carries an inline child list. Notes attach to the
@@ -119,7 +127,7 @@ produced does not — and may name the version they arose from.
 
 - [examples/](examples/) — one conformant Beat in this layout, deliberately
   non-software.
-- [harmonic/](harmonic/) — this repository described in its own vocabulary. Real
+- [harmonic-method/](harmonic-method/) — this repository described in its own vocabulary. Real
   capabilities, real work in flight, real decisions.
 
 To check a tree against the specs — required fields, lifecycle enums, reference
@@ -145,7 +153,7 @@ one.
 
 Copyright 2026 Codazen, Inc.
 
-- **The method** — `specs/`, `skills/`, `examples/`, `harmonic/`, and the
+- **The method** — `specs/`, `skills/`, `examples/`, `harmonic-method/`, and the
   documentation — is licensed under [CC-BY-4.0](LICENSE-CONTENT). Practice it,
   adapt it, build on it; attribute it.
 - **The tooling** — `tools/` — is licensed under [Apache-2.0](LICENSE).

@@ -1,0 +1,23 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-018
+  type: decision
+  attached_to: K-B-005
+  beat_version: K-BV-005.1
+  content: >
+    The method names five functions, not four. Promoter — accountability for
+    adoption — joins Composer, Orchestrator, Conductor, and Producer. This
+    supersedes the four-function enumeration in [K-N-016], which named the set
+    as constant at four. The rest of that decision — retiring the
+    three-framework structure in favor of one method scoped by altitude —
+    stands unchanged.
+  rationale: >
+    Adoption fails on its own terms and with its own failure signature: the
+    work is accepted, the invoice is paid, and usage is near zero six months
+    later while every formal signal says it succeeded. That is not a Composer
+    failure of coherence, an Orchestrator failure of flow, a Conductor failure
+    of drift, or a Producer failure of arithmetic — the other four can all be
+    discharged well and the outcome still be a total loss. An accountability
+    with a distinct failure mode that no existing function covers is a missing
+    function, and naming it is the whole point of the model: an unnamed
+    function is an unstaffed one.

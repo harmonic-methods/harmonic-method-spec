@@ -1,0 +1,18 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-021
+  type: decision
+  attached_to: K-B-005
+  beat_version: K-BV-005.1
+  content: >
+    Value Velocity is named as the Producer's instrument and defined in one
+    line — how quickly committed work converts into realized value. The formula,
+    its inputs, and its calibration are explicitly left to the implementation.
+  rationale: >
+    Naming a measure without saying anything about it invites the reader to
+    assume it is proprietary vapor; publishing a formula the method cannot
+    defend across mediums would be worse, because a number computed one way for
+    software and another way for an operational practice is not one measure. The
+    line the kit holds everywhere else applies here too: publish what is being
+    measured and why it matters, leave how it is computed to the system of
+    record that has the data to compute it.

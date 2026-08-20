@@ -15,6 +15,6 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      # Checks every entity file in harmonic/ and examples/ against specs/.
+      # Checks every entity file in harmonic-method/ and examples/ against specs/.
       # Exits non-zero on the first conformance failure.
       - run: npm run validate

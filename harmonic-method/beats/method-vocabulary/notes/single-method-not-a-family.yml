@@ -6,10 +6,9 @@ note:
   beat_version: K-BV-003.3
   content: >
     "Harmonic Composition" is retired as a named framework. The kit now speaks
-    of "the Harmonic Method," singular, per the canonical org-level Harmonic
-    Method notebook. "Harmonic Orchestration" and "Harmonic Portfolio
-    Management" are likewise retired as separately named frameworks — they
-    were never shipped, and the altitude model (system / beat-track /
+    of "the Harmonic Method," singular. "Harmonic Orchestration" and "Harmonic
+    Portfolio Management" are likewise retired as separately named frameworks —
+    they were never shipped, and the altitude model (system / beat-track /
     portfolio) replaces the family structure they implied.
   rationale: >
     The three-framework boundaries leaked in practice at the organization

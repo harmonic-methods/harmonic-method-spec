@@ -18,11 +18,16 @@ request.
 - Notes attach to a Beat, never to a Beat Version. Use the optional
   `beat_version` field to record which step a Note came from. A version gets
   archived; the knowledge it produced does not.
-- A system's entities live in `harmonic/`, visible rather than hidden. Adopters
+- A system's entities live in `harmonic-method/`, visible rather than hidden. Adopters
   use the same name in their own repositories.
 - There is no `checks/` directory, by design. The kit assesses without recording.
 
 ## Vocabulary
+
+`specs/function.yml` declares `concept:` rather than `entity:`. Nothing
+instantiates a Function and no entity carries one as a field, so the checker
+parses it and stops there — there is no tree to validate. Keep that distinction
+if another non-instantiable concept is ever added.
 
 The method's word for the level above a Beat is **system**. "Project", "Drop",
 and "Movement" belong to the reference implementation and are not defined here —
@@ -47,7 +52,7 @@ repository already had once. Point your agent at the file in `skills/`.
 
 Substantive work gets a Beat Version under the Beat it serves; decisions get a
 Note with its rationale. The reasoning behind past choices lives in
-`harmonic/beats/*/notes/` — read it before reversing one.
+`harmonic-method/beats/*/notes/` — read it before reversing one.
 
 **Do not write Revision files here.** In a git-hosted system the commit is the
 Revision. Bind the change to its plan by naming the Beat Version in the commit

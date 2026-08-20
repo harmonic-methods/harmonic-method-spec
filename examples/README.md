@@ -1,6 +1,6 @@
 # Worked example
 
-One conformant Beat, laid out exactly as `harmonic/` is — so what you read here is
+One conformant Beat, laid out exactly as `harmonic-method/` is — so what you read here is
 what you would copy.
 
     coda.yml                                         EX-SYS-CODA
