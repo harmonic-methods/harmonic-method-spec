@@ -11,8 +11,15 @@ fields:
   title: {type: string, required: true}
   description: {type: string, required: true, description: What changed and why.}
   status:
-    type: enum [active, archived]
+    type: enum [active, delivered, withdrawn]
     required: true
+    descriptions:
+      active: In flight — planned, and neither finished nor set down.
+      delivered: The planned change shipped.
+      withdrawn: >
+        Left flight without shipping — superseded, descoped, or dropped. Why it
+        was withdrawn is rationale and belongs in a decision Note, not in this
+        field.
   evidence:
     type: reference
     required: false

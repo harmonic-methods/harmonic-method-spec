@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.2
   beat: HM-B-002
   title: Canonical drift guard
-  status: archived
+  status: withdrawn
   summary: >
     A change to the rubric on either side should fail loudly rather than
     silently desync the two. The plan is a fingerprint over both dimension

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.4
   beat: HM-B-002
   title: This repository becomes canonical for the primitives and the rubrics
-  status: active
+  status: delivered
   summary: >
     Until now the reference implementation held the canonical definitions and
     this repository mirrored them, which put the published standard downstream

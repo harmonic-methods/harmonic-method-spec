@@ -1,0 +1,34 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.13
+  beat: HM-B-003
+  title: A bounded step's status says what happened to it
+  status: active
+  summary: >
+    A Beat Version and a Revision each had a binary status of active or
+    archived, which collapsed the most common question anyone asks about a past
+    step: was it done, or was it dropped? "Archived" means set aside, and
+    delivered work is the opposite of set aside. Both entities now carry
+    active, delivered, or withdrawn. The binary was inherited from an
+    implementation where it pairs with a label derived from source-control
+    state, so archived never has to mean abandoned there — copied here without
+    that derivation, the word was left carrying meaning it cannot hold, and
+    nothing can derive it because a git-hosted system keeps no Revision record
+    to derive from.
+  scope: >
+    In: the status enum and its value descriptions on both entity specs; the
+    checker's permitted values for both; every instance in this repository's own
+    system and in the worked example; the reader-facing and contributor prose
+    describing what happens to a step that ends; and the Notes recording the
+    reasoning and the lag this leaves behind.
+    Out: the Beat's own status, which stays open or closed. A Beat is a durable
+    capability with no terminal success state — it is operated and then retired,
+    never delivered — so the asymmetry with a bounded step is correct rather
+    than an oversight, and collapsing them would be the real error.
+    Out also: any fourth value naming why a step was withdrawn. Superseded,
+    descoped, and abandoned are rationale, and rationale belongs in a decision
+    Note that cites what it replaced.
+    Out: the spec set version, which stays where this unreleased cycle put it.
+    An enum change is breaking, and doing it before the first tag exists costs a
+    minor step where doing it after would cost a major — the window is being
+    used deliberately, not stumbled into.

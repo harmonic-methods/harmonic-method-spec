@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.7
   beat: HM-B-003
   title: Name the altitude above a system consistently
-  status: active
+  status: delivered
   summary: >
     Two normative spec files named the same altitude differently: the Coda spec
     placed an organization above a system, while the function spec and the

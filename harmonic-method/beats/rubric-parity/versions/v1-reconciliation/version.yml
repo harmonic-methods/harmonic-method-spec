@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.1
   beat: HM-B-002
   title: v1.0.0 rubric reconciliation
-  status: archived
+  status: delivered
   summary: >
     Both published rubrics were diffed against the canonical beat_quality and
     plan_quality definitions and corrected until they agreed. The Beat rubric

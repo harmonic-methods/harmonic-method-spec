@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.12
   beat: HM-B-003
   title: Extend the derivable-facts rule past the checker's reach
-  status: active
+  status: delivered
   summary: >
     Two recorded rules already govern restated facts inside the tree: a count
     goes in no prose because the directory answers it, and a version lives in one

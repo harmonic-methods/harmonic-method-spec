@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.6
   beat: HM-B-002
   title: The standard stops depending on any one implementation
-  status: active
+  status: delivered
   summary: >
     A standard cannot instruct its readers in terms of one product and still be
     a standard. Two dependencies are removed. The contributor guide named a

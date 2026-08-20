@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.11
   beat: HM-B-003
   title: Keep the first released version in the 1.x line
-  status: active
+  status: delivered
   summary: >
     The unreleased work had been numbered as a major bump on the reasoning that
     two field values changed and anything keying off the old ones would break.

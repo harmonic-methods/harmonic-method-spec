@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.8
   beat: HM-B-003
   title: Publish the cadence entities
-  status: active
+  status: delivered
   summary: >
     The method names the Conductor's accountability — that decisions stay in
     force — and its discipline, reconciliation as routine rather than crisis

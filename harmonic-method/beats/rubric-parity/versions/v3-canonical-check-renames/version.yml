@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.3
   beat: HM-B-002
   title: Follow the canonical check renames
-  status: active
+  status: delivered
   summary: >
     The reference implementation renamed both checks the kit mirrors —
     `beat_quality` became `beat_coda_quality`, and `plan_quality` became

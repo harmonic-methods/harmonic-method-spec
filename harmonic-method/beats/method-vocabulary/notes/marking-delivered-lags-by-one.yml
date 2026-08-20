@@ -1,0 +1,25 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-053
+  type: context
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.13
+  content: >
+    A step cannot be marked delivered in the change that delivers it, because
+    the mark has to be committed and the commit is part of the work. So the
+    commit that marks steps delivered belongs to a step of its own, which is
+    still active until it merges in turn. At any moment this repository's own
+    system may show exactly one step active whose work has in fact landed.
+
+    That lag is bounded at one and is not worth chasing. Reading it as a defect
+    leads either to marking a step delivered before it is, which is a false
+    record, or to an unbounded regress of steps that exist only to close
+    previous ones.
+  rationale: >
+    Recorded because the alternative is a reader finding one step active with
+    nothing in flight and concluding the discipline is not followed — which was
+    the actual state of this repository before the vocabulary changed, when
+    nineteen steps sat active with all their work merged. The difference between
+    a lag of one and a backlog of nineteen is the whole point, and stating the
+    expected number is what makes the second case visible as a problem rather
+    than as more of the same.

@@ -33,7 +33,7 @@ would not survive a commit anyway.
 
 Notes attach to the **Beat**, never to a Beat Version, and may name the Beat
 Version they arose from via the optional `beat_version` field. A version gets
-archived; the knowledge it produced does not.
+delivered or withdrawn; the knowledge it produced outlives either.
 
 The system Coda is a root Coda and omits `parent`. The portfolio Coda above it
 belongs to the publisher and is deliberately not asserted here.

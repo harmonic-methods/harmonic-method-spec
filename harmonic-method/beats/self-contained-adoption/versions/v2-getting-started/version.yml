@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.2
   beat: HM-B-004
   title: Getting started in three steps
-  status: archived
+  status: delivered
   summary: >
     The README explained what the method is but never what to do first, so a
     visitor had to infer adoption from the entity model. It now opens with three

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.2
   beat: HM-B-003
   title: Conformance check for the repository's own artifacts
-  status: archived
+  status: delivered
   summary: >
     A machine-readable vocabulary is worth little if the repository's own files
     quietly stop conforming to it. `npm run validate` now checks every entity

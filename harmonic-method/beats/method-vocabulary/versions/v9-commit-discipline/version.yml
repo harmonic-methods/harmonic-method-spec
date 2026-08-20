@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.9
   beat: HM-B-003
   title: Check that each commit binds exactly one Beat Version
-  status: active
+  status: delivered
   summary: >
     The method says a Revision belongs to exactly one Beat Version, and in a
     git-hosted system the commit is the Revision — so a commit carrying two

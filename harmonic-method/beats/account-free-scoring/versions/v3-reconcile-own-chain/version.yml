@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-001.3
   beat: HM-B-001
   title: Reconcile this repository's own chain, and close the gap that found
-  status: active
+  status: delivered
   summary: >
     Running the new reconciliation instrument on this repository's own Coda chain
     returned two findings and exposed one gap in the instrument itself. Both

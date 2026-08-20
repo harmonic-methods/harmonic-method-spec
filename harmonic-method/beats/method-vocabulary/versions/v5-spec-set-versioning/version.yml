@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.5
   beat: HM-B-003
   title: Make the spec set's version machine-readable
-  status: active
+  status: delivered
   summary: >
     The specs carried their version in a YAML comment, so nothing could parse
     it and no implementation could pin to it — which makes a claim of canonical

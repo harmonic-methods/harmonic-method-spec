@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.1
   beat: HM-B-004
   title: A front door for the repository
-  status: archived
+  status: delivered
   summary: >
     README.md is currently one line, so the first thing a visitor sees tells
     them nothing about what this is or whether it is for them. This gives the

@@ -199,7 +199,7 @@ function checkTree(root, codaId) {
       if (!v) { fail(`${vPath}: no top-level 'beat_version' key`); continue; }
 
       for (const f of BV_REQ) if (v[f] === undefined) fail(`${vPath}: missing required '${f}'`);
-      if (!['active', 'archived'].includes(v.status)) fail(`${vPath}: status '${v.status}' not in [active, archived]`);
+      if (!['active', 'delivered', 'withdrawn'].includes(v.status)) fail(`${vPath}: status '${v.status}' not in [active, delivered, withdrawn]`);
       if (v.beat !== b.id) fail(`${vPath}: declares beat '${v.beat}' but sits under ${b.id}`);
       if (v.notes !== undefined) fail(`${vPath}: Beat Versions carry no notes — attach to the Beat with beat_version`);
       if (v.revisions !== undefined) fail(`${vPath}: inline 'revisions' duplicates ./revisions/`);
@@ -214,7 +214,7 @@ function checkTree(root, codaId) {
         if (!r) { fail(`${rPath}: no top-level 'revision' key`); continue; }
 
         for (const f of REV_REQ) if (r[f] === undefined) fail(`${rPath}: missing required '${f}'`);
-        if (!['active', 'archived'].includes(r.status)) fail(`${rPath}: status '${r.status}' not in [active, archived]`);
+        if (!['active', 'delivered', 'withdrawn'].includes(r.status)) fail(`${rPath}: status '${r.status}' not in [active, delivered, withdrawn]`);
         // specs/revision.yml: a Revision belongs to exactly one Beat Version.
         if (r.beat_version !== v.id) fail(`${rPath}: declares beat_version '${r.beat_version}' but sits under ${v.id}`);
         if (revIds.has(r.id)) fail(`${rPath}: duplicate revision id '${r.id}'`);
