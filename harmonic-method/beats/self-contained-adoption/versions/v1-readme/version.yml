@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-004.1
-  beat: K-B-004
+  id: HM-BV-004.1
+  beat: HM-B-004
   title: A front door for the repository
   status: archived
   summary: >

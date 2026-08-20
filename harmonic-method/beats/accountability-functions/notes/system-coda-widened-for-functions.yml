@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-031
+  id: HM-N-031
   type: decision
-  attached_to: K-B-005
-  beat_version: K-BV-005.2
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.2
   content: >
     The system Coda is widened to cover naming who answers for each of the five
     functions, and no longer promises "the same answer the reference

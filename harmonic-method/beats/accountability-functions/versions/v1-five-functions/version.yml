@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-005.1
-  beat: K-B-005
+  id: HM-BV-005.1
+  beat: HM-B-005
   title: The five functions published as a spec
   status: active
   summary: >

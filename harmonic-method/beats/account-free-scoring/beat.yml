@@ -1,6 +1,6 @@
 # Beat — conformant to specs/beat.yml
 beat:
-  id: K-B-001
+  id: HM-B-001
   title: Account-free quality scoring
   status: open
   coda:
@@ -8,7 +8,7 @@ beat:
       Someone evaluating the Harmonic Method can score a real Beat or a real plan
       using nothing but this repository and an agent, and trust the result
       enough to act on it.
-    parent: K-CODA
+    parent: HM-CODA
   description: >
     The capability by which a Beat or a Beat Version plan is scored against the
     published rubrics — seven dimensions for a Beat, six for a plan, 1-5 each,

@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-028
+  id: HM-N-028
   type: context
-  attached_to: K-B-002
-  beat_version: K-BV-002.3
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.3
   content: >
     The reference implementation's Beat Version rubric carries seven dimensions:
     the six this kit publishes plus `completeness`, which probes a codebase to

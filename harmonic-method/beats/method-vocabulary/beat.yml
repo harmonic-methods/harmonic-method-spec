@@ -1,6 +1,6 @@
 # Beat — conformant to specs/beat.yml
 beat:
-  id: K-B-003
+  id: HM-B-003
   title: Machine-readable method vocabulary
   status: open
   coda:
@@ -9,7 +9,7 @@ beat:
       naming the right entity, attaching knowledge to the right place, and
       respecting the lifecycle rules — without a human translating the method
       into prose first.
-    parent: K-CODA
+    parent: HM-CODA
   description: >
     The capability by which the method's entity model is published in a form
     tools and agents can consume directly: Coda, Beat, Beat Version, Revision,

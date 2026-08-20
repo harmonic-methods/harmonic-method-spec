@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-032
+  id: HM-N-032
   type: decision
-  attached_to: K-B-002
-  beat_version: K-BV-002.5
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.5
   content: >
     The rubric fingerprint covers the sections that define what a score means —
     the scoring scale, the dimension table, and the check rules — and not the

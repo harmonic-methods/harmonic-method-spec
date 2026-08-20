@@ -1,0 +1,23 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-034
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.6
+  content: >
+    This repository's own entities use the `HM-` prefix. It replaces `K-`, which
+    stood for "kit". Commit trailers on commits made before this change name
+    `K-` Beat Versions: substitute `HM-` for `K-` and they resolve, since only
+    the prefix moved. The worked example keeps `EX-`.
+  rationale: >
+    `K-` was accurate when this repository was a kit and became misleading when
+    it became the source of truth for the primitives and the rubrics — an
+    identifier that abbreviates the wrong noun is a small, permanent piece of
+    friction in every citation. `HM-` names the method whose system this is.
+    Rewriting the commit messages already written would have made every old
+    trailer resolve, and was rejected: a trailer records the binding as it was
+    named at the time, and editing history to tidy that up destroys the only
+    evidence of what was actually planned under which identifier. A mapping
+    costs one sentence and keeps the record honest. The example keeps its own
+    prefix because an adopter picks theirs, and showing two different prefixes
+    is what makes that visible.

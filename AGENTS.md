@@ -103,7 +103,7 @@ message instead:
 
     Add fingerprint guard over canonical rubric
 
-    Beat-Version: K-BV-002.2
+    Beat-Version: HM-BV-002.2
 
 Exactly one `Beat-Version:` trailer per commit. A Revision belongs to exactly
 one Beat Version, and the commit is the Revision — so a commit carrying two

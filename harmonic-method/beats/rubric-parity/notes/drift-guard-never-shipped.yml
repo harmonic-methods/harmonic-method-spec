@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-026
+  id: HM-N-026
   type: context
-  attached_to: K-B-002
-  beat_version: K-BV-002.3
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.3
   content: >
     The canonical drift guard was described as shipped and never existed. The
     Beat Version that planned it states that a fingerprint over both dimension

@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-024
+  id: HM-N-024
   type: guidance
-  attached_to: K-B-003
-  beat_version: K-BV-003.4
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.4
   content: >
     Do not write a count of files or entities into prose. The kit claimed "six
     entity specs" in five places — a Beat Version title, two Beat Version scope
@@ -11,7 +11,7 @@ note:
     held five, from the first release onward. No spec was ever deleted; the
     number was simply wrong when first written and was then copied forward by
     every artifact that referred back to it. All five have been corrected in
-    place, as factual errors rather than superseded decisions, per [K-N-023].
+    place, as factual errors rather than superseded decisions, per [HM-N-023].
     The rule the kit already applies to entity files applies to prose too: the
     directory is the list. Say "the entity specs", not how many, and a reader
     who wants the count can run `ls`.

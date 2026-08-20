@@ -1,8 +1,8 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-015
+  id: HM-N-015
   type: decision
-  attached_to: K-B-003
+  attached_to: HM-B-003
   content: >
     In a git-hosted system, the commit is the Revision. This repository records
     no Revision files of its own; work is bound to its plan by naming the Beat

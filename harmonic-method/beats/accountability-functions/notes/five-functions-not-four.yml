@@ -1,13 +1,13 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-018
+  id: HM-N-018
   type: decision
-  attached_to: K-B-005
-  beat_version: K-BV-005.1
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.1
   content: >
     The method names five functions, not four. Promoter — accountability for
     adoption — joins Composer, Orchestrator, Conductor, and Producer. This
-    supersedes the four-function enumeration in [K-N-016], which named the set
+    supersedes the four-function enumeration in [HM-N-016], which named the set
     as constant at four. The rest of that decision — retiring the
     three-framework structure in favor of one method scoped by altitude —
     stands unchanged.

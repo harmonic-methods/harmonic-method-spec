@@ -1,13 +1,13 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-022
+  id: HM-N-022
   type: decision
-  attached_to: K-B-003
-  beat_version: K-BV-003.4
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.4
   content: >
     The visible directory holding a system's entities is named
     `harmonic-method/`, here and in an adopter's repository. This supersedes the
-    `harmonic/` name chosen in [K-N-013]; everything else that decision settled
+    `harmonic/` name chosen in [HM-N-013]; everything else that decision settled
     — visible rather than hidden, and not `system/` — stands unchanged and is
     the reasoning to read before reversing either.
   rationale: >

@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-029
+  id: HM-N-029
   type: decision
-  attached_to: K-B-003
-  beat_version: K-BV-003.5
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.5
   content: >
     The specs version as one set, under a single number held in
     `specs/spec-set.yml`. Every spec file declares that same version as a parsed

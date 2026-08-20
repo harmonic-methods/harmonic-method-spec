@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-003.1
-  beat: K-B-003
+  id: HM-BV-003.1
+  beat: HM-B-003
   title: The entity specs at 1.0.0
   status: archived
   summary: >

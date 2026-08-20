@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-001.1
-  beat: K-B-001
+  id: HM-BV-001.1
+  beat: HM-B-001
   title: Both rubrics published as agent skills
   status: archived
   summary: >

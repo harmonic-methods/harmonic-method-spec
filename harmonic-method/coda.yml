@@ -1,7 +1,7 @@
 # The kit's own system Coda — the outcome this repository exists to serve.
 # Conformant to specs/coda.yml. Root Coda: omits parent.
 coda:
-  id: K-CODA
+  id: HM-CODA
   statement: >
     A team can adopt the Harmonic Method from this repository alone — read the
     entity model, name who answers for each of its five functions, score their

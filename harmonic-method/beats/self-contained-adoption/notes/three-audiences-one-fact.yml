@@ -1,8 +1,8 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-014
+  id: HM-N-014
   type: decision
-  attached_to: K-B-004
+  attached_to: HM-B-004
   content: >
     The repository carries three explanatory entry points, split by audience and
     kept non-overlapping: README.md for humans, llms.txt for agents consuming
@@ -15,4 +15,4 @@ note:
     convention would be off-message. The audience split is what keeps the three
     files from becoming three copies of the same facts, which is the failure
     mode this repository has already had once and spends its tooling
-    preventing. See [K-N-010] for the same rule applied to README and llms.txt.
+    preventing. See [HM-N-010] for the same rule applied to README and llms.txt.

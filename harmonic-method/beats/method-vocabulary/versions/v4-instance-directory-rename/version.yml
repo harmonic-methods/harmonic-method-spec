@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-003.4
-  beat: K-B-003
+  id: HM-BV-003.4
+  beat: HM-B-003
   title: Rename the instance directory to harmonic-method/
   status: active
   summary: >

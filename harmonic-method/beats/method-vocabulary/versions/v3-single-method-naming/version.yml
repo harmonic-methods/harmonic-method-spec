@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-003.3
-  beat: K-B-003
+  id: HM-BV-003.3
+  beat: HM-B-003
   title: Rename to the Harmonic Method; retire the three-framework structure
   status: archived
   summary: >

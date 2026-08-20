@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-003.2
-  beat: K-B-003
+  id: HM-BV-003.2
+  beat: HM-B-003
   title: Conformance check for the repository's own artifacts
   status: archived
   summary: >

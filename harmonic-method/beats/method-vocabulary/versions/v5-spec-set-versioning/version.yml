@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat.yml
 beat_version:
-  id: K-BV-003.5
-  beat: K-B-003
+  id: HM-BV-003.5
+  beat: HM-B-003
   title: Make the spec set's version machine-readable
   status: active
   summary: >

@@ -1,14 +1,14 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-012
+  id: HM-N-012
   type: constraint
-  attached_to: K-B-001
+  attached_to: HM-B-001
   content: >
     If the rubrics are ever published in another agent platform's native format,
     every variant is generated from one source. Never hand-maintain a second
     copy of a dimension table — that is the failure this kit already had once,
     multiplied by the number of platforms. Note this does not contradict
-    [K-N-003]: canonical-to-kit is a translation and must be guarded rather than
+    [HM-N-003]: canonical-to-kit is a translation and must be guarded rather than
     generated, because the kit deliberately diverges in vocabulary;
     kit-to-platform is repackaging, where the words are identical and only the
     wrapper differs. Generation is correct on the second edge and wrong on the

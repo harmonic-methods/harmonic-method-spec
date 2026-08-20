@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat.yml
 beat_version:
-  id: K-BV-005.2
-  beat: K-B-005
+  id: HM-BV-005.2
+  beat: HM-B-005
   title: Bring the system Coda and the accountability model into alignment
   status: active
   summary: >

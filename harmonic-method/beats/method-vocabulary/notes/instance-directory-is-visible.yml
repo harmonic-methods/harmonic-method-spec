@@ -1,8 +1,8 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-013
+  id: HM-N-013
   type: decision
-  attached_to: K-B-003
+  attached_to: HM-B-003
   content: >
     A system's entities live in a visible directory named `harmonic/`, both here
     and in an adopter's repository. Not `system/`, and not a hidden `.harmonic/`,

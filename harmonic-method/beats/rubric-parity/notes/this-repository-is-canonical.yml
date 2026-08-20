@@ -1,15 +1,15 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-025
+  id: HM-N-025
   type: decision
-  attached_to: K-B-002
-  beat_version: K-BV-002.4
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.4
   content: >
     This repository is canonical for the entity primitives and for the rubric
     dimensions, red flags, and anchors. The reference implementation conforms to
     it at a pinned tag rather than defining it. This supersedes the mirroring
-    premise in [K-N-001], which cast the kit as a translation of canonical
-    definitions held elsewhere, and narrows [K-N-002] to what its reasoning
+    premise in [HM-N-001], which cast the kit as a translation of canonical
+    definitions held elsewhere, and narrows [HM-N-002] to what its reasoning
     actually supports: the TypeScript literal unions stay in the reference
     implementation, because they derive compile-time exhaustiveness checks that
     a shared file format cannot. Dimension prose and anchors carry no

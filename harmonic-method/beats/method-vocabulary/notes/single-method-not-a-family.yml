@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-016
+  id: HM-N-016
   type: decision
-  attached_to: K-B-003
-  beat_version: K-BV-003.3
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.3
   content: >
     "Harmonic Composition" is retired as a named framework. The kit now speaks
     of "the Harmonic Method," singular. "Harmonic Orchestration" and "Harmonic

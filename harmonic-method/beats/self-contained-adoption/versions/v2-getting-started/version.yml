@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-004.2
-  beat: K-B-004
+  id: HM-BV-004.2
+  beat: HM-B-004
   title: Getting started in three steps
   status: archived
   summary: >

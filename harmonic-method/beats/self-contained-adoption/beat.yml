@@ -1,6 +1,6 @@
 # Beat — conformant to specs/beat.yml
 beat:
-  id: K-B-004
+  id: HM-B-004
   title: Self-contained adoption path
   status: open
   coda:
@@ -8,7 +8,7 @@ beat:
       A newcomer who lands on this repository understands what the Harmonic Method
       is, applies one of its rubrics to their own work, and decides whether to
       go further — all without leaving the repository or talking to anyone.
-    parent: K-CODA
+    parent: HM-CODA
   description: >
     The capability by which the repository explains and demonstrates itself:
     what the method is for, what each spec and skill does, a worked example to

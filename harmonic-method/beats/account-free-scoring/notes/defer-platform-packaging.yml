@@ -1,8 +1,8 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-011
+  id: HM-N-011
   type: decision
-  attached_to: K-B-001
+  attached_to: HM-B-001
   content: >
     The kit stays a single flat repository for now rather than becoming a
     monorepo with a package per agent platform. Eventual targets, when this is

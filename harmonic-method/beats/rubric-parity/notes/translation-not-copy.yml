@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-001
+  id: HM-N-001
   type: decision
-  attached_to: K-B-002
-  beat_version: K-BV-002.1
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.1
   content: >
     The kit translates the canonical rubric rather than reproducing it verbatim:
     it says "Beat Version" where canonical says "Revision", omits entities it

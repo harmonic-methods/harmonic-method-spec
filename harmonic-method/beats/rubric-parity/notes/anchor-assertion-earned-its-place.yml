@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-033
+  id: HM-N-033
   type: guidance
-  attached_to: K-B-002
-  beat_version: K-BV-002.5
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.5
   content: >
     Every rule in this guard was verified by making it fail before being
     believed: an edited anchor, an edited red flag, and a digest recorded for a

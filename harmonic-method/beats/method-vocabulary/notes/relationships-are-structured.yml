@@ -1,8 +1,8 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-007
+  id: HM-N-007
   type: context
-  attached_to: K-B-003
+  attached_to: HM-B-003
   content: >
     Entity relationships are structured fields, never prose. Both rubrics score
     a description that names sibling or child entity instances as a defect,

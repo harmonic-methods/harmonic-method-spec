@@ -1,7 +1,7 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: K-BV-002.1
-  beat: K-B-002
+  id: HM-BV-002.1
+  beat: HM-B-002
   title: v1.0.0 rubric reconciliation
   status: archived
   summary: >

@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-002
+  id: HM-N-002
   type: decision
-  attached_to: K-B-002
-  beat_version: K-BV-002.2
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.2
   content: >
     Canonical dimension definitions stay TypeScript in the reference
     implementation; they are not moved to YAML for the kit's convenience.

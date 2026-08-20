@@ -271,7 +271,7 @@ function checkVocabulary(roots) {
 checkSpecs();
 checkRubricFingerprints();
 checkToolingVersion();
-checkTree('harmonic-method', 'K-CODA');
+checkTree('harmonic-method', 'HM-CODA');
 checkTree('examples', 'EX-SYS-CODA');
 checkVocabulary(['harmonic-method', 'examples']);
 

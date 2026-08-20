@@ -1,11 +1,11 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-023
+  id: HM-N-023
   type: context
-  attached_to: K-B-003
-  beat_version: K-BV-003.4
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.4
   content: >
-    [K-N-016] originally attributed the single-method rename to a "canonical
+    [HM-N-016] originally attributed the single-method rename to a "canonical
     org-level Harmonic Method notebook" in the reference implementation. No
     such notebook exists — an org-level search of the reference implementation
     found nothing resembling one — so the clause was removed rather than

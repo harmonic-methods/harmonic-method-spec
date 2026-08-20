@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: K-N-020
+  id: HM-N-020
   type: decision
-  attached_to: K-B-005
-  beat_version: K-BV-005.1
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.1
   content: >
     No entity spec gains a field naming an accountable function. Beat, Beat
     Version, Revision, Note, and Coda are unchanged. `specs/function.yml`
