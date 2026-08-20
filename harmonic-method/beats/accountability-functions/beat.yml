@@ -5,9 +5,9 @@ beat:
   status: open
   coda:
     statement: >
-      A team reading this repository can say who answers for each of the five
-      things that determine whether work succeeds — and can see plainly which
-      of them nobody is currently holding.
+      A team reading this repository can name the five accountabilities that
+      determine whether work succeeds, and use them to find the ones their own
+      setup has left unassigned.
     parent: K-CODA
   description: >
     The capability by which the method's accountability model is published

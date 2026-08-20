@@ -1,0 +1,35 @@
+# Note — conformant to specs/note.yml
+note:
+  id: K-N-031
+  type: decision
+  attached_to: K-B-005
+  beat_version: K-BV-005.2
+  content: >
+    The system Coda is widened to cover naming who answers for each of the five
+    functions, and no longer promises "the same answer the reference
+    implementation would give" — it promises the same answer any conforming
+    implementation would give. The statement it replaces, preserved here because
+    changing a Coda is a recorded decision and the prior statement is kept:
+    "A team can adopt the Harmonic Method from this repository alone — read the
+    entity model, score their own work against the published rubrics, and get
+    the same answer the reference implementation would give — without an
+    account, a vendor relationship, or a call."
+    The accountability Beat's own Coda is corrected in the opposite direction,
+    from seeing which functions nobody holds to naming the accountabilities and
+    finding the unassigned ones.
+  rationale: >
+    Two errors met in the middle. The system Coda was written when this
+    repository published an entity model and two rubrics, and it enumerated
+    exactly that, so an accountability capability had nothing to ladder to —
+    the rubric caught it as Strategically Aligned 2 out of 5. Widening a parent
+    Coda to accommodate a child is illegitimate when the child is the thing
+    that is wrong, so the judgment being recorded is that the functions belong
+    at system altitude: they are how the entity model gets held, not a separate
+    concern bolted on. The Beat's Coda was the opposite error, promising a
+    staffing view that the same Beat had already decided not to build — a Coda
+    is a resolved future state, not an aspiration the work is prohibited from
+    reaching. Publishing vocabulary lets a reader find their own unassigned
+    accountabilities; it cannot show them a roster it does not hold. The second
+    clause of the old statement also tied a published standard's correctness to
+    one implementation's output, which the inverted canonical direction makes
+    backwards.

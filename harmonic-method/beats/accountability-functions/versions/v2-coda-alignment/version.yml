@@ -1,0 +1,26 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: K-BV-005.2
+  beat: K-B-005
+  title: Bring the system Coda and the accountability model into alignment
+  status: active
+  summary: >
+    Scoring the accountability Beat against the published rubric returned 3.3,
+    failing on Strategically Aligned: the system Coda promised only that a team
+    could read the entity model and score their work, so a capability about who
+    answers for what had nothing to ladder to. The system Coda now covers naming
+    the accountabilities as well, and no longer ties the promise to one
+    implementation's answer. The Beat's own Coda is corrected in the other
+    direction — it claimed a reader could see which functions nobody holds,
+    which publishing vocabulary cannot deliver and which this Beat has already
+    decided not to build.
+  scope: >
+    In: the system Coda statement; the accountability Beat's Coda statement; and
+    the decision Note carrying the prior statement forward, since changing a
+    Coda is a recorded decision and the statement it replaces is preserved
+    rather than overwritten.
+    Out: any change to the five functions, their definitions, or the decision
+    that no entity carries an accountable-function field. The misalignment was
+    in the Coda chain, not in the model, and widening a parent to fit a child is
+    only legitimate when the child was right — which is the judgment being
+    recorded here, not a mechanical fix.
