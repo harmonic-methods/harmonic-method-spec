@@ -29,7 +29,7 @@ might be a pull request, a procedure document, or a runbook diff.
 
 Then point any agent at a rubric and a file:
 
-    Read skills/beat-quality-check/SKILL.md and score the Beat in
+    Read skills/beat-coda-quality-check/SKILL.md and score the Beat in
     examples/beats/client-estimate-approval/beat.yml against it.
 
 You get seven scores with rationale, the single highest-leverage improvement, and
@@ -44,7 +44,7 @@ follow it. Native placement is an optimization, not a requirement:
 
 | Agent | Where the file goes |
 | --- | --- |
-| Claude Code | `.claude/skills/beat-quality-check/SKILL.md` |
+| Claude Code | `.claude/skills/beat-coda-quality-check/SKILL.md` |
 | Cursor, Windsurf | `.cursor/rules/` |
 | GitHub Copilot | referenced from `.github/copilot-instructions.md` |
 | Anything else | anywhere — "read this file and follow it" |
@@ -61,7 +61,7 @@ Copy [examples/](examples/) as the starting shape and rename it:
 
 Write the Coda first, as a resolved future state rather than a task list — a Beat
 without a Coda cannot be decomposed, by rule. Then add one Beat Version for the
-next step and score it with `plan-quality-check` before any work starts.
+next step and score it with `beat-version-quality-check` before any work starts.
 
 Two caveats going in. The conformance checker below is currently kit-internal: it
 hardcodes this repository's own roots, so it will not check your tree yet. And
@@ -100,10 +100,10 @@ possible to say which of the five nobody is currently holding.
 Two skills score work against the published quality dimensions. Both are written
 to be read literally by an agent.
 
-- [skills/beat-quality-check](skills/beat-quality-check/SKILL.md) — scores a
+- [skills/beat-coda-quality-check](skills/beat-coda-quality-check/SKILL.md) — scores a
   Beat 1-5 across seven dimensions: Distinctive, Harmonious, Substantial,
   Durable, Clear, Strategically Aligned, Business Outcome.
-- [skills/plan-quality-check](skills/plan-quality-check/SKILL.md) — scores a
+- [skills/beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) — scores a
   Beat Version plan 1-5 across six: Scoped, Directional, Testable, Traceable,
   Assignable, Risk-aware.
 

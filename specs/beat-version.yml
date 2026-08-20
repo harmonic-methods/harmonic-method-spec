@@ -12,7 +12,7 @@ fields:
     type: string
     required: true
     description: >
-      What this step delivers and why. With scope, the prose the plan_quality
+      What this step delivers and why. With scope, the prose the beat_version_quality
       rubric scores — acceptance criteria, assumptions, and dependencies belong
       here or in attached Notes.
   scope:
@@ -26,7 +26,7 @@ fields:
     type: list<revision>
     description: The tracked changes that execute this version. See revision.yml.
 quality:
-  rubric: plan_quality  # see skills/plan-quality-check/SKILL.md
+  rubric: beat_version_quality  # see skills/beat-version-quality-check/SKILL.md
   dimensions: [Scoped, Directional, Testable, Traceable, Assignable, Risk-aware]
   scale: 1-5 per dimension
   reference_gate: >

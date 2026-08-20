@@ -1,5 +1,5 @@
 ---
-name: plan-quality-check
+name: beat-version-quality-check
 description: Score a Harmonic Method Beat Version plan across the six published plan-quality dimensions (Scoped, Directional, Testable, Traceable, Assignable, Risk-aware), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a plan or Beat Version before work begins.
 ---
 
@@ -9,7 +9,7 @@ You are scoring a **Beat Version** — a planned step in a Beat's evolution —
 against the published rubric. Spec: `specs/beat-version.yml` (v1.0.0).
 
 The dimension definitions, red flags, scoring anchors, and check rules below
-follow the reference implementation's canonical `plan_quality` rubric prompt.
+follow the reference implementation's canonical `beat_version_quality` rubric prompt.
 Score against them as written; do not paraphrase them.
 
 This is NOT a build quality check (that evaluates the change itself). This

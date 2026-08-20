@@ -1,5 +1,5 @@
 ---
-name: beat-quality-check
+name: beat-coda-quality-check
 description: Score a Harmonic Method Beat across the seven published quality dimensions (Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a Beat.
 ---
 
@@ -9,7 +9,7 @@ You are scoring a **Beat** — the Harmonic Method's unit of durable capability 
 against the published rubric. Spec: `specs/beat.yml` (v1.0.0).
 
 The dimension definitions, red flags, scoring scale, and check rules below
-follow the reference implementation's canonical `beat_quality` rubric prompt.
+follow the reference implementation's canonical `beat_coda_quality` rubric prompt.
 Score against them as written; do not paraphrase them.
 
 ## Inputs

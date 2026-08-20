@@ -1,0 +1,20 @@
+# Note — conformant to specs/note.yml (v1.0.0)
+note:
+  id: K-N-028
+  type: context
+  attached_to: K-B-002
+  beat_version: K-BV-002.3
+  content: >
+    The reference implementation's Beat Version rubric carries seven dimensions:
+    the six this kit publishes plus `completeness`, which probes a codebase to
+    score how much of the planned capability already exists. The kit stays at
+    six for now. Under the inverted canonical direction this is an
+    implementation extension rather than kit drift, but it is unresolved either
+    way: a method-level version of the dimension would have to work when the
+    medium is a procedure or a runbook, where there is no codebase to probe.
+    Resolve it as a deliberate translation — generalize it to "how much of the
+    planned capability already exists, by whatever evidence the medium
+    affords", or record that the method omits it — and do not leave it
+    implicit. Until then the kit's Beat Version rubric and the reference
+    implementation's differ by one dimension, and the averages they produce are
+    not directly comparable.

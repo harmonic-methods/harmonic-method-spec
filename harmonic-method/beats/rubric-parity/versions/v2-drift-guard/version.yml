@@ -5,11 +5,13 @@ beat_version:
   title: Canonical drift guard
   status: active
   summary: >
-    A change to the canonical rubric should fail loudly rather than silently
-    desync the published kit. A fingerprint over both canonical dimension
-    tables, anchors included, now fails in the reference implementation's test
-    suite whenever either table moves, and the failure names the re-translation
-    steps in order: re-review the skills, publish the kit, then update the hash.
+    A change to the rubric on either side should fail loudly rather than
+    silently desync the two. The plan is a fingerprint over both dimension
+    tables, anchors included, failing in the reference implementation's test
+    suite whenever either table moves, with a failure message naming the
+    re-translation steps in order rather than inviting a hash bump. NOT YET
+    BUILT — no fingerprint, hash, or snapshot over either table exists, and the
+    drift it was meant to catch has since happened undetected.
   scope: >
     In: the fingerprint over both dimension tables, an assertion that anchor
     coverage is actually included so the guard cannot go quietly anchor-blind,

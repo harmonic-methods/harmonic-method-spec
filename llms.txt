@@ -18,8 +18,8 @@
 - specs/function.yml: Function — the five accountabilities (Composer, Orchestrator, Conductor, Producer, Promoter); a concept, not an instantiable entity, and not a field on any entity
 
 ## Skills
-- skills/beat-quality-check/SKILL.md: score a Beat 1-5 across seven dimensions
-- skills/plan-quality-check/SKILL.md: score a Beat Version plan 1-5 across six dimensions
+- skills/beat-coda-quality-check/SKILL.md: score a Beat 1-5 across seven dimensions
+- skills/beat-version-quality-check/SKILL.md: score a Beat Version plan 1-5 across six dimensions
 
 ## Layout of a system
 One rule all the way down: an entity is a directory, its children are
