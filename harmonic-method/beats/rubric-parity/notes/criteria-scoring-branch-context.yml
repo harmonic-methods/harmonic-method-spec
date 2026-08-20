@@ -1,0 +1,43 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-044
+  type: context
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.7
+  content: >
+    The criteria-scoring proposal in [HM-N-043] comes from an unmerged branch
+    written before this repository became canonical. What it holds: the scoring
+    sections of both rubrics restructured, output formats extended to carry the
+    criteria and their answers so a band can be audited, and two spec files
+    touched at their scale lines.
+
+    Three things have moved underneath it. Its two Beat Versions occupy
+    identifier slots this repository has since assigned to other work, so they
+    need renumbering under the current prefix. Both rubrics' normative text is
+    now covered by a digest, so restructuring the scoring section will fail the
+    checker until the change is acknowledged deliberately — that is the guard
+    working, not an obstacle. And every path and check name it references has
+    been renamed.
+
+    Two of its own claims were checked against the reference implementation and
+    are false: that the plain Beat-rubric name was reclaimed for a different
+    check, when it is stated repeatedly there as a deprecated alias; and that
+    the plan rubric carries no codebase-probing dimension, when it does. A third
+    is self-superseded within the branch: it first recorded criteria scoring as
+    already shipped in the reference implementation, then corrected that to
+    unshipped after reading the source. Do not carry any of the three forward.
+
+    Its remaining claim was correct and independently reached the same finding
+    recorded in [HM-N-026] — that no fingerprint guard existed on either side.
+    Two records of one defect, found five days apart by different passes, is
+    itself worth knowing: neither pass could see the other's work.
+  rationale: >
+    The branch's central difficulty is already resolved and a reader would waste
+    time on it otherwise. It argues at length over whether this repository may
+    legitimately hold a scoring method the reference implementation does not,
+    and settles on keeping the method while dropping the attribution. That
+    dilemma dissolved when this repository became canonical for the rubrics —
+    see [HM-N-025]. A method published here that an implementation has not yet
+    adopted is not a divergence needing justification; it is the ordinary
+    direction of travel, and the implementation either follows or declares an
+    extension.

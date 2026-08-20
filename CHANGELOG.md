@@ -37,6 +37,17 @@ inverts.
   generically. The README and `llms.txt` keep one attribution line each, and the
   trademark notice keeps the marks: provenance and legal notice are not
   instruction. See HM-N-035.
+- **The criteria-scoring proposal is recorded as an open question.** An unmerged
+  branch proposes computing a dimension's band from binary factual criteria
+  instead of asking a reader to match a description to a band. It targets the
+  failure the system Coda exists to prevent — that a band means the same thing
+  wherever it is produced — but it is unvalidated, and changing how a band is
+  computed changes what every score means. Filed as an assumption carrying its
+  validation and refutation conditions, plus the context needed to act on it,
+  rather than left in a branch drifting further from the specs each release. Two
+  of that branch's own claims about the reference implementation were checked and
+  found false and are named so they are not carried forward. No rubric text
+  changed, so no digest moved. See HM-BV-002.7, HM-N-043, and HM-N-044.
 - **The commit guard now actually runs in continuous integration.** The check
   skips a missing base ref by design, and the job checked out one commit deep —
   so the base was never present and the check skipped on every run while printing
