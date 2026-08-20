@@ -1,0 +1,19 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-001
+  title: Account-free quality scoring
+  status: open
+  coda:
+    statement: >
+      Someone evaluating the Harmonic Method can assess a real Beat, a real plan,
+      or whether their own intent still holds, using nothing but this repository
+      and an agent, and trust the result enough to act on it.
+    parent: HM-CODA
+  description: >
+    The capability by which a Beat or a Beat Version plan is scored against the
+    published rubrics — seven dimensions for a Beat, six for a plan, 1-5 each,
+    with per-dimension rationale and the single highest-leverage improvement.
+    Scoring is assessment only: nothing is recorded, nothing is gated, and
+    enforcement is left to whatever system of record the adopter uses.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

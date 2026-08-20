@@ -1,0 +1,21 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.10
+  beat: HM-B-003
+  title: Make the commit guard actually run in continuous integration
+  status: active
+  summary: >
+    The commit-discipline check skips when it cannot find a base ref, so a
+    shallow clone or a fork is not reported as a discipline failure. The
+    integration job checks out at the default depth of one commit, which means
+    the base ref is never present and the check skipped every time — reporting
+    success in the only place it was meant to be enforced. The job now fetches
+    full history and names the pull request's own base, and the check gains a
+    mode that turns a missing base into a failure rather than a skip, which the
+    job sets. A guard permitted to skip silently in its enforcement context is
+    the failure this repository has already shipped once.
+  scope: >
+    In: the integration job's checkout depth, the base ref it passes, the
+    environment flag it sets; and the check's handling of that flag.
+    Out: widening what the check inspects. This changes only whether it runs,
+    not what it judges.

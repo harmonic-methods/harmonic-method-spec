@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.6
+  beat: HM-B-003
+  title: Rename the instance ID prefix from K- to HM-
+  status: active
+  summary: >
+    Every entity in this repository's own system carried a `K-` prefix, short
+    for "kit" — a name the repository has outgrown now that it holds the
+    canonical primitives and rubrics rather than a starter set. All 159
+    identifiers across 57 files move to `HM-`, and the worked example keeps
+    `EX-` unchanged, since an adopter chooses their own prefix and the example
+    exists to show that. Commit trailers written before this change still name
+    `K-` Beat Versions; the substitution is mechanical and recorded rather than
+    rewritten.
+  scope: >
+    In: the Coda, Beat, Beat Version, and Note identifiers, every
+    back-reference and bracketed citation between them, the checker's expected
+    root Coda id, the example commit trailer in the contributor guide, and the
+    changelog's references — an identifier that changed still points at the same
+    live entity, unlike a path, which described where something used to be.
+    Out: rewriting the commit messages already on this branch. A trailer is the
+    binding between a change and its plan, and rewriting history to make old
+    bindings resolve would falsify the record of what was named at the time;
+    a recorded mapping resolves them without that cost.
+    Out also: the example's `EX-` prefix, and any change to the shape of an
+    identifier beyond its prefix.

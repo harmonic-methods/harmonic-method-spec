@@ -1,6 +1,6 @@
-# Harmonic Method Kit
+# The Harmonic Method
 
-> Machine-readable specs and agent skills for the Harmonic Method — a single
+> The specification and agent skills for the Harmonic Method — a single
 > method for improving systems with explicit intent, preserved context, and
 > decision lineage, applied here at system altitude. Coda, Beat, Beat Version,
 > Revision, and Note are the same primitives at beat/track and portfolio
@@ -15,30 +15,38 @@
 - specs/beat-version.yml: Beat Version — a planned step in a Beat's evolution
 - specs/revision.yml: Revision — a tracked change executing a Beat Version
 - specs/note.yml: Note — typed knowledge (context, assumption, constraint, guidance, decision)
+- specs/spec-set.yml: the one version of the normative surface; every spec repeats it as a parsed spec_version field and the checker enforces agreement. Pin this number, not the repository tag — package.json versions the checker separately.
+- specs/bar.yml: Bar — the recurring cadence period work is planned and delivered within; nests temporally via an optional parent, so a longer cadence is a Bar with children rather than a second entity
+- specs/downbeat.yml: Downbeat — an immutable anchor recording where a capability stood and what it was converging toward; sits at beat altitude, so one Bar boundary yields one Downbeat per capability in view
+- specs/function.yml: Function — the five accountabilities (Composer, Orchestrator, Conductor, Producer, Promoter); a concept, not an instantiable entity, and not a field on any entity
 
-## Skills
-- skills/beat-quality-check/SKILL.md: score a Beat 1-5 across seven dimensions
-- skills/plan-quality-check/SKILL.md: score a Beat Version plan 1-5 across six dimensions
+## Instruments
+Each serves one of the five functions. A digest over each one's normative text
+guards it against an unacknowledged edit.
+- skills/beat-coda-quality-check/SKILL.md: Composer — score a Beat 1-5 across seven dimensions
+- skills/beat-version-quality-check/SKILL.md: Orchestrator — score a Beat Version plan 1-5 across six dimensions
+- skills/coda-alignment-check/SKILL.md: Conductor — reconcile a Coda chain across eight checks, reported as findings rather than a score
+The Producer and Promoter have no instrument yet, deliberately.
 
 ## Layout of a system
 One rule all the way down: an entity is a directory, its children are
 subdirectories. No file carries an inline child list — the directory is the
 list. Notes attach to the Beat, never to a Beat Version, and may name the Beat
 Version they arose from via the optional beat_version field.
-- harmonic/coda.yml: the system Coda every Beat below ladders to
-- harmonic/beats/<slug>/beat.yml: a durable capability
-- harmonic/beats/<slug>/notes/: that Beat's typed knowledge
-- harmonic/beats/<slug>/versions/<v>/version.yml: a planned step
-- harmonic/beats/<slug>/versions/<v>/revisions/: the changes executing it
+- harmonic-method/coda.yml: the system Coda every Beat below ladders to
+- harmonic-method/beats/<slug>/beat.yml: a durable capability
+- harmonic-method/beats/<slug>/notes/: that Beat's typed knowledge
+- harmonic-method/beats/<slug>/versions/<v>/version.yml: a planned step
+- harmonic-method/beats/<slug>/versions/<v>/revisions/: the changes executing it
 
-There is no checks/ directory by design: the kit assesses but does not record,
+There is no checks/ directory by design: this repository assesses but does not record,
 and no check entity is specified.
 
-## The kit's own system
-The kit described in its own vocabulary — real capabilities, real work in
+## This repository's own system
+This repository described in its own vocabulary — real capabilities, real work in
 flight, and the real decisions behind it, not illustrations.
-- harmonic/: the Beats this repository delivers, their planned steps, and the
+- harmonic-method/: the Beats this repository delivers, their planned steps, and the
   Notes recording why each choice was made
 
 ## Worked example
-- examples/: one conformant Beat, laid out exactly as harmonic/ is
+- examples/: one conformant Beat, laid out exactly as harmonic-method/ is

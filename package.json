@@ -1,12 +1,13 @@
 {
-  "name": "harmonic-method-kit",
-  "version": "1.0.0",
+  "name": "harmonic-method-spec",
+  "version": "1.2.0",
   "description": "Machine-readable specs and agent skills for the Harmonic Method.",
   "type": "module",
   "private": true,
   "license": "SEE LICENSE IN README.md",
   "scripts": {
-    "validate": "node tools/validate.mjs"
+    "validate": "node tools/validate.mjs",
+    "fingerprint": "node tools/write-fingerprints.mjs"
   },
   "devDependencies": {
     "yaml": "^2.8.1"

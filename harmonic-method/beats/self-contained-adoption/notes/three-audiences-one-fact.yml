@@ -1,0 +1,18 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-014
+  type: decision
+  attached_to: HM-B-004
+  content: >
+    The repository carries three explanatory entry points, split by audience and
+    kept non-overlapping: README.md for humans, llms.txt for agents consuming
+    the kit, and AGENTS.md for agents contributing to it. CLAUDE.md is a pointer
+    to AGENTS.md and holds no content of its own. Rationale for past choices
+    stays in the Notes; AGENTS.md links to them rather than restating them.
+  rationale: >
+    AGENTS.md is vendor-neutral, which matches a kit that names Claude Code,
+    Cursor, and Copilot as eventual targets — leading with one vendor's
+    convention would be off-message. The audience split is what keeps the three
+    files from becoming three copies of the same facts, which is the failure
+    mode this repository has already had once and spends its tooling
+    preventing. See [HM-N-010] for the same rule applied to README and llms.txt.

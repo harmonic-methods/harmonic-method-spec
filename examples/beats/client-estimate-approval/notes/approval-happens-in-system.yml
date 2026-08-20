@@ -1,6 +1,6 @@
 # Example — a conformant Note, showing the optional beat_version narrowing:
 # the decision belongs to the Beat, but it was made while planning v1.
-# See specs/note.yml (v1.0.0).
+# See specs/note.yml.
 note:
   id: EX-N-002
   type: decision

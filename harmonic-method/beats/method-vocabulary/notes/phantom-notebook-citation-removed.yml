@@ -1,0 +1,17 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-023
+  type: context
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.4
+  content: >
+    [HM-N-016] originally attributed the single-method rename to a "canonical
+    org-level Harmonic Method notebook" in the reference implementation. No
+    such notebook exists — an org-level search of the reference implementation
+    found nothing resembling one — so the clause was removed rather than
+    superseded. The distinction matters and is the rule to follow next time: a
+    decision that changed course gets a new Note citing the old one, because
+    both readings were once true. A citation to a source that never existed is
+    a false claim about provenance, and preserving it would leave published
+    material pointing at nothing. The decision itself — one method, five
+    functions, scoped by altitude — was never in question and is unchanged.

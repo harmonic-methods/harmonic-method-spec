@@ -1,0 +1,9 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-010
+  type: context
+  attached_to: HM-B-004
+  content: >
+    llms.txt is the agent-facing entry point and README.md the human-facing one.
+    They are read by different consumers and can diverge in tone, but never in
+    substance.

@@ -1,0 +1,14 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-001
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.1
+  content: >
+    The kit translates the canonical rubric rather than reproducing it verbatim:
+    it says "Beat Version" where canonical says "Revision", omits entities it
+    does not define, and generalizes software-specific wording.
+  rationale: >
+    A verbatim copy imported a stale entity name and a dangling reference into a
+    published spec. Translation preserves the scoring meaning while keeping the
+    kit medium-agnostic.

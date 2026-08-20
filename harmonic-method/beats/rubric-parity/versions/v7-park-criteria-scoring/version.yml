@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-002.7
+  beat: HM-B-002
+  title: Park the criteria-scoring proposal for validation
+  status: active
+  summary: >
+    An unmerged branch proposes replacing holistic band-matching in both rubrics
+    with criteria-based scoring: binary factual criteria per dimension, and a
+    band computed from the success rate over the criteria answered. The proposal
+    is unvalidated but load-bearing — it targets the exact failure the system
+    Coda promises to prevent, that a band means the same thing wherever it is
+    produced. It is recorded here as an assumption carrying its validation
+    conditions, alongside the context needed to act on it, rather than left in a
+    branch that will drift further from the specs every release. No rubric text
+    changes, so no digest moves.
+  scope: >
+    In: an assumption Note stating the proposal and what would validate or
+    refute it, and a context Note holding what the branch contains, what has
+    since moved underneath it, and which of its own claims were checked and
+    found false.
+    Out: adopting the proposal. Changing how a band is computed changes what
+    every score produced by these rubrics means, which is a decision to take
+    deliberately with its own increment — and one that moves both rubric digests
+    and probably the spec set version. Out also: reconciling, rebasing, or
+    closing the branch itself, and any edit to the dimension definitions, red
+    flags, or anchors, which the proposal leaves untouched.

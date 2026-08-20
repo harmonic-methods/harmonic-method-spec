@@ -1,0 +1,21 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-041
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.3
+  content: >
+    This repository describes itself as publishing the specification of the
+    Harmonic Method and shipping the tooling to apply it. It does not call
+    itself a kit, and it does not call itself only a specification either.
+  rationale: >
+    "Kit" was accurate while this was a starter set of files to take pieces
+    from, and became misleading the moment it held the definitions an
+    implementation conforms to — a conformance target named like a sample pack
+    invites readers to treat its contents as suggestions. But replacing it with
+    "specification" alone would overclaim in the other direction, because the
+    normative specs sit here alongside a checker, a worked example, and two agent
+    skills, and the decision not to separate them was deliberate. Naming both
+    halves is the only description that stays true without a split, and it keeps
+    the honest admission the old word carried for free: some of what is here is
+    not normative.

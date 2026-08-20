@@ -1,0 +1,35 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-002.3
+  beat: HM-B-002
+  title: Follow the canonical check renames
+  status: active
+  summary: >
+    The reference implementation renamed both checks the kit mirrors —
+    `beat_quality` became `beat_coda_quality`, and `plan_quality` became
+    `beat_version_quality`, each keeping the old name only as a deprecated
+    alias. The kit still publishes both under the retired names, so a reader
+    who runs a kit rubric and then the reference implementation's check cannot
+    tell they are the same instrument. Both skill directories, both
+    frontmatter names, both spec `rubric:` fields, and every reader-facing
+    reference are renamed to match. The dimension sets, anchors, and check
+    rules are untouched: for the Beat rubric this is name-only, and the
+    seven dimensions are unchanged.
+  scope: >
+    In: the two skill directory names and frontmatter `name` fields, the
+    canonical rubric names cited in each skill body, the `rubric:` field and
+    skill path comment in specs/beat.yml and specs/beat-version.yml, the
+    `summary` field description in specs/beat-version.yml, and every reference
+    in README.md, llms.txt, AGENTS.md, and the instance directory's README.
+    Also in: correcting an earlier claim that a canonical drift guard is in
+    place — it is not — and recording the newly found dimension divergence and
+    the published-path breakage as findings. Renaming a skill directory breaks
+    every reader who vendored it at the old path, including the
+    `.claude/skills/` placement README recommends; that cost is accepted here
+    and called out in the changelog rather than discovered downstream.
+    Out: adding the `completeness` dimension canonical now carries. It probes a
+    codebase for how much of the planned capability exists, which is
+    medium-specific, so whether the kit generalizes it or omits it deliberately
+    is a translation decision and not a rename. Also out: the changelog's
+    historical entries and archived Beat Version prose, which record the names
+    as they were.

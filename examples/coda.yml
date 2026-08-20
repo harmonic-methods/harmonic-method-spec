@@ -1,5 +1,5 @@
 # Example — the system Coda the example Beat ladders to.
-# Conformant to specs/coda.yml (v1.0.0). Root Coda: omits parent.
+# Conformant to specs/coda.yml. Root Coda: omits parent.
 coda:
   id: EX-SYS-CODA
   statement: >

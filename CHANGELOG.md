@@ -1,5 +1,241 @@
 # Changelog
 
+## v1.2.0 — 2026-08-20 (unreleased)
+
+The direction of authority inverts, and two published paths move. Nothing here
+was ever released — there is no tag in this repository — so the path and field
+changes below break no existing consumer, and the spec set takes a minor step
+rather than a major one. The major line stays available for the first change
+that breaks something real. See HM-BV-003.11.
+
+**Spec set 1.1.0.** This is the number an implementation pins.
+
+- **The first releasable version stays in the 1.x line.** The work had been
+  numbered as a major on the reasoning that two field values changed. Nothing
+  could have been keying off them — no tag exists, so nothing was ever released,
+  and the version was not machine-readable until this cycle. A promise that could
+  not be made cannot be broken, so the spec set takes a minor step and the two
+  unreleased entries dated the same day merge into this one. Once a tag exists
+  this reasoning expires: a renamed field value is a major from then on. See
+  HM-BV-003.11 and HM-N-045.
+  - Separately a gap: the front page tells a reader to copy from a tag, and there
+    is no tag to copy from. Creating one is a release action, not a change to the
+    tree.
+- **This repository is now canonical** for the entity primitives and for the
+  rubric dimensions, red flags, and anchors. An implementation conforms at a
+  pinned tag; it stays canonical only for its own type declarations, its gate
+  thresholds, and everything it computes. AGENTS.md is rewritten accordingly, and `rubric-parity`'s Beat
+  description — which asserted mirroring — is corrected. See HM-BV-002.4 and
+  HM-N-025. The conformance test on the implementation's side is not built yet;
+  until it is, this is declared rather than enforced.
+- **`skills/beat-quality-check` → `skills/beat-coda-quality-check`** and
+  **`skills/plan-quality-check` → `skills/beat-version-quality-check`**,
+  following the reference implementation's renames of `beat_quality` and
+  `plan_quality`, both of which survive there only as deprecated aliases. The
+  `rubric:` fields in `specs/beat.yml` and `specs/beat-version.yml` follow.
+  **No dimension, anchor, red flag, or check rule changed** — the Beat rubric's
+  seven dimensions and the Beat Version rubric's six are byte-identical. Anyone
+  who vendored either skill at its old path, including the `.claude/skills/`
+  placement README recommends, must re-copy. See HM-BV-002.3 and HM-N-027.
+- **The Beat Version rubric stays at six dimensions.** The reference
+  implementation scores a seventh, `completeness`, which probes a codebase for
+  how much of the planned capability exists. The method omits it: it is not
+  medium-agnostic, and more importantly it does not belong in a rubric that
+  scores how well a plan is *written*. Every other dimension can be scored the
+  moment the plan exists, which is when the rubric is meant to be used; a
+  dimension measuring what has been built cannot, and mixing them makes a score
+  depend on when it was run. Assessing realized-against-planned belongs to a
+  cadence anchor. See HM-BV-002.6 and HM-N-036, superseding HM-N-028.
+- **Instructional text names no specific implementation.** The contributor guide
+  explained conformance in one product's vocabulary and used its entity names as
+  the examples of an allowed extension — which made a conformance rule unreadable
+  to the very audience it exists for. It now speaks of an implementation
+  generically. The README and `llms.txt` keep one attribution line each, and the
+  trademark notice keeps the marks: provenance and legal notice are not
+  instruction. See HM-N-035.
+- **`skills/coda-alignment-check` (new)** — an instrument for the Conductor. Two
+  instruments graded how well something is *written*; none asked whether what was
+  decided is still true, which is the accountability the method singles out as
+  most often unstaffed. Eight checks over a Coda chain: does it resolve, does each
+  Coda serve the one above it, does the parent cover the child, is it a resolved
+  state, is it specific enough to judge against, does anything recorded already
+  contradict it, has it moved since it was anchored, and are the decisions under
+  it still in force.
+  - **It reports findings, not a score.** A chain with one broken link is broken,
+    and an average would conceal which link — the same reason a portfolio-wide
+    convergence reading was rejected. `cannot-determine` is its own category, so
+    a missing input is never reported as agreement. See HM-N-046.
+  - **The digest guard is generalized** to cover a findings instrument as well as
+    a band rubric: normative-section detection is no longer specific to a
+    dimension table, and the substance assertion counts enumerated checks as well
+    as scoring anchors. Both existing digests were verified unchanged, proving the
+    generalization did not quietly redefine what is covered. The new instrument
+    was nearly published outside the guard entirely — `AGENTS.md` now says that
+    adding an instrument with a new normative heading means registering it.
+  - **Run against this repository's own chain immediately**, it returned two
+    findings and exposed a gap in itself. Both findings were the same defect: the
+    Beat's Coda and the system Coda each promised *scoring*, written when scoring
+    was all this repository published, and neither covered an instrument that
+    reconciles a chain. Both widened. The gap: all eight checks compared a Coda
+    upward against its parent, and none looked down at the entity carrying it — so
+    the instrument could not detect the divergence it had just surfaced. A ninth
+    check closes it, and its digest was regenerated deliberately. See HM-N-048
+    and HM-N-049.
+  - **Each instrument now names the function it serves**, and the index states
+    that the Producer and Promoter have none, deliberately. See HM-N-047.
+- **The derivable-facts rule now extends past the checker's reach.** Two rules
+  already governed restated facts inside the tree — a count goes in no prose
+  because the directory answers it, and a version lives in one checked place.
+  Both assumed the checker could reach the text. A pull request body cannot be
+  reached, and a version and a commit count restated in one went stale within the
+  hour, caught by a reader rather than by anything automatic. Outside the tree the
+  rule is not "one authority" but "no copy". Recorded with a second rule from the
+  same incident: a programmatic replacement asserts that it matched, and a remote
+  surface is verified by reading it back — two silent no-op edits in one sitting
+  earned it. See HM-BV-003.12, HM-N-050, and HM-N-051.
+- **The criteria-scoring proposal is recorded as an open question.** An unmerged
+  branch proposes computing a dimension's band from binary factual criteria
+  instead of asking a reader to match a description to a band. It targets the
+  failure the system Coda exists to prevent — that a band means the same thing
+  wherever it is produced — but it is unvalidated, and changing how a band is
+  computed changes what every score means. Filed as an assumption carrying its
+  validation and refutation conditions, plus the context needed to act on it,
+  rather than left in a branch drifting further from the specs each release. Two
+  of that branch's own claims about the reference implementation were checked and
+  found false and are named so they are not carried forward. No rubric text
+  changed, so no digest moved. See HM-BV-002.7, HM-N-043, and HM-N-044.
+- **The commit guard now actually runs in continuous integration.** The check
+  skips a missing base ref by design, and the job checked out one commit deep —
+  so the base was never present and the check skipped on every run while printing
+  success. The job now fetches full history and passes the pull request's own
+  base, and `HM_REQUIRE_BASE` turns a missing base into a failure rather than a
+  skip. A guard allowed to skip silently where it is the enforcement is worse
+  than an absent one, because its silence is indistinguishable from success. See
+  HM-BV-003.10 and HM-N-042.
+- **This repository stops calling itself a kit.** The word appeared about thirty
+  times in present tense, including as the title of both entry points and the
+  opening line of the contributor guide. It was accurate for a starter set of
+  files and became misleading for a conformance target. The replacement names
+  both halves — this repository publishes the specification and ships the tooling
+  to apply it — because the normative specs sit alongside a checker, a worked
+  example, and two skills, and not separating them was deliberate. The package
+  `name` becomes `harmonic-method-spec`. Historical entries and archived Beat
+  Version prose keep the word, which was true when written. See HM-BV-004.3 and
+  HM-N-041.
+  - Not included: renaming the repository on the host, renaming a local clone,
+    and choosing the published command-line package name. A repository name and
+    an invocable command name are not the same thing, and the latter belongs with
+    the tooling.
+- **`specs/bar.yml` and `specs/downbeat.yml` (new)** — the cadence entities, and
+  the Conductor's structural instrument. The method already named the
+  accountability that decisions stay in force and the discipline of routine
+  reconciliation, but published nothing to make the routine regular. A **Bar** is
+  the recurring period work is planned and delivered within, attaching at
+  portfolio or system altitude; a **Downbeat** is an immutable, additive anchor
+  recording where one capability stood and what it was converging toward.
+  - **Bars nest temporally** via an optional `parent`, so a quarter groups its
+    fortnights without a second entity. Phrase, BarGroup, BarSet, and Period
+    were all weighed; the first three collide with words the method already
+    spends, and Period — the one clean word — would cap the cadence at exactly
+    two levels while every other hierarchy here recurses. See HM-N-039.
+  - **The cadence spans two altitudes by design**: one shared clock, many
+    readings. A portfolio-wide convergence number would average away the only
+    thing worth knowing, and a per-capability clock is not a cadence at all. See
+    HM-N-038.
+  - How a convergence reading is computed stays with the implementation, on the
+    same line every other computed value follows.
+- **`specs/coda.yml` gains `id`**, required when another Coda's `parent`
+  references it. Instances already carried one and the checker already required
+  it while the spec never declared it — the same class of gap as a version
+  living in a comment. Coda also stays an `entity` rather than becoming a
+  `concept`: an earlier proposal here is withdrawn, because Coda instances exist,
+  are addressable, and point at each other, and Note settles the analogy —
+  attaching to a host is not the same as not existing. See HM-N-040.
+- **The Conductor's discipline names both instruments.** Notes carry what was
+  decided; Bars and Downbeats make the checking regular. No other function text
+  changed.
+- **The altitude above a system is a `portfolio`.** `specs/coda.yml` placed an
+  *organization* there while `specs/function.yml` and the README said
+  *portfolio* — two normative files naming one altitude differently. Portfolio
+  wins and organization leaves the method: altitude is recursion, and a
+  portfolio contains portfolios while an organization does not. An altitude
+  answers how much work is in view; an organization answers who owns it, which is
+  a different axis. Tenancy, ownership, and legal structure are now explicitly
+  unspecified — an implementation adding a boundary above portfolio altitude is
+  extending the method, not diverging from it. No rubric text changed, so no
+  digest moved. See HM-BV-003.7 and HM-N-037.
+- **Identifiers move from `K-` to `HM-`.** All 159 across 57 files. `K-` stood
+  for "kit", which this repository has outgrown. The worked example keeps `EX-`,
+  because an adopter picks their own prefix. Commit trailers written before this
+  change name `K-` Beat Versions; substitute `HM-` and they resolve. History was
+  deliberately not rewritten — a trailer records what was named at the time. See
+  HM-BV-003.6 and HM-N-034.
+- **The spec set is now versioned machine-readably**, at **spec 1.1.0**. New
+  `specs/spec-set.yml` holds the single authoritative version; every spec file
+  declares it as a parsed `spec_version` field, replacing a YAML comment nothing
+  could read; and `npm run validate` fails when any of them disagree. **Pin this
+  number** — it is what conformance is declared against. Two `rubric:` field
+  values changed with the check renames above, which would be breaking if
+  anything had been able to pin the previous version; nothing could, because it
+  lived in a comment. See HM-BV-003.5 and HM-N-029.
+- **The tooling now versions separately from the standard.** `package.json`
+  covers the checker, on its own cadence, so a checker fix never bumps what an
+  implementation pins. It had drifted two releases behind the changelog; the
+  validator now asserts it matches the newest changelog heading, and caught that
+  on its first run.
+- **The spec version is removed from 55 instance-file headers and both skill
+  bodies.** They named a version in a comment, which would have gone stale on
+  this release — and a stale version comment does worse than misinform, it
+  asserts conformance to a spec the file was never checked against. Headers now
+  name the spec and stop. See HM-N-030.
+- **The rubric drift guard is built.** `skills/fingerprints.yml` holds a digest
+  per rubric over the sections that define what a score means — the scoring
+  scale, the dimension table, and the check rules — and `npm run validate` fails
+  when any of them change, with a message that names what to verify before
+  regenerating rather than presenting regeneration as the fix. `npm run
+  fingerprint` regenerates deliberately. The checker also asserts the covered
+  text still contains scoring anchors, which caught a real gap on its first run:
+  the original design covered only the dimension table, leaving the Beat Coda
+  rubric's shared scoring scale entirely unguarded. Every rule was verified by
+  making it fail. See HM-BV-002.5, HM-N-032, and HM-N-033.
+- **HM-BV-002.2 is archived unbuilt.** Its design assumed the definitions lived
+  elsewhere, which the inverted direction of authority made obsolete. The gap it
+  named — nothing catching an edit on this side — is what replaced it.
+- **Correction**: the drift guard described as shipped in HM-BV-002.2's summary
+  was never built — no fingerprint, hash, or snapshot over either dimension
+  table exists in the reference implementation. The summary now says so. Real
+  drift went undetected behind that claim. See HM-N-026.
+
+Adds the method's accountability model and renames the instance directory. See
+HM-BV-005.1 and HM-BV-003.4.
+
+- **specs/function.yml** (new): the five functions — Composer, Orchestrator,
+  Conductor, Producer, Promoter — each with what it owns, how it fails, and its
+  discipline, plus the rules that govern them. Declares `concept:` rather than
+  `entity:`: nothing instantiates a Function, and no entity spec gains a field
+  naming one. Promoter is newly named; the other four are unchanged in
+  substance. Value Velocity is named as the Producer's instrument and defined in
+  one line, with its computation left to the implementation.
+- **README.md / llms.txt**: corrected from four functions to five, and both now
+  list `specs/function.yml`. README gains a paragraph on functions as
+  accountabilities rather than titles.
+- **`harmonic/` renamed to `harmonic-method/`**, in this repository and as the
+  recommended name in an adopter's. The old name was chosen while the method was
+  still called Harmonic Composition and read as a bare adjective afterward. Path
+  references updated in README.md, llms.txt, AGENTS.md, examples/README.md, the
+  instance directory's README, `tools/validate.mjs`, and the CI workflow comment.
+  The historical entries below keep the path as it was at each release.
+- **harmonic-method/beats/method-vocabulary/notes/single-method-not-a-family.yml**:
+  removed the attribution of the single-method rename to a "canonical org-level
+  Harmonic Method notebook". No such notebook exists in the reference
+  implementation, so the clause was a false claim about provenance and was
+  removed rather than superseded. The decision it documents is unchanged. See
+  HM-N-023 for why that is a removal and the four-to-five function change is a
+  supersession.
+- **No spec, rubric, or entity-field changes.** Beat, Beat Version, Revision,
+  Note, and Coda are untouched, and every dimension and anchor in both skills is
+  byte-identical.
+
 ## v1.1.0 — 2026-08-17
 
 Renamed from Harmonic Composition Kit to Harmonic Method Kit, following the
@@ -7,7 +243,7 @@ organization-level collapse of the three-framework structure (Harmonic
 Composition, Harmonic Orchestration, Harmonic Portfolio Management) into one
 named method — the Harmonic Method — with four functions (Composer,
 Orchestrator, Conductor, Producer) scoped by altitude rather than split across
-frameworks. See K-BV-003.3.
+frameworks. See HM-BV-003.3.
 
 - **package.json / package-lock.json**: `name` changed to
   `harmonic-method-kit`.
@@ -17,7 +253,7 @@ frameworks. See K-BV-003.3.
   added a line naming the four functions and stating that beat/track and
   portfolio altitude reuse this kit's same primitives rather than needing a
   separate kit. Clone URL updated to `harmonic-method-kit.git`.
-- **specs/*.yml**: header comment on all six spec files changed from
+- **specs/*.yml**: header comment on every spec file changed from
   "Harmonic Composition spec" to "Harmonic Method spec". No field, type, or
   rule changes — the entity model is unchanged.
 - **skills/beat-quality-check, skills/plan-quality-check**: `description`
@@ -124,7 +360,7 @@ Dimension definitions reconciled against the reference implementation's canonica
 - **README.md**: replaced the one-line placeholder with the repository's front
   door — orientation, the entity model, a spec table, both rubrics and their
   dimensions, a copyable scoring invocation, the system layout rule, and an
-  explicit statement of what the kit does not do. This closes K-BV-004.1, whose
+  explicit statement of what the kit does not do. This closes HM-BV-004.1, whose
   scope it was written against.
 - **Beat Versions are directories too**, each holding `version.yml` and an
   optional `revisions/`. `revisions: list<revision>` was already a field of

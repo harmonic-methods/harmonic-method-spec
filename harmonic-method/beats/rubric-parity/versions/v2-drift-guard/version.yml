@@ -1,0 +1,25 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-002.2
+  beat: HM-B-002
+  title: Canonical drift guard
+  status: archived
+  summary: >
+    A change to the rubric on either side should fail loudly rather than
+    silently desync the two. The plan is a fingerprint over both dimension
+    tables, anchors included, failing in the reference implementation's test
+    suite whenever either table moves, with a failure message naming the
+    re-translation steps in order rather than inviting a hash bump. NOT YET
+    BUILT — no fingerprint, hash, or snapshot over either table exists, and the
+    drift it was meant to catch has since happened undetected.
+  scope: >
+    In: the fingerprint over both dimension tables, an assertion that anchor
+    coverage is actually included so the guard cannot go quietly anchor-blind,
+    and a failure message that prevents a reflexive hash bump.
+    Out: fingerprinting the surrounding prompt text — it embeds shared style
+    constants that churn for unrelated reasons, and failures that frequent would
+    train exactly the reflex the guard exists to prevent. Also out: generating
+    the kit's text from canonical, which would overwrite the translation.
+  # Archived unbuilt. The design assumed definitions held elsewhere, which the
+  # inverted direction of authority made obsolete; the gap it names — nothing
+  # catching an edit on this side — is what replaced it, and that is now built.

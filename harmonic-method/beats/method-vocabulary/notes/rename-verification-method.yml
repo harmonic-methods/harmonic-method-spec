@@ -1,0 +1,18 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-017
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.3
+  content: >
+    This rename was verified with a case-insensitive grep for "composition",
+    "orchestration", "portfolio management", and "family of frameworks" across
+    every `.md`, `.yml`, `.json`, and `.txt` file, plus an explicit check of the
+    repository's extensionless files (`LICENSE`, `LICENSE-CONTENT`,
+    `.gitignore`) and `tools/validate.mjs` — none of which carry those
+    extensions and none of which were caught by the pattern-based sweep. All
+    came back clean. A future edit that reintroduces retired-framework
+    language in a file type outside this set (for example a new script or a
+    binary asset with embedded text) would not be caught by re-running only
+    the extension-scoped grep — re-check untracked-extension files by hand
+    when adding one.

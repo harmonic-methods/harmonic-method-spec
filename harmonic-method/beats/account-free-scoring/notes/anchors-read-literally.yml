@@ -1,0 +1,9 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-005
+  type: context
+  attached_to: HM-B-001
+  content: >
+    Consumers are agents at least as often as humans, so the rubric text is the
+    interface. Anchors are read literally, which is why both skills instruct the
+    reader not to paraphrase them.

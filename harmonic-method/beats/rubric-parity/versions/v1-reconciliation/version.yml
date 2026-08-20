@@ -1,0 +1,19 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-002.1
+  beat: HM-B-002
+  title: v1.0.0 rubric reconciliation
+  status: archived
+  summary: >
+    Both published rubrics were diffed against the canonical beat_quality and
+    plan_quality definitions and corrected until they agreed. The Beat rubric
+    was missing a seventh dimension outright; the plan rubric's anchors were
+    paraphrases that had drifted far enough to invert one dimension's failure
+    mode and strip the sizing basis out of another. Corrected, translated where
+    the canonical text was stale, and released as v1.0.0.
+  scope: >
+    In: the dimension tables of both skills, the shared 1-5 scale, the check
+    rules the kit had dropped, beat.yml's dimension list, a summary field on
+    beat-version.yml, spec version headers, and the changelog entry.
+    Out: the canonical definitions themselves, the reference implementation's
+    surrounding prompt text, and any enforcement or gating behavior.

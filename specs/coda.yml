@@ -1,12 +1,21 @@
 # Harmonic Method spec — Coda
-# spec_version: 1.0.0
 entity: coda
+spec_version: 1.1.0
 summary: >
   The strategic outcome an entity exists to serve. Codas form a hierarchy:
-  an organization Coda, initiative/system Codas beneath it, and Beat Codas
-  beneath those — so every step of work provably ladders up to strategy.
-attached_to: [organization, system, beat]
+  a portfolio Coda, system Codas beneath it, and Beat Codas beneath those — so
+  every step of work provably ladders up to strategy. The hierarchy recurses:
+  a portfolio of portfolios is a portfolio at a higher altitude.
+attached_to: [portfolio, system, beat]
 fields:
+  id:
+    type: string
+    required_when: another Coda's parent field references it
+    description: >
+      Addressable identifier. A Coda nothing points at does not need one — a
+      Beat Coda at the bottom of the chain is carried by its Beat and identified
+      by it. A Coda with children beneath it must be addressable, or they cannot
+      ladder to it.
   statement:
     type: string
     required: true
@@ -19,7 +28,7 @@ fields:
     required: false
     description: >
       The Coda one level up (a Beat Coda points to its system Coda; a system
-      Coda points to the organization Coda). Root Codas omit this.
+      Coda points to its portfolio Coda). Root Codas omit this.
 rules:
   - A Beat without a Coda cannot be decomposed into Beat Versions.
   - Alignment ("harmonization") is assessed against the Coda chain, not against

@@ -1,0 +1,30 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-001.2
+  beat: HM-B-001
+  title: An instrument for the Conductor
+  status: active
+  summary: >
+    Two published instruments assess how well something is written — a capability
+    definition, and a plan. Neither asks whether what was decided is still true,
+    which is the one accountability the method singles out as most often
+    unstaffed and most expensive to leave so. A third skill reconciles a Coda
+    chain: whether each Coda still serves the one above it, whether each is
+    written as a resolved state, whether anything recorded already contradicts
+    it, and whether it has moved since it was last anchored. It reports findings
+    rather than a band, because "is this still true" is a factual question and a
+    number would blur it. The digest guard is generalized so the new instrument
+    is covered by it rather than sitting outside it.
+  scope: >
+    In: the new skill, its named checks and their divergence conditions, its
+    output shape, and the statement that it assesses without recording; the
+    generalization of normative-section detection and the substance assertion so
+    a findings instrument is guarded like a band rubric; its digest; and its
+    registration in the reader-facing entry points and the contributor guide.
+    Out: scoring. Adding a band would invite averaging a chain's alignment into
+    one number, which is the specific failure a portfolio-wide convergence
+    reading was rejected for.
+    Out also: enforcement, a recorded finding, and any change to the two existing
+    rubrics — their dimension text, anchors, and check rules are untouched, so
+    their digests do not move. Out: the spec set version, which stays where this
+    unreleased cycle put it, since nothing can yet have pinned it.

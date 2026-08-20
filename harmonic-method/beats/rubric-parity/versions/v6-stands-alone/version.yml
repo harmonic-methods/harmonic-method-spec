@@ -1,0 +1,29 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-002.6
+  beat: HM-B-002
+  title: The standard stops depending on any one implementation
+  status: active
+  summary: >
+    A standard cannot instruct its readers in terms of one product and still be
+    a standard. Two dependencies are removed. The contributor guide named a
+    specific implementation while explaining what conformance means, and named
+    its entities as the examples of an allowed extension; it now speaks of an
+    implementation generically. And the Beat Version rubric will not take the
+    seventh dimension the reference implementation scores, because that dimension
+    probes a codebase for how much of the planned capability exists — an
+    assessment the method places on a cadence anchor rather than a planning
+    rubric. The rubric text is unchanged, so no digest moves.
+  scope: >
+    In: the contributor guide's conformance and extension prose; the unreleased
+    changelog entry's references; and the decision that the Beat Version rubric
+    omits the codebase-probing dimension, superseding the Note that recorded it
+    as unresolved.
+    Out: the attribution in the README and the agent-facing entry point, which
+    name a reference implementation as provenance rather than as instruction — a
+    reader is entitled to know whether anything implements this. Out also: the
+    trademark notice, which names the marks because that is its function.
+    Out: writing the cadence specs the omitted dimension is deferred to. Bar and
+    Downbeat are method vocabulary and are not yet specified here, so the
+    omission stands on the medium-agnostic argument alone and does not depend on
+    a spec that does not exist.

@@ -1,0 +1,99 @@
+# Harmonic Method spec — Function
+concept: function
+spec_version: 1.1.0
+summary: >
+  A function is an accountability the method names: one of the five things
+  someone has to answer for if work is to succeed. Functions are not entities —
+  nothing instantiates a Function, and no record here carries one as a field.
+  They are the accountability vocabulary the entities are worked through.
+holders: >
+  A function is held by a person, or by an agent operating under a named
+  person's accountability. One holder may hold several functions. What the
+  method requires is that each function is held by someone identifiable — an
+  unnamed function is an unstaffed one, and unstaffed functions fail quietly.
+altitude: >
+  The five functions are constant at every altitude — system, beat/track, and
+  portfolio. Altitude changes the scope a function answers for, never the set.
+functions:
+  composer:
+    owns: >
+      Architectural coherence — that the system holds together as one
+      intelligible thing rather than one that merely works. What the system is
+      for, what belongs inside it, and where its boundaries fall.
+    fails_when: >
+      The system still functions and nobody can explain it as a whole.
+      Capabilities overlap, boundaries blur, and every new piece of work
+      requires archaeology before it can start.
+    discipline: >
+      Naming things at the right altitude, and resisting the pressure to model
+      temporary work as though it were durable.
+  orchestrator:
+    owns: >
+      That work moves — sequencing, coordination, and the handoffs between
+      everyone and everything doing the work. Where some of the work is done by
+      agents, this function owns what runs unattended, what runs supervised,
+      and what waits for a person.
+    fails_when: >
+      Every piece is sound and nothing ships. Work queues behind unclear
+      ownership, handoffs are lost silently, and capacity sits idle while deadlines
+      slip.
+    discipline: >
+      Knowing what can proceed in parallel and what genuinely must wait — and
+      being honest about which constraints are real rather than habitual.
+  conductor:
+    owns: >
+      That decisions stay in force. The gap between what was decided and what
+      is actually true, reconciled and surfaced while correcting it is cheap.
+    fails_when: >
+      Decisions get rediscovered rather than recalled. The same question is
+      re-litigated months later, a constraint everyone agreed to is quietly
+      violated, and stated intent diverges from actual behavior with no record
+      of when.
+    discipline: >
+      Reconciliation as routine rather than as crisis response, which takes
+      both a record and a rhythm. Notes carry what was decided and why; Bars and
+      Downbeats make the checking regular, so divergence surfaces as a finding
+      on a known occasion rather than as a discovery under pressure.
+  producer:
+    owns: >
+      The relationship between what is spent and what it is worth. Whether the
+      investment is returning, and whether the work should continue at its
+      current shape and cost.
+    fails_when: >
+      Work proceeds because it is interesting, urgent, or already started, and
+      nobody is accountable for whether it is worth what it costs — so nothing
+      is ever stopped, only starved.
+    discipline: >
+      Holding a line every other function's incentives push against, and being
+      explicit about whose ledger is being defended: the ledger of the party
+      investing in the work, or of the party delivering it. Same discipline,
+      different balance sheet, and the two can be in genuine tension on the
+      same engagement.
+    instrument: >
+      Value Velocity — how quickly committed work converts into realized value.
+      The method names the measure; how it is computed and calibrated is an
+      implementation concern.
+  promoter:
+    owns: >
+      Adoption — whether the thing that was built is actually taken up by the
+      people it was built for. Not delivery, not acceptance, not sign-off.
+    fails_when: >
+      The work is accepted and paid for, and six months later usage is near
+      zero, because every formal signal said it succeeded.
+    discipline: >
+      Treating adoption as designed work with an owner. The function has two
+      modes — a practitioner driving adoption from the delivering side, and a
+      champion carrying the change to their own colleagues from inside. Same
+      accountability held from different sides of the table; identifying and
+      supporting the champion is the practitioner's central task rather than an
+      afterthought.
+rules:
+  - Functions are accountabilities, not titles. One person may hold several,
+    and a function may be held by an agent under a named person's
+    accountability.
+  - Responsibility delegates; accountability does not. Work moves down;
+    answering for it stays where it was assigned.
+  - A function that appears unheld at one altitude is often delegated rather
+    than absent. The signal to read is span of control, not the empty slot.
+  - The set is closed at five. A sixth accountability is a claim about the
+    method and belongs in a decision, not in a local variant.

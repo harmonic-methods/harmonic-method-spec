@@ -1,0 +1,30 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.8
+  beat: HM-B-003
+  title: Publish the cadence entities
+  status: active
+  summary: >
+    The method names the Conductor's accountability — that decisions stay in
+    force — and its discipline, reconciliation as routine rather than crisis
+    response, but published no structure for the routine. Bar and Downbeat
+    supply it. A Bar is the recurring period work is planned and delivered
+    within; a Downbeat is an immutable anchor recording where a capability
+    honestly stood at a moment, so later divergence from it is measurable rather
+    than remembered. Bars nest temporally, so a longer period groups shorter
+    ones without a second entity. The Coda spec gains the identifier its
+    instances already carried, which the cadence entities need in order to
+    reference the outcome an anchor was taken against.
+  scope: >
+    In: specs/bar.yml and specs/downbeat.yml at the current spec set version;
+    the identifier field on the Coda spec; a sentence in the Conductor function
+    naming cadence alongside decision lineage as its instruments; and the Notes
+    recording why cadence spans two altitudes and why nesting replaced a second
+    period entity.
+    Out: how a convergence reading is computed. The method requires that a
+    reading be taken and preserved; the arithmetic behind it is an
+    implementation's, on the same line every other computed value here follows.
+    Out also: scheduling — what triggers a boundary, who is notified, and what
+    a ceremony does are operational concerns, not entity definitions. Out: any
+    instance of either entity in this repository's own system, which runs no
+    cadence and would be asserting a practice it does not follow.

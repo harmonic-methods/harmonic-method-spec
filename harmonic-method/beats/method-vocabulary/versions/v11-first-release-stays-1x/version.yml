@@ -1,0 +1,31 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.11
+  beat: HM-B-003
+  title: Keep the first released version in the 1.x line
+  status: active
+  summary: >
+    The unreleased work had been numbered as a major bump on the reasoning that
+    two field values changed and anything keying off the old ones would break.
+    Nothing could have been keying off them: there is no tag in this repository,
+    local or remote, so nothing has ever been released, and the version itself
+    lived in a comment until this cycle, so it could not be pinned even in
+    principle. A compatibility promise that could not be made cannot be broken.
+    The spec set moves from its previous version by a minor step instead, and the
+    two unreleased changelog entries dated the same day merge into one. The
+    effect is that the first version anyone can actually depend on is a 1.x, and
+    the major line stays available for the first change that breaks a real
+    consumer.
+  scope: >
+    In: the version in the spec set manifest and in every spec file; the package
+    manifest and its lock; the merge of the two unreleased changelog entries into
+    one; the two mentions of the retired number in the increment that introduced
+    machine-readable versioning; and the branch name and pull request title,
+    which both carry it.
+    Out: the earlier changelog entries, which describe work merged to the trunk
+    and stay as written even though none of them was tagged either. Rewriting
+    them would falsify the record to tidy a numbering decision.
+    Out also: tagging the release. The absence of any tag is what makes this
+    change correct and is separately a gap — the front page tells a reader to
+    copy from a tag, and there is none to copy from — but creating one is a
+    release action, not a change to the tree.

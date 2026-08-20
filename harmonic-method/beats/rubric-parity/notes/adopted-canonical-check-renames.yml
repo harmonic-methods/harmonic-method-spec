@@ -1,0 +1,22 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-027
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.3
+  content: >
+    The kit adopts the reference implementation's renamed check names:
+    `beat_coda_quality` (was `beat_quality`) and `beat_version_quality` (was
+    `plan_quality`). Both skill directories, both frontmatter names, and both
+    spec `rubric:` fields follow. This is the last change the kit takes in that
+    direction — see the decision inverting which side is canonical.
+  rationale: >
+    The renames are better names, independent of who owns them.
+    `beat_coda_quality` says what the rubric actually grades — the Beat's Coda
+    and the context directing it — where `beat_quality` implied it graded the
+    capability's delivery. `beat_version_quality` names the entity it scores
+    instead of an abstraction ("plan") the entity model never defined. Both old
+    names survive in the reference implementation only as deprecated aliases, so
+    keeping them here would have left a reader unable to tell that a kit rubric
+    and the reference implementation's check are the same instrument — the exact
+    confusion this Beat exists to prevent.

@@ -1,0 +1,22 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-030
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.5
+  content: >
+    Instance files and skill bodies no longer restate the spec version. The
+    header comment names the spec it conforms to and stops there; the version
+    lives in the manifest alone. Fifty-five files carried `(v1.0.0)` in a
+    comment, every one of which would have gone stale on this release.
+  rationale: >
+    This is the same failure as the spec count restated in five places, at ten
+    times the scale and with a worse property: a stale version comment does not
+    merely misinform, it asserts conformance to a specification the file was
+    never checked against. Per-instance conformance versions do have real value —
+    they are how you find a file written against a superseded spec — but only as
+    a checked field. As a comment the claim rots silently, and 55 rotting claims
+    are worse than none, because a reader cannot tell which ones are still true.
+    If per-instance versions are wanted later, add a validated field and let the
+    checker keep it honest. Applies the rule in [HM-N-024]: do not write into
+    prose what a single authority already answers.

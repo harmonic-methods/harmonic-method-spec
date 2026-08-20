@@ -1,0 +1,22 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-020
+  type: decision
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.1
+  content: >
+    No entity spec gains a field naming an accountable function. Beat, Beat
+    Version, Revision, Note, and Coda are unchanged. `specs/function.yml`
+    declares itself a `concept` rather than an `entity` for the same reason:
+    nothing instantiates a Function.
+  rationale: >
+    A required accountable-function field would make every existing conformant
+    file non-conformant and would demand a staffing answer at the moment
+    someone is trying to describe a capability — the highest-friction possible
+    place to ask it. An optional field is worse than either: it would be
+    unfilled in most trees, so any check over it would be meaningless, and it
+    would still imply the method expects a per-entity holder when what the
+    method actually requires is that each function is held somewhere
+    identifiable. The accountability model earns its keep as vocabulary first.
+    Revisit only with evidence that reading a real tree left someone unable to
+    tell who answers for what.

@@ -1,9 +1,0 @@
-# Note — conformant to specs/note.yml (v1.0.0)
-note:
-  id: K-N-009
-  type: constraint
-  attached_to: K-B-004
-  content: >
-    Adoption material must not oversell. The kit records nothing, gates nothing,
-    and has no audit trail; saying so plainly is part of the capability, not a
-    caveat bolted onto it.

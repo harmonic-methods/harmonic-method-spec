@@ -1,16 +1,16 @@
 /**
- * Conformance check for the kit's own artifacts.
+ * Conformance check for this repository's own artifacts.
  *
  * Validates every entity file in a system tree against the specs in `specs/`:
  * required fields, lifecycle enums, decision rationale, the agreement between a
  * child's back-reference and the directory it sits in, and reference
- * resolution. Also rejects vocabulary this kit does not define.
+ * resolution. Also rejects vocabulary these specs do not define.
  *
  * Scope note: this checks the *entity* files. It does not check the rubric text
  * in `skills/` — a hand-edit to a dimension anchor is still unguarded here. The
  * reference implementation's fingerprint test catches canonical-side drift; the
- * kit side of that gap is tracked in
- * harmonic/beats/rubric-parity/versions/v2-drift-guard/.
+ * local side of that gap is tracked in
+ * harmonic-method/beats/rubric-parity/versions/v2-drift-guard/.
  *
  * Run with: npm run validate
  */
@@ -20,13 +20,16 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
-const KIT = join(dirname(fileURLToPath(import.meta.url)), '..');
+import { checkCommitTrailers } from './commit-discipline.mjs';
+import { normativeSkills, normativeText, digest, normativeItemCount } from './rubric-fingerprint.mjs';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 let failures = 0;
 const fail = (m) => { console.log(`  FAIL ${m}`); failures++; };
-const read = (p) => readFileSync(join(KIT, p), 'utf8');
+const read = (p) => readFileSync(join(ROOT, p), 'utf8');
 const load = (p) => parse(read(p));
-const ls = (p) => (existsSync(join(KIT, p)) ? readdirSync(join(KIT, p)) : []);
+const ls = (p) => (existsSync(join(ROOT, p)) ? readdirSync(join(ROOT, p)) : []);
 
 // Required fields, per the specs each entity is declared in.
 const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
@@ -35,18 +38,122 @@ const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
 const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
 const NOTE_TYPES = ['context', 'assumption', 'constraint', 'guidance', 'decision'];
 
-/** Every spec must parse — a machine-readable spec that does not is worthless. */
+const SEMVER = /^\d+\.\d+\.\d+$/;
+const MANIFEST = 'specs/spec-set.yml';
+
+/**
+ * Every spec must parse — a machine-readable spec that does not is worthless —
+ * and every spec must declare the same version as the manifest. The specs move
+ * as a set, so an implementation pins one number rather than one per file. A
+ * version living only in a comment is what this replaces: unparseable, and it
+ * had gone stale in 55 files.
+ */
 function checkSpecs() {
   console.log('== specs ==');
-  const specs = ls('specs').map((f) => `specs/${f}`);
+
+  let setVersion;
+  try {
+    const m = load(MANIFEST);
+    if (m?.manifest !== 'spec_set') fail(`${MANIFEST}: expected 'manifest: spec_set'`);
+    setVersion = m?.spec_version;
+    if (!SEMVER.test(String(setVersion))) fail(`${MANIFEST}: spec_version '${setVersion}' is not semver`);
+  } catch (e) {
+    fail(`${MANIFEST}: ${e.message}`);
+  }
+
+  const specs = ls('specs').map((f) => `specs/${f}`).filter((p) => p !== MANIFEST);
   let ok = 0;
   for (const p of specs) {
-    try { load(p); ok++; } catch (e) { fail(`${p}: ${e.message}`); }
+    let doc;
+    try { doc = load(p); ok++; } catch (e) { fail(`${p}: ${e.message}`); continue; }
+    if (doc?.spec_version === undefined) {
+      fail(`${p}: no parsed 'spec_version' field — a version in a comment cannot be checked`);
+    } else if (setVersion !== undefined && doc.spec_version !== setVersion) {
+      fail(`${p}: spec_version '${doc.spec_version}' disagrees with ${MANIFEST} '${setVersion}'`);
+    }
   }
-  console.log(`  ${ok}/${specs.length} parsed`);
+  console.log(`  ${ok}/${specs.length} parsed, spec set ${setVersion ?? '(unknown)'}`);
 }
 
-/** Validates one system tree. Used for both `harmonic/` and `examples/`. */
+/**
+ * The dimension tables are canonical here, so an edit to one changes the
+ * standard. A digest per rubric makes that edit impossible to make silently.
+ * Anchor coverage is asserted separately, so the guard cannot pass over a
+ * section that no longer contains a rubric at all.
+ */
+function checkRubricFingerprints() {
+  console.log('== rubric fingerprints ==');
+  let stored;
+  try {
+    const f = load('skills/fingerprints.yml');
+    if (f?.manifest !== 'rubric_fingerprints') fail("skills/fingerprints.yml: expected 'manifest: rubric_fingerprints'");
+    stored = f?.fingerprints ?? {};
+  } catch (e) {
+    return fail(`skills/fingerprints.yml: ${e.message}`);
+  }
+
+  const skills = normativeSkills();
+  if (skills.length === 0) return fail('no skill carries a normative section');
+
+  for (const skill of skills) {
+    const section = normativeText(skill);
+    const items = normativeItemCount(section);
+    if (items < 3) {
+      fail(`skills/${skill}: normative sections enumerate fewer than 3 items — a fingerprint over them would guard nothing`);
+      continue;
+    }
+    const actual = digest(section);
+    if (stored[skill] === undefined) {
+      fail(`skills/fingerprints.yml: no digest recorded for '${skill}'`);
+    } else if (stored[skill] !== actual) {
+      fail(
+        `skills/${skill}: rubric text changed — this edits the published standard.\n` +
+        `       Do not update the digest first. Confirm the edit was intended, record the\n` +
+        `       decision, decide whether the spec set version moves, then run: npm run fingerprint`,
+      );
+    } else {
+      console.log(`  ${skill}  ${items} normative items, digest matches`);
+    }
+  }
+  for (const recorded of Object.keys(stored)) {
+    if (!skills.includes(recorded)) fail(`skills/fingerprints.yml: digest recorded for '${recorded}', which carries no normative section`);
+  }
+}
+
+/**
+ * The commit is the Revision, and a Revision belongs to exactly one Beat
+ * Version. Nothing enforced that, and the rule was broken twice in one sitting
+ * from the same cause — a script that failed partway while `git add -A` ran
+ * anyway.
+ */
+function checkCommitDiscipline() {
+  console.log('== commit discipline ==');
+  let result;
+  try { result = checkCommitTrailers(); } catch (e) { return fail(`git: ${e.message}`); }
+  if (result.skipped) return console.log(`  skipped — ${result.skipped}`);
+  for (const p of result.problems) fail(p);
+  const excused = result.excused ? `, ${result.excused} excused` : '';
+  if (result.problems.length === 0) console.log(`  ${result.checked} commit(s) each bind one Beat Version${excused}`);
+}
+
+/**
+ * The tooling versions separately from the standard: a checker fix must never
+ * bump what an implementation pins. Nothing kept the tooling version honest,
+ * and it had drifted two releases behind the changelog.
+ */
+function checkToolingVersion() {
+  console.log('== tooling version ==');
+  let pkg;
+  try { pkg = JSON.parse(read('package.json')); } catch (e) { return fail(`package.json: ${e.message}`); }
+  const latest = read('CHANGELOG.md').match(/^## v(\d+\.\d+\.\d+)/m)?.[1];
+  if (!latest) return fail('CHANGELOG.md: no "## vX.Y.Z" heading found');
+  if (pkg.version !== latest) {
+    fail(`package.json version '${pkg.version}' != newest CHANGELOG entry 'v${latest}'`);
+  }
+  console.log(`  package.json ${pkg.version}, newest changelog entry v${latest}`);
+}
+
+/** Validates one system tree. Used for both `harmonic-method/` and `examples/`. */
 function checkTree(root, codaId) {
   console.log(`== ${root}/ ==`);
 
@@ -64,7 +171,7 @@ function checkTree(root, codaId) {
 
   for (const slug of ls(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
-    if (!existsSync(join(KIT, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
+    if (!existsSync(join(ROOT, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
 
     let b;
     try { b = load(beatPath)?.beat; } catch (e) { fail(`${beatPath}: ${e.message}`); continue; }
@@ -85,7 +192,7 @@ function checkTree(root, codaId) {
     for (const vslug of ls(`${root}/beats/${slug}/versions`)) {
       const vDir = `${root}/beats/${slug}/versions/${vslug}`;
       const vPath = `${vDir}/version.yml`;
-      if (!existsSync(join(KIT, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
+      if (!existsSync(join(ROOT, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
 
       let v;
       try { v = load(vPath)?.beat_version; } catch (e) { fail(`${vPath}: ${e.message}`); continue; }
@@ -173,15 +280,18 @@ function checkVocabulary(roots) {
   ];
   for (const p of files) {
     const m = read(p).match(stray);
-    if (m) fail(`${p}: uses "${m[0]}" — not an entity this kit defines`);
+    if (m) fail(`${p}: uses "${m[0]}" — not an entity these specs define`);
   }
   console.log(`  ${files.length} files checked`);
 }
 
 checkSpecs();
-checkTree('harmonic', 'K-CODA');
+checkRubricFingerprints();
+checkToolingVersion();
+checkCommitDiscipline();
+checkTree('harmonic-method', 'HM-CODA');
 checkTree('examples', 'EX-SYS-CODA');
-checkVocabulary(['harmonic', 'examples']);
+checkVocabulary(['harmonic-method', 'examples']);
 
 console.log(failures === 0 ? '\nconformant' : `\n${failures} failure(s)`);
 process.exit(failures === 0 ? 0 : 1);

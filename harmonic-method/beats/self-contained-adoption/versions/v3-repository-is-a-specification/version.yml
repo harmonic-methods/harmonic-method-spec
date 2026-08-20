@@ -1,0 +1,29 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-004.3
+  beat: HM-B-004
+  title: Stop calling this a kit
+  status: active
+  summary: >
+    The repository called itself a kit roughly thirty times in present tense —
+    the README and agent-facing entry point opened with it as a title, the
+    contributor guide led with it, the checker's own comments used it, and both
+    the system Coda and a live Beat carried it. "Kit" was accurate when this was
+    a starter set of files to take pieces from, and became misleading when it
+    became the source of truth an implementation conforms to. The package name
+    follows. What replaces it is not "specification" alone: this repository
+    publishes the specification and ships the tooling to apply it, which is a
+    more honest description than either half.
+  scope: >
+    In: the titles and present-tense prose in README.md, llms.txt, AGENTS.md,
+    CLAUDE.md, the instance directory's README, the checker's comments and its
+    root constant, the system Coda's header, and the live Beat description that
+    used the word; plus the `name` field in the package manifest and its lock
+    file.
+    Out: the changelog's earlier entries and archived Beat Version prose, which
+    used the word when it was true. Out also: renaming the repository on the
+    host, renaming the local clone directory, and choosing the published
+    command-line package name — the first two are actions outside this working
+    tree and the third is a distribution decision that belongs with the tooling,
+    since a repository name and an invocable command name are not the same
+    thing.

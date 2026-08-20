@@ -1,0 +1,22 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-022
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.4
+  content: >
+    The visible directory holding a system's entities is named
+    `harmonic-method/`, here and in an adopter's repository. This supersedes the
+    `harmonic/` name chosen in [HM-N-013]; everything else that decision settled
+    — visible rather than hidden, and not `system/` — stands unchanged and is
+    the reasoning to read before reversing either.
+  rationale: >
+    `harmonic/` was named while the method was still called Harmonic
+    Composition, where it read as a sensible abbreviation. Once the method
+    became the Harmonic Method, the directory was a bare adjective: an adopter
+    finding it in a repository they had not seen before could not tell what it
+    held instances of, and neither could an agent sweeping the tree.
+    `harmonic-method/` names the method it instantiates, which is the whole job
+    of the name. The cost is that the path appears in published material and
+    changes for anyone who copied the earlier layout — paid now, while the
+    number of adopters is small, rather than later when it is not.

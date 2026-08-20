@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-049
+  type: decision
+  attached_to: HM-B-001
+  beat_version: HM-BV-001.3
+  content: >
+    The reconciliation instrument gains a ninth check: whether a Coda still
+    describes the entity carrying it, read against that entity's description and
+    Beat Versions rather than against the Coda above it.
+  rationale: >
+    The instrument shipped with eight checks and could not detect the very
+    divergence its own first run surfaced. Every check comparing Codas ran
+    upward — child against parent — and a Coda can serve its parent perfectly
+    while the work beneath it has moved past what the Coda promises. The
+    published Beat rubric does not close this either: its Strategically Aligned
+    dimension scores a Beat against the Coda above it, which is the same upward
+    direction. Nothing looked down. That blind spot is the likeliest divergence
+    in any system still growing, for a structural reason worth stating: a Coda
+    is authored once at the moment of least information, and every subsequent
+    increment is an opportunity for the entity to exceed it, with no step in the
+    process that re-reads the two together. Adding the check moved this
+    instrument's digest, which is the guard behaving correctly — the change was
+    confirmed, recorded, and only then regenerated.

@@ -1,0 +1,19 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-026
+  type: context
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.3
+  content: >
+    The canonical drift guard was described as shipped and never existed. The
+    Beat Version that planned it states that a fingerprint over both dimension
+    tables "now fails in the reference implementation's test suite whenever
+    either table moves". No fingerprint, hash, or snapshot over either table
+    exists anywhere in the reference implementation; the tests that do touch the
+    tables assert internal schema parity, not parity with this kit. The claim
+    has been corrected to describe the guard as planned. It is the third false
+    statement found in this repository's own record, after a citation to a
+    notebook that does not exist and a spec count restated in five places — all
+    three the same shape: a Beat Version summary written at plan time,
+    describing intent in the past tense, and never re-read after the work
+    landed. Read a summary as a plan until something verifies it shipped.

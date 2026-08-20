@@ -1,0 +1,24 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-005.1
+  beat: HM-B-005
+  title: The five functions published as a spec
+  status: active
+  summary: >
+    The kit published an entity model with no account of who answers for it,
+    while its own README asserted four functions and named them in passing.
+    `specs/function.yml` now carries all five — Composer, Orchestrator,
+    Conductor, Producer, and the newly named Promoter — each with what it owns,
+    how it fails, and its discipline, plus the rules that govern them:
+    accountabilities rather than titles, holdable by an agent under a named
+    person, constant across altitude, and closed at five. README and llms.txt
+    are corrected from four to five.
+  scope: >
+    In: specs/function.yml, the function count and enumeration in README.md and
+    llms.txt, and the Notes recording what was decided and what the Promoter
+    definition currently rests on.
+    Out: any field on Beat, Beat Version, Note, or Coda naming an accountable
+    function — that is a separate decision with real adoption cost, recorded
+    here as deferred rather than taken. Also out: a rubric that scores whether
+    the functions are staffed, certification or maturity apparatus around any
+    function, and the computation behind Value Velocity.

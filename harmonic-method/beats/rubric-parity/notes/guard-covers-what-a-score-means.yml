@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-032
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.5
+  content: >
+    The rubric fingerprint covers the sections that define what a score means —
+    the scoring scale, the dimension table, and the check rules — and not the
+    title, the inputs contract, or the output format. The checker separately
+    asserts that the covered text still contains scoring anchors, so the guard
+    cannot pass over a section that has stopped being a rubric.
+  rationale: >
+    The first version covered only the dimension table and failed immediately on
+    the Beat Coda rubric, which carries no anchors there. That turned out to be
+    faithful: the rubric it mirrors defines each dimension with a description and
+    a red flag and scores them against one shared scale, while the Beat Version
+    rubric carries anchors per dimension. The two shapes are both correct, so the
+    guard covers whichever of these sections a rubric actually has rather than
+    assuming one layout — and the shared scale, which the first version left
+    entirely unguarded, is now covered. Excluding the wrapper sections is
+    deliberate: they carry style wording that churns for unrelated reasons, and a
+    guard that fails often trains the reflex of bumping the digest without
+    reading the change, which is the failure the message is written to prevent.

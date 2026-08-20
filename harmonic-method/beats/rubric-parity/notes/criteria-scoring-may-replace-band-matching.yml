@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-043
+  type: assumption
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.7
+  content: >
+    Unvalidated: that scoring a dimension by answering binary factual criteria
+    and computing a band from the result would make a band mean the same thing
+    across readers, where asking a reader to match a description to a band does
+    not. The proposed method is three or four criteria per dimension, each
+    answered yes, no, or cannot-determine; a ratio of yes over yes-plus-no, with
+    cannot-determine excluded from the denominator; and fixed bands at 0.20,
+    0.40, 0.60, and 0.80. The dimension definitions, red flags, and anchors are
+    untouched by it — only how a band is arrived at.
+
+    What would validate it: the same entity scored by several readers, or by one
+    reader repeatedly, under both methods, showing tighter agreement under
+    criteria. What would refute it: agreement no better than band-matching, or
+    criteria that cannot be phrased without assuming a medium — the method has to
+    hold where the subject is a procedure or an organizational practice, and a
+    criterion that only parses for software would trade one reproducibility
+    problem for a narrower scope. Neither test has been run. Until one is, the
+    published rubrics keep band-matching.
+  rationale: >
+    Recorded as an assumption rather than a decision because the reasoning is
+    persuasive and the evidence is absent. The argument is that "score this one
+    to five" is read differently by different readers and by the same reader
+    twice, so a band stops being a shared claim — which is the failure the
+    system Coda exists to prevent, making this proposal aimed at the right
+    target. That is not the same as knowing it works, and a change to how every
+    score is computed is exactly the kind of change that should not ride on a
+    plausible argument. Filed with its validation conditions so the next person
+    can settle it rather than re-derive it.

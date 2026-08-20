@@ -1,0 +1,32 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-036
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.6
+  content: >
+    The Beat Version rubric stays at six dimensions and does not adopt the
+    seventh the reference implementation scores, which probes a codebase to
+    measure how much of the planned capability already exists. Assessing
+    realized-against-planned belongs to a cadence anchor — a Downbeat, which
+    freezes where a capability honestly stands so later divergence is
+    computable — not to a rubric that scores how well a plan is written. This
+    supersedes [HM-N-028], which recorded the divergence as unresolved and left
+    open whether the dimension would be generalized.
+  rationale: >
+    Two reasons, and the second is the load-bearing one. The dimension is not
+    medium-agnostic: it names a codebase as the thing to probe, and the method
+    has to hold where the medium is a procedure, a runbook, or an
+    organizational practice, where there is nothing to probe in that sense.
+    Generalizing the wording would have made it parse everywhere while still
+    measuring nothing consistently, which is worse than omitting it.
+    The stronger reason is that it does not belong in this rubric at all. Every
+    other dimension scores the plan as written — boundaries, direction,
+    testability, traceability, sizing, risk — and can be scored the moment the
+    plan exists, before any work starts, which is exactly when the rubric is
+    meant to be used. A dimension measuring what has been built cannot be
+    scored then, and mixing it in makes the rubric's score depend on when it was
+    run. Separating the two also gives each function its own instrument: this
+    rubric serves the Orchestrator, and convergence against intent serves the
+    Conductor. An implementation is free to score both together; the method
+    keeps them distinct.

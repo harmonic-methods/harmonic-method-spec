@@ -1,0 +1,28 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-037
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.7
+  content: >
+    The altitude above a system is a **portfolio**. "Organization" is retired as
+    an altitude name and does not appear in the method. Portfolio recurses, so
+    the method names no level above it. Tenancy, ownership, and legal structure
+    are not altitudes and are not specified here; an implementation that adds a
+    boundary above portfolio altitude for any of them is extending the method,
+    not contradicting it.
+  rationale: >
+    Two normative spec files disagreed — one placed an organization above a
+    system, the other a portfolio — and the disagreement survived because the two
+    words look interchangeable while describing different axes. An altitude
+    answers "how much work is in view": a beat is a discrete piece, a system is
+    one thing being improved, a portfolio is the set of systems. An organization
+    answers "who owns it", which is orthogonal — the same organization can hold
+    several portfolios and a single portfolio can span organizations. The
+    method's own test settles which word survives: altitude is recursion, and a
+    portfolio contains portfolios while an organization does not contain
+    organizations in any sense a method can act on. Adopting an implementation's
+    container names was considered and rejected for the same reason plus one
+    more: those containers are tenancy boundaries and folders, and a mapping from
+    them to an altitude belongs in that implementation's conformance
+    declaration, not in the standard.

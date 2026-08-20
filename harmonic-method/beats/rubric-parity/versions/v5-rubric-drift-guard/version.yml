@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-002.5
+  beat: HM-B-002
+  title: Guard the published dimension tables against an undeliberate edit
+  status: active
+  summary: >
+    The drift guard was planned against the old direction of authority — a
+    fingerprint that fired when definitions held elsewhere moved — and was never
+    built, and real drift went undetected behind the claim that it had been. Now
+    that the dimension tables are canonical here, the guard that matters is the
+    inverse: a fingerprint over this repository's own tables, so a dimension,
+    red flag, or anchor cannot change without the change appearing in the diff
+    and the checker refusing until it is acknowledged. The fingerprint covers
+    the dimension section of each rubric, and the checker separately asserts
+    each section still carries its scoring anchors, so the guard cannot go
+    quietly anchor-blind over text that no longer contains any.
+  scope: >
+    In: a fingerprint file holding one digest per rubric; extraction of the
+    dimension section from each skill; checker rules comparing both digests and
+    asserting anchor coverage; and a failure message that names what to verify
+    before updating a digest rather than presenting the update as the fix.
+    Out: fingerprinting the surrounding prompt text, which carries shared style
+    wording that churns for unrelated reasons — failures that frequent would
+    train exactly the reflex the message exists to prevent. Also out: any
+    conformance check against an implementation, which runs on the
+    implementation's side and against the published version, not from here.

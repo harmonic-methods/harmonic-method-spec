@@ -1,0 +1,22 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-003.3
+  beat: HM-B-003
+  title: Rename to the Harmonic Method; retire the three-framework structure
+  status: archived
+  summary: >
+    The kit and its vocabulary are renamed from Harmonic Composition to the
+    Harmonic Method, following the organization-level decision collapsing the
+    three-framework structure (Composition, Orchestration, Portfolio
+    Management) into one method with four functions (Composer, Orchestrator,
+    Conductor, Producer) scoped by altitude. Every reference to "Harmonic
+    Composition" as a named framework — the package name, the clone URL, and
+    the "founding framework of a family" framing — is replaced. The entity
+    model and rubrics are unchanged; this kit still covers system altitude
+    only.
+  scope: >
+    In: README, llms.txt, CHANGELOG, package.json/package-lock.json, every
+    spec file header, both skill files, and every Coda/Note prose reference
+    to "Harmonic Composition". Out: the entity fields, the rubric dimensions
+    and anchors, and any expansion of scope to beat/track or portfolio
+    altitude — this Beat Version is a rename, not a scope change.

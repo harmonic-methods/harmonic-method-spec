@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-001.3
+  beat: HM-B-001
+  title: Reconcile this repository's own chain, and close the gap that found
+  status: active
+  summary: >
+    Running the new reconciliation instrument on this repository's own Coda chain
+    returned two findings and exposed one gap in the instrument itself. Both
+    findings are the same shape: the Beat's Coda and the system Coda each promise
+    scoring, and were written when scoring was all this repository published —
+    neither covers an instrument that reconciles a chain and reports findings
+    rather than a band. Both are widened. The gap is that the instrument checks
+    Coda against parent Coda and never checks a Coda against the entity carrying
+    it, which is precisely the divergence found here — so a ninth check is added
+    and the digest moved deliberately.
+  scope: >
+    In: the ninth check and its divergence conditions; the Beat's Coda statement
+    and the system Coda statement; the regenerated digest for the instrument
+    whose text changed; and the Notes recording what the run found and why the
+    missing check was missing.
+    Out: the other two instruments, whose text and digests are untouched. Out
+    also: the seven checks that already existed, which the run did not fault.
+    Out: taking a Downbeat on anything here. The run returned
+    cannot-determine for the anchor check across the whole chain because this
+    repository holds no cadence instances, which is a deliberate absence and not
+    a finding to repair.

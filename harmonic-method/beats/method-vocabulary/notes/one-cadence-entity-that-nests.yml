@@ -1,0 +1,28 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-039
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.8
+  content: >
+    A longer cadence period is a Bar with children, not a second entity. Bars
+    nest temporally through the optional `parent` field, the same shape Codas
+    use. Naming a distinct entity for the longer period was considered —
+    Phrase, BarGroup, BarSet, and Period were all weighed — and rejected.
+  rationale: >
+    The naming candidates each collided with words the method already spends.
+    "Phrase" appears in both rubrics, including in the instruction not to
+    paraphrase and the instruction to cite exact phrases — unusable in a
+    repository whose subject is written text. "Group" is taken: both rubrics use
+    "release grouping" for a different kind of container. "Set" is taken by the
+    definition of portfolio altitude, the set of systems. "Period" was the one
+    clean word and was still rejected, for a reason that outlasts vocabulary: a
+    second entity caps the cadence at exactly two levels, and every other
+    hierarchy in this method recurses without a cap. A portfolio of portfolios
+    is a portfolio; a Coda's parent is a Coda. Capping cadence at two levels
+    would need a justification no one has, and nesting gives arbitrary depth for
+    free. The cost is a little musical literalism — bars do not contain bars in
+    music — and the method already pays that tariff everywhere: a Beat here is a
+    durable multi-week capability, where a musical beat is atomic and sits
+    inside a bar. Fidelity to the metaphor was never the binding constraint;
+    consistency with the method's own recursion claim is.

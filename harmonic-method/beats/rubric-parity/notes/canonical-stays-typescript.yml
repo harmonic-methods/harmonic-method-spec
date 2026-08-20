@@ -1,0 +1,14 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-002
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.2
+  content: >
+    Canonical dimension definitions stay TypeScript in the reference
+    implementation; they are not moved to YAML for the kit's convenience.
+  rationale: >
+    Those consts derive a literal union consumed by schema validation and
+    exhaustiveness checks. YAML would collapse them to string[], trading
+    compile-time safety for a shared file format that would not have prevented
+    the drift anyway — two unlinked copies were the cause, not the format.

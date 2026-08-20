@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-048
+  type: context
+  attached_to: HM-B-001
+  beat_version: HM-BV-001.3
+  content: >
+    The reconciliation instrument was run against this repository's own chain
+    immediately after being written. Result: seven checks passed across all five
+    Beat Codas and the system Coda, one returned cannot-determine for the whole
+    chain, and two findings landed on the same defect.
+
+    The findings: the Beat's own Coda promised that someone could "score a real
+    Beat or a real plan", and the system Coda promised scoring "against the
+    published rubrics". Both were written when scoring was everything this
+    repository published. Neither covered an instrument that reconciles a chain
+    and reports findings rather than a band — so the Beat had outgrown its own
+    Coda in the same commit that added the instrument. Both statements are
+    widened.
+
+    The cannot-determine is the anchor check, across the entire chain: no
+    Downbeat exists here, because this repository publishes the cadence entities
+    and deliberately holds no instances of them. That is an absence by design,
+    not a finding, and the instrument was written to report it as
+    cannot-determine rather than as agreement — which is what it did.
+  rationale: >
+    Recorded because the run is the only evidence that the instrument works on a
+    real chain rather than on a description of one, and because a reader
+    comparing the Codas against their history will otherwise find two widenings
+    with no stated cause. It is also the second time an instrument published here
+    has failed this repository on its first run — the Beat rubric scored the
+    accountability Beat at 3.3 and found the same class of defect, a parent Coda
+    enumerating what the repository held when it was written. Two independent
+    instruments finding the same failure shape twice is a pattern about Codas,
+    not about either instrument: a Coda is written once, the work keeps
+    arriving, and nothing re-reads the pair.

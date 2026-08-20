@@ -1,0 +1,9 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-006
+  type: constraint
+  attached_to: HM-B-003
+  content: >
+    The specs describe the method, not any implementation of it. Fields that
+    exist only in the reference implementation do not belong here, and the specs
+    must not assume software as the medium.

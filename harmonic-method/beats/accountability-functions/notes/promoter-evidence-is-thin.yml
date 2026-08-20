@@ -1,0 +1,14 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-019
+  type: assumption
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.1
+  content: >
+    Promoter is the newest function and its definition was derived largely from
+    a single engagement. The two-mode framing in particular — practitioner and
+    champion as one accountability held from opposite sides of the table — is
+    recent and has not been tested against a second client. Publishing it makes
+    it public before that test. Treat the two-mode language as the part most
+    likely to move, and re-read it specifically for whether a client would
+    recognize and accept being called a champion.

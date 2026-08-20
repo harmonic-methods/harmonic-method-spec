@@ -1,0 +1,22 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-015
+  type: decision
+  attached_to: HM-B-003
+  content: >
+    In a git-hosted system, the commit is the Revision. This repository records
+    no Revision files of its own; work is bound to its plan by naming the Beat
+    Version in the commit message. `specs/revision.yml` stays — Revision is a
+    Harmonic Method primitive — and the worked example keeps one, because its
+    evidence is a procedure document rather than a commit.
+  rationale: >
+    A Revision does three jobs: point at the change artifact, hold the reasoning,
+    and bind the change to a Beat Version. For git-hosted work the first is
+    circular (the commit is the artifact), the second is what a commit message
+    already is, and only the third is a real gap — which a line in the commit
+    message closes. Writing the other two into YAML would be a second copy of
+    what git already holds, able to drift, and unverifiable: the checker cannot
+    compare prose to a commit. That is the failure this repository exists to
+    prevent, so shipping it as a recommended practice would be self-defeating.
+    Revisions earn their place where git is not the medium — a procedure, a
+    runbook, a draft — and in a system of record that needs to query the graph.
