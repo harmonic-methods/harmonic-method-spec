@@ -78,6 +78,16 @@ text that decided it.
    Diverged when: a Note supersedes another that the Coda depended on, and the
    Coda still reflects the superseded position.
 
+9. **Coda still describes its entity** — the Coda covers what the entity has
+   actually become, not only what it was when the Coda was written.
+   Diverged when: the entity now delivers something its own Coda does not
+   promise. Checks 2 and 3 compare a Coda against the Coda above it, which
+   cannot see this: a Coda can serve its parent perfectly and still have been
+   outgrown by the work beneath it. Read the entity's description and its Beat
+   Versions, not only its Coda. This is the most likely divergence in a system
+   that is still growing, because a Coda is written once and the work keeps
+   arriving.
+
 ## Output format
 
 - **Findings**, most consequential first. For each: the check, its answer, the

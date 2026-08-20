@@ -5,9 +5,9 @@ beat:
   status: open
   coda:
     statement: >
-      Someone evaluating the Harmonic Method can score a real Beat or a real plan
-      using nothing but this repository and an agent, and trust the result
-      enough to act on it.
+      Someone evaluating the Harmonic Method can assess a real Beat, a real plan,
+      or whether their own intent still holds, using nothing but this repository
+      and an agent, and trust the result enough to act on it.
     parent: HM-CODA
   description: >
     The capability by which a Beat or a Beat Version plan is scored against the

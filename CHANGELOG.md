@@ -72,6 +72,15 @@ that breaks something real. See HM-BV-003.11.
     generalization did not quietly redefine what is covered. The new instrument
     was nearly published outside the guard entirely — `AGENTS.md` now says that
     adding an instrument with a new normative heading means registering it.
+  - **Run against this repository's own chain immediately**, it returned two
+    findings and exposed a gap in itself. Both findings were the same defect: the
+    Beat's Coda and the system Coda each promised *scoring*, written when scoring
+    was all this repository published, and neither covered an instrument that
+    reconciles a chain. Both widened. The gap: all eight checks compared a Coda
+    upward against its parent, and none looked down at the entity carrying it — so
+    the instrument could not detect the divergence it had just surfaced. A ninth
+    check closes it, and its digest was regenerated deliberately. See HM-N-048
+    and HM-N-049.
   - **Each instrument now names the function it serves**, and the index states
     that the Producer and Promoter have none, deliberately. See HM-N-047.
 - **The criteria-scoring proposal is recorded as an open question.** An unmerged
