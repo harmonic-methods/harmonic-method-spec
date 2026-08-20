@@ -42,8 +42,13 @@ function exceptions() {
 }
 
 /**
- * Returns {skipped} when the base is unreachable — a shallow CI clone or a fork
+ * Returns {skipped} when the base is unreachable — a shallow clone or a fork
  * without the base branch should not be reported as a discipline failure.
+ *
+ * Except where skipping would defeat the point: set HM_REQUIRE_BASE and an
+ * absent base becomes a failure. Continuous integration sets it, because a
+ * guard allowed to skip silently in the one place it is enforced reports
+ * success while guarding nothing.
  */
 export function checkCommitTrailers() {
   let range;
@@ -51,6 +56,9 @@ export function checkCommitTrailers() {
     git(['rev-parse', '--verify', BASE]);
     range = `${BASE}..HEAD`;
   } catch {
+    if (process.env.HM_REQUIRE_BASE) {
+      return { problems: [`base ref '${BASE}' not present, and HM_REQUIRE_BASE is set — fetch enough history to resolve it`], checked: 0 };
+    }
     return { skipped: `base ref '${BASE}' not present` };
   }
 

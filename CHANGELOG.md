@@ -37,6 +37,14 @@ inverts.
   generically. The README and `llms.txt` keep one attribution line each, and the
   trademark notice keeps the marks: provenance and legal notice are not
   instruction. See HM-N-035.
+- **The commit guard now actually runs in continuous integration.** The check
+  skips a missing base ref by design, and the job checked out one commit deep —
+  so the base was never present and the check skipped on every run while printing
+  success. The job now fetches full history and passes the pull request's own
+  base, and `HM_REQUIRE_BASE` turns a missing base into a failure rather than a
+  skip. A guard allowed to skip silently where it is the enforcement is worse
+  than an absent one, because its silence is indistinguishable from success. See
+  HM-BV-003.10 and HM-N-042.
 - **This repository stops calling itself a kit.** The word appeared about thirty
   times in present tense, including as the title of both entry points and the
   opening line of the contributor guide. It was accurate for a starter set of

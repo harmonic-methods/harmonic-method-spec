@@ -10,11 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: the commit-discipline check compares against the base
+          # ref, and at the default depth of 1 it would find none and skip.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
       - run: npm ci
-      # Checks every entity file in harmonic-method/ and examples/ against specs/.
-      # Exits non-zero on the first conformance failure.
+      # Checks every entity file in harmonic-method/ and examples/ against specs/,
+      # the rubric digests, the spec set version, and commit discipline.
+      # Exits non-zero on any conformance failure.
       - run: npm run validate
+        env:
+          # On a pull request compare against its own base; on a push to main the
+          # range is empty, which is correct — those commits were checked already.
+          HM_BASE_REF: ${{ github.base_ref && format('origin/{0}', github.base_ref) || 'main' }}
+          # A missing base ref must fail here rather than skip.
+          HM_REQUIRE_BASE: '1'

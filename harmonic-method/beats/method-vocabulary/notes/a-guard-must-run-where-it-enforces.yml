@@ -1,0 +1,24 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-042
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.10
+  content: >
+    A check permitted to skip must not be permitted to skip in the context where
+    it is the enforcement. The commit-discipline check skips a missing base ref
+    on purpose, so a shallow clone or a fork is not reported as a discipline
+    failure — and the integration job checked out one commit deep, so the base
+    was never there and the check skipped on every run while reporting success.
+    Whenever a check has a legitimate skip path, ask where it will actually run
+    and whether the skip is reachable there. If it is, give the enforcing context
+    a way to demand the check — here, an environment flag that turns the skip
+    into a failure.
+  rationale: >
+    This is the same shape as the guard that was described as shipped and never
+    built, and it is more dangerous, because this one exists, runs, and prints a
+    reassuring line. A guard that is absent gets noticed eventually when the
+    thing it should have caught gets through. A guard that skips silently is
+    trusted, and its silence is indistinguishable from success. The defect was
+    found only because the workflow was read before the branch was pushed, which
+    is not a process anyone should rely on twice.
