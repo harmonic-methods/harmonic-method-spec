@@ -8,6 +8,14 @@ summary: >
   a portfolio of portfolios is a portfolio at a higher altitude.
 attached_to: [portfolio, system, beat]
 fields:
+  id:
+    type: string
+    required_when: another Coda's parent field references it
+    description: >
+      Addressable identifier. A Coda nothing points at does not need one — a
+      Beat Coda at the bottom of the chain is carried by its Beat and identified
+      by it. A Coda with children beneath it must be addressable, or they cannot
+      ladder to it.
   statement:
     type: string
     required: true

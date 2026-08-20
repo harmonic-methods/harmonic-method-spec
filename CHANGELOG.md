@@ -37,6 +37,34 @@ inverts.
   generically. The README and `llms.txt` keep one attribution line each, and the
   trademark notice keeps the marks: provenance and legal notice are not
   instruction. See HM-N-035.
+- **`specs/bar.yml` and `specs/downbeat.yml` (new)** — the cadence entities, and
+  the Conductor's structural instrument. The method already named the
+  accountability that decisions stay in force and the discipline of routine
+  reconciliation, but published nothing to make the routine regular. A **Bar** is
+  the recurring period work is planned and delivered within, attaching at
+  portfolio or system altitude; a **Downbeat** is an immutable, additive anchor
+  recording where one capability stood and what it was converging toward.
+  - **Bars nest temporally** via an optional `parent`, so a quarter groups its
+    fortnights without a second entity. Phrase, BarGroup, BarSet, and Period
+    were all weighed; the first three collide with words the method already
+    spends, and Period — the one clean word — would cap the cadence at exactly
+    two levels while every other hierarchy here recurses. See HM-N-039.
+  - **The cadence spans two altitudes by design**: one shared clock, many
+    readings. A portfolio-wide convergence number would average away the only
+    thing worth knowing, and a per-capability clock is not a cadence at all. See
+    HM-N-038.
+  - How a convergence reading is computed stays with the implementation, on the
+    same line every other computed value follows.
+- **`specs/coda.yml` gains `id`**, required when another Coda's `parent`
+  references it. Instances already carried one and the checker already required
+  it while the spec never declared it — the same class of gap as a version
+  living in a comment. Coda also stays an `entity` rather than becoming a
+  `concept`: an earlier proposal here is withdrawn, because Coda instances exist,
+  are addressable, and point at each other, and Note settles the analogy —
+  attaching to a host is not the same as not existing. See HM-N-040.
+- **The Conductor's discipline names both instruments.** Notes carry what was
+  decided; Bars and Downbeats make the checking regular. No other function text
+  changed.
 - **The altitude above a system is a `portfolio`.** `specs/coda.yml` placed an
   *organization* there while `specs/function.yml` and the README said
   *portfolio* — two normative files naming one altitude differently. Portfolio

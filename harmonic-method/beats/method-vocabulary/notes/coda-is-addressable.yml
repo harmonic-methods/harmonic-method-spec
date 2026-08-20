@@ -1,0 +1,25 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-040
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.8
+  content: >
+    The Coda spec declares `entity`, not `concept`, and gains an `id` required
+    when another Coda's parent field references it. An earlier reading of this
+    repository proposed the opposite — that Coda become a concept alongside
+    Function — and that proposal is withdrawn.
+  rationale: >
+    The proposal rested on Coda having no lifecycle and never standing alone,
+    which is true and turns out not to be the distinguishing test. Function is a
+    concept because nothing instantiates it: there is no such thing as a
+    particular Composer record, and no entity carries one as a field. Coda
+    instances plainly exist, are addressable, and point at each other — the
+    laddering that the whole method rests on is Coda instances referencing Coda
+    instances. Note is the closer analogue and settles it: Note also attaches to
+    a host and never stands alone, and Note is an entity. Attaching to something
+    is not the same as not existing. The `id` had been carried by instances and
+    required by the checker while the spec never declared it, which is the same
+    class of gap as a version living in a comment — real behavior with no
+    normative statement behind it. Requiring it only when something points at
+    the Coda keeps a Beat Coda free of an identifier nothing would ever use.

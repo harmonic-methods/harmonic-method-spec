@@ -79,6 +79,13 @@ Beat Version is delivered by one or more **Revisions**, the tracked changes that
 actually execute it. **Notes** carry the typed knowledge — context, constraints,
 guidance, decisions — that explains why any of it is the way it is.
 
+Cadence makes reconciliation routine. A **Bar** is the recurring period work is
+planned and delivered within, and Bars nest — a quarter over its fortnights —
+so a longer cadence needs no second entity. Crossing a Bar's boundary is the
+occasion for a **Downbeat** on each capability in view: an immutable anchor
+recording the outcome it was converging toward and how far it had got. Drift is
+then measurable rather than remembered.
+
 Cutting across all of it are the five **functions** — Composer, Orchestrator,
 Conductor, Producer, Promoter. They are accountabilities rather than titles: one
 person may hold several, an agent may hold one under a named person's
@@ -93,6 +100,8 @@ possible to say which of the five nobody is currently holding.
 | [specs/beat-version.yml](specs/beat-version.yml) | a planned step in a Beat's evolution |
 | [specs/revision.yml](specs/revision.yml) | a tracked change executing a Beat Version |
 | [specs/note.yml](specs/note.yml) | typed knowledge attached to what it informs |
+| [specs/bar.yml](specs/bar.yml) | the recurring period work is planned within |
+| [specs/downbeat.yml](specs/downbeat.yml) | an immutable anchor of where a capability stood |
 | [specs/function.yml](specs/function.yml) | the five accountabilities the work is held through |
 | [specs/spec-set.yml](specs/spec-set.yml) | the version of the set above, which an implementation pins |
 

@@ -1,0 +1,59 @@
+# Harmonic Method spec — Downbeat
+entity: downbeat
+spec_version: 2.0.0
+summary: >
+  An immutable anchor recording where a capability honestly stood at a moment:
+  the outcome it was converging toward, and how far it had converged. A Downbeat
+  is what makes drift measurable instead of remembered — without one, a claim
+  that intent and reality have diverged has nothing to be measured against.
+attached_to: [beat]
+fields:
+  id: {type: string, required: true}
+  beat:
+    type: reference
+    required: true
+    description: >
+      The Beat this anchor was taken on. Downbeats sit at beat altitude because
+      convergence is only measurable per capability, even when the Bar boundary
+      that occasioned them belongs to a portfolio.
+  bar:
+    type: reference
+    required: false
+    description: >
+      The Bar whose boundary occasioned this anchor. Omitted when one is taken
+      outside the cadence — a reading before a decision, or after a shock.
+  coda_state:
+    type: string
+    required: true
+    description: >
+      A fixed record of the Beat's Coda as it stood when the anchor was taken,
+      sufficient to detect that it has since changed. What form that record
+      takes is an implementation's choice; that it cannot be altered afterward
+      is not.
+  convergence:
+    type: string
+    required: true
+    description: >
+      The reading of how far the capability had converged toward its Coda,
+      frozen at the moment of taking. The method requires a reading be taken and
+      preserved; how it is computed and on what scale is an implementation's.
+  taken_at: {type: timestamp, required: true}
+  taken_by:
+    type: reference
+    required: true
+    description: >
+      Who took the reading. A person, or an agent operating under a named
+      person's accountability — the same rule that governs who holds a function.
+rules:
+  - A Downbeat is immutable. A newer reading is a new Downbeat; correcting one
+    by editing it destroys the evidence the anchor exists to provide.
+  - Downbeats are additive. Taking one never removes or supersedes a prior one,
+    and the latest is simply the one taken most recently.
+  - A Downbeat is not a Beat Version. It carries no plan, no scope, no quality
+    grade, and no Revisions — it records what was true, not what is intended.
+  - Drift is the difference between the latest Downbeat and the present. A Coda
+    that has changed since the anchor was taken is the signal the Conductor
+    exists to surface.
+  - Crossing a Bar boundary produces one Downbeat per capability in view. One
+    occasion, many anchors — a single reading across a portfolio would average
+    away the only thing worth knowing.

@@ -1,0 +1,22 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-038
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.8
+  content: >
+    A Bar belongs to a portfolio or a system; a Downbeat belongs to a Beat.
+    Crossing one Bar boundary produces one Downbeat per capability in view. The
+    cadence deliberately spans two altitudes: one shared clock, many readings.
+  rationale: >
+    Putting both at the same altitude fails in whichever direction you choose.
+    Anchoring at portfolio altitude would mean one reading for the whole
+    portfolio, which averages away the only thing worth knowing — convergence is
+    a property of a capability, and a portfolio-wide number hides a capability
+    that has stalled behind three that have not. Putting the period at beat
+    altitude instead would give every capability its own clock, and a cadence
+    whose participants reconcile on different days is not a cadence: the whole
+    value of a shared boundary is that everything in view is compared at the
+    same moment, so the comparison means something. Keeping the clock high and
+    the readings low is what makes a Bar boundary an occasion rather than an
+    event that happens separately to everyone.

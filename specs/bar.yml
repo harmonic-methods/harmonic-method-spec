@@ -1,0 +1,42 @@
+# Harmonic Method spec — Bar
+entity: bar
+spec_version: 2.0.0
+summary: >
+  The recurring period work is planned and delivered within — the regular
+  cadence a Conductor reconciles against. A Bar is a span of time with a
+  boundary at each end; crossing a boundary is the routine occasion for taking
+  a Downbeat on each capability in view.
+attached_to: [portfolio, system]
+fields:
+  id: {type: string, required: true}
+  attached_to:
+    type: reference
+    required: true
+    description: >
+      The portfolio or system whose cadence this Bar belongs to. Altitude is
+      recursion, so a portfolio of portfolios runs its own Bars.
+  starts: {type: date, required: true}
+  ends: {type: date, required: true}
+  status:
+    type: enum [open, closed]
+    required: true
+    description: Binary — open (the current or a future period) or closed (elapsed).
+  parent:
+    type: reference
+    required: false
+    description: >
+      The enclosing Bar, when a longer period groups shorter ones — a quarter
+      over its fortnights. This is temporal containment at one altitude, NOT a
+      change of altitude: a parent Bar and its children may all belong to the
+      same portfolio. Root Bars omit this.
+rules:
+  - A parent Bar contains its children in time — no child starts before it or
+    ends after it.
+  - Bars sharing a parent do not overlap. Overlapping periods make "which Bar
+    are we in" unanswerable, which defeats the purpose of having one.
+  - A Bar's boundary is the occasion for a Downbeat, not a substitute for one.
+    A period that elapses without an anchor being taken leaves nothing to
+    reconcile against later.
+  - A longer cadence is a Bar with children, never a separate kind of period.
+    The method names one cadence entity and nests it, for the same reason Codas
+    nest rather than being renamed at each altitude.
