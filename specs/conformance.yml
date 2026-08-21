@@ -1,0 +1,68 @@
+# Harmonic Method spec — Conformance
+concept: conformance
+spec_version: 1.2.0
+summary: >
+  What conforming to this method involves, and what an implementation states
+  about itself in order to be checked. Conformance is a claim an implementation
+  makes, recorded where it can be reviewed, and made against a stated version of
+  the spec set rather than against whatever the specs say today.
+surface:
+  binding_and_comparable: >
+    The fields each entity spec declares, which of them are required, and the
+    values each lifecycle field permits; and the identifiers of the dimensions
+    or checks each instrument scores. These are facts an implementation can
+    state and a tool can compare, so these are what a conformance check covers.
+  binding_but_not_comparable: >
+    The rules carried by each entity spec, the requirement that an entity is a
+    directory whose children are subdirectories, the binding between a change
+    and the step it executes, and the five functions. Each of these binds an
+    implementation as much as a field does, and none of them reduces to a
+    comparison — they are read and followed, and a tool that reported on them
+    would be reporting on prose. An implementation is not less conformant for
+    them going unchecked.
+  everything_else: >
+    Nothing else here binds anyone. The worked example, this repository's own
+    system, the tooling, and the reader-facing prose exist to be read, copied,
+    or run. The surface is defined by what binds rather than by where it lives,
+    so adding a directory does not silently add to it.
+declaration:
+  spec_version:
+    type: string
+    required: true
+    description: >
+      The spec set version the claim is made against. A claim against no version
+      is not a claim, because the thing claimed keeps moving.
+  entities:
+    type: map
+    required: true
+    description: >
+      One entry per entity the specs define, naming the fields the
+      implementation carries, which it requires, and the values it permits where
+      the spec declares a lifecycle. An implementation may name entities the
+      specs do not define; those are extensions and are simply reported.
+  instruments:
+    type: map
+    required: false
+    description: >
+      One entry per instrument the implementation scores, naming the dimension
+      or check identifiers it uses. Omitted by an implementation that scores
+      nothing, which is conformant — the instruments are published for use, not
+      required for it.
+rules:
+  - >
+    An extension conforms. An implementation will carry entities, fields, and
+    scored dimensions the specs do not define; that is expected of anything real,
+    and none of it is a defect.
+  - >
+    A contradiction does not conform — a required field the implementation lacks,
+    a permitted lifecycle value it renamed or dropped, or a published dimension
+    it no longer scores.
+  - >
+    The declaration is the implementation's own claim about itself. A check
+    compares that claim against the specs; whether the implementation matches its
+    own claim is for its own tests to establish. Two links, each verifiable by
+    whoever owns it.
+  - >
+    Conformance is claimed against a version, never against the trunk. A claim
+    that tracks the latest state of this repository cannot be false, and so says
+    nothing.

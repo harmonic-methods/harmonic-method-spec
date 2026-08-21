@@ -24,7 +24,28 @@
   caught by a contributor reading the diff rather than by any check. Note that the
   miss is not the same as a replacement matching nothing: every replacement landed,
   but only one of several facts that had to change was replaced. See HM-N-065.
-- **No change to the spec set**, which stays at 1.1.0.
+- **`specs/conformance.yml` (new)** — what conforming involves, and what an
+  implementation declares. This repository claimed to be canonical while offering
+  no statement of what conforming to it entails, so a conformance command would
+  have had no referent and its failures would have been arguments about scope.
+  - **The surface separates into three, not two.** What binds and can be
+    compared: fields, which are required, permitted lifecycle values, and the
+    identifiers each instrument scores. What binds and cannot be compared: the
+    rules on each entity, the layout, the binding between a change and its step,
+    the five functions. What binds nobody: everything else. The two-way split is a
+    false choice — fold the uncomparable rules in and the command must ignore them
+    while claiming coverage; fold them out and the method stops requiring what
+    makes it a method. See HM-N-063.
+  - **A declaration is written, never inferred.** Deriving a model from source
+    means parsing a language, which would make the tool a tool for that language —
+    and the method has to hold for an implementation in anything, or in nothing.
+    Two links rather than one: a check compares the declaration to the specs, the
+    implementation's own tests compare its behaviour to the declaration. See
+    HM-N-064.
+  - The surface is defined by what binds, not by where it lives. Adding a
+    directory here does not silently enlarge what an implementation owes.
+- **Spec set 1.2.0.** Additive — the first spec set change since a tag exists, so
+  the minor step is now a promise rather than a formality.
 
 ## v1.3.0 — 2026-08-21
 

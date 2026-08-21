@@ -1,0 +1,32 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-063
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.3
+  content: >
+    The normative surface separates into three, not two. What binds and can be
+    compared: fields, which are required, permitted lifecycle values, and the
+    identifiers each instrument scores. What binds and cannot be compared: the
+    rules on each entity, the layout, the binding between a change and its step,
+    and the five functions. What binds nobody: everything else here.
+
+    An implementation is not less conformant because the second category goes
+    unchecked, and a check that claimed to cover it would be reporting on prose.
+  rationale: >
+    The two-way split people reach for first is normative against
+    non-normative, and it produces a false choice. Fold the uncomparable rules
+    into the checked set and the command has to either ignore them silently while
+    claiming full coverage, or emit findings about prose it cannot actually
+    evaluate — both of which make it look broken. Fold them out of the normative
+    set instead and the method has quietly stopped requiring the very things that
+    make it a method: that decisions carry rationale, that an entity is a
+    directory, that a change names the step it executes. Neither is acceptable, so
+    the middle category is the honest answer and it has to be stated rather than
+    left implicit.
+
+    The surface is also defined by what binds rather than by where it lives. An
+    enumeration of files would duplicate what the directory already answers and
+    would go stale on the first addition — the same failure as a count written
+    into prose. Adding a directory here should not silently enlarge what an
+    implementation owes.

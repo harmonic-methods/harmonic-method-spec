@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.15
   beat: HM-B-003
   title: Verify the claim, not the proxy
-  status: active
+  status: delivered
   summary: >
     Three failures from one shape, all of them real and all of them from this
     week. A changelog entry claimed a release while no tag existed, so the claim
