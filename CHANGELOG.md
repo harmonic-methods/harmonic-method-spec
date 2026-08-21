@@ -92,10 +92,19 @@
   medium — a Revision whose evidence is a procedure document has no branch state
   to read. This makes explicit what the field already required, after a real
   implementation read it as satisfiable by derivation. See HM-N-063.
-- **Spec set 1.2.0.** This is the number an implementation pins. The move is
-  additive — a new normative file and two rules making an existing requirement
-  explicit. No field, enum, dimension, or anchor changed, and no tag exists yet,
-  so nothing that was promised is broken.
+- **One fewer Note type.** The type for something believed but not verified is
+  retired; four remain. It answered a question about confidence rather than about
+  kind, where every other type names what a piece of knowledge is — and both
+  instances here turned out to be background about how much evidence something
+  rests on. The cost is recorded: there is now no type-level signal that a Note is
+  unverified, and a confidence field to replace it is named as owed rather than
+  invented in the same step. See HM-BV-003.16 and HM-N-065.
+- **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
+  normative file and two rules making an existing requirement explicit, and loses
+  one enum value. A removed value would be a major once a tag exists; none does
+  and nothing has been released, so the set takes a minor step and this cycle's
+  normative changes share one number rather than minting a second that nobody
+  could have held.
 
 ## v1.2.1 — 2026-08-20
 

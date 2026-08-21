@@ -1,0 +1,40 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-065
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.16
+  content: >
+    The Note type for something believed but not verified is retired. The method
+    defines four types: context, constraint, guidance, decision. [HM-N-019] and
+    [HM-N-043] both used it and are re-typed as context; the delivered step
+    [HM-BV-002.7], which describes creating one, is left as the record of what
+    happened at the time and is superseded by this Note rather than rewritten.
+  rationale: >
+    The type answered a question about confidence, not about kind. Every other
+    type names what a piece of knowledge *is* — a boundary, an instruction, a
+    choice, background — while this one named how sure of it someone was, which
+    is a property any of the four can carry in any degree. That mismatch showed up
+    in use: both instances here are background about how much evidence something
+    rests on, which is what context means, and neither became a different kind of
+    knowledge by being uncertain.
+
+    What it costs is real and is recorded rather than minimized. The method now
+    has no type-level signal that a Note is unverified, so the signal has to live
+    in the Note's own wording. Both re-typed instances say so in their first
+    line, which is why they survive the change legibly; a Note that relied on the
+    type alone to carry the caveat would have needed rewriting.
+
+    A confidence field is the obvious replacement and is deliberately not added
+    here. Attaching a numeric scale to knowledge is a bigger claim than removing
+    a type — it needs a definition of what the number means and what reads it,
+    and inventing one in the same step that creates the vacancy is how an
+    unconsidered field becomes permanent in a published standard. It is owed, and
+    naming it as owed is what keeps it from being quietly forgotten.
+
+    This is a removal from the normative surface, and the first this repository
+    has made. No tag exists and nothing has been released, so the spec set takes
+    a minor step and shares this cycle's number with the additive change that
+    preceded it, on the same reasoning recorded when the first releasable version
+    stayed in the 1.x line: a promise that could not have been made cannot be
+    broken. Once a tag exists, a removal is a major.

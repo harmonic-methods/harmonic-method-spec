@@ -8,11 +8,10 @@ summary: >
 fields:
   id: {type: string, required: true}
   type:
-    type: enum [context, assumption, constraint, guidance, decision]
+    type: enum [context, constraint, guidance, decision]
     required: true
     descriptions:
       context: Background a contributor or agent needs to act well here.
-      assumption: Something believed true but not verified; carries risk until validated.
       constraint: A boundary that must be respected (technical, legal, commercial).
       guidance: How to approach work in this area; standards and preferences.
       decision: A choice that was made, with its rationale — the core lineage type.
