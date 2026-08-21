@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.16
   beat: HM-B-003
   title: The binding lives where the Revision lives
-  status: active
+  status: delivered
   summary: >
     The Revision spec says a tracked change in a software medium is a change with
     a linked pull request. This repository binds work to its plan one commit at a

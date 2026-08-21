@@ -44,6 +44,21 @@
     HM-N-064.
   - The surface is defined by what binds, not by where it lives. Adding a
     directory here does not silently enlarge what an implementation owes.
+- **A request's title and description are scanned for foreign identifiers.** The
+  one surface no other check reaches is where this repository's only real leak
+  went: a closed request carrying a private repository's name, a commit reference
+  into it, and three identifiers from a system these specs do not define. The body
+  was already supplied for the binding rule, so only the patterns were missing.
+  Verified against the actual leaked text — it catches two of those three.
+  - **It matches shapes, never names**, and that is a constraint rather than a
+    choice: a check that runs in public cannot carry a list of client or
+    repository names, because the list would be the worse leak. So a client's name
+    will never be caught, nor a capability identifier whose shape collides with
+    ours — the third identifier from that leak. HM-N-067 states all three gaps,
+    because a check that exists invites the assumption that it suffices, and a
+    false sense of cover removes the habit that was actually protecting anyone.
+  - Fails rather than warns: a false positive costs a reworded sentence, a miss is
+    permanent. See HM-BV-003.17.
 - **The binding moved to where the Revision is.** `specs/revision.yml` defines a
   tracked change in a software medium as a change with a *linked request* — so
   binding work to its step one commit at a time was finer-grained than the entity

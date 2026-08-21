@@ -33,4 +33,5 @@ jobs:
           # checker; a request with no binding must fail rather than skip.
           HM_PR_BODY: ${{ github.event.pull_request.body }}
           HM_PR_NUMBER: ${{ github.event.pull_request.number }}
+          HM_PR_TITLE: ${{ github.event.pull_request.title }}
           HM_REQUIRE_BINDING: ${{ github.event_name == 'pull_request' && '1' || '' }}

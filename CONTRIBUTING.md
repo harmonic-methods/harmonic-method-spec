@@ -29,6 +29,14 @@ yet.
 If you would rather not, say so in the description and open it as a draft. Some
 changes are better discussed before they are planned.
 
+## Keep other systems' identifiers out
+
+Describe what happened rather than citing the record it happened in. A check
+scans the title and description for identifier shapes belonging to systems these
+specs do not define, and fails on them — but it matches shapes and never names,
+so a client's name will never be caught. The habit is the control; the check is
+only a backstop.
+
 ## Before you push
 
     npm install

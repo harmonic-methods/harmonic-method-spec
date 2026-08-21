@@ -151,6 +151,12 @@ Before making this repository public, sweep what visibility exposes and not only
 what git tracks: pull request descriptions and comments, commit messages, issue
 text, closed pull request diffs, branch names, and the repository description.
 
+A request's title and description are scanned for identifier shapes from systems
+these specs do not define. It matches shapes and never names — a list of names in
+a public check would be the leak — so a client's name is never caught, and neither
+is a capability identifier whose shape collides with ours. Describe what happened
+instead of citing the record it happened in.
+
 `specs/revision.yml` still defines the entity, and `examples/` keeps one, because
 a Revision is the only record that exists when the change artifact is a procedure
 document rather than a commit.

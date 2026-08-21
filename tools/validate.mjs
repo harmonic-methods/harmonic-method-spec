@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
-import { checkBinding } from './commit-discipline.mjs';
+import { checkBinding, checkPublicSurface } from './commit-discipline.mjs';
 import { normativeSkills, normativeText, digest, normativeItemCount } from './rubric-fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -181,6 +181,19 @@ function checkBindingDiscipline() {
   if (r.skipped) return console.log(`  skipped — ${r.skipped}`);
   for (const p of r.problems ?? []) fail(p);
   if (r.bound) console.log(`  ${r.where} binds ${r.bound}`);
+}
+
+/**
+ * A request description is the one surface here no other check reaches, and the
+ * only real leak this repository has had went through it.
+ */
+function checkPublicSurfaceHygiene() {
+  console.log('== public surface ==');
+  let r;
+  try { r = checkPublicSurface(); } catch (e) { return fail(`public surface: ${e.message}`); }
+  if (r.skipped) return console.log(`  skipped — ${r.skipped}`);
+  for (const p of r.problems) fail(p);
+  if (r.problems.length === 0) console.log(`  ${r.scanned.join(' and ')} carry no foreign identifiers`);
 }
 
 /**
@@ -371,6 +384,7 @@ if (TARGET) {
   checkToolingVersion();
   checkReleaseInvariant();
   checkBindingDiscipline();
+  checkPublicSurfaceHygiene();
   checkTree('harmonic-method');
   checkTree('examples');
   checkVocabulary(['harmonic-method', 'examples']);
