@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.3
   beat: HM-B-006
   title: What conformance means, and what an implementation declares
-  status: active
+  status: delivered
   summary: >
     This repository claims to be canonical and offers no statement of what
     conforming to it involves. Nothing says which of its contents bind an

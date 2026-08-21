@@ -1,0 +1,44 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-066
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.16
+  content: >
+    A change is bound to the step it executes on the pull request, not on each
+    commit. Exactly one binding per request, because a Revision belongs to
+    exactly one step. A commit may carry the trailer and nothing requires it.
+
+    This supersedes the commit-level half of [HM-N-015]. The rest of that
+    decision stands unchanged and is the reason this one is possible: this
+    repository still records no Revision files, the change artifact is still the
+    artifact, and binding the change to its step is still the only one of a
+    Revision's three jobs that git leaves undone.
+  rationale: >
+    The earlier decision put the binding on the commit, which is finer-grained
+    than the entity it models. [specs/revision.yml] defines a tracked change in a
+    software medium as a change with a linked request — so a request carrying four
+    commits is one Revision, and demanding four bindings modelled something the
+    specs do not define. The practice contradicted the specification it exists to
+    demonstrate, which is the worst place for this repository to be wrong.
+
+    Correcting the altitude rather than relaxing the rule matters. The friction
+    was real — a contributor, an assistant, and a web editor were all failing a
+    check for a convention none of them could discover from its message — and the
+    tempting fix was to soften the requirement and move it into review. That
+    would have traded the discipline away, and this repository has watched
+    unenforced discipline decay repeatedly. Moving it to the altitude the specs
+    already name keeps it enforced and removes the friction as a consequence
+    rather than as a compromise.
+
+    The clearest evidence the rule was misplaced is what happened to its
+    exception. A commit had been excused by name for carrying two bindings; at
+    the request altitude it is not a violation at all, and the exceptions list is
+    deleted rather than shortened. An exception that dissolves when a rule is
+    stated correctly was never a concession — it was the rule being wrong,
+    recorded as if it were the world being awkward.
+
+    Accepted cost: a request body cannot be read from a clone, so a missing
+    binding surfaces when the request is opened rather than when the commit is
+    made. The template carries the line pre-filled, which is why it is part of
+    this step and not a nicety.

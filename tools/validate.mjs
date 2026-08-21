@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
-import { checkCommitTrailers } from './commit-discipline.mjs';
+import { checkBinding } from './commit-discipline.mjs';
 import { normativeSkills, normativeText, digest, normativeItemCount } from './rubric-fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -170,19 +170,17 @@ function checkReleaseInvariant() {
 }
 
 /**
- * The commit is the Revision, and a Revision belongs to exactly one Beat
- * Version. Nothing enforced that, and the rule was broken twice in one sitting
- * from the same cause — a script that failed partway while `git add -A` ran
- * anyway.
+ * A change is bound to the step it executes. The Revision spec puts a tracked
+ * change in a software medium at a request with a linked change, so the binding
+ * belongs on the request rather than on each commit inside it.
  */
-function checkCommitDiscipline() {
-  console.log('== commit discipline ==');
-  let result;
-  try { result = checkCommitTrailers(); } catch (e) { return fail(`git: ${e.message}`); }
-  if (result.skipped) return console.log(`  skipped — ${result.skipped}`);
-  for (const p of result.problems) fail(p);
-  const excused = result.excused ? `, ${result.excused} excused` : '';
-  if (result.problems.length === 0) console.log(`  ${result.checked} commit(s) each bind one Beat Version${excused}`);
+function checkBindingDiscipline() {
+  console.log('== binding ==');
+  let r;
+  try { r = checkBinding(); } catch (e) { return fail(`binding: ${e.message}`); }
+  if (r.skipped) return console.log(`  skipped — ${r.skipped}`);
+  for (const p of r.problems ?? []) fail(p);
+  if (r.bound) console.log(`  ${r.where} binds ${r.bound}`);
 }
 
 /**
@@ -372,7 +370,7 @@ if (TARGET) {
   checkRubricFingerprints();
   checkToolingVersion();
   checkReleaseInvariant();
-  checkCommitDiscipline();
+  checkBindingDiscipline();
   checkTree('harmonic-method');
   checkTree('examples');
   checkVocabulary(['harmonic-method', 'examples']);

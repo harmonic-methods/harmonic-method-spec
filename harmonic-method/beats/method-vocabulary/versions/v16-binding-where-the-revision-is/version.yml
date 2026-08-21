@@ -1,0 +1,44 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.16
+  beat: HM-B-003
+  title: The binding lives where the Revision lives
+  status: active
+  summary: >
+    The Revision spec says a tracked change in a software medium is a change with
+    a linked pull request. This repository binds work to its plan one commit at a
+    time, which is finer-grained than the entity it models: a request carrying
+    four commits is one Revision by the spec and needs four bindings by the
+    check. The practice contradicts the specification it is meant to demonstrate.
+
+    The binding moves to the request. A commit may carry the trailer and nothing
+    requires it; the request carries exactly one, because a Revision belongs to
+    exactly one step. Two consequences follow without being argued for. A
+    contributor from outside, an assistant, and a web editor can all commit
+    without knowing a convention none of them could discover from the failure
+    they would otherwise get. And the excused commit in the exceptions list stops
+    being a violation at all, which is the clearest sign the rule was at the
+    wrong altitude — the exception was a symptom, not a concession.
+
+    Done when: a request binding one step passes; one binding two fails; one
+    binding none fails; a commit carrying no trailer passes; a local run says
+    plainly that it cannot see a request; and a first-time contributor can find
+    the requirement before hitting it.
+  scope: >
+    In: the binding check reading the request rather than the commits; the
+    integration job supplying it; a contributing guide and a request template so
+    the requirement is discoverable before it is enforced; the Note superseding
+    the commit-level decision; and deletion of the exceptions list, whose only
+    entry is no longer a violation.
+    Out: changing the Revision spec, which already says what a Revision is. This
+    brings the practice to the specification rather than the reverse, and that
+    direction matters — the alternative would have been to redefine a published
+    entity to match a local habit.
+    Out also: requiring anything of a contributor's commit messages. The
+    trailer stays welcome on a commit and stops being a gate.
+    Risks stated: a check that reads a request cannot run locally, so a missing
+    binding is learned at request time rather than at commit time — the template
+    is the mitigation and it is the reason the template is in scope rather than
+    optional; and a request may no longer span two steps, which is a real
+    constraint and the specification's position, so the answer is to split the
+    request rather than to widen the rule.

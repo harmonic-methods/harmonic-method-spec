@@ -29,3 +29,8 @@ jobs:
           HM_BASE_REF: ${{ github.base_ref && format('origin/{0}', github.base_ref) || 'origin/main' }}
           # A missing base ref must fail here rather than skip.
           HM_REQUIRE_BASE: '1'
+          # The binding is checked on the request, so the body has to reach the
+          # checker; a request with no binding must fail rather than skip.
+          HM_PR_BODY: ${{ github.event.pull_request.body }}
+          HM_PR_NUMBER: ${{ github.event.pull_request.number }}
+          HM_REQUIRE_BINDING: ${{ github.event_name == 'pull_request' && '1' || '' }}

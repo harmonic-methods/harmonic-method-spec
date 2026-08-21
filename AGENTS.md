@@ -109,17 +109,12 @@ message instead:
 
     Beat-Version: HM-BV-002.2
 
-Exactly one `Beat-Version:` trailer per commit. A Revision belongs to exactly
-one Beat Version, and the commit is the Revision — so a commit carrying two
-trailers is a non-conformant Revision, and a change spanning two Beat Versions
-is two commits. `npm run validate` enforces this over the commits your branch
-adds, and skips when the base ref is absent. Set `HM_BASE_REF` if your base is
-not `main`.
-
-If a commit already in history breaks the rule, name it in
-`tools/trailer-exceptions.txt` with the reason rather than rewriting it — the
-evidence of what happened is worth more than a clean check. That file is meant to
-stay short.
+Exactly one `Beat-Version:` trailer per **pull request**, in its description. A
+Revision belongs to exactly one Beat Version, and `specs/revision.yml` puts a
+tracked change at the request rather than at each commit inside it — so a request
+spanning two steps is two requests. Commits may carry the trailer; nothing
+requires it. The check runs where a request exists, which is why a local run
+reports that it cannot see one.
 
 When a Beat Version's work has merged, set its status to `delivered`. If it left
 flight without shipping — superseded, descoped, dropped — set `withdrawn` and say

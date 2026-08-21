@@ -44,6 +44,26 @@
     HM-N-064.
   - The surface is defined by what binds, not by where it lives. Adding a
     directory here does not silently enlarge what an implementation owes.
+- **The binding moved to where the Revision is.** `specs/revision.yml` defines a
+  tracked change in a software medium as a change with a *linked request* — so
+  binding work to its step one commit at a time was finer-grained than the entity
+  being modelled, and the practice contradicted the specification it exists to
+  demonstrate. Exactly one binding per request now; commits may carry the trailer
+  and none requires it.
+  - This removes real friction as a **consequence, not a compromise**. A
+    contributor, an assistant, and a web editor were each failing a check for a
+    convention none could discover from its message. The tempting fix was to
+    soften the rule and move it into review, which would have traded away a
+    discipline this repository has repeatedly watched decay when unenforced.
+  - **The exception dissolved.** A commit had been excused by name for carrying
+    two bindings; at the request altitude it is not a violation, so
+    `tools/trailer-exceptions.txt` is deleted rather than shortened. An exception
+    that disappears when a rule is stated correctly was never a concession — it
+    was the rule being wrong, recorded as if the world were awkward.
+  - Adds `CONTRIBUTING.md` and a request template carrying the line pre-filled,
+    because a request body cannot be read from a clone and the requirement has to
+    be discoverable before it is enforced. See HM-BV-003.16 and HM-N-066,
+    superseding the commit-level half of HM-N-015.
 - **Spec set 1.2.0.** Additive — the first spec set change since a tag exists, so
   the minor step is now a promise rather than a formality.
 
