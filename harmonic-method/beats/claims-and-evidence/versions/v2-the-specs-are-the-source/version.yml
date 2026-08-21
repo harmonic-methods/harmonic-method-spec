@@ -1,0 +1,44 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-007.2
+  beat: HM-B-007
+  title: The specs are the source the checker reads
+  status: active
+  summary: >
+    This repository describes its specs as machine-readable and nothing
+    machine-reads them for their rules. The checker carries its own copy of every
+    required field and every permitted lifecycle value, matching the specs by hand
+    across four entities, with nothing reconciling the two. Add a required field
+    to a spec and the checker will not ask for it; rename a permitted value and
+    the checker will keep accepting the old one.
+
+    The checker now derives both from the specs, keyed by the entity each spec
+    declares, so the filename mapping goes too. What cannot be derived is named
+    rather than quietly left behind: a requirement stated as a condition in prose,
+    and the rules about shape — that a child agrees with the directory holding it,
+    that references resolve — which no field declaration expresses.
+
+    Done when: the derived rules are shown equal to the removed ones before they
+    are removed; adding a required field to a spec makes the checker demand it
+    with no other change; a lifecycle value renamed in a spec is enforced under
+    its new name; an unparseable value list fails loudly rather than silently
+    checking nothing; and the sentence claiming the specs are machine-readable is
+    true.
+  scope: >
+    In: deriving required fields and permitted lifecycle values from the entity
+    specs; keying that off the entity each spec declares rather than off its
+    filename; deleting the duplicated constants; failing on a value list that
+    cannot be parsed; and the Note naming what stays hand-written and why.
+    Out: deriving the requirement stated as a condition, which is prose and would
+    need a grammar nobody wants; and the rules about shape and resolution, which
+    a field declaration cannot express and which are the larger part of what this
+    checker does. Both stay hand-written, and the point is that they are named as
+    such rather than passing for derived.
+    Out also: generating a schema in another format for implementations to
+    consume. That becomes worth doing once the specs are genuinely the source,
+    which is this step, and it is a distribution decision with its own release.
+    Risks stated: a derivation that differs from the constants would change what
+    is checked without anyone noticing, so equality is demonstrated before the
+    constants are deleted rather than assumed from a passing run; and a value list
+    that fails to parse must fail rather than yield nothing, because a check that
+    silently stops checking is the failure this capability exists to prevent.

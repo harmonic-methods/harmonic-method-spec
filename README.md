@@ -161,8 +161,10 @@ produced does not — and may name the version they arose from.
 - [harmonic-method/](harmonic-method/) — this repository described in its own vocabulary. Real
   capabilities, real work in flight, real decisions.
 
-To check a tree against the specs — required fields, lifecycle enums, reference
-resolution, decision rationale:
+To check a tree against the specs — required fields, lifecycle values, reference
+resolution, decision rationale. The required fields and permitted values are read
+from `specs/` rather than restated in the checker, so a change to a spec changes
+what is enforced:
 
     npm install
     npm run validate                                  # this repository

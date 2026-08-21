@@ -44,6 +44,24 @@
     HM-N-064.
   - The surface is defined by what binds, not by where it lives. Adding a
     directory here does not silently enlarge what an implementation owes.
+- **The checker reads the specs instead of copying them.** Required fields and
+  permitted lifecycle values are now derived from `specs/`, keyed by the entity
+  each spec declares — so the filename mapping is gone too. Before this, the
+  checker carried its own copy of all of it across four entities with nothing
+  reconciling the two: adding a required field to a spec changed no behaviour, and
+  renaming a permitted value left the old one accepted. **The claim that these
+  specs are machine-readable is now true**, where it previously was not.
+  - Equality between the derived rules and the removed constants was
+    **demonstrated before the constants were deleted**, not inferred from a
+    passing run — a derivation that quietly differed would have changed what is
+    checked with nothing to say so.
+  - An unreadable value list now **fails** rather than yielding nothing, because
+    the tempting behaviour leaves a field unchecked because of a typo and reports
+    success while doing it.
+  - What stays hand-written is named rather than left to be discovered: a
+    requirement stated as a condition, and every rule about shape and resolution —
+    the larger part of this checker, and not a shortfall to close later, because a
+    field declaration describes a field. See HM-BV-007.2 and HM-N-069.
 - **`HM-B-007`, nothing claims more than it can show (new capability, one step
   planned).** Nine recorded rules and four checks about holding this repository's
   claims to what it can demonstrate had accumulated under the capability that

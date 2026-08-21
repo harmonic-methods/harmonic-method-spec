@@ -44,12 +44,48 @@ const treeRead = (p) => readFrom(BASE, p);
 const treeLoad = (p) => parse(treeRead(p));
 const treeLs = (p) => (existsSync(join(BASE, p)) ? readdirSync(join(BASE, p)) : []);
 
-// Required fields, per the specs each entity is declared in.
-const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
-const BV_REQ = ['id', 'beat', 'title', 'summary', 'scope', 'status'];
-const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
-const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
-const NOTE_TYPES = ['context', 'assumption', 'constraint', 'guidance', 'decision'];
+/**
+ * Field rules read from the specs rather than copied from them.
+ *
+ * Keyed by the entity each spec declares, so no filename mapping is kept here
+ * either. Only two things are derivable: whether a field is required, and which
+ * values a lifecycle field permits. A requirement stated as a condition is prose
+ * and stays hand-written below, as do the rules about shape and resolution, which
+ * no field declaration expresses — those are the larger part of this checker and
+ * they are named as hand-written rather than passing for derived.
+ */
+const SPEC_RULES = (() => {
+  const byEntity = {};
+  for (const f of ls('specs')) {
+    let doc;
+    try { doc = load(`specs/${f}`); } catch { continue; }   // checkSpecs reports the parse failure
+    if (!doc || typeof doc.entity !== 'string') continue;    // a concept or the manifest defines no instances
+    const fields = doc.fields ?? {};
+    const required = Object.entries(fields).filter(([, v]) => v && v.required === true).map(([k]) => k);
+    const values = {};
+    for (const [name, def] of Object.entries(fields)) {
+      const t = def && typeof def.type === 'string' ? def.type : '';
+      if (!t.startsWith('enum')) continue;
+      const m = t.match(/^enum\s*\[([^\]]+)\]/);
+      if (!m) {
+        // A list that cannot be read must fail. Yielding nothing would leave the
+        // field silently unchecked, which is worse than the typo that caused it.
+        fail(`specs/${f}: field '${name}' declares '${t}', which is not a readable value list`);
+        continue;
+      }
+      values[name] = m[1].split(',').map((v) => v.trim());
+    }
+    byEntity[doc.entity] = { required, values, file: `specs/${f}` };
+  }
+  return byEntity;
+})();
+
+/** The rules for one entity, or a failure if no spec declares it. */
+function rulesFor(entity) {
+  const r = SPEC_RULES[entity];
+  if (!r) { fail(`no spec declares entity '${entity}' — the checker cannot derive its rules`); return { required: [], values: {} }; }
+  return r;
+}
 
 const SEMVER = /^\d+\.\d+\.\d+$/;
 const MANIFEST = 'specs/spec-set.yml';
@@ -245,8 +281,9 @@ function checkTree(root) {
     try { b = treeLoad(beatPath)?.beat; } catch (e) { fail(`${beatPath}: ${e.message}`); continue; }
     if (!b) { fail(`${beatPath}: no top-level 'beat' key`); continue; }
 
-    for (const f of BEAT_REQ) if (b[f] === undefined) fail(`${beatPath}: missing required '${f}'`);
-    if (!['open', 'closed'].includes(b.status)) fail(`${beatPath}: status '${b.status}' not in [open, closed]`);
+    for (const f of rulesFor('beat').required) if (b[f] === undefined) fail(`${beatPath}: missing required '${f}'`);
+    const beatStatuses = rulesFor('beat').values.status ?? [];
+    if (!beatStatuses.includes(b.status)) fail(`${beatPath}: status '${b.status}' not in [${beatStatuses.join(', ')}]`);
     if (!b.coda?.statement) fail(`${beatPath}: coda.statement missing`);
     if (b.coda?.parent !== codaId) fail(`${beatPath}: coda.parent '${b.coda?.parent}' does not ladder to ${codaId}`);
     // A directory is the list; an inline field would be the second copy this
@@ -266,8 +303,9 @@ function checkTree(root) {
       try { v = treeLoad(vPath)?.beat_version; } catch (e) { fail(`${vPath}: ${e.message}`); continue; }
       if (!v) { fail(`${vPath}: no top-level 'beat_version' key`); continue; }
 
-      for (const f of BV_REQ) if (v[f] === undefined) fail(`${vPath}: missing required '${f}'`);
-      if (!['active', 'delivered', 'withdrawn'].includes(v.status)) fail(`${vPath}: status '${v.status}' not in [active, delivered, withdrawn]`);
+      for (const f of rulesFor('beat_version').required) if (v[f] === undefined) fail(`${vPath}: missing required '${f}'`);
+      const bvStatuses = rulesFor('beat_version').values.status ?? [];
+      if (!bvStatuses.includes(v.status)) fail(`${vPath}: status '${v.status}' not in [${bvStatuses.join(', ')}]`);
       if (v.beat !== b.id) fail(`${vPath}: declares beat '${v.beat}' but sits under ${b.id}`);
       if (v.notes !== undefined) fail(`${vPath}: Beat Versions carry no notes — attach to the Beat with beat_version`);
       if (v.revisions !== undefined) fail(`${vPath}: inline 'revisions' duplicates ./revisions/`);
@@ -281,8 +319,9 @@ function checkTree(root) {
         try { r = treeLoad(rPath)?.revision; } catch (e) { fail(`${rPath}: ${e.message}`); continue; }
         if (!r) { fail(`${rPath}: no top-level 'revision' key`); continue; }
 
-        for (const f of REV_REQ) if (r[f] === undefined) fail(`${rPath}: missing required '${f}'`);
-        if (!['active', 'delivered', 'withdrawn'].includes(r.status)) fail(`${rPath}: status '${r.status}' not in [active, delivered, withdrawn]`);
+        for (const f of rulesFor('revision').required) if (r[f] === undefined) fail(`${rPath}: missing required '${f}'`);
+        const revStatuses = rulesFor('revision').values.status ?? [];
+        if (!revStatuses.includes(r.status)) fail(`${rPath}: status '${r.status}' not in [${revStatuses.join(', ')}]`);
         // specs/revision.yml: a Revision belongs to exactly one Beat Version.
         if (r.beat_version !== v.id) fail(`${rPath}: declares beat_version '${r.beat_version}' but sits under ${v.id}`);
         if (revIds.has(r.id)) fail(`${rPath}: duplicate revision id '${r.id}'`);
@@ -304,8 +343,9 @@ function checkTree(root) {
       try { n = treeLoad(nPath)?.note; } catch (e) { fail(`${nPath}: ${e.message}`); continue; }
       if (!n) { fail(`${nPath}: no top-level 'note' key`); continue; }
 
-      for (const f of NOTE_REQ) if (n[f] === undefined) fail(`${nPath}: missing required '${f}'`);
-      if (!NOTE_TYPES.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in specs/note.yml`);
+      for (const f of rulesFor('note').required) if (n[f] === undefined) fail(`${nPath}: missing required '${f}'`);
+      const noteTypes = rulesFor('note').values.type ?? [];
+      if (!noteTypes.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in ${rulesFor('note').file}`);
       if (n.type === 'decision' && !n.rationale) fail(`${nPath}: a decision Note requires rationale`);
       if (n.attached_to !== b.id) fail(`${nPath}: attached_to '${n.attached_to}' but sits under ${b.id}`);
       if (noteIds.has(n.id)) fail(`${nPath}: duplicate note id '${n.id}'`);

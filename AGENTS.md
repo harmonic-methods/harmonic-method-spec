@@ -24,6 +24,18 @@ request.
 - There is no `checks/` directory, by design. This repository assesses without
   recording.
 
+## The checker reads the specs
+
+Required fields and permitted lifecycle values are derived from `specs/`, keyed by
+the entity each spec declares. Change a spec and the checker changes with it — so
+adding `required: true` to a field will fail every existing file that lacks it,
+which is the intended behaviour and worth knowing before you add one.
+
+Not derived, and hand-written on purpose: a requirement stated as a condition,
+and every rule about shape — a child agreeing with its directory, references
+resolving. A field declaration describes a field; most of what makes a tree
+conformant is about relationships between files.
+
 ## Versions
 
 `specs/spec-set.yml` holds the one version of the normative surface. Every spec

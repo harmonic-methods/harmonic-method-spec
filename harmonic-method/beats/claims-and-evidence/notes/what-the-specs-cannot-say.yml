@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-069
+  type: decision
+  attached_to: HM-B-007
+  beat_version: HM-BV-007.2
+  content: >
+    The checker derives two things from the specs and hand-writes the rest. It
+    derives whether a field is required and which values a lifecycle field
+    permits, keyed by the entity each spec declares. It hand-writes a requirement
+    stated as a condition, and every rule about shape — that a child's
+    back-reference agrees with the directory holding it, that references resolve,
+    that a root outcome carries no parent.
+
+    The hand-written part is the larger part. That is not a shortfall to close
+    later; a field declaration describes a field, and most of what makes a tree
+    conformant is about relationships between files.
+  rationale: >
+    Before this, the checker carried its own copy of every required field and
+    permitted value, matching four specs by hand with nothing reconciling them.
+    The specs were described as machine-readable while nothing machine-read them
+    for their rules, so adding a required field to a spec changed no behaviour and
+    renaming a permitted value left the old one accepted. Equality between the
+    derived rules and the removed constants was demonstrated before the constants
+    were deleted, rather than inferred from a passing run — a derivation that
+    quietly differed would have changed what is checked with nothing to say so.
+
+    Two boundaries are worth stating rather than discovering. A conditional
+    requirement is prose — one field here is required only when another record
+    points at it — and deriving that would need a grammar for expressing
+    conditions in a spec, which is a much larger commitment than the problem
+    justifies. And an unreadable value list now fails loudly, because the
+    tempting behaviour is to yield nothing and carry on, which would leave a field
+    unchecked because of a typo and report success while doing it.
