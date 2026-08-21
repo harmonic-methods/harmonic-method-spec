@@ -1,0 +1,46 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.15
+  beat: HM-B-003
+  title: The published surfaces stop restating what a check can count
+  status: active
+  summary: >
+    Two defects of the same shape, both invisible to every check this repository
+    runs. The reconciliation instrument carries nine checks and both published
+    surfaces said eight, so an agent reading the specification was told the wrong
+    number about the instrument it was about to apply. And one field description
+    still offered a retired altitude as a value a Note may attach to, four spec
+    set versions after the decision retiring it said it does not appear in the
+    method.
+
+    Neither was reachable. The instrument digests guard an instrument's own
+    normative text, not prose written about it elsewhere; the vocabulary sweep
+    rejects a different set of words and does not read field descriptions for
+    altitude names. So both are corrected and both classes are closed by a check,
+    because a corrected number with nothing holding it is the same defect waiting
+    for the next edit.
+
+    Done when: the counts on both published surfaces are derived from the
+    instruments and disagreement fails the check; a retired altitude name in the
+    normative surface fails the check; both rules were made to fail before being
+    believed; and the previous step is marked delivered.
+  scope: >
+    In: the check count on the two published surfaces; the field description
+    naming a retired altitude; two checker rules, one counting an instrument's
+    enumerated items and asserting the published prose agrees, one sweeping the
+    normative surface for retired altitude names; the Notes recording both rules;
+    and marking HM-BV-006.2 delivered, which is this step's share of the
+    one-step lag.
+    Out: the counts stated inside an instrument's own section headings, which the
+    digests already cover, and the enumeration of spec files in the agent-facing
+    entry point, which is a restatement of a directory listing and a different
+    defect with a different fix. Out also: the spec set version, which does not
+    move — a corrected field description and a corrected count change no field,
+    enum, dimension, or anchor, so nothing an implementation pins has moved.
+    Risks stated: the altitude sweep is scoped to the normative surface and not to
+    entity files on purpose, because the Notes recording the retirement have to be
+    able to name the word they retire — widening it to the tree fails six such
+    Notes, which was verified rather than assumed; and a count check that located
+    its line by any mention of a skill path would read the wrong line, since the
+    front page names each instrument three times, so each surface is anchored on
+    the form unique to the row that states the count.

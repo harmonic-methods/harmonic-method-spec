@@ -1,0 +1,30 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-061
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.15
+  content: >
+    How many dimensions or checks an instrument carries is counted from the
+    instrument and asserted against the two published surfaces, rather than
+    trusted where it is written. A disagreement fails the conformance check.
+  rationale: >
+    The standing rule keeps derivable facts out of prose the checker cannot
+    reach, and the front page and the agent-facing entry point were both outside
+    that reach while stating three counts each. One had already gone stale: the
+    reconciliation instrument gained a ninth check, the digest moved and was
+    regenerated correctly, and both surfaces still said eight — so the guard that
+    exists worked exactly as designed and could not have caught this, because it
+    covers an instrument's own normative text and not prose written about it
+    somewhere else.
+
+    Deleting the counts was the alternative and was rejected. A reader choosing
+    an instrument is entitled to know how much work applying it is, and the two
+    sibling rows enumerate their dimensions immediately after the count, so
+    removing one count would leave the table inconsistent and lose real
+    information. A count that is checked is not a restatement in the sense the
+    rule forbids — the rule permits one where a check enforces agreement, and this
+    creates the check that permits these.
+
+    The rule was made to fail before being believed, per the standing habit: it
+    reported both stale surfaces on its first run, and nothing else.

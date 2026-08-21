@@ -24,7 +24,7 @@ fields:
   attached_to:
     type: reference
     required: true
-    description: The Org, system, or Beat this knowledge belongs to.
+    description: The portfolio, system, or Beat this knowledge belongs to.
   beat_version:
     type: reference
     required: false

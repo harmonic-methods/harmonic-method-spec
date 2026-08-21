@@ -309,6 +309,71 @@ function checkVocabulary(roots) {
   console.log(`  ${files.length} files checked`);
 }
 
+const COUNT_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+
+/**
+ * How many dimensions or checks each instrument carries, as stated on the two
+ * published surfaces.
+ *
+ * These are derivable facts sitting in prose no other check reaches, which is the
+ * shape this repository keeps failing at. One had already gone stale: the
+ * reconciliation instrument gained a ninth check and both surfaces still said
+ * eight, so an agent consuming the specification was told the wrong number. The
+ * instrument digests do not cover this — they guard an instrument's own text, not
+ * prose about it. Count the enumerated items and assert the prose agrees.
+ */
+function checkPublishedCounts() {
+  console.log('== published counts ==');
+  const surfaces = [
+    { path: 'README.md', find: (s) => `](skills/${s}/SKILL.md)` },
+    { path: 'llms.txt', find: (s) => `- skills/${s}/SKILL.md:` },
+  ];
+  const skills = normativeSkills();
+  for (const skill of skills) {
+    const items = (read(`skills/${skill}/SKILL.md`).match(/^\d+\. \*\*/gm) ?? []).length;
+    if (items < 1 || items >= COUNT_WORDS.length) {
+      fail(`skills/${skill}: ${items} enumerated items — outside the range this check can state in words`);
+      continue;
+    }
+    for (const { path, find } of surfaces) {
+      const needle = find(skill);
+      const line = read(path).split('\n').find((l) => l.includes(needle));
+      if (line === undefined) { fail(`${path}: no line matching '${needle}'`); continue; }
+      const stated = line.toLowerCase().match(new RegExp(`\\b(${COUNT_WORDS.slice(1).join('|')})\\b`))?.[1];
+      if (stated === undefined) fail(`${path}: the line naming ${skill} states no count`);
+      else if (COUNT_WORDS.indexOf(stated) !== items) {
+        fail(`${path}: says '${stated}' where skills/${skill} enumerates ${items}`);
+      }
+    }
+  }
+  console.log(`  ${skills.length} instruments, counts agree across ${surfaces.length} published surfaces`);
+}
+
+/**
+ * Retired altitude names, rejected on the normative surface only.
+ *
+ * The altitudes are portfolio, system, and beat. "Organization" was retired as an
+ * altitude name because it answers who owns the work rather than how much is in
+ * view, and the decision states it does not appear in the method — yet it
+ * survived in one field description, which is exactly where a reader looks to
+ * find out what a field accepts.
+ *
+ * Scoped to `specs/` on purpose, and narrower than the sweep in checkVocabulary:
+ * the Notes recording a retirement have to be able to name the word they retire,
+ * and an adopter's own tree is not measured against this repository's vocabulary
+ * discipline.
+ */
+function checkRetiredAltitudes() {
+  console.log('== retired altitudes ==');
+  const retired = /\b(orgs?|organizations?)\b/i;
+  const files = ls('specs').map((f) => `specs/${f}`);
+  for (const p of files) {
+    const m = read(p).match(retired);
+    if (m) fail(`${p}: uses "${m[0]}" — a retired altitude name; the altitudes are portfolio, system, and beat`);
+  }
+  console.log(`  ${files.length} spec files checked`);
+}
+
 /**
  * Which checks travel, and which stay.
  *
@@ -332,7 +397,9 @@ if (TARGET) {
   }
 } else {
   checkSpecs();
+  checkRetiredAltitudes();
   checkRubricFingerprints();
+  checkPublishedCounts();
   checkToolingVersion();
   checkCommitDiscipline();
   checkTree('harmonic-method');

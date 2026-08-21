@@ -25,7 +25,7 @@ Each serves one of the five functions. A digest over each one's normative text
 guards it against an unacknowledged edit.
 - skills/beat-coda-quality-check/SKILL.md: Composer — score a Beat 1-5 across seven dimensions
 - skills/beat-version-quality-check/SKILL.md: Orchestrator — score a Beat Version plan 1-5 across six dimensions
-- skills/coda-alignment-check/SKILL.md: Conductor — reconcile a Coda chain across eight checks, reported as findings rather than a score
+- skills/coda-alignment-check/SKILL.md: Conductor — reconcile a Coda chain across nine checks, reported as findings rather than a score
 The Producer and Promoter have no instrument yet, deliberately.
 
 ## Layout of a system

@@ -1,0 +1,32 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-062
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.15
+  content: >
+    A Note attaches to a portfolio, a system, or a Beat. The field description
+    offering an organization as the third of those is corrected, and the
+    normative surface is swept for retired altitude names so it cannot return.
+    The sweep covers `specs/` only.
+  rationale: >
+    The decision retiring the word as an altitude name states that it does not
+    appear in the method, and it had appeared in the method for four spec set
+    versions afterward — in a field description, which is the one place a reader
+    goes to find out what a field accepts. Every sibling spec had already been
+    corrected: the Coda attaches to a portfolio, a system, or a Beat, and a Bar to
+    a portfolio or a system. This was the last holdout, and it survived because
+    the decision was applied to the files that disagreed with each other and not
+    to the file that agreed with neither.
+
+    Scoping the sweep to the normative surface is the load-bearing choice. Six
+    Notes in this repository name the word while recording why it was retired,
+    and a sweep over the tree fails all six — the record of a decision has to be
+    able to name what it decided against. That was verified by widening the sweep
+    and reading the failures, not assumed. The existing vocabulary sweep is left
+    alone: it answers a different question, about words this repository declines
+    to define at all, and an adopter's tree is measured against neither.
+
+    This is a correction, not a change of course, so the spec set does not move.
+    No field, enum, dimension, or anchor is different afterward; a description
+    that contradicted a recorded decision now agrees with it.
