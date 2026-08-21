@@ -17,6 +17,13 @@
   description (HM-N-061). And a command's exit code is the answer, not its piped
   output — three times in one sitting a pipeline returned zero for a failing run
   and `set -e` did not fire (HM-N-062).
+- **The lock file agreed with the manifest again**, and the rule that prevents a
+  recurrence is written down: never hand-edit a generated file, regenerate it. The
+  manifest was renamed and its parser reclassified while the lock file kept the old
+  name and classification — both internally valid, disagreeing with each other, and
+  caught by a contributor reading the diff rather than by any check. Note that the
+  miss is not the same as a replacement matching nothing: every replacement landed,
+  but only one of several facts that had to change was replaced. See HM-N-065.
 - **No change to the spec set**, which stays at 1.1.0.
 
 ## v1.3.0 — 2026-08-21
