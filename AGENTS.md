@@ -46,6 +46,11 @@ instantiates a Function and no entity carries one as a field, so the checker
 parses it and stops there — there is no tree to validate. Keep that distinction
 if another non-instantiable concept is ever added.
 
+`specs/conformance.yml` declares `statement:`, the third discriminator. It is
+neither an entity nor a concept — it states what a conformance claim covers
+rather than describing something the method models. A file in `specs/` carries
+exactly one of the three.
+
 The method's word for the level above a Beat is **system**. "Project", "Drop",
 and "Movement" belong to the reference implementation and are not defined here —
 the validator rejects them in entity files. Prefer block form in YAML: inside a

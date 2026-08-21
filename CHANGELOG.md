@@ -77,7 +77,25 @@
   covers `specs/` only — the Notes recording a retirement have to be able to name
   the word they retire, which was verified by widening it and reading the six
   failures. See HM-N-062.
-- **No change to the spec set**, which stays at 1.1.0.
+- **Conformance is stated normatively**, in a new spec file. What a claim covers
+  — these specs and the instruments' normative sections — what it excludes, and
+  the line between an allowed extension and a contradiction that fails on the
+  implementation's side. The rule had lived only in the contributor guide, which
+  is not the normative surface and is not what an implementation pins. This is
+  also the prerequisite HM-BV-006.2 named and deferred: a check that reports
+  conformance needs a published statement of which files are normative before it
+  can mean anything. See HM-BV-006.3 and HM-N-064.
+- **A bounded step's status is carried, not derived.** A Beat Version and a
+  Revision each state their three values on the entity. An implementation may
+  compute an extra label from its medium, but a value derived from a signal that
+  exists in only one medium does not satisfy a field the method requires in every
+  medium — a Revision whose evidence is a procedure document has no branch state
+  to read. This makes explicit what the field already required, after a real
+  implementation read it as satisfiable by derivation. See HM-N-063.
+- **Spec set 1.2.0.** This is the number an implementation pins. The move is
+  additive — a new normative file and two rules making an existing requirement
+  explicit. No field, enum, dimension, or anchor changed, and no tag exists yet,
+  so nothing that was promised is broken.
 
 ## v1.2.1 — 2026-08-20
 

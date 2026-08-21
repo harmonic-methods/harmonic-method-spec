@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-064
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.3
+  content: >
+    What a conformance claim covers is declared in `specs/conformance.yml`, on
+    the normative surface, with `statement:` as a third discriminator alongside
+    `entity:` and `concept:`. The extension and contradiction distinction moves
+    there from the contributor guide, which keeps its copy as guidance for
+    contributors rather than as the authority.
+  rationale: >
+    An implementation pins a spec set version. Until now the rule deciding
+    whether a divergence was an allowed extension or a conformance failure lived
+    only in the file addressed to people changing this repository — so the most
+    consequential rule published here was the one thing an implementation could
+    not pin, and a reconciliation against a real implementation had to cite
+    contributor guidance to classify what it found. A standard whose conformance
+    rule is not part of the standard is asking to be read selectively.
+
+    It is a statement rather than an entity or a concept because nothing
+    instantiates it and no record carries it as a field, and it is not a concept
+    because it describes nothing the method models — Function is a concept
+    because Composer is a real accountability that simply has no record; this
+    describes the standard's own edges. Three discriminators is one more than the
+    directory had, so the rule is written as exactly one per file to keep the next
+    addition from arriving by precedent.
+
+    The statement deliberately excludes itself from what it enforces on others.
+    It names the checker, the published surfaces, the worked example, and this
+    repository's own recorded work as non-normative, which preserves the standing
+    finding that a checker stricter than its spec is a defect in the checker and
+    not a conformance failure for anyone. And by the rule it publishes, no
+    implementation's divergences are named in it — those belong in that
+    implementation's own declaration, which is also what keeps normative text
+    free of any one vendor's vocabulary.

@@ -1,0 +1,58 @@
+# Harmonic Method spec — conformance
+#
+# What conformance means, which files carry the standard, and how a divergence is
+# classified. Declared here because a conformance claim with no published
+# statement of what it covers is unfalsifiable, and because the check that can
+# report conformance needs a statement of which files are normative before it can
+# mean anything.
+#
+# Not an entity and not a concept: nothing instantiates this and no record
+# carries it as a field. `statement:` is the third discriminator in this
+# directory, after `entity:` and `concept:`.
+statement: conformance
+spec_version: 1.2.0
+summary: >
+  An implementation conforms to a spec set version. It does not conform to a
+  repository tag, to a package version, or to another implementation. The claim
+  covers the entity primitives in this directory and the rubric dimensions, red
+  flags, and anchors in the instruments — the two things this repository is
+  canonical for.
+normative_surface:
+  specs: >
+    Every file in this directory: the fields, their required-ness, the lifecycle
+    enums, and the rules stated on each entity.
+  instruments: >
+    In each instrument, the scoring scale, the dimension table or check list, and
+    the check rules. A digest over those sections fails this repository's own
+    check when any of them is edited without acknowledgement.
+  excluded: >
+    Nothing else is normative, and an implementation is not measured against it:
+    the front page, the agent-facing entry point, the contributor guide, the
+    worked example, this repository's own recorded work, and the checker. A
+    checker stricter than the specs is a defect in the checker.
+classification:
+  extension: >
+    Defining an entity these specs do not, scoring a dimension the method omits,
+    computing a value the method only names, or adding a boundary above the
+    altitudes named here. An extension is allowed, needs no permission, and is
+    declared rather than negotiated.
+  contradiction: >
+    A required field an implementation lacks, an enum value it renames or
+    collapses, a dimension whose anchor text differs from the text published
+    here, or a rule it inverts. A contradiction is a conformance failure, and it
+    fails on the implementation's side.
+rules:
+  - An implementation declares conformance to the single version in
+    `spec-set.yml`, never to a version per file. The specs move as a set.
+  - A distinction the method requires on an entity is carried by that entity. An
+    implementation may compute an additional label from whatever its medium
+    affords, but a value derived from a signal that exists in only one medium
+    does not satisfy a field the method requires in every medium.
+  - Where an implementation extends the method, the mapping from its own
+    containers and vocabulary onto these primitives belongs in that
+    implementation's conformance declaration, not in this repository.
+  - Silence is permission. Where these specs say nothing, an implementation is
+    free; where they state a field, an enum, or a rule, following it is what the
+    claim means.
+  - A conformance claim names the spec set version it was made against. A claim
+    with no version attached cannot be checked and is not a claim.

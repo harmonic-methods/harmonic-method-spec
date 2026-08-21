@@ -1,0 +1,53 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.3
+  beat: HM-B-006
+  title: What a conformance claim covers, stated where it can be pinned
+  status: active
+  summary: >
+    This repository declares itself canonical and describes the extension and
+    contradiction distinction only in the contributor guide — a file for people
+    changing this repository, not the normative surface, and not what an
+    implementation pins. So the rule that decides whether a divergence is a
+    conformance failure has been unpinnable since the direction of authority
+    inverted, and a reconciliation run against a real implementation had to cite
+    the contributor guide to classify anything.
+
+    This states it normatively instead. What a claim covers, what it excludes,
+    how a divergence is classified, and that the mapping from an implementation's
+    own containers onto these primitives belongs in that implementation's
+    declaration rather than here. It also settles the question that prompted it —
+    whether a status distinction the method requires may be satisfied by
+    deriving it from a source-control signal. It may not, because such a signal
+    exists in only one medium.
+
+    This is the prerequisite the previous step named and deferred, and the reason
+    it deferred the conformance subcommand.
+
+    Done when: the normative surface states what conformance covers and excludes;
+    the extension and contradiction line is pinnable rather than guidance-only;
+    both bounded-step entities carry the status rule; and the spec set moves.
+  scope: >
+    In: a new normative file declaring the conformance statement, its
+    discriminator, and its rules; the status rule on Beat Version and on
+    Revision; the spec set version across every spec file; the spec listing on
+    both published surfaces; the contributor-guide line recording the third
+    discriminator; and the Notes recording both decisions.
+    Out: the conformance subcommand itself. This step supplies what it needed and
+    stops there, because a command that reports conformance has to decide what it
+    reads on an implementation's side, and no implementation has published a
+    declaration to read yet. Out also: any statement about a particular
+    implementation's divergences, which belongs in that implementation's
+    declaration by the rule this step publishes — writing them here would
+    contradict the constraint that normative text names no implementation.
+    Owed, not done: HM-BV-003.15 is unmerged as this step is written, so it stays
+    active and closing it belongs to the next substantive step after this branch
+    lands. Naming it here rather than marking it delivered keeps the claim honest;
+    a summary asserting work that had not happened is the failure this repository
+    has recorded four times.
+    Risks stated: a normative statement of what is normative can contradict
+    itself, so the exclusion list names the checker among the things an
+    implementation is not measured against, which is the standing rule that a
+    checker stricter than its spec is a defect in the checker; and adding a third
+    discriminator to a directory that had two invites a fourth, so the rule is
+    stated as exactly one of three per file rather than left to precedent.
