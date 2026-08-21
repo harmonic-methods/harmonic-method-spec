@@ -44,6 +44,27 @@
     HM-N-064.
   - The surface is defined by what binds, not by where it lives. Adding a
     directory here does not silently enlarge what an implementation owes.
+- **`HM-B-007`, nothing claims more than it can show (new capability, one step
+  planned).** Nine recorded rules and four checks about holding this repository's
+  claims to what it can demonstrate had accumulated under the capability that
+  publishes the entity model, because that is where the checker lives.
+  - **How it was recognized:** four consecutive increments scored only adequately
+    on advancing that capability's outcome. No single score was wrong enough to
+    act on; the pattern across four was. A dimension that keeps scoring three on
+    unrelated work is a capability boundary in the wrong place, not bad luck.
+  - **Nothing moved.** A Note records what was learned while a particular
+    capability was being delivered, and reattaching it to a capability that did
+    not exist then would say it arose from work that had not started. A repository
+    whose purpose is that nothing claims more than it can show cannot begin by
+    falsifying its own lineage. The cost — most of the reasoning filed elsewhere,
+    connected only by subject — is the honest shape of a capability recognized
+    late. See HM-N-068.
+  - Scored 4.1 first time, with Harmonious the weak dimension for the second Beat
+    in a row and the same cause: not naming the standing tension it sits inside.
+    Here that tension is that what this repository publishes assesses without
+    enforcing, while what it does to itself enforces a great deal — legitimate,
+    and only while the two stay told apart in the tooling. Fixed before
+    decomposition; 4.3 after.
 - **A request's title and description are scanned for foreign identifiers.** The
   one surface no other check reaches is where this repository's only real leak
   went: a closed request carrying a private repository's name, a commit reference
