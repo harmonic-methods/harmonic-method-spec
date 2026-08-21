@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.17
   beat: HM-B-003
   title: Identifiers from elsewhere do not travel into public prose
-  status: active
+  status: delivered
   summary: >
     A request description is the one surface here that no check reaches, and it
     is where the only real leak happened: a closed request carried a private

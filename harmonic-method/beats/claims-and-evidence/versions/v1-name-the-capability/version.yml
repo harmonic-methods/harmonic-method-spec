@@ -1,0 +1,34 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-007.1
+  beat: HM-B-007
+  title: Name the capability and leave the history where it happened
+  status: active
+  summary: >
+    Nine recorded rules and four checks about holding this repository's claims to
+    what it can show had accumulated under the capability that publishes the
+    entity model, because that is where the checker lives. Four consecutive
+    increments scored only adequately on advancing that capability's outcome,
+    which was the signal: the work was arriving by gravity rather than by fit.
+
+    This names the capability it actually belongs to and decides what moves,
+    which is nothing. The rules stay attached where they were written, because a
+    Note records what was learned while a particular capability was being
+    delivered, and reattaching it would falsify that. The new capability starts
+    empty and takes the next increment instead.
+  scope: >
+    In: the capability itself with its outcome and boundary; the decision that
+    existing rules stay where they are and why; and the reader-facing register of
+    what this repository is, which gains it.
+    Out: moving any recorded rule, any planned step, or any check. A rule
+    reattached to a capability that did not exist when it was learned is a false
+    record, and the reason to have named this capability is that false records are
+    what it exists to prevent — doing that as its first act would be an unusually
+    poor start.
+    Out also: any new check. This step names a capability and adds no
+    enforcement; the first guard to arrive under it will be the next increment,
+    and there is no shortage of candidates.
+    Risks stated: a capability that starts empty looks like a bucket, and the
+    only defence is that the next increment lands here rather than back where the
+    gravity is — if the following hygiene step attaches to the vocabulary
+    capability again, this one was not worth naming.

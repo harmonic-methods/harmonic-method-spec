@@ -1,0 +1,33 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-007
+  title: Nothing claims more than it can show
+  status: open
+  coda:
+    statement: >
+      A reader can trust what this repository says about itself. Every claim it
+      makes about its own state is either held up by something that runs, or
+      accompanied by a plain statement of what is not checked and why.
+    parent: HM-CODA
+  description: >
+    The capability by which this repository's assertions about itself are held to
+    what can be demonstrated. Three parts, and the third is the one usually
+    skipped: a claim that can be checked is checked; a claim that cannot be is
+    labelled as unchecked where a reader will meet it; and a check that exists is
+    verified by making it fail before it is believed.
+
+    The boundary with the conformance capability is direction. That one verifies
+    an implementation's claims about itself against these specs, outward. This
+    one verifies this repository's claims about its own state, inward — and it
+    exists because a standard whose own record misstates its state has nothing
+    to lend an adopter.
+
+    It is held against a standing tension it must not resolve in the wrong
+    direction. What is published here assesses and does not enforce: no gate, no
+    recorded score, nothing an adopter must satisfy. What this repository does to
+    itself is the opposite, and deliberately so. That asymmetry is legitimate —
+    holding yourself to more than you ask of others is not hypocrisy — but it
+    only stays legitimate while the two are told apart in the tooling, so no
+    check invented here may quietly become something an adopter owes.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.
