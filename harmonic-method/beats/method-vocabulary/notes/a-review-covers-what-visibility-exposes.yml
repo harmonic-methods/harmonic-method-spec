@@ -1,0 +1,28 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-061
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.15
+  content: >
+    A review before making a repository public covers everything that visibility
+    exposes, not everything that git tracks. Pull request descriptions and their
+    comments, commit messages, issue text, review threads, the diffs of closed
+    pull requests, branch names, and the repository's own description all become
+    readable at the same moment the files do. Sweep them by name, not by
+    inference from a clean working tree.
+  rationale: >
+    A pre-publication sweep of this repository reported it clean, and it was: no
+    secrets, no internal identifiers, every link and citation resolving. The
+    identifiers that actually leaked — a private repository's name, a commit
+    reference into it, and three entity identifiers from the system it hosts —
+    were in the description of a closed pull request, which the sweep never
+    looked at because it was scoped to tracked files. They surfaced only because
+    someone asked an unrelated question about that pull request's title.
+
+    The lesson is not that the sweep was careless but that its scope was
+    reasoned from the wrong boundary. "The repository" means one thing to a
+    checker and another to a reader with a browser, and the second definition is
+    the one that matters when the switch is flipped. Worth knowing too that the
+    remedy is partial: a description can be edited, and the diff of a closed
+    pull request cannot, so the only complete fix is not putting it there.

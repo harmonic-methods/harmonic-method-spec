@@ -15,6 +15,7 @@
  * Run with: npm run validate
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -129,6 +130,42 @@ function checkRubricFingerprints() {
   }
   for (const recorded of Object.keys(stored)) {
     if (!skills.includes(recorded)) fail(`skills/fingerprints.yml: digest recorded for '${recorded}', which carries no normative section`);
+  }
+}
+
+/**
+ * A changelog entry claiming a release is a claim about the world, and the tag is
+ * the only part of it a tree can check. Either the newest entry says it is
+ * unreleased, or a tag exists for it.
+ *
+ * The marker is the escape hatch by design: an entry still being drafted on a
+ * branch has no tag yet and must not fail. Removing the marker is the act of
+ * claiming release, and that is when the tag becomes owed.
+ */
+function checkReleaseInvariant() {
+  console.log('== release invariant ==');
+  const heading = read('CHANGELOG.md').split('\n').find((l) => /^## v\d+\.\d+\.\d+/.test(l));
+  if (!heading) return fail('CHANGELOG.md: no "## vX.Y.Z" heading found');
+  const version = heading.match(/^## v(\d+\.\d+\.\d+)/)[1];
+
+  if (/\(unreleased\)/i.test(heading)) {
+    console.log(`  v${version} is marked unreleased — no tag owed`);
+    return;
+  }
+
+  let tags;
+  try {
+    tags = execFileSync('git', ['tag', '--list', `v${version}`], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  } catch {
+    // Same reasoning as the commit check: a shallow clone is not a defect, but a
+    // silent skip where this is enforced would repeat the failure it exists for.
+    if (process.env.HM_REQUIRE_BASE) return fail(`cannot read tags to confirm v${version}, and HM_REQUIRE_BASE is set — fetch tags`);
+    return console.log('  skipped — tags unavailable');
+  }
+  if (tags !== `v${version}`) {
+    fail(`CHANGELOG.md claims v${version} released, but no tag v${version} exists — tag it, or mark the entry (unreleased)`);
+  } else {
+    console.log(`  v${version} released and tagged`);
   }
 }
 
@@ -334,6 +371,7 @@ if (TARGET) {
   checkSpecs();
   checkRubricFingerprints();
   checkToolingVersion();
+  checkReleaseInvariant();
   checkCommitDiscipline();
   checkTree('harmonic-method');
   checkTree('examples');
