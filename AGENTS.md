@@ -142,6 +142,20 @@ When editing text with a script, assert that every replacement matched. A
 replacement that finds nothing changes nothing and reports nothing. For a remote
 surface, verify by reading it back rather than by trusting what was sent.
 
+Read a command's exit code, not its piped output. A pipeline reports its last
+stage, so `npm run validate | tail` returns zero on a failing run and `set -e`
+will not fire.
+
+The newest changelog entry either says `(unreleased)` or has a tag. Removing the
+marker is the act of claiming release, and `npm run validate` will then demand
+the tag — so **tag first, then remove the marker**. A branch that removes it
+before the tag exists cannot pass its own check, and the tag should point at
+merged work rather than at a branch.
+
+Before making this repository public, sweep what visibility exposes and not only
+what git tracks: pull request descriptions and comments, commit messages, issue
+text, closed pull request diffs, branch names, and the repository description.
+
 `specs/revision.yml` still defines the entity, and `examples/` keeps one, because
 a Revision is the only record that exists when the change artifact is a procedure
 document rather than a commit.

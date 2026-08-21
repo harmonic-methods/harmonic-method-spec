@@ -1,0 +1,44 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.15
+  beat: HM-B-003
+  title: Verify the claim, not the proxy
+  status: active
+  summary: >
+    Three failures from one shape, all of them real and all of them from this
+    week. A changelog entry claimed a release while no tag existed, so the claim
+    was checked against nothing. A pre-publication review reported a clean
+    repository having swept only what git tracks, while the identifiers that
+    actually leaked sat in a pull request description. And a command's success was
+    read off piped output three separate times while its exit code said otherwise,
+    which pushed a failing commit.
+
+    Each is a proxy mistaken for the thing claimed. The first is checkable and
+    becomes a rule the checker enforces: the newest changelog entry either says it
+    is unreleased, or a tag exists for it. The other two are not checkable from
+    inside a tree and become written rules instead. The live instance is fixed:
+    the newest entry is released, and it says so.
+  scope: >
+    In: the release invariant in the checker, with a soft skip where the history
+    is unavailable and a strict mode the integration job already sets; the
+    unreleased marker on the newest entry; the two rules that cannot be checked,
+    recorded as guidance; and marking the previous step delivered.
+    Out: verifying that a package was published, which no check inside a tree can
+    know and which would make the checker depend on a registry. The tag is the
+    proxy the method already relies on, and the front page already tells a reader
+    to copy from one.
+    Out also: linting prose outside the tree. A pull request description is
+    outside the checker's reach by definition, which is exactly why the rule
+    covering it has to be a rule rather than a test.
+    Risks stated: a tag check that skips silently where it is enforced would
+    repeat the failure that produced it, so the strict mode is the point rather
+    than a refinement; and requiring a tag on every entry, including one still
+    being drafted, would fail every branch mid-flight, which is why the unreleased
+    marker is the escape and not an oversight.
+    The invariant also fixes an order, which was found while building it rather
+    than designed in: a branch that removes the marker cannot pass its own check
+    until the tag exists, and the tag should point at merged work. So the tag is
+    cut first, on the commit that holds what was released, and the marker comes
+    off afterwards. An unreleased entry owes no tag, so that sequence is the one
+    the rule permits — which makes it guidance the rule enforces rather than a
+    convention someone has to remember.

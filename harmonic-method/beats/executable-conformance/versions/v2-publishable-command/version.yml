@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.2
   beat: HM-B-006
   title: A command someone can run without cloning
-  status: active
+  status: delivered
   summary: >
     Checking a tree still requires cloning this repository and knowing the path
     to a script inside it, which is a poor answer to "verify this yourself" and

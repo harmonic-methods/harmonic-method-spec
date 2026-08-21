@@ -1,6 +1,32 @@
 # Changelog
 
-## v1.3.0 — 2026-08-20 (unreleased)
+## v1.4.0 — 2026-08-21 (unreleased)
+
+- **The checker enforces a release invariant.** The newest changelog entry either
+  says `(unreleased)` or a tag exists for it. Caught a live case on its first run:
+  `harmonic-method@1.3.0` was on the public registry while the entry still claimed
+  to be unreleased and no `v1.3.0` tag existed. Now tagged.
+  - The rule also **fixes an order**, found while building it rather than designed
+    in: a branch removing the marker cannot pass its own check until the tag
+    exists, and a tag should point at merged work — so tag first, then remove the
+    marker. An unreleased entry owes no tag, so the rule permits exactly that
+    sequence and no other.
+- **Two rules no check can reach, written down instead.** A pre-publication review
+  covers what *visibility* exposes, not what git tracks — this repository's own
+  sweep reported clean while internal identifiers sat in a closed pull request's
+  description (HM-N-061). And a command's exit code is the answer, not its piped
+  output — three times in one sitting a pipeline returned zero for a failing run
+  and `set -e` did not fire (HM-N-062).
+- **The lock file agreed with the manifest again**, and the rule that prevents a
+  recurrence is written down: never hand-edit a generated file, regenerate it. The
+  manifest was renamed and its parser reclassified while the lock file kept the old
+  name and classification — both internally valid, disagreeing with each other, and
+  caught by a contributor reading the diff rather than by any check. Note that the
+  miss is not the same as a replacement matching nothing: every replacement landed,
+  but only one of several facts that had to change was replaced. See HM-N-065.
+- **No change to the spec set**, which stays at 1.1.0.
+
+## v1.3.0 — 2026-08-21
 
 - **The checker is now a publishable command.** `hm validate <path>`, with a
   second binary named for the package so that running it without installing
