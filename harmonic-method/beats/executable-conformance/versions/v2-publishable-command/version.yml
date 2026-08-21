@@ -1,0 +1,54 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.2
+  beat: HM-B-006
+  title: A command someone can run without cloning
+  status: active
+  summary: >
+    Checking a tree still requires cloning this repository and knowing the path
+    to a script inside it, which is a poor answer to "verify this yourself" and
+    the reason the previous step scored only adequately on advancing toward the
+    Coda. This makes the checker a publishable command with an entry point of its
+    own: one subcommand, `validate`, taking the tree to check, and a version
+    readout that names both the spec set version and the package version because
+    they move separately and only one of them is what conformance is declared
+    against.
+
+    Three names diverge on purpose and none of them is a mistake to be
+    reconciled: the repository, the published package, and the typed command.
+    Two binaries ship, one named for the package so that running it without
+    installing keeps working, and a short one for people who install it.
+
+    Done when: a packed tarball can be run without the repository present and
+    checks an external tree; both binary names reach the same entry point; the
+    repository's own self-check still runs from its script unchanged; the version
+    readout distinguishes the two streams; and the front page shows the
+    no-install path before the install path.
+  scope: >
+    In: the package manifest's name, its removal of the flag that blocks
+    publishing, and its binary map; a command entry point with subcommand
+    dispatch, help output, and a version readout; the file list that decides what
+    ships; the front-page install section; and the Notes recording the naming
+    decision and what ships.
+    Out: publishing. That needs credentials this work does not have and is a
+    release action, like cutting a tag — verification here is a packed tarball run
+    from outside the repository, which proves the same thing without claiming a
+    registry name. Scoring this step against its Coda returns only adequate for
+    exactly that reason, and the shortfall is named rather than absorbed: a
+    packaged command nobody can install is inert, and the front page must not
+    describe it as available before it is. This is the third time a mechanism has
+    landed a cycle ahead of the thing that makes it usable, after a pinnable
+    version with nothing to pin and an entry claiming release with no tag, so the
+    release action that finishes it is stated as owed rather than assumed.
+    Out also: the conformance subcommand, which needs a statement of which files
+    are normative before it can mean anything; and the three publication-hygiene
+    items still outstanding, which cohere with each other and not with packaging
+    a command — putting them here would be the kind of grab-bag the plan rubric
+    penalizes.
+    Risks stated: a binary map whose names do not include the package name breaks
+    running without installing, which is the path a standing constraint obliges
+    this repository to keep pleasant; a file list that omits something the command
+    reads leaves a package that works locally and fails once installed, which is
+    why it is verified from a tarball rather than by inspection; and publishing
+    under a name nobody has claimed invites a squatter the moment the repository
+    is public.

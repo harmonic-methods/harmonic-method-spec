@@ -69,6 +69,14 @@ tree, though. From a clone of this repository:
 
     node tools/validate.mjs /path/to/your/harmonic-method
 
+The same check ships as a command, for anyone who would rather not clone:
+
+    npx harmonic-method validate ./harmonic-method     # nothing to install
+    hm validate ./harmonic-method                      # after a global install
+
+The command is optional and always will be. Reading a spec, applying an
+instrument, or vendoring any of it installs nothing.
+
 It checks what the specs require — fields, lifecycle values, decision rationale,
 reference resolution, and that each child agrees with the directory holding it.
 It does not apply the disciplines this repository keeps on itself, so a Beat of

@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-059
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.2
+  content: >
+    Three names, none of them a mistake to reconcile. The repository is named for
+    the artifact it publishes. The package is named for the method, because that
+    is what someone searches for and what keeps running it without installing
+    legible. The typed command is the two-letter prefix every identifier in this
+    repository already carries. Two binaries ship and both reach the same entry
+    point: one named for the package, so running it without installing resolves,
+    and the short one for anyone who installs it.
+  rationale: >
+    A short command was wanted and the short name was already taken on the
+    registry — but that only ever ruled it out as a package name, since a binary
+    name needs no registry uniqueness. So the short name survives where it
+    matters, on the keyboard, and the package takes the discoverable one.
+
+    The prefix is the right short name rather than an invented abbreviation: it
+    is already the association a reader has, because it prefixes every Beat, step
+    and Note here.
+
+    Keeping one binary named for the package is not cosmetic. The runner resolves
+    a binary matching the package name, or the only one if there is exactly one —
+    so shipping only the short name would break running without installing, which
+    is the path a standing constraint obliges this repository to keep pleasant.
+
+    A registry scope was reserved for the publisher and is deliberately not used
+    for the command. A scope guarantees a name forever, which matters for anything
+    an implementation depends on and matters less for something a person types —
+    and it lengthens the no-install form, which is the one form a constraint here
+    requires be kept comfortable. So the scope is where machine-consumable
+    normative data belongs, the unscoped name is where the command belongs, and
+    owning a scope does not reserve the unscoped name: they are separate
+    namespaces, and only the unscoped one can be taken by someone else.
