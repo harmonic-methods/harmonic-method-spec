@@ -1,0 +1,40 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.17
+  beat: HM-B-003
+  title: Identifiers from elsewhere do not travel into public prose
+  status: active
+  summary: >
+    A request description is the one surface here that no check reaches, and it
+    is where the only real leak happened: a closed request carried a private
+    repository's name, a commit reference into it, and three identifiers from a
+    system this repository does not define. The description can be edited; the
+    diff of a closed request cannot, so the only complete remedy is not putting
+    it there in the first place.
+
+    The body is already supplied to the checker for the binding rule, so the
+    mechanism exists and only the patterns are missing. A check now scans the
+    title and the description for identifier shapes belonging to systems these
+    specs do not define, and fails rather than warns, because the cost of a
+    false positive is a reworded sentence and the cost of a miss is permanent.
+
+    Done when: each shape fails when present in a title or a description; this
+    repository's own identifiers pass, since they are a different shape; a local
+    run says plainly that there is no request to read; and the gap the check
+    cannot close is written down rather than assumed away.
+  scope: >
+    In: the check, the shapes it matches, the skip where no request exists, and
+    the Note recording what it cannot cover.
+    Out: matching names. A check that runs in public cannot carry a list of
+    client or repository names, because the list would be the leak — so this
+    matches shapes only, and the consequence is that a client's name will never
+    be caught. Stating that is part of the work; leaving it implicit would let a
+    reader assume a coverage that does not exist.
+    Out also: scanning an adopter's requests. This is a discipline this
+    repository keeps on itself and does not travel, on the same rule that keeps
+    the vocabulary sweep home. And out: closed requests, which the check cannot
+    see and whose diffs cannot be edited anyway.
+    Risks stated: a shape common enough to appear innocently would block a
+    legitimate request, so the shapes are distinctive rather than broad; and the
+    check discloses what it looks for, which is accepted because a shape is not a
+    secret and the alternative is no check at all.

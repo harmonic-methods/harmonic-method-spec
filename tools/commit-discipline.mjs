@@ -1,87 +1,102 @@
 /**
- * Commit discipline over the branch's own commits.
+ * Binding discipline: a change is bound to the step it executes.
  *
- * A Revision belongs to exactly one Beat Version, and in a git-hosted system the
- * commit is the Revision — so a commit carrying two `Beat-Version:` trailers is
- * a non-conformant Revision, and a change spanning two Beat Versions is two
- * commits. This check exists because that mistake was made twice in one sitting,
- * both times from the same cause, and nothing caught it.
+ * The Revision spec says a tracked change in a software medium is a change with a
+ * linked pull request, so the binding belongs on the request and not on each
+ * commit inside it. A request carrying four commits is one Revision; demanding
+ * four bindings would model something the specs do not define, and would fail a
+ * contributor, an assistant, or a web editor for a convention none of them could
+ * discover from the failure.
  *
- * Scope: commits on this branch but not on the base. Commits made before the
- * discipline was written are not retroactively judged.
+ * Exactly one binding per request, because a Revision belongs to exactly one Beat
+ * Version. A commit may carry the trailer as well; nothing requires it.
  *
- * Exceptions live in `trailer-exceptions.txt`, one commit per line with a
- * reason. A defect already in history is recorded rather than rewritten — the
- * same principle that keeps old trailers un-rewritten. The file is meant to stay
- * short; a growing one is the smell, not the fix.
+ * The request body is only visible where a request exists, so this reports that
+ * it cannot check rather than pretending to — with a strict mode the integration
+ * job sets, because a check allowed to skip silently where it is the enforcement
+ * reports success while guarding nothing.
  */
-import { readFileSync, existsSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+const TRAILER = /^Beat-Version:[ \t]*(\S+)[ \t]*$/gm;
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const BASE = process.env.HM_BASE_REF ?? 'main';
-
-// stderr is discarded: an absent base ref is a soft skip, and git's own
-// diagnostic on the way there would read as a crash.
-const git = (args) =>
-  execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
-
-function exceptions() {
-  const p = join(ROOT, 'tools/trailer-exceptions.txt');
-  if (!existsSync(p)) return new Map();
-  const out = new Map();
-  for (const line of readFileSync(p, 'utf8').split('\n')) {
-    const t = line.trim();
-    if (!t || t.startsWith('#')) continue;
-    const [sha, ...reason] = t.split(/\s+/);
-    out.set(sha, reason.join(' '));
-  }
-  return out;
+/** Bindings named in a request body, in order, deduplicated. */
+export function bindingsIn(body) {
+  return [...new Set([...String(body ?? '').matchAll(TRAILER)].map((m) => m[1]))];
 }
 
 /**
- * Returns {skipped} when the base is unreachable — a shallow clone or a fork
- * without the base branch should not be reported as a discipline failure.
- *
- * Except where skipping would defeat the point: set HM_REQUIRE_BASE and an
- * absent base becomes a failure. Continuous integration sets it, because a
- * guard allowed to skip silently in the one place it is enforced reports
- * success while guarding nothing.
+ * Returns {skipped} when there is no request to read — a local run, or a push
+ * that is not a request — unless HM_REQUIRE_BINDING says that is a failure.
  */
-export function checkCommitTrailers() {
-  let range;
-  try {
-    git(['rev-parse', '--verify', BASE]);
-    range = `${BASE}..HEAD`;
-  } catch {
-    if (process.env.HM_REQUIRE_BASE) {
-      return { problems: [`base ref '${BASE}' not present, and HM_REQUIRE_BASE is set — fetch enough history to resolve it`], checked: 0 };
+export function checkBinding() {
+  const body = process.env.HM_PR_BODY;
+  const number = process.env.HM_PR_NUMBER;
+  const requireBinding = Boolean(process.env.HM_REQUIRE_BINDING);
+
+  if (body === undefined || (!requireBinding && !number && String(body).trim() === '')) {
+    if (requireBinding) {
+      return { problems: ['no request body supplied, and HM_REQUIRE_BINDING is set — pass HM_PR_BODY'] };
     }
-    return { skipped: `base ref '${BASE}' not present` };
+    return { skipped: 'no request to read — a binding is checked when one is opened' };
   }
 
-  const shas = git(['rev-list', '--no-merges', range]).split('\n').filter(Boolean);
-  const allowed = exceptions();
+  const found = bindingsIn(body);
+  const where = number ? `request #${number}` : 'the request';
+
+  if (found.length === 0) {
+    return {
+      problems: [
+        `${where} names no step it executes. Add a line to the description:\n` +
+        '           Beat-Version: HM-BV-<beat>.<step>\n' +
+        '       Pick the step from harmonic-method/beats/*/versions/ — or open one first if none fits.',
+      ],
+    };
+  }
+  if (found.length > 1) {
+    return {
+      problems: [
+        `${where} names ${found.length} steps (${found.join(', ')}), and a change belongs to exactly one. Split it.`,
+      ],
+    };
+  }
+  return { bound: found[0], where };
+}
+
+/**
+ * Identifier shapes belonging to systems these specs do not define.
+ *
+ * Shapes, never names. This check runs in public, so a list of client or
+ * repository names would itself be the leak — which means a client's name will
+ * never be caught here, and that gap is real rather than an oversight.
+ */
+const FOREIGN = [
+  { what: 'a note identifier from another system', re: /\bN-[0-9A-Z]{4}-[0-9]{3,}\b/gi },
+  { what: 'an entity identifier from another system', re: /\b(?:bv|rev|acct|mv|ts)-[0-9a-f]{8,}\b/gi },
+];
+
+/**
+ * Scans a request's title and description. Returns {skipped} where there is no
+ * request to read — a local run has none, and inventing one would be worse than
+ * saying so.
+ */
+export function checkPublicSurface() {
+  const body = process.env.HM_PR_BODY;
+  const title = process.env.HM_PR_TITLE;
+  if (body === undefined && title === undefined) {
+    return { skipped: 'no request to read — a description is scanned when one is opened' };
+  }
+
   const problems = [];
-
-  for (const sha of shas) {
-    const body = git(['log', '-1', '--format=%B', sha]);
-    const trailers = body.split('\n').filter((l) => /^Beat-Version:\s*\S/.test(l));
-    const short = sha.slice(0, 7);
-    const subject = git(['log', '-1', '--format=%s', sha]);
-
-    const excused = [...allowed.keys()].find((k) => sha.startsWith(k));
-    if (excused) continue;
-
-    if (trailers.length > 1) {
-      problems.push(
-        `${short} carries ${trailers.length} Beat-Version trailers — a Revision belongs to one Beat Version: "${subject}"`,
-      );
-    } else if (trailers.length === 0) {
-      problems.push(`${short} carries no Beat-Version trailer — bind the change to its plan: "${subject}"`);
+  for (const [where, text] of [['title', title ?? ''], ['description', body ?? '']]) {
+    for (const { what, re } of FOREIGN) {
+      const hits = [...new Set([...String(text).matchAll(re)].map((m) => m[0]))];
+      if (hits.length) {
+        problems.push(
+          `the request ${where} carries ${what}: ${hits.join(', ')}\n` +
+          '       Identifiers from a system these specs do not define should not appear in\n' +
+          '       public prose. Describe what happened instead of citing its record.',
+        );
+      }
     }
   }
-  return { checked: shas.length, excused: allowed.size, problems };
+  return { problems, scanned: [title !== undefined && 'title', body !== undefined && 'description'].filter(Boolean) };
 }

@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-064
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.3
+  content: >
+    An implementation declares its conformance in a document it writes and keeps.
+    Nothing infers it by reading the implementation's source. The declaration
+    names the spec set version it claims against, and per entity and instrument,
+    what the implementation carries.
+  rationale: >
+    Inference was rejected on three grounds and the first is fatal. Deriving a
+    model from source means parsing a language, which would make the tool a tool
+    for that language — and this method has to hold for an implementation written
+    in anything, or in nothing, since its medium may be a procedure rather than
+    code. A conformance check that only understands one language contradicts the
+    standard it enforces.
+
+    Second, a claim should be an assertion with an author. Everything else here
+    records decisions rather than reconstructing them, and a conformance claim is
+    a decision about what an implementation holds itself to. Written down, it
+    appears in a diff and can be reviewed, argued with, and compared against its
+    own past.
+
+    Third, it makes failure actionable. An inferred model that is wrong produces
+    an argument about the inference; a declared model that disagrees with the
+    specs means one of two written things is wrong, and both are readable.
+
+    The obvious objection is that a declaration can lie. It can, and every
+    conformance regime has that property. The honest framing is two links rather
+    than one: a check compares the declaration against the specs, and the
+    implementation's own tests compare its behaviour against the declaration.
+    Each link is verifiable by whoever owns it, and the declaration is where they
+    meet. A useful side effect is that it can be diffed over time, so a change in
+    what an implementation conforms to becomes visible — which is the Conductor's
+    concern applied to conformance itself.

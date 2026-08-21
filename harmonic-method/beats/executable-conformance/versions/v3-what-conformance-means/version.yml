@@ -1,0 +1,44 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.3
+  beat: HM-B-006
+  title: What conformance means, and what an implementation declares
+  status: delivered
+  summary: >
+    This repository claims to be canonical and offers no statement of what
+    conforming to it involves. Nothing says which of its contents bind an
+    implementation, which of those a tool could ever compare, or what an
+    implementation would have to state about itself to be checked. Without that,
+    a conformance command has no referent and its failures would be arguments
+    about scope.
+
+    A conformance spec supplies it. It separates what is checkable — fields,
+    which of them are required, lifecycle values, and the identifiers each
+    instrument scores — from what binds an implementation without reducing to a
+    comparison, such as the rules on each entity, the layout, and the five
+    functions. And it defines the declaration an implementation writes: the
+    version its claim is made against, and per entity and instrument, what it
+    actually carries. Extensions conform; contradictions do not.
+
+    Done when: a reader can tell which contents bind an implementation and which
+    of those a tool can verify; the declaration's shape is stated closely enough
+    to write one against; the spec set version has moved for the addition; and
+    nothing enumerates files that a directory already lists.
+  scope: >
+    In: the conformance spec; the spec set version, which moves for an addition
+    to the normative surface; and the Notes recording the three-way separation
+    and why a declaration is written rather than inferred.
+    Out: the command that enforces it. That is the next step, and it exists to
+    check this document rather than to define it — writing both together would
+    let the checker's convenience decide what conformance means.
+    Out also: publishing the normative surface as data an implementation can
+    depend on, which is a distribution decision with its own naming and its own
+    release action; and any implementation's own declaration, which is work in
+    that implementation's repository and is theirs to assert.
+    Risks stated: classifying a rule as checkable would promise enforcement that
+    cannot exist and would make the command look broken when it ignores one;
+    enumerating the files that are normative would duplicate what the directory
+    already answers and would go stale on the first addition, so the surface is
+    defined by what binds rather than by where it lives; and the spec set version
+    is now consequential in a way it was not last week, because a tag exists and
+    a consumer can pin it.
