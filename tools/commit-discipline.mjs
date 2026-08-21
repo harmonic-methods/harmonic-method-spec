@@ -30,9 +30,10 @@ export function bindingsIn(body) {
 export function checkBinding() {
   const body = process.env.HM_PR_BODY;
   const number = process.env.HM_PR_NUMBER;
+  const requireBinding = Boolean(process.env.HM_REQUIRE_BINDING);
 
-  if (body === undefined) {
-    if (process.env.HM_REQUIRE_BINDING) {
+  if (body === undefined || (!requireBinding && !number && String(body).trim() === '')) {
+    if (requireBinding) {
       return { problems: ['no request body supplied, and HM_REQUIRE_BINDING is set — pass HM_PR_BODY'] };
     }
     return { skipped: 'no request to read — a binding is checked when one is opened' };
