@@ -8,15 +8,16 @@ summary: >
 fields:
   id: {type: string, required: true}
   type:
-    type: enum [context, constraint, guidance, decision]
+    type: enum [background, constraint, guidance, decision]
     required: true
     additions: none
     children: allowed
     descriptions:
-      context: >
-        The root. Every Note is context in the general sense, and the other three
-        name specializations of it. As a value it means a Note that rises to no
-        narrower kind — background a contributor or agent needs to act well here.
+      background: >
+        Knowledge that rises to no narrower kind — what a contributor or agent
+        needs to know to act well here. Named for the case rather than for the
+        category, so that "context" stays the word for all four and never doubles
+        as one of them.
       constraint: A boundary that must be respected (technical, legal, commercial).
       guidance: How to approach work in this area; standards and preferences.
       decision: A choice that was made, with its rationale — the core lineage type.
@@ -48,9 +49,9 @@ fields:
 rules:
   - Notes are preserved, not overwritten; superseding is a new Note referencing the old.
   - Decisions cite what they supersede when they change course.
-  - Every Note is context in the general sense. The `type` names the
-    specialization it rises to, and `context` is the value for one that rises to
-    none.
+  - Every Note is context in the general sense — the Note is the context, and
+    `type` names the specialization it rises to. No value is called context, so
+    that the word for the whole is never also the word for a part.
   - A subtype narrows its type and never contradicts it. A reader that does not
     recognize a subtype falls back to the type, which is the whole reason the
     type is closed and the subtype is free.

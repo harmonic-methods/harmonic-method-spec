@@ -1,0 +1,40 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.18
+  beat: HM-B-003
+  title: The category is not one of its members
+  status: active
+  summary: >
+    Declaring the type hierarchy rooted at context left `context` doing two jobs
+    at once — the category every Note belongs to, and the value for a Note that
+    specializes no further. Filtering on it was ambiguous and only prose said
+    which sense applied.
+
+    The leaf is renamed. Four types: background, constraint, guidance, decision.
+    No value is called context, so the word for the whole is never also the word
+    for a part, and the hierarchy needs no disclaimer to be read correctly.
+
+    `background` rather than `information`, which was the first candidate and had
+    the same defect — all four types are information, so it would have restaged
+    the collision one word along. Background names the unspecialized case and
+    nothing else, and it is what the field's own description already said.
+
+    Done when: no type is named for the category; the thirteen instances are
+    re-typed; the checker rejects the old value; and the field keeps its name.
+  scope: >
+    In: the enum value, its description, the root rule, the checker's accepted
+    types, the thirteen Notes carrying the old value, and both published
+    surfaces.
+    Out: renaming the field to name the root. It was considered and rejected: the
+    Note *is* the context, so a context-prefixed field restates the entity, it
+    would be the only prefixed field name in these specs, and it would encode the
+    root into a name that lies if the root ever moves. The root belongs in the
+    summary and the rules, which is where it now is.
+    Out also: the word "context" in prose, which keeps meaning the category and
+    is correct everywhere it appears. Only the typed field changed.
+    Owed, not done: seven earlier steps remain unmerged and this makes eight.
+    Risks stated: this is the second rename of a published value in one unreleased
+    cycle, which is affordable only because no tag exists — once one does, a
+    renamed value is a major and this kind of correction stops being cheap. That is
+    an argument for cutting the tag once the vocabulary settles, not for renaming
+    more freely while it is free.

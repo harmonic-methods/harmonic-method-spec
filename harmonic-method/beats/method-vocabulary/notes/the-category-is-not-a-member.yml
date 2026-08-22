@@ -1,0 +1,39 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-072
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.18
+  content: >
+    The unspecialized Note type is `background`. No type is named context.
+    Context remains the word for the category all four belong to — the Note is
+    the context, and the type names how far it specializes. This resolves the
+    double duty [HM-N-071] recorded as the one thing it left open.
+  rationale: >
+    A category that is also one of its own members cannot be filtered on. Asking
+    for the context Notes either meant all of them or meant the unspecialized
+    ones, and nothing in the data said which — only prose, which is exactly where
+    this repository has learned not to keep load-bearing distinctions.
+
+    Two candidates. Adding a distinct child under the root was the option offered
+    at the time; it removes the ambiguity but grows the vocabulary and leaves the
+    colliding value in place, so a reader still meets `context` as a value and has
+    to be told it means the narrow sense. Renaming the leaf removes the collision
+    instead of working around it, and the set stays at four.
+
+    `information` was the first name proposed and was rejected on inspection for
+    the defect it shared with the thing it replaced: all four types are
+    information, so the category word would simply have moved one step. That the
+    first replacement reproduced the original error is worth recording, because
+    the failure mode is not the specific word — it is reaching for the broadest
+    available noun when naming the case that has no distinguishing feature.
+    `background` is narrow, and it is what the field's description already said
+    before any of this.
+
+    The field keeps the name `type`. Naming it for the root was considered and
+    rejected: the Note is the context, so the prefix restates the entity rather
+    than adding information; it would be the only prefixed field name in these
+    specs, where every other entity names its own fields plainly; and it would fix
+    the root into a name that goes wrong if the root ever moves. A hierarchy is
+    better stated in the rules, where it can be explained, than in a field name,
+    where it can only be asserted.

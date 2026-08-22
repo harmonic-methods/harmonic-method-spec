@@ -14,7 +14,7 @@
 - specs/beat.yml: Beat — a durable capability or process, laddering to a Coda
 - specs/beat-version.yml: Beat Version — a planned step in a Beat's evolution
 - specs/revision.yml: Revision — a tracked change executing a Beat Version
-- specs/note.yml: Note — typed knowledge (context, constraint, guidance, decision); a closed hierarchy rooted at context, narrowed by an optional free-form subtype rather than extended with new top-level types
+- specs/note.yml: Note — typed knowledge (background, constraint, guidance, decision); a closed hierarchy rooted at context (the Note is the context), narrowed by an optional free-form subtype rather than extended with new top-level types
 - specs/spec-set.yml: the one version of the normative surface; every spec repeats it as a parsed spec_version field and the checker enforces agreement. Pin this number, not the repository tag — package.json versions the checker separately.
 - specs/bar.yml: Bar — the recurring cadence period work is planned and delivered within; nests temporally via an optional parent, so a longer cadence is a Bar with children rather than a second entity
 - specs/downbeat.yml: Downbeat — an immutable anchor recording where a capability stood and what it was converging toward; sits at beat altitude, so one Bar boundary yields one Downbeat per capability in view

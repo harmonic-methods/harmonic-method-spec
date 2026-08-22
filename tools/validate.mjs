@@ -57,7 +57,7 @@ const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
 const BV_REQ = ['id', 'beat', 'title', 'summary', 'scope', 'status'];
 const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
 const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
-const NOTE_TYPES = ['context', 'constraint', 'guidance', 'decision'];
+const NOTE_TYPES = ['background', 'constraint', 'guidance', 'decision'];
 
 const SEMVER = /^\d+\.\d+\.\d+$/;
 const MANIFEST = 'specs/spec-set.yml';

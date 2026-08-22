@@ -1,7 +1,7 @@
 # Note — conformant to specs/note.yml
 note:
   id: HM-N-019
-  type: context
+  type: background
   attached_to: HM-B-005
   beat_version: HM-BV-005.1
   content: >

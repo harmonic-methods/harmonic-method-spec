@@ -140,6 +140,14 @@
   `child_type` extension is classifiable, an added sibling still reports as a
   contradiction, and the checker points the second at the first. See HM-BV-003.17
   and HM-N-071.
+- **No Note type is named for the category any more.** Rooting the hierarchy at
+  context left `context` as both the category and one of its members, so filtering
+  on it was ambiguous and only prose said which sense applied. The unspecialized
+  type is now `background`; the set stays at four. `information` was the first
+  candidate and had the same defect — all four types are information — which is
+  worth naming, because the failure mode is reaching for the broadest noun to name
+  the case with no distinguishing feature. The field keeps the name `type`. See
+  HM-BV-003.18 and HM-N-072.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does
