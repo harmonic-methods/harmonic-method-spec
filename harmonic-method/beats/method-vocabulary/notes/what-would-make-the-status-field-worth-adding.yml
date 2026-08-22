@@ -1,0 +1,31 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-068
+  type: context
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.16
+  content: >
+    Unvalidated, and recorded so the next person can settle it rather than
+    re-derive it: the intended shape of the owed Note status is that an agent
+    gathers evidence, forms a judgement about how well supported a Note is, and
+    records it — so that a human, or an automated process, is assisted rather than
+    replaced in deciding whether the Note is validated. The judgement is
+    subjective and the point is the assistance, not the number.
+
+    What is missing is not the design but the demonstration. The expectation is
+    that the field would not be used consistently until a case exists showing the
+    assisted decision was better than the unassisted one. Adding it before then
+    produces a field that is present, optional, and mostly empty, which teaches
+    every reader that it can be ignored.
+
+    What would settle it: one case where an agent's evidence-gathering changed a
+    validation outcome that someone then acted on. What would refute it: a case
+    where the judgement was produced, ignored, and the decision made on other
+    grounds anyway — which would mean the assistance was not the missing piece.
+  rationale: >
+    Filed as context with the caveat in its first line, which is the practice the
+    retiring decision said the wording would have to carry once the type no longer
+    did. This is the first record written under that constraint, and it is worth
+    noting that the first thing needing it was a claim about the replacement for
+    the very type that was removed — evidence that the gap named there is real,
+    and that prose can carry it.

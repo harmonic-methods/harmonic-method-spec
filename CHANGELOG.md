@@ -101,6 +101,20 @@
   not a confidence number — is named as owed rather than invented in the same
   step. This spec declares no Note status field at all, which is why the type slot
   was carrying lifecycle to begin with. See HM-BV-003.16 and HM-N-065.
+- **Encoding is not normative, and the checker now says so.** No spec file
+  defines a directory layout, a file format, or an identifier scheme, yet the
+  checker enforces a layout on any tree it is pointed at — the third and largest
+  instance of a checker stricter than its spec. Resolved by declaring the split
+  rather than weakening the checker: the *relationships* the specs state are
+  normative, the *encoding* is not, and the tree rules check one convention this
+  repository uses and recommends. A method that holds for a procedure or a runbook
+  cannot mandate a file format. See HM-BV-006.4 and HM-N-067.
+- **Every enum declares whether additions are allowed.** Note types are open, so
+  an implementation defining a further kind of knowledge is extending the method;
+  the four status enums are closed, because an unknown status cannot be
+  interpreted — a reader cannot tell whether it means done or dropped. An enum
+  with no declaration is closed, and the checker requires the declaration rather
+  than inferring it. See HM-N-066.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

@@ -82,6 +82,11 @@ reference resolution, and that each child agrees with the directory holding it.
 It does not apply the disciplines this repository keeps on itself, so a Beat of
 yours may use any vocabulary it likes.
 
+The layout it reads is a convention, not a condition of conformance. The specs
+define no encoding, so a tree, a database, or a set of records all conform if the
+required fields are present and the relationships hold — this checker reads one of
+those, because a checker has to read something.
+
 ## The model
 
 A **Coda** is the outcome an entity exists to serve, written as a resolved

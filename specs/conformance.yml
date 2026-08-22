@@ -25,6 +25,21 @@ normative_surface:
     In each instrument, the scoring scale, the dimension table or check list, and
     the check rules. A digest over those sections fails this repository's own
     check when any of them is edited without acknowledgement.
+  relationships: >
+    The relationships these specs state are normative: which entity a Note
+    attaches to, which Beat a Beat Version belongs to, which Beat Version a
+    Revision executes, and which Coda a Coda ladders to. An implementation has
+    to be able to answer those questions. It does not have to answer them the
+    way this repository does.
+  encoding: >
+    Not normative. No file here defines a directory layout, a file format, an
+    identifier scheme, or a serialization, and none will — a method that holds
+    for a procedure and a runbook cannot mandate one. A directory tree, a
+    database, a single document, and a set of issue records all conform if the
+    required fields are present and the relationships hold. The checker
+    validates one concrete encoding, because a checker has to read something;
+    that encoding is a convention this repository uses and recommends, not a
+    condition of conformance.
   excluded: >
     Nothing else is normative, and an implementation is not measured against it:
     the front page, the agent-facing entry point, the contributor guide, the
@@ -51,6 +66,14 @@ rules:
   - Where an implementation extends the method, the mapping from its own
     containers and vocabulary onto these primitives belongs in that
     implementation's conformance declaration, not in this repository.
+  - Every enum declares whether additions are allowed, in an `additions` key
+    beside it. A value an implementation adds is an extension where that key
+    reads allowed, and a contradiction where it reads none. An enum carrying no
+    declaration is closed, so a new enum either decides the question or inherits
+    the stricter answer.
+  - Where additions are allowed, an added value widens the set and does not
+    redefine it. An implementation may not give a published value a different
+    meaning, and an added value may not overlap one.
   - Silence is permission. Where these specs say nothing, an implementation is
     free; where they state a field, an enum, or a rule, following it is what the
     claim means.
