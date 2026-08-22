@@ -182,6 +182,17 @@
   dimension is Strategically Aligned — the system Coda speaks of reading the model
   and assessing against instruments and says nothing about the model being
   complete. Named rather than absorbed. See HM-N-077.
+- **The system Coda promises sufficiency, and sufficiency is bounded.** A Beat
+  opened to close a gap in the entity model scored short on Strategically Aligned,
+  and the fault was in the Coda — it promised reading, naming and assessing, and
+  said nothing about the model being adequate to the work brought to it. Widened,
+  and deliberately to *sufficient* rather than *complete*: completeness is judged
+  against everything imaginable, so promising it would make every conceivable gap
+  strategically aligned by construction, which is how a strategic anchor becomes a
+  mandate to accumulate primitives. A constraint records the bound — a gap earns a
+  primitive only when someone met it in practice, silence that merely leaves room
+  is the feature, and the burden sits on the addition. See HM-BV-003.21, HM-N-078
+  and HM-N-079.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

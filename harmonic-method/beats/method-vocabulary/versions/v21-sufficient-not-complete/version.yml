@@ -1,0 +1,43 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.21
+  beat: HM-B-003
+  title: Sufficient, not complete
+  status: active
+  summary: >
+    Scoring the newest Beat against the published rubric returned a shortfall on
+    Strategically Aligned, and the defect was in the system Coda rather than the
+    Beat — the Coda spoke of reading the entity model and assessing against the
+    instruments, and said nothing about the model being adequate for the work
+    someone brought to it. A Beat closing a hole in the model therefore had
+    nothing above it to ladder to.
+
+    The Coda is widened, and the word is chosen carefully. Sufficient, not
+    complete. Completeness is absolute and would make every conceivable gap
+    Coda-justified, which converts a strategic anchor into a licence to
+    accumulate primitives. Sufficiency is relative to a use and can only be
+    judged against work someone actually did.
+
+    A constraint records the bound so that the widening cannot be read as an
+    invitation, and so the next person proposing an entity meets the test rather
+    than reconstructing it.
+  scope: >
+    In: the system Coda statement, the decision recording the widening and its
+    precedent, and the constraint bounding what sufficiency licenses.
+    Out: the normative surface. This is about what this repository's own Coda
+    promises, not about what the method requires of anyone, and putting a
+    scope-discipline rule into the standard would be the first instance of the
+    creep it exists to prevent.
+    Out also: re-opening the entity model. Nothing is added here, and the
+    constraint is deliberately written to make the omissions currently on record
+    stay omissions until someone hits them.
+    Owed, not done: ten earlier steps remain unmerged and this makes eleven.
+    Observed, not acted on: re-scored against the widened Coda the new Beat reaches
+    roughly 3.9, still under the reference threshold of 4, and the only remaining
+    sub-4 dimension is Business Outcome — where the rubric itself states that about
+    3 is the expected floor for infrastructure and platform-quality work and tells
+    the reader not to restructure. Six dimensions at Strong and one at the
+    sanctioned floor cannot average 4, so a Beat of this class cannot pass that
+    gate however well it is written. That is a finding about the rubric or the
+    threshold, it is recorded rather than worked around, and it is not this step's
+    business.

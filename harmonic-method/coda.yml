@@ -4,7 +4,7 @@ coda:
   id: HM-CODA
   statement: >
     A team can adopt the Harmonic Method from this repository alone — read the
-    entity model, name who answers for each of its five functions, assess their
-    own work against the published instruments, and get the same answer any
-    conforming implementation would give — without an account, a vendor
-    relationship, or a call.
+    entity model and find it sufficient for the work they actually do, name who
+    answers for each of its five functions, assess that work against the
+    published instruments, and get the same answer any conforming implementation
+    would give — without an account, a vendor relationship, or a call.
