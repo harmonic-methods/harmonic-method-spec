@@ -1,0 +1,51 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.17
+  beat: HM-B-003
+  title: Types narrow rather than multiply
+  status: active
+  summary: >
+    The Note type enum closes, and gains children instead. An implementation that
+    needs to be more precise narrows a published value rather than adding a fifth
+    one nobody else can read, carried in an optional `subtype` beside the type.
+
+    This reverses the half of the previous decision that opened Note types, and it
+    reverses it on that decision's own argument. Openness was justified there by
+    an added type costing a reader little, since the content still reads. A child
+    costs less: an unknown child still reports its parent, so a reader loses
+    precision rather than classification, where an unknown sibling loses the
+    classification outright. The reasoning used to make the exception turns out to
+    favour not making it.
+
+    The type is also declared the root rather than one of four peers. Every Note
+    is context in the general sense; the other three name specializations of it,
+    and `context` as a value means a Note that rises to no narrower kind.
+
+    Done when: the enum is closed and children are allowed; every enum declares
+    both; a child is a classifiable extension and an added sibling still reports
+    as a contradiction; and the worked example narrows instead of adding.
+  scope: >
+    In: the closed enum and the `children` declaration on all five enums; the
+    optional `subtype` field; the root statement and the two rules that govern a
+    child; the `child_type` extension kind and its checks; the checker rule
+    requiring both declarations; the worked example, which now narrows guidance
+    rather than adding a type; and the Note superseding the previous decision.
+    Out: any list of blessed subtypes. The method enumerates none and should not —
+    the value of the mechanism is that an implementation can be precise without
+    asking, and a published list would turn every new subtype into a request.
+    Out also: reviving the retired type as a child. It is available under this
+    mechanism and is still wrong for the reason it was retired, which is recorded
+    rather than left for someone to rediscover.
+    Out also: the spec set version, which stays where it is. Nothing is released
+    and no tag exists, so this cycle's normative changes continue to share one
+    number rather than minting several nobody could have held.
+    Owed, not done: six earlier steps remain unmerged and this makes seven.
+    Merging is now the binding constraint on everything downstream, including the
+    reference implementation's own conformance work, which is measured against a
+    spec set version that only exists on a branch.
+    Risks stated: `context` now does double duty as the root and as the value for
+    an unspecialized Note, so filtering on it is ambiguous unless a reader knows
+    which sense is meant — named in the superseding Note as the one thing this
+    change leaves unresolved rather than papered over; and a free-form subtype is
+    unvalidated by construction, so two implementations may pick the same word for
+    different things, which the parent bounds but does not prevent.

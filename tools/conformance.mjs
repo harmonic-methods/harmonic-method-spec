@@ -21,7 +21,7 @@ import { parse } from 'yaml';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SEMVER = /^\d+\.\d+\.\d+$/;
-const EXTENSION_KINDS = ['entity', 'field', 'enum_value', 'dimension', 'computed'];
+const EXTENSION_KINDS = ['entity', 'field', 'child_type', 'enum_value', 'dimension', 'computed'];
 const ALTITUDES = ['portfolio', 'system', 'beat'];
 
 const specFiles = () => readdirSync(join(ROOT, 'specs'));
@@ -47,7 +47,10 @@ function enums() {
     try { d = loadSpec(f); } catch { continue; }
     for (const [name, field] of Object.entries(d?.fields ?? {})) {
       if (typeof field?.type === 'string' && field.type.startsWith('enum')) {
-        found.set(`${f.replace(/\.yml$/, '')}.${name}`, field.additions);
+        const values = (field.type.match(/\[(.*)\]/)?.[1] ?? '').split(',').map((v) => v.trim()).filter(Boolean);
+        found.set(`${f.replace(/\.yml$/, '')}.${name}`, {
+          additions: field.additions, children: field.children, values,
+        });
       }
     }
   }
@@ -101,6 +104,21 @@ export function checkDeclaration(path) {
       fail(`${at}: kind '${e?.kind}' is not one of ${EXTENSION_KINDS.join(', ')}`);
       return;
     }
+    if (e.kind === 'child_type') {
+      if (e?.enum === undefined || e?.parent === undefined || e?.value === undefined) {
+        fail(`${at}: a child type names its 'enum', its 'parent', and its 'value'`);
+        return;
+      }
+      const spec = known.get(String(e.enum));
+      if (spec === undefined) {
+        fail(`${at}: enum '${e.enum}' is not declared in specs/`);
+      } else if (spec.children !== 'allowed') {
+        fail(`${at}: '${e.enum}' declares children none, so '${e.value}' cannot narrow it — declare it under divergences`);
+      } else if (!spec.values.includes(String(e.parent))) {
+        fail(`${at}: '${e.parent}' is not a value of '${e.enum}' — a child narrows a published value`);
+      }
+      return;
+    }
     if (e.kind !== 'enum_value') {
       if (e?.name === undefined) fail(`${at}: missing 'name'`);
       return;
@@ -109,10 +127,14 @@ export function checkDeclaration(path) {
       fail(`${at}: an added enum value names its 'enum' and its 'value'`);
       return;
     }
-    if (!known.has(String(e.enum))) {
+    const spec = known.get(String(e.enum));
+    if (spec === undefined) {
       fail(`${at}: enum '${e.enum}' is not declared in specs/`);
-    } else if (known.get(String(e.enum)) !== 'allowed') {
-      fail(`${at}: '${e.enum}' declares additions none, so adding '${e.value}' is a contradiction, not an extension — declare it under divergences`);
+    } else if (spec.additions !== 'allowed') {
+      const hint = spec.children === 'allowed'
+        ? ` — it allows children, so narrow a published value instead, or declare this under divergences`
+        : ` — declare it under divergences`;
+      fail(`${at}: '${e.enum}' declares additions none, so adding '${e.value}' is a contradiction, not an extension${hint}`);
     }
   });
 

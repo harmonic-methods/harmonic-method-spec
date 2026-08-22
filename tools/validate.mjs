@@ -378,15 +378,17 @@ function checkEnumDeclarations() {
     for (const [name, field] of Object.entries(doc?.fields ?? {})) {
       if (typeof field?.type !== 'string' || !field.type.startsWith('enum')) continue;
       n++;
-      const d = field.additions;
-      if (d === undefined) {
-        fail(`specs/${f}: field '${name}' is an enum with no 'additions' declaration — say 'allowed' or 'none'`);
-      } else if (d !== 'allowed' && d !== 'none') {
-        fail(`specs/${f}: field '${name}' declares additions '${d}' — expected 'allowed' or 'none'`);
+      for (const key of ['additions', 'children']) {
+        const d = field[key];
+        if (d === undefined) {
+          fail(`specs/${f}: field '${name}' is an enum with no '${key}' declaration — say 'allowed' or 'none'`);
+        } else if (d !== 'allowed' && d !== 'none') {
+          fail(`specs/${f}: field '${name}' declares ${key} '${d}' — expected 'allowed' or 'none'`);
+        }
       }
     }
   }
-  console.log(`  ${n} enums, each declaring whether additions are allowed`);
+  console.log(`  ${n} enums, each declaring whether additions and children are allowed`);
 }
 
 /**

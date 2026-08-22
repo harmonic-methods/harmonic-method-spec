@@ -130,6 +130,16 @@
   than running code. The command is the only part of this repository an adopter
   executes and was the one part nothing loaded. Deliberately shallow. See
   HM-N-070.
+- **Note types narrow rather than multiply.** The enum closes and gains children:
+  an implementation needing a finer kind sets an optional `subtype` under a
+  published value instead of adding a fifth type. This reverses the openness
+  granted earlier in this same cycle, on that decision's own argument — an unknown
+  child still reports its parent, so a reader loses precision rather than
+  classification, where an unknown sibling loses the classification outright. The
+  type is now stated as the root: everything is context in the general sense. A
+  `child_type` extension is classifiable, an added sibling still reports as a
+  contradiction, and the checker points the second at the first. See HM-BV-003.17
+  and HM-N-071.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

@@ -1,0 +1,46 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-071
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.17
+  content: >
+    Note types are closed to additions and open to children. An implementation
+    needing a finer kind narrows a published value through an optional `subtype`
+    rather than adding a top-level type. The type is the root of the hierarchy —
+    every Note is context in the general sense, the other three name
+    specializations, and `context` as a value means one that rises to no narrower
+    kind. This supersedes [HM-N-066] on Note types; what it said about the four
+    status enums stands unchanged.
+  rationale: >
+    The previous decision opened Note types on the argument that an unknown one
+    costs a reader little, because the content still reads and only the
+    classification is lost. A child costs less than that, on the same axis: an
+    unknown child still reports its parent, so a reader loses precision and keeps
+    the classification. The argument used to justify the exception turns out to
+    argue against making it, which is a better reason to reverse than a change of
+    taste.
+
+    It also restores a property the exception had cost. Every other enum here is
+    closed because completeness is what makes a value interpretable, and Note
+    types were the one place that stopped being true. They are now closed for the
+    same reason as the rest, with the precision that openness was reaching for
+    supplied by a mechanism that degrades instead.
+
+    One part of the proposal is deliberately not adopted. That every Note is a
+    form of assumption was offered alongside the hierarchy, and it would put
+    confidence back in the kind slot — the exact conflation that retired the type
+    in [HM-N-065]. A decision that was made is not an assumption; its rationale
+    may rest on several, and the record of a choice is a fact about what was
+    chosen. The type is available as a child under this mechanism and remains
+    wrong for the reason it was retired, and reviving it there would compete with
+    the verification status still owed in [HM-N-068].
+
+    What this leaves unresolved, stated rather than smoothed over: `context` now
+    carries two senses — the root that every Note belongs to, and the value for a
+    Note with no narrower kind. Filtering on it is ambiguous unless a reader knows
+    which is meant. The alternative was a distinct catch-all child under the root,
+    which removes the ambiguity at the cost of a fifth name and a model that takes
+    longer to explain. The double duty is the cheaper problem today and the easier
+    one to fix later, since adding the catch-all child is additive and splitting a
+    value that has been in use is not.

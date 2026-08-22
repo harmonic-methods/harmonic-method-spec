@@ -77,9 +77,9 @@ declaration:
       the list is not the same as declaring it empty.
   optional:
     extensions: >
-      What the implementation adds — an entity, a field, a value on an enum that
-      allows additions, a dimension it scores beyond the instruments, or a value
-      it computes. Each names its kind. Informative rather than load-bearing: an
+      What the implementation adds — an entity, a field, a child of a published
+      enum value, a value on an enum that allows additions, a dimension it scores
+      beyond the instruments, or a value it computes. Each names its kind. Informative rather than load-bearing: an
       extension needs no permission, so a reader who wants only to know whether a
       score means the same thing can skip the list.
     mappings: >
@@ -101,11 +101,15 @@ rules:
   - Where an implementation extends the method, the mapping from its own
     containers and vocabulary onto these primitives belongs in that
     implementation's conformance declaration, not in this repository.
-  - Every enum declares whether additions are allowed, in an `additions` key
-    beside it. A value an implementation adds is an extension where that key
+  - Every enum declares whether additions are allowed and whether children are,
+    in `additions` and `children` keys beside it. A value an implementation adds is an extension where that key
     reads allowed, and a contradiction where it reads none. An enum carrying no
     declaration is closed, so a new enum either decides the question or inherits
     the stricter answer.
+  - Where children are allowed, an implementation may narrow a published value
+    instead of adding a sibling to it. A child is an extension, and it degrades —
+    a reader who does not know the child still knows its parent, which a sibling
+    does not offer. Prefer a child wherever one will carry the meaning.
   - Where additions are allowed, an added value widens the set and does not
     redefine it. An implementation may not give a published value a different
     meaning, and an added value may not overlap one.
