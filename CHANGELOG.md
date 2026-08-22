@@ -158,6 +158,30 @@
   declined — it would contradict the Note's own first rule — with the difference
   between expiry and obligation-driven retention recorded so a future retention
   rule starts from it. See HM-BV-003.19, HM-N-073 and HM-N-074.
+- **A dimension is never a type.** Twice a property any kind of knowledge can
+  carry has been found in the kind slot — confidence, as a type for the
+  unverified, and reach of consequence, as a tier named for how much a decision
+  matters. The rule that catches the next one is now stated: kind is what the
+  knowledge is, everything else is a dimension and belongs in its own field. The
+  cost of the confusion is that two Notes then differ on two axes while appearing
+  to differ on one, so every downstream filter inherits the ambiguity. See
+  HM-BV-003.20 and HM-N-075.
+- **Reach of consequence is designed and withheld.** An optional altitude value,
+  widening only, was specified and then withdrawn once its vocabulary was tested
+  against a host the altitudes do not contain — a person is not an altitude. Two
+  workable shapes are recorded along with what settles the choice, which is a
+  second host hierarchy to design against. Both reversals in this cycle came from
+  deciding against a single case. See HM-N-076.
+- **`HM-B-007`, knowledge that arrives before its subject (new Beat, not yet
+  decomposed).** Three deferrals turned out to be one missing concept: disposable
+  capture, a pending verification state, and the fact that a Note cannot be
+  written until the entity it informs exists — which inverts the order work
+  happens in. The promotion step is accountable work the method assigns to the
+  Composer while the entity model does not contain it. Scored roughly 3.7 against
+  the published Beat rubric, short of the reference threshold, and the weak
+  dimension is Strategically Aligned — the system Coda speaks of reading the model
+  and assessing against instruments and says nothing about the model being
+  complete. Named rather than absorbed. See HM-N-077.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

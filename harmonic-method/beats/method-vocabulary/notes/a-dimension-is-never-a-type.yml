@@ -1,0 +1,33 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-075
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.20
+  content: >
+    A Note's kind is what the knowledge is — one value in `type`, optionally
+    narrowed by `subtype`. Every other property a Note carries is a dimension:
+    orthogonal to kind, orthogonal to the other dimensions, and belonging in a
+    field of its own. A dimension is never expressed as a type. The method names
+    no dimension yet and states which ones implementations own.
+  rationale: >
+    This generalizes two corrections rather than proposing a theory. The retired
+    Note type for unverified knowledge was confidence in the kind slot, and the
+    reference implementation's decision tier — strategic, structural,
+    implementation — is reach of consequence in the same slot, read as though it
+    were three kinds of decision. Both were found by noticing that the values did
+    not answer the question the field asks.
+
+    The cost of the confusion is specific and worth stating rather than asserting
+    as untidiness. Kinds are meant to be comparable: two Notes of different kinds
+    differ in what they are. Once a dimension occupies the slot, two Notes differ
+    on two axes while appearing to differ on one, so a reader cannot tell whether
+    they are looking at different knowledge or the same knowledge held with
+    different certainty. Every downstream filter inherits that ambiguity.
+
+    Naming no dimension yet is deliberate and is the part most likely to look
+    unfinished. The distinction is what catches the next one, and it holds
+    whatever the list turns out to be; naming a dimension requires a vocabulary
+    that survives the entity model growing, and this repository has just watched
+    one such vocabulary fail that test inside a single sitting. Stating the rule
+    now and the members later is the order that does not have to be reversed.

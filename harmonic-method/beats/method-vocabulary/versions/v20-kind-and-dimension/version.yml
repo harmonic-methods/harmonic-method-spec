@@ -1,0 +1,45 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.20
+  beat: HM-B-003
+  title: A dimension is never a type
+  status: active
+  summary: >
+    Twice now a property that any kind of knowledge can carry has been found
+    sitting in the kind slot — confidence, as a Note type for the unverified, and
+    reach of consequence, in a tier named for how much a decision matters. Both
+    were corrected one at a time, and nothing stated the rule that would have
+    caught either.
+
+    It is stated now. A Note's kind is what the knowledge is, carried by type and
+    optionally narrowed by subtype. Everything else is a dimension, orthogonal to
+    kind and to the other dimensions, and belongs in a field of its own. The
+    reason is not tidiness — a dimension in the kind slot makes the kinds
+    incomparable, because two Notes then differ on two axes while appearing to
+    differ on one.
+
+    No dimension is named yet, and the list of what implementations own is stated
+    instead. That is the whole change: the rule that catches the next one, without
+    guessing which it will be.
+  scope: >
+    In: the kind and dimension statement, the list of dimensions implementations
+    own, and the rule forbidding a dimension in the type slot. The two Notes
+    recording the distinction and the deferral. A new Beat for knowledge arrival,
+    scoped and not yet decomposed.
+    Out: naming any dimension, including reach of consequence, which was designed
+    and then withdrawn in the same sitting once its vocabulary was tested against
+    a host the altitudes do not contain. The deferral is recorded with what would
+    settle it.
+    Out also: the ingestion gap itself, which is why the new Beat exists rather
+    than a field. Three deferrals have now landed on the same missing concept and
+    a fourth patch would have been the third place it was half-answered.
+    Owed, not done: nine earlier steps remain unmerged and this makes ten. Scoring
+    the new Beat against the published rubric returns roughly 3.7, short of the
+    reference threshold, and the shortfall is in Strategically Aligned rather than
+    in the Beat — the system Coda speaks of reading the entity model and assessing
+    against instruments, and says nothing about the model being complete. That is
+    the same defect the reconciliation instrument found in this repository's Codas
+    once before, and it is named here rather than absorbed by inflating the score.
+    Risks stated: a rule with no named dimension reads as abstract, so both
+    corrections it generalizes are cited in the decision, which is the evidence
+    that the rule describes something that actually happened twice.
