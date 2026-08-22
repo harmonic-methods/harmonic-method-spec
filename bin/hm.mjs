@@ -2,7 +2,7 @@
 /**
  * The Harmonic Method command line.
  *
- * One subcommand today. Two binary names point here: one matching the package so
+ * Two subcommands. Two binary names point here: one matching the package so
  * that running it without installing works, and a short one for anyone who
  * installs it.
  *
@@ -30,12 +30,19 @@ function versions() {
 
 const USAGE = `hm — verify a tree against the Harmonic Method
 
-  hm validate <path>    check a directory holding a system Coda
-  hm --version          print the spec set and package versions
-  hm --help             this
+  hm validate <path>       check a directory holding a system Coda
+  hm conformance <file>    check a conformance declaration
+  hm --version             print the spec set and package versions
+  hm --help                this
 
 The spec set version is what an implementation pins. The package version is this
 command's own, and the two move separately.
+
+The conformance check reads a declaration and reports whether the claim is well
+formed —
+a version named, every divergence pointing at something real, nothing filed as an
+extension that is a contradiction under another name. It cannot tell you whether
+the implementation behaves as it claims; no file can.
 
 Nothing here is required to use the method: the specs, the instruments, and the
 worked example are files, and reading or vendoring them installs nothing.`;
@@ -51,6 +58,16 @@ if (cmd === '--version' || cmd === '-v') {
 if (!cmd || cmd === '--help' || cmd === '-h' || cmd === 'help') {
   console.log(USAGE);
   process.exit(cmd ? 0 : 1);
+}
+
+if (cmd === 'conformance') {
+  const file = rest[0];
+  if (!file) {
+    console.log('hm conformance: needs a path to a declaration file\n\n' + USAGE);
+    process.exit(1);
+  }
+  const c = spawnSync(process.execPath, [join(HERE, 'tools/conformance.mjs'), file], { stdio: 'inherit' });
+  process.exit(c.status ?? 1);
 }
 
 if (cmd !== 'validate') {

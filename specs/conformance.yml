@@ -56,6 +56,41 @@ classification:
     collapses, a dimension whose anchor text differs from the text published
     here, or a rule it inverts. A contradiction is a conformance failure, and it
     fails on the implementation's side.
+declaration:
+  summary: >
+    What an implementation publishes to make its claim checkable. It lives with
+    the implementation, not here — this states its shape so that two declarations
+    can be read the same way, and so a check can tell a well-formed claim from a
+    vague one.
+  required:
+    spec_version: >
+      The value from `spec-set.yml` this claim is made against. A claim with no
+      version attached cannot be checked.
+    implementation: >
+      The name of the system claiming. A declaration says who is claiming.
+    divergences: >
+      Every contradiction the implementation knows it carries, each naming the
+      spec file, the field or rule, what this repository publishes, and what the
+      implementation does instead. May be empty, and an empty list is the whole
+      point of the field — it is the strong claim, that nothing published here is
+      contradicted, and it is what makes the declaration falsifiable. Omitting
+      the list is not the same as declaring it empty.
+  optional:
+    extensions: >
+      What the implementation adds — an entity, a field, a value on an enum that
+      allows additions, a dimension it scores beyond the instruments, or a value
+      it computes. Each names its kind. Informative rather than load-bearing: an
+      extension needs no permission, so a reader who wants only to know whether a
+      score means the same thing can skip the list.
+    mappings: >
+      The implementation's own vocabulary against the primitives declared here,
+      for a reader who has to translate. Each names both sides.
+  limits: >
+    A declaration is a claim, and checking it verifies the claim's form rather
+    than the implementation's behaviour. Nothing readable from outside can
+    establish that a system does what it says; what a check can establish is that
+    the statement is specific enough to be wrong. That is the failure being
+    guarded against — a claim too vague for anyone to contradict.
 rules:
   - An implementation declares conformance to the single version in
     `spec-set.yml`, never to a version per file. The specs move as a set.
@@ -74,6 +109,12 @@ rules:
   - Where additions are allowed, an added value widens the set and does not
     redefine it. An implementation may not give a published value a different
     meaning, and an added value may not overlap one.
+  - A declaration lists every contradiction its author knows about. Declaring one
+    does not make it conformant, and describing it as a simplification instead of
+    listing it is the failure the list exists to prevent.
+  - Nothing filed as an extension may be a contradiction under another name. An
+    added value on an enum that declares additions none belongs under
+    divergences, whatever it is called.
   - Silence is permission. Where these specs say nothing, an implementation is
     free; where they state a field, an enum, or a rule, following it is what the
     claim means.

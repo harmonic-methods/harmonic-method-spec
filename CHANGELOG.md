@@ -115,6 +115,21 @@
   interpreted — a reader cannot tell whether it means done or dropped. An enum
   with no declaration is closed, and the checker requires the declaration rather
   than inferring it. See HM-N-066.
+- **A conformance claim now has a shape, and a check.** The statement said what a
+  claim covers and left the claim shapeless, so two implementations could both
+  declare conformance and mean different things. A declaration requires the spec
+  set version, who is claiming, and every known contradiction; extensions and
+  vocabulary mappings are optional, because they do not change what a claim is
+  worth. An empty divergence list is the strong claim — omitting the list is not
+  the same as declaring it empty. `hm conformance <file>` checks the form, and
+  reports an added value on a closed enum as a contradiction filed under the wrong
+  heading. It cannot confirm behaviour, and says so. See HM-BV-006.5 and HM-N-069.
+- **The published command is now checked to the extent that it runs.** It broke
+  during the work above — a stray backtick, the entry point stopped parsing, and
+  the self-check still reported conformant, because every rule reads files rather
+  than running code. The command is the only part of this repository an adopter
+  executes and was the one part nothing loaded. Deliberately shallow. See
+  HM-N-070.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

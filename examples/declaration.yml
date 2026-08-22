@@ -1,0 +1,45 @@
+# A worked conformance declaration — conformant to specs/conformance.yml
+#
+# Deliberately not a real implementation: the point is the shape. This one keeps
+# its records in a spreadsheet and a folder of documents, which is exactly the
+# case the encoding rule exists to permit.
+declaration:
+  spec_version: 1.2.0
+  implementation: Estimating Desk
+  divergences:
+    - spec: revision.yml
+      field: status
+      published: active, delivered, withdrawn
+      actual: >
+        Carries `open` and `done` only. A change that was abandoned is recorded
+        as `done` with a cancellation note, so the two outcomes cannot be told
+        apart without reading the note.
+      resolving: >
+        Owed. A third value is being added; until it exists this is a
+        contradiction and is declared as one rather than described as a
+        simplification.
+  extensions:
+    - kind: enum_value
+      enum: note.type
+      value: template
+      why: >
+        A reusable wording an estimator starts from. It is a kind of knowledge
+        rather than a confidence level, and it overlaps none of the four.
+    - kind: entity
+      name: Engagement
+      why: >
+        A commercial container holding several systems under one client
+        agreement. The method names no such boundary, and the altitudes are
+        unaffected by it.
+    - kind: computed
+      name: turnaround
+      why: >
+        Working days from estimate sent to approval recorded. The method names no
+        measure here, so nothing is contradicted by defining one.
+  mappings:
+    - theirs: Folder
+      ours: system
+    - theirs: Service line
+      ours: portfolio
+    - theirs: Estimate
+      ours: beat_version

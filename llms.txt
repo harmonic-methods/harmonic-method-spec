@@ -19,7 +19,7 @@
 - specs/bar.yml: Bar — the recurring cadence period work is planned and delivered within; nests temporally via an optional parent, so a longer cadence is a Bar with children rather than a second entity
 - specs/downbeat.yml: Downbeat — an immutable anchor recording where a capability stood and what it was converging toward; sits at beat altitude, so one Bar boundary yields one Downbeat per capability in view
 - specs/function.yml: Function — the five accountabilities (Composer, Orchestrator, Conductor, Producer, Promoter); a concept, not an instantiable entity, and not a field on any entity
-- specs/conformance.yml: conformance — what a claim covers (these specs and the instruments' normative sections), what it excludes, and the line between an allowed extension and a contradiction that fails on the implementation's side. Not an entity and not a concept; nothing instantiates it
+- specs/conformance.yml: conformance — what a claim covers (these specs and the instruments' normative sections), what it excludes, and the line between an allowed extension and a contradiction that fails on the implementation's side. Not an entity and not a concept; nothing instantiates it. Also declares the shape of a conformance declaration — spec set version, implementation, and known contradictions required; extensions and vocabulary mappings optional
 
 ## Instruments
 Each serves one of the five functions. A digest over each one's normative text

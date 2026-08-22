@@ -77,6 +77,18 @@ The same check ships as a command, for anyone who would rather not clone:
 The command is optional and always will be. Reading a spec, applying an
 instrument, or vendoring any of it installs nothing.
 
+If you build something that implements the method, declare what you conform to.
+Copy [examples/declaration.yml](examples/declaration.yml) as the shape, keep it
+with your implementation rather than here, and check it:
+
+    hm conformance ./harmonic-method-declaration.yml
+
+It requires the spec set version, who is claiming, and every contradiction you
+know you carry. An empty divergence list is the strong claim, not the easy one —
+it says nothing published here is contradicted, and one counter-example settles
+it. What it cannot do is confirm your system behaves as you say; nothing readable
+from outside can.
+
 It checks what the specs require — fields, lifecycle values, decision rationale,
 reference resolution, and that each child agrees with the directory holding it.
 It does not apply the disciplines this repository keeps on itself, so a Beat of

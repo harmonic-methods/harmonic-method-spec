@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-069
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.5
+  content: >
+    A conformance declaration requires three things — the spec set version, the
+    implementation's name, and a list of known contradictions. Extensions and
+    vocabulary mappings are optional. The list of contradictions may be empty,
+    and omitting it is not the same as declaring it empty.
+  rationale: >
+    The asymmetry is the design. A reader who wants to know whether a score
+    produced elsewhere means what it means here needs exactly one thing: where
+    that implementation knowingly differs. Extensions do not affect the answer —
+    an extension needs no permission, so a list of them is courtesy, and a reader
+    in a hurry can skip it. Requiring the divergence list and not the extension
+    list puts the obligation on the only part that changes what a claim is worth.
+
+    An empty list is therefore the strong claim rather than the lazy one, which
+    is why omission cannot be allowed to stand in for it. A declaration with no
+    divergence key asserts nothing and would read as conformance; a declaration
+    with an empty one asserts that nothing published here is contradicted, and
+    can be shown wrong by a single counter-example. The point of the field is to
+    make the claim falsifiable, and a claim nobody can contradict is not a claim.
+
+    The checker's sharpest rule follows from the enum decision rather than from
+    schema validation: an added value on an enum declaring additions none is
+    reported as a contradiction filed under the wrong heading. That is the most
+    plausible misuse of a declaration — not lying outright, but relabelling a
+    contradiction as an extension, where the word makes it sound permitted. The
+    check names it in those terms and points at the right section.
+
+    What none of this establishes is that an implementation behaves as it claims.
+    Nothing readable from outside can, and the declaration says so in its own
+    limits rather than letting a passing check imply more than it earned.

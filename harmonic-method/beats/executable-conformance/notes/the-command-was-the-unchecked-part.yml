@@ -1,0 +1,25 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-070
+  type: guidance
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.5
+  content: >
+    The published command is checked to the extent that it parses and reports
+    both version streams. Keep that check shallow. It exists because the entry
+    point is the only part of this repository an adopter runs, and it was the one
+    part nothing loaded.
+  rationale: >
+    Found the way these things are always found. A stray backtick closed a
+    template literal while a second subcommand was being added, the entry point
+    stopped parsing, and the self-check printed conformant — correctly, by its own
+    rules, because every one of them reads files rather than running code. A
+    packed tarball was verified once by hand when the command shipped, and
+    nothing had re-verified it since.
+
+    Shallow is deliberate and worth defending. The temptation is to test each
+    subcommand's behaviour here, which would duplicate the checks those
+    subcommands already dispatch to, grow into a second suite, and eventually stop
+    being run — leaving the shallow question unanswered again. Parses, and
+    dispatches far enough to read both versions, is the whole job: it catches the
+    class of failure that ships a broken binary while everything else looks green.
