@@ -1,0 +1,52 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-080
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.8
+  content: >
+    The seventh Beat dimension is renamed Outcome-Oriented (`outcomeOriented`)
+    and rewritten. It asks whether the Beat states the outcome someone commits to
+    rather than the work that produces it. The carve-out placing a score floor of
+    about 3 on infrastructure and platform-quality Beats is deleted, and the
+    dimension now states that an internal beneficiary carries no lower ceiling.
+  rationale: >
+    The carve-out was self-defeating, and the arithmetic is the argument. It told
+    an evaluator to expect about 3 for a whole class of Beats, and forbade
+    restructuring, folding, or converting them in response. Against a threshold of
+    4 on the average of seven, six dimensions at Strong and one at the sanctioned
+    floor comes to 3.86 — so a Beat of that class could not pass however well it
+    was written, while every available remedy was refused in the same paragraph.
+    A rubric that instructs a failing score and blocks the response is not
+    protecting a category, it is excluding one politely. It was found by scoring a
+    real Beat in this repository twice, which is the second time an instrument
+    published here has failed this repository on first contact.
+
+    The floor existed to compensate for wording that made infrastructure unable to
+    score well. Expressed at VP or CFO or board level, justifying a standalone
+    budget line item — a reliability guarantee genuinely does not read like that,
+    so the dimension needed an exemption to avoid being wrong. Removing the
+    premise removes the need for the exemption: reliability, scalability and
+    accuracy are outcomes leadership commits to, and a well-framed one now scores
+    as highly as any other. Score how the outcome is framed, never who it is for.
+
+    That wording was also the least medium-agnostic text in either rubric. A board
+    and a budget line are a context the method cannot assume where the medium is a
+    procedure or an organizational practice, which is the same objection that took
+    the codebase-probing dimension out of the plan rubric.
+
+    The rename carries its own reason. Every other dimension here is an adjective
+    describing the Beat and this was the only noun phrase, so the set now reads
+    consistently. More than that, de-commercialising the body while leaving
+    "Business" in the name would have repeated an error already corrected twice in
+    this cycle — a field description fixed while the value kept asserting what was
+    removed, and a category word left doing duty as one of its own members.
+
+    Two alternatives were weighed and refused. Merging into Clear conflates
+    legibility with framing, and the distinction is load-bearing: "migrate the
+    service to a new identity provider" is perfectly clear and is exactly what
+    this dimension exists to catch. Dropping it altogether would leave the most
+    common way a Beat goes wrong — an engineering task dressed as a capability —
+    covered only partly by Substantial, which scores size, and Durable, which
+    scores evolution. Neither asks whether the thing is stated as an outcome at
+    all.
