@@ -97,8 +97,10 @@
   kind, where every other type names what a piece of knowledge is — and both
   instances here turned out to be background about how much evidence something
   rests on. The cost is recorded: there is now no type-level signal that a Note is
-  unverified, and a confidence field to replace it is named as owed rather than
-  invented in the same step. See HM-BV-003.16 and HM-N-065.
+  unverified, and what would replace it — a status marking a claim as unsettled,
+  not a confidence number — is named as owed rather than invented in the same
+  step. This spec declares no Note status field at all, which is why the type slot
+  was carrying lifecycle to begin with. See HM-BV-003.16 and HM-N-065.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

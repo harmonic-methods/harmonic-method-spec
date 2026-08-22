@@ -30,11 +30,13 @@ beat_version:
     Out: rewriting the delivered step that describes creating an instance of the
     retired type. It recorded what was true when it shipped, and the evidence of
     what happened is worth more than a clean read — the new decision cites it
-    instead, which is the rule for a decision that changes course. Out also: a
-    confidence field to replace what the type expressed. It is named as owed in
-    the decision rather than added here, because inventing a numeric scale for a
-    published standard in the same step that removes a type is how an unconsidered
-    field becomes permanent.
+    instead, which is the rule for a decision that changes course. Out also: the
+    field that would replace what the type expressed — a status marking a claim
+    as unsettled, not a confidence number, because "not yet validated" is an open
+    obligation rather than a degree of belief. It is named as owed in the decision
+    rather than added here, since a status needs its exits defined and inventing
+    them in the same step that creates the vacancy is how an unconsidered field
+    becomes permanent.
     Out also: the generic use of the word in the Beat Version spec's prose about
     what a summary should contain. That names a kind of content, not a type.
     Owed, not done: HM-BV-003.15 and HM-BV-006.3 are both unmerged as this is

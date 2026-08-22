@@ -25,12 +25,26 @@ note:
     line, which is why they survive the change legibly; a Note that relied on the
     type alone to carry the caveat would have needed rewriting.
 
-    A confidence field is the obvious replacement and is deliberately not added
-    here. Attaching a numeric scale to knowledge is a bigger claim than removing
-    a type — it needs a definition of what the number means and what reads it,
-    and inventing one in the same step that creates the vacancy is how an
-    unconsidered field becomes permanent in a published standard. It is owed, and
-    naming it as owed is what keeps it from being quietly forgotten.
+    What is owed is a verification state, not a confidence number, and the
+    difference decides what the next person builds. A number records how sure
+    someone was; the retired type recorded that a verdict is still outstanding.
+    "Not yet validated" is an open obligation rather than a degree of belief —
+    someone owes an answer — and a low number on a Note obliges nobody.
+
+    The reason the signal had nowhere to go is structural: this spec declares no
+    status field on a Note at all, so the type slot was the only place lifecycle
+    could live, and the retired type was doing double duty as kind and as state.
+    Removing it therefore deleted the second job rather than relocating it. The
+    replacement is a status whose pending value marks a claim as unsettled. The
+    reference implementation reached the coherent form of this move first — it
+    keeps such a status and has dropped the type, where this repository dropped
+    the type without having the status.
+
+    It is deliberately not added here. A status on a Note needs its exits defined
+    — settled true, settled false, superseded — and inventing them in the same
+    step that creates the vacancy is how an unconsidered field becomes permanent
+    in a published standard. Naming what is owed, and naming it accurately, is
+    what keeps it from being forgotten or built as the wrong thing.
 
     This is a removal from the normative surface, and the first this repository
     has made. No tag exists and nothing has been released, so the spec set takes
