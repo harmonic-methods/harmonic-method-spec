@@ -192,5 +192,13 @@ Dimension order: scoped, directional, testable, traceable, assignable, riskAware
 - A baseline Beat Version (v1 representing work that already exists) should be
   evaluated differently: Scoped is less relevant; Traceable and Testable still
   matter.
+- **Name the version you scored against.** Read `spec_version` from
+  `specs/spec-set.yml` and report it with the result. A score is a claim about an
+  entity measured against a rubric, and rubrics move — without the version a
+  later reader cannot tell whether the score predates the definitions that
+  produced it, and two scores cannot be compared at all. If the spec set is not
+  available to you, say the version is unknown rather than guessing or omitting
+  it: an unversioned score is usable now and worthless later. Do not copy the
+  version into this file or any other — read it where it lives.
 - This skill assesses; it does not enforce. The first-Revision gate belongs to
   the system of record.

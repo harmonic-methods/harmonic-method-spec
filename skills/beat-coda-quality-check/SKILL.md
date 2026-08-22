@@ -118,5 +118,13 @@ For each dimension: score, one-sentence justification, and (for any score below
 - Score the Beat as written; do not silently assume missing context.
 - Never raise a score because the intent seems good — Clear means written-down
   clear.
+- **Name the version you scored against.** Read `spec_version` from
+  `specs/spec-set.yml` and report it with the result. A score is a claim about an
+  entity measured against a rubric, and rubrics move — without the version a
+  later reader cannot tell whether the score predates the definitions that
+  produced it, and two scores cannot be compared at all. If the spec set is not
+  available to you, say the version is unknown rather than guessing or omitting
+  it: an unversioned score is usable now and worthless later. Do not copy the
+  version into this file or any other — read it where it lives.
 - This skill assesses; it does not enforce. Gates, approvals, and recorded
   lineage are the responsibility of the system of record.

@@ -210,6 +210,19 @@
   so was dropping it (nothing else asks whether the thing is stated as an outcome).
   Implementations deriving a literal union from the key break at compile time,
   which is the failure mode to prefer. See HM-BV-002.8 and HM-N-080.
+- **A score now names the rubric that produced it.** Moving a dimension exposed a
+  symmetrical gap: the front page named only one kind of staleness — whether a
+  score predates the text it judged — and the reference implementation built
+  exactly that half, hashing the thing scored and recording nothing about what
+  scored it. So every result taken before a rubric change keeps reading as fresh
+  against definitions that no longer exist. All three instruments now require the
+  spec set version in the reported result, read from the manifest and copied
+  nowhere; the conformance statement requires a recorded score to carry that
+  version plus the state of what it judged, and to detect both kinds of staleness.
+  Recording scores in the tree was proposed and refused — a score cannot hold a
+  hash of its own file, an LLM score is not reproducible, and requiring one would
+  mean a Beat could not be written without running a model. See HM-BV-002.9 and
+  HM-N-081.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

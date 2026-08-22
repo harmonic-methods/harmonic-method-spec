@@ -117,6 +117,14 @@ rejected — averaging conceals the only thing worth knowing.
 - Prefer naming the repair over prescribing it. Widening a parent Coda and
   narrowing a child are both legitimate answers to the same finding, and which
   is right depends on judgment the reader has and you do not.
+- **Name the version you reconciled against.** Read `spec_version` from
+  `specs/spec-set.yml` and report it with the findings. A finding set is a claim
+  about a chain measured against these checks, and the checks move — this
+  instrument has already gained one since it was published, so a finding set with
+  no version attached cannot be told apart from one produced against a shorter
+  list. If the spec set is not available to you, say the version is unknown rather
+  than guessing or omitting it. Do not copy the version into this file or any
+  other — read it where it lives.
 - This skill assesses; it does not enforce, and it records nothing. A reconciled
   chain is a reading taken at a moment, not a durable claim — the durable record
   of one is a Downbeat.

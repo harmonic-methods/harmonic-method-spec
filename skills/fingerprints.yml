@@ -8,6 +8,6 @@
 #     npm run fingerprint
 manifest: rubric_fingerprints
 fingerprints:
-  beat-coda-quality-check: 61ad554cb186b548689a74ab3d65f824ea1807e3a25b3712d615067fcb1d7d8d
-  beat-version-quality-check: d3e162b84788c04bc763090b171aac1da0be33b0261de38a8552a58ea80ccd55
-  coda-alignment-check: 277bf7e4c9f3a98b153b7abd0fad776fb68c96d841d2cda44bb5962210e0e69c
+  beat-coda-quality-check: 360661650796890142c714a2c0e39135f64b18dceed94498665b9f5062fb2876
+  beat-version-quality-check: 70f33ebbe15940f47275f48f0be04ef94db0f08e71c7d075f41589a2f36f0a40
+  coda-alignment-check: e801cc611ecb3b631433b07ccd9d13496792d6998c3b9c5fdedf38c6cd59455b

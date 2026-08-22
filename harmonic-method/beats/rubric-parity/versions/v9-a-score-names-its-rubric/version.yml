@@ -1,0 +1,51 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-002.9
+  beat: HM-B-002
+  title: A score names the rubric that produced it
+  status: active
+  summary: >
+    Moving a dimension exposed a gap on both sides of the boundary. The front page
+    already said a score produced here cannot tell you whether it predates the text
+    it judged, and named only that half — the entity changing after the score. It
+    said nothing about the rubric changing, which is the half that just moved, and
+    the reference implementation had implemented exactly the half that was named
+    and no more. Its checks hash the thing scored and record nothing about what
+    scored it, so every result taken before today still reads as fresh against a
+    rubric that no longer exists.
+
+    Both halves are now stated. Each instrument requires the spec set version to be
+    reported with its result, read from the manifest rather than copied anywhere.
+    The conformance statement requires a recorded score to carry that version and
+    the state of what it judged, and says that an implementation gating on a score
+    must detect both kinds of staleness.
+
+    Recording a score in the tree was proposed and refused. A score cannot hold a
+    hash of the file it sits in, an LLM score is not reproducible, and requiring
+    one would mean a Beat could not be written without running a model — against a
+    standing constraint that reading, applying and vendoring must install nothing.
+    Putting the requirement at the point of production costs nothing and is
+    exercised on every run.
+  scope: >
+    In: the version rule in all three instruments' check rules, including the
+    reconciliation instrument, whose own check list grew earlier today and which
+    has the same problem for the same reason; the storage rule in the conformance
+    statement; the front-page sentence that named one side of staleness as though
+    it were both; and the decision Note.
+    Out: recording scores here, in any form. The refusal is reasoned in the Note
+    rather than left as a stance, because the proposal was a good one and will be
+    made again.
+    Out also: prescribing how an implementation stores the version, or what it does
+    when a stored score turns out to be stale. Whether that invalidates a gate,
+    warns, or triggers a re-run is a policy an implementation owns.
+    Owed, not done: thirteen earlier steps remain unmerged and this makes fourteen.
+    Honest limit: the production half is exercised every time an instrument runs;
+    the storage half is not exercised here at all, because this repository records
+    no scores. It ships as a rule with no local use, which is the same position as
+    the cadence rules that this repository states and holds no instances of. Named
+    rather than glossed, because a rule nothing exercises is a rule nothing tests.
+    Risks stated: three digests moved at once, each confirmed as intended and
+    recorded before regenerating; and an instrument now instructs a reader to go
+    find a file, which fails softly by design — the rule says to report the version
+    as unknown rather than guess, so a vendored skill with no spec set beside it
+    produces an honestly unversioned score instead of a wrong one.

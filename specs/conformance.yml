@@ -119,6 +119,11 @@ rules:
   - Nothing filed as an extension may be a contradiction under another name. An
     added value on an enum that declares additions none belongs under
     divergences, whatever it is called.
+  - A recorded score names the spec set version it was produced under, and the
+    state of what it judged. Staleness has two sides — the thing scored can change
+    after the score and so can the rubric — and an implementation that gates on a
+    score has to be able to detect both. Detecting only the first leaves a passing
+    result standing against definitions it was never produced against.
   - Silence is permission. Where these specs say nothing, an implementation is
     free; where they state a field, an enum, or a rule, following it is what the
     claim means.
