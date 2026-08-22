@@ -148,6 +148,16 @@
   worth naming, because the failure mode is reaching for the broadest noun to name
   the case with no distinguishing feature. The field keeps the name `type`. See
   HM-BV-003.18 and HM-N-072.
+- **Lineage has to be legible, and Notes do not expire.** A Note is now required
+  to be readable by everyone who can act on the entity it informs — an
+  implementation may classify and restrict, but not let a Note be cited as lineage
+  by a reader who cannot open it, and where a restriction forbids that the lineage
+  is written at the readable level with the restricted material as evidence. No
+  classification scheme is specified; the tiers vary by organization and
+  regulation, and the bound holds under any of them. Expiry was considered and
+  declined — it would contradict the Note's own first rule — with the difference
+  between expiry and obligation-driven retention recorded so a future retention
+  rule starts from it. See HM-BV-003.19, HM-N-073 and HM-N-074.
 - **Spec set 1.2.0.** This is the number an implementation pins. The set gains a
   normative file and two rules making an existing requirement explicit, and loses
   one enum value. A removed value would be a major once a tag exists; none does

@@ -1,0 +1,39 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-073
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.19
+  content: >
+    A Note is legible to everyone who can act on the entity it informs. An
+    implementation may classify and restrict; it may not let a Note be cited as
+    lineage by a reader who cannot open it. Where a restriction forbids that, the
+    lineage is written at the readable level and the restricted material is
+    evidence rather than the record. The method states no classification scheme.
+  rationale: >
+    The whole claim of this method is that decisions stay recoverable — that the
+    reasoning behind a choice can be found by whoever meets its consequences. A
+    Note nobody can read still satisfies every structural rule and defeats that
+    claim completely. It is worse than an absent Note, because the citation
+    resolves and the reader concludes the reasoning exists and is simply not for
+    them, which stops the question being asked again.
+
+    Stating the bound rather than a scheme is the load-bearing choice. Public,
+    internal, confidential, restricted and their variants differ by organization
+    and by regulation, and a standard that fixed one set would be wrong for most
+    adopters while adding nothing — the bound is what actually protects the
+    lineage, and it holds under any scheme.
+
+    The redaction rule matters because the conflict is real and will happen.
+    Legitimate restrictions exist — legal advice, compensation, an unannounced
+    commercial position — and the answer is not to weaken the bound. It is that
+    the readable Note carries the decision and enough of the reasoning to be
+    acted on, and the restricted document is the evidence behind it. That is how
+    a classified record has always worked, and it keeps the distinction the
+    method needs, which is between what was decided and what the decision rests
+    on.
+
+    Visibility is deliberately not a field here. The bound constrains an
+    implementation's model without requiring the method to have one, and tenancy
+    and ownership are already outside what these specs describe by an earlier
+    decision.

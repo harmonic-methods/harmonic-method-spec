@@ -55,5 +55,14 @@ rules:
   - A subtype narrows its type and never contradicts it. A reader that does not
     recognize a subtype falls back to the type, which is the whole reason the
     type is closed and the subtype is free.
+  - A Note is legible to everyone who can act on the entity it informs. An
+    implementation may classify and restrict, and most will; what it may not do
+    is let a Note be cited as lineage by a reader who cannot open it. A citation
+    nobody can follow is not lineage.
+  - Where a restriction genuinely forbids that, what gets written at the readable
+    level is the lineage — a Note stating the choice and its reasoning without
+    the restricted material, which then stands as evidence rather than as the
+    record. A redacted rationale is honest. A citation to something nobody can
+    read is not.
   - A Note never attaches to a Beat Version. Knowledge that outlives the step
     belongs to the Beat; use beat_version to record which step produced it.
