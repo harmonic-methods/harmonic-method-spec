@@ -2,6 +2,31 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Encoding does not bind, and the checker now says so.** No spec file defines a
+  directory layout, a file format, or an identifier scheme, yet the checker
+  enforces a layout on any tree it is pointed at, and the published surface listed
+  that layout as binding — the third and largest instance of a checker stricter
+  than its spec. Resolved by declaring the split rather than weakening the
+  checker: the *relationships* the specs state are what bind — which entity a Note
+  attaches to, which Beat a Beat Version belongs to, which Beat Version a Revision
+  executes, which Coda a Coda ladders to — and the *encoding* does not. A method
+  that holds where the medium is a procedure or a runbook cannot mandate a file
+  format, and an implementation keeping its records in a database would otherwise
+  be non-conformant for a reason having nothing to do with the method. The tree
+  rules stay, as a convention this repository uses and recommends. This corrects
+  text that shipped, so it was settled as a disagreement before it was written.
+  See HM-BV-006.4 and HM-N-088.
+- **Every enum declares whether additions are allowed.** An added value fell in
+  neither category the conformance statement defined — the contradiction list
+  covered a value renamed or collapsed, never one added. Note types are open, so
+  an implementation defining a further kind of knowledge is extending the method;
+  the four status enums are closed, because an unknown status cannot be
+  interpreted — a reader cannot tell whether a fourth value means done or dropped.
+  An enum with no declaration is closed, and the checker requires the declaration
+  rather than inferring it, because the question is easy to miss when adding a
+  field and closed-by-default is a silent answer. A second rule bounds the
+  openness: an addition widens the set and may not redefine or overlap a published
+  value. See HM-N-087.
 - **The seventh Beat dimension is renamed and rewritten.** `Business Outcome`
   becomes **`Outcome-Oriented`** (`outcomeOriented`), and the carve-out placing a
   score floor of about 3 on infrastructure and platform-quality Beats is deleted.

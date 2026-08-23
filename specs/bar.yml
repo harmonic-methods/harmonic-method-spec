@@ -20,6 +20,7 @@ fields:
   status:
     type: enum [open, closed]
     required: true
+    additions: none
     description: Binary — open (the current or a future period) or closed (elapsed).
   parent:
     type: reference

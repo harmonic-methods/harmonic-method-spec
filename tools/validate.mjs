@@ -6,6 +6,13 @@
  * child's back-reference and the directory it sits in, and reference
  * resolution. Also rejects vocabulary these specs do not define.
  *
+ * Encoding note: the specs define no layout, so the tree rules below — an entity
+ * is a directory, its children are subdirectories, no inline child list — read
+ * one concrete encoding this repository uses and recommends. They are not
+ * conformance requirements; see `encoding` on the surface in
+ * specs/conformance.yml. A tree encoded some other way is not non-conformant, it
+ * is simply not what this checker reads.
+ *
  * Scope note: this checks the *entity* files. It does not check the rubric text
  * in `skills/` — a hand-edit to a dimension anchor is still unguarded here. The
  * reference implementation's fingerprint test catches canonical-side drift; the
@@ -398,6 +405,38 @@ function checkPublishedCounts() {
 }
 
 /**
+ * Every enum on the normative surface declares whether an implementation may add
+ * to it.
+ *
+ * The conformance statement classifies an added value by that declaration, so an
+ * enum that omits it leaves the classification unanswerable — and the question is
+ * easy to miss when adding a field, because nothing about writing an enum prompts
+ * it. Closed is the safe default, so this demands the declaration rather than
+ * inferring one: the decision belongs where the enum is defined, made by whoever
+ * knows whether the set is meant to be complete.
+ */
+function checkEnumDeclarations() {
+  console.log('== enum declarations ==');
+  const before = failures;
+  let n = 0;
+  for (const f of ls('specs')) {
+    let doc;
+    try { doc = load(`specs/${f}`); } catch { continue; }
+    for (const [name, field] of Object.entries(doc?.fields ?? {})) {
+      if (typeof field?.type !== 'string' || !field.type.startsWith('enum')) continue;
+      n++;
+      const d = field.additions;
+      if (d === undefined) {
+        fail(`specs/${f}: field '${name}' is an enum with no 'additions' declaration — say 'allowed' or 'none'`);
+      } else if (d !== 'allowed' && d !== 'none') {
+        fail(`specs/${f}: field '${name}' declares additions '${d}' — expected 'allowed' or 'none'`);
+      }
+    }
+  }
+  if (failures === before) console.log(`  ${n} enums, each declaring whether additions are allowed`);
+}
+
+/**
  * Retired altitude names, rejected on the normative surface only.
  *
  * The altitudes are portfolio, system, and beat. "Organization" was retired as an
@@ -445,6 +484,7 @@ if (TARGET) {
   }
 } else {
   checkSpecs();
+  checkEnumDeclarations();
   checkRetiredAltitudes();
   checkRubricFingerprints();
   checkPublishedCounts();

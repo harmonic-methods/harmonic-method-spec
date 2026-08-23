@@ -13,13 +13,26 @@ surface:
     or checks each instrument scores. These are facts an implementation can
     state and a tool can compare, so these are what a conformance check covers.
   binding_but_not_comparable: >
-    The rules carried by each entity spec, the requirement that an entity is a
-    directory whose children are subdirectories, the binding between a change
-    and the step it executes, and the five functions. Each of these binds an
-    implementation as much as a field does, and none of them reduces to a
-    comparison — they are read and followed, and a tool that reported on them
-    would be reporting on prose. An implementation is not less conformant for
-    them going unchecked.
+    The rules carried by each entity spec, the relationships these specs state —
+    which entity a Note attaches to, which Beat a Beat Version belongs to, which
+    Beat Version a Revision executes, which Coda a Coda ladders to — the binding
+    between a change and the step it executes, and the five functions. Each of
+    these binds an implementation as much as a field does, and none of them
+    reduces to a comparison — they are read and followed, and a tool that reported
+    on them would be reporting on prose. An implementation is not less conformant
+    for them going unchecked.
+  encoding: >
+    Not binding, and named rather than left to the category below because the
+    checker published here reads one and a reader would otherwise assume it
+    binds. No file here defines a directory layout, a file format, an identifier
+    scheme, or a serialization, and none will: a method that holds where the
+    medium is a procedure or a runbook cannot mandate a file format, and an
+    implementation keeping its records in a database would otherwise be
+    non-conformant for a reason having nothing to do with the method. A tree, a
+    database, a single document, and a set of issue records all conform if the
+    required fields are present and the relationships hold. The tree this
+    repository checks is a convention it uses and recommends, because a checker
+    has to read something.
   everything_else: >
     Nothing else here binds anyone. The worked example, this repository's own
     system, the tooling, and the reader-facing prose exist to be read, copied,
@@ -57,6 +70,17 @@ rules:
     A contradiction does not conform — a required field the implementation lacks,
     a permitted lifecycle value it renamed or dropped, or a published dimension
     it no longer scores.
+  - >
+    Every enum declares whether additions are allowed, in an `additions` key
+    beside it. A value an implementation adds is an extension where that key reads
+    `allowed` and a contradiction where it reads `none`. An enum carrying no
+    declaration is closed, so a new enum either decides the question or inherits
+    the stricter answer.
+  - >
+    Where additions are allowed, an added value widens the set and does not
+    redefine it. An implementation may not give a published value a different
+    meaning, and an added value may not overlap one — that is what keeps a
+    taxonomy from becoming a dialect.
   - >
     The declaration is the implementation's own claim about itself. A check
     compares that claim against the specs; whether the implementation matches its

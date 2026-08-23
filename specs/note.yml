@@ -10,6 +10,7 @@ fields:
   type:
     type: enum [context, constraint, guidance, decision]
     required: true
+    additions: allowed
     descriptions:
       context: Background a contributor or agent needs to act well here.
       constraint: A boundary that must be respected (technical, legal, commercial).
