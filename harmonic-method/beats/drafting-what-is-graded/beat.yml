@@ -5,10 +5,11 @@ beat:
   status: open
   coda:
     statement: >
-      Someone who can describe a capability in a paragraph leaves this repository
-      holding a conformant Beat and its Coda, drafted with an agent and scored
-      against the published rubric before anyone else reads it — so that starting
-      is not gated on having learned the shape first.
+      Someone holding either a paragraph or a Beat written a year ago that no
+      longer says what the capability became can put a conformant, scored entity
+      in front of their team using this repository and an agent — so that neither
+      starting nor correcting is gated on having learned the shape first, and
+      correcting never costs the reasoning behind what changed.
     parent: HM-CODA
   description: >
     The capability by which this repository helps produce the entities it

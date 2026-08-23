@@ -1,0 +1,80 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-009.2
+  beat: HM-B-009
+  title: Revision that preserves what it changes
+  status: active
+  summary: >
+    The instrument composes and cannot improve anything that already exists. The
+    single improving pass it makes is on its own draft, before that draft is
+    anyone's record, which is the easy half — nothing is at stake in a file no
+    one has relied on yet. Most of the value is in the other half: a Beat written
+    a year ago, by someone else, that no longer says what the capability has
+    become.
+
+    Revising a record carries an obligation drafting does not, and it is the
+    reason this is a step rather than a flag. `specs/coda.yml` requires that
+    changing a Coda be a recorded decision with the prior statement preserved,
+    and `specs/note.yml` forbids overwriting knowledge at all — superseding is a
+    new Note citing the old. So an instrument that emits a changed Coda and
+    nothing else is not merely unhelpful, it is non-conformant by construction.
+    The change and the Note that preserves what it replaced are one output, and
+    the instrument either produces both or declines to act.
+
+    It also has to tell two failures apart that look identical in a score. A Beat
+    scoring badly because it is written badly is a wording problem and revision
+    fixes it. A Beat scoring badly because it is two capabilities wearing one
+    title is a boundary problem, and no rewording touches it. The method names no
+    entity for splitting or merging a capability, so the conformant output there
+    is a finding that says what the two capabilities appear to be — not an edit,
+    and not an invented operation. [HM-N-102] records why that stays a finding.
+
+    Revising is not evolving. Changing what a capability *is said to be* is this;
+    changing what it *does next* is a Beat Version and belongs to the
+    Orchestrator's instrument. The two are easy to confuse precisely when someone
+    is looking at a Beat that feels stale, which is when the distinction matters
+    most, so it gets stated where a reader meets it rather than assumed.
+
+    Done when: the instrument accepts an existing Beat and Coda as input, not only
+    a description; every proposed change to a Coda arrives with the decision Note
+    preserving the prior statement, and the instrument refuses to emit one without
+    the other; a boundary problem is reported as a finding naming the capabilities
+    it thinks are present, with no edit proposed; the revise-versus-evolve
+    distinction appears on both explanatory surfaces; and no dimension, anchor or
+    threshold is restated, so the digest position established by the previous step
+    is unchanged.
+  scope: >
+    In: the revising pass over an existing Beat and its Coda; the decision Note
+    the instrument must emit with any Coda change; the rule that distinguishes a
+    wording problem from a boundary problem and what it outputs in each case; the
+    revise-versus-evolve boundary on both published surfaces; and the Note
+    recording why splitting and merging stay findings.
+
+    Out: split and merge as operations the instrument performs. The method names
+    no entity for either, and inventing one so an instrument has somewhere to put
+    its output is the wrong direction — a finding is the conformant answer until
+    the method has something to say, and whether it should is a question for the
+    capability that owns the entity model.
+    Out also: the Orchestrator's planning instrument. Evolving a capability is a
+    Beat Version, and drafting one is a step of its own under this Beat.
+    Out also: applying anything. The instrument proposes a change and its Note;
+    whether either is accepted, recorded, or gated belongs to whatever system of
+    record the adopter uses, and this repository records nothing.
+    Out also: any edit to the quality instrument, and any addition to the digest's
+    covered headings. Same boundary as the previous step and for the same reason —
+    if revising exposes a defect in a dimension, that is a finding for the
+    capability that owns the rubric.
+
+    Owed, not done: nothing this step opens.
+
+    Risks stated: the sharp one is that a revising instrument is a rewrite engine
+    unless the lineage obligation is genuinely load-bearing. If it can be run and
+    produce a changed Coda with no Note, someone will run it that way, and the
+    record it quietly damages is the thing the method exists to protect. Nothing
+    checks this — it is a written rule of the same class as the prohibition on
+    inventing facts in the previous step, and it carries the same limitation,
+    stated rather than papered over.
+    Second: iterating an entity against a rubric the same agent is applying
+    measures the agent. The previous step bounded that at one improving pass;
+    this one either inherits that bound or states its own, and picking which is
+    part of the work rather than a detail left to whoever builds it.
