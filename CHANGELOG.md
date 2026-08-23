@@ -2,6 +2,36 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The system Coda promises sufficiency, and the word is load-bearing.** A team
+  reading the entity model should "find it sufficient for the work they actually
+  do" — not complete. The widening was forced by the instruments: a Beat opened to
+  close a gap in the model scored short on Strategically Aligned, and the fault was
+  in the Coda, which promised reading, naming and assessing and promised nothing
+  about the model being adequate to the work brought to it. Completeness would have
+  been the obvious word and is the wrong one — it is judged against everything
+  imaginable, so a Coda promising it makes every conceivable gap strategically
+  aligned by construction, which is how a strategic anchor becomes a mandate to
+  accumulate primitives. Sufficiency is a fit between a model and a use: it cannot
+  be claimed in the abstract, and it fails honestly when someone brings work the
+  model cannot carry. See HM-BV-003.21 and HM-N-078.
+  - **A constraint records the bound**, because a widened Coda with no stated limit
+    is the invitation that was worried about. A gap earns a new primitive only when
+    someone met it in practice and had to invent something to proceed. A conceivable
+    gap is not a gap; the burden sits on the addition, not the omission. Its natural
+    enemy is named too, because it arrives disguised as diligence: a reader who has
+    just understood the model can see what it lacks, and the impulse to complete the
+    picture is indistinguishable from care. See HM-N-079.
+  - **The third time this Coda has been outgrown**, after HM-N-031 and HM-N-048, and
+    the shape is identical each time — it enumerated what the repository held when it
+    was written, so the next capability had nothing to ladder to. Three instances is
+    a pattern about the writing, which is why the replacement clause deliberately
+    does not enumerate.
+  - **Re-scored against the widened Coda, the new Beat reaches 4.14 and passes**,
+    with Strategically Aligned rising from 2. The Beat text did not change; a score
+    moved because its context moved. That is a third kind of staleness and nothing
+    records it — a score can go stale because the thing scored changed, because the
+    rubric changed, or because the Coda it was judged against changed. The next step
+    covers the second and leaves this one open, named rather than folded in.
 - **A dimension is never a type.** Twice a property any kind of knowledge can
   carry has been found sitting in the kind slot: confidence, as a Note type for
   the unverified, and reach of consequence, in a tier named for how much a decision

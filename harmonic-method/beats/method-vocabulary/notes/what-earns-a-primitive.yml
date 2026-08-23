@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-079
+  type: constraint
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.21
+  content: >
+    Sufficiency is bounded by work an adopter actually did, never by what a
+    reader can imagine. A gap earns a new primitive only when someone met it in
+    practice and had to invent something to proceed. A conceivable gap is not a
+    gap, an asymmetry a reader finds unsatisfying is not a gap, and the burden of
+    proof sits on the addition rather than on the omission.
+  rationale: >
+    The published conformance statement already says that silence is permission —
+    where these specs say nothing, an implementation is free. Read together with a
+    Coda promising sufficiency, that gives the test. An omission is a defect only
+    when the silence would make two conforming implementations diverge in a way
+    that misleads a reader comparing them. Where silence merely leaves room, the
+    silence is the feature, and filling it costs every implementation a change for
+    no gain in comparability.
+
+    The evidence bar is not new here either; it is applied and now stated. A
+    scoring method waits on a trial nobody has run. A verification status waits on
+    a demonstrated case. A dimension waits on a second host hierarchy to design
+    against. In each the reasoning was persuasive and the evidence absent, and in
+    each the answer was to record what would settle it rather than to ship on the
+    argument. Two decisions in this cycle were reversed within hours precisely
+    because they were made from a single case, which is the strongest available
+    evidence that the bar is set correctly and was not being met.
+
+    This constraint has a natural enemy worth naming, because it will present
+    itself as diligence. A reader who has just understood the model can see what
+    it lacks, and the impulse to complete the picture is indistinguishable from
+    care. The Composer's stated discipline is resisting exactly that pressure —
+    naming things at the right altitude and declining to model what is not durable
+    — so the impulse is the thing the function exists to hold, not a signal to act
+    on.
