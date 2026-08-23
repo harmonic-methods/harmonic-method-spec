@@ -2,6 +2,33 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The root outcome claims what the repository does, and only that.** It was
+  wrong in both directions and neither error showed until something was measured
+  against it. It claimed too little: it promised a reader could read the model,
+  name the functions and assess work, and said nothing about producing any of it
+  — so once an instrument that composes and corrects entities exists, the outcome
+  stops describing the repository, and every step serving that capability scores
+  as indirect progress toward an outcome that does not reach it. That is the
+  ninth reconciliation check, and it fired one altitude down before anyone looked
+  up. See HM-BV-007.3 and HM-N-103.
+  - **It also claimed too much, which is the worse half.** It promised a team
+    would "get the same answer any conforming implementation would give". Scores
+    here come from an agent reading a rubric, and HM-N-081 had already refused to
+    record a score as a field because an LLM score is not reproducible and doing
+    so would give a non-deterministic judgement the authority of a field. The
+    root was granting that same judgement the authority of a guarantee. An
+    argument sustained about a field does not stop applying because the claim
+    moved up an altitude.
+  - **It overclaimed against its own child.** The capability that actually
+    delivers parity promises a score *means the same thing* wherever it is
+    produced, so nobody re-learns what a 4 is. Meaning the same thing and being
+    the same answer are different promises, and the parent held the stronger,
+    falser one. The root now says what the child can show.
+  - The trade is recorded rather than hidden: a widened outcome is a weaker one,
+    and the fifth reconciliation check exists for that. The clause added is narrow
+    on purpose, and an outcome that silently excludes a capability the repository
+    ships teaches every future reader that the outcome is decorative.
+
 - **The repository drafts what it grades.** Three instruments score a Beat, a
   plan, and a chain of outcomes, and none of them helped write any of it — so
   someone arriving with a paragraph had to hand-author the shape from the worked
