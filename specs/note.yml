@@ -8,18 +8,23 @@ summary: >
 type_hierarchy: >
   The four types are a hierarchy, not a list. Every Note is context in the
   general sense — the Note is the context — and `type` names the specialization
-  it rises to; `context` as a value means a Note that rises to no narrower kind.
-  An implementation needing a finer kind narrows a published value through
-  `subtype` rather than adding a fifth type nobody else can read.
+  it rises to. No value is called context, so the word for the whole is never
+  also the word for a part: the type for a Note that rises to no narrower kind is
+  `background`. An implementation needing a finer kind narrows a published value
+  through `subtype` rather than adding a fifth type nobody else can read.
 fields:
   id: {type: string, required: true}
   type:
-    type: enum [context, constraint, guidance, decision]
+    type: enum [background, constraint, guidance, decision]
     required: true
     additions: none
     children: allowed
     descriptions:
-      context: Background a contributor or agent needs to act well here.
+      background: >
+        Knowledge that rises to no narrower kind — what a contributor or agent
+        needs to know to act well here. Named for the case rather than for the
+        category, so that "context" stays the word for all four and never doubles
+        as one of them.
       constraint: A boundary that must be respected (technical, legal, commercial).
       guidance: How to approach work in this area; standards and preferences.
       decision: A choice that was made, with its rationale — the core lineage type.
@@ -51,9 +56,9 @@ fields:
 rules:
   - Notes are preserved, not overwritten; superseding is a new Note referencing the old.
   - Decisions cite what they supersede when they change course.
-  - Every Note is context in the general sense, and `type` names the
-    specialization it rises to. No value is called anything but the four, so the
-    word for the whole is never also the word for a part beyond `context` itself.
+  - Every Note is context in the general sense — the Note is the context — and
+    `type` names the specialization it rises to. No value is called context, so
+    that the word for the whole is never also the word for a part.
   - A subtype narrows its type and never contradicts it. A reader that does not
     recognize a subtype falls back to the type, which is the whole reason the
     type is closed and the subtype is free.

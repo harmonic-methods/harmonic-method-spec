@@ -1,7 +1,7 @@
 # Note — conformant to specs/note.yml
 note:
   id: HM-N-007
-  type: context
+  type: background
   attached_to: HM-B-003
   content: >
     Entity relationships are structured fields, never prose. Both rubrics score

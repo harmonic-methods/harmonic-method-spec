@@ -57,7 +57,32 @@ const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
 const BV_REQ = ['id', 'beat', 'title', 'summary', 'scope', 'status'];
 const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
 const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
-const NOTE_TYPES = ['context', 'constraint', 'guidance', 'decision'];
+/**
+ * The Note types, read from the spec rather than restated beside it.
+ *
+ * The failure message this feeds says a type "is not in specs/note.yml", so the
+ * list had better come from there. It was a hand-written copy until a rename
+ * moved the value in both places, which is the moment a restated fact goes
+ * wrong — one of the two edits is always the one that gets forgotten.
+ *
+ * Read on demand and never at module load, and returns null rather than throwing
+ * when the spec will not parse. A checker that dies on a malformed spec file
+ * gives an adopter a stack trace where checkSpecs would have given them the line
+ * and the reason, so the diagnostic is left to the check that owns it and the
+ * type comparison simply stands down.
+ */
+let noteTypesCache;
+function noteTypes() {
+  if (noteTypesCache !== undefined) return noteTypesCache;
+  let values = null;
+  try {
+    const t = load('specs/note.yml')?.fields?.type?.type ?? '';
+    const parsed = (t.match(/\[(.*)\]/)?.[1] ?? '').split(',').map((v) => v.trim()).filter(Boolean);
+    if (parsed.length > 0) values = parsed;
+  } catch { /* checkSpecs reports the parse failure with the line and the reason */ }
+  noteTypesCache = values;
+  return values;
+}
 
 const SEMVER = /^\d+\.\d+\.\d+$/;
 const MANIFEST = 'specs/spec-set.yml';
@@ -313,7 +338,8 @@ function checkTree(root) {
       if (!n) { fail(`${nPath}: no top-level 'note' key`); continue; }
 
       for (const f of NOTE_REQ) if (n[f] === undefined) fail(`${nPath}: missing required '${f}'`);
-      if (!NOTE_TYPES.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in specs/note.yml`);
+      const types = noteTypes();
+      if (types && !types.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in specs/note.yml`);
       if (n.type === 'decision' && !n.rationale) fail(`${nPath}: a decision Note requires rationale`);
       if (n.attached_to !== b.id) fail(`${nPath}: attached_to '${n.attached_to}' but sits under ${b.id}`);
       if (noteIds.has(n.id)) fail(`${nPath}: duplicate note id '${n.id}'`);

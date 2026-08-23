@@ -2,6 +2,29 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **`context` stops being one of the four Note types.** The type for knowledge
+  that rises to no narrower kind is now **`background`**, and no type is called
+  context — every Note is context in the general sense, and the word for the whole
+  cannot also be the word for one of its parts. The previous step declared the
+  hierarchy and kept `context` as a value in the same breath, which made filtering
+  ambiguous; it named that as the one thing it left open, and this closes it.
+  Renaming the value rather than the category is deliberate: the claim that every
+  Note *is* context is what lets the type be closed and a child degrade
+  gracefully. `background` was chosen over `information`, which names the category
+  again from another direction, and over `general`, which describes a position in
+  the hierarchy rather than what the Note holds. Thirteen Notes carried the old
+  value and were retyped in the same change — a rename that leaves the data behind
+  is not a rename. See HM-BV-003.18 and HM-N-072.
+  - **The checker now reads the permitted types from the spec.** Its own failure
+    message says a type "is not in specs/note.yml" while the list came from a
+    hand-written constant beside it. A rename that has to be made in two places is
+    when a restated fact goes wrong, so it is read rather than restated —
+    confirmed by changing the spec's enum and watching every Note fail against it.
+  - The pattern this rename fixes has now appeared three times in one cycle: a
+    description corrected while the value it labels kept asserting what the
+    correction removed. A retired altitude in a field description, a rubric
+    dimension de-commercialised in body but not in name, and this. Two of the
+    three were found by reading, not by a check.
 - **Note types close, and gain children instead.** An implementation needing a
   finer kind narrows a published value through an optional `subtype` rather than
   adding a fifth type nobody else can read. This reverses the half of the previous
