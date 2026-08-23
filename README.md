@@ -89,6 +89,13 @@ it says nothing published here is contradicted, and one counter-example settles
 it. What it cannot do is confirm your system behaves as you say; nothing readable
 from outside can.
 
+[examples/declaration-spec-kit.yml](examples/declaration-spec-kit.yml) applies
+the same form to a real workflow built by someone else — GitHub's Spec Kit — as
+a reading rather than a claim. Its maintainers have declared nothing, and the
+file says so in the field the checker prints, because a qualification that lives
+only in a comment does not survive being quoted. Read it for what a thorough
+divergence list looks like against a system that genuinely diverges.
+
 It checks what the specs require — fields, lifecycle values, decision rationale,
 reference resolution, and that each child agrees with the directory holding it.
 It does not apply the disciplines this repository keeps on itself, so a Beat of

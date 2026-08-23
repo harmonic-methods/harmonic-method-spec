@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-095
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.7
+  content: >
+    The check over shipped declarations reads the directory instead of one path
+    written into the checker. It was verified by being made to fail twice before
+    being believed: once with a fault in the second declaration, which the
+    previous check could not have seen, and once with no declaration present at
+    all.
+  rationale: >
+    The check named a single file. That was correct while one file existed and
+    became wrong the moment a second arrived — silently, which is the property
+    worth naming. Nothing would have failed. A new artifact would simply have
+    shipped beside a check that structurally could not reach it, and the
+    repository would have gone on reporting conformant while carrying an
+    unchecked claim. That is the failure [HM-B-007] exists to catch, arriving
+    from the direction that Beat does not watch: not a claim without a check, but
+    a check whose reach quietly stopped matching what was published.
+
+    The directory is the list here for the same reason it is the list everywhere
+    else in this repository. A file name inside a checker is the same kind of
+    second copy as an inline `notes:` field, and it goes stale the same way.
+
+    Making it fail first is not ceremony. The digest that preceded this one was
+    described as shipped and had never been built, and real drift went undetected
+    behind the claim. A rule believed on the strength of a passing run is a rule
+    nobody has tested, because a passing run is also what a rule that does
+    nothing produces.
+
+    What the check deliberately does not assert: how many declarations there are,
+    or what any of them claims. A reading of somebody else's system and a
+    fictional worked example are both declarations, and the rules that judge a
+    claim's form do not distinguish them. Counting them would restate a fact the
+    directory already carries.

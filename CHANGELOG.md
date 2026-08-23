@@ -22,6 +22,36 @@
     record still files a dimension as a kind. Where it belongs is the knowledge
     arrival capability — and this may satisfy the condition HM-N-093 set for
     designing that entity, which is raised rather than acted on.
+- **A reading is not a claim.** The declaration checker had only ever been run
+  against a fictional example written by the same people who wrote the rules, so
+  its blind spots were theirs and it had no way to find out. A conformance reading
+  of GitHub's Spec Kit now ships beside the worked one — a real workflow, built by
+  someone else, pursuing the same intent-before-change thesis and diverging from
+  this method in nine specific places. It is a **reading, not a declaration**, and
+  the difference is load-bearing: its maintainers have claimed nothing, and
+  `specs/conformance.yml` is explicit that a declaration is the implementation's
+  own claim about itself. The qualification therefore lives in the
+  `implementation` field rather than in a header comment, because the checker
+  prints that field and prints no comments, and a caveat that vanishes when the
+  output is quoted is not a caveat. See HM-BV-006.7 and HM-N-094.
+  - **The check that read one file by name now reads the directory.** The second
+    declaration would have shipped unchecked and nothing would have failed — a
+    passing run and a rule with no reach look identical from outside. It was made
+    to fail twice before being believed: once on a fault in the second file, which
+    the previous check structurally could not see, and once with no declaration
+    present. See HM-N-095.
+  - **The form assumes the implementation is its own author**, and nothing is
+    added to answer that yet. A field naming who is claiming, or a weaker second
+    document, would be designed against exactly one case written by this
+    repository — the weakest possible evidence, and the test HM-N-093 already set
+    for a different owed shape. What would settle it is a reading produced by
+    someone with no hand in this specification. See HM-N-096.
+  - Three findings the comparison surfaced belong to other capabilities and are
+    owed rather than folded in: this repository publishes instruments that score
+    a Beat and none that help write one; the Downbeat is specified and no
+    instrument takes one, though HM-N-036 cleared the ground for it; and the plan
+    rubric grades acceptance criteria that no field on the Beat Version spec
+    carries.
 - **One step, many changes.** How many tracked changes a planned step takes was
   stated on one explanatory surface and demonstrated on none. The specs were
   always right — `revisions` is typed as a list and a Revision executes *part of*
@@ -41,6 +71,13 @@
     that, leaving an agent to either split a request needlessly or skip the
     closing habit, and skipping it is how the backlog HM-N-055 diagnoses starts.
     See HM-N-098.
+  - **Two steps sat merged and active**, which is the lag at two and the start of
+    the backlog HM-N-053 names. Both are closed here. This step had written the
+    close out of scope while a request in flight looked like it would carry it;
+    that request merged without closing itself, which is the lag working as
+    designed rather than an omission — a step cannot be marked delivered in the
+    change that delivers it. The clause was corrected rather than quietly
+    reversed, because the reasoning behind it was sound when written.
   - Nothing in `specs/` changes. Both relationships are already carried
     correctly there, so this is a legibility repair on the explanatory surfaces
     and must not move the spec set version.

@@ -35,6 +35,15 @@ beat_version:
     flight so the example also shows a step part-delivered; and the example's own
     description, which enumerated a change identifier that a second one makes
     wrong.
+    In also: closing the steps whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope. This was written out of scope
+    while a request in flight looked like it would carry the close; that request
+    has since merged without closing itself, which is the lag working as designed
+    rather than an omission — a step cannot be marked delivered in the change that
+    delivers it. By then two steps sat merged and active, which is the lag at two
+    and the beginning of the backlog [HM-N-053] names. Correcting the clause is
+    part of the step rather than a silent edit: the reasoning that put the close
+    elsewhere was sound when written and stopped being true.
 
     Out: `specs/revision.yml` and `specs/beat-version.yml`. Both already carry
     the relationship correctly — `list<revision>` and "part of" are not ambiguous
@@ -46,10 +55,6 @@ beat_version:
     is not countable, and a check that matched on wording would fail the moment
     someone improved a sentence.
     Out also: the front page, which already says one or more and needs nothing.
-    Out also: closing the steps whose work has reached the trunk, which the habit
-    in [HM-N-055] would normally put in this step's scope. A request already in
-    flight carries exactly that change; making it in two places would conflict
-    for no gain. If that request is withdrawn, the close returns here.
 
     Owed, not done: nothing this step opens.
 
