@@ -2,6 +2,14 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A bounded step's status is carried, not derived.** A Beat Version's and a
+  Revision's three values live on the entity. An implementation may compute an
+  extra label from whatever its medium affords, but a value derived from a signal
+  present in only one medium does not satisfy a field the method requires in every
+  medium — a Revision whose evidence is a procedure document has no branch state to
+  read. This makes explicit what the field already required, after a real
+  implementation read it as satisfiable by derivation. The Beat Version spec
+  carried no rules at all before this. See HM-BV-006.6 and HM-N-084.
 - **The published counts are derived rather than trusted.** How many dimensions or
   checks each instrument carries is counted from the instrument and asserted against
   the front page and the agent-facing entry point. One had already gone stale — the
