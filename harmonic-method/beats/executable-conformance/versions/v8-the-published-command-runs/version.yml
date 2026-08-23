@@ -1,0 +1,53 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.8
+  beat: HM-B-006
+  title: The published command runs as published
+  status: active
+  summary: >
+    The front page tells an adopter to point the checker at their tree with an
+    absolute path, and an absolute path did not work. A tree argument was joined
+    onto the caller's working directory, which relocates an absolute path
+    underneath it, so the checker looked somewhere that does not exist and
+    reported no Coda.
+
+    The failure message is what makes this worse than a broken flag. It names the
+    path the adopter supplied — which exists, and which they can see exists — so
+    the defect reads as theirs. Someone following the published instruction
+    exactly is told their tree is malformed by a repository whose capability here
+    is that they can verify a claim themselves without asking anyone. The first
+    thing they cannot do is the first thing they were told to do.
+
+    The relative form always worked, which is why this survived: every run inside
+    this repository, and every example an author would try while writing the
+    instruction, takes the relative path.
+
+    Done when: the published absolute form validates a conformant tree from any
+    working directory; the relative form still does; a directory that genuinely
+    holds no Coda is still rejected; and a check fails if any of those three
+    stops being true.
+  scope: >
+    In: resolving a tree argument rather than joining it, at every place a path
+    is built below the caller's base; and a check running the published command
+    against a tree that ships here, in all three forms.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: the front page's wording. The instruction was correct and the tool was
+    wrong; changing the documentation to describe the defect would have been the
+    cheaper fix and the wrong one, and it is worth naming because it was
+    available.
+    Out also: the declaration checker, which takes a file rather than a tree and
+    passes it through without joining. It was read to confirm that rather than
+    assumed, and it needs nothing.
+    Out also: any change to what the checker checks. This is a defect in reaching
+    a tree, not in judging one.
+
+    Owed, not done: nothing this step opens.
+
+    Risks stated: the guard runs the command against a tree inside this
+    repository, so it proves resolution works for a path this repository can
+    construct. An adopter's absolute path can differ in ways no test here
+    reaches — a symbolic link, a mount, a case-insensitive volume — and the
+    check does not claim otherwise. It covers the failure that actually occurred
+    and the two adjacent ones that a careless fix would introduce.

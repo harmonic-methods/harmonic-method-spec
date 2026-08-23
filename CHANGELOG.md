@@ -2,6 +2,33 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The published command runs as published.** The front page tells an adopter to
+  point the checker at their tree with an absolute path, and an absolute path did
+  not work: the argument was joined onto the caller's working directory, which
+  relocates an absolute path underneath it. The checker then looked somewhere that
+  does not exist and reported no Coda — naming the path the adopter supplied,
+  which exists and which they can see exists. Someone following the instruction
+  exactly was told their tree was malformed, by the capability whose whole point
+  is that they can verify a claim themselves without asking anyone. See
+  HM-BV-006.8 and HM-N-104.
+  - **The tool was corrected, not the instruction.** Rewording the front page to
+    instruct a relative path would have taken a line, passed every check, and left
+    a checker that mishandles an ordinary argument with the documentation shaped
+    around the defect so nobody would find it again. Narrowing the command to the
+    form that happens to work narrows the capability and calls it a fix.
+  - **It was found by using the instrument on something real**, not by reading the
+    code and not by a check — dogfooding a different capability against a tree in
+    a scratch directory, which was the first time anything here had been pointed
+    at a tree by absolute path. Every run inside this repository takes the
+    relative form, and so would every example an author tries while writing the
+    instruction. A defect reachable only from outside survives any amount of
+    internal use.
+  - The guard spawns the published command rather than calling the function, in
+    all three forms — absolute, relative, and a directory holding no Coda. The
+    third is there because a resolution change making every path appear to exist
+    would satisfy the first two and be worse than the defect it replaced. It was
+    made to fail against the original defect before being believed.
+
 - **The root outcome claims what the repository does, and only that.** It was
   wrong in both directions and neither error showed until something was measured
   against it. It claimed too little: it promised a reader could read the model,

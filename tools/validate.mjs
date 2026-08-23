@@ -23,7 +23,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { spawnSync, execFileSync } from 'node:child_process';
-import { join, dirname } from 'node:path';
+import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
@@ -38,19 +38,24 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
  * A tree given on the command line is resolved from the caller's directory; this
  * repository's own files are resolved from the tool. Without the split, pointing
  * the checker at a tree elsewhere would look for it inside this repository.
+ *
+ * Every path below a base is built with `resolve` rather than `join`, because
+ * the argument may be absolute and joining an absolute path onto a directory
+ * silently relocates it underneath. That is not hypothetical: it is the defect
+ * this note now guards against, and the front page instructs the absolute form.
  */
 const TARGET = process.argv[2];
 const BASE = TARGET ? process.cwd() : ROOT;
 
 let failures = 0;
 const fail = (m) => { console.log(`  FAIL ${m}`); failures++; };
-const readFrom = (base, p) => readFileSync(join(base, p), 'utf8');
+const readFrom = (base, p) => readFileSync(resolve(base, p), 'utf8');
 const read = (p) => readFrom(ROOT, p);
 const load = (p) => parse(read(p));
 const ls = (p) => (existsSync(join(ROOT, p)) ? readdirSync(join(ROOT, p)) : []);
 const treeRead = (p) => readFrom(BASE, p);
 const treeLoad = (p) => parse(treeRead(p));
-const treeLs = (p) => (existsSync(join(BASE, p)) ? readdirSync(join(BASE, p)) : []);
+const treeLs = (p) => (existsSync(resolve(BASE, p)) ? readdirSync(resolve(BASE, p)) : []);
 
 // Required fields, per the specs each entity is declared in.
 const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
@@ -272,7 +277,7 @@ function checkTree(root) {
 
   for (const slug of treeLs(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
-    if (!existsSync(join(BASE, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
+    if (!existsSync(resolve(BASE, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
 
     let b;
     try { b = treeLoad(beatPath)?.beat; } catch (e) { fail(`${beatPath}: ${e.message}`); continue; }
@@ -293,7 +298,7 @@ function checkTree(root) {
     for (const vslug of treeLs(`${root}/beats/${slug}/versions`)) {
       const vDir = `${root}/beats/${slug}/versions/${vslug}`;
       const vPath = `${vDir}/version.yml`;
-      if (!existsSync(join(BASE, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
+      if (!existsSync(resolve(BASE, vPath))) { fail(`${vDir}/: no version.yml`); continue; }
 
       let v;
       try { v = treeLoad(vPath)?.beat_version; } catch (e) { fail(`${vPath}: ${e.message}`); continue; }
@@ -527,6 +532,38 @@ function checkCommandRuns() {
 }
 
 /**
+ * The published instruction is an absolute path, so an absolute path has to work.
+ *
+ * It did not. A tree argument was joined onto the caller's working directory,
+ * which relocates an absolute path underneath it, and the front page instructs
+ * that form in two places. An adopter following it was told their tree had no
+ * Coda — and the failure named the path they gave, which exists, so the defect
+ * read as theirs rather than as this repository's.
+ *
+ * Guarded by running the published command against a tree that ships here. The
+ * relative form is checked alongside, because a fix trading one for the other
+ * would otherwise pass, and a missing tree is checked too, because a resolution
+ * bug that made every path "found" would satisfy the first two.
+ */
+function checkTreeArgumentResolves() {
+  console.log('== tree argument ==');
+  const bin = join(ROOT, 'bin/hm.mjs');
+  const cases = [
+    ['absolute', join(ROOT, 'examples'), 0],
+    ['relative', 'examples', 0],
+    ['missing', join(ROOT, 'examples/beats'), 1],
+  ];
+  for (const [kind, arg, want] of cases) {
+    const r = spawnSync(process.execPath, [bin, 'validate', arg], { cwd: ROOT, encoding: 'utf8' });
+    if (r.status !== want) {
+      fail(`hm validate ${kind} path exited ${r.status}, expected ${want}: ${(r.stdout ?? '').trim().split('\n').pop()}`);
+    } else {
+      console.log(`  ${kind} path ${want === 0 ? 'accepted' : 'rejected'}, as it should be`);
+    }
+  }
+}
+
+/**
  * Retired altitude names, rejected on the normative surface only.
  *
  * The altitudes are portfolio, system, and beat. "Organization" was retired as an
@@ -567,7 +604,7 @@ function checkRetiredAltitudes() {
  */
 if (TARGET) {
   const target = TARGET.replace(/\/+$/, '');
-  if (!existsSync(join(BASE, `${target}/coda.yml`))) {
+  if (!existsSync(resolve(BASE, `${target}/coda.yml`))) {
     fail(`${target}/coda.yml not found — point this at a directory holding a system Coda`);
   } else {
     checkTree(target);
@@ -580,6 +617,7 @@ if (TARGET) {
   checkPublishedCounts();
   checkToolingVersion();
   checkCommandRuns();
+  checkTreeArgumentResolves();
   checkReleaseInvariant();
   checkBindingDiscipline();
   checkPublicSurfaceHygiene();

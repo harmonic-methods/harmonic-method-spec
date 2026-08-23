@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-007.3
   beat: HM-B-007
   title: The root claims what the repository does, and only that
-  status: active
+  status: delivered
   summary: >
     The system outcome was wrong in both directions at once, and neither error
     was visible until something was measured against it.
