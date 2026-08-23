@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-108
+  type: decision
+  attached_to: HM-B-009
+  beat_version: HM-BV-009.2
+  content: >
+    Every question the instrument asks carries a proposed default the author can
+    accept or correct, and names what a good answer unblocks. Questions are few
+    and ordered by leverage.
+  rationale: >
+    An open question and a proposal are not the same act, and the difference
+    decides whether anything comes back. "Where should the boundary be?" asks
+    someone to compose an answer from nothing, and it is postponed. "I would draw
+    it at X — is that right?" asks them to check one, and correcting a specific
+    proposal is far easier than authoring an answer. Being wrong in the proposal
+    is not a cost; it is often what produces the sharpest correction.
+
+    This is the same move the composing instrument already makes when it marks an
+    assumption in a draft rather than leaving a blank, and it is worth stating
+    once as a property of how this repository asks rather than twice as a local
+    habit. A marked assumption is a question that has been asked; a question with
+    a default is an assumption offered for rejection. Both put a specific claim in
+    front of a person, which is the only reliable way to find out they disagree.
+
+    Naming what an answer unblocks is the second half. A person deciding whether
+    to spend a minute needs to know what the minute buys, and "this would lift
+    Testable from two" is that. Without it a question is a chore.
+
+    Keeping the list short is not politeness. A long list is a form, and a form
+    does not get filled in — the two questions that mattered are lost among the
+    six that did not, and nothing gets answered at all. Where more than a few
+    gaps are real, the honest output is that the Beat needs a conversation, and
+    naming which two to start it with.

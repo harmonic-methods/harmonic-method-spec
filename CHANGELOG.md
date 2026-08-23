@@ -2,6 +2,38 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **What nobody decided.** The composing instrument stops rewording when a
+  dimension resists twice, on the reasoning that a dimension which will not lift
+  is rarely a sentence problem — and then said nothing about what to do next,
+  leaving the person where the score already left them: told their Beat is weak,
+  not told what they have to decide. The clarifying instrument is that next step.
+  It reads the dimensions that scored low and turns each into a question their
+  author can actually answer. See HM-BV-009.2.
+  - **The division it depends on**: revision fixes what is badly written, where
+    the knowledge exists and the wording fails to carry it; clarification asks for
+    what is not known, where no wording helps because nobody has decided the
+    thing. A draft reworded around a gap reads better and says no more, which is
+    worse than the draft that showed the gap.
+  - **Questions are derived, never tabulated.** Each comes from the rubric's own
+    text at the moment of asking — the dimension, its red flag, and the anchor one
+    band above where the score landed. A stored mapping from dimension to question
+    would be a compressed statement of what a dimension means, which is the second
+    copy HM-N-012 forbids, and it would drift silently: nothing fails, the
+    questions simply stop matching the rubric that produced the score they answer.
+    A stock question also asks what a dimension usually lacks, where a derived one
+    asks what *this* Beat lacks. See HM-N-107.
+  - **Every question carries a proposed default**, because an open question and a
+    proposal are not the same act. "Where should the boundary be?" is postponed;
+    "I would draw it at X — is that right?" gets checked. Being wrong in the
+    proposal is not a cost, it is often what produces the sharpest correction —
+    the same move the composing instrument already makes when it marks an
+    assumption rather than leaving a blank. The list stays short because a long
+    list is a form, and a form does not get filled in. See HM-N-108.
+  - **Some low scores are not questions.** A dimension that will not lift is
+    sometimes a boundary in the wrong place, and asking a question implies an
+    answer would fix it. Those are reported as findings naming the capabilities
+    the instrument thinks are present, with the redraw left to a person.
+
 - **An anchor that can be wrong.** The method names drift as the Conductor's
   central value and specifies the entity that makes drift computable in full, and
   nothing here produced one. HM-N-036 cleared the ground for this instrument when

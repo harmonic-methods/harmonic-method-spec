@@ -1,0 +1,68 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-009.2
+  beat: HM-B-009
+  title: What nobody decided
+  status: active
+  summary: >
+    The composing instrument drafts, scores, and revises, and it stops rewording
+    when a dimension resists twice — on the reasoning that a dimension which will
+    not lift is rarely a sentence problem. It stops there and says nothing about
+    what to do next, which leaves the person exactly where the score already left
+    them: told their Beat is weak, not told what they have to decide.
+
+    This step adds the instrument for that moment. It reads the dimensions that
+    scored low, and turns each into a question its author can actually answer.
+
+    The division it depends on is worth stating plainly, because reaching for the
+    wrong side wastes the effort: revision fixes what is badly written, where the
+    knowledge exists and the wording fails to carry it; clarification asks for
+    what is not known, where no wording helps because nobody has decided the
+    thing. A draft reworded around a gap reads better and says no more, which is
+    worse than the draft that showed the gap.
+
+    Every question is derived from the rubric's own text at the moment of asking
+    — the dimension, its red flag, and the anchor one band above. No mapping from
+    dimension to question is stored anywhere. [HM-N-107] records why a stored
+    mapping would be a paraphrase of the canonical text rather than a convenience.
+
+    Done when: a low score yields a short ordered list of answerable questions,
+    each naming the dimension it came from, what a good answer unblocks, and a
+    proposed default the author can accept or correct; a dimension that will not
+    lift because the capability is drawn wrong is reported as a finding rather
+    than dressed as a question; nothing the instrument could not answer is
+    answered by it; and no dimension, anchor or threshold is restated in the new
+    file.
+  scope: >
+    In: the clarifying instrument for the Composer; its placement on both
+    explanatory surfaces beside the other producing instruments; and the two
+    Notes recording why the questions are derived rather than tabulated, and why
+    a question carries a proposed default.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: clarifying a plan. The plan rubric produces dimension scores of the same
+    shape and the derivation would be identical, so the temptation to widen this
+    instrument to cover both is real — and refused, because the Orchestrator has
+    no drafting instrument yet and a clarifier without a drafter serves half a
+    loop. Plan clarification arrives with the plan drafter, as one step.
+    Out also: filing the answers. An answer worth keeping usually becomes a Note
+    against the Beat; drafting one is within reach and storing it is not, and this
+    repository records nothing.
+    Out also: any stored mapping from a dimension to the questions it usually
+    implies, however convenient. The reason is the whole point of the step.
+    Out also: a threshold for when a score is low enough to clarify. The rubric
+    reports a score and the reference gate is an implementation's; inventing a
+    trigger here would put a number on the normative surface by the side door.
+
+    Owed, not done: nothing this step opens.
+
+    Risks stated: an instrument that asks questions can hide behind them. A list
+    of questions is easy to produce, feels like progress, and can be a way of
+    declining to do work the instrument could have done — the composing
+    instrument revises for exactly the cases where the knowledge is present, and
+    a clarifier that fires too early makes a person answer what an agent could
+    have read. The instrument answers this with a rule rather than a mechanism:
+    if it can answer from something it has actually read, it cites the source and
+    withdraws the question. Nothing checks that, and it is stated rather than
+    implied.
