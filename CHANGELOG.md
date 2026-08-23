@@ -2,6 +2,26 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The right second instance.** The decision that a dimension is never a type
+  cited two cases. One was wrong about the system it described: the reference
+  implementation's decision tier — `strategic`, `structural`, `implementation` —
+  lives on a separate optional field, documented as "only meaningful on decision
+  Notes", and those words appear nowhere as a type value. The implementation
+  already does what the rule prescribes, so the Note cited a compliant system as a
+  violation. Found by reading the code the Note described, not by a check.
+  A better instance was in the same enum unnoticed: the `document` type carries a
+  storage key, a MIME type, a processing status and an assignment status, and other
+  Notes reference it to record where they came from — provenance and processing
+  state, both on this spec's own list of dimensions an implementation owns. The
+  evidence that settles it is the implementation's own workaround: note listings
+  pass an explicit exclude filter for this type, and a value that must be filtered
+  out of listings of its own type is not a member of it. The rule does not move;
+  the evidence for it gets stronger. See HM-BV-003.25 and HM-N-097.
+  - The conforming path for such a value is **not** a child of a published type,
+    which was the earlier assumption. Narrowing `background` with an ingestion
+    record still files a dimension as a kind. Where it belongs is the knowledge
+    arrival capability — and this may satisfy the condition HM-N-093 set for
+    designing that entity, which is raised rather than acted on.
 - **Arrival is not attachment.** The first step of the knowledge-arrival capability
   decides the two things every later step depends on and adds no entity. Knowledge
   that has arrived and is not yet attached **is not a Note**, and `attached_to`
