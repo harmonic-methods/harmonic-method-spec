@@ -1,0 +1,35 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-107
+  type: decision
+  attached_to: HM-B-009
+  beat_version: HM-BV-009.2
+  content: >
+    The clarifying instrument derives every question from the rubric's own text
+    at the moment of asking — the dimension, its red flag, and the anchor one
+    band above where the score landed. No mapping from a dimension to the
+    questions it typically implies is stored anywhere, and none may be added.
+  rationale: >
+    A table would be the obvious build. Seven dimensions, a handful of stock
+    questions each, and the instrument becomes a lookup that runs faster and
+    reads more confidently than one that has to go and read a rubric first.
+
+    It would also be a paraphrase of the canonical text, which is the failure
+    [HM-N-012] names from the other direction when it forbids hand-maintaining a
+    second copy of a dimension table. A stock question is a compressed statement
+    of what a dimension means. Two statements of the same meaning drift, and this
+    one would drift silently: nothing would fail, the questions would simply
+    stop matching the rubric that produced the score they answer, and the person
+    would be asked about a definition that no longer exists.
+
+    Deriving at the moment of asking costs a file read and buys the property that
+    matters — an edit to a dimension changes the questions it produces, with no
+    second edit to remember. It also makes the instrument correct against a
+    version it was not written for, which is the same reason the composing
+    instrument points at the rubric rather than reproducing it.
+
+    The stronger reason is about what the questions are for. A stock question
+    asks what the dimension usually lacks. A derived one asks what *this* Beat
+    lacks, because it is written against the specific text of the anchor one band
+    above where the score actually landed. The first is a form; the second is a
+    reading, and only the second is worth a person's minute.

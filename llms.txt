@@ -32,14 +32,19 @@ guards it against an unacknowledged edit.
 The Producer and Promoter have no instrument yet, deliberately.
 
 ## Producing
-Two skills produce rather than assess. Neither carries dimensions or a scale,
-neither is covered by the digest because there is nothing normative in either to
-guard, and both defer every judgement they need to an instrument above by
+Three skills produce rather than assess. None carries dimensions or a scale,
+none is covered by the digest because there is nothing normative in any of them
+to guard, and each defers every judgement it needs to an instrument above by
 pointing at the file.
 - skills/beat-composing/SKILL.md: Composer — compose a Beat and its Coda from a
   plain description, ask for what is missing rather than inventing it, score the
   draft with beat-coda-quality-check read as written, then revise from that score
   and from the author's feedback
+- skills/beat-clarifying/SKILL.md: Composer — turn the dimensions that scored low
+  into the few questions their author has to answer, each derived from the
+  rubric's own text at the moment of asking rather than from a stored mapping,
+  each carrying a proposed default. Revision fixes what is badly written;
+  clarification asks for what nobody has decided
 - skills/downbeat-taking/SKILL.md: Conductor — take an immutable anchor on one
   capability: the Coda frozen verbatim, and a reading of how far the work had
   converged toward it. Defines no scale, because downbeat.yml leaves computation

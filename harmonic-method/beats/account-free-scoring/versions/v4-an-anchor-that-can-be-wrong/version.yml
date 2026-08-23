@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-001.4
   beat: HM-B-001
   title: An anchor that can be wrong
-  status: active
+  status: delivered
   summary: >
     The method names drift as the Conductor's central value and specifies the
     entity that makes drift computable in full — immutable, one per capability,

@@ -160,7 +160,7 @@ function, and each is written to be read literally by an agent.
 | [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
 | [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
 
-Two skills produce rather than assess, and neither defines any judgement of its
+Three skills produce rather than assess, and none defines any judgement of its
 own — which is what keeps a production aid from becoming a second standard.
 
 [beat-composing](skills/beat-composing/SKILL.md) serves the Composer: give it a
@@ -168,6 +168,12 @@ paragraph describing a capability and it drafts the Coda and the Beat, asks for
 what it is missing rather than inventing it, scores its own draft with the Beat
 rubric above — read as written, never paraphrased — and revises from that score
 and from what you say back.
+
+[beat-clarifying](skills/beat-clarifying/SKILL.md) serves the Composer too, for
+the moment revision stops helping: it turns the dimensions that scored low into
+the few questions their author actually has to answer, each with a proposed
+default to accept or correct. Revision fixes what is badly written;
+clarification asks for what nobody has decided.
 
 [downbeat-taking](skills/downbeat-taking/SKILL.md) serves the Conductor: it takes
 an anchor on one capability, freezing the outcome it was converging toward and
