@@ -1,0 +1,44 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-097
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.25
+  content: >
+    [HM-N-075] cited two instances of a dimension occupying the kind slot. One was
+    wrong and is withdrawn; a genuine second instance replaces it. The rule is
+    unchanged — a dimension is never expressed as a type — and it is still found
+    twice, with the right pair.
+
+    Withdrawn: the reference implementation's decision tier. Substituted: its
+    `document` Note type, which carries provenance and processing state.
+  rationale: >
+    The decision tier is not in the kind slot and never was. `strategic`,
+    `structural` and `implementation` live on a separate optional field, described
+    in that implementation as "only meaningful on decision Notes; ignored on other
+    types", and those three words appear nowhere as a type value. The
+    implementation already does what this rule prescribes, so the Note cited a
+    compliant system as a violation. That is the failure the claims-and-evidence
+    capability exists to catch, and it was found by reading the code the Note
+    described rather than by any check.
+
+    The real second instance was in the same enum the whole time. A `document`
+    type carries a storage key, a filename, a MIME type, a file size, a processing
+    status, and an assignment status, and other Notes point back at it to record
+    where they came from. Provenance and processing state are both named on this
+    spec's own list of dimensions an implementation owns. So the value answers
+    where knowledge came from and how far through a pipeline it is, not what the
+    knowledge is.
+
+    The evidence that settles it is the implementation's own workaround: note
+    listings have to pass an explicit exclude filter for this type, because a
+    reader asking for the Notes on something does not want ingestion records. A
+    value that must be filtered out of listings of its own type is not a member of
+    that type, and needing the filter is the cost the rule predicts — every
+    downstream query inherits the ambiguity.
+
+    This is a better instance than the one it replaces, and not only because it is
+    true. The decision tier would have been a subtle case even if correct, since a
+    tier of consequence is at least about the decision. An ingestion record is not
+    knowledge at all, which makes the distinction the rule draws visible without
+    argument.
