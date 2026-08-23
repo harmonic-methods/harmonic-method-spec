@@ -29,3 +29,7 @@ fields:
 rules:
   - A Revision belongs to exactly one Beat Version (reassignment is a recorded event).
   - The reasoning for the change lives with the Revision, not only in the artifact.
+  - A Revision's status is carried on the Revision. Deriving delivered from a
+    source-control signal is a convenience an implementation may add, not a
+    substitute for the field — a Revision whose evidence is a procedure document
+    or a runbook diff has no such signal to derive from.

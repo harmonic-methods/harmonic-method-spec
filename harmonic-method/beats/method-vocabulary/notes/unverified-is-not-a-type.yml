@@ -1,0 +1,54 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-086
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.23
+  content: >
+    The Note type for something believed but not verified is retired. The method
+    defines four types: context, constraint, guidance, decision. [HM-N-019] and
+    [HM-N-043] both used it and are re-typed as context; the delivered step
+    [HM-BV-002.7], which describes creating one, is left as the record of what
+    happened at the time and is superseded by this Note rather than rewritten.
+  rationale: >
+    The type answered a question about confidence, not about kind. Every other
+    type names what a piece of knowledge *is* — a boundary, an instruction, a
+    choice, background — while this one named how sure of it someone was, which
+    is a property any of the four can carry in any degree. That mismatch showed up
+    in use: both instances here are background about how much evidence something
+    rests on, which is what context means, and neither became a different kind of
+    knowledge by being uncertain.
+
+    What it costs is real and is recorded rather than minimized. The method now
+    has no type-level signal that a Note is unverified, so the signal has to live
+    in the Note's own wording. Both re-typed instances say so in their first
+    line, which is why they survive the change legibly; a Note that relied on the
+    type alone to carry the caveat would have needed rewriting.
+
+    What is owed is a verification state, not a confidence number, and the
+    difference decides what the next person builds. A number records how sure
+    someone was; the retired type recorded that a verdict is still outstanding.
+    "Not yet validated" is an open obligation rather than a degree of belief —
+    someone owes an answer — and a low number on a Note obliges nobody.
+
+    The reason the signal had nowhere to go is structural: this spec declares no
+    status field on a Note at all, so the type slot was the only place lifecycle
+    could live, and the retired type was doing double duty as kind and as state.
+    Removing it therefore deleted the second job rather than relocating it. The
+    replacement is a status whose pending value marks a claim as unsettled. The
+    reference implementation reached the coherent form of this move first — it
+    keeps such a status and has dropped the type, where this repository dropped
+    the type without having the status.
+
+    It is deliberately not added here. A status on a Note needs its exits defined
+    — settled true, settled false, superseded — and inventing them in the same
+    step that creates the vacancy is how an unconsidered field becomes permanent
+    in a published standard. Naming what is owed, and naming it accurately, is
+    what keeps it from being forgotten or built as the wrong thing.
+
+    This is a removal from the normative surface, and the first this repository
+    has made. No tag exists and nothing has been released, so the spec set takes
+    a minor step and shares this cycle's number with the additive change that
+    preceded it, on the same reasoning recorded when the first releasable version
+    stayed in the 1.x line: a promise that could not have been made cannot be
+    broken. Once a tag exists, a removal is a major.

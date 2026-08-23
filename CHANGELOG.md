@@ -2,6 +2,39 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **One fewer Note type**, and the trigger for a major is corrected. The type for
+  something believed but not verified is retired; four remain. It answered a
+  question about confidence rather than about kind, and both instances here were
+  background about how much evidence something rests on. The removal would be a
+  major under the rule recorded with spec set 1.1.0 — a renamed value becomes one
+  once a tag exists — but that rule tests the wrong thing. The tag holds the
+  package name, nothing consumes the spec set it shipped, and this lands in 1.2.0,
+  which has never been tagged. A major is owed to a consumer who can be broken,
+  not to the existence of a marker. The set stays in 1.x while the method is
+  stabilizing. See HM-BV-003.23, HM-N-086 and HM-N-090.
+- **A bounded step's status is carried, not derived.** A Beat Version's and a
+  Revision's three values live on the entity. An implementation may compute an
+  extra label from whatever its medium affords, but a value derived from a signal
+  present in only one medium does not satisfy a field the method requires in every
+  medium — a Revision whose evidence is a procedure document has no branch state to
+  read. This makes explicit what the field already required, after a real
+  implementation read it as satisfiable by derivation. The Beat Version spec
+  carried no rules at all before this. See HM-BV-006.6 and HM-N-084.
+- **The published counts are derived rather than trusted.** How many dimensions or
+  checks each instrument carries is counted from the instrument and asserted against
+  the front page and the agent-facing entry point. One had already gone stale — the
+  reconciliation instrument carries nine checks and both surfaces said eight, so an
+  agent was told the wrong number about the instrument it was about to apply. The
+  instrument digests could not have caught it: they guard an instrument's own
+  normative text, not prose written about it elsewhere. See HM-BV-003.22 and
+  HM-N-082.
+- **A retired altitude name is rejected on the normative surface.** A Note attaches
+  to a portfolio, a system, or a Beat; one field description still offered an
+  organization, several spec set versions after the decision retiring the word said
+  it does not appear in the method. Corrected, and swept for. The sweep covers
+  `specs/` only — the Notes recording a retirement have to be able to name the word
+  they retire, which was verified by widening it and reading the failures. See
+  HM-N-083.
 - **The checker enforces a release invariant.** The newest changelog entry either
   says `(unreleased)` or a tag exists for it. Caught a live case on its first run:
   `harmonic-method@1.3.0` was on the public registry while the entry still claimed

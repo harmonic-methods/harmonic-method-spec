@@ -1,0 +1,32 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-084
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.6
+  content: >
+    A Beat Version's and a Revision's three status values are carried on the
+    entity. An implementation may compute an additional label from whatever its
+    medium affords, but a value derived from a signal present in only one medium
+    does not satisfy a field the method requires in every medium. Binary status
+    paired with a source-control state is therefore an extension plus a
+    contradiction, not an equivalent representation.
+  rationale: >
+    The question was put directly, because a real implementation carries a binary
+    status and derives the rest from branch state, and that derivation genuinely
+    does recover delivered from withdrawn — for software. The method is
+    medium-agnostic, which is what settles it. A Revision whose evidence is a
+    procedure document or a runbook diff has nothing to derive from, so an
+    implementation conforming by derivation conforms for one medium and silently
+    cannot for the others. The failure would surface only when someone applied the
+    method to a process rather than a codebase, which is precisely the audience
+    the medium-agnostic wording exists to serve.
+
+    This makes an existing requirement explicit rather than adding one. The field
+    was already required with three values, so two values never satisfied it; what
+    was missing was any statement that a derived label is not the field. The
+    decision that retired the binary anticipated the shape of this — it observed
+    that an implementation pairs the binary with a derived label, and that copying
+    the binary without the derivation loses the distinction — but it reasoned about
+    what this repository should carry, not about what an implementation may
+    substitute. That gap is what left the question open.

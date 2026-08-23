@@ -39,6 +39,11 @@ Do not write a spec version anywhere else. Not into an instance file's header
 comment, not into a skill body, not into prose. Fifty-five files used to, and
 every one went stale on the same day.
 
+The spec set stays in the 1.x line while the method is stabilizing, so a change
+breaking a permitted value takes a minor step. What would cost a major is a
+consumer who can be broken, not a tag — a tag may exist only to hold a package
+name. Ask what depends on a version before deciding what a change to it costs.
+
 ## Vocabulary
 
 `specs/function.yml` declares `concept:` rather than `entity:`. Nothing

@@ -1,0 +1,46 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.6
+  beat: HM-B-006
+  title: A bounded step's status is carried, not derived
+  status: active
+  summary: >
+    This step was planned as the one that put a conformance statement on the
+    normative surface, and most of that arrived from another direction first —
+    `specs/conformance.yml` exists, the extension and contradiction distinction is
+    normative, and a claim is already required to name a version. Nothing is left
+    to do there, and the framing that landed is better than the one planned: it
+    defines the surface by what binds rather than by where a file lives, so adding
+    a directory does not silently enlarge what an implementation is measured
+    against.
+
+    What the plan carried that has not arrived is one rule, and it is the reason
+    this step still exists. A Beat Version's and a Revision's three status values
+    are carried on the entity. An implementation may compute an extra label from
+    whatever its medium affords, but a value derived from a signal present in only
+    one medium does not satisfy a field the method requires in every medium.
+
+    The Beat Version spec had no rules at all before this. The Revision spec had
+    two, and neither said where its status lives.
+  scope: >
+    In: the status rule on both bounded-step entities, and the Note recording why
+    a derived label does not satisfy the field.
+    Out: `specs/conformance.yml`, which this step planned to create and no longer
+    needs to. Its own structure stands as it arrived — a three-way surface split
+    between what binds and is comparable, what binds and is not, and what binds
+    nobody. A version of this step written against the earlier plan would have
+    replaced that with a two-way split defined by file location, which is the
+    weaker model and would have been a regression presented as progress.
+    Out also: the decision Note that recorded moving the conformance rule onto the
+    normative surface. The move happened; a second record of it would be a
+    duplicate of reasoning already in the tree.
+    Owed, not done: the later steps in this Beat were written against the
+    conformance statement this step planned. Each has to be re-derived against the
+    structure that actually exists, and at least one of them contradicts it — a
+    rule that encoding is not normative, against a surface that lists the
+    directory shape as binding. That is a real disagreement to settle rather than
+    merge.
+    Risks stated: a rule stated on an entity spec binds an implementation without
+    being comparable by a tool, which is exactly the category the surface names as
+    binding and not comparable — so nothing here is checkable, and that is the
+    correct place for it rather than a shortfall.
