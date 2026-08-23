@@ -2,6 +2,23 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Note types close, and gain children instead.** An implementation needing a
+  finer kind narrows a published value through an optional `subtype` rather than
+  adding a fifth type nobody else can read. This reverses the half of the previous
+  decision that opened Note types, and reverses it on that decision's own
+  argument: openness was justified by an added type costing a reader little, since
+  the content still reads — but a child costs less on the same axis, because an
+  unknown child still reports its parent, so a reader loses precision rather than
+  the classification outright. Every enum now declares `children` beside
+  `additions`; they are different questions with different answers on the same
+  enum, and Note types are the proof — closed to siblings, open to children. The
+  four types are also declared a hierarchy rather than a list: every Note is
+  context in the general sense, and `context` as a value means one that rises to
+  no narrower kind. `hm conformance` gains a `child_type` extension kind, and the
+  worked example now narrows `guidance` rather than adding a type. What this leaves
+  unresolved is recorded rather than smoothed over — `context` now carries two
+  senses, and the rename is a separate step because it moves a published value.
+  See HM-BV-003.24 and HM-N-071.
 - **A conformance claim now has a shape, and a check.** The statement said what a
   claim covers and left the claim shapeless, so two implementations could both
   declare conformance and mean different things, and neither could be

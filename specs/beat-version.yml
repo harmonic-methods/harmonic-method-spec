@@ -23,6 +23,7 @@ fields:
     type: enum [active, delivered, withdrawn]
     required: true
     additions: none
+    children: none
     descriptions:
       active: In flight — planned, and neither finished nor set down.
       delivered: The planned step shipped.

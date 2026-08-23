@@ -19,14 +19,14 @@ declaration:
         contradiction and is declared as one rather than described as a
         simplification.
   extensions:
-    - kind: enum_value
+    - kind: child_type
       enum: note.type
+      parent: guidance
       value: template
       why: >
-        A reusable wording an estimator starts from. Note types declare
-        `additions: allowed`, so this widens the set rather than contradicting
-        it — a reader who does not recognise it still reads the content and
-        resolves the attachment.
+        A reusable wording an estimator starts from — guidance, narrowed. A reader
+        who does not know the child still knows it is guidance, which is why this
+        is a child rather than a fifth type.
     - kind: entity
       name: Engagement
       why: >

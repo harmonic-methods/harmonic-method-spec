@@ -5,17 +5,33 @@ summary: >
   Typed knowledge attached to the entity it informs. Notes are the decision
   and context lineage: why things are the way they are, preserved where the
   work happens rather than in disconnected documents.
+type_hierarchy: >
+  The four types are a hierarchy, not a list. Every Note is context in the
+  general sense — the Note is the context — and `type` names the specialization
+  it rises to; `context` as a value means a Note that rises to no narrower kind.
+  An implementation needing a finer kind narrows a published value through
+  `subtype` rather than adding a fifth type nobody else can read.
 fields:
   id: {type: string, required: true}
   type:
     type: enum [context, constraint, guidance, decision]
     required: true
-    additions: allowed
+    additions: none
+    children: allowed
     descriptions:
       context: Background a contributor or agent needs to act well here.
       constraint: A boundary that must be respected (technical, legal, commercial).
       guidance: How to approach work in this area; standards and preferences.
       decision: A choice that was made, with its rationale — the core lineage type.
+  subtype:
+    type: string
+    required: false
+    description: >
+      A narrower kind within the type, for a taxonomy the method does not name —
+      a file-derived context, a statutory constraint, a reversed decision. The
+      method enumerates no subtypes and will not: the point is that an
+      implementation can be precise without inventing a top-level type nobody
+      else can read. One level only.
   content: {type: string, required: true}
   rationale:
     type: string
@@ -35,5 +51,11 @@ fields:
 rules:
   - Notes are preserved, not overwritten; superseding is a new Note referencing the old.
   - Decisions cite what they supersede when they change course.
+  - Every Note is context in the general sense, and `type` names the
+    specialization it rises to. No value is called anything but the four, so the
+    word for the whole is never also the word for a part beyond `context` itself.
+  - A subtype narrows its type and never contradicts it. A reader that does not
+    recognize a subtype falls back to the type, which is the whole reason the
+    type is closed and the subtype is free.
   - A Note never attaches to a Beat Version. Knowledge that outlives the step
     belongs to the Beat; use beat_version to record which step produced it.

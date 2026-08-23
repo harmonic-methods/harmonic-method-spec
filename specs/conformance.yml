@@ -94,11 +94,16 @@ rules:
     a permitted lifecycle value it renamed or dropped, or a published dimension
     it no longer scores.
   - >
-    Every enum declares whether additions are allowed, in an `additions` key
-    beside it. A value an implementation adds is an extension where that key reads
-    `allowed` and a contradiction where it reads `none`. An enum carrying no
-    declaration is closed, so a new enum either decides the question or inherits
-    the stricter answer.
+    Every enum declares whether additions are allowed and whether children are,
+    in `additions` and `children` keys beside it. A value an implementation adds
+    is an extension where `additions` reads `allowed` and a contradiction where it
+    reads `none`. An enum carrying no declaration is closed, so a new enum either
+    decides the question or inherits the stricter answer.
+  - >
+    Where children are allowed, an implementation may narrow a published value
+    instead of adding a sibling to it. A child is an extension, and it degrades —
+    a reader who does not know the child still knows its parent, which a sibling
+    does not offer. Prefer a child wherever one will carry the meaning.
   - >
     Where additions are allowed, an added value widens the set and does not
     redefine it. An implementation may not give a published value a different

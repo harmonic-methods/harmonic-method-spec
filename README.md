@@ -109,7 +109,10 @@ A **Beat** is a durable capability. It is never rewritten wholesale; it evolves
 through **Beat Versions**, each a bounded, testable step toward the Coda. A
 Beat Version is delivered by one or more **Revisions**, the tracked changes that
 actually execute it. **Notes** carry the typed knowledge — context, constraints,
-guidance, decisions — that explains why any of it is the way it is.
+guidance, decisions — that explains why any of it is the way it is. Those four
+are a hierarchy rather than a list: a Note *is* context, and the type names how
+far it specializes. An implementation needing a finer kind narrows one of the
+four rather than adding a fifth nobody else can read.
 
 Cadence makes reconciliation routine. A **Bar** is the recurring period work is
 planned and delivered within, and Bars nest — a quarter over its fortnights —

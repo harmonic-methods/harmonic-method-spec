@@ -415,6 +415,11 @@ function checkPublishedCounts() {
  * it. Closed is the safe default, so this demands the declaration rather than
  * inferring one: the decision belongs where the enum is defined, made by whoever
  * knows whether the set is meant to be complete.
+ *
+ * Both halves are demanded, because they are different questions. Whether the set
+ * may be widened and whether a published value may be narrowed have different
+ * answers on the same enum: Note types are closed to siblings and open to
+ * children, and every status enum is closed to both.
  */
 function checkEnumDeclarations() {
   console.log('== enum declarations ==');
@@ -426,15 +431,17 @@ function checkEnumDeclarations() {
     for (const [name, field] of Object.entries(doc?.fields ?? {})) {
       if (typeof field?.type !== 'string' || !field.type.startsWith('enum')) continue;
       n++;
-      const d = field.additions;
-      if (d === undefined) {
-        fail(`specs/${f}: field '${name}' is an enum with no 'additions' declaration — say 'allowed' or 'none'`);
-      } else if (d !== 'allowed' && d !== 'none') {
-        fail(`specs/${f}: field '${name}' declares additions '${d}' — expected 'allowed' or 'none'`);
+      for (const key of ['additions', 'children']) {
+        const d = field[key];
+        if (d === undefined) {
+          fail(`specs/${f}: field '${name}' is an enum with no '${key}' declaration — say 'allowed' or 'none'`);
+        } else if (d !== 'allowed' && d !== 'none') {
+          fail(`specs/${f}: field '${name}' declares ${key} '${d}' — expected 'allowed' or 'none'`);
+        }
       }
     }
   }
-  if (failures === before) console.log(`  ${n} enums, each declaring whether additions are allowed`);
+  if (failures === before) console.log(`  ${n} enums, each declaring whether additions and children are allowed`);
 }
 
 /**
