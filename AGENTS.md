@@ -127,7 +127,7 @@ the next substantive step's scope, which [HM-N-055] asks for, edits two of them 
 and the trailer names the one step the request carries out. Nothing bounds the
 other direction either: a step is delivered by as many Revisions as the work
 takes, and several requests naming the same step is the ordinary case rather than
-a split that was missed. See [HM-N-097].
+a split that was missed. See [HM-N-098].
 
 When a Beat Version's work has merged, set its status to `delivered`. If it left
 flight without shipping — superseded, descoped, dropped — set `withdrawn` and say

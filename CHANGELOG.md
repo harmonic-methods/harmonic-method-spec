@@ -2,6 +2,26 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The right second instance.** The decision that a dimension is never a type
+  cited two cases. One was wrong about the system it described: the reference
+  implementation's decision tier — `strategic`, `structural`, `implementation` —
+  lives on a separate optional field, documented as "only meaningful on decision
+  Notes", and those words appear nowhere as a type value. The implementation
+  already does what the rule prescribes, so the Note cited a compliant system as a
+  violation. Found by reading the code the Note described, not by a check.
+  A better instance was in the same enum unnoticed: the `document` type carries a
+  storage key, a MIME type, a processing status and an assignment status, and other
+  Notes reference it to record where they came from — provenance and processing
+  state, both on this spec's own list of dimensions an implementation owns. The
+  evidence that settles it is the implementation's own workaround: note listings
+  pass an explicit exclude filter for this type, and a value that must be filtered
+  out of listings of its own type is not a member of it. The rule does not move;
+  the evidence for it gets stronger. See HM-BV-003.25 and HM-N-097.
+  - The conforming path for such a value is **not** a child of a published type,
+    which was the earlier assumption. Narrowing `background` with an ingestion
+    record still files a dimension as a kind. Where it belongs is the knowledge
+    arrival capability — and this may satisfy the condition HM-N-093 set for
+    designing that entity, which is raised rather than acted on.
 - **One step, many changes.** How many tracked changes a planned step takes was
   stated on one explanatory surface and demonstrated on none. The specs were
   always right — `revisions` is typed as a list and a Revision executes *part of*
@@ -11,7 +31,7 @@
   case as the rule. The example now carries a second Revision, deliberately left
   in flight while the first has shipped, so it also shows a step part-delivered —
   the state that makes it obvious why status is carried on each change rather
-  than only on the step. See HM-BV-004.6 and HM-N-098.
+  than only on the step. See HM-BV-004.6 and HM-N-099.
   - **Executing is not touching**, and two instructions in the contributor
     guidance disagreed until this said so. One held that a request spanning two
     steps is two requests; the other asks that closing the previous step be
@@ -20,7 +40,7 @@
     it reads the request description and never the diff — but nothing stated
     that, leaving an agent to either split a request needlessly or skip the
     closing habit, and skipping it is how the backlog HM-N-055 diagnoses starts.
-    See HM-N-097.
+    See HM-N-098.
   - Nothing in `specs/` changes. Both relationships are already carried
     correctly there, so this is a legibility repair on the explanatory surfaces
     and must not move the spec set version.
