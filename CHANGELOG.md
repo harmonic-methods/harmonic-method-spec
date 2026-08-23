@@ -2,6 +2,29 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **One step, many changes.** How many tracked changes a planned step takes was
+  stated on one explanatory surface and demonstrated on none. The specs were
+  always right — `revisions` is typed as a list and a Revision executes *part of*
+  a step — but the agent-facing entry point omitted the relationship, and the
+  worked example showed a step with a single change, which is the shape a reader
+  copies. An example with no instance of the ordinary case teaches the special
+  case as the rule. The example now carries a second Revision, deliberately left
+  in flight while the first has shipped, so it also shows a step part-delivered —
+  the state that makes it obvious why status is carried on each change rather
+  than only on the step. See HM-BV-004.6 and HM-N-098.
+  - **Executing is not touching**, and two instructions in the contributor
+    guidance disagreed until this said so. One held that a request spanning two
+    steps is two requests; the other asks that closing the previous step be
+    folded into the next substantive step's scope, which produces a request
+    editing two steps every time it is followed. The check was never confused —
+    it reads the request description and never the diff — but nothing stated
+    that, leaving an agent to either split a request needlessly or skip the
+    closing habit, and skipping it is how the backlog HM-N-055 diagnoses starts.
+    See HM-N-097.
+  - Nothing in `specs/` changes. Both relationships are already carried
+    correctly there, so this is a legibility repair on the explanatory surfaces
+    and must not move the spec set version.
+
 - **Arrival is not attachment.** The first step of the knowledge-arrival capability
   decides the two things every later step depends on and adds no entity. Knowledge
   that has arrived and is not yet attached **is not a Note**, and `attached_to`

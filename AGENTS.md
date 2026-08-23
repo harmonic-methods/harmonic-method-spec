@@ -117,9 +117,17 @@ message instead:
 Exactly one `Beat-Version:` trailer per **pull request**, in its description. A
 Revision belongs to exactly one Beat Version, and `specs/revision.yml` puts a
 tracked change at the request rather than at each commit inside it — so a request
-spanning two steps is two requests. Commits may carry the trailer; nothing
+*executing* two steps is two requests. Commits may carry the trailer; nothing
 requires it. The check runs where a request exists, which is why a local run
 reports that it cannot see one.
+
+Executing, not touching. The check reads the description and never the diff, so a
+request may edit any number of Beat Version files — closing the previous step in
+the next substantive step's scope, which [HM-N-055] asks for, edits two of them —
+and the trailer names the one step the request carries out. Nothing bounds the
+other direction either: a step is delivered by as many Revisions as the work
+takes, and several requests naming the same step is the ordinary case rather than
+a split that was missed. See [HM-N-097].
 
 When a Beat Version's work has merged, set its status to `delivered`. If it left
 flight without shipping — superseded, descoped, dropped — set `withdrawn` and say

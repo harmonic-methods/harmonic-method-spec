@@ -1,0 +1,61 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-004.6
+  beat: HM-B-004
+  title: One step, many changes
+  status: active
+  summary: >
+    How many tracked changes a planned step takes is stated on one of the three
+    explanatory surfaces and demonstrated on none of them. The specs carry it —
+    the field is typed as a list, and a Revision executes *part of* a step — and
+    the front page says it in words. The agent-facing entry point does not, the
+    contributor guidance implies the opposite, and the worked example shows a
+    step with a single change, which is the shape a reader copies.
+
+    A reader assembling the rule from what they are shown rather than from the
+    field types concludes that a step gets one change. That is wrong in the
+    direction that matters: it makes people either oversize a change or split a
+    step that did not need splitting.
+
+    The contributor guidance is the sharp case, because two of its instructions
+    disagree on a plain reading. One says a request spanning two steps is two
+    requests. The other asks that closing the previous step be folded into the
+    next substantive step's scope — which produces a request touching two steps
+    every time it is followed. They reconcile only if "spanning" means executing
+    rather than touching, which is what the check implements and what nothing
+    said. [HM-N-097] records it.
+
+    Done when: the relationship reads the same on all three surfaces; the worked
+    example demonstrates it rather than describing it; and the guidance
+    distinguishes the step a request executes from the steps it edits.
+  scope: >
+    In: the cardinality on the agent-facing entry point; the executing-not-
+    touching distinction in the contributor guidance, cited to a Note rather than
+    argued in place; a second Revision under the worked example's step, left in
+    flight so the example also shows a step part-delivered; and the example's own
+    description, which enumerated a change identifier that a second one makes
+    wrong.
+
+    Out: `specs/revision.yml` and `specs/beat-version.yml`. Both already carry
+    the relationship correctly — `list<revision>` and "part of" are not ambiguous
+    — so this is a legibility failure on the explanatory surfaces and not a gap
+    in the normative one. Changing a spec to restate what it already implies
+    would move the spec set version for a documentation problem.
+    Out also: a check that the surfaces agree. The published counts check works
+    because an instrument's items are enumerable; a relationship stated in prose
+    is not countable, and a check that matched on wording would fail the moment
+    someone improved a sentence.
+    Out also: the front page, which already says one or more and needs nothing.
+    Out also: closing the steps whose work has reached the trunk, which the habit
+    in [HM-N-055] would normally put in this step's scope. A request already in
+    flight carries exactly that change; making it in two places would conflict
+    for no gain. If that request is withdrawn, the close returns here.
+
+    Owed, not done: nothing this step opens.
+
+    Risks stated: this step reserves Note identifiers above a block already
+    claimed by a step in flight on another request, because identifiers are
+    allocated by hand and the checker only detects a collision once both are in
+    one tree. If the other request lands first, nothing here moves. If it is
+    withdrawn, this leaves a gap in the sequence, which is harmless and better
+    than a duplicate.
