@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-008.1
   beat: HM-B-008
   title: Arrival is not attachment
-  status: active
+  status: delivered
   summary: >
     The first step of this capability decides the two things every later step
     depends on, and adds no entity.

@@ -471,17 +471,32 @@ function checkEnumDeclarations() {
 }
 
 /**
- * The worked declaration ships as the shape an implementation copies, so it has
- * to stay valid against the rules it illustrates. An example that no longer
- * passes teaches the wrong shape to everyone who starts from it.
+ * Every declaration shipped here stays valid against the rules it illustrates.
+ * One that no longer passes teaches the wrong shape to everyone who starts from
+ * it.
+ *
+ * This read one path by name until a second declaration arrived, and the second
+ * one would have shipped unchecked — the failure this repository names in
+ * HM-B-007, an artifact published beside a check that does not reach it. The
+ * directory is the list here for the same reason it is everywhere else.
+ *
+ * Note what is NOT asserted: how many declarations there are, or what any of
+ * them claims. A reading of somebody else's system and the fictional worked
+ * example are both declarations, and the rules that judge a claim's form do not
+ * care which is which.
  */
-function checkExampleDeclaration() {
-  console.log('== example declaration ==');
-  const p = 'examples/declaration.yml';
-  if (!existsSync(join(ROOT, p))) return fail(`${p}: not found`);
-  const failures = checkDeclaration(join(ROOT, p));
-  for (const f of failures) fail(`${p}: ${f}`);
-  if (failures.length === 0) console.log('  well-formed against the declaration rules');
+function checkExampleDeclarations() {
+  console.log('== example declarations ==');
+  const files = ls('examples').filter((f) => /^declaration.*\.yml$/.test(f)).sort();
+  if (files.length === 0) {
+    return fail('examples/: no declaration found — the shape an implementation copies has to ship');
+  }
+  for (const f of files) {
+    const p = `examples/${f}`;
+    const problems = checkDeclaration(join(ROOT, p));
+    for (const m of problems) fail(`${p}: ${m}`);
+    if (problems.length === 0) console.log(`  ${f}  well-formed against the declaration rules`);
+  }
 }
 
 /**
@@ -570,7 +585,7 @@ if (TARGET) {
   checkPublicSurfaceHygiene();
   checkTree('harmonic-method');
   checkTree('examples');
-  checkExampleDeclaration();
+  checkExampleDeclarations();
   checkVocabulary(['harmonic-method', 'examples']);
 }
 

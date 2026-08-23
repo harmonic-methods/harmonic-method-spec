@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-094
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.7
+  content: >
+    A conformance reading of a system whose maintainers have made no claim is
+    published here, using the declaration form, and labelled in the
+    `implementation` field itself as a third-party reading rather than a claim.
+    The label sits in a parsed field and not only in a header comment.
+  rationale: >
+    Two things were in tension. `specs/conformance.yml` states that a declaration
+    is the implementation's own claim about itself, so writing one on somebody's
+    behalf and filing it under the same name would contradict the spec the file
+    is meant to illustrate. Against that, the checker had only ever been run on a
+    fictional example, and a validator tested solely against its author's own
+    shape has the author's blind spots and no way to discover them.
+
+    Using the form and refusing the name resolves it. The rules that judge a
+    claim's form — a version is named, every divergence points at something real,
+    nothing filed as an extension is a contradiction wearing the other label —
+    are about the statement, not about who is making it. They apply unchanged to
+    a reading. What does not apply is the standing of the result, and that is
+    what the label carries.
+
+    The label goes in `implementation` rather than in a comment because the
+    checker prints that field and prints no comments. A qualification that
+    survives only in the source is a qualification that vanishes the first time
+    somebody quotes the output — and the output is the part that reads like a
+    verdict. Putting it in the field means the tool cannot report this as a
+    conformance result without also reporting that nobody claimed it.
+
+    The alternative considered was to publish only a vocabulary mapping and no
+    declaration. It was refused because a mapping exercises none of the rules
+    and would have left the checker exactly as untested as before, which was the
+    reason for doing this at all.

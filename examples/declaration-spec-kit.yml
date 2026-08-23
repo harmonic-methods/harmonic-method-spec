@@ -1,0 +1,192 @@
+# A conformance reading of GitHub Spec Kit — conformant to specs/conformance.yml
+#
+# READ THIS FIRST. specs/conformance.yml says a declaration is "the
+# implementation's own claim about itself". This file is not that. Spec Kit's
+# maintainers have made no claim about this method, and nothing here should be
+# read as one. It is a third-party reading: what a declaration would have to say
+# if they wrote one, produced by reading their published templates and commands.
+#
+# The caveat is carried in the `implementation` field rather than only in this
+# comment, because the checker prints that field and prints no comments. A
+# qualification that does not survive into the tool's output is a qualification
+# only the careful reader gets.
+#
+# Why publish it at all. The worked declaration beside this one is deliberately
+# fictional, so nothing here had ever been run against a real system built by
+# someone else. This is that test, and it found something: the declaration form
+# assumes the implementation is the author. See HM-N-094 and HM-N-096.
+#
+# No `resolving:` key appears on any divergence below. That field says what the
+# implementation intends to do about a contradiction, and only its authors can
+# say. Guessing would be the overreach this whole framing exists to avoid.
+#
+# Read against github/spec-kit at main, 23 August 2026.
+declaration:
+  spec_version: 1.2.0
+  implementation: >-
+    GitHub Spec Kit — a third-party reading, NOT a claim by its maintainers
+  divergences:
+    - spec: coda.yml
+      field: statement
+      published: >
+        Required. The outcome an entity exists to serve, written as a resolved
+        future state, with Codas nesting so every step ladders up to strategy.
+      actual: >
+        No Coda and no chain. A feature specification carries success criteria,
+        which are measurable outcomes for that one feature. Nothing above a
+        feature holds an outcome, so there is nothing for a feature to ladder to
+        and no chain for alignment to be assessed against.
+
+    - spec: beat.yml
+      field: >-
+        rule — a Beat is a durable capability, never rewritten wholesale
+      published: >
+        The canonical unit is a capability that persists and evolves through
+        Beat Versions, carrying its own Coda, description, and open/closed
+        lifecycle.
+      actual: >
+        The unit is a numbered feature directory. It is specified, planned,
+        built, and complete; it is not revisited as a capability, and a later
+        change to the same area of the system becomes a new numbered feature
+        with no relationship recorded to the earlier one. The durable layer the
+        method names does not exist.
+
+    - spec: beat-version.yml
+      field: status
+      published: >
+        Required, one of active, delivered, withdrawn, carried on the entity in
+        every medium.
+      actual: >
+        No status field on any artifact. Position is inferred from which files
+        exist beside the specification and from checked boxes inside the task
+        list. A step abandoned without shipping leaves the same trace as one
+        never started, so withdrawn is not representable.
+
+    - spec: revision.yml
+      field: beat_version
+      published: >
+        Required. A Revision belongs to exactly one Beat Version, and the
+        reasoning for the change lives with the Revision rather than only in
+        the artifact.
+      actual: >
+        A change is bound to a task and a user story inside the task list, and
+        to a feature branch. That binding is a working file on the branch rather
+        than a record of the merged change, so once the branch is gone nothing
+        connects what shipped back to the planned step it executed.
+
+    - spec: note.yml
+      field: type
+      published: >
+        Required, one of background, constraint, guidance, decision. Additions
+        none, children allowed.
+      actual: >
+        No typed knowledge entity. Constraints and guidance are consolidated in
+        a single governing document; decisions and their rationale are written
+        into the per-feature implementation plan. The four kinds exist as
+        content and none of them is addressable as a record.
+
+    - spec: note.yml
+      field: >-
+        rule — Notes are preserved, not overwritten; superseding is a new Note
+        referencing the old
+      published: >
+        Preservation and supersession, so that decision lineage survives the
+        work that produced it.
+      actual: >
+        The governing document is amended in place under a version bump, and the
+        per-feature plan is rewritten as the feature is refined. What a decision
+        replaced is recoverable from version control history and nowhere in the
+        record itself, which is the distinction between history and lineage.
+
+    - spec: downbeat.yml
+      field: coda_state
+      published: >
+        Required, and immutable once taken. A fixed record of the Coda as it
+        stood, sufficient to detect that it has since changed.
+      actual: >
+        Convergence is assessed — the workflow compares what was built against
+        the specification and appends work for the gaps, repeating until it
+        reports converged — but nothing is anchored. Each assessment replaces
+        the last, so the reading exists and the record of it does not, and
+        drift over time is not computable.
+
+    - spec: bar.yml
+      field: starts
+      published: >
+        Required. A Bar is the recurring period work is planned and delivered
+        within, and its boundary is the occasion for taking an anchor.
+      actual: >
+        No cadence entity and no time axis at all. The workflow is driven by the
+        arrival of a feature, not by a period elapsing.
+
+    - spec: function.yml
+      field: >-
+        rule — each function is held by someone identifiable
+      published: >
+        Five accountabilities — Composer, Orchestrator, Conductor, Producer,
+        Promoter — constant at every altitude, each held by a person or by an
+        agent under a named person's accountability.
+      actual: >
+        No accountability model. Roles are addressed only as which agent runs
+        which command. Nothing in the workflow makes it possible to say which of
+        the five nobody is holding, which is the whole purpose of naming them.
+
+  extensions:
+    - kind: entity
+      name: Constitution
+      why: >
+        A governing document of binding principles, versioned under its own
+        semantic-versioning policy with a stated amendment procedure, which
+        every downstream artifact is checked against. The method names no such
+        entity. Nothing is contradicted by having one — and it is the extension
+        this repository has most to learn from, since it runs an unmodelled
+        equivalent on itself.
+
+    - kind: entity
+      name: Implementation Plan
+      why: >
+        A per-feature technical design — stack, data model, interface contracts,
+        and the research behind each choice. The method would carry this as
+        background and guidance knowledge; structuring it as its own artifact
+        adds precision in one medium and is an extension, not a contradiction.
+
+    - kind: entity
+      name: Task
+      why: >
+        A numbered, individually checkable unit below the planned step, carrying
+        a parallelism marker and a back-reference to the user story it serves.
+        The method names nothing between a Beat Version and a Revision, so this
+        occupies a layer the specs leave empty rather than one they define.
+
+    - kind: entity
+      name: Checklist
+      why: >
+        A generated set of pass/fail questions about a specification's
+        completeness. Adjacent to the instruments published here but not one of
+        them: it is generated per feature rather than published as a fixed
+        rubric, so two runs need not ask the same questions.
+
+    - kind: field
+      name: clarification marker
+      why: >
+        An inline marker written into a specification wherever a detail is
+        underspecified, resolved by a later pass that asks the author about each
+        one. It makes ambiguity visible in the artifact rather than only in an
+        assessment of it. The method has no counterpart.
+
+    - kind: computed
+      name: convergence verdict
+      why: >
+        A pass over the built system reporting whether it has converged on the
+        specification, looped until it has. The method requires that a reading
+        be taken and preserved and leaves the computation to an implementation,
+        so computing one contradicts nothing — what makes this a divergence
+        elsewhere is that the reading is not anchored, which is filed above.
+
+  mappings:
+    - theirs: The initialized repository
+      ours: system
+    - theirs: A numbered feature directory
+      ours: beat_version
+    - theirs: The pull request merging a feature branch
+      ours: revision

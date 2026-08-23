@@ -1,0 +1,37 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-096
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.7
+  content: >
+    The declaration form has no way to say who wrote a claim, and therefore no
+    way to distinguish a claim from a reading. Nothing is added to
+    `specs/conformance.yml` to answer that yet. The gap is recorded, with the
+    condition that would settle it.
+  rationale: >
+    `specs/conformance.yml` says a declaration is the implementation's own claim
+    about itself, and every rule in it follows from that: a divergence list is
+    falsifiable because its author knows what they carry, and a claim is checked
+    for form rather than truth because only the author can speak to truth. A
+    reading written by somebody else satisfies none of those premises while
+    passing every rule, and the checker reports it as well-formed — correctly,
+    because form is all it judges.
+
+    The obvious repair is a field naming who is claiming, or a second kind of
+    document with weaker standing. Both are refused for now, on the test
+    [HM-N-093] already set for a different owed entity: a shape is earned by a
+    second case to design against, not by a first case that could be served by
+    naming the problem. There is exactly one reading here, written by the same
+    people who wrote the form, which is the weakest possible evidence about what
+    the shape should be.
+
+    What would settle it: a reading of a system produced by someone with no hand
+    in this specification, or an implementation that declares and is then read
+    independently, so the two documents can be compared rather than imagined.
+    Until then the qualification lives in the `implementation` field, which is
+    honest and is not a design.
+
+    Recorded rather than left implicit because the failure mode is specific and
+    quiet. A reading that circulates without its label reads as a conformance
+    verdict on somebody else's system, and this repository would be its source.

@@ -51,3 +51,8 @@ flight, and the real decisions behind it, not illustrations.
 
 ## Worked example
 - examples/: one conformant Beat, laid out exactly as harmonic-method/ is
+- examples/declaration.yml: a worked conformance declaration, deliberately fictional
+- examples/declaration-spec-kit.yml: the same form applied to GitHub's Spec Kit — a
+  third-party reading, NOT a claim by its maintainers, who have declared nothing.
+  The qualification is carried in the implementation field because that is what the
+  checker prints. Do not cite it as a conformance result for that workflow.

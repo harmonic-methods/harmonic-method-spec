@@ -2,6 +2,37 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A reading is not a claim.** The declaration checker had only ever been run
+  against a fictional example written by the same people who wrote the rules, so
+  its blind spots were theirs and it had no way to find out. A conformance reading
+  of GitHub's Spec Kit now ships beside the worked one — a real workflow, built by
+  someone else, pursuing the same intent-before-change thesis and diverging from
+  this method in nine specific places. It is a **reading, not a declaration**, and
+  the difference is load-bearing: its maintainers have claimed nothing, and
+  `specs/conformance.yml` is explicit that a declaration is the implementation's
+  own claim about itself. The qualification therefore lives in the
+  `implementation` field rather than in a header comment, because the checker
+  prints that field and prints no comments, and a caveat that vanishes when the
+  output is quoted is not a caveat. See HM-BV-006.7 and HM-N-094.
+  - **The check that read one file by name now reads the directory.** The second
+    declaration would have shipped unchecked and nothing would have failed — a
+    passing run and a rule with no reach look identical from outside. It was made
+    to fail twice before being believed: once on a fault in the second file, which
+    the previous check structurally could not see, and once with no declaration
+    present. See HM-N-095.
+  - **The form assumes the implementation is its own author**, and nothing is
+    added to answer that yet. A field naming who is claiming, or a weaker second
+    document, would be designed against exactly one case written by this
+    repository — the weakest possible evidence, and the test HM-N-093 already set
+    for a different owed shape. What would settle it is a reading produced by
+    someone with no hand in this specification. See HM-N-096.
+  - Three findings the comparison surfaced belong to other capabilities and are
+    owed rather than folded in: this repository publishes instruments that score
+    a Beat and none that help write one; the Downbeat is specified and no
+    instrument takes one, though HM-N-036 cleared the ground for it; and the plan
+    rubric grades acceptance criteria that no field on the Beat Version spec
+    carries.
+
 - **Arrival is not attachment.** The first step of the knowledge-arrival capability
   decides the two things every later step depends on and adds no entity. Knowledge
   that has arrived and is not yet attached **is not a Note**, and `attached_to`
