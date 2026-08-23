@@ -1,9 +1,9 @@
 ---
-name: beat-authoring
-description: Draft a conformant Harmonic Method Beat and its Coda from a plain description of a capability, then score the draft against the published Beat rubric and report what would raise it. Use when asked to write, draft, create, or start a Beat — or when someone has described something they want to build and needs it expressed as a capability rather than a task.
+name: beat-composing
+description: Draft a conformant Harmonic Method Beat and its Coda from a plain description of a capability, then score the draft against the published Beat rubric and report what would raise it. Use when asked to compose, write, draft, create, or start a Beat — or when someone has described something they want to build and needs it expressed as a capability rather than a task.
 ---
 
-# Beat Authoring
+# Beat Composing
 
 You are drafting a **Beat** — a durable capability — and the **Coda** it serves,
 from whatever the person in front of you can already say about it. Specs:

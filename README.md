@@ -161,7 +161,7 @@ function, and each is written to be read literally by an agent.
 | [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
 
 One skill produces rather than assesses.
-[beat-authoring](skills/beat-authoring/SKILL.md) serves the Composer too: give it
+[beat-composing](skills/beat-composing/SKILL.md) serves the Composer too: give it
 a paragraph describing a capability and it drafts the Coda and the Beat, asks for
 what it is missing rather than inventing it, and then scores its own draft with
 the Beat rubric above — read as written, never paraphrased. It defines no
