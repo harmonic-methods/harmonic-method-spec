@@ -2,6 +2,39 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A score now names the rubric that produced it.** Moving a dimension exposed a
+  symmetrical gap neither side had noticed: the front page named one kind of
+  staleness — whether a score predates the text it judged — and the reference
+  implementation built exactly that, hashing the thing scored and recording nothing
+  about what scored it. So every result taken before the seventh dimension was
+  rewritten still read as fresh against definitions that no longer existed. Nobody
+  was careless; the specification asked for half the problem and got half the
+  problem. All three instruments now require the spec set version in the reported
+  result, read from the manifest and copied nowhere, and the conformance statement
+  requires a recorded score to carry that version and the state of what it judged.
+  An implementation that gates on a score has to detect both. See HM-BV-002.9 and
+  HM-N-081.
+  - **The requirement sits at the point of production, not of storage.** Check
+    rules are read on every run, they are covered by the digest so they cannot be
+    edited quietly, and they cost nothing. Recording the latest score on the entity
+    was proposed and refused with reasons kept, because it is a reasonable idea that
+    will be proposed again: a score in a file cannot hold a hash of that file, an
+    LLM score is not reproducible, and requiring the field would mean a Beat could
+    not be written without running a model.
+  - **A third kind of staleness is named and left open.** A score can also go stale
+    because the Coda it was judged against changed — which happened in this cycle,
+    moving a dimension from 2 to 4 with no edit to the Beat. Covering it here would
+    mean designing a field from the single case that produced it, which is what the
+    constraint written two steps ago exists to prevent.
+  - **A stale enumeration in the plan instrument, found while editing it.** It still
+    told a reader to match a convention naming four Note types by value and a fifth
+    as deprecated, all of which this cycle's vocabulary steps have moved; the rename
+    step swept the specs, the Notes, the front page, the entry point and the checker,
+    and did not sweep the instruments. The fix is not a corrected list but no list —
+    judge whether the knowledge is recorded, never which type carries it. A
+    derivable fact restated in prose is better removed than guarded, and no check
+    could have caught this one, because the words involved are ordinary English
+    everywhere else in the same file.
 - **The system Coda promises sufficiency, and the word is load-bearing.** A team
   reading the entity model should "find it sufficient for the work they actually
   do" — not complete. The widening was forced by the instruments: a Beat opened to

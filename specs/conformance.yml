@@ -115,6 +115,12 @@ rules:
     own claim is for its own tests to establish. Two links, each verifiable by
     whoever owns it.
   - >
+    A recorded score names the spec set version it was produced under, and the
+    state of what it judged. Staleness has two sides — the thing scored can change
+    after the score and so can the rubric — and an implementation that gates on a
+    score has to be able to detect both. Detecting only the first leaves a passing
+    result standing against definitions it was never produced against.
+  - >
     A declaration lists every contradiction its author knows about. Declaring one
     does not make it conformant, and describing it as a simplification instead of
     listing it is the failure the list exists to prevent.

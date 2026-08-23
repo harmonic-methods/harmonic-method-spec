@@ -1,0 +1,54 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-081
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.9
+  content: >
+    A score names the spec set version it was produced against. Each instrument
+    requires it in the reported result, read from the manifest and copied nowhere.
+    A recorded score additionally carries the state of what it judged, and an
+    implementation that gates on a score must detect both kinds of staleness. No
+    score is recorded as structured data in this repository, and none will be.
+  rationale: >
+    The gap was symmetrical and neither side had noticed. The front page named one
+    kind of staleness — whether a score predates the text it judged — and assigned
+    it to a system of record. The reference implementation built precisely that,
+    hashing the thing scored, and stores nothing about the rubric that scored it.
+    So a dimension could move and every prior result would keep reading as fresh
+    against definitions that no longer existed, which is exactly what happened
+    when the seventh dimension was renamed and rewritten. Nobody was careless. The
+    specification asked for half the problem and got half the problem, which is
+    the most instructive kind of gap.
+
+    The requirement sits at the point of production rather than of storage,
+    deliberately. An instrument's check rules are read on every run, so the rule is
+    exercised constantly rather than only when someone remembers to write a score
+    down; the check rules are covered by the digest, so the rule cannot be edited
+    quietly; and it costs nothing and installs nothing. The version is read from
+    the manifest and never copied into an instrument, because a version written
+    into a second place is the defect that put a great many files out of date on
+    one day.
+
+    Recording the latest score on the entity was proposed, and is refused for
+    three reasons worth keeping, because it is a reasonable idea that will be
+    proposed again. A score in the file cannot carry a hash of that file, since
+    writing the hash changes it — which is why a system of record keeps the
+    snapshot separately. An LLM score is not reproducible, and this repository has
+    an open unvalidated question about whether band-matching even means the same
+    thing to two readers, so recording one as structured data would give a
+    non-deterministic judgement the authority of a field. And requiring the field
+    would mean a Beat could not be written without running a model, against a
+    standing constraint that reading, applying and vendoring must install nothing;
+    making it optional would leave a field that is mostly empty and therefore
+    ignored. Two scores do appear in this repository's step records as prose,
+    which is a narrative of what a reading found and not a field anything queries.
+
+    A third kind of staleness is known and not covered here. A score can also go
+    stale because the Coda it was judged against changed, which happened in this
+    cycle — a Beat's Strategically Aligned dimension moved from 2 to 4 with no
+    edit to the Beat, because the parent Coda was widened. [HM-N-078] records that
+    case. It is left open rather than folded in, because designing a field from the
+    single case that produced it is what [HM-N-079] was written to prevent, and
+    exempting this from that constraint on the day it was written would say the
+    constraint is for other people.

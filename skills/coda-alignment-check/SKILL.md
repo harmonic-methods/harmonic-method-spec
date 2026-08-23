@@ -117,6 +117,14 @@ rejected — averaging conceals the only thing worth knowing.
 - Prefer naming the repair over prescribing it. Widening a parent Coda and
   narrowing a child are both legitimate answers to the same finding, and which
   is right depends on judgment the reader has and you do not.
+- **Name the version you scored against.** Read `spec_version` from
+  `specs/spec-set.yml` and report it with the result. A score is a claim about an
+  entity measured against a rubric, and rubrics move — without the version a
+  later reader cannot tell whether the score predates the definitions that
+  produced it, and two scores cannot be compared at all. If the spec set is not
+  available to you, say the version is unknown rather than guessing or omitting
+  it: an unversioned score is usable now and worthless later. Do not copy the
+  version into this file or any other — read it where it lives.
 - This skill assesses; it does not enforce, and it records nothing. A reconciled
   chain is a reading taken at a moment, not a durable claim — the durable record
   of one is a Downbeat.

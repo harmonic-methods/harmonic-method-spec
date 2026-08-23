@@ -197,8 +197,9 @@ nothing.
 
 This repository **assesses but does not enforce**. It records no scores, gates nothing,
 and keeps no audit trail — there is no history of who changed a Beat or when,
-and a score produced here cannot tell you whether it predates the text it
-judged. Those properties belong to a system of record. Use these specs to apply the
+and a score produced here cannot tell you whether it predates the text it judged
+or the rubric that judged it. Those properties belong to a system of record —
+which has to detect both kinds of staleness, not just the first. Use these specs to apply the
 method wherever you already work, or to self-review before anything is tracked;
 don't present its output as an official Check to anyone who would rely on it as
 one.
