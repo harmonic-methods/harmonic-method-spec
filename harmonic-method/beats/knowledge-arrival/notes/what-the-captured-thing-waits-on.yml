@@ -1,0 +1,32 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-093
+  type: constraint
+  attached_to: HM-B-008
+  beat_version: HM-BV-008.1
+  content: >
+    The entity for captured knowledge is owed, not designed. It is earned — three
+    deferrals met the gap in practice and a real implementation carries the
+    machinery — but no field list is published until there is a second
+    implementation of arrival to design against, or one implementation plus a
+    concrete case its shape cannot carry.
+  rationale: >
+    Earned and designable are different tests, and this repository has already
+    paid for confusing them. [HM-N-076] designed a dimension, tested its
+    vocabulary against a host the altitudes do not contain, and withdrew it in the
+    same sitting. Two other decisions in that cycle were reversed within hours for
+    the same reason: each was made from a single case. There is exactly one
+    implementation of arrival to look at, so publishing a field list now is the
+    same move with the same expected outcome.
+
+    Naming the condition is what keeps this from being an indefinite deferral. A
+    second implementation makes the difference between what arrival requires and
+    what one system happens to do visible in a way that no amount of reasoning
+    about one system can. Failing that, a case the single implementation's shape
+    cannot carry is equally decisive, because it shows the shape is a local choice
+    rather than the concept.
+
+    Recorded as a constraint rather than as background because it binds the next
+    person to plan this Beat. The pressure to specify will come from the same
+    place [HM-N-079] named: a reader who has just understood the gap can see what
+    would fill it, and the impulse is indistinguishable from diligence.

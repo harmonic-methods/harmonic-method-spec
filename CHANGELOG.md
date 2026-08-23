@@ -2,6 +2,31 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Arrival is not attachment.** The first step of the knowledge-arrival capability
+  decides the two things every later step depends on and adds no entity. Knowledge
+  that has arrived and is not yet attached **is not a Note**, and `attached_to`
+  stays required — that field is what makes a Note lineage rather than a document,
+  because a decision nobody can reach from its consequences is not recoverable.
+  Making attachment optional was the cheapest available change and is refused for
+  exactly that reason: it would have worked and cost the entity its defining
+  property. Capture before attachment is a stage *before* a Note, which is where
+  HM-N-074 had already arrived from the other direction when it declined expiry.
+  And **promotion — deciding what captured knowledge implies about capability — is
+  the Composer's to answer for**, which is not a new assignment but the judgement
+  that function already owns; what the method adds is that the act has a name, so
+  an implementation automating it automates a named accountability rather than
+  filling a gap privately. See HM-BV-008.1 and HM-N-092.
+  - **The entity for captured knowledge is owed, not designed**, and the condition
+    that settles it is stated: a second implementation of arrival to design
+    against, or one implementation plus a case its shape cannot carry. Earned and
+    designable are different tests, and this repository has already paid for
+    confusing them — HM-N-076 withdrew a published dimension in one sitting for
+    being designed against a single case. See HM-N-093.
+  - One strain recorded rather than smoothed: the five functions are declared
+    constant at every altitude, and this names an act the Composer answers for at
+    an altitude the entity model does not yet contain, since captured knowledge has
+    no altitude until it is attached. Not a contradiction today; the step that
+    specifies the captured thing is where it has to be resolved.
 - **The record catches up.** Thirteen steps sat active with their work merged,
   against a lag HM-N-053 bounds at one and explains: a step cannot be marked
   delivered in the change that delivers it, so the mark belongs to a step of its
