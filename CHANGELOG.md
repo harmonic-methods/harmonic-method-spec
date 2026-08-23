@@ -2,6 +2,21 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The published counts are derived rather than trusted.** How many dimensions or
+  checks each instrument carries is counted from the instrument and asserted against
+  the front page and the agent-facing entry point. One had already gone stale — the
+  reconciliation instrument carries nine checks and both surfaces said eight, so an
+  agent was told the wrong number about the instrument it was about to apply. The
+  instrument digests could not have caught it: they guard an instrument's own
+  normative text, not prose written about it elsewhere. See HM-BV-003.22 and
+  HM-N-082.
+- **A retired altitude name is rejected on the normative surface.** A Note attaches
+  to a portfolio, a system, or a Beat; one field description still offered an
+  organization, several spec set versions after the decision retiring the word said
+  it does not appear in the method. Corrected, and swept for. The sweep covers
+  `specs/` only — the Notes recording a retirement have to be able to name the word
+  they retire, which was verified by widening it and reading the failures. See
+  HM-N-083.
 - **The checker enforces a release invariant.** The newest changelog entry either
   says `(unreleased)` or a tag exists for it. Caught a live case on its first run:
   `harmonic-method@1.3.0` was on the public registry while the entry still claimed

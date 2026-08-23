@@ -130,7 +130,7 @@ function, and each is written to be read literally by an agent.
 | --- | --- | --- |
 | [beat-coda-quality-check](skills/beat-coda-quality-check/SKILL.md) | Composer | Is this capability well defined? Seven dimensions, 1-5: Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome. |
 | [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
-| [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Eight checks over a Coda chain, reported as findings rather than a score. |
+| [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
 
 The Producer and the Promoter have no instrument yet, deliberately. The
 Producer's would need Value Velocity defined closely enough to assess without
