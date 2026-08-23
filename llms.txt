@@ -13,7 +13,9 @@
 - specs/coda.yml: Coda — the strategic outcome an entity exists to serve
 - specs/beat.yml: Beat — a durable capability or process, laddering to a Coda
 - specs/beat-version.yml: Beat Version — a planned step in a Beat's evolution
-- specs/revision.yml: Revision — a tracked change executing a Beat Version
+- specs/revision.yml: Revision — a tracked change executing part of a Beat Version.
+  The relationship runs one way: a Revision belongs to exactly one Beat Version, and a
+  Beat Version is delivered by one or more Revisions. Nothing bounds how many.
 - specs/note.yml: Note — typed knowledge (background, constraint, guidance, decision)
 - specs/conformance.yml: Conformance — which contents bind an implementation, which of those a tool can compare, and the declaration an implementation writes. Extensions conform; contradictions do not. A claim is made against a spec set version, never against the trunk.
 - specs/spec-set.yml: the one version of the normative surface; every spec repeats it as a parsed spec_version field and the checker enforces agreement. Pin this number, not the repository tag — package.json versions the checker separately.
@@ -38,7 +40,7 @@ Version they arose from via the optional beat_version field.
 - harmonic-method/beats/<slug>/beat.yml: a durable capability
 - harmonic-method/beats/<slug>/notes/: that Beat's typed knowledge
 - harmonic-method/beats/<slug>/versions/<v>/version.yml: a planned step
-- harmonic-method/beats/<slug>/versions/<v>/revisions/: the changes executing it
+- harmonic-method/beats/<slug>/versions/<v>/revisions/: the changes executing it — one or more
 
 There is no checks/ directory by design: this repository assesses but does not record,
 and no check entity is specified.

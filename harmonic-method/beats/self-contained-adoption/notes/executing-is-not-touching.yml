@@ -1,0 +1,40 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-098
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.6
+  content: >
+    A request's binding names the one step it executes, not every step it edits.
+    The contributor guidance now says so. It previously said that a request
+    spanning two steps is two requests, which on a plain reading forbids editing
+    two Beat Version files in one request.
+  rationale: >
+    Two instructions in the same file disagreed. [HM-N-055] asks that closing the
+    previous step be folded into the next substantive step's scope, and following
+    it produces a request that edits two Beat Version files every single time.
+    The binding paragraph then appeared to forbid exactly that. Both were written
+    correctly and neither reader of one had the other in view — the same failure
+    the reconciliation instrument names as the most commonly missed divergence,
+    arriving here in the guidance rather than in a Coda.
+
+    The check was never confused: it reads the request description and never the
+    diff, so it has always counted trailers rather than edited files. What was
+    missing was any statement of that, which left the two paragraphs to be
+    reconciled by whoever noticed, and the reconciliation is not obvious from
+    either one. An agent following the stricter reading would split a request
+    that did not need splitting, or skip the closing habit to avoid the apparent
+    conflict — and skipping it for two cycles is how the backlog [HM-N-055]
+    diagnoses starts.
+
+    The other direction is stated at the same time because it is the same
+    question asked backwards, and it was the one actually misread in practice: a
+    step is delivered by as many Revisions as the work takes, and several
+    requests naming one step is ordinary. Nothing in the specs ever bounded it —
+    the field is a list and a Revision executes part of a step — but the guidance
+    only discussed the constraint, so the constraint was the half that got
+    remembered.
+
+    Stated in the guidance rather than in the specs because the specs are already
+    right. This is a legibility repair, not a change to what conformance means,
+    and it must not move the spec set version.

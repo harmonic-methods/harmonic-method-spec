@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-099
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.6
+  content: >
+    The worked example carries a second Revision under its single step, and the
+    second one is left in flight while the first has shipped. The step was
+    previously executed by exactly one change.
+  rationale: >
+    A worked example is copied, not read for what it omits. This one is
+    described on the front page as the shape you would copy, so every
+    relationship it exhibits is taken as the relationship — and it exhibited a
+    step with one change, in a repository whose specs allow many. Nothing was
+    stated incorrectly anywhere; the example simply had no instance of the
+    ordinary case, and an example without an instance teaches the special case as
+    the rule.
+
+    Leaving the second change in flight is deliberate and does a second job. It
+    shows a step part-delivered, which is the state that makes it obvious why
+    status is carried on each change rather than only on the step — the reason
+    given in `specs/revision.yml` and, until now, not visible anywhere a reader
+    could see it happening.
+
+    The alternative was a sentence in the example's description saying that a
+    step may take several changes. It was refused because the file already
+    contained accurate prose about the layout and the prose is not what a reader
+    copies. Demonstrating costs one file; asserting costs one line and does not
+    work.
+
+    Removing the change identifier from the description's tree diagram is part of
+    the same edit rather than tidying. It enumerated one identifier, a second
+    made it wrong, and enumerating both would put a derivable fact in prose no
+    check reaches — which is the failure the guidance names and this repository
+    has already had.

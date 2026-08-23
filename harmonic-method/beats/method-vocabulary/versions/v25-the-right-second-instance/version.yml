@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.25
   beat: HM-B-003
   title: The right second instance
-  status: active
+  status: delivered
   summary: >
     The decision that a dimension is never a type cited two instances. One of them
     was wrong about the system it described, and a better one was in the same enum

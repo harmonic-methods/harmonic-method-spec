@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.7
   beat: HM-B-006
   title: A reading is not a claim
-  status: active
+  status: delivered
   summary: >
     The declaration checker had never been run against a real system somebody
     else built. The only declaration shipped here is fictional by design, so

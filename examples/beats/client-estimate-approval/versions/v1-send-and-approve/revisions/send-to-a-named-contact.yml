@@ -1,0 +1,21 @@
+# Example — a second Revision under the same Beat Version, showing that a step is
+# delivered by as many changes as the work takes. See specs/revision.yml.
+revision:
+  id: EX-R-002
+  beat_version: EX-BV-001.1
+  title: The estimate reaches a named contact, not a shared mailbox
+  status: active
+  description: >
+    Sending was addressed to whichever mailbox the last thread used, so an
+    estimate could sit unread while everyone assumed it had been seen, and no
+    one could say who had been asked. The revised step names the contact on the
+    engagement as the recipient and records who it went to.
+
+    This is a different part of the same step from EX-R-001, not a later step:
+    the planned increment covers sending and recording alike, and neither half
+    is a capability on its own. It is still in flight while the recording half
+    has shipped, which is the ordinary state of a step delivered by more than
+    one change.
+  evidence: >
+    Draft revision to the client engagement procedure, section 3 — Issuing an
+    estimate. In review with the engagement leads.
