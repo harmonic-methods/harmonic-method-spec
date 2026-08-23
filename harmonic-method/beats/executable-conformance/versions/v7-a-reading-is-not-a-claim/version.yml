@@ -1,0 +1,64 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.7
+  beat: HM-B-006
+  title: A reading is not a claim
+  status: active
+  summary: >
+    The declaration checker had never been run against a real system somebody
+    else built. The only declaration shipped here is fictional by design, so
+    every rule it exercises was written and tested against a shape this
+    repository invented. A checker validated only on its author's own example is
+    a checker whose blind spots are the author's.
+
+    This step supplies the missing case: a conformance reading of a widely used
+    specification-driven workflow that implements the same intent-before-change
+    thesis this method does, read from its published templates and commands.
+
+    The reading is not a declaration, and the difference is the substance of the
+    step rather than a caveat on it. [HM-N-094] records why the form is used
+    anyway and how the qualification is carried where the tool prints it rather
+    than only where a careful reader looks.
+
+    It found what it was run to find. The checker judged the claim's form
+    correctly and had nothing to say about the one thing wrong with it — that
+    nobody at the implementation being described has claimed anything. That gap
+    is [HM-N-096] and is left owed rather than closed here.
+
+    Done when: a second declaration ships and is checked by the same rules as the
+    first; the not-a-claim qualification appears in the checker's own output and
+    not only in a comment; the check that reads them no longer names a file; and
+    the new rule has been made to fail before being believed.
+  scope: >
+    In: the reading itself, as a second declaration beside the worked one; the
+    generalization of the check that reads declarations, from one hard-coded path
+    to the directory; the two Notes recording the framing and the gap it exposed;
+    and one line on each published surface pointing a reader at the second file.
+    In also: the status field on the two steps whose work has since reached the
+    trunk, keeping the lag at the one [HM-N-053] bounds it to.
+
+    Out: any change to `specs/conformance.yml`. The reading exposed that the
+    declaration form assumes the implementation is its own author, and a field or
+    an entity answering that is a change to the normative surface — a version
+    step and a decision of its own, not a rider on the step that noticed it.
+    Out also: contacting the implementation's maintainers or inviting them to
+    declare. Publishing a reading of a public workflow from its public artifacts
+    is one act; asking someone to adopt a conformance model is a different one
+    with different consequences, and merging them would make the first look like
+    a lever for the second.
+    Out also: the gaps in this repository the comparison surfaced that belong to
+    other capabilities — an authoring path, an instrument that takes an anchor,
+    and a field for the acceptance criteria a published rubric already grades.
+    Each belongs to the Beat it serves. A Revision belongs to exactly one step,
+    so bundling them here would be one request spanning four.
+
+    Owed, not done: the three findings above, and the shape question in
+    [HM-N-096]. None is blocked by this step.
+
+    Risks stated: the reading describes somebody else's system and they did not
+    write it, so it can be wrong in a way the fictional example never could — a
+    template misread, or a workflow that has moved since. It is dated at the top
+    of the file and names what it was read from, which makes it falsifiable
+    rather than safe. The mitigation for being wrong is that someone can say so;
+    the mitigation for being misread as their claim is that the qualification
+    travels in the field the checker prints.

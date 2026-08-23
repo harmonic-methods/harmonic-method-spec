@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-007.2
   beat: HM-B-007
   title: The record catches up
-  status: active
+  status: delivered
   summary: >
     Thirteen steps sat active with their work merged. The expected lag is one —
     [HM-N-053] states it and states why: a step cannot be marked delivered in the
