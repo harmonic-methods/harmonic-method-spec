@@ -2,6 +2,42 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The repository drafts what it grades.** Three instruments score a Beat, a
+  plan, and a chain of outcomes, and none of them helped write any of it — so
+  someone arriving with a paragraph had to hand-author the shape from the worked
+  example before the rubrics had anything to read, putting the hardest part of
+  adoption before the part this repository supports. The first producing
+  instrument closes that for the Composer: read the specs, elicit what is
+  missing, draft the Coda and then the Beat, and score the result with the
+  published rubric read as written. See HM-B-009 and HM-BV-009.1.
+  - **It revises as well as drafts**, on two loops with deliberately different
+    limits. Its own is bounded at one pass, because a draft iterated against a
+    rubric the same agent is applying measures the agent rather than the Beat. The
+    author's is not bounded at all — bounding it would be the instrument overruling
+    the person it exists to serve. Where an instruction contradicts the score, the
+    person wins and the cost is named, because quietly splitting the difference
+    leaves a draft satisfying neither and a reason satisfying nobody. Revision sits
+    in this step rather than a later one because a draft is not a record: the
+    lineage obligation that makes amendment hard binds a file somebody has relied
+    on, and amending anything already recorded is refused outright.
+  - **It defines no quality of its own**, which is the whole discipline. It
+    restates no dimension, anchor, red flag or threshold, and points at the
+    canonical instrument instead — the cheapest way to honour HM-N-012's rule
+    against a hand-maintained second copy is to keep no copy at all. Its three
+    standing moves are ask, mark unresolved, or stop; inventing a fact about a
+    system nobody has seen is the one failure it could introduce into a record
+    whose purpose is that reasoning stays recoverable.
+  - **Nothing in it is normative, so the digest does not cover it** and nothing is
+    left unguarded by that — there is nothing in it to guard. Widening the guard
+    over drafting prose was refused: the tool's own reasoning is that hashing text
+    which churns for unrelated reasons trains the reflex of bumping a digest
+    without reading the change. HM-N-101 states what would reverse this — a
+    producing instrument that decides something the rubric does not.
+  - Production is a capability of its own rather than a step under scoring, whose
+    constraint was written for assessment. That raises a question about the system
+    Coda, which promises reading, naming and assessing, and does not mention
+    producing. Raised in HM-N-100 and deliberately not settled by a skill.
+
 - **The right second instance.** The decision that a dimension is never a type
   cited two cases. One was wrong about the system it described: the reference
   implementation's decision tier — `strategic`, `structural`, `implementation` —

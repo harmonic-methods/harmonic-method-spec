@@ -1,0 +1,99 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-009.1
+  beat: HM-B-009
+  title: The Composer's first draft
+  status: active
+  summary: >
+    Three instruments score a Beat, a plan, and a chain of outcomes. None of them
+    helps write any of it. Someone arriving with a paragraph has to hand-author
+    the shape from the worked example before the rubrics have anything to read,
+    which puts the hardest part of adoption before the part this repository
+    supports.
+
+    This step adds the first producing instrument, for the Composer: read the two
+    specs, elicit what is missing, draft the Coda and then the Beat, score the
+    result with the published rubric read as written, and revise it from that
+    score and from what the author says back. It defers every judgement of quality
+    to that rubric and defines none of its own, which is what keeps a drafting aid
+    from becoming a second standard.
+
+    Revising the draft belongs here rather than in a step of its own, and the
+    reason is that a draft is not a record. What makes revision hard elsewhere is
+    lineage — `specs/coda.yml` requires that changing a Coda be a recorded
+    decision preserving the prior statement, and `specs/note.yml` forbids
+    overwriting knowledge at all — and none of that binds a file nobody has relied
+    on yet. Amending something already recorded is a different act with a real
+    obligation, and stays out. An instrument that drafts but cannot take "make the
+    boundary tighter" is not a finished instrument, so this is closing a gap in the
+    step rather than widening it.
+
+    The two revision loops have deliberately different limits. The instrument's
+    own is bounded at one pass, because a draft iterated against a rubric the same
+    agent is applying measures the agent. The author's is not bounded at all, and
+    bounding it would be the instrument overruling the person it exists to serve.
+
+    It carries no normative section, so the digest does not cover it and nothing
+    is left unguarded by that — there is nothing in it to guard. [HM-N-101]
+    records what that rests on and what would change it.
+
+    Done when: an agent handed only this repository can turn a paragraph into a
+    conformant Beat and Coda and report a score from the published instrument; it
+    revises on the author's instruction without limit and on its own initiative
+    exactly once; a revision that costs one dimension to lift another reports both;
+    an instruction that contradicts the score is followed and the cost named rather
+    than silently split; an entity that is already recorded is refused with the
+    reason; no dimension, anchor, or threshold appears in the new file; and the
+    published surfaces distinguish an instrument that produces from one that
+    assesses.
+  scope: >
+    In: the drafting instrument for the Composer; the revision loop over a draft,
+    driven by the score and by the author's feedback, with the two limits stated
+    above; its placement on both explanatory surfaces, separated from the
+    assessment instruments rather than listed among them; and the two Notes
+    recording why this is a capability of its own and why it sits outside the
+    digest.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: amending an entity that is already in someone's record. That is where
+    the lineage obligation lives — a preserved prior statement and a decision Note
+    that supersedes rather than overwrites — and discharging it properly is a step
+    of its own. The instrument refuses the case rather than half-serving it.
+    Out also: the other producing instruments this capability will want — planning
+    the next step, turning a weak score into the questions a person has to answer,
+    and taking a cadence anchor. Each is a step of its own. Drafting the Beat comes
+    first because a Beat is what everything below it hangs from, and because it is
+    the one an adopter meets first.
+    Out also: any edit to the quality instrument. This step is a consumer of that
+    rubric and changes nothing about it — if drafting exposes a defect in a
+    dimension, that is a finding for the capability that owns the rubric.
+    Out also: a fifth published dimension, a threshold of its own, or any
+    restatement of what good looks like. The constraint on the Beat says why.
+    Out also: adding a heading to the digest's covered sections. Nothing here is
+    normative, and widening the guard to cover prose that churns would train the
+    habit of bumping a digest without reading the change.
+
+    Owed, not done: the remaining producing instruments, and the question of
+    whether the system Coda covers production as well as assessment — raised in
+    [HM-N-100] and not settled here.
+    Owed elsewhere: dogfooding this instrument surfaced a defect that belongs to
+    the capability making conformance executable, not to this one. The checker
+    resolves a tree argument against the caller's working directory, so an
+    absolute path is joined onto that directory and lands somewhere that does not
+    exist — and the front page instructs an absolute path in two places. An
+    adopter following it is told their tree has no Coda. Left for a step under the
+    Beat that owns the checker rather than fixed in passing, which is the same
+    boundary every other clause here observes.
+
+    Risks stated: the failure this instrument can introduce is a confident
+    sentence about a system nobody has seen, written into a record whose purpose
+    is that reasoning stays recoverable. The instrument answers it with two moves
+    and a prohibition — ask, or mark it unresolved, and never invent — which is a
+    written habit rather than a mechanism, and nothing here checks it.
+    Second: the boundary between revising a draft and amending a record is the
+    whole basis for keeping revision in this step, and it is enforced by the
+    instrument reading its own instruction rather than by anything that can tell
+    the two apart. An entity pasted in from a system of record looks exactly like
+    a draft. Stated rather than solved; the same class of limitation as the first,
+    and the reason the refusal is written as a plain rule rather than a nuance.
