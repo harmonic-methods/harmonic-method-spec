@@ -1,0 +1,32 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-009
+  title: Drafting what the instruments grade
+  status: open
+  coda:
+    statement: >
+      Someone who can describe a capability in a paragraph leaves this repository
+      holding a conformant Beat and its Coda, drafted with an agent and scored
+      against the published rubric before anyone else reads it — so that starting
+      is not gated on having learned the shape first.
+    parent: HM-CODA
+  description: >
+    The capability by which this repository helps produce the entities it
+    defines, rather than only grading them once someone else has written them.
+    An agent is pointed at the specs and the published rubric, elicits what it is
+    missing, drafts the Coda and the Beat, and scores the draft with the existing
+    instrument unmodified.
+
+    The boundary with the scoring capability is direction. That one takes a
+    written entity and says how good it is; this one takes a description and
+    produces the entity, then hands it to that one for the verdict. Nothing here
+    defines what good means — every judgement is deferred to the published
+    rubric, which stays canonical and stays the only place a dimension is
+    written down.
+
+    It is held against a standing constraint it must not break: an instrument
+    that produces must never become a second definition of quality. The moment a
+    drafting aid restates a dimension, an anchor, or a threshold, the repository
+    has two answers to the same question and one of them drifts.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

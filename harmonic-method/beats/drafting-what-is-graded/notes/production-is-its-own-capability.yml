@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-100
+  type: decision
+  attached_to: HM-B-009
+  beat_version: HM-BV-009.1
+  content: >
+    Producing entities is a capability of its own rather than a step under the
+    scoring capability. It also raises a question about the system Coda that this
+    Note does not settle.
+  rationale: >
+    [HM-N-004] is a constraint on the scoring capability: the skills assess, they
+    never enforce, and gates, approvals and recorded lineage belong to the system
+    of record. A drafting instrument is none of those three — it produces a draft
+    and hands it back, enforcing nothing — so it does not contradict the
+    constraint. But the constraint exists because that capability was scoped to
+    assessment, and filing production under it would quietly widen a boundary
+    somebody drew deliberately. A capability recognized late gets its own Beat;
+    that is the shape [HM-N-068] already describes.
+
+    The boundary between the two is direction, and it is worth stating because it
+    is the only thing keeping this from becoming a second standard. Scoring takes
+    a written entity and says how good it is. Drafting takes a description and
+    produces the entity, then hands it to scoring for the verdict. Every judgement
+    of quality stays on the other side of that line.
+
+    The question this raises and does not answer: the system Coda promises that a
+    team can read the entity model, name the functions, and assess their work
+    against the published instruments. Production is not in that list. It is
+    arguably inside "adopt the Harmonic Method from this repository alone", since
+    a model you cannot apply without first learning a file format is not one you
+    adopted from here — but that is a reading, and a Coda that has to be read
+    generously to cover a capability beneath it is exactly what the ninth
+    reconciliation check looks for. Raised here rather than resolved, because
+    widening the system Coda is a decision about what this repository is for and
+    should not arrive as a side effect of adding a skill.

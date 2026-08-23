@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.6
   beat: HM-B-004
   title: One step, many changes
-  status: active
+  status: delivered
   summary: >
     How many tracked changes a planned step takes is stated on one of the three
     explanatory surfaces and demonstrated on none of them. The specs carry it —

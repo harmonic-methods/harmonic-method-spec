@@ -160,6 +160,14 @@ function, and each is written to be read literally by an agent.
 | [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
 | [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
 
+One skill produces rather than assesses.
+[beat-authoring](skills/beat-authoring/SKILL.md) serves the Composer too: give it
+a paragraph describing a capability and it drafts the Coda and the Beat, asks for
+what it is missing rather than inventing it, and then scores its own draft with
+the Beat rubric above — read as written, never paraphrased. It defines no
+quality of its own, which is what keeps a drafting aid from becoming a second
+standard.
+
 The Producer and the Promoter have no instrument yet, deliberately. The
 Producer's would need Value Velocity defined closely enough to assess without
 computing it; the Promoter's rests on the newest and thinnest evidence of the

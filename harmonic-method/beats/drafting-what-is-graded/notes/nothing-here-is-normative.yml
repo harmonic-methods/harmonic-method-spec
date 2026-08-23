@@ -1,0 +1,40 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-101
+  type: decision
+  attached_to: HM-B-009
+  beat_version: HM-BV-009.1
+  content: >
+    The drafting instrument carries no normative section and is deliberately not
+    covered by the rubric digest. It restates no dimension, anchor, red flag, or
+    threshold, and defers every judgement to the published quality instrument by
+    pointing at the file.
+  rationale: >
+    The guard's own warning is that an instrument with a differently named
+    normative section ships unguarded unless the heading is added to the covered
+    list. The honest reading of that warning is a question — does this file
+    contain anything whose edit would change the standard? — and here the answer
+    is no, because the file was written so that it could not. It names no
+    dimension and carries no scale. Someone editing every word of it cannot
+    change what a score means, because it produces no score of its own; it tells
+    an agent to read the canonical instrument and follow it as written.
+
+    That is the same argument [HM-N-012] makes from the other end. A variant of a
+    rubric must be generated from one source and never hand-maintained, because a
+    second copy of a dimension table is a copy that drifts. The cheapest way to
+    honour that in a file that is not a rubric is to have no copy at all — not an
+    abbreviated one, not a summary "for convenience", none. So the drafting
+    instruction says read the other file, and says why, and says the other file
+    wins on any disagreement.
+
+    Widening the guard to cover this file was considered and refused. The covered
+    sections are deliberately narrow — the tool's own comment explains that
+    hashing prose which churns for unrelated reasons trains the reflex of bumping
+    a digest without reading the change, and drafting guidance is exactly that
+    kind of prose. A guard that fires on a reworded sentence is a guard people
+    learn to clear rather than read.
+
+    What would change this: a producing instrument that has to decide something
+    the rubric does not — an ordering, a default, a threshold for when to stop
+    iterating. The moment one of those is written down, it is normative, and it
+    needs a heading in the covered list before it ships rather than after.

@@ -31,6 +31,14 @@ guards it against an unacknowledged edit.
 - skills/coda-alignment-check/SKILL.md: Conductor — reconcile a Coda chain across nine checks, reported as findings rather than a score
 The Producer and Promoter have no instrument yet, deliberately.
 
+## Authoring
+One skill produces rather than assesses. It carries no dimensions and no scale,
+is not covered by the digest because there is nothing normative in it to guard,
+and defers every judgement to the instrument above by pointing at the file.
+- skills/beat-authoring/SKILL.md: Composer — draft a Beat and its Coda from a
+  plain description, ask for what is missing rather than inventing it, then score
+  the draft with beat-coda-quality-check read as written
+
 ## Layout of a system
 One rule all the way down: an entity is a directory, its children are
 subdirectories. No file carries an inline child list — the directory is the

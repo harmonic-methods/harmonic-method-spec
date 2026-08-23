@@ -1,0 +1,66 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-009.1
+  beat: HM-B-009
+  title: The Composer's first draft
+  status: active
+  summary: >
+    Three instruments score a Beat, a plan, and a chain of outcomes. None of them
+    helps write any of it. Someone arriving with a paragraph has to hand-author
+    the shape from the worked example before the rubrics have anything to read,
+    which puts the hardest part of adoption before the part this repository
+    supports.
+
+    This step adds the first producing instrument, for the Composer: read the two
+    specs, elicit what is missing, draft the Coda and then the Beat, and score the
+    result with the published rubric read as written. It defers every judgement of
+    quality to that rubric and defines none of its own, which is what keeps a
+    drafting aid from becoming a second standard.
+
+    It carries no normative section, so the digest does not cover it and nothing
+    is left unguarded by that — there is nothing in it to guard. [HM-N-101]
+    records what that rests on and what would change it.
+
+    Done when: an agent handed only this repository can turn a paragraph into a
+    conformant Beat and Coda and report a score from the published instrument; no
+    dimension, anchor, or threshold appears in the new file; and the published
+    surfaces distinguish an instrument that produces from one that assesses.
+  scope: >
+    In: the drafting instrument for the Composer; its placement on both
+    explanatory surfaces, separated from the assessment instruments rather than
+    listed among them; and the two Notes recording why this is a capability of its
+    own and why it sits outside the digest.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: the other producing instruments this capability will want — planning the
+    next step, turning a weak score into the questions a person has to answer, and
+    taking a cadence anchor. Each is a step of its own. Drafting the Beat comes
+    first because a Beat is what everything below it hangs from, and because it is
+    the one an adopter meets first.
+    Out also: any edit to the quality instrument. This step is a consumer of that
+    rubric and changes nothing about it — if drafting exposes a defect in a
+    dimension, that is a finding for the capability that owns the rubric.
+    Out also: a fifth published dimension, a threshold of its own, or any
+    restatement of what good looks like. The constraint on the Beat says why.
+    Out also: adding a heading to the digest's covered sections. Nothing here is
+    normative, and widening the guard to cover prose that churns would train the
+    habit of bumping a digest without reading the change.
+
+    Owed, not done: the remaining producing instruments, and the question of
+    whether the system Coda covers production as well as assessment — raised in
+    [HM-N-100] and not settled here.
+    Owed elsewhere: dogfooding this instrument surfaced a defect that belongs to
+    the capability making conformance executable, not to this one. The checker
+    resolves a tree argument against the caller's working directory, so an
+    absolute path is joined onto that directory and lands somewhere that does not
+    exist — and the front page instructs an absolute path in two places. An
+    adopter following it is told their tree has no Coda. Left for a step under the
+    Beat that owns the checker rather than fixed in passing, which is the same
+    boundary every other clause here observes.
+
+    Risks stated: the failure this instrument can introduce is a confident
+    sentence about a system nobody has seen, written into a record whose purpose
+    is that reasoning stays recoverable. The instrument answers it with two moves
+    and a prohibition — ask, or mark it unresolved, and never invent — which is a
+    written habit rather than a mechanism, and nothing here checks it.
