@@ -1,0 +1,67 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-007.3
+  beat: HM-B-007
+  title: The root claims what the repository does, and only that
+  status: active
+  summary: >
+    The system outcome was wrong in both directions at once, and neither error
+    was visible until something was measured against it.
+
+    It claimed too little. It promised a reader could read the model, name the
+    functions, and assess work against the instruments — and said nothing about
+    producing any of it. Once an instrument that composes and corrects entities
+    exists, the outcome no longer describes the repository, which is the ninth
+    reconciliation check exactly: an entity that now delivers something its own
+    outcome does not promise. The consequence is not cosmetic. Every step under
+    the producing capability would score as indirect progress toward an outcome
+    that does not reach it, which is what happened one altitude down before this
+    was noticed.
+
+    It also claimed too much, and this is the worse half. It promised a team
+    would "get the same answer any conforming implementation would give". Scores
+    here are produced by reading a rubric, and [HM-N-081] already refuses to
+    record one as a field on the grounds that an LLM score is not reproducible —
+    that doing so would give a non-deterministic judgement the authority of a
+    field. The root outcome was granting that same judgement the authority of a
+    guarantee, one altitude above where the objection had already been sustained.
+
+    It also overclaimed against its own child. The capability that actually
+    delivers parity promises that a score "means the same thing" as one produced
+    anywhere else, so a team need not re-learn what a 4 is. Meaning the same
+    thing and being the same answer are different promises, and the parent had
+    the stronger, falser one.
+
+    Done when: the root outcome names producing alongside reading, naming and
+    assessing; the parity clause promises shared meaning rather than an identical
+    result, and cannot be read as a claim about the determinism of a model; the
+    prior statement is preserved with the reasoning, as changing a Coda requires;
+    and no clause survives that this repository cannot show.
+  scope: >
+    In: the two corrections to the system outcome, and the decision Note that
+    preserves the statement they replace.
+
+    Out: the Codas beneath it. Widening the root does not oblige any capability
+    to restate its own outcome, and rewriting five of them to echo new wording
+    would be the restatement discipline this repository spends its tooling
+    preventing.
+    Out also: a check that the root outcome matches what ships. Nothing can
+    compare a sentence against a repository, and a rule that tried would be the
+    kind of guard that passes while guarding nothing.
+    Out also: the identity question underneath. Producing instruments push this
+    further from a conformance target and closer to tooling, which [HM-N-041]
+    already weighed once when it settled what to call this repository. Naming
+    production in the outcome does not reopen that, and if it should be reopened
+    it deserves its own step rather than arriving inside a wording fix.
+
+    Owed, not done: nothing this step opens.
+
+    Risks stated: a widened outcome is a weaker one, and the fifth reconciliation
+    check asks whether an outcome can settle whether a given piece of work
+    advances it. Adding a clause moves it toward accepting more work. The
+    judgement made here is that the clause added is specific — composing and
+    correcting entities, with an agent, from this repository alone — rather than
+    a general permission to build things, and that a root outcome silently
+    excluding a capability the repository ships is the worse failure. Recorded so
+    that a later reader can disagree with the trade rather than have to
+    reconstruct it.
