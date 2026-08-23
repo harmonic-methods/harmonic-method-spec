@@ -1,0 +1,39 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-087
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.4
+  content: >
+    Every enum declares whether an implementation may add to it, in an
+    `additions` key beside the enum. Note types are open. All four status enums
+    are closed. An enum with no declaration is closed, and the checker requires
+    the declaration rather than inferring it.
+  rationale: >
+    The line is drawn by what an added value costs a reader, and the two cases
+    are genuinely different rather than a matter of taste.
+
+    An unknown status cannot be interpreted. The three values on a bounded step
+    partition it — in flight, shipped, set down — so a fourth value tells a reader
+    that something happened without saying which of the three it resembles, and
+    the first question anyone asks of a past step becomes unanswerable. That is
+    the same failure the retired binary had, arriving from the other direction.
+    An unknown Note type costs nothing comparable: the content is still readable,
+    the attachment still resolves, and the type only narrows why the knowledge is
+    there. A reader who meets a kind of knowledge this method did not name has
+    lost a classification, not a fact.
+
+    So the closed sets are closed because completeness is what makes them
+    interpretable, and the open one is open because it is a taxonomy rather than a
+    partition. A second rule bounds the openness: an addition widens the set and
+    may not redefine a published value or overlap one, which is what keeps a
+    taxonomy from becoming a dialect.
+
+    Closed is the default for anything undeclared, because that is the direction
+    where a mistake is recoverable — permitting an addition later breaks nobody,
+    and withdrawing permission breaks whoever took it. The declaration is
+    nonetheless required rather than defaulted, because the question is easy to
+    miss when writing a new field and the person defining an enum is the one who
+    knows whether the set is meant to be complete. Verified by removing a
+    declaration and reading the failure, and by declaring a value neither
+    `allowed` nor `none` and reading that one too.

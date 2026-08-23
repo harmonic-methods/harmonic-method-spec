@@ -1,0 +1,63 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.4
+  beat: HM-B-006
+  title: The two edges the conformance statement left undrawn
+  status: active
+  summary: >
+    Publishing the conformance statement exposed two questions it could not
+    answer, both found by trying to classify a real implementation against it.
+
+    An implementation that adds a value to an enum falls in neither category the
+    statement defines — the contradiction list covers a value renamed or
+    collapsed, never one added. And the statement declares the specs normative
+    while no spec file defines an encoding, which means the checker has been
+    enforcing a directory layout that the standard never required. That is the
+    third instance of a checker stricter than its spec, and the largest, because
+    it is not one field but the whole shape of a tree.
+
+    Both are settled here, and neither by weakening a check. Each enum now
+    declares whether additions are allowed, at the point where the enum is
+    defined. And the encoding is declared outside what binds while the
+    relationships move plainly inside it, so the tree rules become a stated
+    convention rather than an unstated requirement.
+
+    Done when: an added enum value is classifiable; every enum carries the
+    declaration and the checker demands it; the surface says the encoding does not
+    bind and says why it is named rather than left implicit; and the checker and
+    the front page both say that their tree rules read one encoding.
+  scope: >
+    In: an `additions` declaration on all five enums; the two conformance rules
+    that classify an added value and bound what an addition may do; the
+    relationships stated explicitly on the binding surface and the encoding stated
+    as not binding; the checker rule requiring every enum to declare; the
+    checker's own statement that its tree rules read one encoding; the front-page
+    equivalent; and the Notes recording both decisions.
+    Out: any change to what the tree rules check. The gap was a missing statement,
+    not an over-strict rule — the layout is still worth checking and still worth
+    recommending, and removing the checks would have left an adopter with a
+    command that reports almost nothing. Declaring the split fixes the defect the
+    standing guidance names, which is a checker enforcing what no spec says.
+    Out also: a `children` declaration beside `additions`. Whether a published
+    value may be narrowed is a separate question from whether the set may be
+    widened, and it is the next step in the vocabulary Beat rather than a rider
+    on this one.
+    Out also: the five functions, whose set is already declared closed in their own
+    spec and which are not a field enum, so the new declaration does not reach
+    them and does not need to.
+    Out also: a status field on a Note, which stays owed with its condition now
+    recorded rather than open-ended.
+    Corrects merged text: the directory requirement was published as binding, so
+    this contradicts a statement that shipped and reviewed clean rather than
+    extending one. It was raised as a disagreement and settled by the owner before
+    a line of it was written, which is the order that a contradiction — as opposed
+    to an extension — requires.
+    Owed, not done: seven steps remain after this one, six of which were waiting
+    on the decision this step carried. The step taken ahead of it is merged or in
+    review, so the queue is unblocked rather than merely longer.
+    Risks stated: closed-by-default is the safe direction but it is a silent
+    default, so the checker demands the declaration rather than inferring it,
+    verified by removing one and by supplying a value that is neither `allowed`
+    nor `none`; and declaring an encoding non-binding invites the reading that
+    layout does not matter, which the wording guards against by calling the tree a
+    recommended convention and by saying why it is named at all.

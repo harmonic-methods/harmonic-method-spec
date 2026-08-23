@@ -1,0 +1,60 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.18
+  beat: HM-B-003
+  title: The category is not one of its members
+  status: active
+  summary: >
+    `context` stops being one of the four Note types and becomes only the word for
+    all of them. The type for knowledge that rises to no narrower kind is
+    `background`.
+
+    The previous step declared the types a hierarchy with context at the root and
+    kept `context` as one of the four values in the same breath, which made
+    filtering on it ambiguous — every Note, or only the unspecialized ones, with
+    no way for a reader to tell. That step named the ambiguity as the one thing it
+    did not resolve. This resolves it.
+
+    Renaming the value rather than the category is deliberate: the claim that every
+    Note is context is what lets the type be closed and a child degrade gracefully,
+    so the category word is the one carrying the argument.
+
+    Done when: no type is called context; the value names the case rather than the
+    category on every published surface; every Note carrying the old value is
+    retyped; and the checker reads the permitted types from the spec instead of
+    restating them.
+  scope: >
+    In: the enum value and its description; the hierarchy statement and the rule
+    that no value is called context; the front page, the agent-facing entry point,
+    and the checker; the thirteen Notes carrying the old value; three Notes whose
+    prose named it; and the Note recording the decision.
+    Also in, because this step exposed it: the checker's list of permitted Note
+    types was a hand-written copy sitting beside the spec it claimed to read — its
+    own failure message says a type "is not in specs/note.yml" while the list came
+    from a constant. A rename that has to be made in two places is exactly when a
+    restated fact goes wrong, so the list is now read from the spec. Verified by
+    changing the spec's enum and watching every Note fail against it, which a copy
+    could not have done. The read is lazy and non-fatal by construction: a first
+    attempt did it at module load and turned an unparseable spec file into a stack
+    trace, where the check that owns that diagnostic would have given the line and
+    the reason — so the derivation stands down instead, verified by breaking the
+    file and counting zero stack frames in the output.
+    Out: a fifth value. A distinct catch-all under the root was the alternative to
+    the double duty and was refused there for costing a name and a longer model;
+    renaming one value settles the same ambiguity without adding anything.
+    Out also: any sweep that rejects the old word in Notes. The Notes recording
+    this rename have to be able to name what they renamed, which is the same
+    reason the retired-altitude sweep stops at `specs/`. The three prose
+    references were found with a grep and fixed by hand, and that is stated rather
+    than dressed up as a check.
+    Out also: the spec set version, unchanged for the same reason as the rest of
+    this cycle — nothing is released, no consumer holds the old value, and the test
+    is a consumer who can be broken rather than a tag that exists.
+    Owed, not done: three steps remain after this one, all of them additive, and
+    none waiting on a decision.
+    Risks stated: this moves a published value, so an implementation deriving a
+    literal union breaks at compile time rather than silently, which is the failure
+    mode to prefer; and thirteen Notes changed type in one commit, which is a data
+    change riding with a modelling one — kept together because a rename that leaves
+    the data behind is not a rename, and kept out of the previous step for exactly
+    that reason.

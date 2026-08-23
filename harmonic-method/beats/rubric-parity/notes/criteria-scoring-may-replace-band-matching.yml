@@ -1,7 +1,7 @@
 # Note — conformant to specs/note.yml
 note:
   id: HM-N-043
-  type: context
+  type: background
   attached_to: HM-B-002
   beat_version: HM-BV-002.7
   content: >
@@ -23,7 +23,7 @@ note:
     problem for a narrower scope. Neither test has been run. Until one is, the
     published rubrics keep band-matching.
   rationale: >
-    Recorded as context rather than a decision because the reasoning is
+    Recorded as background rather than a decision because the reasoning is
     persuasive and the evidence is absent. The argument is that "score this one
     to five" is read differently by different readers and by the same reader
     twice, so a band stops being a shared claim — which is the failure the

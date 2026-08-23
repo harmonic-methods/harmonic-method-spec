@@ -1,0 +1,49 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-072
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.18
+  content: >
+    The Note type for knowledge that rises to no narrower kind is renamed from
+    `context` to `background`. No type is called context, because every Note is
+    context in the general sense and the word for the whole cannot also be the
+    word for one of its parts. This settles the ambiguity [HM-N-071] recorded as
+    the one thing it left open.
+  rationale: >
+    The previous step declared the four types a hierarchy with context at the
+    root, and in the same breath kept `context` as one of the four values. That
+    made filtering ambiguous: a query for context could mean every Note or only
+    the unspecialized ones, and no reader could tell which was meant without
+    knowing which sense the author had in mind. The step said so rather than
+    smoothing it over, and named the fix as owed.
+
+    Renaming the value is the fix rather than renaming the category, because the
+    category word is the one carrying the argument. That every Note is context is
+    the claim the hierarchy rests on — it is why the type can be closed, why a
+    child degrades gracefully, and why an unrecognized subtype still means
+    something. Renaming the root would have kept the ambiguity and lost the
+    reason.
+
+    `background` was chosen over `information` and over `general`. All four types
+    are information, so that word has the same defect from a different direction —
+    it would name the category again. `general` describes the position in the
+    hierarchy rather than the content, which tells a reader where the value sits
+    and not what it holds. `background` names the case: what someone needs to know
+    to act well here, which is what the field description already said while the
+    value said something else.
+
+    That disagreement is worth naming, because it is the pattern this repository
+    keeps meeting. The description read "Background a contributor or agent needs
+    to act well here" while the value read `context` — a description corrected at
+    some point and a value left asserting what the correction removed. The same
+    shape appeared in a retired altitude surviving in a field description, and in
+    a rubric dimension whose body was de-commercialised while its name kept the
+    old claim. Two of the three were found by reading rather than by any check.
+
+    The rename moves a published value, which under an earlier rule would have
+    owed a major. It does not: nothing consumes the spec set, no tag exists for
+    the version this lands in, and the test is a consumer who can be broken rather
+    than a marker that exists — as [HM-N-090] settled. Thirteen Notes here carried
+    the old value and were retyped in the same change, because a rename that
+    leaves the data behind is not a rename.

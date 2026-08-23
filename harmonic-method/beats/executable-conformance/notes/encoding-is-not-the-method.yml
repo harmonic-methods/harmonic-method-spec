@@ -1,0 +1,47 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-088
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.4
+  content: >
+    The relationships these specs state are normative; the encoding is not. No
+    spec file defines a directory layout, a file format, an identifier scheme, or
+    a serialization, and none will. The checker's tree rules read one concrete
+    encoding, declared as a convention this repository uses and recommends rather
+    than as a condition of conformance. The requirement that an entity is a
+    directory whose children are subdirectories is removed from the binding
+    surface, where it had been listed.
+  rationale: >
+    The gap was real and had been invisible because the checker filled it. Nothing
+    in the specs describes a directory of entities, yet the checker rejects a tree
+    that encodes them another way, and it rejects an inline child list that no
+    spec forbids. By the standing guidance that a checker stricter than its spec
+    is a defect in the checker, this was the third instance and much the largest —
+    not a single field this time but the entire shape of a tree.
+
+    Three resolutions were available. Specifying the layout normatively was
+    rejected because it contradicts the claim the method rests on: a method that
+    holds where the medium is a procedure, a runbook, or an organizational
+    practice cannot mandate a file format, and an implementation keeping its
+    records in a database would be non-conformant for a reason having nothing to
+    do with the method. Deleting the tree rules was rejected for the opposite
+    reason — it would leave an adopter with a command that checks almost nothing
+    structural, and the layout is genuinely worth recommending.
+
+    What was actually missing was a statement, so the statement is what got
+    added. Splitting relationships from encoding also names the thing conformance
+    should have been about all along: whether an implementation can answer which
+    Beat a step belongs to and which entity a Note informs, not whether it stores
+    the answer in a file. An implementation is free to change its encoding for its
+    own reasons — readability, tooling, or reuse of what ships here — and that is
+    now plainly a choice rather than an obligation.
+
+    This corrects merged text rather than adding to it, which is why it was raised
+    as a disagreement before being written. The published surface listed the
+    directory requirement as binding-but-not-comparable, and that is the opposite
+    of what is settled here. A middle reading was available and refused — that the
+    layout binds whoever vendors this repository's encoding and nobody else —
+    because it adds a fourth category to a surface whose value was that three was
+    already the honest maximum, and because a rule that binds only those who opted
+    into it is a convention with extra steps.

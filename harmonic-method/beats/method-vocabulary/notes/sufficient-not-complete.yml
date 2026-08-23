@@ -1,0 +1,50 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-078
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.21
+  content: >
+    The system Coda now promises that a team reading the entity model finds it
+    sufficient for the work they actually do. The word is sufficient rather than
+    complete, and the difference is the point rather than a matter of style. The
+    statement it replaces, preserved here because changing a Coda is a recorded
+    decision and the prior statement is kept: "A team can adopt the Harmonic
+    Method from this repository alone — read the entity model, name who answers
+    for each of its five functions, assess their own work against the published
+    instruments, and get the same answer any conforming implementation would give
+    — without an account, a vendor relationship, or a call."
+  rationale: >
+    The widening was forced by the instruments. A Beat opened to close a gap in
+    the entity model scored short on Strategically Aligned, and inspection put
+    the fault in the Coda — it promised reading, naming and assessing, and
+    promised nothing about the model being adequate to the work brought to it.
+
+    The precedent sets the test this has to pass. Widening a parent Coda to
+    accommodate a child is illegitimate when the child is the thing that is
+    wrong, and that test is met here: the gap the new Beat closes is one somebody
+    met in practice, in this repository, when a Note could not be written because
+    the entity it informs did not exist yet. The Beat is not reaching for room —
+    the room is missing.
+
+    This is the third time the system Coda has been outgrown by work beneath it,
+    after [HM-N-031] and [HM-N-048], and the shape is identical all three times:
+    the Coda enumerated what the repository held when it was written, so the next
+    capability had nothing above it to ladder to. Three instances is a pattern
+    about the writing rather than about the work, which is why the replacement
+    clause deliberately does not enumerate. Sufficiency for work actually done
+    stays true as the model grows; a list of what the model contains cannot.
+
+    Complete was the obvious word and is the wrong one. Completeness is a property
+    of an inventory and is judged against everything imaginable, so a Coda
+    promising it makes every conceivable gap strategically aligned by
+    construction — which is precisely how a strategic anchor becomes a mandate to
+    accumulate. Sufficiency is a property of a fit between a model and a use. It
+    cannot be assessed without naming the work, which means it cannot be claimed
+    in the abstract, and it fails honestly when someone brings work the model
+    cannot carry.
+
+    The bound this requires is recorded separately as a constraint, because a
+    widened Coda with no stated limit is exactly the invitation that was worried
+    about, and the limit is the kind of thing a later reader will look for as a
+    rule rather than infer from a rationale.

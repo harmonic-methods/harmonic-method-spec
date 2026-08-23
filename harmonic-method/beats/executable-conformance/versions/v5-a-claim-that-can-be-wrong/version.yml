@@ -1,0 +1,63 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.5
+  beat: HM-B-006
+  title: A claim that can be wrong
+  status: active
+  summary: >
+    The conformance statement said what a claim covers and left the claim itself
+    shapeless, so two implementations could both declare conformance and mean
+    different things, and neither could be contradicted. This gives the
+    declaration a shape and a check.
+
+    Required: the spec set version, who is claiming, and every contradiction the
+    author knows about. The divergence list is the whole mechanism — an empty
+    list is the strong claim, and a claim nobody can falsify is not one. Optional:
+    what the implementation adds and how its vocabulary maps onto these
+    primitives, both informative rather than load-bearing.
+
+    The check earns its place with one rule that is not merely schema
+    validation: an added value on an enum declaring additions none is reported as
+    a contradiction filed under the wrong heading. That is the move a declaration
+    would most plausibly be used to disguise, and it is now the thing the checker
+    is most pointed about.
+
+    Done when: the declaration's shape is normative; a worked example exists and
+    is checked so it cannot rot; the command grows the subcommand the previous
+    step deferred; and every new rule was made to fail before being believed.
+  scope: >
+    In: the declaration block on the normative surface and the three rules that
+    bound it; a checker for a declaration file; the `conformance` subcommand and
+    its help; a worked declaration in the examples, deliberately non-software and
+    deliberately carrying one real divergence; a check keeping that example valid;
+    and the Notes.
+    Also in, unplanned: a smoke check that the published command parses and
+    dispatches. The entry point broke during this step and the self-check still
+    reported conformant, because every rule reads files the command never loads.
+    Fixing the break without closing the gap would have left the one part an
+    adopter actually runs as the one part nothing checks.
+    Also in, unavoidably: the previous declaration shape is replaced rather than
+    extended. It asked for one entry per entity naming every field carried, which
+    is a mirror of the specs that nothing read and that would drift silently, and
+    the surface sentence promising a check over fields and permitted values is
+    corrected in the same step rather than left asserting coverage the tool does
+    not provide. Correcting it here rather than later is the point: a claim about
+    what a check covers should not outlive the step that builds the check.
+    Out: verifying that an implementation behaves as it claims. Not deferred —
+    impossible, and the declaration says so in its own limits rather than leaving
+    a reader to assume the check is stronger than it is.
+    Out also: a registry of declarations, or any mechanism for collecting them.
+    One declaration nobody has written yet does not need a directory.
+    Out also: the `child_type` extension kind. A declaration cannot narrow a
+    published value until an enum declares that children are allowed, and no enum
+    does yet — the worked example therefore adds a Note type here, and the step
+    that closes that enum is the step that changes the example to narrow one
+    instead. Shipping the kind now would mean shipping a check that rejects every
+    use of it.
+    Owed, not done: six steps remain after this one, and none of them is now
+    waiting on a decision.
+    Risks stated: a declaration is self-reported, so a dishonest one passes — the
+    check narrows what can be claimed vaguely rather than what can be claimed
+    falsely, and the limits wording is what keeps that from being oversold; and a
+    worked example is the shape people copy, so a stale one teaches the wrong
+    thing, which is why it is checked rather than trusted.

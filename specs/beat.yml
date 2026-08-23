@@ -22,6 +22,8 @@ fields:
   status:
     type: enum [open, closed]
     required: true
+    additions: none
+    children: none
     description: Binary lifecycle — open (active, being worked or operated) or closed.
   versions:
     type: list<beat_version>

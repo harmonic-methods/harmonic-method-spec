@@ -6,6 +6,13 @@
  * child's back-reference and the directory it sits in, and reference
  * resolution. Also rejects vocabulary these specs do not define.
  *
+ * Encoding note: the specs define no layout, so the tree rules below — an entity
+ * is a directory, its children are subdirectories, no inline child list — read
+ * one concrete encoding this repository uses and recommends. They are not
+ * conformance requirements; see `encoding` on the surface in
+ * specs/conformance.yml. A tree encoded some other way is not non-conformant, it
+ * is simply not what this checker reads.
+ *
  * Scope note: this checks the *entity* files. It does not check the rubric text
  * in `skills/` — a hand-edit to a dimension anchor is still unguarded here. The
  * reference implementation's fingerprint test catches canonical-side drift; the
@@ -15,13 +22,14 @@
  * Run with: npm run validate
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { spawnSync, execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
 import { checkBinding, checkPublicSurface } from './commit-discipline.mjs';
+import { checkDeclaration } from './conformance.mjs';
 import { normativeSkills, normativeText, digest, normativeItemCount } from './rubric-fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -49,7 +57,32 @@ const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
 const BV_REQ = ['id', 'beat', 'title', 'summary', 'scope', 'status'];
 const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
 const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
-const NOTE_TYPES = ['context', 'constraint', 'guidance', 'decision'];
+/**
+ * The Note types, read from the spec rather than restated beside it.
+ *
+ * The failure message this feeds says a type "is not in specs/note.yml", so the
+ * list had better come from there. It was a hand-written copy until a rename
+ * moved the value in both places, which is the moment a restated fact goes
+ * wrong — one of the two edits is always the one that gets forgotten.
+ *
+ * Read on demand and never at module load, and returns null rather than throwing
+ * when the spec will not parse. A checker that dies on a malformed spec file
+ * gives an adopter a stack trace where checkSpecs would have given them the line
+ * and the reason, so the diagnostic is left to the check that owns it and the
+ * type comparison simply stands down.
+ */
+let noteTypesCache;
+function noteTypes() {
+  if (noteTypesCache !== undefined) return noteTypesCache;
+  let values = null;
+  try {
+    const t = load('specs/note.yml')?.fields?.type?.type ?? '';
+    const parsed = (t.match(/\[(.*)\]/)?.[1] ?? '').split(',').map((v) => v.trim()).filter(Boolean);
+    if (parsed.length > 0) values = parsed;
+  } catch { /* checkSpecs reports the parse failure with the line and the reason */ }
+  noteTypesCache = values;
+  return values;
+}
 
 const SEMVER = /^\d+\.\d+\.\d+$/;
 const MANIFEST = 'specs/spec-set.yml';
@@ -305,7 +338,8 @@ function checkTree(root) {
       if (!n) { fail(`${nPath}: no top-level 'note' key`); continue; }
 
       for (const f of NOTE_REQ) if (n[f] === undefined) fail(`${nPath}: missing required '${f}'`);
-      if (!NOTE_TYPES.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in specs/note.yml`);
+      const types = noteTypes();
+      if (types && !types.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in specs/note.yml`);
       if (n.type === 'decision' && !n.rationale) fail(`${nPath}: a decision Note requires rationale`);
       if (n.attached_to !== b.id) fail(`${nPath}: attached_to '${n.attached_to}' but sits under ${b.id}`);
       if (noteIds.has(n.id)) fail(`${nPath}: duplicate note id '${n.id}'`);
@@ -398,6 +432,86 @@ function checkPublishedCounts() {
 }
 
 /**
+ * Every enum on the normative surface declares whether an implementation may add
+ * to it.
+ *
+ * The conformance statement classifies an added value by that declaration, so an
+ * enum that omits it leaves the classification unanswerable — and the question is
+ * easy to miss when adding a field, because nothing about writing an enum prompts
+ * it. Closed is the safe default, so this demands the declaration rather than
+ * inferring one: the decision belongs where the enum is defined, made by whoever
+ * knows whether the set is meant to be complete.
+ *
+ * Both halves are demanded, because they are different questions. Whether the set
+ * may be widened and whether a published value may be narrowed have different
+ * answers on the same enum: Note types are closed to siblings and open to
+ * children, and every status enum is closed to both.
+ */
+function checkEnumDeclarations() {
+  console.log('== enum declarations ==');
+  const before = failures;
+  let n = 0;
+  for (const f of ls('specs')) {
+    let doc;
+    try { doc = load(`specs/${f}`); } catch { continue; }
+    for (const [name, field] of Object.entries(doc?.fields ?? {})) {
+      if (typeof field?.type !== 'string' || !field.type.startsWith('enum')) continue;
+      n++;
+      for (const key of ['additions', 'children']) {
+        const d = field[key];
+        if (d === undefined) {
+          fail(`specs/${f}: field '${name}' is an enum with no '${key}' declaration — say 'allowed' or 'none'`);
+        } else if (d !== 'allowed' && d !== 'none') {
+          fail(`specs/${f}: field '${name}' declares ${key} '${d}' — expected 'allowed' or 'none'`);
+        }
+      }
+    }
+  }
+  if (failures === before) console.log(`  ${n} enums, each declaring whether additions and children are allowed`);
+}
+
+/**
+ * The worked declaration ships as the shape an implementation copies, so it has
+ * to stay valid against the rules it illustrates. An example that no longer
+ * passes teaches the wrong shape to everyone who starts from it.
+ */
+function checkExampleDeclaration() {
+  console.log('== example declaration ==');
+  const p = 'examples/declaration.yml';
+  if (!existsSync(join(ROOT, p))) return fail(`${p}: not found`);
+  const failures = checkDeclaration(join(ROOT, p));
+  for (const f of failures) fail(`${p}: ${f}`);
+  if (failures.length === 0) console.log('  well-formed against the declaration rules');
+}
+
+/**
+ * The published command parses and dispatches.
+ *
+ * Nothing checked this, and it broke exactly once during the work that added the
+ * second subcommand: a stray backtick closed a template literal, the entry point
+ * stopped parsing, and the self-check still printed conformant — because every
+ * rule here reads files the command never loads. The command is the only part of
+ * this repository an adopter runs, so it is the last place that gap should exist.
+ *
+ * Deliberately shallow. It asserts the module loads and that the two streams are
+ * reported, not what any subcommand does — those have their own checks, and a
+ * smoke test that grows into a second test suite stops being run.
+ */
+function checkCommandRuns() {
+  console.log('== command ==');
+  const bin = join(ROOT, 'bin/hm.mjs');
+  if (!existsSync(bin)) return fail('bin/hm.mjs: not found');
+  const parsed = spawnSync(process.execPath, ['--check', bin], { encoding: 'utf8' });
+  if (parsed.status !== 0) return fail(`bin/hm.mjs does not parse: ${(parsed.stderr ?? '').split('\n')[0]}`);
+  const v = spawnSync(process.execPath, [bin, '--version'], { encoding: 'utf8' });
+  if (v.status !== 0) return fail(`bin/hm.mjs --version exited ${v.status}`);
+  if (!/spec set \d+\.\d+\.\d+/.test(v.stdout) || !/package\s+\d+\.\d+\.\d+/.test(v.stdout)) {
+    return fail(`bin/hm.mjs --version did not report both streams: ${JSON.stringify(v.stdout)}`);
+  }
+  console.log('  parses, and --version reports both streams');
+}
+
+/**
  * Retired altitude names, rejected on the normative surface only.
  *
  * The altitudes are portfolio, system, and beat. "Organization" was retired as an
@@ -445,15 +559,18 @@ if (TARGET) {
   }
 } else {
   checkSpecs();
+  checkEnumDeclarations();
   checkRetiredAltitudes();
   checkRubricFingerprints();
   checkPublishedCounts();
   checkToolingVersion();
+  checkCommandRuns();
   checkReleaseInvariant();
   checkBindingDiscipline();
   checkPublicSurfaceHygiene();
   checkTree('harmonic-method');
   checkTree('examples');
+  checkExampleDeclaration();
   checkVocabulary(['harmonic-method', 'examples']);
 }
 

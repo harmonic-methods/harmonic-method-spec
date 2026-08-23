@@ -77,10 +77,27 @@ The same check ships as a command, for anyone who would rather not clone:
 The command is optional and always will be. Reading a spec, applying an
 instrument, or vendoring any of it installs nothing.
 
+If you build something that implements the method, declare what you conform to.
+Copy [examples/declaration.yml](examples/declaration.yml) as the shape, keep it
+with your implementation rather than here, and check it:
+
+    hm conformance ./harmonic-method-declaration.yml
+
+It requires the spec set version, who is claiming, and every contradiction you
+know you carry. An empty divergence list is the strong claim, not the easy one —
+it says nothing published here is contradicted, and one counter-example settles
+it. What it cannot do is confirm your system behaves as you say; nothing readable
+from outside can.
+
 It checks what the specs require — fields, lifecycle values, decision rationale,
 reference resolution, and that each child agrees with the directory holding it.
 It does not apply the disciplines this repository keeps on itself, so a Beat of
 yours may use any vocabulary it likes.
+
+The layout it reads is a convention, not a condition of conformance. The specs
+define no encoding, so a directory tree, a database, or a set of issue records
+all conform if the required fields are present and the relationships hold — this
+checker reads one of those, because a checker has to read something.
 
 ## The model
 
@@ -91,8 +108,12 @@ ladders up to strategy.
 A **Beat** is a durable capability. It is never rewritten wholesale; it evolves
 through **Beat Versions**, each a bounded, testable step toward the Coda. A
 Beat Version is delivered by one or more **Revisions**, the tracked changes that
-actually execute it. **Notes** carry the typed knowledge — context, constraints,
-guidance, decisions — that explains why any of it is the way it is.
+actually execute it. **Notes** carry the typed knowledge — background,
+constraints, guidance, decisions — that explains why any of it is the way it is.
+Those four are a hierarchy rather than a list: a Note *is* context, and the type
+names how far it specializes. No type is called context, so the word for all four
+never doubles as one of them. An implementation needing a finer kind narrows one
+of the four rather than adding a fifth nobody else can read.
 
 Cadence makes reconciliation routine. A **Bar** is the recurring period work is
 planned and delivered within, and Bars nest — a quarter over its fortnights —
@@ -176,8 +197,9 @@ nothing.
 
 This repository **assesses but does not enforce**. It records no scores, gates nothing,
 and keeps no audit trail — there is no history of who changed a Beat or when,
-and a score produced here cannot tell you whether it predates the text it
-judged. Those properties belong to a system of record. Use these specs to apply the
+and a score produced here cannot tell you whether it predates the text it judged
+or the rubric that judged it. Those properties belong to a system of record —
+which has to detect both kinds of staleness, not just the first. Use these specs to apply the
 method wherever you already work, or to self-review before anything is tracked;
 don't present its output as an official Check to anyone who would rely on it as
 one.

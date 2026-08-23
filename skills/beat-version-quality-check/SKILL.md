@@ -179,12 +179,12 @@ Dimension order: scoped, directional, testable, traceable, assignable, riskAware
   stable knowledge record — e.g. a decision/constraint/context Note ID for
   traceability — is fine and encouraged; that is not a drifting
   pipeline-position relationship.)
-- Evaluate Notes for traceability — decisions, constraints, and low-confidence
-  context should be recorded. Assumptions count as recorded when they carry an
-  explicit validation state; note that the reference implementation has
-  deprecated its `assumption` Note type in favor of context/constraint/guidance/
-  decision with an unvalidated status, so match whichever convention the system
-  of record uses rather than demanding a specific type.
+- Evaluate Notes for traceability — decisions, constraints, and knowledge held
+  with low confidence should be recorded. Judge whether the knowledge is there,
+  never which type carries it: the permitted types are whatever `specs/note.yml`
+  declares, an implementation may narrow one, and a system of record may track
+  how settled a claim is in a field of its own. Demanding a particular type is
+  how this rule went stale once already.
 - A Beat Version can score well with zero attached Notes if its summary and
   Scope are precise and self-contained.
 - Suggestions must be actionable — "add explicit scope boundaries for what's
@@ -192,5 +192,13 @@ Dimension order: scoped, directional, testable, traceable, assignable, riskAware
 - A baseline Beat Version (v1 representing work that already exists) should be
   evaluated differently: Scoped is less relevant; Traceable and Testable still
   matter.
+- **Name the version you scored against.** Read `spec_version` from
+  `specs/spec-set.yml` and report it with the result. A score is a claim about an
+  entity measured against a rubric, and rubrics move — without the version a
+  later reader cannot tell whether the score predates the definitions that
+  produced it, and two scores cannot be compared at all. If the spec set is not
+  available to you, say the version is unknown rather than guessing or omitting
+  it: an unversioned score is usable now and worthless later. Do not copy the
+  version into this file or any other — read it where it lives.
 - This skill assesses; it does not enforce. The first-Revision gate belongs to
   the system of record.

@@ -7,7 +7,7 @@ note:
   content: >
     The Note type for something believed but not verified is retired. The method
     defines four types: context, constraint, guidance, decision. [HM-N-019] and
-    [HM-N-043] both used it and are re-typed as context; the delivered step
+    [HM-N-043] both used it and are re-typed as background; the delivered step
     [HM-BV-002.7], which describes creating one, is left as the record of what
     happened at the time and is superseded by this Note rather than rewritten.
   rationale: >

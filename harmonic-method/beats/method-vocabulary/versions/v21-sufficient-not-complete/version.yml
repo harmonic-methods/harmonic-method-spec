@@ -1,0 +1,61 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.21
+  beat: HM-B-003
+  title: Sufficient, not complete
+  status: active
+  summary: >
+    Scoring the newest Beat against the published rubric returned a shortfall on
+    Strategically Aligned, and the defect was in the system Coda rather than the
+    Beat — the Coda spoke of reading the entity model and assessing against the
+    instruments, and said nothing about the model being adequate for the work
+    someone brought to it. A Beat closing a hole in the model therefore had
+    nothing above it to ladder to.
+
+    The Coda is widened, and the word is chosen carefully. Sufficient, not
+    complete. Completeness is absolute and would make every conceivable gap
+    Coda-justified, which converts a strategic anchor into a licence to
+    accumulate primitives. Sufficiency is relative to a use and can only be
+    judged against work someone actually did.
+
+    A constraint records the bound so that the widening cannot be read as an
+    invitation, and so the next person proposing an entity meets the test rather
+    than reconstructing it.
+
+    Done when: the Coda promises sufficiency and does not enumerate; the prior
+    statement is preserved in the decision; the bound is a constraint rather than
+    a rationale; and the Beat that exposed the gap is re-scored against the
+    widened Coda rather than assumed to pass.
+  scope: >
+    In: the system Coda statement, the decision recording the widening and its
+    precedent, and the constraint bounding what sufficiency licenses.
+    Out: the normative surface. This is about what this repository's own Coda
+    promises, not about what the method requires of anyone, and putting a
+    scope-discipline rule into the standard would be the first instance of the
+    creep it exists to prevent.
+    Out also: re-opening the entity model. Nothing is added here, and the
+    constraint is deliberately written to make the omissions currently on record
+    stay omissions until someone hits them.
+    Owed, not done: one step remains after this one.
+    Re-scored against the widened Coda, and it passes: the new Beat comes to 4.14
+    — Distinctive 4, Harmonious 4, Substantial 5, Durable 4, Clear 4,
+    Strategically Aligned 4, Outcome-Oriented 4 — against a reference threshold of
+    4. Strategically Aligned rises from 2 because the Beat now serves a stated
+    promise directly: the model cannot currently hold knowledge learned before its
+    subject exists, which is the sufficiency the Coda undertakes. The Beat text did
+    not change, and it is stated plainly that a score moved because its context
+    moved.
+    Found here, and owed: that is a third kind of staleness, and nothing records
+    it. A score can go stale because the thing scored changed, because the rubric
+    changed, or — as here — because the Coda it was judged against changed. The
+    next step records the rubric version beside a score, which covers the second
+    and leaves this one open. Named rather than folded in, because widening that
+    step to carry a Coda reference would be designing a field from the single case
+    that produced it, which is the failure this Beat's own constraint was just
+    written to prevent.
+    Risks stated: sufficiency is judged rather than computed, so it cannot be
+    checked and an adopter has to take the Coda at its word — which is true of
+    every Coda and is why the constraint states the test rather than leaving it to
+    a reader's disposition; and a widened Coda is the classic move for
+    accommodating a child that should have been refused, so the precedent's test
+    is met explicitly in the decision rather than passed over.

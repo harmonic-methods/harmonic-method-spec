@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-076
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.20
+  content: >
+    Reach of consequence — how far beyond its host a Note's consequences travel —
+    is not named as a dimension yet. It was designed as an optional altitude
+    value, widening only, and withdrawn before shipping. An implementation
+    carrying it is extending the method.
+  rationale: >
+    The design was an enum of the altitudes, which assumes two things that are
+    true today and will not stay true. That every host a Note attaches to sits in
+    the altitude hierarchy, and that extent of consequence is measured in
+    altitudes. Both fail as soon as a Note can attach to a party rather than to a
+    scope of work — a person is not an altitude, and a Note about one reaching
+    "portfolio" is either meaningless or coerced. It would also re-merge the two
+    axes an earlier decision separated at some cost, since altitude answers how
+    much work is in view and a party answers who.
+
+    Two shapes survive that test and neither is chosen here. A reference-valued
+    reach, naming the entity consequences extend to, works for any host hierarchy
+    and gives up filterability. A reach relative to the host — the enclosing
+    scope, or the root — abstracts over whatever hierarchy the host sits in and
+    gives up the ability to distinguish one level from the next.
+
+    What settles it is a second host hierarchy to design against, which the work
+    on the remaining functions will produce. Deciding now would mean designing a
+    published dimension against a single case, which is how both reversals in
+    this cycle happened — an enum opened and closed within hours, and a value
+    renamed twice — each made without a second case to test the vocabulary on.
+    The pattern is clear enough to act on.
+
+    Nothing is lost by waiting. The only current instance is an implementation's
+    tier, which is already an extension and stays a valid one.

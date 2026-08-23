@@ -1,0 +1,27 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-070
+  type: guidance
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.5
+  content: >
+    The published command is checked to the extent that it runs: the entry point
+    parses, and `--version` reports both streams. Deliberately shallow, and it
+    stays shallow — what each subcommand does has its own check.
+  rationale: >
+    It broke during the work that added the second subcommand. A stray backtick
+    closed a template literal, the entry point stopped parsing, and the
+    self-check still printed conformant — because every rule here reads files and
+    none of them loads the command. The one part of this repository an adopter
+    actually executes was the one part nothing executed.
+
+    Fixing the break without closing the gap would have left that true. So the
+    smoke check went in alongside the fix, and it was made to fail first: the
+    break was reintroduced and the checker reported `bin/hm.mjs does not parse`
+    before the check was believed.
+
+    Shallow on purpose. A smoke check that grows into a second test suite stops
+    being run, and every rule it would duplicate already exists — the tree rules
+    check what `validate` does, the declaration rules check what `conformance`
+    does. What was missing was not coverage of behaviour but evidence that the
+    thing loads at all.

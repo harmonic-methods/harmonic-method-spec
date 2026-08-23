@@ -11,43 +11,79 @@ surface:
     The fields each entity spec declares, which of them are required, and the
     values each lifecycle field permits; and the identifiers of the dimensions
     or checks each instrument scores. These are facts an implementation can
-    state and a tool can compare, so these are what a conformance check covers.
+    state and a tool can compare, so a divergence is stated about one of these
+    and a conformance check can judge it.
   binding_but_not_comparable: >
-    The rules carried by each entity spec, the requirement that an entity is a
-    directory whose children are subdirectories, the binding between a change
-    and the step it executes, and the five functions. Each of these binds an
-    implementation as much as a field does, and none of them reduces to a
-    comparison — they are read and followed, and a tool that reported on them
-    would be reporting on prose. An implementation is not less conformant for
-    them going unchecked.
+    The rules carried by each entity spec, the relationships these specs state —
+    which entity a Note attaches to, which Beat a Beat Version belongs to, which
+    Beat Version a Revision executes, which Coda a Coda ladders to — the binding
+    between a change and the step it executes, and the five functions. Each of
+    these binds an implementation as much as a field does, and none of them
+    reduces to a comparison — they are read and followed, and a tool that reported
+    on them would be reporting on prose. An implementation is not less conformant
+    for them going unchecked.
+  encoding: >
+    Not binding, and named rather than left to the category below because the
+    checker published here reads one and a reader would otherwise assume it
+    binds. No file here defines a directory layout, a file format, an identifier
+    scheme, or a serialization, and none will: a method that holds where the
+    medium is a procedure or a runbook cannot mandate a file format, and an
+    implementation keeping its records in a database would otherwise be
+    non-conformant for a reason having nothing to do with the method. A tree, a
+    database, a single document, and a set of issue records all conform if the
+    required fields are present and the relationships hold. The tree this
+    repository checks is a convention it uses and recommends, because a checker
+    has to read something.
   everything_else: >
     Nothing else here binds anyone. The worked example, this repository's own
     system, the tooling, and the reader-facing prose exist to be read, copied,
     or run. The surface is defined by what binds rather than by where it lives,
     so adding a directory does not silently add to it.
 declaration:
-  spec_version:
-    type: string
-    required: true
-    description: >
-      The spec set version the claim is made against. A claim against no version
-      is not a claim, because the thing claimed keeps moving.
-  entities:
-    type: map
-    required: true
-    description: >
-      One entry per entity the specs define, naming the fields the
-      implementation carries, which it requires, and the values it permits where
-      the spec declares a lifecycle. An implementation may name entities the
-      specs do not define; those are extensions and are simply reported.
-  instruments:
-    type: map
-    required: false
-    description: >
-      One entry per instrument the implementation scores, naming the dimension
-      or check identifiers it uses. Omitted by an implementation that scores
-      nothing, which is conformant — the instruments are published for use, not
-      required for it.
+  summary: >
+    What an implementation publishes to make its claim checkable. It lives with
+    the implementation, not here — this states its shape so that two declarations
+    can be read the same way, and so a check can tell a well-formed claim from a
+    vague one.
+  required:
+    spec_version:
+      type: string
+      description: >
+        The value from `spec-set.yml` this claim is made against. A claim with no
+        version attached is not a claim, because the thing claimed keeps moving.
+    implementation:
+      type: string
+      description: >
+        The name of the system claiming. A declaration says who is claiming.
+    divergences:
+      type: list
+      description: >
+        Every contradiction the implementation knows it carries, each naming the
+        spec file, the field or rule, what this repository publishes, and what the
+        implementation does instead. May be empty, and an empty list is the whole
+        point of the field — it is the strong claim, that nothing published here
+        is contradicted, and it is what makes the declaration falsifiable.
+        Omitting the list is not the same as declaring it empty.
+  optional:
+    extensions:
+      type: list
+      description: >
+        What the implementation adds — an entity, a field, a value on an enum that
+        allows additions, a dimension it scores beyond the instruments, or a value
+        it computes. Each names its kind. Informative rather than load-bearing: an
+        extension needs no permission, so a reader who wants only to know whether
+        a score means the same thing can skip the list.
+    mappings:
+      type: list
+      description: >
+        The implementation's own vocabulary against the primitives declared here,
+        for a reader who has to translate. Each names both sides.
+  limits: >
+    A declaration is a claim, and checking it verifies the claim's form rather
+    than the implementation's behaviour. Nothing readable from outside can
+    establish that a system does what it says; what a check can establish is that
+    the statement is specific enough to be wrong. That is the failure being
+    guarded against — a claim too vague for anyone to contradict.
 rules:
   - >
     An extension conforms. An implementation will carry entities, fields, and
@@ -58,10 +94,44 @@ rules:
     a permitted lifecycle value it renamed or dropped, or a published dimension
     it no longer scores.
   - >
+    Every enum declares whether additions are allowed and whether children are,
+    in `additions` and `children` keys beside it. A value an implementation adds
+    is an extension where `additions` reads `allowed` and a contradiction where it
+    reads `none`. An enum carrying no declaration is closed, so a new enum either
+    decides the question or inherits the stricter answer.
+  - >
+    Where children are allowed, an implementation may narrow a published value
+    instead of adding a sibling to it. A child is an extension, and it degrades —
+    a reader who does not know the child still knows its parent, which a sibling
+    does not offer. Prefer a child wherever one will carry the meaning.
+  - >
+    Where additions are allowed, an added value widens the set and does not
+    redefine it. An implementation may not give a published value a different
+    meaning, and an added value may not overlap one — that is what keeps a
+    taxonomy from becoming a dialect.
+  - >
     The declaration is the implementation's own claim about itself. A check
     compares that claim against the specs; whether the implementation matches its
     own claim is for its own tests to establish. Two links, each verifiable by
     whoever owns it.
+  - >
+    A recorded score names the spec set version it was produced under, and the
+    state of what it judged. Staleness has two sides — the thing scored can change
+    after the score and so can the rubric — and an implementation that gates on a
+    score has to be able to detect both. Detecting only the first leaves a passing
+    result standing against definitions it was never produced against.
+  - >
+    A declaration lists every contradiction its author knows about. Declaring one
+    does not make it conformant, and describing it as a simplification instead of
+    listing it is the failure the list exists to prevent.
+  - >
+    Nothing filed as an extension may be a contradiction under another name. An
+    added value on an enum that declares `additions: none` belongs under
+    divergences, whatever it is called.
+  - >
+    A declaration is checked for its form, never for its truth. Whether an
+    implementation behaves as it claims is not knowable from a file, and a check
+    that implied otherwise would be the vaguest claim in the system.
   - >
     Conformance is claimed against a version, never against the trunk. A claim
     that tracks the latest state of this repository cannot be false, and so says

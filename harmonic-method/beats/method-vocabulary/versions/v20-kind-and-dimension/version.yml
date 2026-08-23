@@ -1,0 +1,70 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.20
+  beat: HM-B-003
+  title: A dimension is never a type
+  status: active
+  summary: >
+    Twice now a property that any kind of knowledge can carry has been found
+    sitting in the kind slot — confidence, as a Note type for the unverified, and
+    reach of consequence, in a tier named for how much a decision matters. Both
+    were corrected one at a time, and nothing stated the rule that would have
+    caught either.
+
+    It is stated now. A Note's kind is what the knowledge is, carried by type and
+    optionally narrowed by subtype. Everything else is a dimension, orthogonal to
+    kind and to the other dimensions, and belongs in a field of its own. The
+    reason is not tidiness — a dimension in the kind slot makes the kinds
+    incomparable, because two Notes then differ on two axes while appearing to
+    differ on one.
+
+    No dimension is named yet, and the list of what implementations own is stated
+    instead. That is the whole change: the rule that catches the next one, without
+    guessing which it will be.
+
+    Done when: the distinction is normative; the rule forbidding a dimension in
+    the type slot is stated; the dimensions implementations own are listed as
+    extensions rather than as owed fields; and the deferral of the one dimension
+    that was designed carries what would settle it.
+  scope: >
+    In: the kind and dimension statement, the list of dimensions implementations
+    own, and the rule forbidding a dimension in the type slot. The two Notes
+    recording the distinction and the deferral. A new Beat for knowledge arrival,
+    scoped and not yet decomposed.
+    Out: naming any dimension, including reach of consequence, which was designed
+    and then withdrawn in the same sitting once its vocabulary was tested against
+    a host the altitudes do not contain. The deferral is recorded with what would
+    settle it, which is a second host hierarchy to design against.
+    Out also: the ingestion gap itself, which is why the new Beat exists rather
+    than a field. Three deferrals have now landed on the same missing concept and
+    a fourth patch would have been the third place it was half-answered.
+    Out also: recording the new Beat's score as structured data on the Beat. That
+    is the next step in the rubric Beat, and putting the number in prose here
+    rather than in a field is deliberate — a score with no rubric version beside
+    it is exactly what that step exists to fix, so this one does not pretend to
+    have fixed it early.
+    Owed, not done: two steps remain after this one.
+    Scored, and it does not pass: the new Beat comes to 3.86 on the published
+    rubric — Distinctive 4, Harmonious 4, Substantial 5, Durable 4, Clear 4,
+    Strategically Aligned 2, Outcome-Oriented 4 — against a reference threshold of
+    4. The shortfall is one dimension and it is not in the Beat. The system Coda
+    promises reading the entity model, naming the functions, assessing against the
+    instruments and getting the same answer anywhere; it says nothing about the
+    model being adequate to the work brought to it, so a Beat that adds a missing
+    concept connects to no stated objective without reading in something the Coda
+    does not say. That is a defect in the Coda and it is fixed in the next step
+    rather than absorbed by inflating a score.
+    Worth recording, because it arrives from a new direction: the trap found in
+    the retired dimension was never specific to that dimension. A 4.0 gate on a
+    mean of seven needs a total of 28, and six dimensions at Strong come to 24 —
+    so any single dimension below Strong fails unless a 5 elsewhere buys the
+    shortfall back, one 5 per point lost. This Beat scores 27 with a 2 on one
+    dimension and a 5 on another, which is the same total the retired dimension's
+    sanctioned floor produced from six Strongs and a 3, reached by a different
+    route. Named here; not acted on here, because the threshold is an
+    implementation's choice and this is not the step to argue about it.
+    Risks stated: a rule with no named dimension reads as abstract, so both
+    corrections it generalizes are cited in the decision, which is the evidence
+    that the rule describes something that actually happened twice; and a new Beat
+    opened with no versions is a placeholder until someone plans its first step,
+    which the Note attached to it is written to survive.
