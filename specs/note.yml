@@ -5,6 +5,29 @@ summary: >
   Typed knowledge attached to the entity it informs. Notes are the decision
   and context lineage: why things are the way they are, preserved where the
   work happens rather than in disconnected documents.
+kind_and_dimension: >
+  A Note's kind is what the knowledge is. It is one value — `type`, optionally
+  narrowed by `subtype` — and nothing else belongs in that slot. Everything else
+  a Note carries is a dimension: a property any kind can hold in any degree,
+  orthogonal to kind and to the other dimensions. How sure someone is, how far
+  the consequences travel, who may read it, where it came from, whether anyone
+  has checked it — none of these is a kind of knowledge. A dimension put in the
+  kind slot makes the kinds incomparable, because two Notes then differ on two
+  axes while appearing to differ on one.
+dimensions:
+  method_named: >
+    None yet, deliberately. The distinction is stated before any dimension is
+    named because the distinction is what stops the next one arriving as a type,
+    and it holds whatever the eventual list turns out to be. Naming a dimension
+    is a separate decision each time, and each needs a vocabulary that survives
+    the entity model growing.
+  implementation_owned: >
+    Confidence, reach of consequence, classification and confidentiality tiers,
+    provenance, processing or triage state, and retention. An implementation
+    carrying any of them is extending the method, and declares them as field
+    extensions. Two are constrained without being specified — lineage must be
+    legible whatever the classification scheme, and Notes do not expire — and
+    those constraints are rules below rather than fields here.
 type_hierarchy: >
   The four types are a hierarchy, not a list. Every Note is context in the
   general sense — the Note is the context — and `type` names the specialization
@@ -62,6 +85,8 @@ rules:
   - A subtype narrows its type and never contradicts it. A reader that does not
     recognize a subtype falls back to the type, which is the whole reason the
     type is closed and the subtype is free.
+  - A dimension is never expressed as a type. A property that any kind can carry
+    belongs in a field of its own, whether or not the method names that field.
   - A Note is legible to everyone who can act on the entity it informs. An
     implementation may classify and restrict, and most will; what it may not do
     is let a Note be cited as lineage by a reader who cannot open it. A citation

@@ -1,0 +1,32 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-077
+  type: background
+  attached_to: HM-B-008
+  content: >
+    This Beat exists because three separate deferrals turned out to be one
+    missing concept. Disposable capture was declined as a property of a Note and
+    pointed at a triage stage that the method does not describe. A pending
+    verification state was named as owed and has no home while nothing models the
+    interval before knowledge is settled. And a Note cannot be written at all
+    until the entity it informs exists, because attachment is required and the
+    checker resolves it — which inverts the order the work actually happens in,
+    since a team learns something and only then decides what capability it
+    implies.
+
+    All three are the same shape. The method describes knowledge once it is
+    attached, settled and preserved, and describes nothing about its arrival.
+
+    Two things make this a capability rather than a field. The promotion step is
+    accountable work, not plumbing: deciding what a body of captured knowledge
+    implies about capability is architectural coherence, which the method already
+    assigns to the Composer — so an accountability is named for an act the entity
+    model does not contain. And a reference implementation already has the
+    machinery, in a triage state and a clustering that proposes whether captured
+    knowledge affects an existing capability or could form a new one, which is
+    evidence the concept is real and currently invented per implementation.
+  rationale: >
+    Recorded before decomposition so that whoever plans the first step is not
+    working from the last of the three deferrals alone. Two of them read as small
+    when met individually, which is exactly why they were each deferred, and the
+    third is what makes the shape visible.

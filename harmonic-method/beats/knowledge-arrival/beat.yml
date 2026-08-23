@@ -1,0 +1,22 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-008
+  title: Knowledge that arrives before its subject
+  status: open
+  coda:
+    statement: >
+      Knowledge is captured when it is learned rather than when the thing it
+      concerns exists, and the step that turns captured knowledge into an
+      attached record — deciding what it implies about capability — is a named
+      act somebody answers for rather than a gap each implementation fills
+      differently.
+    parent: HM-CODA
+  description: >
+    The capability by which knowledge enters a system before the entity it
+    informs has been defined, and is later promoted into a record attached to
+    one. Covers capture with no host, the grouping that suggests what a body of
+    captured knowledge implies, and the promotion itself. Distinct from the Note,
+    which specifies knowledge once it is attached and says nothing about how it
+    got there.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

@@ -2,6 +2,47 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A dimension is never a type.** Twice a property any kind of knowledge can
+  carry has been found sitting in the kind slot: confidence, as a Note type for
+  the unverified, and reach of consequence, in a tier named for how much a decision
+  matters. Both were corrected one at a time and nothing stated the rule that would
+  have caught either. A Note's kind is what the knowledge is — `type`, optionally
+  narrowed by `subtype` — and everything else is a dimension, orthogonal to kind
+  and to the other dimensions, belonging in a field of its own. The reason is not
+  tidiness: a dimension in the kind slot makes the kinds incomparable, because two
+  Notes then differ on two axes while appearing to differ on one, and every
+  downstream filter inherits the ambiguity. No dimension is named yet — the
+  distinction is what catches the next one, and it holds whatever the list turns
+  out to be. What implementations own is listed instead: confidence, reach,
+  classification tiers, provenance, triage state, retention. See HM-BV-003.20 and
+  HM-N-075.
+  - **Reach of consequence was designed and withdrawn in the same sitting.** As an
+    enum of the altitudes it assumed every host sits in the altitude hierarchy and
+    that extent is measured in altitudes — both fail the moment a Note can attach
+    to a party rather than a scope of work, since a person is not an altitude. Two
+    shapes survive that test and neither is chosen without a second host hierarchy
+    to design against. See HM-N-076.
+- **`HM-B-008`, knowledge that arrives before its subject (new capability, no steps
+  planned yet).** Three separate deferrals turned out to be one missing concept:
+  disposable capture pointed at a triage stage the method does not describe, a
+  pending verification state has no home while nothing models the interval before
+  knowledge is settled, and a Note cannot be written until the entity it informs
+  exists — which inverts the order the work actually happens in. The method
+  describes knowledge once it is attached, settled and preserved, and describes
+  nothing about its arrival. A capability rather than a field, because the
+  promotion step is accountable work the entity model does not contain. See
+  HM-N-077.
+  - **It scores 3.86 and does not pass**, and the shortfall is not in the Beat.
+    Strategically Aligned is 2 because the system Coda says nothing about the model
+    being adequate to the work brought to it, so a Beat adding a missing concept
+    connects to no stated objective. Recorded rather than absorbed by inflating the
+    score; the Coda is fixed in the next step.
+  - Worth noting from a new direction: the trap found in the retired dimension was
+    never specific to it. A 4.0 gate on a mean of seven needs a total of 28, and six
+    dimensions at Strong come to 24 — so any single dimension below Strong fails
+    unless a 5 elsewhere buys the shortfall back, one 5 per point lost. This Beat's
+    27 comes from a 2 paid for by a 5; the retired dimension's sanctioned floor
+    reached the same total from six Strongs and a 3.
 - **Two properties a Note has to have before anything can be built on it**, one
   added and one deliberately withheld.
   - **A Note is legible to everyone who can act on the entity it informs.** An
