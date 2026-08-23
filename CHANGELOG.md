@@ -2,6 +2,30 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Two properties a Note has to have before anything can be built on it**, one
+  added and one deliberately withheld.
+  - **A Note is legible to everyone who can act on the entity it informs.** An
+    implementation may classify and restrict, and every serious one will; what it
+    may not do is let a Note be cited as lineage by a reader who cannot open it. A
+    Note nobody can read satisfies every structural rule and defeats the claim the
+    method rests on — worse than an absent Note, because the citation resolves and
+    the reader concludes the reasoning exists and is simply not for them, which
+    stops the question being asked again. Where a restriction genuinely forbids
+    that, the readable Note carries the decision and enough reasoning to act on,
+    and the restricted material is evidence rather than the record. No
+    classification scheme is specified: the tiers vary by organization and by
+    regulation, and the bound is what protects the lineage under any of them. See
+    HM-BV-003.19 and HM-N-073.
+  - **Notes do not expire.** No time to live, no ephemerality flag, no automatic
+    disposal — the Note's first rule is that it is preserved, and lineage that
+    disposes of itself is a log. The need behind the proposal is real and is
+    answered elsewhere: the reference implementation already carries a
+    pre-promotion triage state, so disposable capture exists as a stage before a
+    Note rather than as a property of one. Retention is explicitly not foreclosed,
+    and the distinction to start from is recorded — expiry disposes of a record
+    because time passed, retention because an obligation says it must be gone. The
+    unaddressed case is named rather than left to be discovered: what happens to a
+    decision whose cited evidence is destroyed under obligation. See HM-N-074.
 - **`context` stops being one of the four Note types.** The type for knowledge
   that rises to no narrower kind is now **`background`**, and no type is called
   context — every Note is context in the general sense, and the word for the whole

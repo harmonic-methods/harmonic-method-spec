@@ -1,0 +1,48 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.19
+  beat: HM-B-003
+  title: A Note a reader can depend on
+  status: active
+  summary: >
+    Two properties a Note has to have before anything can be built on it, one
+    added and one deliberately withheld.
+
+    Added: a Note is legible to everyone who can act on the entity it informs. An
+    implementation may classify and restrict — every serious one will — but it may
+    not let a Note be cited as lineage by a reader who cannot open it. Where a
+    restriction genuinely forbids that, the lineage is what gets written at the
+    readable level and the restricted material is evidence rather than the record.
+
+    Withheld: notes do not expire. Time to live was considered and declined. The
+    method's first rule for a Note is that it is preserved, so an expiry field
+    would contradict the entity's own opening promise, and the ephemeral tier the
+    proposal was reaching for turns out to already exist in the reference
+    implementation as a pre-promotion triage state.
+
+    Done when: the legibility bound and the redaction rule are normative; the
+    decision against expiry is recorded with what would reopen it; and neither
+    change specifies a classification scheme.
+  scope: >
+    In: the three rules on the Note spec — the legibility bound, the redaction
+    rule, and the statement that a Note does not expire — and the two Notes
+    recording the decisions.
+    Out: any classification scheme. Public, internal, confidential, restricted and
+    their equivalents vary by organization and by regulation, and a standard that
+    fixed one would be wrong for most adopters. The method states the bound that
+    holds whatever the scheme is; naming the tiers is an implementation's job and
+    belongs in its conformance declaration.
+    Out also: a retention policy. Declining expiry is not the same as ruling out
+    retention forever, and the difference between the two is recorded so that a
+    future retention rule starts from the distinction rather than rediscovering it.
+    The unaddressed case is named: what happens to a decision whose cited evidence
+    is destroyed under obligation.
+    Out also: visibility as a field. The bound constrains an implementation's
+    visibility model without requiring the method to have one.
+    Owed, not done: two steps remain after this one, both additive.
+    Risks stated: a bound stated without a mechanism is unenforceable here, which
+    is the ordinary condition of everything in this repository and is why the
+    conformance declaration exists — an implementation that restricts lineage is
+    contradicting a rule, and the rule is now specific enough to say so. The
+    no-expiry rule is the one addition here that a real implementation is most
+    likely to already contradict, which is the point: it is now declarable.

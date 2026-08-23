@@ -1,0 +1,33 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-074
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.19
+  content: >
+    Notes do not expire. There is no time to live, no ephemerality flag, and no
+    automatic disposal. Retention is a separate question and is not settled here.
+  rationale: >
+    The Note's first rule is that it is preserved and that superseding is a new
+    Note referencing the old. An expiry field would contradict the entity's own
+    opening promise, and the promise is the reason the entity is worth having —
+    lineage that disposes of itself is a log.
+
+    The proposal came from a real need, which is that a great deal of what people
+    want to capture is disposable, and forcing it through a permanent record makes
+    capture expensive enough that it stops happening. That need is answered
+    somewhere else. The reference implementation already carries a pre-promotion
+    triage state, so disposable capture exists there as a stage before a Note
+    rather than as a property of one — cheap to write, cheap to discard, and
+    promoted deliberately. Naming the tier that exists is a better answer than
+    giving the permanent record a timer.
+
+    Retention is explicitly not foreclosed, and the distinction to start from is
+    the one this decision rests on. Expiry disposes of a record because time
+    passed. Retention disposes of it because an obligation says it must be gone —
+    a legal hold lapsing, a client contract ending, a subject requesting erasure.
+    The first contradicts preservation and the second overrides it, and they are
+    not the same argument. A future retention rule has to say what happens to a
+    decision whose cited evidence is destroyed under obligation, because that is
+    the case where preservation and law actually collide, and it is not addressed
+    by anything written here.
