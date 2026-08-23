@@ -2,6 +2,39 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **An anchor that can be wrong.** The method names drift as the Conductor's
+  central value and specifies the entity that makes drift computable in full, and
+  nothing here produced one. HM-N-036 cleared the ground for this instrument when
+  it refused a codebase-probing dimension in the plan rubric — assessing
+  realized-against-planned belongs to a cadence anchor, not to a rubric scoring a
+  plan — and the ground stayed clear. See HM-BV-001.4.
+  - **It defines no convergence scale, and that is the point.** `downbeat.yml`
+    says how convergence is computed and on what scale is an implementation's,
+    which is not a gap someone forgot to fill: a percentage of planned scope means
+    something for software and nothing for an organizational practice, and leaving
+    it open is what lets the entity hold everywhere. Every other instrument here
+    carries a scale, so one without looks unfinished beside them — and adding one
+    would make a number canonical that the spec said was theirs. Worse, a reading
+    that looks like a score invites comparison between systems meaning different
+    things by it, manufacturing exactly the false equivalence parity exists to
+    prevent. See HM-N-105.
+  - **A reading of the record is not a reading of the capability.** The spec says
+    a Downbeat records where a capability *honestly* stood, and an agent can see
+    what the record claims rather than what is true. This repository has produced
+    an instance of each direction: thirteen steps once sat marked in flight with
+    their work already on the trunk, and in the same reconciliation one step read
+    as further along than it was because its work merged into a branch that had
+    itself already merged. So the instrument reports what it examined and what it
+    took on the record's word as two lists, and says what it could not determine.
+    That split is also the mitigation for having no scale — prose can be written
+    loosely, an enumeration of what you actually looked at much less so. See
+    HM-N-106.
+  - It refuses to sign an anchor. `taken_by` is a person, or an agent under a
+    named person's accountability, and an anchor nobody answers for is not
+    evidence. It also never edits a prior anchor, never grades, and takes one
+    capability at a time — a single reading across a portfolio averages away the
+    only thing worth knowing.
+
 - **The published command runs as published.** The front page tells an adopter to
   point the checker at their tree with an absolute path, and an absolute path did
   not work: the argument was joined onto the caller's working directory, which

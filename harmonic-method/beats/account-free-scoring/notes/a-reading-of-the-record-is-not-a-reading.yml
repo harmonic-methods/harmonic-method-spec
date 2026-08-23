@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-106
+  type: decision
+  attached_to: HM-B-001
+  beat_version: HM-BV-001.4
+  content: >
+    A Downbeat taken by this instrument separates what was examined directly from
+    what was taken on the record's word, and states what could not be determined.
+    A reading assembled only from status fields must say that it is a reading of
+    the record rather than of the capability.
+  rationale: >
+    The spec says a Downbeat records where a capability *honestly* stood, and the
+    word is doing work. An agent handed a tree can see what the record claims. It
+    cannot see what is true, and the two come apart in both directions.
+
+    This repository has produced an instance of each, which is why the split is a
+    rule rather than advice. Thirteen steps once sat marked in flight with their
+    work already on the trunk — a record lagging its reality, and an anchor taken
+    then would have understated convergence badly. In the same reconciliation, one
+    step read as further along than it was because its work had merged into a
+    branch that had itself already merged, so nothing reached the trunk. A reading
+    built from status fields would have been wrong in opposite directions on the
+    same day.
+
+    So the instrument reports two lists rather than one conclusion. What it
+    examined stands as evidence. What it took on the record's word is still
+    useful and is labelled, so a later reader can see which half to distrust when
+    the record turns out to have been wrong. And where it could not tell, it says
+    so — the same discipline the reconciliation instrument already applies when it
+    refuses to report an unanswered question as agreement.
+
+    This is also the mitigation for having no scale. A prose reading with no band
+    to land in could be written loosely; a reading that has to enumerate what it
+    actually looked at is much harder to write loosely, because the enumeration
+    is where the looseness would show.

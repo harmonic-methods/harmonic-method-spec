@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.8
   beat: HM-B-006
   title: The published command runs as published
-  status: active
+  status: delivered
   summary: >
     The front page tells an adopter to point the checker at their tree with an
     absolute path, and an absolute path did not work. A tree argument was joined

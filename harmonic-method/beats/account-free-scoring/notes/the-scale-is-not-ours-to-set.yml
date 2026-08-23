@@ -1,0 +1,41 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-105
+  type: decision
+  attached_to: HM-B-001
+  beat_version: HM-BV-001.4
+  content: >
+    The Downbeat instrument defines no convergence scale. It uses the adopter's
+    if they have one and names it, writes prose if they do not and says so, and
+    never introduces a number this repository has not defined.
+  rationale: >
+    `specs/downbeat.yml` says the method requires a reading be taken and
+    preserved, and that how it is computed and on what scale is an
+    implementation's. That is not a gap someone forgot to fill. Convergence is
+    the one judgement in the method whose right form genuinely differs by medium
+    — a percentage of planned scope means something for software and nothing for
+    an organizational practice — and leaving it open is what lets the entity hold
+    everywhere.
+
+    The temptation to add one here is strong precisely because every other
+    instrument in this repository carries a scale, so a Downbeat instrument
+    without one looks unfinished beside them. Yielding would do more damage than
+    the inconsistency it removes. A published scale here becomes canonical by the
+    same argument that makes the dimension tables canonical, and every
+    implementation would then be measured against a number the spec explicitly
+    said was theirs. That is not an extension of the method, it is a
+    contradiction of a field's own description, and this repository would be the
+    one carrying it.
+
+    The second damage is subtler and is the reason this is worth a Note rather
+    than a line in the instrument. A reading that looks like a score invites
+    comparison, and readings from two systems that mean different things by the
+    same number are worse than readings nobody tries to compare. The parity this
+    repository defends is that a score means the same thing wherever it is
+    produced; publishing a scale the method left open would manufacture the exact
+    false equivalence that parity exists to prevent.
+
+    The cost is accepted rather than denied. Prose is harder to compare and
+    easier to write loosely than a number, and the instrument is more subjective
+    for having no band to land in. The mitigation is the honesty split in
+    [HM-N-106], not a scale.
