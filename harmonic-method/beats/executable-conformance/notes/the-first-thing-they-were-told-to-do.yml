@@ -1,0 +1,40 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-104
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.8
+  content: >
+    A tree argument is resolved rather than joined, so the absolute form the
+    front page instructs works. The tool was corrected; the instruction was not
+    changed to match the tool.
+  rationale: >
+    Two fixes were available and only one of them is honest. Rewording the front
+    page to instruct a relative path would have taken a line, passed every check,
+    and left a checker that mishandles a perfectly ordinary argument — with the
+    documentation now shaped around the defect so that nobody would find it
+    again. The capability here is that anyone can verify a claim themselves with
+    one command; narrowing the command to the form that happens to work narrows
+    the capability and calls it a fix.
+
+    Worth recording how it was found, because the mechanism generalizes. It was
+    not found by reading the code or by a check. It was found by using the
+    instrument on something real — dogfooding a different capability entirely,
+    against a tree in a scratch directory, which is the first time anything here
+    had been pointed at a tree by absolute path. Every run inside this repository
+    uses the relative form, and so would every example an author tries while
+    writing the instruction. A defect reachable only from outside survives any
+    amount of internal use.
+
+    The failure message is the part that turns a bug into a bad first impression,
+    and it is why this is filed as a decision rather than a fix. The check looked
+    at a relocated path and the message printed the original, so it named a file
+    the adopter can see exists and said it was not there. Someone following the
+    published instruction exactly is told their tree is malformed. The lesson the
+    guard encodes is not "resolve paths" but "run the published form, from
+    outside, against something real" — which is why the check spawns the command
+    rather than calling the function.
+
+    A missing tree is checked alongside the two working forms. A resolution
+    change that made every path appear to exist would satisfy an absolute case
+    and a relative case and be worse than the defect it replaced.
