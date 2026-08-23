@@ -1,6 +1,6 @@
 ---
 name: beat-coda-quality-check
-description: Score a Harmonic Method Beat across the seven published quality dimensions (Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a Beat.
+description: Score a Harmonic Method Beat across the seven published quality dimensions (Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Outcome-Oriented), 1-5 each, with reasoning and improvement guidance. Use when asked to check, grade, or improve a Beat.
 ---
 
 # Beat Quality Check
@@ -60,21 +60,19 @@ the context was missing.
    by the Coda above it (in the reference implementation, the project's stated
    strategy).
    Red flag: Nice-to-have that doesn't connect to stated objectives.
-7. **Business Outcome** (`businessOutcome`) — Expressed at VP/CFO/board level —
-   the outcome survives any implementation rewrite and justifies a standalone
-   budget line item. Infrastructure and platform quality Beats (reliability, scalability,
-   accuracy guarantees) are a valid distinct category: their buyer is internal
-   leadership rather than an end user, so a score of ~3/5 is an expected and
-   acceptable floor for this class — it signals indirect value, not a quality
-   defect. Do not suggest restructuring or folding an infrastructure Beat into
-   another Beat.
-   Red flag: Describes a specific implementation step, technology, or one-off
-   internal task rather than a durable business outcome (e.g. "add Stripe
-   webhook handler", "configure Redis cluster"). When a Beat covers
-   infrastructure or platform quality and scores ~3/5, this is expected — do NOT
-   recommend restructuring, folding it into another Beat, or converting it to a
-   constraint Note, as those remedies destroy audit traceability for a
-   legitimate category of work.
+7. **Outcome-Oriented** (`outcomeOriented`) — Stated as the outcome someone
+   commits to, not as the work that produces it. The outcome survives any change
+   of implementation: rewrite the system, replace the procedure, retire the tool,
+   and the Beat still names the same thing. Whoever authorises the work should
+   recognise it as what they are getting — a customer, a client, or the
+   organisation's own leadership, whether or not money changes hands.
+   Red flag: Names a step, a technology, or a one-off task rather than a durable
+   outcome ("add a webhook handler", "configure the cache cluster", "run the
+   onboarding workshop"). A Beat whose beneficiary is internal rather than an end
+   user is not penalised for that and has no lower ceiling — reliability,
+   scalability and accuracy guarantees are outcomes leadership commits to, and a
+   well-framed one scores as highly here as any other. Score how the outcome is
+   framed, never who it is for.
 
 ## Output format
 
