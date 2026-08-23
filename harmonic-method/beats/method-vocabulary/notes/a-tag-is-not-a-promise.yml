@@ -1,0 +1,40 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-090
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.23
+  content: >
+    The spec set stays in the 1.x line while the method is stabilizing, and a
+    change that breaks a permitted value takes a minor step. What triggers a major
+    is a consumer who can be broken, not the existence of a tag. This supersedes
+    the statement recorded with spec set 1.1.0 that a renamed value becomes a
+    major from the first tag onward.
+  rationale: >
+    The earlier rule set its trigger on the wrong thing, and it took a real case to
+    show it. Tags now exist and the package ships the specs, so by that rule three
+    steps in flight would each be a major. But the tag was cut to reserve the
+    package name, nothing consumes the spec set it published, and the version it
+    carries is 1.1.0 while the changes land in 1.2.0, which has never been tagged.
+    A tag is a fact about this repository; a promise is a relationship with someone
+    else, and only the second is worth paying a major for.
+
+    Stating it as a consumer test rather than a tag test also survives the case the
+    tag test gets wrong in the other direction — a spec set published and depended
+    on before anyone thought to tag it. The question to ask is whether a change
+    would break someone, which is answerable, rather than whether a marker exists,
+    which is merely observable.
+
+    The 1.x policy rests on the surface not being settled. A major line means
+    something when the thing it protects is stable enough that the promise is worth
+    what it costs to keep; this repository has changed a dimension, a Note type, a
+    catch-all value and an enum's openness within one cycle, which is not that
+    profile yet. The policy expires when someone judges the method stable, and
+    naming the condition rather than a date is deliberate — the condition is a
+    judgement and a date would be invented.
+
+    Worth recording as a reading habit rather than only as a decision: the claim
+    that nothing had been released was true when first made and kept being repeated
+    after tags appeared, because nobody re-read it against the tag list. The claim
+    to check is not whether a version is unreleased but whether anything depends on
+    it.

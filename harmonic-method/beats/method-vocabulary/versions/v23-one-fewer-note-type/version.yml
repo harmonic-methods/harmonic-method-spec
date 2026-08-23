@@ -1,0 +1,53 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.23
+  beat: HM-B-003
+  title: One fewer Note type
+  status: active
+  summary: >
+    The Note type recording something believed but not verified is retired. Four
+    types remain — context, constraint, guidance, decision. The two instances in
+    this repository that used it become context, and the one whose rationale
+    named its own type has that sentence corrected rather than left to contradict
+    the file it sits in.
+
+    This is a removal from the normative surface and the first one this
+    repository has made. A recorded rule says a removed value becomes a major once
+    a tag exists, and tags now exist — but the test in that rule is the wrong one.
+    The tag was cut to reserve the package name, nothing consumes the spec set it
+    shipped, and the version it carries is 1.1.0 while this lands in 1.2.0, which
+    has never been tagged. A promise nobody holds cannot be broken, so the spec set
+    stays in the 1.x line while the method is stabilizing.
+
+    Done when: the enum, the field description, the agent-facing entry point, and
+    the checker all carry four types; both instances are re-typed and internally
+    consistent; the decision cites what it supersedes; and the version this lands
+    under is decided rather than inherited.
+  scope: >
+    In: the enum and its description in the Note spec; the type list on the
+    agent-facing entry point; the checker's accepted types; the two instances and
+    the rationale sentence naming the retired type; the corrected changelog
+    characterization; and the decision Note with the gap it leaves.
+    Out: rewriting the delivered step that describes creating an instance of the
+    retired type. It recorded what was true when it shipped, and the evidence of
+    what happened is worth more than a clean read — the new decision cites it
+    instead, which is the rule for a decision that changes course. Out also: the
+    field that would replace what the type expressed — a status marking a claim
+    as unsettled, not a confidence number, because "not yet validated" is an open
+    obligation rather than a degree of belief. It is named as owed in the decision
+    rather than added here, since a status needs its exits defined and inventing
+    them in the same step that creates the vacancy is how an unconsidered field
+    becomes permanent.
+    Out also: the generic use of the word in the Beat Version spec's prose about
+    what a summary should contain. That names a kind of content, not a type.
+    Owed, not done: HM-BV-003.22 and HM-BV-006.6 are both unmerged as this is
+    written, so all three stay active and closing them belongs to the next
+    substantive step after this branch lands.
+    Also in: the correction to what triggers a major, which two later steps in
+    this stack depend on — each renames a value and would otherwise inherit an
+    unexamined answer.
+    Risks stated: the method now has no type-level signal for unverified
+    knowledge, so the signal has to live in a Note's own wording — both re-typed
+    instances already say in their first line that they are untested, which is
+    why they survive the change legibly, and a third that did not would have
+    needed rewriting rather than re-typing.

@@ -2,6 +2,16 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **One fewer Note type**, and the trigger for a major is corrected. The type for
+  something believed but not verified is retired; four remain. It answered a
+  question about confidence rather than about kind, and both instances here were
+  background about how much evidence something rests on. The removal would be a
+  major under the rule recorded with spec set 1.1.0 — a renamed value becomes one
+  once a tag exists — but that rule tests the wrong thing. The tag holds the
+  package name, nothing consumes the spec set it shipped, and this lands in 1.2.0,
+  which has never been tagged. A major is owed to a consumer who can be broken,
+  not to the existence of a marker. The set stays in 1.x while the method is
+  stabilizing. See HM-BV-003.23, HM-N-086 and HM-N-090.
 - **A bounded step's status is carried, not derived.** A Beat Version's and a
   Revision's three values live on the entity. An implementation may compute an
   extra label from whatever its medium affords, but a value derived from a signal
