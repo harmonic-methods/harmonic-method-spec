@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.4
   beat: HM-B-006
   title: The two edges the conformance statement left undrawn
-  status: active
+  status: delivered
   summary: >
     Publishing the conformance statement exposed two questions it could not
     answer, both found by trying to classify a real implementation against it.

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.22
   beat: HM-B-003
   title: The published surfaces stop restating what a check can count
-  status: active
+  status: delivered
   summary: >
     Two defects of the same shape, both invisible to every check this repository
     runs. The reconciliation instrument carries nine checks and both published

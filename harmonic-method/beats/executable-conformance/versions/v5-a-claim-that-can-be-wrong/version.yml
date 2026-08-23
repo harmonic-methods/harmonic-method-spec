@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.5
   beat: HM-B-006
   title: A claim that can be wrong
-  status: active
+  status: delivered
   summary: >
     The conformance statement said what a claim covers and left the claim itself
     shapeless, so two implementations could both declare conformance and mean

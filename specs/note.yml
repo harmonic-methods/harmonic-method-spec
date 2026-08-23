@@ -100,5 +100,15 @@ rules:
     a record that removes itself because time passed contradicts the first rule
     here. Retention under an obligation is a different question and is not
     settled by this.
+  - Knowledge that has arrived and is not yet attached is not a Note. `attached_to`
+    is required and stays required — it is what makes a Note lineage rather than a
+    document, because a decision nobody can reach from its consequences is not
+    recoverable. Capture before attachment is a stage before a Note, not a Note
+    with a field missing.
+  - Promoting captured knowledge into an attached record — deciding what it
+    implies about capability — is the Composer's to answer for. It is the same
+    judgement that function already owns — what the system is for, what belongs
+    inside it, and where its boundaries fall. An implementation may automate the
+    act; the accountability does not move.
   - A Note never attaches to a Beat Version. Knowledge that outlives the step
     belongs to the Beat; use beat_version to record which step produced it.

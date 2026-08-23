@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.24
   beat: HM-B-003
   title: Types narrow rather than multiply
-  status: active
+  status: delivered
   summary: >
     The Note type enum closes, and gains children instead. An implementation that
     needs to be more precise narrows a published value rather than adding a fifth

@@ -1,0 +1,62 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-008.1
+  beat: HM-B-008
+  title: Arrival is not attachment
+  status: active
+  summary: >
+    The first step of this capability decides the two things every later step
+    depends on, and adds no entity.
+
+    First: knowledge that has arrived and is not yet attached is not a Note. The
+    Note spec requires `attached_to` and will keep requiring it — that field is
+    what makes a Note lineage rather than a document, so relaxing it to admit
+    arrival would empty the entity of the property it exists for. Arrival is a
+    stage before a Note, which is the reading [HM-N-074] already reached from the
+    other direction when it declined expiry and pointed at a triage state instead.
+
+    Second: promotion — deciding what a body of captured knowledge implies about
+    capability — is accountable work, and it belongs to the Composer. That is not
+    a new assignment. It is what the Composer already owns: what the system is
+    for, what belongs inside it, and where its boundaries fall. Naming it here
+    means an implementation that automates promotion is automating a named
+    accountability rather than filling a gap however it likes.
+
+    What the captured thing actually carries is deliberately not specified. There
+    is one implementation to design against, and this repository has already
+    watched a published vocabulary fail on exactly that basis.
+
+    Done when: the method says arrival is not a Note and says why the requirement
+    stays; promotion is named as an act the Composer answers for; and the field
+    list is recorded as owed against a stated condition rather than left open.
+  scope: >
+    In: two rules on the Note spec — that knowledge with no host is not a Note,
+    and that promoting it is the Composer's to answer for; the Notes recording
+    both decisions and what the second one is waiting on.
+    Out: an entity for captured knowledge. It is earned — three deferrals met the
+    gap in practice and a real implementation carries the machinery — but earned is
+    not the same as designable. [HM-N-076] withdrew a published dimension in one
+    sitting because it was designed against a single host hierarchy, and there is
+    one implementation of arrival to look at. Naming the field list now would
+    repeat that exactly.
+    Out also: relaxing `attached_to`. Considered and refused rather than passed
+    over: it is the cheapest possible change and it would cost the Note its
+    defining property. A Note whose attachment is optional cannot be found by
+    whoever meets the consequences of the decision it records, which is the whole
+    claim the entity makes.
+    Out also: the grouping that suggests what captured knowledge implies. It is in
+    the Beat's description and is a later step — a suggestion mechanism is only
+    meaningful once there is something to group.
+    Out also: any statement about how promotion is triggered, whether by a person,
+    an agent, or a cadence boundary. The accountability is named; the mechanism is
+    an implementation's.
+    Owed, not done: the entity for captured knowledge, with the condition that
+    settles it stated in the Note — a second implementation of arrival to design
+    against, or one implementation plus a case its shape cannot carry.
+    Risks stated: this step adds two rules and no capability an adopter can use,
+    which is the honest shape of a first step on a capability whose substance is
+    owed — and it is a real risk that naming the accountability reads as having
+    solved the problem, so the Note says plainly what is still missing; and the
+    Composer gaining a named act at an altitude the entity model does not yet
+    contain is a small strain on the claim that the five functions are constant
+    across altitudes, noted rather than resolved.

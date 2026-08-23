@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.9
   beat: HM-B-002
   title: A score names the rubric that produced it
-  status: active
+  status: delivered
   summary: >
     Moving a dimension exposed a gap on both sides of the boundary. The front page
     already said a score produced here cannot tell you whether it predates the text

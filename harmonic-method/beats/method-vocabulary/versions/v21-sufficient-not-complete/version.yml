@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.21
   beat: HM-B-003
   title: Sufficient, not complete
-  status: active
+  status: delivered
   summary: >
     Scoring the newest Beat against the published rubric returned a shortfall on
     Strategically Aligned, and the defect was in the system Coda rather than the

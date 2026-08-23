@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.19
   beat: HM-B-003
   title: A Note a reader can depend on
-  status: active
+  status: delivered
   summary: >
     Two properties a Note has to have before anything can be built on it, one
     added and one deliberately withheld.

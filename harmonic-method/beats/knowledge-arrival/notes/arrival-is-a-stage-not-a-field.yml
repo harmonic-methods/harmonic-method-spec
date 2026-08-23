@@ -1,0 +1,41 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-092
+  type: decision
+  attached_to: HM-B-008
+  beat_version: HM-BV-008.1
+  content: >
+    Knowledge that has arrived and is not yet attached is not a Note, and
+    `attached_to` stays required. Capture before attachment is a stage before a
+    Note rather than a Note with a field missing. Promoting captured knowledge
+    into an attached record is the Composer's to answer for.
+  rationale: >
+    The cheapest available change was to make `attached_to` optional, and it is
+    refused rather than passed over, because it would have worked and cost the
+    entity everything. A Note is lineage precisely because it is reachable from
+    the thing whose consequences a reader has met. Make attachment optional and a
+    Note becomes a document that happens to live in the repository — findable if
+    you already know it exists, which is the condition the entity was created to
+    escape. The requirement is the property, not a constraint on it.
+
+    That leaves arrival needing somewhere else to live, and [HM-N-074] had already
+    reached the same place from the other direction. Declining expiry, it pointed
+    at a pre-promotion triage state as a stage before a Note rather than a
+    property of one. Two independent decisions arriving at the same shape is the
+    strongest evidence available here that the shape is right.
+
+    Naming promotion as the Composer's is not a new assignment and should not read
+    as one. Deciding what a body of captured knowledge implies about capability is
+    what that function already owns — what the system is for, what belongs inside
+    it, where its boundaries fall — and its stated discipline is resisting the
+    pressure to model temporary work as durable, which is exactly the judgement
+    promotion requires. What the method adds is that the act has a name, so an
+    implementation automating it is automating a named accountability instead of
+    filling a gap privately.
+
+    One strain is worth recording rather than smoothing. The five functions are
+    declared constant at every altitude, and this names an act the Composer
+    answers for at an altitude the entity model does not yet contain, since
+    captured knowledge has no altitude until it is attached. That is not a
+    contradiction today and could become one, and the step that specifies the
+    captured thing is where it has to be resolved.

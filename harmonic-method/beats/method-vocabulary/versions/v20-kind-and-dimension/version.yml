@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.20
   beat: HM-B-003
   title: A dimension is never a type
-  status: active
+  status: delivered
   summary: >
     Twice now a property that any kind of knowledge can carry has been found
     sitting in the kind slot — confidence, as a Note type for the unverified, and

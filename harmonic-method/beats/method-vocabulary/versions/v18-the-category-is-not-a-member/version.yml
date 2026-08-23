@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.18
   beat: HM-B-003
   title: The category is not one of its members
-  status: active
+  status: delivered
   summary: >
     `context` stops being one of the four Note types and becomes only the word for
     all of them. The type for knowledge that rises to no narrower kind is
