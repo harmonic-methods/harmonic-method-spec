@@ -2,6 +2,31 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A conformance claim now has a shape, and a check.** The statement said what a
+  claim covers and left the claim shapeless, so two implementations could both
+  declare conformance and mean different things, and neither could be
+  contradicted. A declaration requires the spec set version, who is claiming, and
+  every known contradiction; extensions and vocabulary mappings are optional,
+  because they do not change what a claim is worth. An empty divergence list is
+  the strong claim — omitting the list is not the same as declaring it empty, and
+  the check draws that distinction. `hm conformance <file>` checks the form, and
+  is most pointed about the move a declaration would most plausibly be used to
+  disguise: an added value on an enum declaring `additions: none` is reported as a
+  contradiction filed under the wrong heading. It cannot confirm behaviour, and
+  says so in its own limits. See HM-BV-006.5 and HM-N-069.
+  - **The earlier declaration shape is replaced, not extended.** It asked for one
+    entry per entity naming every field carried and every value permitted — a
+    mirror of the specs that nothing read and that would drift from them silently.
+    What a reader needs is the delta. The surface sentence promising a check over
+    fields, required-ness and permitted values is corrected in the same step to
+    say what is true, rather than left asserting coverage the tool does not
+    provide.
+- **The published command is now checked to the extent that it runs.** It broke
+  during the work above — a stray backtick, the entry point stopped parsing, and
+  the self-check still reported conformant, because every rule reads files rather
+  than running code. The command is the only part of this repository an adopter
+  executes and was the one part nothing loaded. Deliberately shallow, and made to
+  fail before it was believed. See HM-N-070.
 - **Encoding does not bind, and the checker now says so.** No spec file defines a
   directory layout, a file format, or an identifier scheme, yet the checker
   enforces a layout on any tree it is pointed at, and the published surface listed

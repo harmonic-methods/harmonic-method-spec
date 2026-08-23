@@ -22,13 +22,14 @@
  * Run with: npm run validate
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { spawnSync, execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
 import { checkBinding, checkPublicSurface } from './commit-discipline.mjs';
+import { checkDeclaration } from './conformance.mjs';
 import { normativeSkills, normativeText, digest, normativeItemCount } from './rubric-fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -437,6 +438,47 @@ function checkEnumDeclarations() {
 }
 
 /**
+ * The worked declaration ships as the shape an implementation copies, so it has
+ * to stay valid against the rules it illustrates. An example that no longer
+ * passes teaches the wrong shape to everyone who starts from it.
+ */
+function checkExampleDeclaration() {
+  console.log('== example declaration ==');
+  const p = 'examples/declaration.yml';
+  if (!existsSync(join(ROOT, p))) return fail(`${p}: not found`);
+  const failures = checkDeclaration(join(ROOT, p));
+  for (const f of failures) fail(`${p}: ${f}`);
+  if (failures.length === 0) console.log('  well-formed against the declaration rules');
+}
+
+/**
+ * The published command parses and dispatches.
+ *
+ * Nothing checked this, and it broke exactly once during the work that added the
+ * second subcommand: a stray backtick closed a template literal, the entry point
+ * stopped parsing, and the self-check still printed conformant — because every
+ * rule here reads files the command never loads. The command is the only part of
+ * this repository an adopter runs, so it is the last place that gap should exist.
+ *
+ * Deliberately shallow. It asserts the module loads and that the two streams are
+ * reported, not what any subcommand does — those have their own checks, and a
+ * smoke test that grows into a second test suite stops being run.
+ */
+function checkCommandRuns() {
+  console.log('== command ==');
+  const bin = join(ROOT, 'bin/hm.mjs');
+  if (!existsSync(bin)) return fail('bin/hm.mjs: not found');
+  const parsed = spawnSync(process.execPath, ['--check', bin], { encoding: 'utf8' });
+  if (parsed.status !== 0) return fail(`bin/hm.mjs does not parse: ${(parsed.stderr ?? '').split('\n')[0]}`);
+  const v = spawnSync(process.execPath, [bin, '--version'], { encoding: 'utf8' });
+  if (v.status !== 0) return fail(`bin/hm.mjs --version exited ${v.status}`);
+  if (!/spec set \d+\.\d+\.\d+/.test(v.stdout) || !/package\s+\d+\.\d+\.\d+/.test(v.stdout)) {
+    return fail(`bin/hm.mjs --version did not report both streams: ${JSON.stringify(v.stdout)}`);
+  }
+  console.log('  parses, and --version reports both streams');
+}
+
+/**
  * Retired altitude names, rejected on the normative surface only.
  *
  * The altitudes are portfolio, system, and beat. "Organization" was retired as an
@@ -489,11 +531,13 @@ if (TARGET) {
   checkRubricFingerprints();
   checkPublishedCounts();
   checkToolingVersion();
+  checkCommandRuns();
   checkReleaseInvariant();
   checkBindingDiscipline();
   checkPublicSurfaceHygiene();
   checkTree('harmonic-method');
   checkTree('examples');
+  checkExampleDeclaration();
   checkVocabulary(['harmonic-method', 'examples']);
 }
 

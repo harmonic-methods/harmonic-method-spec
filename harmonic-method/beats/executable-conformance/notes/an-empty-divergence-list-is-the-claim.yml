@@ -1,0 +1,48 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-069
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.5
+  content: >
+    A conformance declaration requires the spec set version, the name of the
+    implementation claiming, and a list of every contradiction its author knows
+    about. The list may be empty and omitting it is not the same as declaring it
+    empty. Extensions and vocabulary mappings are optional. A check reads the
+    declaration's form and never its truth.
+  rationale: >
+    The statement said what a claim covers and left the claim itself shapeless,
+    so two implementations could both declare conformance and mean different
+    things, and neither could be contradicted. A claim nobody can be wrong about
+    is the failure being guarded against here, and it is a more common failure
+    than a false claim.
+
+    The divergence list is the whole mechanism. An empty list is the strong claim
+    — that nothing published here is contradicted — and one counter-example
+    settles it. That is why the list is required rather than optional: an author
+    who omits it has said nothing, and an author who writes `divergences: []` has
+    staked something. The distinction is invisible in prose and decisive in a
+    check, so the check draws it.
+
+    Extensions and mappings are optional because they do not change what a claim
+    is worth. An extension needs no permission, so a reader who only wants to
+    know whether a score means the same thing can skip the list; a mapping helps
+    a reader translate and binds nobody. Making either required would have
+    charged every implementation for a courtesy.
+
+    This replaces the earlier declaration shape, which asked for one entry per
+    entity naming every field carried and every value permitted. That shape was a
+    mirror of the specs, so a declaration would restate what is already published
+    and drift from it silently, and nothing in the checker ever read it. What a
+    reader actually needs is the delta. The surface sentence that promised a check
+    covering fields, required-ness and permitted values is corrected in the same
+    step to say what is true — that a divergence is stated about one of those and
+    a check can judge it — rather than left asserting coverage the tool does not
+    provide.
+
+    What the check cannot do is stated in the declaration's own limits rather
+    than left for a reader to assume away. Nothing readable from outside can
+    establish that a system behaves as it says. A declaration is self-reported, so
+    a dishonest one passes; the check narrows what can be claimed vaguely, not
+    what can be claimed falsely, and overselling that would have been the vaguest
+    claim in the system.
