@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.8
   beat: HM-B-002
   title: A dimension that told you to fail
-  status: active
+  status: delivered
   summary: >
     The seventh Beat dimension carried a carve-out stating that infrastructure and
     platform-quality Beats score about 3 out of 5, that this is expected, and that

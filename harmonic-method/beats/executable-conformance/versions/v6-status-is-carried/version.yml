@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.6
   beat: HM-B-006
   title: A bounded step's status is carried, not derived
-  status: active
+  status: delivered
   summary: >
     This step was planned as the one that put a conformance statement on the
     normative surface, and most of that arrived from another direction first —

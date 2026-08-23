@@ -1,0 +1,45 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-007.2
+  beat: HM-B-007
+  title: The record catches up
+  status: active
+  summary: >
+    Thirteen steps sat active with their work merged. The expected lag is one —
+    [HM-N-053] states it and states why: a step cannot be marked delivered in the
+    change that delivers it, so the mark belongs to a step of its own, which is
+    itself active until it merges in turn.
+
+    Thirteen is not that lag. It is the backlog the same Note says makes the
+    discipline look unfollowed, and it accumulated because a twelve-step cycle was
+    written and merged without a closing step. One of the thirteen is older and
+    has a different cause, recorded rather than folded in: its Beat's second step
+    was merged into a branch that had already merged, so its work never reached
+    the trunk and the step stayed honestly incomplete.
+
+    Done when: every step whose work is on the trunk reads delivered; exactly one
+    step is active, and it is this one; and the reason a check cannot do this is
+    written down rather than left as an apparent omission.
+  scope: >
+    In: the status field on thirteen steps, and the Note recording what the
+    backlog was evidence of.
+    Out: a check. Nothing in the tree can tell whether a step's work has landed —
+    that fact lives in the history, not in the files, and the checker deliberately
+    reads files. A count-based rule was considered and refused: several steps
+    being genuinely in flight at once is normal and expected, so a cap on active
+    steps would fail correct trees while still passing a backlog spread across
+    Beats. What makes the backlog visible is the stated expected number, which
+    already exists.
+    Out also: rescuing the orphaned step. Its work is real, unmerged, and now
+    partly overtaken by what landed since — reconciling it is a step of its own,
+    not a rider on a bookkeeping change.
+    Out also: renumbering. This step takes HM-BV-007.2 although the orphaned step
+    already claims that identifier on its branch. Numbering follows what reached
+    the trunk, because the trunk is what a reader sees; the step that failed to
+    land is the one that adapts. Stated here so the rescue does not read it as a
+    collision it has to resolve silently.
+    Owed, not done: the orphaned step, the reference implementation's conformance
+    declaration, and a first step for the newest Beat. None is blocked.
+    Risks stated: this commit makes thirteen claims true and adds one that is not
+    yet — its own step reads active while its work is in review, which is the lag
+    working as designed rather than a fourteenth instance of the problem.

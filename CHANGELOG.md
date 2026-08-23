@@ -2,6 +2,19 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The record catches up.** Thirteen steps sat active with their work merged,
+  against a lag HM-N-053 bounds at one and explains: a step cannot be marked
+  delivered in the change that delivers it, so the mark belongs to a step of its
+  own. Twelve came from a cycle written and merged without a closing step. The
+  thirteenth had a different cause worth separating — its Beat's second step was
+  merged into a branch that had itself already merged, so the work landed on a dead
+  branch and never reached the trunk; that step is marked delivered only for the
+  part that merged, and the remainder is owed. No check is added: whether a step's
+  work has landed lives in the history rather than the files, and a cap on active
+  steps would fail correct trees, since several steps in flight at once is normal.
+  What made the backlog visible was the stated expected number — which is the
+  argument HM-N-053 makes, and this is the first case that tested it. See
+  HM-BV-007.2 and HM-N-091.
 - **A score now names the rubric that produced it.** Moving a dimension exposed a
   symmetrical gap neither side had noticed: the front page named one kind of
   staleness — whether a score predates the text it judged — and the reference

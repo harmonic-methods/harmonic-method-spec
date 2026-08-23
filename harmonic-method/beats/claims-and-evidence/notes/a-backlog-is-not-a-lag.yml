@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-091
+  type: background
+  attached_to: HM-B-007
+  beat_version: HM-BV-007.2
+  content: >
+    Thirteen steps were active with their work merged, against a lag [HM-N-053]
+    bounds at one. Twelve came from a single cycle written and merged without a
+    closing step. The thirteenth is older and has a different cause: its Beat's
+    second step was merged into a branch that had itself already merged, so the
+    work landed on a dead branch and never reached the trunk, and the step stayed
+    active because it was genuinely incomplete.
+  rationale: >
+    Recorded because the two causes look identical in the tree and are not the
+    same failure. Twelve steps were bookkeeping — the work is on the trunk and the
+    record had not caught up. One was substantive: nothing was on the trunk to
+    record. A reader who fixes both by editing status fields would make a false
+    claim about the thirteenth, which is why it is marked delivered only for the
+    part that merged and its second step is owed separately.
+
+    The number is what made this visible, which is the argument [HM-N-053] makes
+    and this is the first case that tests it. A lag of one reads as the discipline
+    working. Thirteen reads as nobody keeping the record, and the only reason it
+    was caught is that the expected value was written down and could be compared
+    against. An undocumented convention would have produced the same thirteen and
+    no signal.
+
+    What this suggests about the cycle rather than the record: a twelve-step cycle
+    is long enough that the closing step needs to be planned with it, not
+    remembered after. Every one of the twelve steps stated its own owed count in
+    its scope, so the backlog was visible in each of them and was never the thing
+    anyone was looking at — a count restated in twelve places is not the same as a
+    count anyone checks.

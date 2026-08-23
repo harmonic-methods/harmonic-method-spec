@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.23
   beat: HM-B-003
   title: One fewer Note type
-  status: active
+  status: delivered
   summary: >
     The Note type recording something believed but not verified is retired. Four
     types remain — context, constraint, guidance, decision. The two instances in

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-007.1
   beat: HM-B-007
   title: Name the capability and leave the history where it happened
-  status: active
+  status: delivered
   summary: >
     Nine recorded rules and four checks about holding this repository's claims to
     what it can show had accumulated under the capability that publishes the
