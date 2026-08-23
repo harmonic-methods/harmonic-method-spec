@@ -1,0 +1,62 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.25
+  beat: HM-B-003
+  title: The right second instance
+  status: active
+  summary: >
+    The decision that a dimension is never a type cited two instances. One of them
+    was wrong about the system it described, and a better one was in the same enum
+    unnoticed.
+
+    Withdrawn: the reference implementation's decision tier, which is a separate
+    optional field and therefore already conforming — the Note cited a compliant
+    system as a violation.
+
+    Substituted: that implementation's `document` Note type, which carries a
+    storage key, a MIME type, a processing status and an assignment status, and
+    which other Notes reference to record where they came from. Provenance and
+    processing state are both on this spec's own list of dimensions an
+    implementation owns.
+
+    The rule does not move. What moves is the evidence for it, and it gets
+    stronger: the implementation has to pass an explicit exclude filter to keep
+    this type out of note listings, which is the cost the rule predicts and a
+    plainer demonstration than the case it replaces.
+
+    Done when: the withdrawn citation is recorded as withdrawn and why; the
+    substituted instance is recorded with the evidence that settles it; and the
+    rule and the dimension list are untouched.
+  scope: >
+    In: one Note superseding [HM-N-075] on its evidence, and nothing else.
+    Out: the rule, the kind-and-dimension statement, and the dimensions list. All
+    three were right and none depended on the withdrawn instance — the rule always
+    rested on the retired confidence type, which is real.
+    Out also: editing [HM-N-075]. Notes are preserved and superseding is a new Note
+    referencing the old, which is this spec's first rule. The wrong citation stays
+    readable, because a reader who finds the correction should be able to see what
+    was corrected.
+    Out also: any change to the reference implementation. What the conforming move
+    is for its `document` type is a question for that implementation's own
+    conformance work, and the answer is not the one previously assumed — see below.
+    Out also: the conforming path for a provenance value. It is not a child of a
+    published type, which was the earlier assumption and is wrong for the same
+    reason the type itself is wrong: narrowing `background` with an ingestion
+    record still files a dimension as a kind. Where it does belong is the knowledge
+    arrival capability, and saying more than that here would be designing that
+    entity from this one case.
+    Raised, not decided: this may satisfy the condition [HM-N-093] set for
+    designing the captured-knowledge entity — one implementation plus a concrete
+    case its shape cannot carry. An ingestion record with no home in the model,
+    forced into the type enum and then filtered out of its own listings, is a
+    strong candidate for that case. It is raised rather than acted on because
+    [HM-N-079] puts the burden on the addition and the judgement belongs to whoever
+    plans that Beat.
+    Owed, not done: two steps are active with their work merged, against a bound
+    [HM-N-053] states as one, and this makes three. The bound is itself now known
+    to be understated — it assumes steps merge one at a time — and correcting it
+    together with the marking is a step of its own, awaiting a decision.
+    Risks stated: a superseding Note that withdraws evidence rather than a
+    conclusion is easy to misread as weakening the rule, so both this Note and the
+    summary above say explicitly that the rule does not move and why it never
+    depended on the withdrawn half.
