@@ -1,0 +1,50 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-103
+  type: decision
+  attached_to: HM-B-007
+  beat_version: HM-BV-007.3
+  content: >
+    The system outcome is restated, to name producing alongside reading, naming
+    and assessing, and to promise shared meaning rather than an identical result.
+
+    The statement it replaces, preserved here as `specs/coda.yml` requires:
+
+    "A team can adopt the Harmonic Method from this repository alone — read the
+    entity model and find it sufficient for the work they actually do, name who
+    answers for each of its five functions, assess that work against the
+    published instruments, and get the same answer any conforming implementation
+    would give — without an account, a vendor relationship, or a call."
+  rationale: >
+    Two faults, in opposite directions, and each was invisible until something
+    was measured against the statement rather than read alongside it.
+
+    The omission surfaced first. An instrument that composes and corrects
+    entities has no home in an outcome promising only that a reader can read,
+    name and assess — so a step serving it scored as indirect progress, correctly,
+    against a parent that did not reach it. That is the ninth reconciliation
+    check working: a Coda is written once and the work keeps arriving.
+
+    The overclaim is the more serious one because it was a promise about
+    behaviour. "Get the same answer any conforming implementation would give"
+    reads as a guarantee of identical output. Scores here come from an agent
+    reading a rubric, and [HM-N-081] had already refused to record a score as a
+    field precisely because an LLM score is not reproducible and doing so "would
+    give a non-deterministic judgement the authority of a field". The same
+    objection applies with more force to the root outcome, which was granting
+    that judgement the authority of a guarantee. An argument sustained about a
+    field does not stop applying because the claim moved to a higher altitude.
+
+    What the repository can actually show is what its own parity capability
+    promises: that a score means the same thing wherever it is produced, so
+    nobody has to re-learn what a 4 is. The root now says that, which is both
+    true and the thing an adopter needs — they are deciding whether to trust the
+    scale, not whether to expect a deterministic machine.
+
+    The trade in widening the outcome is recorded rather than hidden. A broader
+    outcome is a weaker instrument for judging whether work belongs, and the
+    fifth reconciliation check exists for exactly that. The clause added is
+    narrow on purpose — composing and correcting the entities, with an agent,
+    from this repository alone — and the alternative was worse: an outcome that
+    silently excludes a capability the repository ships teaches every future
+    reader that the outcome is decorative.
