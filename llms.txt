@@ -31,13 +31,21 @@ guards it against an unacknowledged edit.
 - skills/coda-alignment-check/SKILL.md: Conductor — reconcile a Coda chain across nine checks, reported as findings rather than a score
 The Producer and Promoter have no instrument yet, deliberately.
 
-## Composing
-One skill produces rather than assesses. It carries no dimensions and no scale,
-is not covered by the digest because there is nothing normative in it to guard,
-and defers every judgement to the instrument above by pointing at the file.
+## Producing
+Two skills produce rather than assess. Neither carries dimensions or a scale,
+neither is covered by the digest because there is nothing normative in either to
+guard, and both defer every judgement they need to an instrument above by
+pointing at the file.
 - skills/beat-composing/SKILL.md: Composer — compose a Beat and its Coda from a
-  plain description, ask for what is missing rather than inventing it, then score
-  the draft with beat-coda-quality-check read as written
+  plain description, ask for what is missing rather than inventing it, score the
+  draft with beat-coda-quality-check read as written, then revise from that score
+  and from the author's feedback
+- skills/downbeat-taking/SKILL.md: Conductor — take an immutable anchor on one
+  capability: the Coda frozen verbatim, and a reading of how far the work had
+  converged toward it. Defines no scale, because downbeat.yml leaves computation
+  to the implementation; separates what was examined from what was taken on the
+  record's word; reports drift against the prior anchor or states that there is
+  none to compare against
 
 ## Layout of a system
 One rule all the way down: an entity is a directory, its children are

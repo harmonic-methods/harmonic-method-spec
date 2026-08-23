@@ -1,0 +1,73 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-001.4
+  beat: HM-B-001
+  title: An anchor that can be wrong
+  status: active
+  summary: >
+    The method names drift as the Conductor's central value and specifies the
+    entity that makes drift computable in full — immutable, one per capability,
+    carrying the outcome as it stood and how far the work had converged toward
+    it. Nothing here produces one. [HM-N-036] cleared the ground for this
+    instrument when it refused a codebase-probing dimension in the plan rubric,
+    on the ground that assessing realized-against-planned belongs to a cadence
+    anchor rather than to a rubric scoring a plan. The ground has been clear
+    since and nothing was built on it.
+
+    This step adds the instrument. It sits under this Beat because the reading is
+    an assessment and this is the assessment capability — the Beat's outcome
+    already covers whether someone's own intent still holds, and the Conductor's
+    other instrument is here too. The alternative was the producing capability,
+    on the ground that an anchor is an entity and taking one produces it; that
+    reading is available and is not the one taken, because what makes a Downbeat
+    hard is judging convergence honestly, not emitting the record.
+
+    One constraint separates this from every other instrument here. The spec
+    states that how convergence is computed and on what scale is an
+    implementation's choice, so this instrument must not define one. Every other
+    instrument in this repository carries a scale; the temptation to add a tidy
+    one here is exactly what the spec forecloses, and [HM-N-105] records why
+    yielding to it would break parity rather than improve it.
+
+    Done when: an agent handed only this repository can take a conformant anchor
+    on a real capability; the reading uses the adopter's scale or plain prose and
+    never a number this repository invented; the Coda is frozen verbatim rather
+    than summarized; the reading separates what was examined from what was taken
+    on the record's word; the anchor names a person who answers for it; and drift
+    against a prior anchor is reported, or its absence stated rather than implied.
+  scope: >
+    In: the Downbeat instrument for the Conductor; its placement on both
+    explanatory surfaces alongside the other producing instrument rather than
+    among the assessments; and the two Notes recording the scale prohibition and
+    the honesty split.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: a convergence scale, a threshold, or any number this repository defines.
+    The spec leaves computation to the implementation, and filling that gap here
+    would not be an extension but a contradiction of the field's own description.
+    Out also: recording or retaining the anchor. An immutable record this
+    repository does not store is a contradiction the instrument names out loud
+    rather than resolving — retention belongs to a system of record, and that
+    boundary has held since [HM-N-004].
+    Out also: the Bar. Cadence is what occasions an anchor and the instrument
+    reads one when it is offered, but nothing here helps set up a cadence, and a
+    capability for that is not opened by this step.
+    Out also: any edit to the reconciliation instrument. The two are adjacent —
+    one compares intent against intent up the chain, the other compares intent
+    against reality at a moment — and keeping them separate is what [HM-N-036]
+    decided.
+
+    Owed, not done: nothing this step opens.
+
+    Risks stated: the instrument asks an agent to judge how far a capability has
+    converged, which is the most subjective thing anything in this repository
+    does, and it deliberately declines the one device that would make the output
+    look rigorous. A prose reading is harder to compare and easier to write
+    loosely than a number, and that is the accepted cost of not inventing a scale
+    the method left open. The honesty split is the mitigation: a reading that must
+    say what it examined and what it merely believed is harder to write loosely
+    than one that need not.
+    Second: nothing checks that an anchor is left unaltered, because nothing here
+    stores one. The immutability rule is real and this repository can only state
+    it, which is said in the instrument rather than implied.
