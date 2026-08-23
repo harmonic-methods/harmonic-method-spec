@@ -139,6 +139,7 @@ possible to say which of the five nobody is currently holding.
 | [specs/bar.yml](specs/bar.yml) | the recurring period work is planned within |
 | [specs/downbeat.yml](specs/downbeat.yml) | an immutable anchor of where a capability stood |
 | [specs/function.yml](specs/function.yml) | the five accountabilities the work is held through |
+| [specs/conformance.yml](specs/conformance.yml) | what conforming involves, and what an implementation declares |
 | [specs/spec-set.yml](specs/spec-set.yml) | the version of the set above, which an implementation pins |
 | [specs/conformance.yml](specs/conformance.yml) | what a conformance claim covers, and how a divergence is classified |
 

@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-065
+  id: HM-N-086
   type: decision
   attached_to: HM-B-003
-  beat_version: HM-BV-003.16
+  beat_version: HM-BV-003.23
   content: >
     The Note type for something believed but not verified is retired. The method
     defines four types: context, constraint, guidance, decision. [HM-N-019] and

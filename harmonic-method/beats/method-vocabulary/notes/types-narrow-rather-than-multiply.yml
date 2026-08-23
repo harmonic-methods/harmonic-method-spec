@@ -3,14 +3,14 @@ note:
   id: HM-N-071
   type: decision
   attached_to: HM-B-003
-  beat_version: HM-BV-003.17
+  beat_version: HM-BV-003.24
   content: >
     Note types are closed to additions and open to children. An implementation
     needing a finer kind narrows a published value through an optional `subtype`
     rather than adding a top-level type. The type is the root of the hierarchy —
     every Note is context in the general sense, the other three name
     specializations, and `context` as a value means one that rises to no narrower
-    kind. This supersedes [HM-N-066] on Note types; what it said about the four
+    kind. This supersedes [HM-N-087] on Note types; what it said about the four
     status enums stands unchanged.
   rationale: >
     The previous decision opened Note types on the argument that an unknown one
@@ -30,11 +30,11 @@ note:
     One part of the proposal is deliberately not adopted. That every Note is a
     form of assumption was offered alongside the hierarchy, and it would put
     confidence back in the kind slot — the exact conflation that retired the type
-    in [HM-N-065]. A decision that was made is not an assumption; its rationale
+    in [HM-N-086]. A decision that was made is not an assumption; its rationale
     may rest on several, and the record of a choice is a fact about what was
     chosen. The type is available as a child under this mechanism and remains
     wrong for the reason it was retired, and reviving it there would compete with
-    the verification status still owed in [HM-N-068].
+    the verification status still owed in [HM-N-089].
 
     What this leaves unresolved, stated rather than smoothed over: `context` now
     carries two senses — the root that every Note belongs to, and the value for a

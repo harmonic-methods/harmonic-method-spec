@@ -1,0 +1,35 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-067
+  type: constraint
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.17
+  content: >
+    The public-surface check matches identifier shapes and never names. Three
+    things it therefore cannot catch, all of them by design rather than by
+    omission:
+
+    A client's or a repository's name. A check that runs in public cannot carry
+    a list of them, because the list would be a worse leak than the one it
+    prevents. Nothing mechanical will ever cover this.
+
+    A capability identifier from another system, where the shape is a letter, a
+    dash and digits. That collides with this repository's own identifiers, so
+    matching it would fail every request that cites one of ours. Of the three
+    identifiers in the leak that prompted this check, this is the one still not
+    caught.
+
+    Anything in a closed request's diff, which the check cannot see and which
+    cannot be edited afterwards.
+  rationale: >
+    Recorded because a check that exists invites the assumption that it is
+    sufficient, and this one is deliberately partial. A reader who knows only
+    that "the surface is checked" will paste a client name into a description and
+    be surprised — which is worse than knowing there is no check at all, because
+    a false sense of cover removes the habit that was actually protecting them.
+
+    The habit is the primary control and the check is the backstop, not the
+    reverse. Describe what happened rather than citing the record it happened in:
+    a request needing another system's identifier to make its point almost always
+    has a better sentence available, and writing that sentence costs less than
+    any of the remedies once the identifier is public.

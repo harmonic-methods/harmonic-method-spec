@@ -43,7 +43,7 @@ beat_version:
     them and does not need to.
     Out also: a status field on a Note, which stays owed with its condition now
     recorded rather than open-ended.
-    Owed, not done: HM-BV-003.15, HM-BV-003.16, and HM-BV-006.3 are all unmerged
+    Owed, not done: HM-BV-003.22, HM-BV-003.23, and HM-BV-006.6 are all unmerged
     as this is written. Closing them belongs to the next substantive step after
     this branch lands, and the count is now four, which is past the bound the
     standing habit sets — the habit assumes steps merge between cycles, and these

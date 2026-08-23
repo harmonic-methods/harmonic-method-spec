@@ -114,17 +114,12 @@ message instead:
 
     Beat-Version: HM-BV-002.2
 
-Exactly one `Beat-Version:` trailer per commit. A Revision belongs to exactly
-one Beat Version, and the commit is the Revision — so a commit carrying two
-trailers is a non-conformant Revision, and a change spanning two Beat Versions
-is two commits. `npm run validate` enforces this over the commits your branch
-adds, and skips when the base ref is absent. Set `HM_BASE_REF` if your base is
-not `main`.
-
-If a commit already in history breaks the rule, name it in
-`tools/trailer-exceptions.txt` with the reason rather than rewriting it — the
-evidence of what happened is worth more than a clean check. That file is meant to
-stay short.
+Exactly one `Beat-Version:` trailer per **pull request**, in its description. A
+Revision belongs to exactly one Beat Version, and `specs/revision.yml` puts a
+tracked change at the request rather than at each commit inside it — so a request
+spanning two steps is two requests. Commits may carry the trailer; nothing
+requires it. The check runs where a request exists, which is why a local run
+reports that it cannot see one.
 
 When a Beat Version's work has merged, set its status to `delivered`. If it left
 flight without shipping — superseded, descoped, dropped — set `withdrawn` and say
@@ -146,6 +141,26 @@ fact — a changelog entry naming a version — is the authority, not a copy.
 When editing text with a script, assert that every replacement matched. A
 replacement that finds nothing changes nothing and reports nothing. For a remote
 surface, verify by reading it back rather than by trusting what was sent.
+
+Read a command's exit code, not its piped output. A pipeline reports its last
+stage, so `npm run validate | tail` returns zero on a failing run and `set -e`
+will not fire.
+
+The newest changelog entry either says `(unreleased)` or has a tag. Removing the
+marker is the act of claiming release, and `npm run validate` will then demand
+the tag — so **tag first, then remove the marker**. A branch that removes it
+before the tag exists cannot pass its own check, and the tag should point at
+merged work rather than at a branch.
+
+Before making this repository public, sweep what visibility exposes and not only
+what git tracks: pull request descriptions and comments, commit messages, issue
+text, closed pull request diffs, branch names, and the repository description.
+
+A request's title and description are scanned for identifier shapes from systems
+these specs do not define. It matches shapes and never names — a list of names in
+a public check would be the leak — so a client's name is never caught, and neither
+is a capability identifier whose shape collides with ours. Describe what happened
+instead of citing the record it happened in.
 
 `specs/revision.yml` still defines the entity, and `examples/` keeps one, because
 a Revision is the only record that exists when the change artifact is a procedure

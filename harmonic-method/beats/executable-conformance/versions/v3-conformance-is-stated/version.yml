@@ -1,6 +1,6 @@
 # Beat Version — conformant to specs/beat.yml
 beat_version:
-  id: HM-BV-006.3
+  id: HM-BV-006.6
   beat: HM-B-006
   title: What a conformance claim covers, stated where it can be pinned
   status: active
@@ -40,7 +40,7 @@ beat_version:
     implementation's divergences, which belongs in that implementation's
     declaration by the rule this step publishes — writing them here would
     contradict the constraint that normative text names no implementation.
-    Owed, not done: HM-BV-003.15 is unmerged as this step is written, so it stays
+    Owed, not done: HM-BV-003.22 is unmerged as this step is written, so it stays
     active and closing it belongs to the next substantive step after this branch
     lands. Naming it here rather than marking it delivered keeps the claim honest;
     a summary asserting work that had not happened is the failure this repository

@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-062
+  id: HM-N-083
   type: decision
   attached_to: HM-B-003
-  beat_version: HM-BV-003.15
+  beat_version: HM-BV-003.22
   content: >
     A Note attaches to a portfolio, a system, or a Beat. The field description
     offering an organization as the third of those is corrected, and the

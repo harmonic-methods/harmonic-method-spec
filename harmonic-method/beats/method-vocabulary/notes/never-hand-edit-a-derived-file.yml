@@ -1,0 +1,33 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-065
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.15
+  content: >
+    Never hand-edit a file that a tool generates. Change the source it is
+    generated from and regenerate it. A lock file, a digest file, and a build
+    output are all derived — editing one directly makes it disagree with the thing
+    it was derived from, and nothing will say so until something downstream
+    behaves oddly.
+  rationale: >
+    This is the same failure as the others recorded here, arriving through a
+    different door. The manifest was renamed and its parser reclassified from a
+    development dependency to a runtime one; the lock file was updated by
+    replacing the version string and nothing else, so it kept the old name and the
+    old classification while describing the same install. Both files were
+    internally valid and they disagreed with each other, which no check here
+    covers — it was found by another contributor reading the diff, not by the
+    tooling.
+
+    The general form: a derived file is a proxy for its source, and editing the
+    proxy does not change what it is a proxy for. The habit that prevents it is
+    mechanical — regenerate rather than retype — and it is cheaper than any check
+    that could detect the drift afterwards.
+
+    Worth noting how the miss happened, because it is not the same as a
+    replacement that matched nothing. Every replacement here did match. The error
+    was replacing one of the several facts that had to change, which an assertion
+    on the replacement cannot catch. When a change alters more than one fact in a
+    file, the thing to verify is the file's agreement with its source, not that
+    each edit landed.

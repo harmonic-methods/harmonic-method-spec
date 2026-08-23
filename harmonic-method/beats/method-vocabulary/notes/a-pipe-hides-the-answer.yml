@@ -1,0 +1,28 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-062
+  type: guidance
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.15
+  content: >
+    Read a command's exit code, not its piped output. A pipeline reports the
+    status of its last stage, so sending a check through a pager or a filter
+    replaces the answer with the filter's opinion of it — and a shell set to stop
+    on error will not stop. Run the check plainly, or capture the status before
+    filtering.
+  rationale: >
+    This happened three times in a single sitting. A conformance run piped
+    through a line filter returned zero while the run itself had failed, and a
+    shell configured to abort on error carried on and pushed the failing commit.
+    A second run reported success for two deliberately broken cases, for the same
+    reason, which briefly looked like a defect in the thing being tested. The
+    pattern is the same as the other verification failures recorded here and it
+    is the most mechanical of them: the check was correct, the check ran, and the
+    result was read from somewhere the result was no longer present.
+
+    It generalizes past pipelines. Any convenience placed between a verification
+    and the person reading it can substitute its own success for the real one —
+    see [HM-N-051] on a text replacement that matched nothing and reported
+    nothing, and [HM-N-042] on a guard that skipped where it was meant to
+    enforce. Whatever the mechanism, the question to ask is whether the thing
+    reporting success is the thing that did the work.

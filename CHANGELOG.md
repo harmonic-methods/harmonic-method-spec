@@ -1,6 +1,109 @@
 # Changelog
 
-## v1.3.0 — 2026-08-20 (unreleased)
+## v1.4.0 — 2026-08-21 (unreleased)
+
+- **The checker enforces a release invariant.** The newest changelog entry either
+  says `(unreleased)` or a tag exists for it. Caught a live case on its first run:
+  `harmonic-method@1.3.0` was on the public registry while the entry still claimed
+  to be unreleased and no `v1.3.0` tag existed. Now tagged.
+  - The rule also **fixes an order**, found while building it rather than designed
+    in: a branch removing the marker cannot pass its own check until the tag
+    exists, and a tag should point at merged work — so tag first, then remove the
+    marker. An unreleased entry owes no tag, so the rule permits exactly that
+    sequence and no other.
+- **Two rules no check can reach, written down instead.** A pre-publication review
+  covers what *visibility* exposes, not what git tracks — this repository's own
+  sweep reported clean while internal identifiers sat in a closed pull request's
+  description (HM-N-061). And a command's exit code is the answer, not its piped
+  output — three times in one sitting a pipeline returned zero for a failing run
+  and `set -e` did not fire (HM-N-062).
+- **The lock file agreed with the manifest again**, and the rule that prevents a
+  recurrence is written down: never hand-edit a generated file, regenerate it. The
+  manifest was renamed and its parser reclassified while the lock file kept the old
+  name and classification — both internally valid, disagreeing with each other, and
+  caught by a contributor reading the diff rather than by any check. Note that the
+  miss is not the same as a replacement matching nothing: every replacement landed,
+  but only one of several facts that had to change was replaced. See HM-N-065.
+- **`specs/conformance.yml` (new)** — what conforming involves, and what an
+  implementation declares. This repository claimed to be canonical while offering
+  no statement of what conforming to it entails, so a conformance command would
+  have had no referent and its failures would have been arguments about scope.
+  - **The surface separates into three, not two.** What binds and can be
+    compared: fields, which are required, permitted lifecycle values, and the
+    identifiers each instrument scores. What binds and cannot be compared: the
+    rules on each entity, the layout, the binding between a change and its step,
+    the five functions. What binds nobody: everything else. The two-way split is a
+    false choice — fold the uncomparable rules in and the command must ignore them
+    while claiming coverage; fold them out and the method stops requiring what
+    makes it a method. See HM-N-063.
+  - **A declaration is written, never inferred.** Deriving a model from source
+    means parsing a language, which would make the tool a tool for that language —
+    and the method has to hold for an implementation in anything, or in nothing.
+    Two links rather than one: a check compares the declaration to the specs, the
+    implementation's own tests compare its behaviour to the declaration. See
+    HM-N-064.
+  - The surface is defined by what binds, not by where it lives. Adding a
+    directory here does not silently enlarge what an implementation owes.
+- **`HM-B-007`, nothing claims more than it can show (new capability, one step
+  planned).** Nine recorded rules and four checks about holding this repository's
+  claims to what it can demonstrate had accumulated under the capability that
+  publishes the entity model, because that is where the checker lives.
+  - **How it was recognized:** four consecutive increments scored only adequately
+    on advancing that capability's outcome. No single score was wrong enough to
+    act on; the pattern across four was. A dimension that keeps scoring three on
+    unrelated work is a capability boundary in the wrong place, not bad luck.
+  - **Nothing moved.** A Note records what was learned while a particular
+    capability was being delivered, and reattaching it to a capability that did
+    not exist then would say it arose from work that had not started. A repository
+    whose purpose is that nothing claims more than it can show cannot begin by
+    falsifying its own lineage. The cost — most of the reasoning filed elsewhere,
+    connected only by subject — is the honest shape of a capability recognized
+    late. See HM-N-068.
+  - Scored 4.1 first time, with Harmonious the weak dimension for the second Beat
+    in a row and the same cause: not naming the standing tension it sits inside.
+    Here that tension is that what this repository publishes assesses without
+    enforcing, while what it does to itself enforces a great deal — legitimate,
+    and only while the two stay told apart in the tooling. Fixed before
+    decomposition; 4.3 after.
+- **A request's title and description are scanned for foreign identifiers.** The
+  one surface no other check reaches is where this repository's only real leak
+  went: a closed request carrying a private repository's name, a commit reference
+  into it, and three identifiers from a system these specs do not define. The body
+  was already supplied for the binding rule, so only the patterns were missing.
+  Verified against the actual leaked text — it catches two of those three.
+  - **It matches shapes, never names**, and that is a constraint rather than a
+    choice: a check that runs in public cannot carry a list of client or
+    repository names, because the list would be the worse leak. So a client's name
+    will never be caught, nor a capability identifier whose shape collides with
+    ours — the third identifier from that leak. HM-N-067 states all three gaps,
+    because a check that exists invites the assumption that it suffices, and a
+    false sense of cover removes the habit that was actually protecting anyone.
+  - Fails rather than warns: a false positive costs a reworded sentence, a miss is
+    permanent. See HM-BV-003.17.
+- **The binding moved to where the Revision is.** `specs/revision.yml` defines a
+  tracked change in a software medium as a change with a *linked request* — so
+  binding work to its step one commit at a time was finer-grained than the entity
+  being modelled, and the practice contradicted the specification it exists to
+  demonstrate. Exactly one binding per request now; commits may carry the trailer
+  and none requires it.
+  - This removes real friction as a **consequence, not a compromise**. A
+    contributor, an assistant, and a web editor were each failing a check for a
+    convention none could discover from its message. The tempting fix was to
+    soften the rule and move it into review, which would have traded away a
+    discipline this repository has repeatedly watched decay when unenforced.
+  - **The exception dissolved.** A commit had been excused by name for carrying
+    two bindings; at the request altitude it is not a violation, so
+    `tools/trailer-exceptions.txt` is deleted rather than shortened. An exception
+    that disappears when a rule is stated correctly was never a concession — it
+    was the rule being wrong, recorded as if the world were awkward.
+  - Adds `CONTRIBUTING.md` and a request template carrying the line pre-filled,
+    because a request body cannot be read from a clone and the requirement has to
+    be discoverable before it is enforced. See HM-BV-003.16 and HM-N-066,
+    superseding the commit-level half of HM-N-015.
+- **Spec set 1.2.0.** Additive — the first spec set change since a tag exists, so
+  the minor step is now a promise rather than a formality.
+
+## v1.3.0 — 2026-08-21
 
 - **The checker is now a publishable command.** `hm validate <path>`, with a
   second binary named for the package so that running it without installing

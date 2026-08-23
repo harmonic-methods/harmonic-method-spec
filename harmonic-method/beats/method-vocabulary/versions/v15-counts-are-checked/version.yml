@@ -1,6 +1,6 @@
 # Beat Version — conformant to specs/beat.yml
 beat_version:
-  id: HM-BV-003.15
+  id: HM-BV-003.22
   beat: HM-B-003
   title: The published surfaces stop restating what a check can count
   status: active

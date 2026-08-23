@@ -1,6 +1,6 @@
 # Beat Version — conformant to specs/beat.yml
 beat_version:
-  id: HM-BV-003.17
+  id: HM-BV-003.24
   beat: HM-B-003
   title: Types narrow rather than multiply
   status: active

@@ -22,13 +22,13 @@
  * Run with: npm run validate
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { spawnSync } from 'node:child_process';
+import { spawnSync, execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
-import { checkCommitTrailers } from './commit-discipline.mjs';
+import { checkBinding, checkPublicSurface } from './commit-discipline.mjs';
 import { checkDeclaration } from './conformance.mjs';
 import { normativeSkills, normativeText, digest, normativeItemCount } from './rubric-fingerprint.mjs';
 
@@ -142,19 +142,66 @@ function checkRubricFingerprints() {
 }
 
 /**
- * The commit is the Revision, and a Revision belongs to exactly one Beat
- * Version. Nothing enforced that, and the rule was broken twice in one sitting
- * from the same cause — a script that failed partway while `git add -A` ran
- * anyway.
+ * A changelog entry claiming a release is a claim about the world, and the tag is
+ * the only part of it a tree can check. Either the newest entry says it is
+ * unreleased, or a tag exists for it.
+ *
+ * The marker is the escape hatch by design: an entry still being drafted on a
+ * branch has no tag yet and must not fail. Removing the marker is the act of
+ * claiming release, and that is when the tag becomes owed.
  */
-function checkCommitDiscipline() {
-  console.log('== commit discipline ==');
-  let result;
-  try { result = checkCommitTrailers(); } catch (e) { return fail(`git: ${e.message}`); }
-  if (result.skipped) return console.log(`  skipped — ${result.skipped}`);
-  for (const p of result.problems) fail(p);
-  const excused = result.excused ? `, ${result.excused} excused` : '';
-  if (result.problems.length === 0) console.log(`  ${result.checked} commit(s) each bind one Beat Version${excused}`);
+function checkReleaseInvariant() {
+  console.log('== release invariant ==');
+  const heading = read('CHANGELOG.md').split('\n').find((l) => /^## v\d+\.\d+\.\d+/.test(l));
+  if (!heading) return fail('CHANGELOG.md: no "## vX.Y.Z" heading found');
+  const version = heading.match(/^## v(\d+\.\d+\.\d+)/)[1];
+
+  if (/\(unreleased\)/i.test(heading)) {
+    console.log(`  v${version} is marked unreleased — no tag owed`);
+    return;
+  }
+
+  let tags;
+  try {
+    tags = execFileSync('git', ['tag', '--list', `v${version}`], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  } catch {
+    // Same reasoning as the commit check: a shallow clone is not a defect, but a
+    // silent skip where this is enforced would repeat the failure it exists for.
+    if (process.env.HM_REQUIRE_BASE) return fail(`cannot read tags to confirm v${version}, and HM_REQUIRE_BASE is set — fetch tags`);
+    return console.log('  skipped — tags unavailable');
+  }
+  if (tags !== `v${version}`) {
+    fail(`CHANGELOG.md claims v${version} released, but no tag v${version} exists — tag it, or mark the entry (unreleased)`);
+  } else {
+    console.log(`  v${version} released and tagged`);
+  }
+}
+
+/**
+ * A change is bound to the step it executes. The Revision spec puts a tracked
+ * change in a software medium at a request with a linked change, so the binding
+ * belongs on the request rather than on each commit inside it.
+ */
+function checkBindingDiscipline() {
+  console.log('== binding ==');
+  let r;
+  try { r = checkBinding(); } catch (e) { return fail(`binding: ${e.message}`); }
+  if (r.skipped) return console.log(`  skipped — ${r.skipped}`);
+  for (const p of r.problems ?? []) fail(p);
+  if (r.bound) console.log(`  ${r.where} binds ${r.bound}`);
+}
+
+/**
+ * A request description is the one surface here no other check reaches, and the
+ * only real leak this repository has had went through it.
+ */
+function checkPublicSurfaceHygiene() {
+  console.log('== public surface ==');
+  let r;
+  try { r = checkPublicSurface(); } catch (e) { return fail(`public surface: ${e.message}`); }
+  if (r.skipped) return console.log(`  skipped — ${r.skipped}`);
+  for (const p of r.problems) fail(p);
+  if (r.problems.length === 0) console.log(`  ${r.scanned.join(' and ')} carry no foreign identifiers`);
 }
 
 /**
@@ -484,9 +531,10 @@ if (TARGET) {
   checkRetiredAltitudes();
   checkRubricFingerprints();
   checkPublishedCounts();
-  checkToolingVersion();
   checkCommandRuns();
-  checkCommitDiscipline();
+  checkReleaseInvariant();
+  checkBindingDiscipline();
+  checkPublicSurfaceHygiene();
   checkTree('harmonic-method');
   checkTree('examples');
   checkExampleDeclaration();

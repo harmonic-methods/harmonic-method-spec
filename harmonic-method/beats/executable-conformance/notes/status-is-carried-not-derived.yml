@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-063
+  id: HM-N-084
   type: decision
   attached_to: HM-B-006
-  beat_version: HM-BV-006.3
+  beat_version: HM-BV-006.6
   content: >
     A Beat Version's and a Revision's three status values are carried on the
     entity. An implementation may compute an additional label from whatever its

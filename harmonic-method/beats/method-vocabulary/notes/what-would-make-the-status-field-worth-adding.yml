@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-068
+  id: HM-N-089
   type: background
   attached_to: HM-B-003
-  beat_version: HM-BV-003.16
+  beat_version: HM-BV-003.23
   content: >
     Unvalidated, and recorded so the next person can settle it rather than
     re-derive it: the intended shape of the owed Note status is that an agent

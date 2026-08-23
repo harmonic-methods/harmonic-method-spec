@@ -1,6 +1,6 @@
 # Beat Version — conformant to specs/beat.yml
 beat_version:
-  id: HM-BV-003.16
+  id: HM-BV-003.23
   beat: HM-B-003
   title: One fewer Note type
   status: active
@@ -39,7 +39,7 @@ beat_version:
     becomes permanent.
     Out also: the generic use of the word in the Beat Version spec's prose about
     what a summary should contain. That names a kind of content, not a type.
-    Owed, not done: HM-BV-003.15 and HM-BV-006.3 are both unmerged as this is
+    Owed, not done: HM-BV-003.22 and HM-BV-006.6 are both unmerged as this is
     written, so all three stay active and closing them belongs to the next
     substantive step after this branch lands.
     Risks stated: the method now has no type-level signal for unverified

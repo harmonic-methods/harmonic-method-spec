@@ -1,0 +1,33 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-068
+  type: decision
+  attached_to: HM-B-007
+  beat_version: HM-BV-007.1
+  content: >
+    The nine rules and four checks that belong to this capability by subject stay
+    attached where they were written, under the capability that publishes the
+    entity model. Nothing is reattached. This capability starts with no history
+    and takes the next increment.
+  rationale: >
+    A Note records what was learned while a particular capability was being
+    delivered. That context is part of what the Note is — a rule about guards
+    that skip was learned while making a guard run in continuous integration, and
+    a rule about derived files was learned while a lock file and a manifest
+    disagreed. Reattaching them to a capability that did not exist at the time
+    would say they arose from work that had not started, which is a false record.
+    A repository whose stated purpose is that nothing claims more than it can show
+    cannot begin by falsifying its own lineage.
+
+    The cost is real and worth stating: someone looking for the reasoning behind
+    this capability will find most of it filed elsewhere, and only the subject
+    connects them. That is the honest shape of a capability recognized late. The
+    alternative — a tidy directory and a fabricated history — trades a
+    findability problem for a truthfulness problem, which is the wrong trade
+    everywhere and a self-refuting one here.
+
+    How it was recognized is worth keeping too. Four consecutive increments scored
+    only adequately on advancing the outcome of the capability they were filed
+    under. No single one was wrong enough to act on; the pattern across four was.
+    A dimension that keeps scoring three on unrelated work is not a run of bad
+    luck, it is a capability boundary in the wrong place.

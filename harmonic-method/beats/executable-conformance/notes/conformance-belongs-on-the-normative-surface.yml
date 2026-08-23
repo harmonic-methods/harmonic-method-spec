@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-064
+  id: HM-N-085
   type: decision
   attached_to: HM-B-006
-  beat_version: HM-BV-006.3
+  beat_version: HM-BV-006.6
   content: >
     What a conformance claim covers is declared in `specs/conformance.yml`, on
     the normative surface, with `statement:` as a third discriminator alongside
