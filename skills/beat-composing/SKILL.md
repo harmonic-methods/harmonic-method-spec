@@ -1,6 +1,6 @@
 ---
 name: beat-composing
-description: Draft a conformant Harmonic Method Beat and its Coda from a plain description of a capability, then score the draft against the published Beat rubric and report what would raise it. Use when asked to compose, write, draft, create, or start a Beat — or when someone has described something they want to build and needs it expressed as a capability rather than a task.
+description: Draft a conformant Harmonic Method Beat and its Coda from a plain description of a capability, score the draft against the published Beat rubric, and revise it from that score and from the author's feedback until they are satisfied. Use when asked to compose, write, draft, create, or start a Beat — or when someone has described something they want to build and needs it expressed as a capability rather than a task.
 ---
 
 # Beat Composing
@@ -91,16 +91,42 @@ anchors, or its thresholds here, and do not score from memory of them. It is
 canonical; this file is not, and a score produced from a paraphrase does not
 mean what a score means anywhere else.
 
-Report the result it tells you to report. Then take the single improvement it
-identifies, apply it, and score once more so the person sees what changed. Stop
-after that second pass — a draft iterated until it scores well against a rubric
-an agent is also applying is measuring the agent, not the Beat. What remains is
-for a person to answer.
+Report the result it tells you to report.
 
-If the draft scores poorly on the same dimension twice, say so plainly and say
-what you think is missing. That is usually a sign the capability is drawn at the
-wrong altitude, and a person needs to redraw it rather than a rewording fixing
-it.
+## Revising the draft
+
+A draft you cannot argue with is not much use, so this instrument revises. Two
+loops, with different limits, and the difference between them is the point.
+
+**Your own loop is bounded at one.** Take the single improvement the score
+identifies, apply it, score again, and show what moved. Then stop revising on
+your own initiative. A draft iterated until it scores well against a rubric the
+same agent is applying measures the agent, not the Beat — the number goes up and
+nothing has been learned.
+
+**The person's loop is not bounded.** Once they have the draft and the score,
+revise as many times as they direct. They are the authority on the capability
+and you are not; a limit on their iteration would be this instrument overruling
+the person it exists to serve. After each revision, re-score and report what
+changed — including anything that got worse, because a change that lifts one
+dimension often costs another, and they should see that rather than discover it.
+
+Where their instruction and the score disagree, follow the person and say plainly
+that you did, naming the dimension it costs. They may know something the rubric
+cannot see. What you must not do is quietly split the difference, which leaves a
+draft that satisfies neither and a record of why that satisfies nobody.
+
+If a dimension resists two revisions, say so and stop rewording it. A dimension
+that will not lift is usually a boundary in the wrong place rather than a
+sentence in the wrong order, and that is redrawn by a person, not reworded by
+you.
+
+**This revises a draft, not a record.** Once an entity is in someone's system of
+record, changing it carries obligations this instrument does not discharge —
+`specs/coda.yml` requires that changing a Coda be a recorded decision with the
+prior statement preserved, and `specs/note.yml` forbids overwriting knowledge at
+all. If you are handed something already recorded, say that this instrument
+drafts and does not amend records, and stop.
 
 ## Output format
 
@@ -109,7 +135,8 @@ it.
   could answer.
 - The score, exactly as the quality instrument specifies it, including the spec
   set version it requires you to report.
-- What changed between the first and second pass, in a sentence.
+- What changed at each revision and what it cost, in a sentence each — yours and
+  theirs alike, so the sequence of the draft is legible without re-reading it.
 
 ## Working rules
 
