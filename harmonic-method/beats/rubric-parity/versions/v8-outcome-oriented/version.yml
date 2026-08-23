@@ -1,0 +1,57 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-002.8
+  beat: HM-B-002
+  title: A dimension that told you to fail
+  status: active
+  summary: >
+    The seventh Beat dimension carried a carve-out stating that infrastructure and
+    platform-quality Beats score about 3 out of 5, that this is expected, and that
+    the evaluator must not restructure them in response. Against the reference
+    threshold of 4 on the average that is not a concession, it is an exclusion:
+    six dimensions at Strong plus one at the sanctioned floor averages 3.86, so a
+    Beat of that class could not pass however well it was written, and every
+    remedy was forbidden in the same sentence.
+
+    It was also the least medium-agnostic text in either rubric, resting on a
+    VP, a CFO, a board and a budget line item — a context the method cannot
+    assume of an operational process or an organizational practice.
+
+    Rewritten and renamed. Outcome-Oriented asks whether the Beat states the
+    outcome someone commits to rather than the work that produces it, and says
+    explicitly that an internal beneficiary carries no lower ceiling. The floor is
+    gone because the wording that made it necessary is gone.
+
+    Done when: the dimension reads as framing rather than as audience; no class of
+    Beat is told what to score; the name, the key, the Beat spec, the instrument's
+    own frontmatter and the front page all agree; and the digest is regenerated
+    from the changed text rather than edited to match it.
+  scope: >
+    In: the dimension's name, key, definition and red flag; the dimension list in
+    the Beat spec, the instrument's own frontmatter, and the front page; the
+    decision Note; and the regenerated digest, in that order.
+    Out: the threshold. The specs already state that the gate is an
+    implementation's choice, and this fixes the rubric rather than arguing about a
+    number that was never canonical. A class the rubric tells you to score at 3
+    is a rubric problem at any threshold.
+    Out also: merging the dimension into Clear, which measures legibility where
+    this measures framing — a Beat can be perfectly clear and still name a
+    migration — and dropping it, which would leave the most common way a Beat goes
+    wrong covered only in part by Substantial and Durable.
+    Out also: rescoring the Beats this repository keeps on itself. A moved rubric
+    makes every prior score unattributable, and the fix for that is provenance on
+    the score rather than a sweep that would be stale again at the next move; it
+    is the next step in this Beat and is deliberately not folded in here.
+    Taken out of order, and why: this is the fourth step of the cycle to land and
+    the first taken out of sequence. The step that was next carries a genuine
+    disagreement with merged text — whether an encoding binds an implementation —
+    and that is a decision rather than a merge, so it is with the owner while the
+    steps that do not depend on it proceed. Eight remain owed, of which seven wait
+    on that answer and one does not.
+    Risks stated: this renames a canonical key, so an implementation deriving a
+    literal union from it breaks at compile time rather than silently, which is
+    the failure mode to prefer; the digest moved, which was confirmed as intended
+    and recorded before regenerating rather than after; and the rename is the
+    third of published text in one unreleased cycle, which is cheap because no
+    consumer holds the old name — the test being a consumer who can be broken
+    rather than a tag that exists, as the previous step established.

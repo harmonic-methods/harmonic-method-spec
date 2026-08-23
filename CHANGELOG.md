@@ -2,6 +2,23 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The seventh Beat dimension is renamed and rewritten.** `Business Outcome`
+  becomes **`Outcome-Oriented`** (`outcomeOriented`), and the carve-out placing a
+  score floor of about 3 on infrastructure and platform-quality Beats is deleted.
+  The carve-out was an exclusion rather than a concession: against a threshold of 4
+  on the average, six dimensions at Strong plus one at the sanctioned floor comes
+  to 3.86, so that class of Beat could not pass however well written, and every
+  remedy was forbidden in the same paragraph. The floor existed to compensate for
+  wording — a VP, a CFO, a board, a budget line item — that a reliability
+  guarantee cannot satisfy and that the method cannot assume of a procedure or an
+  organizational practice. Removing the premise removes the need for the
+  exemption. The rename follows because every other dimension is an adjective and
+  this was the only noun phrase, and because de-commercialising the body while the
+  name kept asserting what was removed would repeat a pattern this cycle has
+  already met. Merging into Clear was refused (legibility is not framing) and so
+  was dropping it (nothing else asks whether the thing is stated as an outcome).
+  Implementations deriving a literal union from the key break at compile time,
+  which is the failure mode to prefer. See HM-BV-002.8 and HM-N-080.
 - **One fewer Note type**, and the trigger for a major is corrected. The type for
   something believed but not verified is retired; four remain. It answered a
   question about confidence rather than about kind, and both instances here were

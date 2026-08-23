@@ -31,7 +31,7 @@ fields:
     description: The typed knowledge attached to this capability. See note.yml.
 quality:
   rubric: beat_coda_quality  # see skills/beat-coda-quality-check/SKILL.md
-  dimensions: [Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Business Outcome]
+  dimensions: [Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Outcome-Oriented]
   scale: 1-5 per dimension
   reference_gate: >
     The reference implementation requires a fresh passing check (>=4/5) before a
