@@ -1,0 +1,50 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-133
+  type: background
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.3
+  content: >
+    `specs/note.yml` requires that Notes be superseded rather than overwritten,
+    and that a decision cite what it supersedes when it changes course. Both
+    rules are honoured here. Neither is derivable.
+
+    The citation runs forward only — the new Note names the old — and it lives in
+    prose inside a rationale. Nothing carries it as a parsed field, so the reverse
+    question, is this Note still standing, can only be answered by reading every
+    later Note in the tree and hoping the citation was written in a form the
+    reader recognizes. There is no marker on the superseded Note at all.
+
+    This step is what makes that matter. The root Coda instrument now reads Notes
+    as evidence, and a superseded decline reads exactly like a live one. The
+    provenance ceiling recorded two steps ago was reversed one step later; both
+    Notes sit in the tree, and only prose distinguishes them. An instrument or a
+    retrieval pass over that record scores a reversed decision as standing
+    evidence, and it does so silently.
+
+    Supersession is a dimension and not a kind. `specs/note.yml` is explicit that
+    a property any kind can carry belongs in a field of its own — a decision, a
+    constraint and a background Note can each be superseded — so a `superseded`
+    type or subtype would put a dimension in the kind slot and make the kinds
+    incomparable. The shape that fits is a reference field on the superseding
+    Note, which makes the graph machine-readable and the back-pointer derivable
+    without a second copy anywhere.
+
+    Two cases, and only one is reachable this way. A Note that was superseded is
+    a fact about the record and belongs in the tree. A Note that nothing reversed
+    but that has simply stopped mattering is not derivable from anything written,
+    and `specs/note.yml` already assigns triage state to implementations while
+    forbidding expiry outright.
+  rationale: >
+    Recorded rather than fixed because it reaches `specs/note.yml`, and a change
+    to an entity spec is not something to fold into a step that was scoped to
+    read declines. It is written down now because this step is what created the
+    exposure: before an instrument read Notes as evidence, an unmarked
+    supersession cost a reader some scanning, and after it, it costs a score its
+    meaning.
+
+    It is the same shape as the two findings that preceded it — a rule stated in
+    full and left in a form nothing can act on — with one difference worth
+    keeping. The cadence entities and the root Note had nowhere to live at all.
+    This one is written down faithfully every time and simply cannot be read
+    back, which is the harder kind to notice, because the record looks complete.

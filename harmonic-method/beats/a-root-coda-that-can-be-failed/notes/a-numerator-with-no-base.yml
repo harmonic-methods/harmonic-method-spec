@@ -15,14 +15,25 @@ note:
     boundary doing heavy work; five against five hundred is a boundary that
     stopped almost nothing and looks identical in the record.
 
-    A fifth Note type for an idea was considered as the fix and is not
-    recommended, for three reasons. A Note is knowledge and the four types are
-    things that are true, while an idea is a candidate. Notes are never
-    overwritten, and an idea has a lifecycle — proposed, then taken up or
-    refused — so it does not belong in an append-only store. And the accepted
-    branch already has a home: an idea that is taken up is a Beat, so a type for
-    ideas would give the same thing two representations depending on how it
-    turned out, which is worse than the gap it closes.
+    An idea that was considered and refused is ordinary Note content, and an
+    earlier draft of this Note argued otherwise on the grounds that a Note holds
+    what is true. That is wrong and `specs/note.yml` says so directly: every Note
+    is context in the general sense, and `type` names the specialization it rises
+    to. Deliberation that went nowhere is context, and losing it is how the same
+    idea gets re-proposed and re-refused.
+
+    A fifth *type* is still not the way in, for the reason the spec gives rather
+    than the one that draft gave: the type set is closed so that a reader who
+    does not recognize a finer kind falls back to something it does recognize,
+    and `subtype` is free for exactly this. An idea narrowing `background` is the
+    sanctioned path and needs no permission — the same answer this step reached
+    for a decline.
+
+    Lifecycle is not an objection either. Notes are preserved and superseded
+    rather than overwritten, which is a lifecycle the method already runs.
+
+    What does survive is narrower: an idea taken up becomes a Beat, so a proposal
+    and its outcome should not both try to be the durable capability.
 
     What is worth exploring instead is a proposal at the same altitude as a Beat,
     resolving to became-a-Beat, declined, or still open — giving both populations

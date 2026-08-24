@@ -38,13 +38,25 @@
     than semantically, and covers the starvation case a decline register shows as
     a clean sheet (HM-N-131); and the method represents no unaccepted proposal, so
     this dimension has a numerator and no base (HM-N-132).
-  - **A fifth Note type for an idea is refused on structure, not on cost.** The
-    four types are things that are true and an idea is a candidate; Notes are
-    never overwritten and an idea has a lifecycle; and an idea that is taken up is
-    already a Beat, so a type for ideas would give one thing two representations
-    depending on how it turned out. A proposal entity is not refused — only
-    deferred to a step that can design it, and noted as cheapest now, while no
-    implementation pins this surface.
+  - **An idea that was considered and refused is ordinary Note content**, and a
+    draft of HM-N-132 argued otherwise on the grounds that a Note holds what is
+    true. `specs/note.yml` says the opposite in its own words — every Note is
+    context, and `type` names the specialization it rises to — and the Note is
+    corrected rather than quietly dropped. A fifth *type* is still not the way
+    in, for the spec's reason and not that one: the type set is closed so an
+    unfamiliar kind falls back to a familiar one, and `subtype` is free, so an
+    idea narrowing background needs no permission. A proposal entity is not
+    refused — only deferred, and noted as cheapest now while nothing pins this
+    surface.
+  - **Supersession is written down and derivable by nothing** (HM-N-133). The
+    rule that a decision cites what it supersedes is honoured every time, in
+    prose, forward-only, with no marker on the superseded Note. This step is what
+    makes it bite: the instrument now reads Notes as evidence, so a reversed
+    decision reads exactly like a standing one — the provenance ceiling removed
+    one step ago is sitting in the tree next to its reversal, distinguished only
+    by prose. It is a dimension rather than a kind, so it wants a reference field
+    and never a type. It reaches `specs/note.yml` and is the first thing worth
+    doing next.
   - Out and stated: measuring the separation between declined and accepted work.
     Where an adopter has embeddings it is computable, and overlap between the two
     populations would mean the boundary is doing no work — but every distance here

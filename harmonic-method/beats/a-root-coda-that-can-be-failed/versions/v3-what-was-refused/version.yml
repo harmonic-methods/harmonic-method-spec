@@ -72,12 +72,20 @@ beat_version:
     analysis is recorded, the choices stay open.
 
     Out: a fifth Note type for an idea, and a proposal entity — neither taken
-    here, and for different reasons. The type is refused on what a Note is: the
-    four types are things that are true, an idea is a candidate with a lifecycle,
-    and the accepted branch is already a Beat. The entity is not refused at all,
-    only deferred to a step that can design it properly; it is cheapest now,
-    while no implementation pins this surface. The reasoning is in [HM-N-132] so
-    the next step starts from it rather than from scratch.
+    here, and for different reasons. A fifth type is refused for the reason the
+    spec already gives: the type set is closed so an unfamiliar kind falls back
+    to a familiar one, and `subtype` is free for exactly this, so an idea
+    narrowing background needs no permission. The entity is not refused at all,
+    only deferred to a step that can design it; it is cheapest now, while no
+    implementation pins this surface. The reasoning is in [HM-N-132] so the next
+    step starts from it rather than from scratch.
+
+    Out: a field for supersession. [HM-N-133] records that the rule requiring a
+    decision to cite what it supersedes is honoured in prose and derivable by
+    nothing, so a superseded decline reads exactly like a live one to the
+    instrument this step just pointed at the record. It reaches
+    `specs/note.yml`, which is not something to fold into a step scoped to read
+    declines, and it is the first thing worth doing next.
 
     Owed, not done: nothing here reaches the altitudes below the root. A Beat
     Coda excludes too, and the Beat rubric's distinctiveness dimension has the
