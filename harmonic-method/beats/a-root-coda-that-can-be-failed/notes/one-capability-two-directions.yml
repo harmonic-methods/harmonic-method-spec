@@ -1,0 +1,31 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-117
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.1
+  content: >
+    Both skills — the instrument that scores a root Coda and the aid that drafts
+    one — are recorded under this Beat, rather than the instrument here and the
+    drafting aid under the capability that owns drafting.
+  rationale: >
+    Splitting them by direction would have matched how the other skills are
+    filed, and it would have cost a step to do it. A request executes one Beat
+    Version, so work landing under two Beats is two requests, and the two halves
+    of this one are not separable in the way that would justify the second: the
+    drafting aid defers every judgement to the instrument by pointing at the
+    file, so shipping it first would point at nothing and shipping the instrument
+    first would leave the only way to produce what it scores unwritten.
+
+    The filing convention is also weaker than it looks here. The drafting
+    capability's Coda is about someone holding a paragraph or a stale Beat, and
+    its standing constraint is that a production aid must never become a second
+    definition of quality. That constraint applies to this drafting aid and is
+    honoured by it, but the capability it belongs to is the one that makes the
+    top of the chain assessable at all — the drafting order exists because the
+    dimensions exist, and neither is useful alone.
+
+    Recorded rather than left implicit, because the next person to add an
+    instrument will find two precedents and should know which one this was and
+    why. The general rule is unchanged: file by capability, and direction is not
+    a capability.

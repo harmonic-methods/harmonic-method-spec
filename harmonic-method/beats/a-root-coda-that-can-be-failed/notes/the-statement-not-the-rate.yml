@@ -1,0 +1,30 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-114
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.1
+  content: >
+    The Producer's instrument scores the root Coda. It does not compute Value
+    Velocity, and Value Velocity stays what `specs/function.yml` already says it
+    is — the measure the method names and the implementation computes.
+  rationale: >
+    The recorded reason the slot stayed empty was that the instrument would need
+    Value Velocity defined closely enough to assess without computing it. That
+    reason was sound and it was aimed at the wrong object. A rate needs a
+    realized figure, and the figure arrives after the moment the judgement is
+    needed: the Producer's question is whether work should continue at its
+    current shape and cost, and it is asked while the work is running.
+
+    What exists at that moment is the claim the rate would eventually be measured
+    against — who benefits, on what evidence, inside what bounds, and what would
+    count as the exchange having gone wrong. Scoring that claim is assessable
+    without computing anything, which is the bar every other instrument here
+    clears, and it is the bar the earlier reading correctly said a rate could not.
+
+    This also puts the Producer's instrument where the function's own failure
+    mode is. `specs/function.yml` says the Producer fails when work proceeds
+    because it is interesting, urgent or already started, and nothing is ever
+    stopped, only starved. Nothing gets stopped against a statement that cannot
+    be failed, so an unfailable root Coda is not a drafting weakness — it is the
+    precondition for the failure the function exists to prevent.

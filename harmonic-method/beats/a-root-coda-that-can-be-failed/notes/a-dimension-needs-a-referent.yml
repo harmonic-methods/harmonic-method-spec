@@ -1,0 +1,38 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-115
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.1
+  content: >
+    The root Coda is scored on six dimensions of its own rather than on the Beat
+    rubric applied at a higher altitude. No organization altitude is added; the
+    root stays the Coda identified by an omitted parent, and a portfolio of
+    portfolios remains a portfolio higher up, as `specs/coda.yml` already says.
+  rationale: >
+    Altitude is recursion for an entity, and it is not recursion for every
+    dimension applied to one. The Beat rubric's heaviest dimension asks whether
+    the entity serves the Coda above it. A root Coda has nothing above it, so
+    that dimension has no referent, and no rewording supplies one — asking
+    whether the top of the chain serves something above the top of the chain is
+    not a hard question, it is an unasked one. Two of the remaining six are also
+    relational to siblings a root Coda does not have.
+
+    Scoring the root with the Beat rubric would therefore have produced an
+    average over dimensions where a third were unanswerable, and the practical
+    result is worse than the theoretical one: an unanswerable dimension gets
+    scored anyway, usually near the middle, and the middle is where a statement
+    that excludes nothing already sits.
+
+    The six replace upward fit with outward fit — the parties the statement
+    claims to serve, the evidence behind those claims, and what the absence of
+    the organization would cost. That is available at the root and nowhere else
+    in the chain needs it, which is the test for whether a rubric earns its own
+    existence rather than being a copy with substitutions.
+
+    A distinct organization altitude was weighed and refused. It would add an
+    entity to carry a statement `specs/coda.yml` already holds, and every rule
+    written for it would be a second copy of a rule about a root Coda. The
+    recursion the spec states is doing the work; what was missing was a rubric
+    that read the omitted parent as a fact about the statement rather than as
+    context that happened to be unavailable.

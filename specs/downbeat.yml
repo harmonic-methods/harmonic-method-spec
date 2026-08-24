@@ -1,6 +1,6 @@
 # Harmonic Method spec — Downbeat
 entity: downbeat
-spec_version: 1.3.0
+spec_version: 1.4.0
 summary: >
   An immutable anchor recording where a capability honestly stood at a moment:
   the outcome it was converging toward, and how far it had converged. A Downbeat

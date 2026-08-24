@@ -29,10 +29,18 @@ guards it against an unacknowledged edit.
 - skills/beat-coda-quality-check/SKILL.md: Composer — score a Beat 1-5 across seven dimensions
 - skills/beat-version-quality-check/SKILL.md: Orchestrator — score a Beat Version plan 1-5 across six dimensions
 - skills/coda-alignment-check/SKILL.md: Conductor — reconcile a Coda chain across nine checks, reported as findings rather than a score
-The Producer and Promoter have no instrument yet, deliberately.
+- skills/root-coda-quality-check/SKILL.md: Producer — score a root Coda 1-5 across six dimensions
+  The root is the Coda with no parent above it. Not the Beat rubric at a higher
+  altitude: every other rubric here measures service to the Coda above and a root
+  Coda has none, so these score the statement's own properties and its relation
+  outward instead. A named measure's score is capped by the provenance of its
+  evidence, and the instrument declines to stand in for the counterparty
+The Promoter has no instrument yet, deliberately. The Producer's scores the
+statement Value Velocity would be measured against rather than computing the rate,
+which is what had kept that slot empty.
 
 ## Producing
-Three skills produce rather than assess. None carries dimensions or a scale,
+Four skills produce rather than assess. None carries dimensions or a scale,
 none is covered by the digest because there is nothing normative in any of them
 to guard, and each defers every judgement it needs to an instrument above by
 pointing at the file.
@@ -51,6 +59,13 @@ pointing at the file.
   to the implementation; separates what was examined from what was taken on the
   record's word; reports drift against the prior anchor or states that there is
   none to compare against
+- skills/root-coda-composing/SKILL.md: Producer — draft the Coda at the top of the
+  chain, ordered from the ledgers outward: who benefits, who pays, what each side
+  gets and how it would be known, what would count as the exchange having gone
+  wrong, the bounds and which gives first, what is excluded, what is defended for
+  what comes next, and what is lost without it. Speaks for no counterparty, settles
+  nothing an accountable person has not adopted, and scores with
+  root-coda-quality-check read as written
 
 ## Layout of a system
 One rule all the way down: an entity is a directory, its children are

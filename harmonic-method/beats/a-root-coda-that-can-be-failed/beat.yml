@@ -1,0 +1,41 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-012
+  title: A root Coda that can be failed
+  status: open
+  coda:
+    statement: >
+      Someone accountable for whether work is worth what it costs can put the
+      statement everything else ladders to in front of their organization, have
+      it scored against published dimensions rather than against opinion, and see
+      which of its claims of value rest on evidence the other party generated and
+      which rest on nothing but the organization's own account.
+    parent: HM-CODA
+  description: >
+    The capability by which the top of the chain becomes assessable and writable.
+    Covers the dimensions a Coda with no parent is scored on, what caps a score
+    when the evidence behind a claimed measure is thin, and the drafting order
+    that produces such a statement from what an organization can already say.
+
+    The boundary with the scoring capability is what sits above the thing being
+    judged. That one scores entities against the Coda they ladder to, and its
+    heaviest dimension is service to that Coda. A root Coda has nothing above it,
+    so the dimension with the most weight elsewhere has no referent here — which
+    is why this is a separate rubric rather than the same one read at a higher
+    altitude, and why altitude recursion holding for an entity does not mean it
+    holds for every dimension applied to one.
+
+    The boundary with the drafting capability is the same statement's other side.
+    That one turns a description of a capability into a Beat and hands it to an
+    instrument for the verdict. This one does that for the statement the
+    instruments themselves cannot reach past, and carries the refusals that only
+    matter at this altitude: an agent may draft what an organization is for and
+    may not settle it.
+
+    It is held against a constraint the other capabilities do not face. Every
+    dimension here that concerns the other party could be scored by inventing
+    their view, fluently and unfalsifiably, and an instrument that did so would
+    read as more rigorous than one that declined. The capability is only worth
+    having if it declines.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

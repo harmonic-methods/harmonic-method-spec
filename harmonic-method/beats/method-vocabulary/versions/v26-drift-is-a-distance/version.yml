@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.26
   beat: HM-B-003
   title: Drift is a distance, and the field only asked for a flag
-  status: active
+  status: delivered
   summary: >
     The anchor entity contradicted itself and the contradiction had shipped. Its
     summary says the anchor is what makes drift measurable instead of remembered.

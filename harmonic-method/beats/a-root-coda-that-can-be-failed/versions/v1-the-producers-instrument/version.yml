@@ -1,0 +1,86 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-012.1
+  beat: HM-B-012
+  title: The Producer's instrument, and the statement it scores
+  status: active
+  summary: >
+    Four of the five accountabilities have an instrument and the Producer has
+    none. The reason recorded when the functions landed was that its instrument
+    would need Value Velocity defined closely enough to assess without computing
+    it, and that reason has held for as long as the attempt was to build a rate.
+    A rate needs a realized figure, and the figure is not available at the moment
+    anyone needs the judgement — which is exactly when work should be stopped,
+    reshaped, or left alone.
+
+    What is available at that moment is the statement the rate would be measured
+    against: whose benefit is claimed, on what evidence, inside what bounds, and
+    what would count as the exchange having gone wrong. That statement is the
+    root Coda, and nothing here scored it. Every rubric published here measures
+    service to the Coda above, so the whole ladder is anchored on the one
+    statement no instrument can reach — a root Coda that excludes nothing lets
+    every entity beneath it score well for laddering to something unfailable.
+
+    This step gives the Producer an instrument that scores that statement, and a
+    drafting aid that produces one. The rubric is six dimensions rather than the
+    Beat's seven read higher up, because the dimension carrying the most weight
+    elsewhere asks about a parent and a root Coda has none.
+
+    It also settles how an instrument that depends on the other party's evidence
+    runs where that party is not present. A named measure's score is capped by
+    the provenance of what stands behind it, and the instrument is forbidden from
+    standing in for the counterparty. The cap is inside the guarded text, so
+    loosening it later fails the conformance check rather than passing quietly.
+
+    Done when: both skills exist and are pointed at rather than copied; the
+    instrument is covered by a digest that was made to fail against the scoring
+    scale and against the provenance table before being believed; both published
+    surfaces name it with a count the checker agrees with; the surfaces stop
+    saying the Producer has no instrument while continuing to say the Promoter
+    has none; and the spec set takes a minor step.
+  scope: >
+    In: the root Coda rubric and its six dimensions, red flags, output format and
+    check rules; the provenance ceiling and the refusal to simulate the
+    counterparty, both inside the guarded sections; the drafting aid and its
+    ordering from the ledgers outward; the digest; both published surfaces; and
+    the spec set minor step, because `specs/conformance.yml` puts the dimensions
+    an instrument scores on the comparable surface, so adding an instrument
+    extends what an implementation declares against.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: any change to `specs/coda.yml`. The root is already identified there by
+    an omitted parent, and no field is missing — what was missing was a rubric
+    that read that omission as a fact about the statement rather than as absent
+    context. A distinct altitude for the organization was considered and refused;
+    the reasoning is recorded rather than left to be re-derived.
+
+    Out: computing Value Velocity, or naming a threshold for any dimension. The
+    rate stays an implementation concern exactly as `specs/function.yml` leaves
+    it, and the instrument reports pass or fail against whatever threshold the
+    reader's implementation sets, saying that the threshold is not fixed here.
+
+    Out: the Promoter's instrument. Adoption still rests on the thinnest evidence
+    of the five and should not gain apparatus because a neighbour did.
+
+    Out: any recorded score of this repository's own root Coda. Scoring it is the
+    obvious next use and the result would be a finding about a real system, which
+    this repository has no place to record and no cadence to record it on.
+
+    Owed, not done: the rubric asks for evidence a counterparty generated, and
+    nothing in the method's own entity model holds such evidence. A Note can
+    carry it as knowledge, which is where an adopter will put it, but there is no
+    field that says this measure came from the other side. Whether that wants a
+    field is a question for whichever capability owns the vocabulary.
+
+    Owed, not done: the drafting aid asks for the bounds and their ordering, and
+    the method has nowhere to keep a bound. It lives in the Coda's prose today.
+
+    Risks stated: the provenance ceiling can be satisfied in form — an
+    organization that names renewal as its measure scores well before anyone has
+    read a renewal. The instrument reports what it examined against what it took
+    on the record's word, which makes the gap visible and does not close it. And
+    an agent scoring Reciprocal is being asked not to do the thing it is most
+    fluent at; the rule is stated twice, in the dimension and in the check rules,
+    because a single mention of a prohibition an agent is good at breaking is a
+    prohibition that gets broken.
