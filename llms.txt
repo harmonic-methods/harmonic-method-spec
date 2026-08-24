@@ -39,6 +39,21 @@ The Promoter has no instrument yet, deliberately. The Producer's scores the
 statement Value Velocity would be measured against rather than computing the rate,
 which is what had kept that slot empty.
 
+## Reading a set
+One skill reads a whole system rather than one entity. It introduces no dimension:
+overlap with sibling Beats and service to the Coda above are already published
+dimensions of the Beat rubric, and this applies them across the set.
+- skills/coverage-reading/SKILL.md: Composer — decompose the system Coda into its
+  separable claims, map each Beat to the claims it serves, and report what falls
+  out: a claim nothing serves, a claim several Beats duplicate, and a Beat serving
+  no claim, which usually means the Coda is behind the system rather than that the
+  Beat does not belong. Reports where the space is, never how much — a capacity
+  figure rises whenever the Coda is widened and no capability is added
+- examples/coverage/: the same two questions answered arithmetically on vectors the
+  adopter supplies. An illustration, not an instrument; no model, no network, no
+  threshold. The two surfaces fail in opposite directions and the disagreement is
+  the useful part
+
 ## Producing
 Four skills produce rather than assess. None carries dimensions or a scale,
 none is covered by the digest because there is nothing normative in any of them

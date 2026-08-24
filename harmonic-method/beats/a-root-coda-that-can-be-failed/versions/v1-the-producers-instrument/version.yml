@@ -46,8 +46,9 @@ beat_version:
     the spec set minor step, because `specs/conformance.yml` puts the dimensions
     an instrument scores on the comparable surface, so adding an instrument
     extends what an implementation declares against.
-    In also: closing the step whose work has reached the trunk, which [HM-N-055]
-    puts in the next substantive step's scope.
+    In also: closing the steps whose work has reached the trunk, which
+    [HM-N-055] puts in the next substantive step's scope. Two of them, because a
+    second landed on the trunk while this step was in flight.
 
     Out: any change to `specs/coda.yml`. The root is already identified there by
     an omitted parent, and no field is missing — what was missing was a rubric
