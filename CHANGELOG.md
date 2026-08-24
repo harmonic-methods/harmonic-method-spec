@@ -2,6 +2,41 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **What was refused, not what is claimed.** Discriminating scored a statement,
+  and a statement cannot separate an organization that excludes from one that
+  wrote an exclusion and never acted on it. Both produce the same text. The
+  instrument now reads recorded declines — the decisions in which work was turned
+  down — as evidence for that dimension. See HM-B-012 and HM-BV-012.3.
+  - **Conduct is the only thing that separates the two cases.** Anything an
+    organization does is consistent with a boundary drawn afterwards to fit it;
+    something it declined is not. A decline reaches the `record` band and no
+    higher — however costly, it stays the organization's own account of its own
+    conduct, and never a counterparty's act. See HM-N-128.
+  - **No subtype, no entity, no artifact.** `specs/note.yml` says the method
+    enumerates no subtypes and will not, and a decline is an ordinary decision.
+    Checking this repository's own tree before designing anything found every
+    significant refusal already written down — the commercial claim it declines to
+    make, the score it declines to record, the capacity figure it declines to
+    produce, the Promoter instrument it declines to build, the weighting it
+    declines to apply. An instrument demanding a dedicated decline record would
+    have asked for a second copy of decisions already made.
+  - **The value is entirely in when it was written.** A refusal recorded when it
+    was made was costly and was uninterested in a score that did not yet exist;
+    one assembled afterwards describes the statement while wearing the clothes of
+    conduct, and is worth less than the statement. Where a decline's date or
+    decider cannot be established it is not counted. The limit is stated rather
+    than implied: a date can be back-written, and no check here can catch that.
+    See HM-N-129.
+  - **A Coda with no recorded decline is reported, never failed.** A young effort
+    has refused little, which is a fact about its age and not a defect in its
+    boundary — and failing it would repeat the shape this instrument has already
+    had to remove twice.
+  - Out and stated: measuring the separation between declined and accepted work.
+    Where an adopter has embeddings it is computable, and overlap between the two
+    populations would mean the boundary is doing no work — but every distance here
+    belongs to the implementation. The method names the evidence, never the
+    arithmetic.
+
 - **Warrant is not a score.** The root Coda instrument capped two dimensions by
   the provenance of their evidence, asserted ceilinging at 2. Six dimensions
   averaged unweighted with two held at 2 puts the ceiling on the overall at 4.0,

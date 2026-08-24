@@ -31,8 +31,9 @@ whose referent is absent.
 ## Inputs
 The root Coda statement, and the context and decisions recorded at the root
 itself — the bounds it holds, the ordering among them, what it has refused, what
-would end it, and any load-bearing assumption registered with the test that
-would settle it. If available: the system Codas directly beneath it (for
+would end it, any load-bearing assumption registered with the test that would
+settle it, and the recorded decisions in which it declined work — what it turned
+down, when, and why. If available: the system Codas directly beneath it (for
 Consequential and Discriminating), and whatever record the organization keeps
 that a measure could be read from — knowledge Notes, renewal and contract
 history, correspondence, support records (for classifying evidence provenance
@@ -51,7 +52,10 @@ what you were given, say so and report the asserted band rather than guessing.
 
 1. **Discriminating** (`discriminating`) — The Coda excludes. There are
    plausible, attractive, profitable things this organization will not do, and
-   reading the statement tells you which.
+   reading the statement tells you which. Where the record holds decisions
+   declining work, read them: a statement that excludes on paper and an
+   organization that has never refused anything are different findings, and only
+   the record separates them.
    Red flag: nothing could fail it — every proposal anyone might bring would
    ladder to it. Also: a statement of capture rather than creation. Better terms,
    a larger share of the same exchange, or a stronger negotiating position
@@ -164,6 +168,25 @@ For each dimension: score, one-sentence justification, and (for any score below
 - Constructing the strongest case *against* the arrangement is permitted and
   useful — it yields hypotheses for someone to check. Report it as an open
   question, never as a verdict, and never let it move a score on its own.
+- **Read declined work as evidence for Discriminating, from wherever the
+  organization already records decisions.** A recorded decline is behavioural
+  rather than textual — what was refused rather than what is claimed — and it is
+  the only evidence that separates a boundary being held from a boundary being
+  described. It reaches the `record` band and no higher: it is the
+  organization's own account of its own conduct, however contemporaneous.
+
+  Demand no particular artifact for it. `specs/note.yml` says the method
+  enumerates no subtypes and will not, and a decline is an ordinary decision —
+  it will already be sitting in a decision Note or in the scope of a planned
+  step, wherever that organization keeps such things. An instrument that
+  required a dedicated record would be asking for a second copy of a decision
+  already written down, which is the failure this method exists to prevent.
+- **A decline counts only if it was recorded before the reading.** Contemporaneity
+  is the whole of its evidential value: a refusal written down when it was made,
+  by whoever made it, was costly and uninterested in any score. One assembled
+  afterwards is a description of the statement wearing the clothes of conduct,
+  and is worth less than the statement, which at least does not pretend. Where a
+  decline's date or decider cannot be established, say so and do not count it.
 - **Report Discriminating below 3 as a blocking finding** alongside the average,
   not instead of it. A Coda nothing can fail cannot be laddered to: every
   dimension in every rubric beneath it that measures service to the Coda above

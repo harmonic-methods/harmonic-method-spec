@@ -1,0 +1,41 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-128
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.3
+  content: >
+    Discriminating is evidenced by recorded declines — the decisions in which
+    work was turned down — read from wherever the organization already keeps
+    decisions. No subtype, no entity, and no artifact is named. A decline reaches
+    the `record` band and no higher, and counts only if it was recorded before
+    the reading.
+  rationale: >
+    The dimension could only read a statement, and a statement cannot separate
+    the two cases it exists to tell apart: an organization that excludes, and one
+    that wrote an exclusion and has never once acted on it. Both produce the same
+    text. Only conduct separates them, and a refusal is the one piece of conduct
+    that proves a boundary was load-bearing — anything an organization does is
+    consistent with a boundary drawn afterwards to fit it, while something it
+    declined is not.
+
+    Naming no artifact is the part that took the most care to get right, and this
+    repository's own tree decided it. Every significant refusal was already
+    written down before anything was designed to hold one: the commercial claim
+    this method declines to make, the score it declines to record, the capacity
+    figure it declines to produce, the instrument it declines to build for the
+    Promoter, the weighting it declines to apply. Each sits in a decision Note or
+    in a planned step's scope, where it belongs. An instrument demanding a
+    dedicated decline record would have asked for a second copy of decisions
+    already made — the exact failure this repository was built after having, and
+    it would have arrived wearing the costume of rigour.
+
+    `specs/note.yml` also forecloses it directly: the method enumerates no
+    subtypes and will not, so a canonical `decline` subtype would contradict a
+    published rule to gain nothing. An implementation wanting that precision has
+    the optional subtype field already and needs no permission for it.
+
+    The `record` cap follows from what a decline is. However contemporaneous and
+    however costly, it remains the organization's own account of its own conduct.
+    It is much better than an assertion about the future and it is not a
+    counterparty's act, and the band ladder should say both.
