@@ -1,0 +1,38 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-112
+  type: decision
+  attached_to: HM-B-011
+  beat_version: HM-BV-011.1
+  content: >
+    Reading a set introduces no dimension, no scale and no threshold. It applies
+    two published dimensions — one about overlap with sibling Beats, one about
+    serving the outcome above — across a set instead of one entity at a time. No
+    surface reports how many more capabilities would fit.
+  rationale: >
+    An earlier reading of this said coverage was named nowhere in the specs and
+    therefore could not be an instrument yet. That was too cautious and is
+    corrected here. The dimension about distinctiveness already speaks of overlap
+    with sibling Beats, so the set is inside its definition already; reading a
+    set is an aggregation of published dimensions, not a new concept needing one.
+    Nothing has to be added to the normative surface for this to be legitimate,
+    and that is exactly why it is legitimate.
+
+    Adding a coverage dimension was the alternative and it is refused. It would
+    put a third definition of quality where two already reach, and it would need
+    what every published dimension needs — anchors, a digest, parity with every
+    implementation, and a version step. All of that to say something two
+    dimensions say between them.
+
+    The capacity figure is the harder refusal, because it is what everyone asks
+    for. How many more Beats fit is not honestly answerable: it depends on where
+    the boundary falls, the boundary is a sentence somebody can edit, and so the
+    figure rises whenever the outcome is widened without a single capability
+    being added. It is the one output that would be gamed by the failure this
+    repository has already documented — a composer that widens its own Coda to
+    make room. A metric that improves when you edit one sentence is worse than
+    no metric.
+
+    What is reported instead is where the space is, not how much. An unserved
+    claim is actionable and specific. A count invites someone to fill it, and
+    some claims should stay unserved.
