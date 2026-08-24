@@ -22,7 +22,7 @@
 #
 # Read against github/spec-kit at main, 23 August 2026.
 declaration:
-  spec_version: 1.2.0
+  spec_version: 1.3.0
   implementation: >-
     GitHub Spec Kit — a third-party reading, NOT a claim by its maintainers
   divergences:
@@ -102,7 +102,8 @@ declaration:
       field: coda_state
       published: >
         Required, and immutable once taken. A fixed record of the Coda as it
-        stood, sufficient to detect that it has since changed.
+        stood, sufficient to determine how far it has moved since and not only
+        that it has.
       actual: >
         Convergence is assessed — the workflow compares what was built against
         the specification and appends work for the gaps, repeating until it

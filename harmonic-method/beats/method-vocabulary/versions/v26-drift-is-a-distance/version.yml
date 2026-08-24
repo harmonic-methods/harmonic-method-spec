@@ -1,0 +1,63 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.26
+  beat: HM-B-003
+  title: Drift is a distance, and the field only asked for a flag
+  status: active
+  summary: >
+    The anchor entity contradicted itself and the contradiction had shipped. Its
+    summary says the anchor is what makes drift measurable instead of remembered.
+    Its rule says drift is the difference between the latest anchor and the
+    present. And the field carrying the anchored outcome asked only for a record
+    sufficient to detect that the outcome had since changed.
+
+    Detecting a change and measuring one are different requirements, and the
+    field asked for the weaker. A digest satisfies it completely and can answer
+    nothing about how far or in which direction anything moved. So an
+    implementation could store a digest, be entirely conformant, and deliver a
+    boolean where the entity promised a difference.
+
+    That is not hypothetical. The reference implementation stores a content hash
+    and its drift call returns `drifted: boolean`. It is conformant and it
+    delivers exactly what the field asked for, which is how the defect stayed
+    invisible — nothing was wrong except the requirement.
+
+    The field now asks for what the summary and the rule already promised. A
+    digest is named as failing it, because a digest is the tempting build and
+    naming it is cheaper than leaving each implementation to discover the gap.
+
+    Done when: the field requires enough to determine how far the outcome moved
+    and not only that it moved; a digest is explicitly named as insufficient; the
+    spec set moves, since an implementation storing only a digest is no longer
+    conformant; and every surface quoting the old wording is requoted rather than
+    left stale.
+  scope: >
+    In: the requirement on the anchored outcome record; the spec set version,
+    which moves because this can break a conforming implementation; and the
+    reading of another workflow, which quoted the published wording and would
+    otherwise carry a stale quotation of a rule that has changed.
+
+    Out: mandating a form. The record stays an implementation's choice and the
+    requirement is stated as what must be answerable from it, not as what it must
+    contain — verbatim text answers it, a structured form answers it, and a
+    digest does not. Naming the one that fails is not the same as naming the one
+    that passes.
+    Out also: how far is far. A distance needs a scale and the method leaves
+    convergence scales to implementations for reasons already recorded; the same
+    reasoning applies here and nothing is invented.
+    Out also: closing the step whose work has reached the trunk. A request
+    already in flight carries that close, and making it twice would conflict for
+    no gain.
+
+    Owed, not done: a recorded measure should name what produced it, the way a
+    recorded score already names the spec set version it was produced under.
+    That rule is not written because nothing yet produces such a measure, and a
+    rule designed against no instance is the shape [HM-N-093] declines. The
+    condition that would settle it is an implementation computing one.
+
+    Risks stated: this makes a conforming implementation non-conformant on a
+    field it implemented correctly against the previous wording. That is the
+    cost of the fix and it is the right way round — the alternative was to
+    weaken the summary and the rule to match the field, which would have kept
+    every implementation conformant and left the entity unable to do the one
+    thing it exists for.

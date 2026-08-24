@@ -1,0 +1,41 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-111
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.26
+  content: >
+    The anchored outcome record must support measuring how far the outcome has
+    moved, not merely detecting that it moved. A digest is named as failing that.
+    The form stays an implementation's choice, and the requirement is stated as
+    what must be answerable from the record rather than as what it must contain.
+  rationale: >
+    Three statements in one file disagreed. The summary promised drift measurable
+    rather than remembered; the rule defined drift as the difference between the
+    latest anchor and the present; the field asked only for enough to detect that
+    a change had occurred. A difference is a magnitude and detection is a
+    boolean, and the field asked for the boolean.
+
+    Two repairs were available and only one keeps the entity worth having. The
+    field could have been left alone and the summary and rule weakened to match
+    it, which would have kept every implementation conformant and reduced the
+    anchor to a change flag — a flag anyone could get from comparing two records
+    directly, making the whole entity redundant. The requirement moves instead,
+    and an implementation storing only a digest becomes non-conformant on a field
+    it had implemented correctly. That cost is real and is the right way round.
+
+    A form is still not mandated, and the phrasing is deliberate: the requirement
+    says what must be answerable from the record, not what the record must be.
+    Verbatim text answers it. A structured form answers it. Naming the digest as
+    insufficient is not the same as naming a replacement, and no replacement is
+    named.
+
+    Worth recording for whoever implements this, because the obvious answer is
+    wrong. Where an implementation computes distance geometrically, the thing to
+    anchor is still the text and never the computed representation. A vector is
+    bound to the model that produced it, and an anchor is immutable — so an
+    anchored vector stops being comparable the moment the model changes, and
+    cannot be recomputed, because the immutability that makes the anchor evidence
+    also forbids fixing it. Anchored text can be measured by any model, including
+    ones that do not exist yet. The record holds what was true; how far it has
+    moved is computed at the moment of asking.
