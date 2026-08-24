@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-010.1
   beat: HM-B-010
   title: Cadence that shows its own omissions
-  status: active
+  status: delivered
   summary: >
     Two entities have been specified in full since the vocabulary landed, and
     neither has ever existed. The checker contained no mention of either; no tree

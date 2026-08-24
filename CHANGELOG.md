@@ -33,6 +33,40 @@
     system entity — only a root Coda identifying it. The example points at that
     Coda's identifier for want of anything better, which works and is not
     obviously right.
+- **Drift is a distance, and the field only asked for a flag.** The anchor entity
+  contradicted itself and the contradiction had shipped. Its summary promises that
+  an anchor is what makes drift *measurable* instead of remembered; its rule
+  defines drift as the *difference* between the latest anchor and the present; and
+  the field carrying the anchored outcome asked only for a record sufficient to
+  *detect that* the outcome had changed. Detecting and measuring are different
+  requirements and the field asked for the weaker one. **The spec set moves to
+  1.3.0**, because an implementation storing only a digest is no longer
+  conformant. See HM-BV-003.26 and HM-N-111.
+  - **A digest satisfies the old wording completely** and can say nothing about
+    how far or in which direction anything moved. Not hypothetical: the reference
+    implementation stores a content hash and its drift call returns
+    `drifted: boolean`. It is conformant and delivers exactly what was asked —
+    which is how the defect stayed invisible. Nothing was wrong except the
+    requirement.
+  - **The form is still not mandated.** The requirement states what must be
+    answerable from the record rather than what the record must contain: verbatim
+    text answers it, a structured form answers it, a digest does not. Naming the
+    one that fails is not naming a replacement, and none is named.
+  - **Anchor the text, never a computed representation.** Where an implementation
+    measures distance geometrically the temptation is to store the vector, and it
+    is wrong: a vector is bound to the model that produced it, an anchor is
+    immutable, so an anchored vector stops being comparable the moment the model
+    changes and cannot be recomputed — the immutability that makes it evidence
+    also forbids fixing it. Anchored text can be measured by any model, including
+    ones that do not exist yet.
+  - Owed: a recorded measure should name what produced it, the way a recorded
+    score already names the spec set version it was produced under. Not written,
+    because nothing yet produces such a measure and a rule designed against no
+    instance is the shape HM-N-093 declines.
+  - The repair could have gone the other way — weaken the summary and the rule to
+    match the field. That would have kept every implementation conformant and
+    reduced the anchor to a change flag anyone could get by comparing two records
+    directly, making the entity redundant.
 
 - **What nobody decided.** The composing instrument stops rewording when a
   dimension resists twice, on the reasoning that a dimension which will not lift
