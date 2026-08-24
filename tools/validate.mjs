@@ -696,6 +696,29 @@ function checkTreeArgumentResolves() {
 }
 
 /**
+ * The worked illustrations run.
+ *
+ * A script that ships beside an explanation and is never executed rots quietly:
+ * the prose keeps describing what it used to do. This runs the coverage
+ * illustration against the fixture it documents and asserts it produces its two
+ * rankings. Deliberately shallow — it checks that the thing runs and says what
+ * it claims to say, not what any number is, because the numbers are illustrative
+ * and asserting them would freeze a fixture that exists to be edited.
+ */
+function checkIllustrationsRun() {
+  console.log('== illustrations ==');
+  const script = join(ROOT, 'examples/coverage/coverage.mjs');
+  const fixture = join(ROOT, 'examples/coverage/vectors.json');
+  if (!existsSync(script) || !existsSync(fixture)) return fail('examples/coverage/: script or fixture missing');
+  const r = spawnSync(process.execPath, [script, fixture], { cwd: ROOT, encoding: 'utf8' });
+  if (r.status !== 0) return fail(`examples/coverage ran non-zero: ${(r.stderr ?? '').split('\n')[0]}`);
+  for (const needle of ['Furthest from the system Coda', 'Closest to a sibling', 'No threshold is applied']) {
+    if (!r.stdout.includes(needle)) return fail(`examples/coverage output is missing "${needle}"`);
+  }
+  console.log('  coverage illustration runs and reports both readings');
+}
+
+/**
  * Retired altitude names, rejected on the normative surface only.
  *
  * The altitudes are portfolio, system, and beat. "Organization" was retired as an
@@ -750,6 +773,7 @@ if (TARGET) {
   checkToolingVersion();
   checkCommandRuns();
   checkTreeArgumentResolves();
+  checkIllustrationsRun();
   checkReleaseInvariant();
   checkBindingDiscipline();
   checkPublicSurfaceHygiene();

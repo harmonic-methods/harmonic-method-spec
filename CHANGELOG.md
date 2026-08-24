@@ -140,6 +140,37 @@
     thinnest evidence of the five and should not gain apparatus because a
     neighbour did.
 
+- **Reading the whole system.** Every instrument here scored an entity, and the
+  failure the Composer is accountable for is entirely about the set — capabilities
+  overlapping, boundaries blurring, a system that works and nobody can explain. A
+  portfolio of Beats each scoring four can be exactly that, and nothing detected
+  it. See HM-B-011 and HM-BV-011.1.
+  - **It introduces no dimension**, and an earlier reading that said it would have
+    to is corrected here. The distinctiveness dimension already speaks of overlap
+    with *sibling Beats*, so the set is inside its definition; reading a set is an
+    aggregation of published dimensions, not a new concept needing one. Adding a
+    coverage dimension would put a third definition of quality where two already
+    reach, and would need anchors, a digest and parity with every implementation
+    to say what two dimensions already say between them. See HM-N-112.
+  - **No capacity figure, from either surface.** It is what everyone asks for and
+    it cannot be honestly produced: it depends on where the boundary falls, the
+    boundary is a sentence somebody can edit, and so the number rises whenever the
+    Coda is widened without a single capability being added. It is the one output
+    that the documented widening-to-fit failure would game. Where the space is,
+    never how much.
+  - **Two surfaces, kept because they disagree.** The instrument reads; the worked
+    illustration does the same arithmetic on vectors the adopter supplies. Distance
+    measures topical proximity rather than service, so it misses a capability that
+    serves an outcome in other words; a reader glosses, so it misses ground two
+    differently-worded Beats both cover. A reading that never disagreed with its
+    own arithmetic would be evidence one of them was not consulted. See HM-N-113.
+  - The illustration is an example and not an instrument. Vectors are input — no
+    model, no network, no dependency, and reading or vendoring anything here still
+    installs nothing. Its fixture is three-dimensional, hand-placed, and describes
+    a system that does not exist, because inventing coordinates for a real system
+    produces a real-looking finding somebody might act on. A check fails if it
+    stops running or stops saying what its explanation claims.
+
 - **A rhythm, not a reminder.** Two entities had been specified in full since the
   vocabulary landed and neither had ever existed: the checker contained no mention
   of a Bar or a Downbeat, no tree here had a place to put one, and the instrument
