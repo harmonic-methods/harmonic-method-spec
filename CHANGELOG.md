@@ -2,6 +2,144 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Warrant is not a score.** The root Coda instrument capped two dimensions by
+  the provenance of their evidence, asserted ceilinging at 2. Six dimensions
+  averaged unweighted with two held at 2 puts the ceiling on the overall at 4.0,
+  so an organization without counterparty evidence could reach a threshold of 4
+  only by scoring a perfect 5 everywhere else. Not a low score — an unpassable
+  gate wearing the costume of one. See HM-B-012 and HM-BV-012.2.
+  - **A defect this repository had already removed once.** The score floor on a
+    class of Beats was deleted because six dimensions at Strong plus one at the
+    sanctioned floor came to 3.86 against the same threshold. This was that
+    again, worse: a ceiling not a floor, two dimensions not one, and a remedy the
+    author usually cannot reach while scoring. Third time an instrument published
+    here has failed this repository on first contact, and the first time by
+    repeating a documented finding. See HM-N-125.
+  - **A capped dimension is not underweighted, it is overweighted.** It can drag
+    an unweighted mean down and cannot lift it, so it decides the outcome more
+    than the dimensions that keep their range. Under the ceiling, strong scores
+    elsewhere also partly compensated for having no evidence at all, because
+    everything landed in one average. A band cannot be averaged away.
+  - **Two bands the ceiling could not carry.** Evidence about a comparable, and
+    an assumption registered with what would falsify it, who is accountable, and
+    by when. Both had been stuck on an unanswerable question — what number does
+    this tier cap at — which dissolves once bands stop converting to points. A
+    rubric rewarding only what has been proven rewards claiming only what is
+    already done; the distinction that matters is managed against unmanaged, not
+    validated against unvalidated. A test that elapses unread forfeits its band,
+    scoring below an honest assertion. See HM-N-126.
+  - **Adoption is not value modelling.** Where a measure is well formed and its
+    evidence is missing because nobody has been shown the thing, that is the
+    Promoter's failure by `specs/function.yml`, and the instrument now says so.
+    The two diagnoses call for opposite responses — rewrite the statement, or
+    publish it and find someone — and this repository is the worked example: its
+    root Coda claims adoption without an account or a call, and the repository is
+    private with forking disabled. See HM-N-127.
+  - **Weighting was refused.** Weights on a six-dimension rubric are
+    unfalsifiable knobs, nothing here justifies a particular set, and they are how
+    a rubric gets tuned until it returns the wanted answer. The mean stays
+    unweighted and the gate stays explicit beside it — what band a reading must
+    reach is an implementation's choice, exactly as the numeric threshold is.
+  - Owed and stated: the warrant split generalizes to any instrument scoring from
+    partial input, and work that resolves a load-bearing assumption still scores
+    badly on the Beat rubric for being small and one-shot. Both belong to steps of
+    their own.
+
+- **What the root is held to.** `specs/note.yml` has said since the vocabulary
+  landed that a Note attaches to the portfolio, system, or Beat the knowledge
+  belongs to. Only the Beat case ever had somewhere to live — the third entity
+  specified in full here and left unrepresentable, after the two cadence
+  entities, and found the same way they were: by using the method rather than
+  reading it. See HM-B-013 and HM-BV-013.1.
+  - **A tightly bounded system scored 1 for having no bounds**, and the rubric
+    was right. This repository's bounds are real and held on every change, and
+    they lived in the contributor charter — not part of the published surface,
+    read by no instrument, never seen by an adopter. A fact kept where the rubric
+    cannot reach it scores as a fact that does not exist. They are now recorded at
+    the root, with the ordering among them stated for the first time.
+  - **The root Coda was replaced, and the prior statement is preserved** as
+    `specs/coda.yml` requires. It was not wrong; it was one altitude too low. It
+    described what a reader could do with a repository — its own header called it
+    a system Coda — so everything beneath it laddered to distribution, and a
+    capability easing adoption while leaving no organization better off had
+    something to score against while one helping an organization stop work had
+    nothing. The replacement is about tracing work to purpose and stopping work
+    that has stopped earning its place, and it names how it can be failed. The
+    exclusion that was the old statement's one strength is carried over intact.
+    See HM-N-119.
+  - **Published bounds count; a charter does not.** The instrument now scores the
+    statement together with the context recorded at the root, and reports which
+    of the two carried each dimension. An organization is bounded by what it
+    published — a rule reliably honoured and never written is a habit, and
+    admitting internal documents would let anyone score well on Bounded by
+    pointing at something no adopter can read. See HM-N-122.
+  - **One reader for both cases**, because they differ in exactly what
+    `attached_to` must equal and `specs/note.yml` states every other rule once for
+    all Notes. Two readers would be two places to add a rule to only one of them.
+    Root Notes sit in `<root>/notes/`, a sibling of `beats/`, following the layout
+    rule already in force. Both new failures were made to fail first — including
+    one that was not theoretical, since the root Notes were written before the
+    step they cite and the checker refused them. See HM-N-123.
+  - **No spec changed.** `specs/note.yml` was already right; what was missing was
+    somewhere to put an instance and something to check it, which is the cadence
+    finding again and the same resolution. The spec set moves for the rubric edit
+    alone, and takes a second minor step in this cycle rather than reusing the
+    previous number, because the two steps merge separately and one number
+    identifying two rubrics is the failure the discipline exists to prevent. See
+    HM-N-124.
+  - Stated rather than absorbed: the new statement names conforming
+    implementations and adopter findings as its measure, and none exists yet
+    beyond the worked example authored here. Under the instrument's own
+    provenance ceiling that holds the two evidence dimensions at asserted. The
+    score stays low until an adopter changes it, and that is the honest reading
+    rather than a writing problem.
+
+- **A root Coda that can be failed.** Four of the five accountabilities had an
+  instrument and the Producer had none. The recorded reason was that its
+  instrument would need Value Velocity defined closely enough to assess without
+  computing it — sound, and aimed at the wrong object. A rate needs a realized
+  figure and the figure arrives after the moment the judgement is needed: the
+  Producer's question is whether work should continue at its current shape and
+  cost, asked while the work is running. What exists at that moment is the
+  statement the rate would eventually be measured against, and nothing here
+  scored it. See HM-B-012 and HM-BV-012.1.
+  - **The instrument scores the statement, not the rate.** Value Velocity stays
+    exactly what `specs/function.yml` says it is: the measure the method names
+    and the implementation computes. What is added is a rubric over the root Coda
+    — the one identified by an omitted parent — asking whose benefit is claimed,
+    on what evidence, inside what bounds, and what would count as the exchange
+    having gone wrong. This is where the function's own failure mode lives:
+    nothing gets stopped against a statement that cannot be failed. See HM-N-114.
+  - **Six dimensions of its own, not the Beat's seven read higher up.** Every
+    rubric here measures service to the Coda above, and a root Coda has none, so
+    the heaviest dimension elsewhere has no referent and no rewording supplies
+    one. Altitude is recursion for an entity; it is not recursion for a dimension
+    whose referent is absent. A distinct organization altitude was weighed and
+    refused — it would add an entity to carry a statement `specs/coda.yml`
+    already holds. See HM-N-115.
+  - **A score is capped by the provenance of its evidence.** Asserted ceilings at
+    2, read out of the record at 4, generated by the counterparty at some cost to
+    them at 5; a qualitative measure reaches the top tier if it names its
+    observer. The instrument may not simulate the counterparty and score from
+    what it imagined — that produces an assertion wearing the other party's name,
+    and attaching reasoning to it makes it harder to dismiss rather than more
+    true. Both rules sit inside the guarded text, so loosening either fails the
+    conformance check. Each was made to fail before being believed. See HM-N-116.
+  - **A drafting aid ordered from the ledgers outward**, because a destination is
+    only checkable once the parties it is measured on exist. It speaks for no
+    counterparty and settles nothing: an agent may draft what an organization is
+    for and may not decide it, so the draft is a proposal until whoever holds the
+    accountability adopts it.
+  - **The spec set takes a minor step** although no spec changed apart from the
+    version each repeats. `specs/conformance.yml` puts the dimensions an
+    instrument scores on the comparable surface, so adding one extends what a
+    declaration is made against — an addition, not a break. Earlier steps added
+    skills without moving it, correctly: those produce rather than assess and
+    contain nothing an implementation can contradict. See HM-N-118.
+  - The Promoter still has no instrument, deliberately. Adoption rests on the
+    thinnest evidence of the five and should not gain apparatus because a
+    neighbour did.
+
 - **Reading the whole system.** Every instrument here scored an entity, and the
   failure the Composer is accountable for is entirely about the set — capabilities
   overlapping, boundaries blurring, a system that works and nobody can explain. A

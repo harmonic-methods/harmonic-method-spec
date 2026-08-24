@@ -1,0 +1,30 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-124
+  type: decision
+  attached_to: HM-B-013
+  beat_version: HM-BV-013.1
+  content: >
+    The spec set takes a second minor step in the same unreleased cycle rather
+    than folding this change into the one the previous step introduced. The
+    previous number was never tagged and nobody could yet have pinned it.
+  rationale: >
+    Folding would have been defensible on the reasoning [HM-N-045] used: a change
+    that cannot break anybody, in a cycle where the number was not yet pinnable,
+    costs less than it appears to. That reasoning is sound and it does not reach
+    this case, because the two steps merge separately. Between them there is a
+    real interval in which the earlier number is on the trunk and available to
+    pin, and reusing it would leave one version identifying two different
+    rubrics — which is the precise failure the versioning discipline exists to
+    prevent, arriving through a side door marked convenience.
+
+    The change itself is an edit to a published rubric's check rules and would
+    require a minor step on its own account under any reading. It widens what a
+    dimension is scored against, so a score produced under the earlier number and
+    one produced under this one are not comparable, and the instruments already
+    require a score to name its version precisely so that they can be told apart.
+    A version that did not move here would make that requirement decorative.
+
+    Two minor steps in one cycle is not a cost worth avoiding. The number is
+    cheap, the changelog says what moved in each, and nothing in the 1.x line is
+    scarce.

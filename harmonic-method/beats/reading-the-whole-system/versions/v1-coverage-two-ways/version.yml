@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-011.1
   beat: HM-B-011
   title: Coverage, read and computed
-  status: active
+  status: delivered
   summary: >
     Every instrument here scores an entity. None reads a set, and the failure the
     Composer is accountable for is entirely about the set — capabilities

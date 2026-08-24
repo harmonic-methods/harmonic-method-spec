@@ -1,0 +1,32 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-127
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.2
+  content: >
+    Where a measure is well formed and its evidence is absent because the thing
+    has not been put in front of anyone, the instrument reports a Promoter
+    finding and says so, rather than reading the gap as a Producer deficiency.
+  rationale: >
+    `specs/function.yml` gives adoption to the Promoter — whether the thing built
+    is taken up by the people it was built for — and names its failure as every
+    formal signal reporting success while usage is near zero. An unevidenced
+    value claim on something nobody can reach is that failure exactly, and the
+    instrument was reporting it as weak value modelling.
+
+    The two diagnoses call for opposite responses. One says rewrite the
+    statement; the other says publish the thing and go find someone. An
+    instrument that cannot tell them apart will keep recommending the first,
+    which is both wasted work and the more discouraging answer, because it reads
+    as a criticism of thinking rather than a description of distribution.
+
+    This repository is the worked example. Its own root Coda claims adoption from
+    the repository alone, without an account, a vendor relationship, or a call,
+    and the repository is private with forking disabled. No adopter can exist, so
+    no adopter evidence can exist. Nothing about that is a defect in the value
+    claim, and the first reading of it said it was.
+
+    Routing a finding is not scoring for another function, and the Promoter's
+    instrument stays deliberately absent. Each instrument here names the function
+    it serves; what changes is that this one stops quietly answering for two.

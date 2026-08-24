@@ -1,0 +1,29 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-118
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.1
+  content: >
+    The spec set takes a minor step for this, although no file in `specs/`
+    changed apart from the version every one of them repeats.
+  rationale: >
+    `specs/conformance.yml` puts the dimensions and checks each instrument scores
+    on the binding, comparable surface — facts an implementation states and a
+    tool compares. Adding an instrument therefore adds to what a declaration is
+    made against, and an implementation pinned to the previous version is not
+    wrong about anything, it simply declares against a smaller surface. That is
+    an addition, so it is a minor step and not a major one.
+
+    The alternative reading — that the spec set versions `specs/` and skills move
+    freely beneath it — is the reading that would let a rubric appear, be scored
+    against, and be compared for parity with no version anyone could pin the
+    comparison to. Two scores are only comparable when both name a version, which
+    is a rule the instruments already state; the rule is empty if the number does
+    not move when the rubric set does.
+
+    Earlier steps added skills without moving it, and that was correct: those
+    produce rather than assess, carry no dimension and no scale, and are
+    explicitly outside the digest because they contain nothing normative to
+    guard. The line is not whether a file was added under `skills/`. It is
+    whether what was added is something an implementation can contradict.

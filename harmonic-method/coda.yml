@@ -1,11 +1,29 @@
-# The system Coda — the outcome this repository exists to serve.
+# The root Coda — the outcome this method exists to serve.
 # Conformant to specs/coda.yml. Root Coda: omits parent.
+#
+# What must stay true, what gives first, and what would end this are decisions
+# rather than direction, and they live in ./notes/ — the directory is the list.
 coda:
   id: HM-CODA
   statement: >
-    A team can adopt the Harmonic Method from this repository alone — read the
-    entity model and find it sufficient for the work they actually do, name who
-    answers for each of its five functions, compose and correct the entities
-    themselves with an agent, assess them against the published instruments, and
-    find that a score means here what it would mean in any conforming
-    implementation — without an account, a vendor relationship, or a call.
+    An organization can trace any change it is making to the purpose it exists
+    to serve, and can tell on a known occasion — against a written anchor, in
+    terms the people it serves would recognize — whether that work is still
+    worth what it costs. Intent survives decomposition into capabilities, steps
+    and changes; a score means the same thing in any conforming implementation;
+    and work that has stopped earning its place is stopped on the record rather
+    than starved off the plan.
+
+    Adopters pay in discipline rather than in money. What they write down stays
+    theirs, nothing here requires an account, a vendor relationship, or a call,
+    and the alternative they could leave for stays available to them on purpose.
+    What the method receives back is the only evidence that could correct it:
+    conforming implementations, and findings from people who applied it to work
+    that mattered to them.
+
+    Without it an organization can establish that work was done and cannot
+    establish that it was worth doing — every widely available alternative
+    measures throughput, and throughput is what a coherent system produces right
+    up until it stops being worth its cost.
+
+    It is failing when adopters score well and stop nothing.

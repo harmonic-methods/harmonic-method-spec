@@ -4,7 +4,7 @@
 # its records in a spreadsheet and a folder of documents, which is exactly the
 # case the encoding rule exists to permit.
 declaration:
-  spec_version: 1.3.0
+  spec_version: 1.6.0
   implementation: Estimating Desk
   divergences:
     - spec: revision.yml

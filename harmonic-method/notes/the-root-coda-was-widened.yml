@@ -1,0 +1,51 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-119
+  type: decision
+  attached_to: HM-CODA
+  beat_version: HM-BV-013.1
+  content: >
+    The root Coda was replaced. The prior statement, preserved here as
+    `specs/coda.yml` requires, read:
+
+    "A team can adopt the Harmonic Method from this repository alone — read the
+    entity model and find it sufficient for the work they actually do, name who
+    answers for each of its five functions, compose and correct the entities
+    themselves with an agent, assess them against the published instruments, and
+    find that a score means here what it would mean in any conforming
+    implementation — without an account, a vendor relationship, or a call."
+
+    Nothing in it was false and it is not superseded for being wrong. It is
+    superseded for being one altitude too low.
+  rationale: >
+    The prior statement was scored against the root Coda rubric on the step that
+    published that rubric, and came to 2.0. The scores are not the reason it
+    changed; what the scores exposed is. Read as a whole it described what a
+    reader could do with a repository, and its own header called it a system
+    Coda. It was functioning as a root because nothing sat above it, not because
+    it said what the effort is for.
+
+    That has a cost beyond tidiness. Every rubric here measures service to the
+    Coda above, so a root scoped to distribution makes distribution the thing
+    everything beneath it ladders to. A capability that made adoption easier and
+    made no organization better off would have scored well, and one that helped
+    an organization stop work it should not be doing had nothing to ladder to.
+    The chain was sound and pointed slightly past the target.
+
+    The replacement is deliberately bolder, and the boldness is load-bearing
+    rather than tonal. A statement about tracing work to purpose, and about being
+    able to stop work that has stopped earning its place, can be failed by the
+    method itself — the last line says how — where a statement about adoption
+    could only be failed by a distribution mistake nobody was going to make.
+
+    What did not change is the exclusion. Adoption without an account, a vendor
+    relationship or a call was the strongest thing the prior statement did, it
+    was the one dimension it scored well on, and it is carried into the new one
+    intact and for a further reason recorded in [HM-N-120]: an adopter who can
+    leave is the only adopter whose staying means anything.
+
+    Deliberately absent: any claim about who publishes this or what they get
+    commercially. The second ledger here is conforming implementations and
+    findings from adopters, which is what could correct the method. An
+    organization's commercial interest in the method existing is real and is that
+    organization's own root Coda to state, one tree over, not this one's.

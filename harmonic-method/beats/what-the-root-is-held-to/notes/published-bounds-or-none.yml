@@ -1,0 +1,35 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-122
+  type: decision
+  attached_to: HM-B-013
+  beat_version: HM-BV-013.1
+  content: >
+    The root Coda instrument scores the statement together with the context
+    recorded at the root, and reports which of the two carried each dimension. A
+    bound kept in a contributor charter, an internal document, or an
+    unwritten practice does not count, however reliably it is honoured.
+  rationale: >
+    The alternative was to score the statement alone, and this repository is the
+    argument against it. Its bounds were real, ordered, and held on every change,
+    and Bounded scored 1 — correctly, because the rubric could not see them. Two
+    responses were available. Push every bound into the statement, which produces
+    a root Coda that is a specification of operating rules and no longer a
+    statement of direction, and which `specs/coda.yml` already forbids by calling
+    a Coda a resolved future state rather than a task list. Or give the bounds
+    somewhere to live and let the instrument read there too.
+
+    The published-only line is where the honesty is. An organization is bounded by
+    what it has published, because that is the only version an adopter, a
+    counterparty, or a later reader can hold it to. A rule reliably honoured and
+    never written is indistinguishable from a habit, and it stops when the person
+    holding it leaves. Admitting an internal charter would have let any
+    organization score well on Bounded by pointing at a document nobody outside
+    it can read, which is the same defect as assessing the counterparty's benefit
+    from our own side.
+
+    Reporting which carried the dimension matters as much as the widening. Without
+    it, a thin statement propped up by a thick record scores the same as a
+    statement that does the work, and the reader deciding whether to rewrite
+    cannot tell which they have. It also keeps the widening from becoming a way
+    to stop improving statements.

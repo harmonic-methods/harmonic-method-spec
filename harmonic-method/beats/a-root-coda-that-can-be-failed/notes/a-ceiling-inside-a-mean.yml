@@ -1,0 +1,45 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-125
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.2
+  content: >
+    The provenance ceiling recorded in [HM-N-116] is removed. Every dimension is scored over its full
+    range on how well formed the statement is, and what stands behind the
+    measures it names is reported as a warrant band that does not enter the
+    average. Nothing may move a score to reflect warrant.
+  rationale: >
+    The arithmetic is the argument. Six dimensions averaged unweighted, two of
+    them capped at 2, puts the ceiling on the overall at 4.0: a perfect 5 on all
+    four remaining dimensions is the only way to reach a threshold of 4. A
+    capped dimension in an unweighted mean is not underweighted, which was the
+    intuition behind thinking the cap was mild. It is asymmetrically
+    overweighted — it can drag the total down and cannot lift it, so it decides
+    the outcome more than the dimensions that keep their range.
+
+    This repository had already found and removed exactly this. [HM-N-080]
+    deleted a score floor on a class of Beats because six dimensions at Strong
+    and one at the sanctioned floor came to 3.86 against a threshold of 4, so
+    that class could not pass however well it was written. This was the same
+    defect with a ceiling instead of a floor, on two dimensions instead of one,
+    and with a remedy — obtain evidence from a counterparty — that the author
+    usually cannot reach while scoring. It is the third time an instrument
+    published here has failed this repository on first contact, and the first
+    time one did it by repeating a documented finding.
+
+    The cause is that the ceiling carried two statements in one number: how well
+    formed a claim is, and what stands behind it. Those are independent. A claim
+    can be impeccably written and wholly unevidenced, and the useful reading says
+    both. A mean can carry one, so the second has to sit beside it.
+
+    Separating them fixes something else that was quietly wrong. Under the
+    ceiling, strong scores on Bounded or Generative partly compensated for having
+    no evidence at all, because everything landed in the same average. A band
+    cannot be averaged away.
+
+    Weighting was considered as the alternative and refused. Weights on a
+    six-dimension rubric are unfalsifiable knobs, nothing here could justify a
+    particular set, and they are the ordinary route by which a rubric is tuned
+    until it returns the answer somebody wanted. An unweighted mean with an
+    explicit band beside it says more and hides less.

@@ -1,0 +1,31 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-013
+  title: What the root is held to
+  status: open
+  coda:
+    statement: >
+      A system's root carries what it is held to where the method can read it —
+      the bounds, the ordering among them when two cannot both hold, and what
+      would end the effort — so that an instrument scoring the top of the chain
+      is reading the organization rather than only its direction, and an adopter
+      inherits the constraints along with the specification.
+    parent: HM-CODA
+  description: >
+    The capability by which knowledge belonging to the root has somewhere to
+    live. Covers where a Note attached to a system rather than to a Beat sits in
+    a tree, what a checker holds about one, and what an instrument reading the
+    root is entitled to read alongside the statement.
+
+    The boundary with the assessment capability is which artifact is being
+    judged. That one scores a statement. This one is about everything true of a
+    system that is not its direction — a floor, an ordering, an ending — which is
+    not direction and does not belong in a statement of it, but without which the
+    statement is being scored against a fraction of what the organization
+    actually holds itself to.
+
+    It is held against the constraint the whole method is held to: knowledge is
+    preserved and never overwritten. A bound that changes is a new decision
+    citing the one it supersedes, at the root exactly as under a Beat.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

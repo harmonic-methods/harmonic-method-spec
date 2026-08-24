@@ -156,7 +156,7 @@ possible to say which of the five nobody is currently holding.
 
 ## The instruments
 
-Three skills assess work against the published definitions. Each serves one
+Four skills assess work against the published definitions. Each serves one
 function, and each is written to be read literally by an agent.
 
 | Instrument | Function | What it asks |
@@ -164,6 +164,7 @@ function, and each is written to be read literally by an agent.
 | [beat-coda-quality-check](skills/beat-coda-quality-check/SKILL.md) | Composer | Is this capability well defined? Seven dimensions, 1-5: Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Outcome-Oriented. |
 | [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
 | [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
+| [root-coda-quality-check](skills/root-coda-quality-check/SKILL.md) | Producer | Is the statement everything ladders to worth laddering to? Six dimensions, 1-5: Discriminating, Attributed, Reciprocal, Bounded, Generative, Consequential — reported with a warrant band that is not one of them. |
 
 [coverage-reading](skills/coverage-reading/SKILL.md) serves the Composer over a
 whole system rather than one entity: which parts of the system Coda nothing
@@ -175,7 +176,7 @@ rises whenever the Coda is widened and no capability is added.
 [examples/coverage/](examples/coverage/) shows the same two questions answered
 arithmetically where an adopter has embeddings; the two disagree usefully.
 
-Three skills produce rather than assess, and none defines any judgement of its
+Four skills produce rather than assess, and none defines any judgement of its
 own — which is what keeps a production aid from becoming a second standard.
 
 [beat-composing](skills/beat-composing/SKILL.md) serves the Composer: give it a
@@ -197,10 +198,42 @@ carries no scale, because the method leaves how convergence is computed to the
 implementation, and it separates what it examined from what it took on the
 record's word.
 
-The Producer and the Promoter have no instrument yet, deliberately. The
-Producer's would need Value Velocity defined closely enough to assess without
-computing it; the Promoter's rests on the newest and thinnest evidence of the
-five, and should not carry more apparatus than the others until that changes.
+[root-coda-composing](skills/root-coda-composing/SKILL.md) serves the Producer:
+it drafts the statement at the top of the chain, starting from who benefits and
+who pays rather than from where the organization is headed, because a destination
+is only checkable once the ledgers it is measured on exist. It will not speak for
+the counterparty and will not settle what an organization is for — that answer
+belongs to whoever is accountable for it, and the draft is a proposal until they
+adopt it.
+
+The Producer's instrument scores the root Coda rather than computing Value
+Velocity, which is what had kept the slot empty: a rate needs a realized figure,
+and the figure is not available at the moment anyone needs the judgement. What is
+available is the statement the rate would be measured against — whose benefit is
+claimed, on what evidence, inside what bounds — so the instrument asks whether
+that statement can be failed, and leaves the arithmetic to the implementation as
+every other instrument here does.
+
+How well a statement is written and what stands behind it are separate readings,
+so the instrument reports a score and a warrant band and never combines them. The
+band records what the measures rest on — an assertion, an assumption registered
+with the test that would settle it, evidence about a comparable, the
+organization's own record, or a costly voluntary act by the other party — and it
+does not enter the average. An earlier version capped two dimensions by that
+evidence instead, which put the ceiling on a six-dimension average at 4.0 and
+made a gate out of a score. That is the defect a score floor on one class of
+Beats had already been removed for, and repeating it is recorded rather than
+quietly fixed.
+
+Its dimensions are not the Beat's read at a higher altitude. Every other rubric
+measures service to the Coda above, and a root Coda has none, so the dimension
+carrying the most weight elsewhere has no referent here and no rewording gives it
+one. These six score the statement's own properties and its relation outward, to
+the parties it serves and the alternatives they hold.
+
+The Promoter still has no instrument, deliberately: adoption rests on the newest
+and thinnest evidence of the five, and should not carry more apparatus than the
+others until that changes.
 
 The dimension definitions and anchors are canonical here, so a score means the
 same thing wherever it is produced. Each instrument tells the reader not to
@@ -210,7 +243,8 @@ of it is edited without acknowledgement.
 
 ## Laying out a system
 
-    harmonic-method/coda.yml                                    the system Coda
+    harmonic-method/coda.yml                                    the root Coda
+    harmonic-method/notes/*.yml                                 what the root is held to
     harmonic-method/beats/<slug>/beat.yml                       a Beat
     harmonic-method/beats/<slug>/notes/*.yml                    its knowledge
     harmonic-method/beats/<slug>/versions/<v>/version.yml       a planned step
@@ -220,7 +254,11 @@ of it is edited without acknowledgement.
 
 One rule all the way down: an entity is a directory, its children are
 subdirectories, and no file carries an inline child list. Notes attach to the
-Beat rather than to a Beat Version — a version ends, the knowledge it
+entity whose knowledge they are, which is the root itself for the bounds a system
+holds, the ordering among them, and what would end the effort — published, so an
+adopter inherits the constraints along with the specification, and so the
+instrument scoring the root reads the organization rather than only its
+direction. Notes attach to the Beat rather than to a Beat Version — a version ends, the knowledge it
 produced does not — and may name the version they arose from.
 
 - [examples/](examples/) — one conformant Beat in this layout, deliberately
