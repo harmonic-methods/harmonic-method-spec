@@ -1,0 +1,80 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-011.1
+  beat: HM-B-011
+  title: Coverage, read and computed
+  status: active
+  summary: >
+    Every instrument here scores an entity. None reads a set, and the failure the
+    Composer is accountable for is entirely about the set — capabilities
+    overlapping, boundaries blurring, a system that works and cannot be
+    explained. A portfolio of Beats each scoring four can be exactly that.
+
+    This step adds the reading, on two surfaces that answer the same two
+    questions differently and are worth having precisely because they disagree.
+
+    The instrument decomposes the outcome into its separable claims, maps each
+    Beat to the claims it serves, and reports what falls out: a claim nothing
+    serves, a claim several Beats duplicate, and a Beat serving no claim at all.
+    That last one is the finding most often misread — it usually means the
+    outcome is behind the system rather than that the Beat does not belong, and
+    it is reported as a finding about the pair.
+
+    The illustration answers the same two questions arithmetically, where an
+    adopter has embeddings: one ranking by distance from the outcome, one by
+    distance to the nearest sibling. It is an example and not an instrument. It
+    computes nothing the published dimensions do not already describe, takes
+    vectors as input so nothing here needs a model or a network, and applies no
+    threshold.
+
+    Neither surface is authoritative over the other and [HM-N-113] records why
+    both ship. They fail in opposite directions: distance measures topical
+    proximity rather than service, so it misses a Beat that serves an outcome in
+    other words; a reader glosses, so it misses ground two differently-worded
+    Beats both cover. The disagreement between them is the most useful thing
+    either produces.
+
+    Done when: a set can be read against the two published dimensions and
+    reported as findings; a claim nothing serves is located rather than counted;
+    no capacity figure is produced by either surface; the illustration runs on a
+    fixture that is obviously a fixture; and a check fails if the illustration
+    stops running or stops saying what its explanation claims.
+  scope: >
+    In: the instrument; the worked illustration with its fixture and its own
+    explanation; a check that the illustration still runs and still reports both
+    readings; and the two Notes recording why coverage introduces no dimension
+    and why two surfaces ship rather than one.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: a capacity figure, from either surface. It is the number everyone asks
+    for and it cannot be honestly produced — it depends on where the boundary
+    falls, and the boundary is a sentence somebody can edit, so the figure rises
+    whenever the outcome is widened and no capability is added. [HM-N-112] holds
+    the line and says what it costs.
+    Out also: a coverage dimension. Adding one would put a third definition of
+    quality on the normative surface for something two existing dimensions
+    already cover, and it would need a digest, an anchor set, and parity with
+    every implementation. Aggregating published dimensions needs none of that.
+    Out also: any threshold. Neither published dimension carries a cutoff for
+    aligned enough or distinct enough, and a number here would become one by
+    being the only one available.
+    Out also: computing embeddings. Vectors are input. Reading a spec, applying
+    an instrument or vendoring any of this still installs nothing, and a fixture
+    that called a model would end that.
+    Out also: running the illustration on this repository's own system. Its
+    vectors would have to be invented, and invented coordinates on real
+    capabilities produce a real-looking finding about a system somebody might
+    act on.
+
+    Owed, not done: the mapping from a Coda's claims to the Beats serving them is
+    produced fresh on each reading and recorded nowhere, so two readings a month
+    apart cannot be compared. Whether that mapping is worth persisting is a
+    question for whoever finds themselves wanting the comparison, and an entity
+    designed before anyone has wanted it is the shape [HM-N-093] declines.
+
+    Risks stated: a coverage reading is the easiest output in this repository to
+    turn into a backlog. A list of unserved claims looks like a plan, and filling
+    every claim is not the same as having a coherent system — some claims should
+    stay unserved. The instrument says so where it hands the reading over, which
+    is a written habit and not a mechanism, and nothing checks it.

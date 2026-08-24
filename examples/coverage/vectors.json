@@ -1,0 +1,12 @@
+{
+  "_": "Illustrative only. Three dimensions, placed by hand so the geometry is legible, for a system that does not exist. Not a measurement of anything, and not produced by any model.",
+  "coda": { "id": "HA-CODA", "label": "a tenant knows, without chasing, when someone will come and what is happening meanwhile", "v": [1, 0, 0] },
+  "beats": [
+    { "id": "HA-B-001", "label": "an appointment a tenant can rely on",      "v": [0.95,  0.31,  0.00] },
+    { "id": "HA-B-002", "label": "progress visible between report and visit","v": [0.94, -0.34,  0.00] },
+    { "id": "HA-B-003", "label": "told before they chase",                   "v": [0.95,  0.28,  0.14] },
+    { "id": "HA-B-004", "label": "repair history a tenant can refer to",     "v": [0.42,  0.91,  0.00] },
+    { "id": "HA-B-005", "label": "the person at the door is who they should be", "v": [0.40, -0.60, 0.69] }
+  ],
+  "probe": { "id": "HA-P-001", "label": "a candidate aimed at open ground", "v": [0.93, 0.05, -0.37] }
+}

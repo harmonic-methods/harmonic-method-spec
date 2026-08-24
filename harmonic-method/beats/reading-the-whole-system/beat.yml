@@ -1,0 +1,31 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-011
+  title: Reading the whole system
+  status: open
+  coda:
+    statement: >
+      Someone holding a set of capabilities can see how the ground is covered —
+      which parts of the outcome nothing serves, which capabilities cover ground
+      already taken, and which sit outside the outcome altogether — assessed
+      against the published dimensions and reported as findings rather than as a
+      number.
+    parent: HM-CODA
+  description: >
+    The capability by which a system is read as a set rather than one entity at
+    a time. Every other instrument here takes a single Beat, a single plan, or a
+    single chain; a set of individually excellent Beats can still be a system
+    nobody can navigate, and nothing detected that.
+
+    It defines nothing of its own. Two published dimensions already carry it —
+    one about overlap with sibling Beats, one about serving the outcome above —
+    and reading a set is applying them across it rather than one at a time. The
+    boundary this must not cross is inventing a third: a coverage dimension, a
+    capacity figure, or a threshold for how full is full would each be a new
+    definition of quality wearing an aggregate's clothes.
+
+    Its subject is the Composer's stated failure. The system still functions,
+    nobody can explain it as a whole, capabilities overlap and boundaries blur —
+    a failure about the set that no per-entity score can see.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.
