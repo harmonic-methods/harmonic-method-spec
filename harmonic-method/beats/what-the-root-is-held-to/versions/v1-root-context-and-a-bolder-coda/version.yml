@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-013.1
   beat: HM-B-013
   title: The root gets a place to keep what it knows, and something worth measuring
-  status: active
+  status: delivered
   summary: >
     `specs/note.yml` has said since the vocabulary landed that a Note attaches to
     the portfolio, system, or Beat the knowledge belongs to. Only the Beat case

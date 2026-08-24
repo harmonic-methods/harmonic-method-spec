@@ -33,8 +33,13 @@ guards it against an unacknowledged edit.
   The root is the Coda with no parent above it. Not the Beat rubric at a higher
   altitude: every other rubric here measures service to the Coda above and a root
   Coda has none, so these score the statement's own properties and its relation
-  outward instead. A named measure's score is capped by the provenance of its
-  evidence, and the instrument declines to stand in for the counterparty
+  outward instead. Scores measure how well formed the statement is; what stands
+  behind it is reported as a warrant band beside the average and never inside it
+  — asserted, asserted-under-test, comparable, record, counterparty-observed. A
+  lapsed test forfeits its band; comparable evidence never reaches Reciprocal;
+  and where a measure is well formed but nobody has been shown the thing, the
+  finding is routed to the Promoter rather than read as weak value modelling. The
+  instrument declines to stand in for the counterparty
 The Promoter has no instrument yet, deliberately. The Producer's scores the
 statement Value Velocity would be measured against rather than computing the rate,
 which is what had kept that slot empty.

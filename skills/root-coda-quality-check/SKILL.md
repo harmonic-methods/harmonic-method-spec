@@ -31,13 +31,13 @@ whose referent is absent.
 ## Inputs
 The root Coda statement, and the context and decisions recorded at the root
 itself — the bounds it holds, the ordering among them, what it has refused, what
-would end it. If available: the system Codas directly beneath it (for
+would end it, and any load-bearing assumption registered with the test that
+would settle it. If available: the system Codas directly beneath it (for
 Consequential and Discriminating), and whatever record the organization keeps
 that a measure could be read from — knowledge Notes, renewal and contract
 history, correspondence, support records (for classifying evidence provenance
-under the check rules). If a named measure's provenance cannot be established
-from what you were given, say so and apply the asserted ceiling rather than
-guessing.
+under the check rules). If a named measure's warrant cannot be established from
+what you were given, say so and report the asserted band rather than guessing.
 
 ## Scoring scale
 
@@ -99,10 +99,13 @@ guessing.
 For each dimension: score, one-sentence justification, and (for any score below
 5) the single most useful improvement. Then:
 
-- **Overall**: average of the six, one decimal.
+- **Overall**: average of the six, one decimal, followed by the warrant band —
+  `Overall 4.3 · warrant asserted`. Never combine them into one number.
 - **Evidence**, in two lists: what you examined directly, and what you took on
-  the statement's or the record's word. Name the provenance tier applied to each
-  measure and any ceiling it imposed.
+  the statement's or the record's word. Name the band each measure reached and
+  what carried it, and name any assumption whose test has lapsed.
+- **Findings belonging elsewhere**: anything the check rules route to another
+  function, named with the function it belongs to.
 - **Verdict**: report pass/fail against whatever threshold the reader's
   implementation sets, and say that the threshold is an implementation choice
   rather than something this repository fixes.
@@ -114,20 +117,43 @@ For each dimension: score, one-sentence justification, and (for any score below
 
 - Score each dimension independently with evidence from the Coda as written.
 - Be specific in rationale — cite exact phrases from the statement.
-- **Cap the score by the provenance of the evidence.** A measure is only worth
-  what its source can bear, and the ceiling applies to Attributed and Reciprocal:
+- **Score every dimension over its full range, and report warrant separately.**
+  Warrant is not a dimension, is not scored, and never enters the average. The
+  scores measure how well formed the statement is; the warrant records what
+  stands behind it. They are independent — a claim can be impeccably written and
+  wholly unevidenced — and a reading that folds either into the other conceals
+  both. Never cap, floor, or otherwise move a score to reflect warrant.
 
-  | Provenance | Ceiling |
+  | Warrant | What stands behind the measures the statement names |
   | --- | --- |
-  | Asserted — the organization states it | 2 |
-  | Inferred from record — read out of Notes, correspondence, contract or renewal history | 4 |
-  | Counterparty-observed — a costly voluntary act by the other party: renewal, expansion, referral, remaining where leaving was viable | 5 |
+  | asserted | The organization states it. Nothing observable is offered. |
+  | asserted, under test | Asserted, and every load-bearing assumption is registered at the root with what is assumed, the observation that would falsify it, who is accountable for looking, and by when. All four, or the band does not apply. |
+  | comparable | Costly voluntary acts by third parties toward a comparable thing, with the comparable named and its disanalogy stated. Never available to Reciprocal. |
+  | record | Read out of the organization's own record — Notes, correspondence, contract or renewal history. |
+  | counterparty-observed | A costly voluntary act by the other party: renewal, expansion, referral, remaining where leaving was viable. |
 
-  A measure may be qualitative and still reach the top tier, provided it names
-  its observer. Without that clause the cap quietly demotes everything that
-  matters most and counts worst — trust, standing, the counterparty's own
-  position — which is the failure the Producer exists to prevent rather than
-  cause.
+  Report the band each named measure supports, and the reading's band as the
+  lowest among the measures the value claim depends on. A measure may be
+  qualitative and still reach the top band, provided it names its observer —
+  without that clause the band demotes what matters most and counts worst.
+- **An elapsed test with no reading recorded forfeits "under test"**, dropping to
+  asserted, and the reading says which assumption lapsed. A commitment to look
+  that was not kept is worse than an honest assertion, because it claimed the
+  discipline without spending it.
+- **Comparable warrant never reaches Reciprocal.** That dimension asks whether
+  this exchange with this counterparty has turned extractive, and no evidence
+  about a comparable arrangement answers it. Naming a flattering comparable is
+  the easiest move available in this whole scheme; requiring the disanalogy is
+  what makes the band falsifiable, and the exclusion is what keeps it from
+  reaching the one dimension it cannot inform.
+- **Route a distribution failure to the Promoter.** Where a measure is well
+  formed and its evidence is absent because the thing has not been put in front
+  of anyone, that is adoption rather than value modelling, and
+  `specs/function.yml` gives adoption to the Promoter. Report it as a Promoter
+  finding and say so. A low warrant read as a Producer deficiency invites a
+  rewrite of the statement, when what is missing is distribution — two opposite
+  responses, and the instrument that cannot tell them apart will keep
+  recommending the wrong one.
 - **Never stand in for the counterparty.** Do not simulate, roleplay, or estimate
   what the other party experiences and then score Reciprocal from it. Assessing
   their benefit from our side is the defect the dimension exists to catch, and

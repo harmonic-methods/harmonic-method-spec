@@ -164,7 +164,7 @@ function, and each is written to be read literally by an agent.
 | [beat-coda-quality-check](skills/beat-coda-quality-check/SKILL.md) | Composer | Is this capability well defined? Seven dimensions, 1-5: Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Outcome-Oriented. |
 | [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
 | [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
-| [root-coda-quality-check](skills/root-coda-quality-check/SKILL.md) | Producer | Is the statement everything ladders to worth laddering to? Six dimensions, 1-5: Discriminating, Attributed, Reciprocal, Bounded, Generative, Consequential. |
+| [root-coda-quality-check](skills/root-coda-quality-check/SKILL.md) | Producer | Is the statement everything ladders to worth laddering to? Six dimensions, 1-5: Discriminating, Attributed, Reciprocal, Bounded, Generative, Consequential — reported with a warrant band that is not one of them. |
 
 Four skills produce rather than assess, and none defines any judgement of its
 own — which is what keeps a production aid from becoming a second standard.
@@ -203,6 +203,17 @@ available is the statement the rate would be measured against — whose benefit 
 claimed, on what evidence, inside what bounds — so the instrument asks whether
 that statement can be failed, and leaves the arithmetic to the implementation as
 every other instrument here does.
+
+How well a statement is written and what stands behind it are separate readings,
+so the instrument reports a score and a warrant band and never combines them. The
+band records what the measures rest on — an assertion, an assumption registered
+with the test that would settle it, evidence about a comparable, the
+organization's own record, or a costly voluntary act by the other party — and it
+does not enter the average. An earlier version capped two dimensions by that
+evidence instead, which put the ceiling on a six-dimension average at 4.0 and
+made a gate out of a score. That is the defect a score floor on one class of
+Beats had already been removed for, and repeating it is recorded rather than
+quietly fixed.
 
 Its dimensions are not the Beat's read at a higher altitude. Every other rubric
 measures service to the Coda above, and a root Coda has none, so the dimension

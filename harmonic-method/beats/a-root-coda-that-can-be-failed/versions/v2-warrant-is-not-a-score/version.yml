@@ -1,0 +1,88 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-012.2
+  beat: HM-B-012
+  title: Warrant is not a score
+  status: active
+  summary: >
+    The instrument published one step ago capped two dimensions by the
+    provenance of their evidence, asserted evidence ceilinging at 2. Six
+    dimensions averaged unweighted, two of them held at 2, puts the ceiling on
+    the overall at 4.0 — so an organization without counterparty evidence could
+    reach a threshold of 4 only by scoring a perfect 5 on all four remaining
+    dimensions. That is not a low score. It is an unpassable gate wearing the
+    costume of a score.
+
+    It is also a defect this repository had already found and removed once. The
+    carve-out placing a score floor on a class of Beats was deleted because six
+    dimensions at Strong and one at the sanctioned floor came to 3.86 against the
+    same threshold, so a Beat of that class could not pass however well it was
+    written. This reproduced that, worse: a ceiling rather than a floor, two
+    dimensions rather than one, and a remedy the author frequently cannot reach
+    at the moment of scoring.
+
+    The cause is that the ceiling was carrying two different statements in one
+    number — how well formed a claim is, and what stands behind it. A mean can
+    only carry one. This step separates them. Every dimension is scored over its
+    full range on how well formed the statement is, and what stands behind it is
+    reported as a warrant band that never enters the average.
+
+    That dissolves the argument the ceiling had started. Where a provenance tier
+    should sit on a 1-5 scale stops being a question once tiers no longer convert
+    to score points, and two further bands become admissible without arithmetic
+    consequences: evidence about a comparable, and an assumption registered with
+    the test that would settle it.
+
+    Done when: no rule in the instrument moves a score to reflect evidence; the
+    reading reports an average and a band and never combines them; a lapsed test
+    forfeits its band; the comparable band cannot reach the dimension it cannot
+    inform; a distribution failure is reported against the function that owns
+    adoption; and the digest was made to fail against the new rules before being
+    believed.
+  scope: >
+    In: replacing the provenance ceiling with a warrant band reported beside the
+    average; the two added bands, one for evidence about a comparable and one for
+    an assumption under test; the forfeit rule when a test elapses unread; the
+    exclusion keeping comparable evidence away from Reciprocal; the rule routing
+    a distribution failure to the Promoter; the output format carrying the band
+    and any finding belonging to another function; and the spec set minor step,
+    for the reason [HM-N-124] already records about steps that merge separately.
+    In also: closing the step whose work reaches the trunk immediately before
+    this one, which [HM-N-055] puts in the next substantive step's scope.
+
+    Out: the Promoter's instrument. Routing a finding to a function is not
+    scoring for it, and adoption still rests on the thinnest evidence of the five.
+    What changes is that the Producer's instrument stops silently answering for
+    two accountabilities.
+
+    Out: weighting the dimensions. It was considered as an alternative to the
+    ceiling and refused. Weights on a six-dimension rubric are unfalsifiable
+    knobs, nothing here could justify a particular set of them, and they are the
+    ordinary way a rubric gets tuned until it returns the answer somebody wanted.
+    The mean stays unweighted and the gate stays explicit beside it.
+
+    Out: any threshold. What band a reading must reach to pass stays an
+    implementation's choice, exactly as the numeric threshold already is. The
+    instrument's contribution is making the choice statable — "no root Coda
+    passes at warrant asserted" is a rule an implementation can adopt, argue
+    with, or waive, which a ceiling buried in an average was not.
+
+    Owed, not done: the warrant pattern generalizes. Any instrument scoring from
+    partial input faces the same split, and the Beat rubric currently handles it
+    by scoring from what it has and saying the context was missing — honest, and
+    not the same as a band a reader can act on. Whether the other instruments
+    should carry a warrant is a question for the capability that owns rubric
+    parity, and it is not answered here.
+
+    Owed, not done: work that resolves a load-bearing assumption scores badly on
+    the Beat rubric, because an experiment is small and one-shot and those
+    dimensions measure size and evolution. The claim worth testing is that such
+    work is aligned in proportion to how load-bearing the assumption is rather
+    than to the capability it delivers. That is an edit to a different instrument
+    and belongs to a step of its own.
+
+    Risks stated: a band is easier to state than a ceiling was to enforce, and
+    nothing here checks that a registered assumption is honest or that a named
+    comparable is apt. The disanalogy requirement and the forfeit rule are what
+    make both falsifiable by a reader; neither is machine-checkable, and saying
+    so is better than implying the checker holds them.

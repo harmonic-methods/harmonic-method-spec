@@ -2,6 +2,49 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Warrant is not a score.** The root Coda instrument capped two dimensions by
+  the provenance of their evidence, asserted ceilinging at 2. Six dimensions
+  averaged unweighted with two held at 2 puts the ceiling on the overall at 4.0,
+  so an organization without counterparty evidence could reach a threshold of 4
+  only by scoring a perfect 5 everywhere else. Not a low score — an unpassable
+  gate wearing the costume of one. See HM-B-012 and HM-BV-012.2.
+  - **A defect this repository had already removed once.** The score floor on a
+    class of Beats was deleted because six dimensions at Strong plus one at the
+    sanctioned floor came to 3.86 against the same threshold. This was that
+    again, worse: a ceiling not a floor, two dimensions not one, and a remedy the
+    author usually cannot reach while scoring. Third time an instrument published
+    here has failed this repository on first contact, and the first time by
+    repeating a documented finding. See HM-N-125.
+  - **A capped dimension is not underweighted, it is overweighted.** It can drag
+    an unweighted mean down and cannot lift it, so it decides the outcome more
+    than the dimensions that keep their range. Under the ceiling, strong scores
+    elsewhere also partly compensated for having no evidence at all, because
+    everything landed in one average. A band cannot be averaged away.
+  - **Two bands the ceiling could not carry.** Evidence about a comparable, and
+    an assumption registered with what would falsify it, who is accountable, and
+    by when. Both had been stuck on an unanswerable question — what number does
+    this tier cap at — which dissolves once bands stop converting to points. A
+    rubric rewarding only what has been proven rewards claiming only what is
+    already done; the distinction that matters is managed against unmanaged, not
+    validated against unvalidated. A test that elapses unread forfeits its band,
+    scoring below an honest assertion. See HM-N-126.
+  - **Adoption is not value modelling.** Where a measure is well formed and its
+    evidence is missing because nobody has been shown the thing, that is the
+    Promoter's failure by `specs/function.yml`, and the instrument now says so.
+    The two diagnoses call for opposite responses — rewrite the statement, or
+    publish it and find someone — and this repository is the worked example: its
+    root Coda claims adoption without an account or a call, and the repository is
+    private with forking disabled. See HM-N-127.
+  - **Weighting was refused.** Weights on a six-dimension rubric are
+    unfalsifiable knobs, nothing here justifies a particular set, and they are how
+    a rubric gets tuned until it returns the wanted answer. The mean stays
+    unweighted and the gate stays explicit beside it — what band a reading must
+    reach is an implementation's choice, exactly as the numeric threshold is.
+  - Owed and stated: the warrant split generalizes to any instrument scoring from
+    partial input, and work that resolves a load-bearing assumption still scores
+    badly on the Beat rubric for being small and one-shot. Both belong to steps of
+    their own.
+
 - **What the root is held to.** `specs/note.yml` has said since the vocabulary
   landed that a Note attaches to the portfolio, system, or Beat the knowledge
   belongs to. Only the Beat case ever had somewhere to live — the third entity
