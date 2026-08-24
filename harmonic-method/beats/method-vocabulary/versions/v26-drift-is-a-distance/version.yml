@@ -36,6 +36,11 @@ beat_version:
     which moves because this can break a conforming implementation; and the
     reading of another workflow, which quoted the published wording and would
     otherwise carry a stale quotation of a rule that has changed.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope. This was written out of scope
+    while another request looked like it would carry the close; that request has
+    since merged, taking its own close with it and leaving its step the one now
+    owed. The clause is corrected rather than quietly reversed.
 
     Out: mandating a form. The record stays an implementation's choice and the
     requirement is stated as what must be answerable from it, not as what it must
@@ -45,9 +50,6 @@ beat_version:
     Out also: how far is far. A distance needs a scale and the method leaves
     convergence scales to implementations for reasons already recorded; the same
     reasoning applies here and nothing is invented.
-    Out also: closing the step whose work has reached the trunk. A request
-    already in flight carries that close, and making it twice would conflict for
-    no gain.
 
     Owed, not done: a recorded measure should name what produced it, the way a
     recorded score already names the spec set version it was produced under.

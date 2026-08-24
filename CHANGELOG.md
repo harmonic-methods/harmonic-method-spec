@@ -2,6 +2,37 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A rhythm, not a reminder.** Two entities had been specified in full since the
+  vocabulary landed and neither had ever existed: the checker contained no mention
+  of a Bar or a Downbeat, no tree here had a place to put one, and the instrument
+  that takes an anchor produced something the layout could not hold. Worse than an
+  ordinary gap, because drift is the difference between the latest anchor and the
+  present — an anchor never taken is the reason a Coda can move without anyone
+  noticing, and the reconciliation instrument compares intent against intent up the
+  chain and cannot see it. See HM-B-010 and HM-BV-010.1.
+  - **Both now have a place and their rules are held.** A parent Bar contains its
+    children in time; Bars sharing a parent do not overlap; an anchor names a Bar
+    that exists and sits under the Beat it claims. Nesting is a parent reference
+    rather than a directory, because the spec is explicit that a parent Bar is
+    temporal containment at one altitude and not a change of altitude. Each rule
+    was made to fail against the exact defect it guards before being believed.
+  - **A period that closed with no anchor is reported, never failed.** The line is
+    whether the tree is malformed or the team is behind: overlapping periods make
+    "which Bar are we in" unanswerable and that is a defect, while an elapsed
+    period nobody read is an accurate record of a habit not yet started. Failing it
+    would refuse correct trees — the same reasoning that declined a cap on active
+    steps. See HM-N-110.
+  - **No cadence is added to this repository's own system**, because it runs none.
+    A Bar here would claim a period work is planned within and a Downbeat would
+    claim somebody took a reading; neither is true, and a fabricated anchor is
+    worse than a missing one. The cost is stated rather than absorbed: this is the
+    first capability the worked example demonstrates and this repository's own
+    system does not, so the rules are checked against a fixture rather than
+    against use. See HM-N-109.
+  - Owed: a Bar's `attached_to` names the system, and the tree convention has no
+    system entity — only a root Coda identifying it. The example points at that
+    Coda's identifier for want of anything better, which works and is not
+    obviously right.
 - **Drift is a distance, and the field only asked for a flag.** The anchor entity
   contradicted itself and the contradiction had shipped. Its summary promises that
   an anchor is what makes drift *measurable* instead of remembered; its rule

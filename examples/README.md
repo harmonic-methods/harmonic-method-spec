@@ -9,6 +9,8 @@ what you would copy.
                                   /versions/v1-send-and-approve/version.yml
                                                      EX-BV-001.1
                                             .../revisions/    the changes executing it
+                                  /downbeats/      an anchor taken at a boundary
+    bars/<period>/bar.yml                          the cadence, a quarter over a fortnight
 
 No file carries an inline child list — every directory is the list. Notes attach
 to the Beat; `notes/approval-happens-in-system.yml` shows the optional
@@ -21,6 +23,12 @@ relationship runs one way — a Revision belongs to exactly one Beat Version, an
 Beat Version takes as many Revisions as the work takes. One here has shipped and
 one is still in review, so the directory also shows a step part-delivered, which
 is why the status lives on each change rather than only on the step.
+
+The cadence is here too: a quarter still open, one fortnight inside it that has
+closed, and an anchor taken on the Beat at that fortnight's boundary. The anchor
+reads in prose and names no scale, because the method leaves how convergence is
+computed to the implementation and this engagement has none — and it separates
+what was examined from what was taken on the record's word.
 
 The example is deliberately non-software: an estimate approval flow is a
 capability whose Revisions are procedure changes rather than pull requests, and

@@ -1,0 +1,31 @@
+# Beat — conformant to specs/beat.yml
+beat:
+  id: HM-B-010
+  title: A rhythm, not a reminder
+  status: open
+  coda:
+    statement: >
+      A team applying the method can record the cadence they actually work to,
+      have its structure checked rather than trusted, and be told which elapsed
+      periods passed without anyone taking a reading — so that a missed
+      reconciliation is visible in the tree instead of depending on somebody
+      remembering it was due.
+    parent: HM-CODA
+  description: >
+    The capability by which the two cadence entities become usable rather than
+    only defined. Covers where a Bar and a Downbeat live in a tree, which of
+    their rules a checker can hold, and the one omission a tree can detect on its
+    own — a period that closed with no anchor against it.
+
+    The boundary with the assessment capability is what is being judged. That one
+    reads a capability and reports how far it has converged; this one is about
+    the occasion on which such a reading is due, and about noticing when the
+    occasion passed unattended. An instrument that takes an anchor is no use to
+    anyone who never learns an anchor was owed.
+
+    It is held against the constraint every capability here is held against: this
+    repository assesses and does not enforce. A missed reading is reported, never
+    failed — a system whose cadence predates its adoption of anchors is behind,
+    not malformed.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.
