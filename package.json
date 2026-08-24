@@ -27,6 +27,7 @@
   },
   "scripts": {
     "validate": "node tools/validate.mjs",
-    "fingerprint": "node tools/write-fingerprints.mjs"
+    "fingerprint": "node tools/write-fingerprints.mjs",
+    "bump-version": "node tools/bump-version.mjs"
   }
 }
