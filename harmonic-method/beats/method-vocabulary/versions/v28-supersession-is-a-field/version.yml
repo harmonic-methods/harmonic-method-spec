@@ -1,0 +1,89 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.28
+  beat: HM-B-003
+  title: A superseded Note stops reading as standing evidence
+  status: active
+  summary: >
+    [HM-N-133] found that supersession is written in prose and readable by
+    nothing: two rules already required a decision to cite what it supersedes,
+    and neither citation was a parsed field. That cost a reader some scanning
+    while every instrument only scored a statement. It stopped being a minor
+    cost the moment an instrument started reading Notes as evidence — a
+    superseded provenance ceiling has been sitting in this repository's own tree
+    beside its own reversal since the step that removed it, distinguished only
+    by which one a reader happened to read last.
+
+    `specs/note.yml` gains `supersedes`, a field on the superseding Note naming
+    the Note or Notes it closes. Nothing is written onto the Note being closed —
+    the rule that makes Notes lineage rather than documents stays exactly as
+    strict as it was. The partition between standing and closed is derived from
+    the reference rather than stored beside it, so the two can never disagree:
+    a Note nothing supersedes is active, and a Note something supersedes is not,
+    and neither state is a field anywhere.
+
+    A Note carrying `supersedes` is required to be a decision, which is what
+    already required a rationale — so retiring a Note by the sanctioned path
+    always costs a stated reason, and a flag that could be set thoughtlessly was
+    never on offer. The reference takes a list, so one decision can close many at
+    once without the discipline getting more expensive per Note retired.
+
+    Whether this belongs in the method at all, or reverses the triage-state
+    dimension the spec already assigns to implementations, was the live question
+    coming in. It does not: triage asks whether a Note has been processed;
+    `supersedes` asks whether its content still applies. The spec now says so in
+    its own words rather than leaving the distinction to a Note about a Note.
+
+    The rubric that surfaced the exposure now closes it: `root-coda-quality-check`
+    reads only the active partition as standing evidence, for a warrant band, a
+    bound, an assumption under test, or a decline alike. A superseded Note may
+    still be cited as history; it may not be scored as though it stood.
+
+    The repository's own first real case is fixed in the same step: [HM-N-125],
+    which already said in prose that it removed the ceiling [HM-N-116] set, now
+    carries `supersedes: HM-N-116` as a parsed reference.
+  scope: >
+    In: the `supersedes` field on `specs/note.yml`; the two rules it replaces —
+    tightened to name the field rather than only describe the behaviour — and
+    the two new rules the field makes statable for the first time: the
+    partition is derived and never stored, and the field only closes, so a Note
+    whose superseder is later superseded does not return to active. The
+    method-named dimension section resolving the triage-state question in the
+    spec's own text. The checker's reference resolution, the self-reference
+    guard, and the decision-type requirement — each made to fail before being
+    trusted: a non-decision carrying the field, a Note superseding itself, and
+    a reference to nothing. `root-coda-quality-check`'s check rule reading only
+    the active partition, verified inside the guarded digest by the same
+    method. Retrofitting the real case already in this tree — HM-N-125 over
+    HM-N-116. The spec set minor step, taken with `npm run bump-version` on its
+    first real use outside its own test cycle.
+    In also: closing the step whose work has reached the trunk, which
+    [HM-N-055] puts in the next substantive step's scope.
+
+    Out: any printed surfacing of the partition in `npm run validate`'s own
+    output. The checker's job stays structural — does the reference resolve, is
+    the type right — and reading the partition to a human is an instrument's
+    job, exactly as reading declines or bounds already is. A print line would
+    have meant a second pass over notes already read once per Beat, for a
+    convenience nothing in this step needed.
+
+    Out: cycle detection beyond direct self-reference. A supersedes graph with a
+    longer cycle — A closes B, B closes C, C closes A — is malformed and nothing
+    here catches it beyond the one-step case. Stated rather than built, because
+    nothing in this tree needs it yet and a general graph check is a
+    disproportionate answer to a case that has not occurred.
+
+    Out: retiring any Note other than the one real case this step already knew
+    about. Sweeping the rest of the tree for supersessions that exist only in
+    prose citations is a read of the whole record, not a structural change, and
+    belongs to whoever reads the tree next rather than to the step that gave
+    them the field to read it with.
+
+    Risks stated: the decision-type requirement assumes retiring something
+    always warrants a rationale, which is right for a reversal and heavier than
+    it needs to be for context that simply stopped applying because a system
+    changed under it — a background Note being closed still has to arrive as a
+    decision to be closed at all. That cost was accepted deliberately: a
+    flag-shaped exemption from it is exactly what a thoughtless bulk retirement
+    would use, and the list form keeps the true cost at one rationale regardless
+    of how many Notes it closes.

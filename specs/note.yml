@@ -1,6 +1,6 @@
 # Harmonic Method spec — Note
 entity: note
-spec_version: 1.7.0
+spec_version: 1.8.0
 summary: >
   Typed knowledge attached to the entity it informs. Notes are the decision
   and context lineage: why things are the way they are, preserved where the
@@ -16,11 +16,20 @@ kind_and_dimension: >
   axes while appearing to differ on one.
 dimensions:
   method_named: >
-    None yet, deliberately. The distinction is stated before any dimension is
-    named because the distinction is what stops the next one arriving as a type,
-    and it holds whatever the eventual list turns out to be. Naming a dimension
-    is a separate decision each time, and each needs a vocabulary that survives
-    the entity model growing.
+    `supersedes` — which Note or Notes this one closes. It is named here rather
+    than left to an implementation because the rule two sections down already
+    requires it in prose ("superseding is a new Note referencing the old"), and
+    a requirement stated in prose with nothing to hold it is exactly the shape of
+    gap this method keeps finding in itself. Naming it here makes the reference
+    parseable, so which Notes still stand is answered by walking the tree rather
+    than by reading every rationale.
+
+    It is not the same question as processing or triage state, which stays
+    implementation-owned below. Triage asks whether a Note has been reviewed or
+    acted on; supersedes asks whether a Note's content still applies. The two are
+    independent — a superseded Note may have been fully triaged, and a live one
+    may not have been looked at yet — and an implementation carrying triage state
+    answers a different question than this field does.
   implementation_owned: >
     Confidence, reach of consequence, classification and confidentiality tiers,
     provenance, processing or triage state, and retention. An implementation
@@ -76,9 +85,32 @@ fields:
       The Beat Version this Note arose from or applies to, when it is narrower
       than the Beat. The Note still belongs to the Beat: a Beat Version is a
       passing step and ends, while the knowledge outlives it.
+  supersedes:
+    type: list<note>
+    required: false
+    description: >
+      The Note or Notes this one closes — content that no longer applies, or a
+      decision reversing an earlier one. Written on the superseding Note; the
+      Note or Notes referenced are never edited. Unlike `versions`, `notes`, or
+      `revisions` elsewhere in this method, this is a literal field on the
+      instance and not a derived directory listing — supersession runs between
+      two Notes that may sit anywhere in the tree, not between a parent and the
+      children beneath it, so there is no containment to read it from.
 rules:
-  - Notes are preserved, not overwritten; superseding is a new Note referencing the old.
-  - Decisions cite what they supersede when they change course.
+  - Notes are preserved, not overwritten; superseding is a new Note whose
+    `supersedes` references the old. Nothing is written onto the Note being
+    closed — the reference runs one way, which is what keeps the first half of
+    this rule true.
+  - A Note that carries `supersedes` is a decision, so its required rationale
+    states why the Note or Notes it lists no longer stand. One rationale may
+    close several at once; what it may not do is close any without one.
+  - A Note nothing supersedes is active; a Note something supersedes is not.
+    Neither is a stored field — an implementation reads the partition off
+    `supersedes`, not beside it, so the two can never disagree.
+  - The field only closes. There is no operation that reopens a Note, so one
+    whose superseder is later superseded by something else does not return to
+    active — what reopens a closed matter is a new decision addressing it
+    directly, not the retirement of the decision that closed it.
   - Every Note is context in the general sense — the Note is the context — and
     `type` names the specialization it rises to. No value is called context, so
     that the word for the whole is never also the word for a part.

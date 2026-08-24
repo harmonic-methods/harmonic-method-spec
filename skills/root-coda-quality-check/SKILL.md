@@ -164,10 +164,17 @@ For each dimension: score, one-sentence justification, and (for any score below
   producing it with reasoning attached makes it worse rather than better, because
   it converts an assertion into something that reads like a finding. Score what
   the Coda names and what the record shows; where neither reaches, say the
-  evidence is absent and apply the asserted ceiling.
+  evidence is absent and report the asserted band.
 - Constructing the strongest case *against* the arrangement is permitted and
   useful — it yields hypotheses for someone to check. Report it as an open
   question, never as a verdict, and never let it move a score on its own.
+- **Read only the active partition of Notes as standing evidence — one nothing
+  supersedes.** `specs/note.yml` derives that partition from `supersedes`
+  rather than storing it, so check every Note this reading would otherwise cite
+  before relying on it. A superseded Note may still be cited as history — what
+  the organization used to hold, and when it stopped — but it does not count
+  toward a warrant band, a bound, an assumption under test, or a decline. A
+  reading that skips this can score a reversed decision as if it still stood.
 - **Read declined work as evidence for Discriminating, from wherever the
   organization already records decisions.** A recorded decline is behavioural
   rather than textual — what was refused rather than what is claimed — and it is

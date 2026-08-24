@@ -265,7 +265,7 @@ function checkToolingVersion() {
  * published surface, so no adopter saw them and no instrument could read them —
  * which is exactly how a tightly bounded system scores 1 for having no bounds.
  */
-function readNotes(dir, ownerId, noteIds, bvRefs) {
+function readNotes(dir, ownerId, noteIds, bvRefs, supersedesRefs) {
   const seen = [];
   for (const nf of treeLs(dir)) {
     const nPath = `${dir}/${nf}`;
@@ -281,6 +281,12 @@ function readNotes(dir, ownerId, noteIds, bvRefs) {
     if (noteIds.has(n.id)) fail(`${nPath}: duplicate note id '${n.id}'`);
     noteIds.add(n.id);
     if (n.beat_version !== undefined) bvRefs.push({ nPath, ref: n.beat_version });
+    if (n.supersedes !== undefined) {
+      if (n.type !== 'decision') fail(`${nPath}: 'supersedes' is set but type is '${n.type}', not decision`);
+      const refs = Array.isArray(n.supersedes) ? n.supersedes : [n.supersedes];
+      if (refs.includes(n.id)) fail(`${nPath}: '${n.id}' supersedes itself`);
+      for (const ref of refs) supersedesRefs.push({ nPath, id: n.id, ref });
+    }
     seen.push(`${n.id} ${n.type}${n.beat_version ? ` →${n.beat_version}` : ''}`);
   }
   return seen;
@@ -311,8 +317,9 @@ function checkTree(root) {
   const downbeatIds = new Set();
   const bvRefs = [];
   const barRefs = [];
+  const supersedesRefs = [];
 
-  const rootNotes = readNotes(`${root}/notes`, codaId, noteIds, bvRefs);
+  const rootNotes = readNotes(`${root}/notes`, codaId, noteIds, bvRefs, supersedesRefs);
   console.log(`  ${codaId ?? '(root)'}  root Coda`);
   console.log(`    notes:    ${rootNotes.join(', ') || '(none)'}`);
 
@@ -376,7 +383,7 @@ function checkTree(root) {
     // Beat and its first step to arrive together.
     const versionSummary = versions.length ? versions.join(', ') : '(none — not yet decomposed)';
 
-    const notes = readNotes(`${root}/beats/${slug}/notes`, b.id, noteIds, bvRefs);
+    const notes = readNotes(`${root}/beats/${slug}/notes`, b.id, noteIds, bvRefs, supersedesRefs);
 
     // Downbeats attach to the Beat, like Notes — the anchor is on the capability
     // even when a portfolio's Bar boundary occasioned it.
@@ -404,6 +411,12 @@ function checkTree(root) {
   // Resolved last, so a Note may reference any Beat Version in the tree.
   for (const { nPath, ref } of bvRefs) {
     if (!bvIds.has(ref)) fail(`${nPath}: beat_version '${ref}' does not resolve`);
+  }
+
+  // Resolved last for the same reason — a Note may supersede one written
+  // anywhere else in the tree, including one not yet seen when it was read.
+  for (const { nPath, id, ref } of supersedesRefs) {
+    if (!noteIds.has(ref)) fail(`${nPath}: '${id}' supersedes '${ref}', which does not resolve`);
   }
 
   checkCadence(root, barRefs);
