@@ -165,6 +165,16 @@ function, and each is written to be read literally by an agent.
 | [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
 | [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
 
+[coverage-reading](skills/coverage-reading/SKILL.md) serves the Composer over a
+whole system rather than one entity: which parts of the system Coda nothing
+serves, which capabilities cover ground already taken, and which sit outside the
+Coda altogether. It adds no dimension — overlap with siblings and service to the
+Coda are already two of the seven above, and this applies them across the set.
+It reports where the space is and never how much, because a capacity figure
+rises whenever the Coda is widened and no capability is added.
+[examples/coverage/](examples/coverage/) shows the same two questions answered
+arithmetically where an adopter has embeddings; the two disagree usefully.
+
 Three skills produce rather than assess, and none defines any judgement of its
 own — which is what keeps a production aid from becoming a second standard.
 

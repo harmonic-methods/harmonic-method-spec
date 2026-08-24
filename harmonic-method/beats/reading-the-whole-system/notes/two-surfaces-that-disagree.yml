@@ -1,0 +1,40 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-113
+  type: decision
+  attached_to: HM-B-011
+  beat_version: HM-BV-011.1
+  content: >
+    The reading ships on two surfaces: an instrument an agent reads, and a worked
+    illustration doing the same arithmetic on vectors an adopter supplies.
+    Neither is authoritative over the other, and where they disagree the
+    instrument says so and says which it trusts.
+  rationale: >
+    Shipping one would have been simpler and would have lost the property that
+    makes either trustworthy. They fail in opposite directions, and each
+    catches what the other cannot.
+
+    Distance measures topical proximity, not service. A capability can serve an
+    outcome in entirely different vocabulary and sit far from it in a vector
+    space; a capability can be lexically adjacent and strategically irrelevant.
+    Whether one thing serves another is an entailment, and arithmetic does not
+    read entailments.
+
+    A reader glosses. Two Beats written in different registers can cover
+    identical ground, and a reader who has just been persuaded by both
+    descriptions will not notice. Arithmetic has no opinion about how well
+    something is written and will put them next to each other.
+
+    So the disagreement is the output worth having. A Beat the arithmetic calls
+    distant and the reader calls aligned is either serving the outcome in other
+    words — interesting — or being read generously — more interesting. Neither
+    surface alone can tell you which, and a reading that never disagreed with its
+    own arithmetic would be evidence that one of them was not being consulted.
+
+    The illustration is an example rather than a second instrument, deliberately.
+    It computes nothing the published dimensions do not describe, applies no
+    threshold, and takes vectors as input so that nothing here acquires a model
+    or a network. Its fixture is three-dimensional, hand-placed, and describes a
+    system that does not exist — a real system's coordinates would have to be
+    invented, and invented coordinates on real capabilities produce a real-looking
+    finding somebody might act on.
