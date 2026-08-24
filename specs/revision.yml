@@ -1,13 +1,31 @@
 # Harmonic Method spec — Revision
 entity: revision
-spec_version: 1.8.0
+spec_version: 1.9.0
 summary: >
-  A tracked change executing part of a Beat Version. Medium-agnostic: a code
-  change with a linked pull request, a process change with a linked procedure,
-  a document change with a linked draft. The Revision carries the reasoning.
+  A tracked change to a Beat. Medium-agnostic: a code change with a linked pull
+  request, a process change with a linked procedure, a document change with a
+  linked draft. The Revision carries the reasoning. Most execute a planned step;
+  one that does not is orphaned rather than unattached — see `beat_version`
+  below and the orphaned rule.
 fields:
   id: {type: string, required: true}
-  beat_version: {type: reference, required: true}
+  beat:
+    type: reference
+    required: true
+    description: >
+      The capability this change belongs to. Required on every Revision,
+      whether or not it executes a planned step — the same shape `attached_to`
+      already carries on a Note, for the same reason: a change nobody can trace
+      back to a capability is not tracked, it is merely logged.
+  beat_version:
+    type: reference
+    required: false
+    description: >
+      The Beat Version this Revision executes, when it is narrower than the
+      Beat — planned, scoped, and scored before the work started. Omitted for
+      an orphaned Revision: a hotfix, a dependency bump, or another change that
+      could not wait for a planning increment. `beat` still names which
+      capability it touches; only the planned step is missing.
   title: {type: string, required: true}
   description: {type: string, required: true, description: What changed and why.}
   status:
@@ -29,7 +47,21 @@ fields:
       Link to the change artifact (pull request, procedure document, runbook
       diff). Optional in the spec; implementations may require it per medium.
 rules:
-  - A Revision belongs to exactly one Beat Version (reassignment is a recorded event).
+  - A Revision belongs to exactly one Beat (reassignment is a recorded event), and
+    optionally to one Beat Version narrower than it. A Beat Version, if present,
+    belongs to the same Beat the Revision names — the two references never
+    disagree about which capability the change touches.
+  - A Revision with no Beat Version is orphaned, not incomplete. An orphaned
+    Revision still names its Beat, still carries its own reasoning in
+    `description`, and still moves through the same status values as any other
+    — nothing about the field being absent relaxes what the Revision itself
+    owes.
+  - Orphaning is a record, not a repair. A later Beat Version addressing the
+    same ground does not adopt the orphan by having its `beat_version` field
+    set after delivery — that would rewrite what already shipped, under what
+    plan, to say something that was not true when it happened. The connection
+    is made by the new Beat Version's own prose, citing the orphan by id, the
+    same way a decision cites what it supersedes.
   - The reasoning for the change lives with the Revision, not only in the artifact.
   - A Revision's status is carried on the Revision. Deriving delivered from a
     source-control signal is a convenience an implementation may add, not a

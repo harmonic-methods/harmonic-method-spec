@@ -1,0 +1,18 @@
+# Example — an orphaned Revision, showing a change that could not wait for a
+# planning increment. See specs/revision.yml. Sits beside versions/, not
+# inside one — there is no Beat Version for this file to nest under.
+revision:
+  id: EX-R-003
+  beat: EX-B-001
+  title: Approval links stopped rejecting valid tokens issued near midnight
+  status: delivered
+  description: >
+    A timezone comparison in the approval link's expiry check used the server's
+    local clock instead of UTC, so a link issued in the last hour of a business
+    day could read as already expired for an approver in a later timezone. Fixed
+    the comparison; no planning increment was opened because the fix was a
+    one-line correction to existing behaviour, not a change to what the
+    capability does.
+  evidence: >
+    Hotfix patch to the approval-link expiry check, applied the same day it was
+    found.

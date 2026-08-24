@@ -2,6 +2,7 @@
 # code. See specs/revision.yml.
 revision:
   id: EX-R-001
+  beat: EX-B-001
   beat_version: EX-BV-001.1
   title: Approval recorded against the engagement, not the inbox
   status: delivered

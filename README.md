@@ -258,6 +258,7 @@ of it is edited without acknowledgement.
     harmonic-method/beats/<slug>/notes/*.yml                    its knowledge
     harmonic-method/beats/<slug>/versions/<v>/version.yml       a planned step
     harmonic-method/beats/<slug>/versions/<v>/revisions/*.yml   the changes executing it
+    harmonic-method/beats/<slug>/revisions/*.yml               changes with no planned step
     harmonic-method/beats/<slug>/downbeats/*.yml                anchors taken on it
     harmonic-method/bars/<slug>/bar.yml                         a period of the cadence
 
@@ -275,6 +276,14 @@ Note whose `supersedes` names it — nothing is ever written onto the Note being
 closed. Which Notes still stand is read off that reference rather than stored
 anywhere: a Note nothing supersedes is active, a Note something supersedes is
 not, and superseding the superseder does not reopen what it closed.
+
+A Revision names its Beat directly and its Beat Version only when there is
+one — a change that could not wait for a planning increment is orphaned
+rather than unattached, sitting beside `versions/` instead of inside one. It
+still carries its own reasoning and moves through the same status values as
+any other. A later, properly planned step does not adopt an orphan by
+editing it after delivery; it cites the orphan's id in its own prose, the
+same way a decision cites what it supersedes.
 
 - [examples/](examples/) — one conformant Beat in this layout, deliberately
   non-software.

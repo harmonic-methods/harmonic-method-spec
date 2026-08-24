@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.28
   beat: HM-B-003
   title: A superseded Note stops reading as standing evidence
-  status: active
+  status: delivered
   summary: >
     [HM-N-133] found that supersession is written in prose and readable by
     nothing: two rules already required a decision to cite what it supersedes,

@@ -1,0 +1,31 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-138
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.29
+  content: >
+    A Beat Version that later addresses the same ground as an orphaned Revision
+    does not adopt it by setting the orphan's `beat_version` field after the
+    fact. The connection is made by the new Beat Version's own prose, citing the
+    orphan by id.
+  rationale: >
+    Setting the field after delivery would rewrite what already shipped, under
+    what plan, to say something that was not true at the time it happened. A
+    Revision delivered as an orphan was delivered without the diligence a
+    planned step provides — no scoped Beat Version, no plan check gating it,
+    nothing scored before the work started. Backfilling `beat_version` once a
+    plan exists erases that fact from the one record built to hold it, which is
+    the same failure a status flag on a Note would have been: a field mutated
+    after the fact to make the past agree with the present.
+
+    Prose citation is not a lesser mechanism standing in for a missing field. It
+    is the mechanism this method already uses everywhere a later record needs
+    to point at an earlier one without altering it — a decision cites what it
+    supersedes, [HM-N-055] has later steps close earlier ones by naming them
+    in scope, and this is the same move at a different pair of entities.
+
+    A dedicated field for this specific citation was considered and set aside
+    for the reason [HM-N-115] already gave a fifth Note type: it would be
+    designed from the one case that raised it, and prose already does the job
+    everywhere else in this method that a citation is needed.
