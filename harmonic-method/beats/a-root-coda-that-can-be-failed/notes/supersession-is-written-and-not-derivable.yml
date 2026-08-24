@@ -30,6 +30,41 @@ note:
     Note, which makes the graph machine-readable and the back-pointer derivable
     without a second copy anywhere.
 
+    Three things about that shape, so the step that takes it does not re-derive
+    them.
+
+    The partition is derived and never flagged. A default active partition is
+    what nothing supersedes, and the inactive one is what something does; the
+    reason a Note left the active set is the superseding Note's rationale, which
+    a decision already has to carry. Nothing is written onto the superseded Note,
+    which is what keeps the first rule of this spec intact — a status set on an
+    existing Note overwrites part of it, and the forward-only citation is not an
+    oversight but how that rule is kept. Notes are the one entity here that does
+    not mutate, deliberately: if the reasoning behind a past decision can be
+    edited afterwards, lineage stops being worth citing. And a derived partition
+    cannot disagree with the graph, because it is the graph.
+
+    The reference takes a list. Most context that stops applying was never
+    reversed by anything — it concerns something that no longer exists — and
+    retiring it is still a decision that deserves a stated reason. One Note
+    superseding forty makes that cheap without making it thoughtless, which a
+    settable flag would not: a flag can be applied in bulk by someone who has
+    stopped reading, and a rationale cannot.
+
+    The transitive case needs a stated answer rather than an inferred one. Where
+    a superseding Note is itself superseded, the original does not return to the
+    active partition. What reopens a closed question is a new decision saying so,
+    not the retirement of the decision that closed it.
+
+    One question the step must settle rather than walk past: `specs/note.yml`
+    assigns processing or triage state to implementations, and active against
+    inactive can be read as exactly that, in which case naming it here reverses a
+    published decision instead of extending one. The reading that says otherwise
+    is that triage state is whether a Note has been processed, while this is
+    whether its content still applies — which is supersession, and supersession
+    is already the method's business. That is the reading taken here and it is
+    close enough to deserve a decision rather than an assumption.
+
     Two cases, and only one is reachable this way. A Note that was superseded is
     a fact about the record and belongs in the tree. A Note that nothing reversed
     but that has simply stopped mattering is not derivable from anything written,
