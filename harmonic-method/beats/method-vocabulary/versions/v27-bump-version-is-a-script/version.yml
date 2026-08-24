@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.27
   beat: HM-B-003
   title: The spec set version moves by running a command, not by hand
-  status: active
+  status: delivered
   summary: >
     AGENTS.md already states the rule: change the spec set version in the
     manifest and every spec together, and when editing text with a script,

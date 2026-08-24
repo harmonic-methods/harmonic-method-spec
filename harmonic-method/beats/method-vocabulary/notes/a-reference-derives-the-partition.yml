@@ -1,0 +1,50 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-134
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.28
+  content: >
+    `specs/note.yml` gains `supersedes`, a field on the superseding Note naming
+    the Note or Notes it closes. Nothing is written onto the Note being closed.
+    A Note carrying the field is required to be a decision. The active
+    partition — which Notes still stand — is derived from the reference rather
+    than stored, and a Note whose superseder is later superseded does not
+    return to it.
+  rationale: >
+    Two rules already required this in prose: Notes are superseded rather than
+    overwritten, and a decision cites what it supersedes. Neither citation was a
+    parsed field, so the reverse question — is this Note still standing — could
+    only be answered by reading every later Note and hoping the citation was
+    phrased in a form the reader recognized. [HM-N-133] found the cost of that
+    stopped being tolerable the moment an instrument started reading Notes as
+    evidence: a reversed decision reads exactly like a live one to anything that
+    does not open every rationale to check.
+
+    Deriving rather than flagging is the choice that keeps a real rule intact.
+    `specs/note.yml` already says Notes are preserved and not overwritten, and a
+    status written onto an existing Note the moment it is retired would overwrite
+    part of it — the same failure the forward-only citation was always guarding
+    against, arriving through a field instead of an edit. A derived partition
+    cannot disagree with the graph, because it is the graph, and nothing is ever
+    written onto a Note after the day it was authored.
+
+    Requiring the superseding Note to be a decision costs nothing new: a decision
+    already requires a rationale, so the requirement is that retiring something
+    always arrives with a stated reason, never that a new kind of writing is
+    invented for it. A flag would not have cost this — a flag can be set at the
+    end of a long day by someone who has stopped reading, and a required
+    rationale cannot.
+
+    The list form matters for the same reason a single-reference field would not
+    have been enough: most Notes that stop applying were never reversed by
+    anything, they concern something that no longer exists, and retiring several
+    of them under one stated reason keeps that decision cheap without making it
+    thoughtless. One rationale, however many Notes it closes.
+
+    The no-reopening rule is the one part of this that is not derivable from the
+    schema alone and needed to be said. Superseding the superseder does not
+    revive what it closed, because there is no operation here that reopens a
+    Note — only a new decision that addresses the matter directly does that, and
+    saying so keeps a reader from assuming the graph works like a toggle when it
+    does not.

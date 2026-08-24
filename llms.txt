@@ -16,7 +16,11 @@
 - specs/revision.yml: Revision — a tracked change executing part of a Beat Version.
   The relationship runs one way: a Revision belongs to exactly one Beat Version, and a
   Beat Version is delivered by one or more Revisions. Nothing bounds how many.
-- specs/note.yml: Note — typed knowledge (background, constraint, guidance, decision)
+- specs/note.yml: Note — typed knowledge (background, constraint, guidance, decision).
+  Preserved, never overwritten; a decision retiring one carries supersedes, a reference
+  to what it closes. The active partition is derived from that reference, not stored —
+  a Note nothing supersedes stands, one something supersedes does not, and superseding
+  the superseder does not reopen what it closed.
 - specs/conformance.yml: Conformance — which contents bind an implementation, which of those a tool can compare, and the declaration an implementation writes. Extensions conform; contradictions do not. A claim is made against a spec set version, never against the trunk.
 - specs/spec-set.yml: the one version of the normative surface; every spec repeats it as a parsed spec_version field and the checker enforces agreement. Pin this number, not the repository tag — package.json versions the checker separately.
 - specs/bar.yml: Bar — the recurring cadence period work is planned and delivered within; nests temporally via an optional parent, so a longer cadence is a Bar with children rather than a second entity

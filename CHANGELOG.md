@@ -2,6 +2,49 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A superseded Note stops reading as standing evidence.** Two rules already
+  required a decision to cite what it supersedes, and neither citation was a
+  parsed field — the reverse question, is this Note still standing, could only
+  be answered by reading every later Note and hoping the citation was phrased
+  in a form the reader recognized. That stopped being tolerable the moment an
+  instrument started reading Notes as evidence: a reversed provenance ceiling
+  had been sitting in this repository's own tree beside its own reversal since
+  the step that removed it, distinguished only by which Note a reader happened
+  to read last. See HM-B-003 and HM-BV-003.28.
+  - **`specs/note.yml` gains `supersedes`**, a reference on the superseding Note
+    naming what it closes. Nothing is written onto the Note being closed — the
+    partition between standing and closed is derived from the reference rather
+    than stored, so the two can never disagree. A Note nothing supersedes is
+    active; a Note something supersedes is not; and superseding the superseder
+    does not reopen what it closed, because there is no operation here that
+    reopens a Note, only a new decision that addresses the matter directly. See
+    HM-N-134.
+  - **The field requires a decision**, which already requires a rationale — so
+    retiring a Note by the sanctioned path always costs a stated reason, and a
+    flag that could be set thoughtlessly by someone who has stopped reading was
+    never on offer. The reference takes a list, so one rationale can close many
+    Notes at once without the discipline getting more expensive per Note.
+  - **Triage state and supersession answer different questions**, settled in the
+    spec's own text rather than left to be inferred: triage asks whether a Note
+    has been processed, supersedes asks whether its content still applies. A
+    superseded Note may have been fully triaged, and a live one may never have
+    been looked at — the two axes move independently. See HM-N-135.
+  - **The instrument that surfaced the exposure now closes it.**
+    `root-coda-quality-check` reads only the active partition as standing
+    evidence — for a warrant band, a bound, an assumption under test, or a
+    decline alike. A superseded Note may still be cited as history; it may not
+    be scored as though it stood. Verified inside the guarded digest by making
+    the rule fail before trusting it.
+  - **The repository's own first real case is fixed in the same step.**
+    HM-N-125, which already said in prose that it removed the ceiling HM-N-116
+    set, now carries `supersedes: HM-N-116` as a parsed reference.
+  - The spec set takes a minor step, moved with `npm run bump-version` on its
+    first real use outside its own test cycle.
+  - Out and stated: any printed surfacing of the partition in the checker's own
+    output, and cycle detection beyond direct self-reference. The checker's job
+    stays structural; reading the partition to a human is an instrument's job,
+    as reading declines or bounds already is.
+
 - **The spec set version moves by running a command, not by hand.**
   `AGENTS.md` already required it: change the version in the manifest and every
   spec together, and assert that a script's replacement matched. What existed to

@@ -4,6 +4,7 @@ note:
   type: decision
   attached_to: HM-B-012
   beat_version: HM-BV-012.2
+  supersedes: HM-N-116
   content: >
     The provenance ceiling recorded in [HM-N-116] is removed. Every dimension is scored over its full
     range on how well formed the statement is, and what stands behind the

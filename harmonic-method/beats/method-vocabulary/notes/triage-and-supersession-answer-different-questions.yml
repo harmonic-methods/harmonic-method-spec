@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-135
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.28
+  content: >
+    `supersedes` does not reverse the decision that leaves processing or triage
+    state implementation-owned. Triage asks whether a Note has been reviewed or
+    acted on. `supersedes` asks whether its content still applies. `specs/note.yml`
+    now states the distinction directly, in the same section that names the
+    dimension.
+  rationale: >
+    The question was live rather than settled going in: `dimensions.implementation_owned`
+    already lists processing or triage state among what the method leaves to an
+    implementation, and active-against-inactive is close enough to that to be
+    read as the same thing wearing a different name. If it were the same thing,
+    naming it here would reverse a decision this file already made rather than
+    extend it, and reversing a decision quietly is exactly the drift this
+    repository keeps finding and removing from itself.
+
+    It is not the same thing, and the difference is not cosmetic. A superseded
+    Note may have been fully triaged — read, filed, acted on — and a live one
+    may never have been looked at since the day it was written. The two axes
+    move independently: triage is about what a reader or a workflow has done
+    with a Note, supersession is about whether the content is still true. An
+    implementation can track both, or either, or neither, and answering one
+    question tells a reader nothing about the other.
+
+    Recorded here rather than left to be inferred, because the two dimensions
+    sit one field apart in the same file and a future edit that blurred them
+    would be an easy mistake to make and a hard one to notice — exactly the kind
+    of ambiguity this method's own discipline is built to remove before it
+    becomes load-bearing.

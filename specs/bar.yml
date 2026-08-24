@@ -1,6 +1,6 @@
 # Harmonic Method spec — Bar
 entity: bar
-spec_version: 1.7.0
+spec_version: 1.8.0
 summary: >
   The recurring period work is planned and delivered within — the regular
   cadence a Conductor reconciles against. A Bar is a span of time with a

@@ -270,6 +270,12 @@ instrument scoring the root reads the organization rather than only its
 direction. Notes attach to the Beat rather than to a Beat Version — a version ends, the knowledge it
 produced does not — and may name the version they arose from.
 
+A Note is preserved rather than overwritten. Retiring one is a new decision
+Note whose `supersedes` names it — nothing is ever written onto the Note being
+closed. Which Notes still stand is read off that reference rather than stored
+anywhere: a Note nothing supersedes is active, a Note something supersedes is
+not, and superseding the superseder does not reopen what it closed.
+
 - [examples/](examples/) — one conformant Beat in this layout, deliberately
   non-software.
 - [harmonic-method/](harmonic-method/) — this repository described in its own vocabulary. Real
