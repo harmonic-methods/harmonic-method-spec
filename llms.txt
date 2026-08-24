@@ -37,6 +37,11 @@ guards it against an unacknowledged edit.
   behind it is reported as a warrant band beside the average and never inside it
   — asserted, asserted-under-test, comparable, record, counterparty-observed. A
   lapsed test forfeits its band; comparable evidence never reaches Reciprocal;
+  Discriminating is evidenced by recorded declines — decisions in which work was
+  turned down — read from wherever decisions are already kept, at the record band,
+  and only where they were recorded before the reading. No subtype and no artifact
+  is named for them: note.yml enumerates no subtypes, and a decline is an ordinary
+  decision already written down;
   and where a measure is well formed but nobody has been shown the thing, the
   finding is routed to the Promoter rather than read as weak value modelling. The
   instrument declines to stand in for the counterparty

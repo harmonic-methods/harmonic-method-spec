@@ -2,6 +2,67 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **What was refused, not what is claimed.** Discriminating scored a statement,
+  and a statement cannot separate an organization that excludes from one that
+  wrote an exclusion and never acted on it. Both produce the same text. The
+  instrument now reads recorded declines — the decisions in which work was turned
+  down — as evidence for that dimension. See HM-B-012 and HM-BV-012.3.
+  - **Conduct is the only thing that separates the two cases.** Anything an
+    organization does is consistent with a boundary drawn afterwards to fit it;
+    something it declined is not. A decline reaches the `record` band and no
+    higher — however costly, it stays the organization's own account of its own
+    conduct, and never a counterparty's act. See HM-N-128.
+  - **No subtype, no entity, no artifact.** `specs/note.yml` says the method
+    enumerates no subtypes and will not, and a decline is an ordinary decision.
+    Checking this repository's own tree before designing anything found every
+    significant refusal already written down — the commercial claim it declines to
+    make, the score it declines to record, the capacity figure it declines to
+    produce, the Promoter instrument it declines to build, the weighting it
+    declines to apply. An instrument demanding a dedicated decline record would
+    have asked for a second copy of decisions already made.
+  - **The value is entirely in when it was written.** A refusal recorded when it
+    was made was costly and was uninterested in a score that did not yet exist;
+    one assembled afterwards describes the statement while wearing the clothes of
+    conduct, and is worth less than the statement. Where a decline's date or
+    decider cannot be established it is not counted. The limit is stated rather
+    than implied: a date can be back-written, and no check here can catch that.
+    See HM-N-129.
+  - **A Coda with no recorded decline is reported, never failed.** A young effort
+    has refused little, which is a fact about its age and not a defect in its
+    boundary — and failing it would repeat the shape this instrument has already
+    had to remove twice.
+  - **Three explorations recorded rather than built**, as background so the
+    choices stay open: negation is weak in a latent space, so declines cluster by
+    topic and not by decline-ness — which the separation reading needs rather than
+    suffers from (HM-N-130); resistance is a gradient better measured structurally
+    than semantically, and covers the starvation case a decline register shows as
+    a clean sheet (HM-N-131); and the method represents no unaccepted proposal, so
+    this dimension has a numerator and no base (HM-N-132).
+  - **An idea that was considered and refused is ordinary Note content**, and a
+    draft of HM-N-132 argued otherwise on the grounds that a Note holds what is
+    true. `specs/note.yml` says the opposite in its own words — every Note is
+    context, and `type` names the specialization it rises to — and the Note is
+    corrected rather than quietly dropped. A fifth *type* is still not the way
+    in, for the spec's reason and not that one: the type set is closed so an
+    unfamiliar kind falls back to a familiar one, and `subtype` is free, so an
+    idea narrowing background needs no permission. A proposal entity is not
+    refused — only deferred, and noted as cheapest now while nothing pins this
+    surface.
+  - **Supersession is written down and derivable by nothing** (HM-N-133). The
+    rule that a decision cites what it supersedes is honoured every time, in
+    prose, forward-only, with no marker on the superseded Note. This step is what
+    makes it bite: the instrument now reads Notes as evidence, so a reversed
+    decision reads exactly like a standing one — the provenance ceiling removed
+    one step ago is sitting in the tree next to its reversal, distinguished only
+    by prose. It is a dimension rather than a kind, so it wants a reference field
+    and never a type. It reaches `specs/note.yml` and is the first thing worth
+    doing next.
+  - Out and stated: measuring the separation between declined and accepted work.
+    Where an adopter has embeddings it is computable, and overlap between the two
+    populations would mean the boundary is doing no work — but every distance here
+    belongs to the implementation. The method names the evidence, never the
+    arithmetic.
+
 - **Warrant is not a score.** The root Coda instrument capped two dimensions by
   the provenance of their evidence, asserted ceilinging at 2. Six dimensions
   averaged unweighted with two held at 2 puts the ceiling on the overall at 4.0,

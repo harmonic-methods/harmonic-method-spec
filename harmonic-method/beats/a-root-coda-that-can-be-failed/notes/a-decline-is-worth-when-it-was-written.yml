@@ -1,0 +1,35 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-129
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.3
+  content: >
+    A decline counts only if it was recorded before the reading, by whoever made
+    it. Where its date or its decider cannot be established, the instrument says
+    so and does not count it. A Coda with no recorded decline is reported as
+    having untested exclusions and is never failed for it.
+  rationale: >
+    The whole evidential value is in the timing. A refusal written when it was
+    made was costly and was uninterested in any score that did not yet exist. One
+    assembled afterwards is a description of the statement wearing the clothes of
+    conduct, and is worth less than the statement itself, which at least does not
+    pretend to be evidence.
+
+    Without this rule the dimension would be the easiest thing in the scheme to
+    game — declines are cheap to write and flattering to invent, and an
+    organization scoring itself would produce exactly the ones its Coda already
+    excludes. Requiring a date and a decider does not make that impossible; it
+    makes it a falsification a reader can catch rather than a rounding a reader
+    cannot see.
+
+    The limit is stated rather than implied: a date can be back-written, and the
+    instrument can refuse a decline whose date is absent but not one whose date
+    is wrong. That is the same limit every band resting on an organization's own
+    record carries, and it is the reason the band stops at record.
+
+    Not failing a Coda for having no declines matters as much as the rule itself.
+    A young effort has refused little, and refusing nothing yet is a fact about
+    its age rather than a defect in its boundary. Failing it would repeat the
+    shape this instrument has already had to remove twice: a rule that makes a
+    whole class unable to pass however well it is written.

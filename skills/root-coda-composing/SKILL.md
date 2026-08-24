@@ -66,10 +66,19 @@ only meaningful once the ledgers it is measured on exist.
    which one gives first when two of them cannot both hold. Press for the
    ordering. An unordered list of things that all matter is a statement that has
    deferred every real trade to the moment it is least affordable.
-5. **Say what is excluded.** Name things the organization could plausibly and
-   profitably do and will not. A root Coda that excludes nothing admits every
-   proposal anyone will ever bring, and everything beneath it will then score
-   well for laddering to a statement that cannot be failed.
+5. **Say what is excluded, and ask what has actually been refused.** Name things
+   the organization could plausibly and profitably do and will not. A root Coda
+   that excludes nothing admits every proposal anyone will ever bring, and
+   everything beneath it will then score well for laddering to a statement that
+   cannot be failed.
+
+   Then ask for the decisions where work was turned down, and read them. Most
+   organizations have refused more than they can recite, and the refusals are the
+   sharper source: an exclusion someone can name from memory is often the one
+   they find comfortable to say, while the record holds the ones that cost
+   something. Where a decline is not covered by the draft, that is either a
+   missing clause or a decision nobody stands behind any more — put it back to
+   them as the question it is, and do not resolve it yourself.
 6. **Provide for what comes after.** What share is defended for the next thing,
    and under what condition the current thing ends. Both are usually missing and
    neither is optional: succession funded out of surplus is succession that never

@@ -1,0 +1,64 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-132
+  type: background
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.3
+  content: >
+    The method has no representation of a proposal that was not accepted. An idea
+    that is taken up becomes a Beat; an idea that is refused becomes nothing,
+    except where somebody happened to write a decision about it. So Discriminating
+    can count refusals and cannot know what they are refusals out of. It has a
+    numerator and no base.
+
+    That matters for any rate. Five recorded declines against six proposals is a
+    boundary doing heavy work; five against five hundred is a boundary that
+    stopped almost nothing and looks identical in the record.
+
+    An idea that was considered and refused is ordinary Note content, and an
+    earlier draft of this Note argued otherwise on the grounds that a Note holds
+    what is true. That is wrong and `specs/note.yml` says so directly: every Note
+    is context in the general sense, and `type` names the specialization it rises
+    to. Deliberation that went nowhere is context, and losing it is how the same
+    idea gets re-proposed and re-refused.
+
+    A fifth *type* is still not the way in, for the reason the spec gives rather
+    than the one that draft gave: the type set is closed so that a reader who
+    does not recognize a finer kind falls back to something it does recognize,
+    and `subtype` is free for exactly this. An idea narrowing `background` is the
+    sanctioned path and needs no permission — the same answer this step reached
+    for a decline.
+
+    Lifecycle is not an objection either. Notes are preserved and superseded
+    rather than overwritten, which is a lifecycle the method already runs.
+
+    What does survive is narrower: an idea taken up becomes a Beat, so a proposal
+    and its outcome should not both try to be the durable capability.
+
+    What is worth exploring instead is a proposal at the same altitude as a Beat,
+    resolving to became-a-Beat, declined, or still open — giving both populations
+    the separation reading needs, an append-only decision when it resolves, and
+    no dilution of the Beat population that coverage and similarity readings run
+    over.
+
+    None of this is decided, and the two options are not priced the same. The
+    three objections to a fifth type are structural and hold whatever the cost of
+    changing: they are about what a Note is, not about who would be disrupted.
+    `specs/note.yml` closing the type enum with additions none makes it a break
+    as well, but that is the smaller half of the argument and removing it would
+    not repair the other half.
+
+    The entity is different. It is the largest change this method admits, and it
+    is cheapest now: no implementation pins this surface yet, so what a new
+    entity costs today is design debt rather than anyone's compatibility, and
+    [HM-N-045] already settles how a break against a version nobody could pin is
+    priced. A structural gap is cheaper to close before adoption than after, and
+    this one has been found by use rather than argued for in advance — which is
+    the evidence this repository trusts most.
+  rationale: >
+    Recorded rather than resolved because the request that produced it
+    demonstrated the gap it describes: there was nowhere to put an idea, and the
+    place it landed is a background Note attached to the instrument that would
+    have used it. Writing the analysis down without deciding is what keeps the
+    next person from re-deriving it, and what keeps this from being settled by
+    whoever happens to touch it next.

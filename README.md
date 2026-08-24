@@ -214,6 +214,15 @@ claimed, on what evidence, inside what bounds — so the instrument asks whether
 that statement can be failed, and leaves the arithmetic to the implementation as
 every other instrument here does.
 
+Discriminating is the one dimension with evidence outside the text: the decisions
+in which the organization declined work. A statement that excludes and an
+organization that has never refused anything read identically, and only conduct
+separates them. The instrument reads those decisions from wherever they are
+already kept — it names no artifact, because `specs/note.yml` enumerates no
+subtypes and a decline is an ordinary decision that will already be written down.
+A decline counts only if it was recorded before the reading, and a Coda with none
+is reported as having untested exclusions rather than failed.
+
 How well a statement is written and what stands behind it are separate readings,
 so the instrument reports a score and a warrant band and never combines them. The
 band records what the measures rest on — an assertion, an assumption registered

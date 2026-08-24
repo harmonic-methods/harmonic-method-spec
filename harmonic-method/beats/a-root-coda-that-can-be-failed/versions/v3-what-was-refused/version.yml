@@ -1,0 +1,100 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-012.3
+  beat: HM-B-012
+  title: What was refused, not what is claimed
+  status: active
+  summary: >
+    Discriminating scored a statement. A statement cannot distinguish an
+    organization that excludes from one that has written an exclusion and never
+    once acted on it, and those are the two cases the dimension exists to tell
+    apart. The evidence that separates them is behavioural: the decisions in
+    which work was actually turned down.
+
+    This step has the instrument read them. A recorded decline is what the
+    organization did rather than what it says, so it reaches the `record` band
+    added one step ago — its own account of its own conduct, and no higher.
+
+    What it deliberately does not do is ask for a new kind of record.
+    `specs/note.yml` states that the method enumerates no subtypes and will not,
+    and a decline is an ordinary decision. Checking this repository's own tree
+    before designing anything found every significant refusal already written
+    down — the commercial claim this method declines to make, the score it
+    declines to record, the capacity figure it declines to produce, the
+    instrument it declines to build for the Promoter. An instrument demanding a
+    dedicated decline record would have asked for a second copy of decisions
+    already made, which is the failure this repository was built after having.
+
+    The evidential weight is entirely in when the decline was written. A refusal
+    recorded when it was made, by whoever made it, was costly and was
+    uninterested in any score. One assembled afterwards describes the statement
+    while wearing the clothes of conduct, and is worth less than the statement,
+    which at least does not pretend.
+
+    Done when: the instrument reads declines from wherever decisions are already
+    kept, names no artifact and no subtype, caps them at the record band, and
+    refuses any decline whose date or decider cannot be established; the drafting
+    aid asks for refusals rather than only for stated exclusions; and the digest
+    was made to fail against the new rules before being believed.
+  scope: >
+    In: the two check rules — declines as evidence for Discriminating at the
+    record band, and the contemporaneity requirement; the addition to the
+    Discriminating dimension naming the distinction the record settles; the
+    Inputs; the drafting aid's exclusion step asking for what was actually
+    refused; and the spec set minor step for the reason [HM-N-124] records.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: a `decline` subtype, a decline entity, or any named artifact.
+    `specs/note.yml` refuses to enumerate subtypes and that refusal is right: an
+    implementation wanting precision has the optional subtype field for exactly
+    this and needs no permission, while a subtype enumerated here would become a
+    conformance surface for a taxonomy the method has no business fixing.
+
+    Out: any change to `specs/note.yml`. It was already right, again.
+
+    Out: measuring the separation between declined and accepted work. Where an
+    adopter has embeddings this is computable — if a Coda discriminates, distance
+    from it should separate the two populations, and overlap means the boundary
+    is doing no work — and computing it is an implementation's, as every distance
+    here is. The method names the evidence; it does not name the arithmetic.
+
+    Out: any gate. A Coda with no recorded decline is not failed. It is reported
+    as a statement whose exclusions are untested, which is a true and useful
+    thing to be told and not a defect to refuse work over.
+
+    In also: recording what the design turned up and did not use — that
+    negation is weak in a latent space and why that helps rather than hinders
+    the reading; that resistance is a gradient better measured structurally than
+    semantically, and covers the starvation case a decline register cannot see;
+    and that the method represents no unaccepted proposal, so this dimension has
+    a numerator and no base. Each is background rather than decision: the
+    analysis is recorded, the choices stay open.
+
+    Out: a fifth Note type for an idea, and a proposal entity — neither taken
+    here, and for different reasons. A fifth type is refused for the reason the
+    spec already gives: the type set is closed so an unfamiliar kind falls back
+    to a familiar one, and `subtype` is free for exactly this, so an idea
+    narrowing background needs no permission. The entity is not refused at all,
+    only deferred to a step that can design it; it is cheapest now, while no
+    implementation pins this surface. The reasoning is in [HM-N-132] so the next
+    step starts from it rather than from scratch.
+
+    Out: a field for supersession. [HM-N-133] records that the rule requiring a
+    decision to cite what it supersedes is honoured in prose and derivable by
+    nothing, so a superseded decline reads exactly like a live one to the
+    instrument this step just pointed at the record. It reaches
+    `specs/note.yml`, which is not something to fold into a step scoped to read
+    declines, and it is the first thing worth doing next.
+
+    Owed, not done: nothing here reaches the altitudes below the root. A Beat
+    Coda excludes too, and the Beat rubric's distinctiveness dimension has the
+    same textual limit this one had. Whether declines evidence anything one
+    altitude down belongs to the capability that owns rubric parity.
+
+    Risks stated: contemporaneity is asserted by the record and checked by
+    nobody. A date can be back-written, and the instrument can only refuse a
+    decline whose date is absent, not one whose date is wrong. That is stated
+    rather than implied, and it is the same limit every record-based band
+    carries. The band caps at record for this reason: a decline is never a
+    counterparty's act, only ours.
