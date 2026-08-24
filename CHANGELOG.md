@@ -2,6 +2,21 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The spec set version moves by running a command, not by hand.**
+  `AGENTS.md` already required it: change the version in the manifest and every
+  spec together, and assert that a script's replacement matched. What existed to
+  do that was a hand-run pattern, redone from memory each time the version
+  moved — five times in this cycle. `tools/bump-version.mjs` does it instead: it
+  reads the current version, replaces it everywhere `specs/` and `examples/`
+  carry it, and refuses to exit quietly if nothing matched. See HM-B-003 and
+  HM-BV-003.27.
+  - Exercised against a real move and a full revert before being trusted, and
+    against three refusals: the same version again, a malformed one, and no
+    argument at all — the same discipline this repository asks of every check it
+    adds to itself.
+  - No version moved to add it. The spec set stays at 1.7.0; a tooling addition
+    is not a reason to move the number it operates on.
+
 - **What was refused, not what is claimed.** Discriminating scored a statement,
   and a statement cannot separate an organization that excludes from one that
   wrote an exclusion and never acted on it. Both produce the same text. The

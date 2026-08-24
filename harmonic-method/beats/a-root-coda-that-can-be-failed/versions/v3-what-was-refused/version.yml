@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-012.3
   beat: HM-B-012
   title: What was refused, not what is claimed
-  status: active
+  status: delivered
   summary: >
     Discriminating scored a statement. A statement cannot distinguish an
     organization that excludes from one that has written an exclusion and never
