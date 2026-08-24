@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-110
+  type: decision
+  attached_to: HM-B-010
+  beat_version: HM-BV-010.1
+  content: >
+    A period that closed with no anchor against it is reported and does not fail
+    the run. The structural rules around it — containment, non-overlap, reference
+    resolution — do fail.
+  rationale: >
+    The line between them is whether the tree is malformed or the team is behind.
+    A Bar that outruns its parent, or two Bars sharing a parent and a fortnight,
+    make "which period are we in" unanswerable, which is the thing the entity
+    exists to answer; those are defects in the record and they fail. A period
+    that elapsed without anyone taking a reading is a record that is accurate
+    about a habit nobody has started, and failing it would refuse a correct tree.
+
+    This is the same reasoning [HM-BV-007.2] used when it declined a cap on how
+    many steps may be active at once: several genuinely in flight is normal, so a
+    rule that failed on the count would fail correct trees while still passing a
+    backlog spread thinly. What made that backlog visible was a stated expectation
+    rather than a gate, and the same applies here. The report names the periods;
+    what to do about them belongs to whoever runs the cadence.
+
+    It also matches the constraint the whole repository is held to. This assesses
+    and does not enforce, and an adopter cloning it to check their tree should get
+    a list of what is missing rather than a refusal to proceed. A checker that
+    failed on a missed reading would be gating on a discipline, which is a system
+    of record's job and not this one's.
+
+    The weakness is admitted: a printed line is easy to ignore in a way a failure
+    is not, and nothing escalates if the same period goes unanchored for a year.
+    The alternative was worse, and the mitigation is that the line names the
+    period rather than reporting a count, so ignoring it takes a decision each
+    time rather than once.

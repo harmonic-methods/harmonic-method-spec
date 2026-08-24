@@ -1,0 +1,11 @@
+# Example — a shorter period inside the quarter, showing that a longer cadence is
+# a Bar with children rather than a second entity. Nesting is a reference, not a
+# directory: the parent contains this one in time at the same altitude.
+# See specs/bar.yml.
+bar:
+  id: EX-BAR-2026-F1
+  attached_to: EX-SYS-CODA
+  starts: 2026-01-01
+  ends: 2026-01-14
+  status: closed
+  parent: EX-BAR-2026-Q1

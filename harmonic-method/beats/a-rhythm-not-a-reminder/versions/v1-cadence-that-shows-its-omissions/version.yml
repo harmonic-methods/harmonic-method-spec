@@ -1,0 +1,74 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-010.1
+  beat: HM-B-010
+  title: Cadence that shows its own omissions
+  status: active
+  summary: >
+    Two entities have been specified in full since the vocabulary landed, and
+    neither has ever existed. The checker contained no mention of either; no tree
+    here has a place to put one; and the instrument that takes an anchor, added
+    two steps ago, produces something the layout cannot hold and the checker
+    cannot read.
+
+    That is worse than an ordinary gap because of what the cadence is for. Drift
+    is the difference between the latest anchor and the present, so an anchor
+    that is never taken is not a missing nicety — it is the reason a Coda can
+    move without anyone noticing. The reconciliation instrument compares intent
+    against intent up the chain and cannot see this; only an anchor and a
+    boundary can.
+
+    This step makes the cadence representable and holds the rules a tree can
+    actually hold: that a parent Bar contains its children in time, that Bars
+    sharing a parent do not overlap, that an anchor names a Bar which exists and
+    sits under the Beat it claims. And it reports the one omission a tree can
+    detect on its own — a period that closed with nothing anchored against it.
+
+    Reported, not failed. A system whose cadence predates its adoption of anchors
+    is behind rather than malformed, and a checker that failed it would be
+    refusing correct trees for a habit their owners had not started. [HM-N-110]
+    records that choice against the same reasoning that refused a cap on active
+    steps.
+
+    Done when: a Bar and a Downbeat have a place in the layout and are validated
+    there; the temporal rules hold and were each made to fail before being
+    believed; an elapsed period with no anchor is reported without failing the
+    run; and the worked example shows a nested cadence with an anchor taken at a
+    boundary.
+  scope: >
+    In: the layout for both cadence entities; validation of their required
+    fields, lifecycle values and references; the two temporal rules; the
+    unanchored-period report; the worked example gaining a quarter, a fortnight
+    inside it, and an anchor at the fortnight's boundary; and the surfaces.
+    In also: closing the step whose work has reached the trunk, which [HM-N-055]
+    puts in the next substantive step's scope.
+
+    Out: a cadence in this repository's own tree. This repository runs no
+    cadence, takes no readings, and adding a Bar to claim otherwise is the
+    failure the claims capability exists to prevent. [HM-N-109] records it, and
+    records the cost — the one capability here that the worked example
+    demonstrates and this repository's own system does not.
+    Out also: an instrument that helps decide what a cadence should be. How long
+    a period is, and whether to nest, depends on things no file here can see; a
+    drafting aid for it is a step of its own and probably wants the Orchestrator
+    rather than the Conductor.
+    Out also: any change to `specs/bar.yml` or `specs/downbeat.yml`. Both were
+    complete; what was missing was somewhere to put an instance and something to
+    check it. The spec set version does not move.
+    Out also: computing drift. A tree can now hold the anchors drift is computed
+    from, and computing it is a reading rather than a structural check — the
+    instrument that takes an anchor already reports it, and nothing here should
+    duplicate that in the checker.
+
+    Owed, not done: a Bar's `attached_to` names the system, and the tree
+    convention has no system entity — only a root Coda identifying it. The
+    example points it at that Coda's identifier for want of anything better,
+    which works and is not obviously right. Whether the convention needs a
+    system entity is a question for the capability that owns the vocabulary.
+
+    Risks stated: the temporal rules read dates, and the checker now parses two
+    fields it previously ignored, so a tree using a date format it does not
+    recognize fails on a field it never had to supply before. That is a real
+    edge and the failure names the field. Nothing here validates that a Bar is
+    immutable once closed, or that an anchor is never edited — those are rules
+    the specs state and no tree can hold, which is said rather than implied.

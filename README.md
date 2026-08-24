@@ -98,6 +98,11 @@ divergence list looks like against a system that genuinely diverges.
 
 It checks what the specs require — fields, lifecycle values, decision rationale,
 reference resolution, and that each child agrees with the directory holding it.
+Where a cadence is recorded it also holds the two rules a tree can hold — a
+parent Bar contains its children in time, and Bars sharing a parent do not
+overlap — and reports any period that closed with no anchor taken against it.
+That last one is reported and never failed: a system whose cadence predates its
+adoption of anchors is behind, not malformed.
 It does not apply the disciplines this repository keeps on itself, so a Beat of
 yours may use any vocabulary it likes.
 
@@ -200,6 +205,8 @@ of it is edited without acknowledgement.
     harmonic-method/beats/<slug>/notes/*.yml                    its knowledge
     harmonic-method/beats/<slug>/versions/<v>/version.yml       a planned step
     harmonic-method/beats/<slug>/versions/<v>/revisions/*.yml   the changes executing it
+    harmonic-method/beats/<slug>/downbeats/*.yml                anchors taken on it
+    harmonic-method/bars/<slug>/bar.yml                         a period of the cadence
 
 One rule all the way down: an entity is a directory, its children are
 subdirectories, and no file carries an inline child list. Notes attach to the
