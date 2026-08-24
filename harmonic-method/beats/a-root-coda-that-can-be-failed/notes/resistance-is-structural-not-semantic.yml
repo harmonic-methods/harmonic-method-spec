@@ -1,0 +1,35 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-131
+  type: background
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.3
+  content: >
+    A decline is binary and resistance is a gradient, and the gradient is the
+    better signal. Work is not only accepted or refused: it is contested,
+    narrowed, deferred, split, reframed until it is something else, or left to go
+    quiet.
+
+    Resistance does not live in the text of an entity and no embedding recovers
+    it. It lives in what happened to the entity — how many times it was reframed,
+    whether it was split or merged, how long it sat between proposal and
+    decision, how much knowledge accumulated against it before it resolved, how
+    many attempts it took relative to comparable work. An implementation
+    recording those already holds the measure, and it needs no model, no labels,
+    and nothing that goes stale when a model is replaced.
+
+    The reading a gradient supports: where resistance rises steeply, the Coda is
+    doing work; where it is uniformly low, the Coda excludes nothing whatever the
+    statement says.
+  rationale: >
+    Recorded because it covers the case a decline register misses entirely, and
+    that case is the one the Producer exists to catch. An organization that never
+    formally refuses anything, and instead grinds unwanted work down through
+    reframing until it dies, produces a clean sheet of declines and a boundary
+    that is doing nothing. `specs/function.yml` names that failure exactly —
+    nothing is ever stopped, only starved — so an evidence base that could only
+    see explicit refusals would be blind to the failure it was built for.
+
+    It also costs less than the geometric route and is available to any
+    implementation, including one whose medium is a procedure rather than
+    software.

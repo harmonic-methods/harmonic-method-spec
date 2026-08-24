@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-130
+  type: background
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.3
+  content: >
+    For an implementation considering whether declines can be found or clustered
+    geometrically. They cannot be clustered by being declines, and that is not a
+    defect to engineer around.
+
+    Sentence embedding models represent negation weakly. "We will build X" and
+    "we will not build X" land close together, because topic dominates and
+    polarity barely registers. Cluster a set of declines and you get topic
+    clusters — a refusal to build a hosted checker sits beside a plan to build
+    one.
+
+    A direction can be learned rather than found: difference of means between a
+    declined and an accepted population, or a regularized linear probe. This
+    repository holds roughly sixty scope clauses recording work put out of scope
+    and around ninety decision Notes, which is enough for the former and thin for
+    the latter against a thousand dimensions.
+
+    The trap to test for is that such a probe will happily learn lexical markers
+    — "out of scope", "declines", "will not" — and become a keyword detector
+    wearing a vector. The check is a held-out set of declines phrased without
+    those markers. If accuracy collapses there, what was built was grep.
+  rationale: >
+    Recorded because the weakness looks like a problem and is a property to rely
+    on. The reading that matters compares how far declined work sits from the
+    Coda against how far accepted work sits from it. That test only means
+    anything if both populations are positioned by topic. If decline-ness
+    dominated the geometry the two clouds would separate on the label rather than
+    on the boundary, and the measure would confirm itself.

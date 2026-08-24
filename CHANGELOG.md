@@ -31,6 +31,20 @@
     has refused little, which is a fact about its age and not a defect in its
     boundary — and failing it would repeat the shape this instrument has already
     had to remove twice.
+  - **Three explorations recorded rather than built**, as background so the
+    choices stay open: negation is weak in a latent space, so declines cluster by
+    topic and not by decline-ness — which the separation reading needs rather than
+    suffers from (HM-N-130); resistance is a gradient better measured structurally
+    than semantically, and covers the starvation case a decline register shows as
+    a clean sheet (HM-N-131); and the method represents no unaccepted proposal, so
+    this dimension has a numerator and no base (HM-N-132).
+  - **A fifth Note type for an idea is refused on structure, not on cost.** The
+    four types are things that are true and an idea is a candidate; Notes are
+    never overwritten and an idea has a lifecycle; and an idea that is taken up is
+    already a Beat, so a type for ideas would give one thing two representations
+    depending on how it turned out. A proposal entity is not refused — only
+    deferred to a step that can design it, and noted as cheapest now, while no
+    implementation pins this surface.
   - Out and stated: measuring the separation between declined and accepted work.
     Where an adopter has embeddings it is computable, and overlap between the two
     populations would mean the boundary is doing no work — but every distance here
