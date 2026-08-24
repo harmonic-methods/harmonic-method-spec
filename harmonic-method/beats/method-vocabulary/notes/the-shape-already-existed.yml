@@ -1,0 +1,27 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-137
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.29
+  content: >
+    Revision's new `beat` plus optional `beat_version` is the same shape
+    `specs/note.yml` already uses for `attached_to` plus optional
+    `beat_version` — a direct reference to what the record is about, and a
+    narrower one naming the planning increment it arose from or belongs to,
+    when there is one.
+  rationale: >
+    Two entities needed the identical thing — something to point at
+    unconditionally, and an optional pointer one level narrower, because not
+    every record naming a Beat also names a step of it. Note solved this first,
+    for a different reason: not every piece of knowledge arises from a planned
+    increment. Revision needed it for the reason this step exists: not every
+    change executes one.
+
+    Reusing the shape rather than inventing a second one keeps a reader's
+    intuition transferable. Someone who has read one of these fields
+    understands the other without re-deriving it, and an implementation
+    validating one already has the logic for the other. A different shape here
+    — a boolean `orphaned` flag, a separate `hotfix` type, a nullable union
+    typed some third way — would have solved the same problem while asking a
+    future reader to notice that it was the same problem solved twice.

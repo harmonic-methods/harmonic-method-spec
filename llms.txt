@@ -13,9 +13,13 @@
 - specs/coda.yml: Coda — the strategic outcome an entity exists to serve
 - specs/beat.yml: Beat — a durable capability or process, laddering to a Coda
 - specs/beat-version.yml: Beat Version — a planned step in a Beat's evolution
-- specs/revision.yml: Revision — a tracked change executing part of a Beat Version.
-  The relationship runs one way: a Revision belongs to exactly one Beat Version, and a
-  Beat Version is delivered by one or more Revisions. Nothing bounds how many.
+- specs/revision.yml: Revision — a tracked change to a Beat. Names its Beat directly
+  and its Beat Version only when one exists; a Beat Version is delivered by one or
+  more Revisions, nothing bounds how many. A Revision with no Beat Version is
+  orphaned rather than incomplete — a hotfix or other change that could not wait for
+  a planning increment — and still carries its own reasoning and status. A later
+  planned step cites an orphan's id in its own prose rather than adopting it by
+  editing the orphan's beat_version after delivery.
 - specs/note.yml: Note — typed knowledge (background, constraint, guidance, decision).
   Preserved, never overwritten; a decision retiring one carries supersedes, a reference
   to what it closes. The active partition is derived from that reference, not stored —
@@ -113,6 +117,8 @@ Version they arose from via the optional beat_version field.
 - harmonic-method/beats/<slug>/notes/: that Beat's typed knowledge
 - harmonic-method/beats/<slug>/versions/<v>/version.yml: a planned step
 - harmonic-method/beats/<slug>/versions/<v>/revisions/: the changes executing it — one or more
+- harmonic-method/beats/<slug>/revisions/: orphaned Revisions — changes with no planned
+  step to nest under. beat names the capability directly; beat_version is absent
 - harmonic-method/beats/<slug>/downbeats/: immutable anchors taken on that capability
 - harmonic-method/bars/<slug>/bar.yml: a period of the cadence. Nesting is a parent
   reference rather than a directory, because a parent Bar is temporal containment at

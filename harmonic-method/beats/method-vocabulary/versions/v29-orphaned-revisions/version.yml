@@ -1,0 +1,81 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.29
+  beat: HM-B-003
+  title: A Revision can outrun the plan that was supposed to precede it
+  status: active
+  summary: >
+    Harmonica's own reference implementation ships a Revision without a Beat
+    Version — a hotfix, a dependency bump, something that could not wait for a
+    planning increment — and `specs/revision.yml` had `beat_version` as
+    required, with a rule stating a Revision belongs to exactly one Beat
+    Version. `AGENTS.md` names exactly this shape, a required field an
+    implementation lacks, as a contradiction rather than an extension. The
+    reference implementation was not extending the method; it was breaking it,
+    and the method was the half that needed to move.
+
+    The deeper defect was structural rather than a stray requirement. Revision
+    reached its Beat only transitively, through `beat_version` — there was no
+    direct reference to hold once that field became optional, and an orphaned
+    Revision would have floated free of the tree with nothing saying which
+    capability it touched.
+
+    `specs/revision.yml` gains `beat`, required on every Revision, with
+    `beat_version` narrowed to optional — the identical shape `specs/note.yml`
+    already uses for `attached_to` and `beat_version`, adopted rather than
+    invented. A Revision with no Beat Version is orphaned, not incomplete: it
+    still names its Beat, still carries its own reasoning in the `description`
+    field the base spec already required unconditionally, and still moves
+    through the same status values as any other.
+
+    The tree gains a sibling `revisions/` directory under a Beat, parallel to
+    `notes/`, holding exactly the Revisions that have no version directory to
+    nest under. The checker enforces the pairing in both directions: a Revision
+    nested under a Beat Version's own `revisions/` must declare and match both
+    references; one sitting directly under a Beat must declare the Beat and
+    must not declare a Beat Version at all — presence there would contradict
+    the reason the file is in that position.
+
+    What a later, properly planned Beat Version does with an orphan it
+    supersedes in substance is answered too: it does not adopt the orphan by
+    setting `beat_version` on it after delivery. That would rewrite what
+    already shipped, under what plan, to say something that was not true when
+    it happened. The connection is prose, citing the orphan by id — the same
+    discipline supersession already uses.
+  scope: >
+    In: `specs/revision.yml` gaining `beat` and narrowing `beat_version` to
+    optional; the three rules stating the shape, the orphaned case, and the
+    no-retroactive-adoption constraint; the checker reading a Beat-level
+    `revisions/` directory and enforcing the location-conditional pairing in
+    both directions; the vocabulary sweep and the printed summary reaching it;
+    the worked example gaining a genuine orphaned Revision and both existing
+    Revisions gaining the now-required field; every rule made to fail before
+    being trusted — five paths, covering both the nested and orphaned cases;
+    the spec set minor step, moved with `npm run bump-version`.
+    In also: closing the step whose work has reached the trunk, which
+    [HM-N-055] puts in the next substantive step's scope.
+
+    Out: any rubric wiring for orphan frequency. The observation that a Beat or
+    a system leaning on orphaned Revisions is itself evidence the planning
+    discipline is not holding is real and is recorded as background — the
+    method names the evidence it can name without computing anything; deciding
+    what rate is meaningful and to whom is arithmetic, and arithmetic stays an
+    implementation's. See [HM-N-136].
+
+    Out: any change to `specs/note.yml`. The shape borrowed from it — a direct
+    reference plus an optional narrower one — was already right; this step
+    applies a working pattern rather than revisiting it.
+
+    Out: a mechanism for citing an orphan from the Beat Version that later
+    addresses it. Prose already does this everywhere else knowledge cites
+    other knowledge in this method, and a dedicated field would be designing
+    one from the single case that raised it — the same reasoning [HM-N-115]
+    already gave for declining a fifth Note type.
+
+    Risks stated: the checker enforces that an orphan's location and its fields
+    agree, and enforces nothing about why a Revision was orphaned — a
+    Revision that should have had a plan and simply didn't is indistinguishable
+    in the tree from one that genuinely could not wait. That is by design and
+    stated rather than solved: the method reports the fact of orphaning, and
+    reading a rate of it as a signal is deferred exactly as far as every other
+    computed judgement here is.

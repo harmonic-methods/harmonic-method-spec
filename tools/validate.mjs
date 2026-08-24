@@ -61,7 +61,7 @@ const treeLs = (p) => (existsSync(resolve(BASE, p)) ? readdirSync(resolve(BASE, 
 const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
 const BV_REQ = ['id', 'beat', 'title', 'summary', 'scope', 'status'];
 const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
-const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
+const REV_REQ = ['id', 'beat', 'title', 'description', 'status'];
 const BAR_REQ = ['id', 'attached_to', 'starts', 'ends', 'status'];
 const DOWNBEAT_REQ = ['id', 'beat', 'coda_state', 'convergence', 'taken_at', 'taken_by'];
 /**
@@ -369,7 +369,10 @@ function checkTree(root) {
 
         for (const f of REV_REQ) if (r[f] === undefined) fail(`${rPath}: missing required '${f}'`);
         if (!['active', 'delivered', 'withdrawn'].includes(r.status)) fail(`${rPath}: status '${r.status}' not in [active, delivered, withdrawn]`);
-        // specs/revision.yml: a Revision belongs to exactly one Beat Version.
+        // specs/revision.yml: nesting under a Beat Version's own directory
+        // declares which Beat Version this Revision executes — a Revision here
+        // is never orphaned, so both references are checked against location.
+        if (r.beat !== b.id) fail(`${rPath}: declares beat '${r.beat}' but sits under ${b.id}`);
         if (r.beat_version !== v.id) fail(`${rPath}: declares beat_version '${r.beat_version}' but sits under ${v.id}`);
         if (revIds.has(r.id)) fail(`${rPath}: duplicate revision id '${r.id}'`);
         revIds.add(r.id);
@@ -382,6 +385,28 @@ function checkTree(root) {
     // gate governs. Rejecting it made that state unrepresentable and forced a
     // Beat and its first step to arrive together.
     const versionSummary = versions.length ? versions.join(', ') : '(none — not yet decomposed)';
+
+    // Orphaned Revisions: siblings of versions/, not nested inside one — the
+    // absence of a Beat Version is the point, so there is no version directory
+    // for this file to sit under. specs/revision.yml: orphaning is a record,
+    // and this is the only tree position that can hold one.
+    const orphans = [];
+    for (const rf of treeLs(`${root}/beats/${slug}/revisions`)) {
+      const rPath = `${root}/beats/${slug}/revisions/${rf}`;
+      let r;
+      try { r = treeLoad(rPath)?.revision; } catch (e) { fail(`${rPath}: ${e.message}`); continue; }
+      if (!r) { fail(`${rPath}: no top-level 'revision' key`); continue; }
+
+      for (const f of REV_REQ) if (r[f] === undefined) fail(`${rPath}: missing required '${f}'`);
+      if (!['active', 'delivered', 'withdrawn'].includes(r.status)) fail(`${rPath}: status '${r.status}' not in [active, delivered, withdrawn]`);
+      if (r.beat !== b.id) fail(`${rPath}: declares beat '${r.beat}' but sits under ${b.id}`);
+      if (r.beat_version !== undefined) {
+        fail(`${rPath}: has beat_version '${r.beat_version}' but sits in beats/${slug}/revisions/ — an orphaned Revision carries no beat_version; a Revision executing a planned step belongs under that step's own revisions/`);
+      }
+      if (revIds.has(r.id)) fail(`${rPath}: duplicate revision id '${r.id}'`);
+      revIds.add(r.id);
+      orphans.push(r.id);
+    }
 
     const notes = readNotes(`${root}/beats/${slug}/notes`, b.id, noteIds, bvRefs, supersedesRefs);
 
@@ -405,6 +430,7 @@ function checkTree(root) {
     console.log(`  ${b.id}  ${slug}/`);
     console.log(`    versions: ${versionSummary}`);
     console.log(`    notes:    ${notes.join(', ') || '(none)'}`);
+    if (orphans.length) console.log(`    orphans:  ${orphans.join(', ')}`);
     if (anchors.length) console.log(`    anchors:  ${anchors.join(', ')}`);
   }
 
@@ -525,6 +551,7 @@ function checkVocabulary(roots) {
       ...ls(`${root}/beats`).flatMap((slug) => [
         `${root}/beats/${slug}/beat.yml`,
         ...ls(`${root}/beats/${slug}/notes`).map((f) => `${root}/beats/${slug}/notes/${f}`),
+        ...ls(`${root}/beats/${slug}/revisions`).map((f) => `${root}/beats/${slug}/revisions/${f}`),
         ...ls(`${root}/beats/${slug}/versions`).flatMap((v) => [
           `${root}/beats/${slug}/versions/${v}/version.yml`,
           ...ls(`${root}/beats/${slug}/versions/${v}/revisions`).map(

@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-136
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.29
+  content: >
+    `specs/revision.yml`'s `beat_version` field moves from required to
+    optional, and gains `beat`, required on every Revision. Reported as fixing
+    a contradiction in the reference implementation, not as recognizing an
+    extension.
+  rationale: >
+    `AGENTS.md` already distinguishes the two cases, and gives "a required
+    field it lacks" as its own example of a contradiction. Harmonica's
+    `create_revision` makes `beatVersionId` optional outright, for hotfixes and
+    operational fixes that do not warrant a planning increment. That is not an
+    implementation defining an entity this repository does not, or scoring a
+    dimension the method omits — the two examples `AGENTS.md` gives for a
+    legitimate extension. It is a required field simply not being there.
+
+    The choice was between two directions to close the gap: hold the rule and
+    call Harmonica non-conformant, or find that the rule was wrong. It was
+    wrong, and finding out took nothing more than asking what a Revision reaches
+    its Beat through today. Only `beat_version`, transitively — there was no
+    direct path, so relaxing the field without adding one would have let an
+    orphaned Revision float free of the tree, unreachable from the capability it
+    changed. That is worse than the contradiction it would have replaced.
+
+    Naming this a contradiction rather than an extension is not a technicality.
+    An extension needs no permission and changes nothing here; a contradiction
+    means either the implementation or the standard has to move, and pretending
+    otherwise — writing this up as "Harmonica extends the method with orphan
+    Revisions" — would have left the actual defect, no direct Beat reference,
+    sitting underneath a label that made it sound settled.

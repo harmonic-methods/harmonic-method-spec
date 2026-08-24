@@ -2,6 +2,42 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A Revision can outrun the plan that was supposed to precede it.** Harmonica's
+  own reference implementation ships a Revision without a Beat Version — a
+  hotfix, a dependency bump, something that could not wait for a planning
+  increment — and `specs/revision.yml` had `beat_version` required, with a rule
+  that a Revision belongs to exactly one Beat Version. `AGENTS.md` names exactly
+  this shape, a required field an implementation lacks, as a contradiction
+  rather than an extension: the reference implementation was not extending the
+  method, it was breaking it. See HM-B-003 and HM-BV-003.29.
+  - **`specs/revision.yml` gains `beat`, required on every Revision**, and
+    narrows `beat_version` to optional — the identical shape `specs/note.yml`
+    already uses for `attached_to` plus optional `beat_version`, adopted rather
+    than invented. A Revision with no Beat Version is orphaned, not incomplete:
+    it still names its Beat, still carries its own reasoning in the
+    `description` field the base spec already required unconditionally, and
+    still moves through the same status values as any other. See HM-N-136 and
+    HM-N-137.
+  - **A sibling `revisions/` directory under a Beat** holds Revisions with no
+    version to nest under. The checker enforces the pairing in both
+    directions — nested requires and matches both references, orphaned
+    requires the Beat and forbids the Beat Version — verified by exercising
+    all five failure paths before trusting any of them.
+  - **Orphaning is a record, not a repair.** A later, properly planned Beat
+    Version does not adopt an orphan by setting its `beat_version` after
+    delivery — that would rewrite what already shipped, under what plan, to
+    say something that was not true when it happened. The connection is the
+    new step's own prose, citing the orphan by id, the same discipline
+    supersession already uses. See HM-N-138.
+  - **The worked example gained a genuine orphaned Revision**, and both
+    existing Revisions gained the now-required field.
+  - The spec set takes a minor step, moved with `npm run bump-version`.
+  - Out and stated: any rubric wiring for how often a Beat or a system leans on
+    orphaned Revisions. That rate is real evidence the planning discipline
+    isn't holding, independent of what any one orphan's own reasoning says —
+    recorded as background, because a rate needs a denominator, a window, and
+    a threshold this repository has no basis to set. See HM-N-139.
+
 - **A superseded Note stops reading as standing evidence.** Two rules already
   required a decision to cite what it supersedes, and neither citation was a
   parsed field — the reverse question, is this Note still standing, could only

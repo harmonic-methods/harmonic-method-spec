@@ -1,0 +1,29 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-139
+  type: background
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.29
+  content: >
+    Recorded for future exploration, not built here: how often a Beat or a
+    system relies on orphaned Revisions is itself evidence about whether the
+    planning discipline is holding, independent of what any individual orphan's
+    `description` says about why it could not wait.
+
+    An orphan is a legitimate escape valve used occasionally. The same escape
+    valve used constantly is a different fact — planning has stopped happening
+    and is being routed around rather than followed. Neither state is visible
+    from reading one Revision; both are visible from the rate across many.
+  rationale: >
+    Named because the method's own discipline says to name evidence without
+    computing it — the same posture taken for declined work evidencing
+    Discriminating, and for reframe or split counts evidencing resistance. A
+    rate needs a denominator, a window, and a threshold for what counts as too
+    often, all of which are implementation judgement calls this repository has
+    no basis to make, and making one here would be designing an instrument from
+    a single conversation rather than from use.
+
+    Left unbuilt for the same reason the separation measure over declined and
+    accepted work was left unbuilt: this is arithmetic, `AGENTS.md` already
+    gives an implementation everything it computes, and this repository's
+    contribution stops at naming what the arithmetic would be over.
