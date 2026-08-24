@@ -1,0 +1,33 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-109
+  type: decision
+  attached_to: HM-B-010
+  beat_version: HM-BV-010.1
+  content: >
+    The cadence entities are demonstrated in the worked example and are not added
+    to this repository's own system. This repository runs no cadence and takes no
+    readings, so it records none.
+  rationale: >
+    A Bar in this tree would be a claim that a period is planned and delivered
+    within, and a Downbeat would be a claim that somebody took a reading and
+    stood behind it. Neither is true. Adding them so that the repository's own
+    system exercises the capability it just built would be exactly the failure
+    [HM-B-007] exists to prevent, arriving as tidiness — and a fabricated anchor
+    is worse than a missing one, because a missing anchor is honestly missing
+    while a fabricated one is evidence of something that did not happen.
+
+    The cost is real and worth stating rather than absorbing. Every other
+    capability here is dogfooded: the vocabulary describes this repository, the
+    instruments are run on its own Beats, the conformance checker checks its own
+    tree. This is the first capability the worked example demonstrates and the
+    repository's own system does not, which means the cadence rules are checked
+    against a fixture rather than against use. A rule exercised only by its own
+    example is thinner evidence than one exercised by work, and that is the
+    honest description of where these rules stand.
+
+    What would change it is not a decision to add a Bar. It is this repository
+    adopting a cadence — deciding that reconciliation happens on a period rather
+    than when something prompts it — which is a change to how the work is run and
+    not to what is recorded about it. If that happens the entities follow, and
+    they will be true when they arrive.

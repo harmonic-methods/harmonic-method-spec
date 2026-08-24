@@ -62,6 +62,12 @@ Version they arose from via the optional beat_version field.
 - harmonic-method/beats/<slug>/notes/: that Beat's typed knowledge
 - harmonic-method/beats/<slug>/versions/<v>/version.yml: a planned step
 - harmonic-method/beats/<slug>/versions/<v>/revisions/: the changes executing it — one or more
+- harmonic-method/beats/<slug>/downbeats/: immutable anchors taken on that capability
+- harmonic-method/bars/<slug>/bar.yml: a period of the cadence. Nesting is a parent
+  reference rather than a directory, because a parent Bar is temporal containment at
+  one altitude and not a change of altitude. The checker holds containment and
+  non-overlap, and reports a period that closed with no anchor against it — reported,
+  never failed, since a cadence younger than its tree is behind rather than malformed
 
 There is no checks/ directory by design: this repository assesses but does not record,
 and no check entity is specified.

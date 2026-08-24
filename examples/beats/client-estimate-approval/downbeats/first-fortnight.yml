@@ -1,0 +1,24 @@
+# Example — an anchor taken at the fortnight boundary. Immutable: a newer reading
+# is a new file, never an edit to this one. See specs/downbeat.yml.
+downbeat:
+  id: EX-DB-001
+  beat: EX-B-001
+  bar: EX-BAR-2026-F1
+  coda_state: >
+    Every estimate a client receives is approved or declined in one place, with
+    the outcome, the timestamp and the approver recorded against the engagement.
+  convergence: >
+    Recording has landed and sending has not. Approvals and declines are captured
+    against the engagement with an approver and a timestamp, which is the half a
+    client sees after they decide. The half before it — the estimate reaching a
+    named contact rather than whichever mailbox the last thread used — is drafted
+    and in review with the engagement leads.
+
+    Examined: the revised procedure section covering approval, and the draft
+    covering issue. Taken on the record's word: that the revised procedure is the
+    one estimators are following, which nobody has observed.
+
+    Read in prose because this engagement keeps no convergence scale. The method
+    leaves that to the implementation and none is invented here.
+  taken_at: 2026-01-14T17:00:00Z
+  taken_by: The estimating lead

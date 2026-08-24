@@ -62,6 +62,8 @@ const BEAT_REQ = ['id', 'title', 'coda', 'description', 'status'];
 const BV_REQ = ['id', 'beat', 'title', 'summary', 'scope', 'status'];
 const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
 const REV_REQ = ['id', 'beat_version', 'title', 'description', 'status'];
+const BAR_REQ = ['id', 'attached_to', 'starts', 'ends', 'status'];
+const DOWNBEAT_REQ = ['id', 'beat', 'coda_state', 'convergence', 'taken_at', 'taken_by'];
 /**
  * The Note types, read from the spec rather than restated beside it.
  *
@@ -273,7 +275,9 @@ function checkTree(root) {
   const bvIds = new Set();
   const noteIds = new Set();
   const revIds = new Set();
+  const downbeatIds = new Set();
   const bvRefs = [];
+  const barRefs = [];
 
   for (const slug of treeLs(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
@@ -353,14 +357,120 @@ function checkTree(root) {
       notes.push(`${n.id} ${n.type}${n.beat_version ? ` →${n.beat_version}` : ''}`);
     }
 
+    // Downbeats attach to the Beat, like Notes — the anchor is on the capability
+    // even when a portfolio's Bar boundary occasioned it.
+    const anchors = [];
+    for (const df of treeLs(`${root}/beats/${slug}/downbeats`)) {
+      const dPath = `${root}/beats/${slug}/downbeats/${df}`;
+      let d;
+      try { d = treeLoad(dPath)?.downbeat; } catch (e) { fail(`${dPath}: ${e.message}`); continue; }
+      if (!d) { fail(`${dPath}: no top-level 'downbeat' key`); continue; }
+
+      for (const f of DOWNBEAT_REQ) if (d[f] === undefined) fail(`${dPath}: missing required '${f}'`);
+      if (d.beat !== b.id) fail(`${dPath}: declares beat '${d.beat}' but sits under ${b.id}`);
+      if (downbeatIds.has(d.id)) fail(`${dPath}: duplicate downbeat id '${d.id}'`);
+      downbeatIds.add(d.id);
+      if (d.bar !== undefined) barRefs.push({ dPath, ref: d.bar });
+      anchors.push(`${d.id}${d.bar ? ` @${d.bar}` : ' (outside cadence)'}`);
+    }
+
     console.log(`  ${b.id}  ${slug}/`);
     console.log(`    versions: ${versionSummary}`);
     console.log(`    notes:    ${notes.join(', ') || '(none)'}`);
+    if (anchors.length) console.log(`    anchors:  ${anchors.join(', ')}`);
   }
 
   // Resolved last, so a Note may reference any Beat Version in the tree.
   for (const { nPath, ref } of bvRefs) {
     if (!bvIds.has(ref)) fail(`${nPath}: beat_version '${ref}' does not resolve`);
+  }
+
+  checkCadence(root, barRefs);
+}
+
+/**
+ * The cadence, and the one thing about it a tree can answer.
+ *
+ * A Bar is a span with a boundary at each end; a longer cadence is a Bar with
+ * children rather than a second entity, so nesting is a reference and not a
+ * directory — the spec is explicit that a parent Bar is temporal containment at
+ * one altitude, not a change of altitude. Two rules follow from that and are
+ * checkable: a parent contains its children in time, and Bars sharing a parent
+ * do not overlap, because overlapping periods make "which Bar are we in"
+ * unanswerable.
+ *
+ * The last part is a reading rather than a rule. `specs/bar.yml` says a
+ * boundary is the occasion for a Downbeat and not a substitute for one, and
+ * that a period elapsing without an anchor leaves nothing to reconcile against
+ * later. So an elapsed Bar that no anchor names is reported and NOT failed: a
+ * tree whose cadence predates its adoption of anchors is behind, not
+ * malformed, and a checker that failed it would be refusing correct trees for
+ * a habit they had not started yet.
+ */
+function checkCadence(root, barRefs) {
+  const bars = new Map();
+  for (const slug of treeLs(`${root}/bars`)) {
+    const bPath = `${root}/bars/${slug}/bar.yml`;
+    if (!existsSync(resolve(BASE, bPath))) { fail(`${root}/bars/${slug}/: no bar.yml`); continue; }
+
+    let bar;
+    try { bar = treeLoad(bPath)?.bar; } catch (e) { fail(`${bPath}: ${e.message}`); continue; }
+    if (!bar) { fail(`${bPath}: no top-level 'bar' key`); continue; }
+
+    for (const f of BAR_REQ) if (bar[f] === undefined) fail(`${bPath}: missing required '${f}'`);
+    if (!['open', 'closed'].includes(bar.status)) fail(`${bPath}: status '${bar.status}' not in [open, closed]`);
+    if (bars.has(bar.id)) fail(`${bPath}: duplicate bar id '${bar.id}'`);
+    else bars.set(bar.id, { ...bar, path: bPath });
+  }
+  if (bars.size === 0) {
+    // Not a defect. Most systems have no cadence recorded here, and the specs
+    // do not require one to exist for a tree to conform.
+    for (const { dPath, ref } of barRefs) fail(`${dPath}: bar '${ref}' does not resolve`);
+    return;
+  }
+
+  console.log(`  cadence: ${bars.size} bar(s)`);
+  const day = (v) => new Date(`${v}`).getTime();
+
+  for (const bar of bars.values()) {
+    if (Number.isNaN(day(bar.starts)) || Number.isNaN(day(bar.ends))) {
+      fail(`${bar.path}: starts/ends must be dates`);
+      continue;
+    }
+    if (day(bar.ends) < day(bar.starts)) fail(`${bar.path}: ends before it starts`);
+    if (bar.parent === undefined) continue;
+
+    const parent = bars.get(bar.parent);
+    if (parent === undefined) { fail(`${bar.path}: parent '${bar.parent}' does not resolve`); continue; }
+    if (day(bar.starts) < day(parent.starts) || day(bar.ends) > day(parent.ends)) {
+      fail(`${bar.path}: not contained by parent '${parent.id}' — a parent Bar contains its children in time`);
+    }
+  }
+
+  // Siblings, including the set with no parent, must not overlap.
+  const byParent = new Map();
+  for (const bar of bars.values()) {
+    const key = bar.parent ?? '(root)';
+    if (!byParent.has(key)) byParent.set(key, []);
+    byParent.get(key).push(bar);
+  }
+  for (const [key, group] of byParent) {
+    const sorted = [...group].sort((a, b) => day(a.starts) - day(b.starts));
+    for (let i = 1; i < sorted.length; i++) {
+      if (day(sorted[i].starts) < day(sorted[i - 1].ends)) {
+        fail(`${sorted[i].path}: overlaps '${sorted[i - 1].id}' under ${key} — Bars sharing a parent do not overlap`);
+      }
+    }
+  }
+
+  for (const { dPath, ref } of barRefs) {
+    if (!bars.has(ref)) fail(`${dPath}: bar '${ref}' does not resolve`);
+  }
+
+  const anchored = new Set(barRefs.map((r) => r.ref));
+  const unanchored = [...bars.values()].filter((b) => b.status === 'closed' && !anchored.has(b.id));
+  for (const bar of unanchored) {
+    console.log(`    note: ${bar.id} closed with no anchor taken — nothing to reconcile against later`);
   }
 }
 
