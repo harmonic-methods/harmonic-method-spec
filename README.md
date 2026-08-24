@@ -222,7 +222,8 @@ of it is edited without acknowledgement.
 
 ## Laying out a system
 
-    harmonic-method/coda.yml                                    the system Coda
+    harmonic-method/coda.yml                                    the root Coda
+    harmonic-method/notes/*.yml                                 what the root is held to
     harmonic-method/beats/<slug>/beat.yml                       a Beat
     harmonic-method/beats/<slug>/notes/*.yml                    its knowledge
     harmonic-method/beats/<slug>/versions/<v>/version.yml       a planned step
@@ -232,7 +233,11 @@ of it is edited without acknowledgement.
 
 One rule all the way down: an entity is a directory, its children are
 subdirectories, and no file carries an inline child list. Notes attach to the
-Beat rather than to a Beat Version — a version ends, the knowledge it
+entity whose knowledge they are, which is the root itself for the bounds a system
+holds, the ordering among them, and what would end the effort — published, so an
+adopter inherits the constraints along with the specification, and so the
+instrument scoring the root reads the organization rather than only its
+direction. Notes attach to the Beat rather than to a Beat Version — a version ends, the knowledge it
 produced does not — and may name the version they arose from.
 
 - [examples/](examples/) — one conformant Beat in this layout, deliberately

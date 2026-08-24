@@ -254,6 +254,39 @@ function checkToolingVersion() {
 }
 
 /**
+ * Notes under one owner — a Beat, or the root Coda itself.
+ *
+ * `specs/note.yml` has always said a Note attaches to "the portfolio, system, or
+ * Beat this knowledge belongs to". Only the Beat case ever had somewhere to live,
+ * which is the third time an entity was specified in full here and left
+ * unrepresentable. What must stay true of a system, which bound gives first when
+ * two of them conflict, and what would end the effort are knowledge about the
+ * root and belong to it. Kept in a contributor charter they sat outside the
+ * published surface, so no adopter saw them and no instrument could read them —
+ * which is exactly how a tightly bounded system scores 1 for having no bounds.
+ */
+function readNotes(dir, ownerId, noteIds, bvRefs) {
+  const seen = [];
+  for (const nf of treeLs(dir)) {
+    const nPath = `${dir}/${nf}`;
+    let n;
+    try { n = treeLoad(nPath)?.note; } catch (e) { fail(`${nPath}: ${e.message}`); continue; }
+    if (!n) { fail(`${nPath}: no top-level 'note' key`); continue; }
+
+    for (const f of NOTE_REQ) if (n[f] === undefined) fail(`${nPath}: missing required '${f}'`);
+    const types = noteTypes();
+    if (types && !types.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in specs/note.yml`);
+    if (n.type === 'decision' && !n.rationale) fail(`${nPath}: a decision Note requires rationale`);
+    if (n.attached_to !== ownerId) fail(`${nPath}: attached_to '${n.attached_to}' but sits under ${ownerId}`);
+    if (noteIds.has(n.id)) fail(`${nPath}: duplicate note id '${n.id}'`);
+    noteIds.add(n.id);
+    if (n.beat_version !== undefined) bvRefs.push({ nPath, ref: n.beat_version });
+    seen.push(`${n.id} ${n.type}${n.beat_version ? ` →${n.beat_version}` : ''}`);
+  }
+  return seen;
+}
+
+/**
  * Validates one system tree — this repository's own, or any tree given on the
  * command line.
  *
@@ -278,6 +311,10 @@ function checkTree(root) {
   const downbeatIds = new Set();
   const bvRefs = [];
   const barRefs = [];
+
+  const rootNotes = readNotes(`${root}/notes`, codaId, noteIds, bvRefs);
+  console.log(`  ${codaId ?? '(root)'}  root Coda`);
+  console.log(`    notes:    ${rootNotes.join(', ') || '(none)'}`);
 
   for (const slug of treeLs(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
@@ -339,23 +376,7 @@ function checkTree(root) {
     // Beat and its first step to arrive together.
     const versionSummary = versions.length ? versions.join(', ') : '(none — not yet decomposed)';
 
-    const notes = [];
-    for (const nf of treeLs(`${root}/beats/${slug}/notes`)) {
-      const nPath = `${root}/beats/${slug}/notes/${nf}`;
-      let n;
-      try { n = treeLoad(nPath)?.note; } catch (e) { fail(`${nPath}: ${e.message}`); continue; }
-      if (!n) { fail(`${nPath}: no top-level 'note' key`); continue; }
-
-      for (const f of NOTE_REQ) if (n[f] === undefined) fail(`${nPath}: missing required '${f}'`);
-      const types = noteTypes();
-      if (types && !types.includes(n.type)) fail(`${nPath}: note type '${n.type}' is not in specs/note.yml`);
-      if (n.type === 'decision' && !n.rationale) fail(`${nPath}: a decision Note requires rationale`);
-      if (n.attached_to !== b.id) fail(`${nPath}: attached_to '${n.attached_to}' but sits under ${b.id}`);
-      if (noteIds.has(n.id)) fail(`${nPath}: duplicate note id '${n.id}'`);
-      noteIds.add(n.id);
-      if (n.beat_version !== undefined) bvRefs.push({ nPath, ref: n.beat_version });
-      notes.push(`${n.id} ${n.type}${n.beat_version ? ` →${n.beat_version}` : ''}`);
-    }
+    const notes = readNotes(`${root}/beats/${slug}/notes`, b.id, noteIds, bvRefs);
 
     // Downbeats attach to the Beat, like Notes — the anchor is on the capability
     // even when a portfolio's Bar boundary occasioned it.
@@ -487,6 +508,7 @@ function checkVocabulary(roots) {
     ...ls('specs').map((f) => `specs/${f}`),
     ...roots.flatMap((root) => [
       `${root}/coda.yml`,
+      ...ls(`${root}/notes`).map((f) => `${root}/notes/${f}`),
       ...ls(`${root}/beats`).flatMap((slug) => [
         `${root}/beats/${slug}/beat.yml`,
         ...ls(`${root}/beats/${slug}/notes`).map((f) => `${root}/beats/${slug}/notes/${f}`),

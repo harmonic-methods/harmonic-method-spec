@@ -1,0 +1,50 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-121
+  type: decision
+  attached_to: HM-CODA
+  beat_version: HM-BV-013.1
+  content: >
+    What is defended for what comes next, and what would end this.
+
+    Defended: roughly a third to a half of each cycle goes to applying the method
+    to this repository's own work rather than to extending the published surface.
+    A range and not a target — below about a third the extensions stop being
+    tested by use, and above about a half nothing new is being published for the
+    use to test.
+
+    Ends when: a conforming implementation can be checked against this method
+    without reading this repository — the primitives absorbed into the tools that
+    implement them, and the checker reproducible from the specs alone. At that
+    point the specification has done what a specification is for, and continuing
+    to publish it would be maintaining a copy of something already held
+    elsewhere, which rule 1 of [HM-N-120] exists to prevent.
+
+    Also ends, differently: if adopters keep scoring well and stopping nothing.
+    That is the failure named in the root Coda itself, and it is an ending rather
+    than a defect to fix, because a method whose instruments produce good scores
+    against work nobody would defend is not under-implemented — it is measuring
+    the wrong thing, and the honest response is to say so rather than to add an
+    instrument.
+  rationale: >
+    Both halves were missing and the missing half that matters is the first one.
+    Succession funded out of surplus is succession that never happens, because
+    every other claim on a cycle reports sooner than the one that only pays back
+    by catching a defect nobody has met yet. Naming a range makes the trade
+    visible when it is being made rather than after several cycles of it not
+    being made.
+
+    The range is calibrated on this repository's own record rather than chosen. The
+    defects that changed the standard most — the absolute-path handling, the
+    cadence entities that had never existed, drift recorded as a flag where the
+    specification asked for a distance — were all found by using the method here,
+    not by reading it. The cycles that found them spent close to half on use. The
+    cycles that spent almost nothing on it shipped text that was later found to
+    describe something that had never been built.
+
+    An ending condition on a specification reads strangely and is the more
+    important of the two. A standard with no stated end has an incentive to remain
+    necessary, which is the incentive that produces a specification nobody can
+    implement without consulting its authors. Writing the end down converts that
+    from a temptation into a stated outcome — and the end named here is success,
+    not abandonment.

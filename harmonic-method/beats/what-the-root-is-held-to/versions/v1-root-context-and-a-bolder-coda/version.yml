@@ -1,0 +1,84 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-013.1
+  beat: HM-B-013
+  title: The root gets a place to keep what it knows, and something worth measuring
+  status: active
+  summary: >
+    `specs/note.yml` has said since the vocabulary landed that a Note attaches to
+    the portfolio, system, or Beat the knowledge belongs to. Only the Beat case
+    ever had somewhere to live. That is the third entity specified in full here
+    and left unrepresentable, after the two cadence entities, and it was found
+    the same way they were — by using the method rather than reading it.
+
+    What it cost became visible when the Producer's instrument was pointed at
+    this repository's own root Coda. Bounded scored 1, against a repository that
+    is in fact tightly bounded and visibly ordered: the bounds were real, held on
+    every change, and living in the contributor charter, which is not part of the
+    published surface, is read by no instrument, and is never seen by an adopter
+    conforming to this method. A fact kept where the rubric cannot reach it
+    scores as a fact that does not exist, and it should.
+
+    The same reading found the statement itself one altitude too low. It
+    described what a reader could do with a repository — its own header called it
+    a system Coda — and was serving as a root only because nothing sat above it.
+    Everything beneath it therefore laddered to distribution, so a capability
+    that eased adoption and left no organization better off had something to
+    score against, and one that helped an organization stop work it should not be
+    doing had nothing.
+
+    This step gives root knowledge a place and holds it there, and replaces the
+    statement with one about tracing work to purpose and being able to stop work
+    that has stopped earning its place. The prior statement is preserved, as
+    `specs/coda.yml` requires of any Coda that changes.
+
+    Done when: a Note attached to the root has somewhere to sit and is validated
+    there on the same rules as one under a Beat; the vocabulary sweep reaches it;
+    the checker was made to fail against a root Note that misattributes itself and
+    against one naming a step that does not exist, before either was believed;
+    the bounds, their ordering and an ending condition are recorded at the root;
+    and the instrument that scores a root Coda reads them.
+  scope: >
+    In: the layout position for a root Note and its validation, sharing one
+    reader with the Beat case so the two cannot drift apart; the vocabulary
+    sweep reaching it; the replacement root Coda and a decision preserving the
+    prior statement; the bounds with their ordering, and the defended share and
+    ending condition, recorded as root Notes; the addition to the root Coda
+    instrument's inputs and check rules so Bounded and Generative are scored
+    against the root's recorded context and not only against its statement; and
+    the surfaces.
+    In also: closing the step whose work reaches the trunk immediately before
+    this one, which [HM-N-055] puts in the next substantive step's scope.
+
+    Out: any change to `specs/note.yml`. It was already right — a Note attaches
+    to a portfolio, a system, or a Beat, and it has said so all along. What was
+    missing was somewhere to put an instance and something to check it, which is
+    the same finding the cadence step recorded and the same resolution. The spec
+    set version does not move.
+
+    Out: a Downbeat or a Bar at the root. An anchor sits at beat altitude by
+    `specs/downbeat.yml`, and this repository still runs no cadence.
+
+    Out: any claim about who publishes this method or what they gain
+    commercially. The second ledger named in the new statement is conforming
+    implementations and findings from adopters, which is what could correct the
+    method. An organization's own interest in this existing is that
+    organization's root Coda to state, in its own tree.
+
+    Out: rescoring the root Coda into the record. This repository assesses
+    without recording, and a Check has nowhere to live here.
+
+    Owed, not done: the new statement names a measure — conforming
+    implementations and findings from people who applied the method to work that
+    mattered to them — and no such implementation exists yet beyond the worked
+    example authored here. Under the instrument's own provenance ceiling that
+    caps the two evidence dimensions at asserted until an adopter produces one.
+    That is the honest state and the number should stay low until it changes; it
+    is recorded so nobody mistakes a low score for a writing problem.
+
+    Risks stated: the bounds are now published, so an adopter can hold the method
+    to them and a change to one is a visible reversal rather than a quiet edit.
+    That is the intent and it is a real cost. And the ordering among the bounds is
+    stated for the first time — it was inferred from choices already made under
+    pressure rather than derived, so the first genuine conflict it governs may
+    show it wrong, which is a decision superseding a Note and not a defect.

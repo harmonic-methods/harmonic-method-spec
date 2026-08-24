@@ -2,6 +2,55 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **What the root is held to.** `specs/note.yml` has said since the vocabulary
+  landed that a Note attaches to the portfolio, system, or Beat the knowledge
+  belongs to. Only the Beat case ever had somewhere to live — the third entity
+  specified in full here and left unrepresentable, after the two cadence
+  entities, and found the same way they were: by using the method rather than
+  reading it. See HM-B-013 and HM-BV-013.1.
+  - **A tightly bounded system scored 1 for having no bounds**, and the rubric
+    was right. This repository's bounds are real and held on every change, and
+    they lived in the contributor charter — not part of the published surface,
+    read by no instrument, never seen by an adopter. A fact kept where the rubric
+    cannot reach it scores as a fact that does not exist. They are now recorded at
+    the root, with the ordering among them stated for the first time.
+  - **The root Coda was replaced, and the prior statement is preserved** as
+    `specs/coda.yml` requires. It was not wrong; it was one altitude too low. It
+    described what a reader could do with a repository — its own header called it
+    a system Coda — so everything beneath it laddered to distribution, and a
+    capability easing adoption while leaving no organization better off had
+    something to score against while one helping an organization stop work had
+    nothing. The replacement is about tracing work to purpose and stopping work
+    that has stopped earning its place, and it names how it can be failed. The
+    exclusion that was the old statement's one strength is carried over intact.
+    See HM-N-119.
+  - **Published bounds count; a charter does not.** The instrument now scores the
+    statement together with the context recorded at the root, and reports which
+    of the two carried each dimension. An organization is bounded by what it
+    published — a rule reliably honoured and never written is a habit, and
+    admitting internal documents would let anyone score well on Bounded by
+    pointing at something no adopter can read. See HM-N-122.
+  - **One reader for both cases**, because they differ in exactly what
+    `attached_to` must equal and `specs/note.yml` states every other rule once for
+    all Notes. Two readers would be two places to add a rule to only one of them.
+    Root Notes sit in `<root>/notes/`, a sibling of `beats/`, following the layout
+    rule already in force. Both new failures were made to fail first — including
+    one that was not theoretical, since the root Notes were written before the
+    step they cite and the checker refused them. See HM-N-123.
+  - **No spec changed.** `specs/note.yml` was already right; what was missing was
+    somewhere to put an instance and something to check it, which is the cadence
+    finding again and the same resolution. The spec set moves for the rubric edit
+    alone, and takes a second minor step in this cycle rather than reusing the
+    previous number, because the two steps merge separately and one number
+    identifying two rubrics is the failure the discipline exists to prevent. See
+    HM-N-124.
+  - Stated rather than absorbed: the new statement names conforming
+    implementations and adopter findings as its measure, and none exists yet
+    beyond the worked example authored here. Under the instrument's own
+    provenance ceiling that holds the two evidence dimensions at asserted. The
+    score stays low until an adopter changes it, and that is the honest reading
+    rather than a writing problem.
+
 - **A root Coda that can be failed.** Four of the five accountabilities had an
   instrument and the Producer had none. The recorded reason was that its
   instrument would need Value Velocity defined closely enough to assess without

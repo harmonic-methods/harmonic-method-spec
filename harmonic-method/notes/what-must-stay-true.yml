@@ -1,0 +1,57 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-120
+  type: constraint
+  attached_to: HM-CODA
+  beat_version: HM-BV-013.1
+  content: >
+    What must stay true of this method, and which gives first when two of them
+    cannot both hold.
+
+    1. A definition lives in exactly one place. A dimension, an anchor, a field,
+    a rule: one file states it and everything else points at the file. Copies are
+    the failure this repository was built after having.
+
+    2. This assesses and does not enforce. No gate, no approval, and no recorded
+    Check here. An adopter cloning it to read their own tree gets a list of what
+    is missing rather than a refusal to proceed.
+
+    3. Adoption requires no account, no vendor relationship, and no call, and the
+    alternative an adopter could leave for stays available to them. This is a
+    measurement rule before it is a generosity: an adopter who cannot leave
+    generates no signal, so removing their exit destroys the only honest evidence
+    the method works.
+
+    4. Nothing assumes a medium. Software, an operational process, an
+    organizational practice — a rule that only holds where there is a codebase is
+    not a rule of this method.
+
+    5. Every change is proposed against a green run of the published checker.
+
+    When they conflict, the ordering is: 5 gives to nothing; 1 beats 2, 3 and 4;
+    3 beats 4; 4 beats 2. Precision of a definition outranks breadth of adoption,
+    because a score that does not mean the same thing everywhere is worth less
+    than no score, and an adopter served by a definition that has quietly drifted
+    is worse off than one who was never served.
+  rationale: >
+    These existed before this Note and every one of them was already being held.
+    They lived in the contributor charter, which is the right place to tell a
+    contributor how to work and the wrong place to keep what the method is held
+    to: the charter is not part of the published surface, no instrument reads it,
+    and an adopter conforming to this method never sees it.
+
+    The consequence showed up when the root Coda was first scored. Bounded came to
+    1 — no range, no floor, no ordering — against a repository that is in fact
+    tightly bounded and visibly ordered. The dimension was right about the
+    statement and wrong about the organization, which is the signature of a fact
+    kept somewhere the rubric cannot reach.
+
+    The ordering is the part that was never written down anywhere, and it is the
+    part that gets argued at the worst moment. Each pair in it has already been
+    decided at least once in this repository's history by someone choosing under
+    pressure; recording the ordering means the next such choice is a recall
+    rather than a re-litigation, which is the Conductor's whole accountability.
+
+    Stated as a constraint rather than a decision because it binds ongoing work
+    rather than settling one question. A change to the ordering is a decision and
+    supersedes this Note rather than editing it.

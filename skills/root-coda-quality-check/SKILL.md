@@ -29,7 +29,9 @@ The altitude recursion holds for the entity; it does not hold for a dimension
 whose referent is absent.
 
 ## Inputs
-The root Coda statement. If available: the system Codas directly beneath it (for
+The root Coda statement, and the context and decisions recorded at the root
+itself — the bounds it holds, the ordering among them, what it has refused, what
+would end it. If available: the system Codas directly beneath it (for
 Consequential and Discriminating), and whatever record the organization keeps
 that a measure could be read from — knowledge Notes, renewal and contract
 history, correspondence, support records (for classifying evidence provenance
@@ -145,8 +147,19 @@ For each dimension: score, one-sentence justification, and (for any score below
 - Distinguish the payer from the beneficiary wherever the statement conflates
   them. Payment reveals what one party expected at the moment they committed;
   it is not evidence of what another party later received.
-- Score the Coda as written; do not silently assume missing context. Never raise
-  a score because the intent seems good.
+- **Score the statement together with the context recorded at the root, and say
+  which carried each dimension.** A bound, an exclusion, an ordering or an ending
+  condition kept as a decision at the root counts as stated, because it is part
+  of what the organization holds itself to and an adopter inherits it. The same
+  fact kept in a contributor document, an internal charter, or somebody's
+  practice does not count, however reliably it is honoured — an organization is
+  bounded by what it published, and the gap between the two is the finding.
+  Report any dimension carried by the recorded context rather than by the
+  statement, both because a reader deciding whether to rewrite the statement
+  needs to know, and because a statement that carries none of them is thinner
+  than its score will suggest.
+- Score what is written; do not silently assume missing context. Never raise a
+  score because the intent seems good.
 - Suggestions must be actionable — "name the range and which bound gives first"
   not "strengthen the constraints".
 - **Name the version you scored against.** Read `spec_version` from

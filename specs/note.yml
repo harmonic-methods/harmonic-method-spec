@@ -1,6 +1,6 @@
 # Harmonic Method spec — Note
 entity: note
-spec_version: 1.4.0
+spec_version: 1.5.0
 summary: >
   Typed knowledge attached to the entity it informs. Notes are the decision
   and context lineage: why things are the way they are, preserved where the

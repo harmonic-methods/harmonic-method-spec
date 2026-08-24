@@ -1,6 +1,6 @@
 # Harmonic Method spec — Coda
 entity: coda
-spec_version: 1.4.0
+spec_version: 1.5.0
 summary: >
   The strategic outcome an entity exists to serve. Codas form a hierarchy:
   a portfolio Coda, system Codas beneath it, and Beat Codas beneath those — so

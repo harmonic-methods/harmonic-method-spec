@@ -72,7 +72,14 @@ One rule all the way down: an entity is a directory, its children are
 subdirectories. No file carries an inline child list — the directory is the
 list. Notes attach to the Beat, never to a Beat Version, and may name the Beat
 Version they arose from via the optional beat_version field.
-- harmonic-method/coda.yml: the system Coda every Beat below ladders to
+- harmonic-method/coda.yml: the root Coda every Beat below ladders to
+- harmonic-method/notes/: knowledge belonging to the root rather than to a Beat —
+  the bounds the system holds, the ordering among them when two cannot both hold,
+  and what would end the effort. Same rules and same reader as a Beat's Notes;
+  attached_to names the root Coda. The instrument scoring a root Coda reads these
+  alongside the statement and reports which of the two carried each dimension —
+  a bound kept in a contributor document counts for nothing, however reliably it
+  is honoured
 - harmonic-method/beats/<slug>/beat.yml: a durable capability
 - harmonic-method/beats/<slug>/notes/: that Beat's typed knowledge
 - harmonic-method/beats/<slug>/versions/<v>/version.yml: a planned step

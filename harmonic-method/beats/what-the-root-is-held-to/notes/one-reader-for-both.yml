@@ -1,0 +1,29 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-123
+  type: decision
+  attached_to: HM-B-013
+  beat_version: HM-BV-013.1
+  content: >
+    Root Notes and Beat Notes are read by one function in the checker rather than
+    by two similar ones, and a root Note sits in `<root>/notes/` — a sibling of
+    `beats/`, following the same rule that an entity's children are
+    subdirectories of it.
+  rationale: >
+    The two cases differ in exactly one thing: what `attached_to` must equal. Every
+    other rule is identical, and `specs/note.yml` states them once for all Notes
+    rather than once per owner. Two readers would have been two places for a rule
+    to be added to only one of them, which is the drift this repository exists to
+    prevent, expressed in code instead of in prose. The owner is a parameter.
+
+    The location follows from the layout rule already in force everywhere else. A
+    Beat's Notes sit under the Beat; the root's Notes sit under the root. Putting
+    them anywhere else — a `root-notes/` directory, or a `context/` directory
+    beside the tree — would have introduced a second naming convention for the
+    same relationship and made the recursion claim false at the one altitude where
+    it is easiest to check.
+
+    Both new failures were made to fail before being believed: a root Note whose
+    `attached_to` names something other than the root Coda, and one naming a step
+    that does not exist. The second was not theoretical — the three root Notes
+    were written before the step they cite, and the checker refused them.
