@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.29
   beat: HM-B-003
   title: A Revision can outrun the plan that was supposed to precede it
-  status: active
+  status: delivered
   summary: >
     Harmonica's own reference implementation ships a Revision without a Beat
     Version — a hotfix, a dependency bump, something that could not wait for a

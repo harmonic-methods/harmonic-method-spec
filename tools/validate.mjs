@@ -64,6 +64,7 @@ const NOTE_REQ = ['id', 'type', 'content', 'attached_to'];
 const REV_REQ = ['id', 'beat', 'title', 'description', 'status'];
 const BAR_REQ = ['id', 'attached_to', 'starts', 'ends', 'status'];
 const DOWNBEAT_REQ = ['id', 'beat', 'coda_state', 'convergence', 'taken_at', 'taken_by'];
+const PROPOSAL_REQ = ['id', 'coda', 'summary', 'status'];
 /**
  * The Note types, read from the spec rather than restated beside it.
  *
@@ -323,6 +324,34 @@ function checkTree(root) {
   console.log(`  ${codaId ?? '(root)'}  root Coda`);
   console.log(`    notes:    ${rootNotes.join(', ') || '(none)'}`);
 
+  // Proposals sit beside beats/, not beneath one — a candidate capability is
+  // not yet owned by any Beat, which is exactly the question its resolution
+  // answers. specs/proposal.yml: the only value that counts as evidence a
+  // boundary excluded something is `declined`; `withdrawn` is reported beside
+  // it and never folded into the same count.
+  const proposalIds = new Set();
+  const proposals = [];
+  for (const pslug of treeLs(`${root}/proposals`)) {
+    const pPath = `${root}/proposals/${pslug}/proposal.yml`;
+    if (!existsSync(resolve(BASE, pPath))) { fail(`${root}/proposals/${pslug}/: no proposal.yml`); continue; }
+
+    let p;
+    try { p = treeLoad(pPath)?.proposal; } catch (e) { fail(`${pPath}: ${e.message}`); continue; }
+    if (!p) { fail(`${pPath}: no top-level 'proposal' key`); continue; }
+
+    for (const f of PROPOSAL_REQ) if (p[f] === undefined) fail(`${pPath}: missing required '${f}'`);
+    if (!['open', 'accepted', 'declined', 'withdrawn'].includes(p.status)) {
+      fail(`${pPath}: status '${p.status}' not in [open, accepted, declined, withdrawn]`);
+    }
+    if (p.coda !== codaId) fail(`${pPath}: declares coda '${p.coda}' but sits under ${codaId}`);
+    if (proposalIds.has(p.id)) fail(`${pPath}: duplicate proposal id '${p.id}'`);
+    proposalIds.add(p.id);
+
+    const pNotes = readNotes(`${root}/proposals/${pslug}/notes`, p.id, noteIds, bvRefs, supersedesRefs);
+    proposals.push(`${p.id} ${p.status}${pNotes.length ? ` [${pNotes.join(', ')}]` : ''}`);
+  }
+  if (proposals.length) console.log(`  proposals: ${proposals.join(', ')}`);
+
   for (const slug of treeLs(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
     if (!existsSync(resolve(BASE, beatPath))) { fail(`${root}/beats/${slug}/: no beat.yml`); continue; }
@@ -548,6 +577,10 @@ function checkVocabulary(roots) {
     ...roots.flatMap((root) => [
       `${root}/coda.yml`,
       ...ls(`${root}/notes`).map((f) => `${root}/notes/${f}`),
+      ...ls(`${root}/proposals`).flatMap((pslug) => [
+        `${root}/proposals/${pslug}/proposal.yml`,
+        ...ls(`${root}/proposals/${pslug}/notes`).map((f) => `${root}/proposals/${pslug}/notes/${f}`),
+      ]),
       ...ls(`${root}/beats`).flatMap((slug) => [
         `${root}/beats/${slug}/beat.yml`,
         ...ls(`${root}/beats/${slug}/notes`).map((f) => `${root}/beats/${slug}/notes/${f}`),

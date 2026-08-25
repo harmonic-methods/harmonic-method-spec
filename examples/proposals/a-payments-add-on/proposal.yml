@@ -1,0 +1,10 @@
+# Example — a declined Proposal. See specs/proposal.yml.
+proposal:
+  id: EX-P-001
+  coda: EX-SYS-CODA
+  summary: >
+    Let the system take payment against an approved estimate directly, instead
+    of the client paying through whatever channel the engagement already uses.
+    Would have added a payment method on file, a charge step after approval,
+    and a reconciliation view against the engagement.
+  status: declined

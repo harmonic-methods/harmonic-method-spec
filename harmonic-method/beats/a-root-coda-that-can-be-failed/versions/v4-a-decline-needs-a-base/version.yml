@@ -1,0 +1,91 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-012.4
+  beat: HM-B-012
+  title: A decline needs a base
+  status: active
+  summary: >
+    [HM-N-132] found the gap the step before this one left open: the method
+    can count a decline and cannot know what it is a decline out of. An idea
+    taken up becomes a Beat; an idea refused becomes nothing, unless somebody
+    happened to write a decision about it. Five declines against six proposals
+    is a boundary doing heavy work; five against five hundred is a boundary
+    that stopped almost nothing, and the record could not tell the two apart.
+
+    `specs/proposal.yml` closes it — a candidate capability, weighed against a
+    Coda, at the same altitude as a Beat because becoming one is exactly the
+    question its resolution answers. It carries no Coda of its own, no scope,
+    no versions: everything a Beat can hold that a Proposal cannot is what
+    accepting one produces. Four terminal states — open, accepted, declined,
+    withdrawn — and only `declined` counts as evidence a boundary excluded
+    something. `withdrawn` is kept beside it and never folded in: nobody
+    weighed that one against the Coda and said no, and counting it as a
+    decline would credit the boundary for an attention span it did not spend.
+
+    Reasoning for why a Proposal was declined or withdrawn is not a field on
+    it — the same discipline `specs/beat-version.yml` and `specs/revision.yml`
+    already hold their own `withdrawn` values to, applied here from the start
+    rather than found by using the entity first. Acceptance carries no
+    reference to the Beat it became, for the reason recorded in the spec's own
+    rules: the Beat is the durable record from that point on, and a citation
+    from the new Beat back to the Proposal — in a Note, if the lineage is
+    worth keeping — runs the direction every other citation in this method
+    already runs.
+
+    `specs/note.yml`'s `attached_to` widens to name Proposal directly,
+    because a candidate under active consideration accumulates the same
+    deliberation a Beat does and needs somewhere legible to hold it — without
+    that, the very decision Note this step requires for a decline's reasoning
+    would have nowhere conformant to attach.
+
+    `root-coda-quality-check` reads the rate wherever the entity is used:
+    how many proposals against a Coda have resolved, how many of those were
+    declined. The band does not move for having a base to read against — a
+    resolved Proposal is still the organization's own account of its own
+    conduct, `record` and no higher, exactly as an unstructured decline
+    already was. What changes is the denominator existing at all.
+  scope: >
+    In: `specs/proposal.yml`; widening `specs/note.yml`'s `attached_to` to
+    name Proposal; the checker reading a top-level `proposals/` directory
+    sibling to `beats/`, holding a Proposal's own `notes/` on the same shared
+    reader every other owner uses; the vocabulary sweep and print summary
+    reaching it; the worked example gaining three proposals — declined,
+    withdrawn, and accepted — and a decision Note on the declined one; every
+    rule made to fail before being trusted, six paths across the entity and
+    its Notes; the base-rate check rule in `root-coda-quality-check` and the
+    matching addition to `root-coda-composing`'s exclusion step; both
+    published surfaces; and the spec set minor step.
+    In also: closing the step whose work has reached the trunk, which
+    [HM-N-055] puts in the next substantive step's scope.
+
+    Out: any computation of the rate itself — a threshold for what counts as
+    healthy, a trend over time, a per-system rollup. The instrument reports a
+    count where one exists, exactly as it already reports which Notes carried
+    a warrant band; turning a count into a judgement about whether it is
+    enough is the arithmetic `AGENTS.md` already gives every implementation.
+
+    Out: any Beat-altitude use of Proposal or of declines as evidence for a
+    Beat's own Distinctive dimension. [HM-BV-012.3] named this as belonging
+    to whoever owns rubric parity, and nothing here reaches it — a Proposal
+    resolving into a Beat is a portfolio-altitude event even when the
+    capability it becomes lives one level down.
+
+    Out: any change to `specs/beat.yml`. A Beat still carries no reference to
+    the Proposal it may have come from; that citation, where it is wanted,
+    is prose on a Note, the same discipline every other cross-entity
+    reference in this method already uses.
+
+    Owed, not done: whether a Beat Version's own plan can cite a Proposal the
+    way a Note does, for the case where accepting an idea and scoping its
+    first step happen close enough together that the citation belongs on the
+    step rather than on the Beat. Not needed by anything this repository's
+    own tree demonstrates; raised for whoever meets the case.
+
+    Risks stated: nothing here stops a Proposal from being written the moment
+    it is declined, backdated to look considered — the same limit the
+    contemporaneity rule for declines already carries and states rather than
+    solves. And a Proposal that should have become a Beat and instead sat
+    `open` indefinitely is indistinguishable in the tree from one still
+    genuinely being weighed; that is a fact about the record, not a defect
+    this step could close without inventing a deadline the method has no
+    basis to set.

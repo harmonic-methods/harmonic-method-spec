@@ -12,6 +12,12 @@
 ## Specs
 - specs/coda.yml: Coda — the strategic outcome an entity exists to serve
 - specs/beat.yml: Beat — a durable capability or process, laddering to a Coda
+- specs/proposal.yml: Proposal — a candidate capability weighed against a Coda,
+  resolving to open, accepted, declined, or withdrawn. Sits at the same altitude as
+  a Beat because becoming one is the question it answers; carries no Coda of its
+  own, no scope, no versions. Gives Discriminating a base: a decline counted
+  without knowing how many proposals it was one of cannot say whether a boundary
+  did work or stopped almost nothing
 - specs/beat-version.yml: Beat Version — a planned step in a Beat's evolution
 - specs/revision.yml: Revision — a tracked change to a Beat. Names its Beat directly
   and its Beat Version only when one exists; a Beat Version is delivered by one or
@@ -49,7 +55,9 @@ guards it against an unacknowledged edit.
   turned down — read from wherever decisions are already kept, at the record band,
   and only where they were recorded before the reading. No subtype and no artifact
   is named for them: note.yml enumerates no subtypes, and a decline is an ordinary
-  decision already written down;
+  decision already written down; where proposal.yml is tracked, the rate reads
+  alongside the fact — how many resolved, how many of those declined, withdrawn
+  reported separately and never counted as a decline — at the same record band;
   and where a measure is well formed but nobody has been shown the thing, the
   finding is routed to the Promoter rather than read as weak value modelling. The
   instrument declines to stand in for the counterparty
@@ -113,6 +121,11 @@ Version they arose from via the optional beat_version field.
   alongside the statement and reports which of the two carried each dimension —
   a bound kept in a contributor document counts for nothing, however reliably it
   is honoured
+- harmonic-method/proposals/<slug>/proposal.yml: a candidate weighed against the
+  root Coda, not yet a Beat
+- harmonic-method/proposals/<slug>/notes/: deliberation on that candidate — why it
+  is taking a while, why it was declined or withdrawn. Same rules and reader as a
+  Beat's Notes; attached_to names the Proposal
 - harmonic-method/beats/<slug>/beat.yml: a durable capability
 - harmonic-method/beats/<slug>/notes/: that Beat's typed knowledge
 - harmonic-method/beats/<slug>/versions/<v>/version.yml: a planned step

@@ -1,0 +1,31 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-142
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.4
+  content: >
+    A Proposal carries no embedded Coda of its own, no scope, and no versions.
+    It names the Coda it is weighed against by reference, the way a Beat
+    Version names its Beat, and nothing more.
+  rationale: >
+    Every one of those omissions was considered and refused on the same
+    ground: a Proposal that carried them would be a Beat under a different
+    name, and the method would then have two entities claiming the same
+    ground — a durable capability and a candidate for one, indistinguishable
+    in everything but the label on the file. [HM-N-132] said this plainly
+    before the entity existed: "an idea taken up becomes a Beat, so a
+    proposal and its outcome should not both try to be the durable
+    capability." Building the entity was the moment that constraint had to
+    be kept rather than merely stated.
+
+    An embedded Coda in particular would have done the most damage, because
+    it would have let a Proposal be scored by `beat-coda-quality-check` as
+    though it were a Beat already — a second surface producing the same
+    verdict a different rubric exists to give, with no way for a reader to
+    tell which one to trust. A Proposal is not a draft Beat waiting to be
+    promoted with a status flip; it is a different kind of record, answering
+    a different question, and it stays that way until acceptance produces an
+    actual Beat through the actual drafting path — `beat-composing`, or a
+    person writing one directly — rather than through a shortcut this entity
+    could have offered and should not.

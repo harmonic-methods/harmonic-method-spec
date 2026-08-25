@@ -33,7 +33,9 @@ The root Coda statement, and the context and decisions recorded at the root
 itself — the bounds it holds, the ordering among them, what it has refused, what
 would end it, any load-bearing assumption registered with the test that would
 settle it, and the recorded decisions in which it declined work — what it turned
-down, when, and why. If available: the system Codas directly beneath it (for
+down, when, and why. Where the organization tracks proposals as their own
+record, its resolved ones — accepted, declined, and withdrawn alike. If
+available: the system Codas directly beneath it (for
 Consequential and Discriminating), and whatever record the organization keeps
 that a measure could be read from — knowledge Notes, renewal and contract
 history, correspondence, support records (for classifying evidence provenance
@@ -194,6 +196,22 @@ For each dimension: score, one-sentence justification, and (for any score below
   afterwards is a description of the statement wearing the clothes of conduct,
   and is worth less than the statement, which at least does not pretend. Where a
   decline's date or decider cannot be established, say so and do not count it.
+- **Where the organization tracks proposals, read the rate and not only the
+  fact.** A recorded decline on its own has a numerator and no base — five
+  declines against six proposals is a boundary doing heavy work, five against
+  five hundred is a boundary that stopped almost nothing, and the two read
+  identically without something to count them against.
+  `specs/proposal.yml` gives that base wherever an organization keeps one:
+  report how many proposals against this Coda have resolved, and how many of
+  those were `declined`. `withdrawn` proposals are reported alongside the
+  count and never folded into it — nobody weighed those against the Coda and
+  said no, and counting them as declines would credit the boundary for an
+  attention span it did not spend. Where no such record exists, score
+  Discriminating from whatever declines are available exactly as before; this
+  is a sharper reading where the base exists, not a requirement that it does.
+  The band this evidence reaches does not move because a base now exists — a
+  resolved proposal is still the organization's own account of its own
+  conduct, `record` and no higher.
 - **Report Discriminating below 3 as a blocking finding** alongside the average,
   not instead of it. A Coda nothing can fail cannot be laddered to: every
   dimension in every rubric beneath it that measures service to the Coda above

@@ -1,0 +1,66 @@
+# Harmonic Method spec — Proposal
+entity: proposal
+spec_version: 1.10.0
+summary: >
+  A candidate capability, weighed against a Coda and not yet a durable thing in
+  its own right. Sits at the same altitude as a Beat, because becoming one is
+  exactly the question a Proposal exists to settle. Without this entity,
+  Discriminating can count what a Coda excluded and never know what it excluded
+  it out of — a decline with no base to read it against.
+fields:
+  id: {type: string, required: true}
+  coda:
+    type: reference
+    required: true
+    description: >
+      The Coda this idea is weighed against — the same one a resulting Beat
+      would ladder to. A Proposal carries no Coda of its own: whether it
+      belongs under this one is the question its resolution answers, not a
+      claim it gets to make about itself.
+  summary:
+    type: string
+    required: true
+    description: >
+      What was proposed, in enough detail that whoever weighs it — and whoever
+      reads the record afterward — can tell what would exist if it were taken
+      up.
+  status:
+    type: enum [open, accepted, declined, withdrawn]
+    required: true
+    additions: none
+    children: none
+    descriptions:
+      open: Still being weighed. Resolved neither way.
+      accepted: >
+        Taken up. The durable capability now lives at the Beat that resulted,
+        not here — see the rule below on why this carries no reference to it.
+      declined: >
+        Weighed against the Coda and not taken up. The only value that counts
+        as evidence a boundary excluded something; why belongs to a decision
+        Note, not this field.
+      withdrawn: >
+        Left consideration before a decision was made — the proposer moved on,
+        priorities shifted, the moment passed. Distinct from declined: nobody
+        weighed this against the Coda and said no, so it is reported beside a
+        decline and never counted as one.
+rules:
+  - A Proposal ladders to the Coda it names directly. It has no `parent` of its
+    own to omit or supply, because it has no Coda embedded in it the way a Beat
+    does — the ladder is the one thing a Proposal is answering, not a fact it
+    states in advance.
+  - Why a Proposal was declined or withdrawn is rationale and belongs in a
+    decision Note, not in this field — the same discipline `specs/beat-version.yml`
+    and `specs/revision.yml` already hold their own `withdrawn` value to.
+  - Acceptance carries no reference to the Beat it became. The Beat is the
+    durable record from that point on; a Proposal and its outcome are not two
+    accounts of the same capability, and a citation running from the new
+    Beat back to the Proposal it came from — in a Note, if the lineage is
+    worth keeping — costs nothing this field would not also cost, without
+    asking the entity that is finished to carry a pointer to the one that
+    supersedes it in substance.
+  - A Proposal carries no scope, no versions, and no lifecycle beyond the four
+    values above. Everything a Beat can hold that a Proposal cannot is exactly
+    what accepting it produces.
+  - Declined and withdrawn Proposals are not deleted or moved. A Coda's
+    excluded ground is legible only if what it excluded is still there to
+    read.

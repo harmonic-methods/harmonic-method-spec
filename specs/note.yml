@@ -1,6 +1,6 @@
 # Harmonic Method spec — Note
 entity: note
-spec_version: 1.9.0
+spec_version: 1.10.0
 summary: >
   Typed knowledge attached to the entity it informs. Notes are the decision
   and context lineage: why things are the way they are, preserved where the
@@ -77,7 +77,12 @@ fields:
   attached_to:
     type: reference
     required: true
-    description: The portfolio, system, or Beat this knowledge belongs to.
+    description: >
+      The portfolio, system, Beat, or Proposal this knowledge belongs to. A
+      Proposal being weighed accumulates the same deliberation any other
+      capability does — why it is taking a while, what would have to be true
+      for it to be taken up — and needs somewhere legible to hold it before it
+      is anything durable enough to hold Notes of its own the way a Beat does.
   beat_version:
     type: reference
     required: false

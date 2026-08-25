@@ -1,0 +1,10 @@
+# Example — a withdrawn Proposal, distinguished from a decline: nobody weighed
+# this against the Coda and said no. See specs/proposal.yml.
+proposal:
+  id: EX-P-002
+  coda: EX-SYS-CODA
+  summary: >
+    A client-facing portal where the client could log in and see every
+    estimate ever sent to them, approved or not, in one place instead of by
+    email thread.
+  status: withdrawn
