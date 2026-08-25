@@ -30,7 +30,10 @@ fields:
       The Coda one level up (a Beat Coda points to its system Coda; a system
       Coda points to its portfolio Coda). Root Codas omit this.
 rules:
-  - A Beat without a Coda cannot be decomposed into Beat Versions.
-  - Alignment ("harmonization") is assessed against the Coda chain, not against
+  - >-
+    A Beat without a Coda cannot be decomposed into Beat Versions.
+  - >-
+    Alignment ("harmonization") is assessed against the Coda chain, not against
     individual documents.
-  - Changing a Coda is a recorded decision; the prior statement is preserved.
+  - >-
+    Changing a Coda is a recorded decision; the prior statement is preserved.

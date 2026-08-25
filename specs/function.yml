@@ -88,12 +88,16 @@ functions:
       supporting the champion is the practitioner's central task rather than an
       afterthought.
 rules:
-  - Functions are accountabilities, not titles. One person may hold several,
+  - >-
+    Functions are accountabilities, not titles. One person may hold several,
     and a function may be held by an agent under a named person's
     accountability.
-  - Responsibility delegates; accountability does not. Work moves down;
+  - >-
+    Responsibility delegates; accountability does not. Work moves down;
     answering for it stays where it was assigned.
-  - A function that appears unheld at one altitude is often delegated rather
+  - >-
+    A function that appears unheld at one altitude is often delegated rather
     than absent. The signal to read is span of control, not the empty slot.
-  - The set is closed at five. A sixth accountability is a claim about the
+  - >-
+    The set is closed at five. A sixth accountability is a claim about the
     method and belongs in a decision, not in a local variant.

@@ -1,0 +1,48 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-148
+  type: decision
+  attached_to: HM-B-007
+  beat_version: HM-BV-007.4
+  content: >
+    Every rule in `specs/` is written as a block scalar, and the checker asserts
+    both that each rule parses to a string and that each item uses the block
+    form. A plain-scalar rule containing a colon does not fail — it silently
+    becomes a mapping, and this repository reported conformant with a corrupted
+    rule on its own normative surface.
+  rationale: >
+    The hazard was met three times while authoring and misread each time as
+    friction. A colon on a continuation line of a wrapped rule raises a scanner
+    error, the checker reports the file with a line and a column, and the author
+    rewrites the sentence. Annoying, safe, and the wrong lesson — because the
+    loud case is not the dangerous one.
+
+    A rule that fits on one line behaves differently. `- A Beat without a Coda
+    is stuck: it cannot be decomposed` is valid YAML. It parses to a mapping
+    from the text before the colon to the text after it, the file loads, every
+    other rule is unaffected, and `npm run validate` prints conformant. The
+    published rule is then not a rule at all, and nothing in the repository
+    says so. That was verified by doing it, and the checker's silence is what
+    made the case worth acting on rather than working around.
+
+    Two changes, and the first is the one that matters. Forty-five rule items
+    across nine spec files were plain scalars and are now block scalars, which
+    makes a colon legal everywhere and closes the trapdoor rather than guarding
+    it. The strip form was chosen over the clip form because the clip form
+    appends a newline to every value, and the point of this change is that no
+    published text moves — which was checked by parsing every spec file before
+    and after and comparing the results, not by reading the diff.
+
+    The check exists for the regression rather than for today. Its type half
+    catches the corruption whatever the formatting, and its form half stops the
+    next contributor rebuilding the trapdoor by writing a short rule the
+    obvious way. Both were made to fail before being believed. It is scoped to
+    `specs/` for the same reason the retired-altitude sweep is — a convention
+    this repository keeps on its own normative files is not something an
+    adopter's tree should be measured against.
+
+    One inconsistency is left rather than fixed. The eleven rules already using
+    the clip form each carry a trailing newline that the forty-five do not.
+    Normalising them would change published strings for a cosmetic gain, and
+    nothing reads a rule's trailing whitespace. Recorded so the difference is a
+    known one instead of a puzzle.

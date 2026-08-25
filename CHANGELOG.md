@@ -2,6 +2,26 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A colon could turn a rule into a mapping, and nothing said so.** The hazard
+  was met three times while authoring and misread each time as friction: a colon
+  on a continuation line of a wrapped rule raises a scanner error, the checker
+  reports a line and a column, the sentence gets rewritten. The loud case is not
+  the dangerous one. A rule short enough to fit on one line silently becomes a
+  mapping instead — `- A Beat without a Coda is stuck: it cannot be decomposed`
+  parses to a key and a value, the file stays valid, the other rules are
+  unaffected, and `npm run validate` prints `conformant` while a published rule is
+  no longer a rule. Verified by producing it. Forty-five rule items across nine
+  spec files are now block scalars, which makes a colon legal and closes the
+  trapdoor rather than guarding it, and a check asserts both that every rule
+  parses to a string and that every item keeps the form. Both halves were made to
+  fail before being believed. See HM-BV-007.4 and HM-N-148.
+  - **No published text moved**, and that was checked rather than reviewed: every
+    spec file was parsed before and after and the parsed values compared. The
+    strip form was chosen over the clip form for exactly that reason — clip
+    appends a newline to every value it touches.
+  - The eleven rules already using the clip form keep their trailing newline and
+    are left alone. Normalising them would move published strings for a cosmetic
+    gain; the difference is recorded rather than fixed or ignored.
 - **A recorded source has to be reachable.** The legibility bound covers a Note
   cited as lineage by a reader who cannot open it. It did not cover a *source*
   cited by a Note that reader can open — which fails the same way and for the
