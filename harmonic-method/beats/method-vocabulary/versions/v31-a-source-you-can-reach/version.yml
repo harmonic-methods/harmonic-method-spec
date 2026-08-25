@@ -1,0 +1,44 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.31
+  beat: HM-B-003
+  title: A source you can reach
+  status: active
+  summary: >
+    The legibility bound covers a Note cited as lineage by a reader who cannot
+    open it. It does not cover a source cited by a Note that reader can open,
+    which fails the same way and for the same reason — the citation resolves,
+    the reader concludes the answer exists and is not for them, and stops
+    asking.
+
+    Provenance is an implementation-owned dimension and stays one. Nothing here
+    defines a source, a field, or a shape. The bound is only that a recorded
+    source resolves for whoever can read the Note that records it.
+
+    Done when: the bound is stated as a rule; the dimensions list says
+    provenance is constrained the same way classification and retention are; and
+    no field, format, or definition of a source appears anywhere.
+  scope: >
+    In: one rule on the Note spec, one clause on the dimensions list saying
+    provenance is constrained without being specified, and the constraint
+    recording it.
+    Out: a provenance field. Sources vary more than classification tiers do — a
+    file, a transcript, a meeting, an email thread, a conversation nobody
+    recorded — and a published field would be wrong for most adopters while
+    adding nothing that reachability does not already give.
+    Out also: any statement about ingestion, extraction, or how a source is
+    stored. That is machinery, it does not survive a change of medium, and the
+    method has already assigned provenance and processing state to
+    implementations.
+    Out also: a check. Whether a reference resolves for a given reader is a
+    runtime question about an implementation's access model, and nothing in a
+    tree of files can answer it. The bound is declarable and contradictable,
+    which is what makes it worth stating.
+    Owed, not done: nothing from the conversation that produced this step. The
+    draft boundary landed as the step before it.
+    Risks stated: this constrains a dimension the method does not define, which
+    reads as odd until the two existing precedents are seen — lineage must be
+    legible whatever the classification scheme, and Notes do not expire — and it
+    is the same move for the same reason; and a bound with no check is
+    unenforceable here, which is the ordinary condition of everything in this
+    repository and is why an implementation declares what it contradicts.
