@@ -2,6 +2,21 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A recorded source has to be reachable.** The legibility bound covers a Note
+  cited as lineage by a reader who cannot open it. It did not cover a *source*
+  cited by a Note that reader can open — which fails the same way and for the
+  same reason: the citation resolves, the reader concludes the answer exists and
+  is simply not for them, and the question stops being asked. A Note reading
+  "derived from document 47" is worse than one with no source at all, because the
+  second invites the reader to go and find out while the first tells them the
+  answer has been found and withheld. Provenance stays an implementation-owned
+  dimension — no field, no format, no definition of a source appears — and the
+  bound is only that a recorded source resolves for whoever can read the Note.
+  Same move as the legibility bound for classification and the no-expiry rule for
+  retention: state what protects the lineage, leave the shape to the
+  implementation, because sources vary more than tiers do. No check is added;
+  whether a reference resolves for a given reader is a runtime question about an
+  access model that no tree of files can answer. See HM-BV-003.31 and HM-N-147.
 - **Preservation begins at publication, not at creation.** The rule that Notes
   are preserved was written from the git case and assumed it silently: a Note is
   drafted in a working tree, edited freely, and becomes a Note at the commit —

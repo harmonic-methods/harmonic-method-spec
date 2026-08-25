@@ -36,7 +36,9 @@ dimensions:
     carrying any of them is extending the method, and declares them as field
     extensions. Two are constrained without being specified — lineage must be
     legible whatever the classification scheme, and Notes do not expire — and
-    those constraints are rules below rather than fields here.
+    those constraints are rules below rather than fields here. Provenance is
+    constrained the same way — a recorded source resolves for whoever can read
+    the Note — without the method saying what a source is.
 type_hierarchy: >
   The four types are a hierarchy, not a list. Every Note is context in the
   general sense — the Note is the context — and `type` names the specialization
@@ -154,6 +156,12 @@ rules:
     the restricted material, which then stands as evidence rather than as the
     record. A redacted rationale is honest. A citation to something nobody can
     read is not.
+  - Where a Note records what it was derived from, that reference resolves for
+    everyone who can read the Note. Provenance is an implementation's to define
+    and none is required here; what an implementation may not do is cite a
+    source its readers cannot reach, which is the legibility bound above
+    applied to the citation rather than to the Note. A source that cannot be
+    opened is not provenance, it is an assertion that provenance exists.
   - A Note does not expire. There is no time to live and no automatic disposal —
     a record that removes itself because time passed contradicts the first rule
     here. Retention under an obligation is a different question and is not

@@ -1,0 +1,38 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-147
+  type: constraint
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.31
+  content: >
+    Where a Note records what it was derived from, that reference resolves for
+    everyone who can read the Note. The method defines no provenance field and
+    requires none — provenance stays an implementation's to design. The bound is
+    only that a recorded source must be reachable by the Note's readers.
+  rationale: >
+    The legibility bound already says a Note may not be cited as lineage by a
+    reader who cannot open it, and gives the reason: the citation resolves, the
+    reader concludes the reasoning exists and is simply not for them, and the
+    question stops being asked. A provenance reference fails in exactly that way
+    and was not covered, because provenance is an implementation-owned dimension
+    and the bound was written about Notes rather than about references.
+
+    The gap is not hypothetical. A Note reading "derived from document 47" is
+    worse than a Note with no source at all: the second invites the reader to go
+    and find out, the first tells them the answer has already been found and
+    withheld. What the reader loses is the same thing in both cases and the
+    first hides the loss.
+
+    Stating the bound without stating a shape is the same move made for
+    classification and for retention, and for the same reason. Sources vary more
+    than tiers do — a file, a transcript, a meeting, an email thread, a
+    conversation nobody recorded — and any field this method published would be
+    wrong for most adopters while adding nothing. What protects the lineage is
+    reachability, which holds whatever a source turns out to be.
+
+    Recorded as a constraint rather than a decision because it binds what an
+    implementation may build rather than settling a question that was open. It
+    also has a case waiting for it: an ingestion log that links a source
+    document to the records extracted from it is exactly this shape, and the
+    obvious implementation of it stores a key into a bucket that most readers of
+    the resulting Notes cannot open.
