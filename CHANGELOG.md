@@ -2,6 +2,38 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Preservation begins at publication, not at creation.** The rule that Notes
+  are preserved was written from the git case and assumed it silently: a Note is
+  drafted in a working tree, edited freely, and becomes a Note at the commit —
+  the medium supplies the boundary and the author never notices. A store that
+  publishes on write has no such boundary, so the same rule would demand a
+  superseding decision Note for every correction. The supersession mechanism made
+  that concrete rather than academic: a superseding Note is a decision whose
+  rationale must say why what it closes no longer stands, which applied to a typo
+  demands a decision explaining why the misspelled version no longer stands.
+  Preservation now begins when a Note becomes readable by anyone but its author,
+  and a change that would not have altered what a reader did is maintenance
+  rather than supersession. The test is readership, not storage, because storage
+  is the thing that varies — committed and pushed in a repository, visible
+  outside the author's scope in a database, off the desk in a paper process. No
+  field is added: the medium answers this, and a stored draft flag would drift
+  from it the moment the two disagreed. Draft-versus-published is also kept
+  distinct from the verification status owed in HM-N-089 — one asks whether the
+  record is real, the other how far to trust it, and one field carrying both
+  would put a dimension where a different dimension sits. See HM-BV-003.30 and
+  HM-N-146.
+  - **And a maintenance edit stays visible as an edit**, with the replaced text
+    recoverable by anyone who can read the Note. This is what makes the
+    maintenance rule honest rather than merely stated: without a trace an author
+    could relabel a change of meaning as a typo and no reader could tell, and the
+    preservation rule would stop being literally true, because an untraced edit
+    is an overwrite by another name. What satisfies it is unspecified and the
+    range is the argument — a repository already has it in the commit history, a
+    store that publishes on write builds a revision, a ledger strikes the line
+    through and initials beside it. The trace must be as readable as the Note
+    itself, since one nobody can open is the citation nobody can follow. It makes
+    the maintenance line checkable; it does not remove it, and a change of
+    meaning still owes a superseding Note however visible the edit.
 - **The Orchestrator's first draft.** Four of the five instrumented functions
   had a producing skill and the Orchestrator had none — named as owed when this
   Beat's first step shipped and never picked up since. `beat-version-composing`

@@ -1,0 +1,67 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.30
+  beat: HM-B-003
+  title: Preservation begins at publication
+  status: active
+  summary: >
+    The preservation rule was written from the git case and assumed it without
+    saying so. A Note drafted in a working tree is edited freely and becomes a
+    Note at the commit; the medium supplies the boundary and the author never
+    notices it. A store that publishes on write has no such boundary, so the
+    same rule would demand a superseding decision Note for every correction.
+
+    Three rules settle it. Preservation begins when a Note becomes readable by
+    anyone but its author. A change that would not have altered what a reader
+    did is maintenance rather than supersession, so a misspelling does not owe a
+    decision. And a maintenance edit stays visible as an edit, with the replaced
+    text recoverable by anyone who can read the Note.
+
+    The third is what makes the second honest. Without a trace the maintenance
+    rule is unfalsifiable — an author can relabel a change of meaning as a typo
+    and no reader can tell — and the preservation rule stops being literally
+    true, because an untraced edit is an overwrite by another name.
+
+    No field is added. The boundary and the trace both belong to the medium: a
+    repository already has both, a store that publishes on write supplies them,
+    a ledger strikes the line through and initials beside it.
+
+    Done when: the boundary is stated in terms of readership rather than
+    storage; the maintenance case is distinguished by its effect on a reader;
+    that case is falsifiable rather than asserted; and the draft axis is
+    explicitly not merged with the verification axis that remains owed.
+  scope: >
+    In: three rules on the Note spec and the Note recording the decision.
+    Added after the first draft of this step, and recorded as added: the
+    visibility rule. The step originally shipped the boundary and the
+    maintenance category and stopped there, which left the category asserted
+    rather than checkable — the weakness was named in the step's own risks and
+    then answered rather than lived with.
+    Out: a draft or status field. The medium answers this, and a stored flag
+    would drift from it the moment the two disagreed. It would also be the
+    second answer to a question already answered, which is the defect this
+    repository keeps finding in its own surfaces.
+    Out also: merging draft state with the verification status owed in
+    [HM-N-089]. They answer different questions — whether the record is real,
+    and how far to trust what it says — and one field carrying both would put a
+    dimension where a different dimension already sits.
+    Out also: any rule about who may publish, or about review before
+    publication. That is an implementation's workflow and this states only when
+    the preservation obligation attaches.
+    Owed, not done: the provenance bound, which is the next step and was
+    decided in the same conversation as this one.
+    Out also: any particular affordance for the trace. An edited marker, a
+    revision list, a diff view are all implementations of it, and requiring one
+    would mandate a mechanism the way specifying an encoding would.
+    Risks stated: the maintenance test is a judgement rather than a computation,
+    so two readers could disagree at the margin — accepted because the
+    alternative is a byte-level rule that would call a reflowed paragraph a
+    supersession, because the method already relies on judgement where the
+    honest answer is a judgement, and because the trace now lets a reader check
+    the judgement rather than take it; a cheap visible edit invites the reading
+    that a change of meaning is acceptable so long as it can be seen, which the
+    Note refuses explicitly — the trace makes the line checkable and does not
+    remove it; and stating a boundary the checker cannot see
+    means an implementation can claim to draw it and not draw it, which is the
+    ordinary condition of every rule here and is what the conformance
+    declaration exists to expose.

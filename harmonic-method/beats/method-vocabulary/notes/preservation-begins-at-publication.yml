@@ -1,0 +1,73 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-146
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.30
+  content: >
+    Preservation begins when a Note becomes readable by anyone but its author,
+    not when it is created. Before that boundary a Note is a draft and may be
+    edited freely. After it, a change that would have altered what a reader did
+    is a supersession; a change that would not — a misspelling, a broken link —
+    is maintenance and owes no superseding Note — but it stays visible as an
+    edit, with the replaced text recoverable by anyone who can read the Note. No
+    field is added; the boundary and the trace are both properties of the
+    medium, and an implementation whose store publishes on write supplies them
+    itself.
+  rationale: >
+    The preservation rule was written from the git case and silently assumed it.
+    In a repository a Note is drafted in a working tree, edited as often as the
+    author likes, and becomes a Note when it is committed. Nobody calls the
+    working copy a superseded version, because the commit is the publication
+    boundary and the medium supplies it free. A database has no equivalent: a
+    write is a publication. So the same rule that costs a git author nothing
+    would force a database implementation to file a decision Note for every
+    keystroke, and the difference is not in the method but in what the medium
+    hands you.
+
+    The supersession mechanism made this urgent rather than academic. A
+    superseding Note is a decision and its rationale must state why what it
+    closes no longer stands. Applied to a typo on a published Note, that
+    demands a decision explaining why the misspelled version no longer stands —
+    which is absurd, and the absurdity is the evidence that the boundary was
+    missing. Two rules land together for that reason: one saying where
+    preservation starts, one saying what kind of change crosses it.
+
+    The test is readership rather than storage, because storage is exactly the
+    thing that varies. Readable by another principal translates to committed
+    and pushed in a repository, to visible outside the author's own scope in a
+    database, and to having left the desk in a paper process. What it protects
+    is constant: once someone else could have relied on the record, correcting
+    it silently destroys evidence they may have acted on.
+
+    The visible trace is what keeps the maintenance rule honest, and it was
+    nearly left out. Without it the rule is unfalsifiable — an author can
+    relabel a change of meaning as a typo and no reader can tell — and the
+    preservation rule stops being literally true, because an untraced edit is an
+    overwrite by any other name. Naming the category was not enough; the trace
+    is what makes the category checkable, which is the difference between a
+    discipline and an assurance.
+
+    What satisfies it is deliberately unspecified, and the range is the
+    argument. A repository already has it in the commit history and owes
+    nothing. A store that publishes on write builds a revision. A ledger strikes
+    the line through and initials beside it, which is the oldest form of this
+    and the proof it is not a software idea. Requiring a particular affordance
+    would mandate a mechanism the way an encoding would.
+
+    One thing the trace must not do is dissolve the line it makes checkable. A
+    cheap visible edit invites reasoning that a change of meaning is acceptable
+    because it can be seen, and it is not — supersession creates a new Note with
+    its own identifier, its own rationale and its own citation semantics, and an
+    edit record supplies none of those.
+
+    Two axes are deliberately kept apart. Draft against published asks whether
+    the record is real yet. Unvalidated against validated, still owed in
+    [HM-N-089], asks how far to trust what it says. A well-evidenced draft and a
+    speculative published Note both exist, and folding both into one status
+    field would put a dimension in a slot that answers a different question —
+    the error the rule above this one forbids.
+
+    No field is added, and that is the point rather than a saving. A stored
+    draft flag would be a second answer to a question the medium already
+    answers, and the two would drift the moment they disagreed.
