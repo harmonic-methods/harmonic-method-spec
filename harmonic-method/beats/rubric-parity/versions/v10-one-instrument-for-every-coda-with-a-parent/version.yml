@@ -22,11 +22,14 @@ beat_version:
     Beats, a Portfolio through its Systems.
 
     Two things came out of the generalisation rather than being planned into
-    it. The instrument had been telling an evaluator to score Strategically
-    Aligned as 3 when no parent Coda existed, which meant a root Coda was
-    quietly accepted and given a number by an instrument whose load-bearing
-    dimensions cannot be asked of one; it now refuses and routes. And
-    `README.md` still sent a new reader's first command at
+    it. Neither instrument checked which Coda it had been handed. The non-root
+    one told an evaluator to score Strategically Aligned as 3 when no parent
+    existed, quietly accepting a root Coda and giving it a number from
+    dimensions whose referent is absent; the root one had no rule at all, and
+    would have scored a Beat Coda against Discriminating and Reciprocal without
+    complaint. Both now refuse and route, so whichever file an operator opens
+    is the one that decides. And `README.md` still sent a new reader's first
+    command at
     `examples/beats/client-estimate-approval/beat.yml`, a path the previous
     step moved — whose own risk note asserted that nothing in this repository
     pointed there.
@@ -37,13 +40,18 @@ beat_version:
     changed text after the decision is recorded rather than before.
   scope: >
     In: the instrument's rename and generalisation, including the altitude
-    table, the refusal rule for a parentless Coda, and the terminology rule
-    extended so that naming the wrong altitude's child is caught the same way
+    table, a routing rule in each instrument refusing the Coda the other one
+    scores, and the terminology rule extended so that naming the wrong
+    altitude's child is caught the same way
     saying "Revision" already was; the `rubric:` value in `specs/beat.yml`;
     `quality:` blocks in `specs/system.yml` and `specs/portfolio.yml` naming
     both instruments; the six cross-references in other skills and on the two
     published surfaces; the broken quickstart path; the spec set minor step;
     the decision Note; and the regenerated digest.
+    In also: the mirror rule in `skills/root-coda-quality-check/SKILL.md`, whose
+    digest moves with it — the only normative edit here outside the renamed
+    instrument, and the reason the spec set does not move a second time: the
+    version tracks the step, not the file count.
     In also: marking [HM-BV-003.32] delivered, which [HM-N-055] puts in the
     next substantive step's scope.
 
@@ -53,9 +61,10 @@ beat_version:
     generalises a referent and changes what is measured in the same pass leaves
     no way to tell which of the two a later score difference came from.
 
-    Out: the root instrument. Its six dimensions are the ones whose referent is
-    absent at the root, and the partition between the two is the thing this
-    step is making true rather than something it revisits.
+    Out: the root instrument's six dimensions. Its routing rule is in — the
+    partition between the two instruments is what this step is making true, and
+    a partition only one side enforces is not one — but nothing it measures is
+    touched. Its digest moves for a check rule, not for an anchor.
 
     Out: reconciling the reference implementation. It persists
     `beat_coda_quality` and must alias it, as it already aliases `beat_quality`

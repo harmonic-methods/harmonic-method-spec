@@ -121,6 +121,15 @@ For each dimension: score, one-sentence justification, and (for any score below
 
 ## Check rules
 
+- **Confirm the Coda has no parent before scoring it.** A Coda carrying one is
+  not root, whatever its altitude, and belongs to `coda-quality-check`; say so
+  and score nothing rather than scoring it here. Read `parent` from the Coda —
+  its absence is the whole of what makes one root. These six ask what something
+  at the top of a chain owes the parties outside it, and put to a Coda that
+  serves one above it they do not become harsh, they become the wrong question:
+  a Beat is not the thing that faces a market, and a reading saying it
+  discriminates poorly is a verdict on the wrong subject that looks exactly like
+  a verdict on the statement. The instrument built for it scores it there.
 - Score each dimension independently with evidence from the Coda as written.
 - Be specific in rationale — cite exact phrases from the statement.
 - **Score every dimension over its full range, and report warrant separately.**

@@ -13,10 +13,11 @@ note:
     states as a table across the three altitudes rather than assuming one of them.
     Distinctive, Harmonious, Substantial, Durable and Outcome-Oriented each gained
     the two readings they did not have; Clear and Strategically Aligned were
-    already altitude-neutral and are unchanged. A new check rule refuses a Coda
-    with no parent instead of scoring it. The spec set takes a minor step, and
-    `specs/system.yml` and `specs/portfolio.yml` name both instruments in a
-    `quality:` block.
+    already altitude-neutral and are unchanged. Both instruments gain a check rule
+    refusing the Coda the other one scores, so either entry point routes and a
+    caller does not have to have chosen correctly to land correctly. The spec set
+    takes a minor step, and `specs/system.yml` and `specs/portfolio.yml` name both
+    instruments in a `quality:` block.
   rationale: >
     The specs asserted this before the instrument could do it. `specs/system.yml`
     shipped saying a System's Coda is scored against the same rubric as any other
@@ -46,14 +47,20 @@ note:
     that the other could not. The split that earns its own instrument is
     parent-presence, and that one already exists.
 
-    The refusal rule is a defect this step found rather than a decision it made.
-    The instrument previously told an evaluator to score Strategically Aligned as
-    3 when no parent Coda existed, which quietly accepted a root Coda and returned
-    a number for it. Two dimensions here measure service to the Coda above;
-    against an absent parent they are not weak, they are unanswerable, and
-    averaging an unanswerable dimension in as though it had been answered produces
-    a figure that reads as a judgement and is not one. A root Coda now routes to
-    the instrument built for it and nothing is scored here.
+    The routing rules are a defect this step found rather than a decision it made,
+    and it ran in both directions. The non-root instrument told an evaluator to
+    score Strategically Aligned as 3 when no parent Coda existed, which quietly
+    accepted a root Coda and returned a number for it: two dimensions there
+    measure service to the Coda above, and against an absent parent they are not
+    weak, they are unanswerable — averaging an unanswerable dimension in as though
+    it had been answered produces a figure that reads as a judgement and is not
+    one. The root instrument had no rule at all, and would have scored a Beat Coda
+    against Discriminating and Reciprocal without complaint. That failure is not
+    the same shape: those six are answerable of a Beat and simply ask the wrong
+    thing of it, since a Beat is not what faces a market, so the reading comes back
+    looking like a verdict on the statement while being a verdict on the wrong
+    subject. Unanswerable in one direction and misdirected in the other, but a
+    number either way, which is why both now refuse rather than degrade.
 
     The cost is named rather than glossed. `beat_coda_quality` is a value an
     implementation persists, and renaming it breaks every stored score keyed to
@@ -65,3 +72,17 @@ note:
     consumer breaks, not whether a tag exists, and here one does: an
     implementation carrying the old identifier must alias it, as it already
     aliases two others.
+
+    Merging the two into one instrument was weighed and refused. It is the obvious
+    reading of the same problem — an operator should not need to know which file
+    to open — but the two share no dimension, so a merged file would not be one
+    instrument with a branch, it would be two behind an `if`. Three things pay for
+    that. They serve different Functions, and both published surfaces index
+    instruments by Function, so the merged one would be the only entry with two
+    and the index would get worse rather than simpler. One digest covers an
+    instrument, so an edit to a Beat anchor would move the digest standing guard
+    over the root anchors — and separate digests are what proved, in this very
+    step, that only the intended section moved. And the placement README
+    recommends is a single file copied into an agent directory, so everyone
+    scoring a Beat would carry the warrant bands too. Mutual routing buys the
+    whole of what the merge was for at the price of two rules.

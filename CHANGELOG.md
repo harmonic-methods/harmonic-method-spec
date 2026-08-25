@@ -78,13 +78,24 @@
     Beat's siblings are the other Beats in its System, a System's are the other
     children under its Portfolio; a Beat evolves through Beat Versions, a System
     through its Beats, a Portfolio through its Systems.
-  - **A parentless Coda is now refused rather than scored.** The instrument had
+  - **Each instrument now refuses the Coda the other one scores**, so whichever
+    file an operator opens is the one that decides and the routing stops being
+    something a caller has to know. Neither had checked. `coda-quality-check`
     said to score Strategically Aligned as 3 when no parent Coda existed, which
-    quietly accepted a root Coda and returned a number for it. Two dimensions
-    here measure service to the Coda above; against an absent parent they are not
-    weak but unanswerable, and averaging one in as though it had been answered
-    produces a figure that reads as a judgement and is not one. It routes to
-    `skills/root-coda-quality-check/SKILL.md` instead.
+    quietly accepted a root Coda and returned a number from dimensions whose
+    referent is absent — averaging an unanswerable dimension in as though it had
+    been answered produces a figure that reads as a judgement and is not one.
+    `root-coda-quality-check` had no rule at all and would have scored a Beat
+    Coda against Discriminating and Reciprocal without complaint; those six are
+    answerable of a Beat and simply ask the wrong thing of it, since a Beat is
+    not what faces a market. Unanswerable in one direction, misdirected in the
+    other, and a number either way.
+  - **The two are not merged into one instrument.** They share no dimension and
+    serve different Functions, both published surfaces index instruments by
+    Function, one digest covers one instrument — so a merged file would put the
+    Beat anchors and the root anchors behind a single digest, and hand everyone
+    scoring a Beat the warrant bands as well. Mutual routing buys what the merge
+    was for at the price of two rules. Recorded in HM-N-152.
   - The terminology rule grew the altitude above it. Suggesting a System be
     decomposed into Beat Versions is the same error one level up as suggesting a
     Beat be decomposed into Revisions, and both are now named.
