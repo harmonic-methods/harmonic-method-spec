@@ -32,13 +32,17 @@ fields:
       change of altitude: a parent Bar and its children may all belong to the
       same portfolio. Root Bars omit this.
 rules:
-  - A parent Bar contains its children in time — no child starts before it or
+  - >-
+    A parent Bar contains its children in time — no child starts before it or
     ends after it.
-  - Bars sharing a parent do not overlap. Overlapping periods make "which Bar
+  - >-
+    Bars sharing a parent do not overlap. Overlapping periods make "which Bar
     are we in" unanswerable, which defeats the purpose of having one.
-  - A Bar's boundary is the occasion for a Downbeat, not a substitute for one.
+  - >-
+    A Bar's boundary is the occasion for a Downbeat, not a substitute for one.
     A period that elapses without an anchor being taken leaves nothing to
     reconcile against later.
-  - A longer cadence is a Bar with children, never a separate kind of period.
+  - >-
+    A longer cadence is a Bar with children, never a separate kind of period.
     The method names one cadence entity and nests it, for the same reason Codas
     nest rather than being renamed at each altitude.

@@ -35,7 +35,8 @@ fields:
     type: list<revision>
     description: The tracked changes that execute this version. See revision.yml.
 rules:
-  - A Beat Version's status is carried on the Beat Version. An implementation may
+  - >-
+    A Beat Version's status is carried on the Beat Version. An implementation may
     derive an additional label from whatever its medium affords, but the three
     values are a field the method requires in every medium, not a projection of
     one.

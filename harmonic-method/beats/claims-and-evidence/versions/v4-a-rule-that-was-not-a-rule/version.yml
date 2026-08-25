@@ -1,0 +1,55 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-007.4
+  beat: HM-B-007
+  title: A rule that was not a rule
+  status: active
+  summary: >
+    A colon in a rule broke this repository's spec files three times while
+    authoring. Each time it was read as friction — the parser reports a line and
+    a column, the sentence gets rewritten, the work continues.
+
+    That was the wrong reading, and the right one is worse. The loud failure
+    only happens when the colon lands on a continuation line of a wrapped rule.
+    A rule short enough to fit on one line silently becomes a mapping instead:
+    the file stays valid, the other rules are unaffected, and the checker prints
+    conformant while a published rule is no longer a rule.
+
+    Forty-five rule items become block scalars, which makes a colon legal and
+    removes the trapdoor rather than guarding it. A check asserts that every
+    rule is a string and that every item keeps the form, so the next short rule
+    written the obvious way is reported instead of absorbed.
+
+    Done when: no published rule text has moved; a corrupted rule is reported
+    rather than passed; the form that permits the corruption is reported too;
+    and both halves were made to fail before being believed.
+  scope: >
+    In: forty-five plain rule items across nine spec files converted to block
+    scalars; a checker rule asserting that every rule parses to a string and
+    that every rule item is written as a block scalar; and the Note recording
+    what was actually wrong.
+    Out: the eleven rules already written in the clip form. They carry a
+    trailing newline the converted ones do not, and normalising them would move
+    published strings for a cosmetic gain. The difference is recorded rather
+    than either fixed or ignored.
+    Out also: any rule about formatting elsewhere in the tree. This covers
+    `specs/` because that is the normative surface, and the same reasoning that
+    scopes the retired-altitude sweep applies — an adopter's tree is not
+    measured against a convention this repository keeps on itself.
+    Out also: the underlying encoding question. Nothing here says a spec must be
+    YAML, and the check reads the one encoding this repository uses, which the
+    conformance statement already declares is a convention rather than a
+    condition.
+    Verified rather than reviewed: the conversion was checked by parsing every
+    spec file before and after and comparing the parsed values, not by reading
+    the diff. Forty-five items moved and no value changed. The strip form was
+    chosen for exactly that reason — the clip form appends a newline to every
+    value it touches.
+    Owed, not done: nothing.
+    Risks stated: the form half of the check mandates a formatting convention on
+    files this repository owns, which is a thing the method deliberately declines
+    to do for adopters — the asymmetry is legitimate and is the one the
+    claims-and-evidence Beat already names, but it is the part most likely to
+    read as over-reach; and a contributor who wants a genuinely short rule now
+    writes three lines where one would do, which is the price of the colon being
+    safe.

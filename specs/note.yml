@@ -104,23 +104,27 @@ fields:
       two Notes that may sit anywhere in the tree, not between a parent and the
       children beneath it, so there is no containment to read it from.
 rules:
-  - Notes are preserved, not overwritten; superseding is a new Note whose
+  - >-
+    Notes are preserved, not overwritten; superseding is a new Note whose
     `supersedes` references the old. Nothing is written onto the Note being
     closed — the reference runs one way, which is what keeps the first half of
     this rule true.
-  - Preservation begins when a Note becomes readable by anyone but its author.
+  - >-
+    Preservation begins when a Note becomes readable by anyone but its author.
     Before that it is a draft and may be edited freely; after it, correcting
     it destroys evidence someone may have acted on, and the correction is a
     supersession. Every medium has this boundary and only some have it built
     in — a commit is one, a shared record is one, a document leaving a desk is
     one. An implementation whose store publishes on write has to draw the
     boundary itself, because the rule above begins there and not at creation.
-  - A change that would not have altered what a reader did is maintenance, not
+  - >-
+    A change that would not have altered what a reader did is maintenance, not
     supersession. Fixing a misspelling or a broken link leaves the record
     saying what it said; changing what it asserts does not, and only the
     second owes a superseding Note. The test is the reader, not the byte
     count.
-  - A maintenance edit stays visible as an edit, and the text it replaced stays
+  - >-
+    A maintenance edit stays visible as an edit, and the text it replaced stays
     recoverable by anyone who can read the Note. Without that, the rule above
     is unfalsifiable — an author could relabel a change of meaning as a typo
     and no reader could tell — and the first rule here stops being literally
@@ -129,52 +133,65 @@ rules:
     a struck-through line with an initial beside it. What may not vary is that
     the trace is as readable as the Note, since a trace nobody can open is the
     citation nobody can follow.
-  - A Note that carries `supersedes` is a decision, so its required rationale
+  - >-
+    A Note that carries `supersedes` is a decision, so its required rationale
     states why the Note or Notes it lists no longer stand. One rationale may
     close several at once; what it may not do is close any without one.
-  - A Note nothing supersedes is active; a Note something supersedes is not.
+  - >-
+    A Note nothing supersedes is active; a Note something supersedes is not.
     Neither is a stored field — an implementation reads the partition off
     `supersedes`, not beside it, so the two can never disagree.
-  - The field only closes. There is no operation that reopens a Note, so one
+  - >-
+    The field only closes. There is no operation that reopens a Note, so one
     whose superseder is later superseded by something else does not return to
     active — what reopens a closed matter is a new decision addressing it
     directly, not the retirement of the decision that closed it.
-  - Every Note is context in the general sense — the Note is the context — and
+  - >-
+    Every Note is context in the general sense — the Note is the context — and
     `type` names the specialization it rises to. No value is called context, so
     that the word for the whole is never also the word for a part.
-  - A subtype narrows its type and never contradicts it. A reader that does not
+  - >-
+    A subtype narrows its type and never contradicts it. A reader that does not
     recognize a subtype falls back to the type, which is the whole reason the
     type is closed and the subtype is free.
-  - A dimension is never expressed as a type. A property that any kind can carry
+  - >-
+    A dimension is never expressed as a type. A property that any kind can carry
     belongs in a field of its own, whether or not the method names that field.
-  - A Note is legible to everyone who can act on the entity it informs. An
+  - >-
+    A Note is legible to everyone who can act on the entity it informs. An
     implementation may classify and restrict, and most will; what it may not do
     is let a Note be cited as lineage by a reader who cannot open it. A citation
     nobody can follow is not lineage.
-  - Where a restriction genuinely forbids that, what gets written at the readable
+  - >-
+    Where a restriction genuinely forbids that, what gets written at the readable
     level is the lineage — a Note stating the choice and its reasoning without
     the restricted material, which then stands as evidence rather than as the
     record. A redacted rationale is honest. A citation to something nobody can
     read is not.
-  - Where a Note records what it was derived from, that reference resolves for
+  - >-
+    Where a Note records what it was derived from, that reference resolves for
     everyone who can read the Note. Provenance is an implementation's to define
     and none is required here; what an implementation may not do is cite a
     source its readers cannot reach, which is the legibility bound above
     applied to the citation rather than to the Note. A source that cannot be
     opened is not provenance, it is an assertion that provenance exists.
-  - A Note does not expire. There is no time to live and no automatic disposal —
+  - >-
+    A Note does not expire. There is no time to live and no automatic disposal —
     a record that removes itself because time passed contradicts the first rule
     here. Retention under an obligation is a different question and is not
     settled by this.
-  - Knowledge that has arrived and is not yet attached is not a Note. `attached_to`
+  - >-
+    Knowledge that has arrived and is not yet attached is not a Note. `attached_to`
     is required and stays required — it is what makes a Note lineage rather than a
     document, because a decision nobody can reach from its consequences is not
     recoverable. Capture before attachment is a stage before a Note, not a Note
     with a field missing.
-  - Promoting captured knowledge into an attached record — deciding what it
+  - >-
+    Promoting captured knowledge into an attached record — deciding what it
     implies about capability — is the Composer's to answer for. It is the same
     judgement that function already owns — what the system is for, what belongs
     inside it, and where its boundaries fall. An implementation may automate the
     act; the accountability does not move.
-  - A Note never attaches to a Beat Version. Knowledge that outlives the step
+  - >-
+    A Note never attaches to a Beat Version. Knowledge that outlives the step
     belongs to the Beat; use beat_version to record which step produced it.
