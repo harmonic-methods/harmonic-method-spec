@@ -2,27 +2,75 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The Orchestrator's first draft.** Four of the five instrumented functions
+  had a producing skill and the Orchestrator had none — named as owed when this
+  Beat's first step shipped and never picked up since. `beat-version-composing`
+  closes it, mirroring `beat-composing` in shape and diverging from it in
+  exactly the one place the two entities actually differ. See HM-B-009 and
+  HM-BV-009.3.
+  - **One instrument needs a Beat; the other needs nothing.** A Coda can be
+    written from a paragraph alone; a Beat Version cannot exist without a Beat,
+    and the reference gate on it scores the Beat itself before decomposition.
+    The new instrument checks for an existing, scored Beat first and points at
+    `beat-composing` rather than draft a step onto an unsettled capability.
+    Everything else — the bounded self-revision loop, the unbounded person's
+    loop, scoring against the published rubric unmodified — carries over
+    unchanged. See HM-N-140.
+  - **A shipped step's plan is not rewritten after the fact.** A Beat Version
+    with delivered Revisions against it has already been held to what it
+    planned; drafting a fresh step is this instrument's job, rewriting a
+    shipped one's plan to say something different is not — the same reasoning
+    `specs/revision.yml` gives an orphaned Revision, applied one altitude up.
+  - **A stale decision Note is superseded, not left standing.** HM-N-100 asked
+    whether the (former) root Coda's promise covered production. That Coda was
+    replaced entirely in a prior step; the question is moot rather than
+    answered, and is now formally superseded rather than left questioning a
+    statement nobody can read anymore — the first real use of `supersedes` on a
+    Note whose own subject wasn't the field's design. See HM-N-141.
+  - **Out, deliberately: an Orchestrator clarifying instrument, and anything for
+    the Promoter.** `beat-clarifying` earned its place by a demonstrated need
+    after `beat-composing` shipped and was used; building its twin now would
+    complete a pattern rather than answer one. The Promoter's absence is a
+    standing decision about evidentiary immaturity and nothing here revisits
+    it.
+  - **A baseline is not a Beat Version — corrected in the published rubric,
+    too.** The first draft of `beat-version-composing` gave baseline-recording
+    work its own drafting step, extending a carve-out already sitting in
+    `skills/beat-version-quality-check/SKILL.md` that scored a "baseline Beat
+    Version" leniently rather than declining to score one at all. Neither text
+    had been checked against `specs/downbeat.yml`, which already says a
+    Downbeat "is not a Beat Version" and "records what was true, not what is
+    intended." Both texts now redirect a baseline to
+    `skills/downbeat-taking/SKILL.md` instead. This edits the published
+    standard — the rubric's check rules — so the spec set version moves,
+    1.9.0 -> 1.10.0, a minor step: the permitted shape of a baseline case
+    changed, no consumer field or entity did. See HM-N-142.
+
 - **A decline needs a base.** The method could count a decline and could not
-  know what it was a decline out of — an idea taken up becomes a Beat, an idea
-  refused becomes nothing unless somebody happened to write a decision about
-  it. Five declines against six proposals is a boundary doing heavy work; five
-  against five hundred is a boundary that stopped almost nothing, and the
-  record could not tell the two apart. See HM-B-012 and HM-BV-012.4.
-  - **`specs/proposal.yml` — a candidate at the same altitude as a Beat**,
-    because becoming one is exactly the question its resolution answers.
-    Carries no Coda of its own, no scope, no versions: everything a Beat can
-    hold that a Proposal cannot is what accepting one produces. See HM-N-142.
+  know what it was a decline out of — an idea taken up becomes whatever the
+  next altitude down needs it to be; an idea refused becomes nothing unless
+  somebody happened to write a decision about it. Five declines against six
+  proposals is a boundary doing heavy work; five against five hundred is a
+  boundary that stopped almost nothing, and the record could not tell the two
+  apart. See HM-B-012 and HM-BV-012.4.
+  - **`specs/proposal.yml` — a candidate sitting one altitude below the Coda
+    it is weighed against**, because settling what belongs at that next
+    altitude down is exactly the question its resolution answers. Carries no
+    Coda of its own, no scope, no versions: everything its outcome can hold
+    that a Proposal cannot is what accepting one produces — and that outcome
+    need not be a built capability at all; adopting a standing decision with
+    nothing built resolves a Proposal just as fully. See HM-N-144.
   - **Four terminal states, and only one counts as evidence.** `open`,
     `accepted`, `declined`, `withdrawn` — `withdrawn` is reported beside a
     decline's count and never folded into it, because nobody weighed that one
     against the Coda and said no. The same distinction `specs/bar.yml` already
     draws between a malformed tree and a team that has not gotten to something
-    yet. See HM-N-143.
+    yet. See HM-N-145.
   - **Reasoning is a Note's job, not a field's**, from the start rather than
     found later — the same discipline `specs/beat-version.yml` and
     `specs/revision.yml` already hold their own `withdrawn` values to.
-    Acceptance carries no reference to the Beat it became; that citation, if
-    wanted, runs from the new Beat back to the Proposal, in prose, the
+    Acceptance carries no reference to what it became; that citation, if
+    wanted, runs from the new entity back to the Proposal, in prose, the
     direction every other citation in this method already runs.
   - **`specs/note.yml`'s `attached_to` widens to name Proposal directly** — a
     candidate under active consideration accumulates the same deliberation a

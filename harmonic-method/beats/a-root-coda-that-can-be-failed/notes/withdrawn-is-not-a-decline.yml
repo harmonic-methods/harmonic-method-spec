@@ -1,6 +1,6 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-143
+  id: HM-N-145
   type: decision
   attached_to: HM-B-012
   beat_version: HM-BV-012.4
@@ -12,8 +12,8 @@ note:
   rationale: >
     The Note that first sketched this entity said plainly that its specifics
     were not decided, and this is the specific that needed deciding rather
-    than copied. Two things end a Proposal without it becoming a Beat, and
-    they are not the same fact. One is the Coda actively rejecting it — the
+    than copied. Two things end a Proposal without it becoming its outcome,
+    and they are not the same fact. One is the Coda actively rejecting it — the
     idea was weighed and the answer was no. The other is nobody finishing the
     weighing at all — the proposer moved on, priorities shifted, attention
     went elsewhere. Forcing the second into `declined` would credit a

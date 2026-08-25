@@ -177,7 +177,7 @@ rises whenever the Coda is widened and no capability is added.
 [examples/coverage/](examples/coverage/) shows the same two questions answered
 arithmetically where an adopter has embeddings; the two disagree usefully.
 
-Four skills produce rather than assess, and none defines any judgement of its
+Five skills produce rather than assess, and none defines any judgement of its
 own — which is what keeps a production aid from becoming a second standard.
 
 [beat-composing](skills/beat-composing/SKILL.md) serves the Composer: give it a
@@ -191,6 +191,16 @@ the moment revision stops helping: it turns the dimensions that scored low into
 the few questions their author actually has to answer, each with a proposed
 default to accept or correct. Revision fixes what is badly written;
 clarification asks for what nobody has decided.
+
+[beat-version-composing](skills/beat-version-composing/SKILL.md) serves the
+Orchestrator: give it an existing, scored Beat and a description of what should
+happen next and it drafts the step — reading the gap between the Beat's current
+state and its Coda before writing anything, so the step it proposes is the
+highest-impact one available rather than whichever is easiest to describe. It
+requires a Beat already stand on its own; where none exists it points at
+beat-composing rather than drafting one itself. It scores with the plan-quality
+rubric above, unmodified, and revises the same two-loop way every producing
+skill here does.
 
 [downbeat-taking](skills/downbeat-taking/SKILL.md) serves the Conductor: it takes
 an anchor on one capability, freezing the outcome it was converging toward and

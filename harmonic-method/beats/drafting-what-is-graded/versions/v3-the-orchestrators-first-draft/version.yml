@@ -1,0 +1,85 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-009.3
+  beat: HM-B-009
+  title: The Orchestrator's first draft
+  status: active
+  summary: >
+    Four of the five instrumented functions had a producing skill and the
+    Orchestrator had none — an asymmetry named as owed when this Beat's first
+    step shipped and never picked up since. `beat-version-composing` closes it,
+    mirroring `beat-composing` in shape and diverging from it in exactly one
+    place the two entities actually differ.
+
+    A Beat can be drafted from nothing; a Beat Version cannot. `specs/beat.yml`
+    requires a Coda before decomposition, and the reference gate on it scores
+    the Beat itself before a step of it is drafted. So where `beat-composing`
+    needs no context to start from, this instrument's first move is to check
+    that a scored Beat already exists and to point at `beat-composing` rather
+    than draft a step onto a capability nobody has settled yet. Everything
+    else — the bounded self-revision loop, the unbounded person's loop, scoring
+    against the published rubric unmodified, stopping on a dimension that
+    resists twice, refusing to amend a record — carries over unchanged, because
+    nothing about drafting a step rather than a capability changes what
+    producing responsibly means.
+
+    One new constraint earns its place rather than being copied: a Beat Version
+    with delivered Revisions against it has already been held to what it
+    planned, so this instrument will draft a fresh step but will not rewrite a
+    shipped one's plan to say something different after the fact — the same
+    reasoning `specs/revision.yml` gives an orphaned Revision, applied to the
+    entity one altitude up.
+
+    Also closed in the same step: [HM-N-100] asked whether the system Coda's
+    promise covered production, against a Coda that no longer exists — it was
+    replaced in [HM-N-119], and the coverage reading already maps this Beat to
+    a live claim of the one that replaced it. The question the Note raised is
+    moot rather than answered, and it is superseded rather than left standing
+    as an open question about a statement nobody can read anymore.
+
+    Also closed in the same step, once review reached this draft: the first
+    pass of `beat-version-composing` carried a baseline-drafting step written
+    by extending `beat-version-quality-check`'s own, then-stale carve-out for
+    a "baseline Beat Version" — never checked against `specs/downbeat.yml`,
+    which already stated a Downbeat "is not a Beat Version" and "records what
+    was true, not what is intended." Both the drafting step and the check
+    rule it was extended from are corrected here, together, rather than
+    leaving the published rubric to contradict the spec it should have
+    conformed to in the first place. [HM-N-142] records the decision.
+  scope: >
+    In: `skills/beat-version-composing/SKILL.md`; the README and llms.txt
+    entries naming it under Producing, with the stated count moving from four
+    to five; the Note recording why this instrument requires a Beat where its
+    sibling requires nothing, and the one new constraint that does not carry
+    over from `beat-composing` unchanged; and superseding [HM-N-100] now that
+    the Coda it questioned is gone.
+    In also: closing the step whose work has reached the trunk, which
+    [HM-N-055] puts in the next substantive step's scope.
+
+    Out: any change to `specs/beat-version.yml`. It was already complete and
+    nothing here revisits it.
+
+    In (revised): a correction to `skills/beat-version-quality-check/SKILL.md`
+    was originally scoped out, on the finding that it was already complete —
+    that finding held for the entity's fields but not for its baseline
+    carve-out, which review of this same draft surfaced as contradicting
+    `specs/downbeat.yml`. Fixed here rather than deferred to a second step,
+    since both the drafting text and the check rule it was drawn from share
+    one defect and one fix.
+
+    Out: a clarifying instrument for the Orchestrator. `beat-clarifying`
+    earned its place by a demonstrated need once `beat-composing` had shipped
+    and been used — a dimension that resisted revision and needed a question
+    instead of a rewrite. Building its Orchestrator twin now, before anyone
+    has hit that wall with a Beat Version, would be completing a pattern
+    rather than answering a need, which is the reasoning [HM-N-131] already
+    gave for not building the resistance measure ahead of a demonstrated case.
+
+    Out: any instrument for the Promoter. Its absence is a standing decision
+    about evidentiary immaturity, not a gap this Beat happens to reach next,
+    and nothing here revisits it.
+
+    Risks stated: the "requires an existing, scored Beat" constraint is
+    advisory, not enforced — nothing here can stop someone from pointing this
+    instrument at an unscored Beat and asking it to proceed anyway, and the
+    instrument's own text can only ask that they not.

@@ -1,6 +1,6 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-142
+  id: HM-N-144
   type: decision
   attached_to: HM-B-012
   beat_version: HM-BV-012.4
@@ -10,22 +10,25 @@ note:
     Version names its Beat, and nothing more.
   rationale: >
     Every one of those omissions was considered and refused on the same
-    ground: a Proposal that carried them would be a Beat under a different
-    name, and the method would then have two entities claiming the same
-    ground — a durable capability and a candidate for one, indistinguishable
-    in everything but the label on the file. [HM-N-132] said this plainly
-    before the entity existed: "an idea taken up becomes a Beat, so a
-    proposal and its outcome should not both try to be the durable
-    capability." Building the entity was the moment that constraint had to
-    be kept rather than merely stated.
+    ground: a Proposal that carried them would be its eventual outcome under
+    a different name, and the method would then have two entities claiming
+    the same ground — a durable thing and a candidate for one,
+    indistinguishable in everything but the label on the file. [HM-N-132]
+    said this plainly before the entity existed: "an idea taken up becomes a
+    Beat, so a proposal and its outcome should not both try to be the
+    durable capability" — read at whatever altitude the outcome actually
+    lands, not only a Beat's. Building the entity was the moment that
+    constraint had to be kept rather than merely stated.
 
     An embedded Coda in particular would have done the most damage, because
-    it would have let a Proposal be scored by `beat-coda-quality-check` as
-    though it were a Beat already — a second surface producing the same
-    verdict a different rubric exists to give, with no way for a reader to
-    tell which one to trust. A Proposal is not a draft Beat waiting to be
-    promoted with a status flip; it is a different kind of record, answering
-    a different question, and it stays that way until acceptance produces an
-    actual Beat through the actual drafting path — `beat-composing`, or a
-    person writing one directly — rather than through a shortcut this entity
-    could have offered and should not.
+    it would have let a Proposal be scored by the rubric its eventual
+    altitude uses — `beat-coda-quality-check`, `root-coda-quality-check`, or
+    whichever applies — as though it were that entity already, a second
+    surface producing the same verdict a different rubric exists to give,
+    with no way for a reader to tell which one to trust. A Proposal is not a
+    draft of its outcome waiting to be promoted with a status flip; it is a
+    different kind of record, answering a different question, and it stays
+    that way until acceptance produces the actual thing through the actual
+    drafting path for that altitude — or, where nothing needs building,
+    through a decision Note recording the adoption — rather than through a
+    shortcut this entity could have offered and should not.

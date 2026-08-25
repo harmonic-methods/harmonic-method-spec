@@ -2,21 +2,28 @@
 entity: proposal
 spec_version: 1.10.0
 summary: >
-  A candidate capability, weighed against a Coda and not yet a durable thing in
-  its own right. Sits at the same altitude as a Beat, because becoming one is
-  exactly the question a Proposal exists to settle. Without this entity,
-  Discriminating can count what a Coda excluded and never know what it excluded
-  it out of — a decline with no base to read it against.
+  A candidate thing, weighed against a Coda and not yet durable in its own
+  right. It sits one altitude below whatever Coda it is weighed against — a
+  Proposal read against a root Coda could become a System, one read against a
+  Beat's own resolved-state Coda could become a Beat Version or a Revision —
+  because settling what belongs at that next altitude down is exactly the
+  question a Proposal exists to answer. Not every acceptance produces a
+  capability at all: accepting a Proposal can mean adopting it as a standing
+  decision with nothing built, which is recorded the same way a decline's
+  rationale already is. Without this entity, Discriminating can count what a
+  Coda excluded and never know what it excluded it out of — a decline with no
+  base to read it against.
 fields:
   id: {type: string, required: true}
   coda:
     type: reference
     required: true
     description: >
-      The Coda this idea is weighed against — the same one a resulting Beat
-      would ladder to. A Proposal carries no Coda of its own: whether it
-      belongs under this one is the question its resolution answers, not a
-      claim it gets to make about itself.
+      The Coda this idea is weighed against — the same one whatever results
+      from acceptance would ladder to, when the result is a laddering entity
+      at all. A Proposal carries no Coda of its own: whether it belongs under
+      this one is the question its resolution answers, not a claim it gets to
+      make about itself.
   summary:
     type: string
     required: true
@@ -32,8 +39,10 @@ fields:
     descriptions:
       open: Still being weighed. Resolved neither way.
       accepted: >
-        Taken up. The durable capability now lives at the Beat that resulted,
-        not here — see the rule below on why this carries no reference to it.
+        Taken up. What resulted — a System, a Beat, a Beat Version, a
+        Revision, or, when nothing needed building, a decision Note recording
+        the adoption — now carries whatever is durable about this, not here.
+        See the rule below on why this field carries no reference to it.
       declined: >
         Weighed against the Coda and not taken up. The only value that counts
         as evidence a boundary excluded something; why belongs to a decision
@@ -51,16 +60,22 @@ rules:
   - Why a Proposal was declined or withdrawn is rationale and belongs in a
     decision Note, not in this field — the same discipline `specs/beat-version.yml`
     and `specs/revision.yml` already hold their own `withdrawn` value to.
-  - Acceptance carries no reference to the Beat it became. The Beat is the
-    durable record from that point on; a Proposal and its outcome are not two
-    accounts of the same capability, and a citation running from the new
-    Beat back to the Proposal it came from — in a Note, if the lineage is
-    worth keeping — costs nothing this field would not also cost, without
-    asking the entity that is finished to carry a pointer to the one that
-    supersedes it in substance.
+  - Acceptance carries no reference to what it became. That thing — whatever
+    altitude it landed at — is the durable record from that point on; a
+    Proposal and its outcome are not two accounts of the same thing, and a
+    citation running from the new entity back to the Proposal it came from —
+    in a Note, if the lineage is worth keeping — costs nothing this field
+    would not also cost, without asking the entity that is finished to carry
+    a pointer to the one that supersedes it in substance.
+  - Acceptance does not require a capability-shaped outcome. Some Proposals
+    are settled by adopting a standing decision rather than building
+    anything — a policy, a constraint, a practice going forward — and that is
+    recorded as a decision Note the same way a decline's rationale already
+    is. A reader must not assume every `accepted` Proposal has a System, Beat,
+    Beat Version, or Revision somewhere that resulted from it.
   - A Proposal carries no scope, no versions, and no lifecycle beyond the four
-    values above. Everything a Beat can hold that a Proposal cannot is exactly
-    what accepting it produces.
+    values above. Everything its outcome can hold that a Proposal cannot is
+    exactly what accepting it produces.
   - Declined and withdrawn Proposals are not deleted or moved. A Coda's
     excluded ground is legible only if what it excluded is still there to
     read.

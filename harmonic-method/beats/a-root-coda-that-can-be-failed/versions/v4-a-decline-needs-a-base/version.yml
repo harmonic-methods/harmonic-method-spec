@@ -7,28 +7,32 @@ beat_version:
   summary: >
     [HM-N-132] found the gap the step before this one left open: the method
     can count a decline and cannot know what it is a decline out of. An idea
-    taken up becomes a Beat; an idea refused becomes nothing, unless somebody
-    happened to write a decision about it. Five declines against six proposals
-    is a boundary doing heavy work; five against five hundred is a boundary
-    that stopped almost nothing, and the record could not tell the two apart.
+    taken up becomes whatever the next altitude down needs it to be; an idea
+    refused becomes nothing, unless somebody happened to write a decision
+    about it. Five declines against six proposals is a boundary doing heavy
+    work; five against five hundred is a boundary that stopped almost
+    nothing, and the record could not tell the two apart.
 
-    `specs/proposal.yml` closes it — a candidate capability, weighed against a
-    Coda, at the same altitude as a Beat because becoming one is exactly the
-    question its resolution answers. It carries no Coda of its own, no scope,
-    no versions: everything a Beat can hold that a Proposal cannot is what
-    accepting one produces. Four terminal states — open, accepted, declined,
-    withdrawn — and only `declined` counts as evidence a boundary excluded
-    something. `withdrawn` is kept beside it and never folded in: nobody
-    weighed that one against the Coda and said no, and counting it as a
-    decline would credit the boundary for an attention span it did not spend.
+    `specs/proposal.yml` closes it — a candidate thing, weighed against a
+    Coda, sitting one altitude below it because settling what belongs at that
+    next altitude down is exactly the question its resolution answers. It
+    carries no Coda of its own, no scope, no versions: everything its outcome
+    can hold that a Proposal cannot is what accepting one produces, and that
+    outcome need not be a built capability at all — adopting a standing
+    decision with nothing built resolves a Proposal just as fully. Four
+    terminal states — open, accepted, declined, withdrawn — and only
+    `declined` counts as evidence a boundary excluded something. `withdrawn`
+    is kept beside it and never folded in: nobody weighed that one against
+    the Coda and said no, and counting it as a decline would credit the
+    boundary for an attention span it did not spend.
 
     Reasoning for why a Proposal was declined or withdrawn is not a field on
     it — the same discipline `specs/beat-version.yml` and `specs/revision.yml`
     already hold their own `withdrawn` values to, applied here from the start
     rather than found by using the entity first. Acceptance carries no
-    reference to the Beat it became, for the reason recorded in the spec's own
-    rules: the Beat is the durable record from that point on, and a citation
-    from the new Beat back to the Proposal — in a Note, if the lineage is
+    reference to what it became, for the reason recorded in the spec's own
+    rules: that thing is the durable record from that point on, and a
+    citation from it back to the Proposal — in a Note, if the lineage is
     worth keeping — runs the direction every other citation in this method
     already runs.
 
