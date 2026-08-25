@@ -46,6 +46,50 @@
     1.9.0 -> 1.10.0, a minor step: the permitted shape of a baseline case
     changed, no consumer field or entity did. See HM-N-142.
 
+- **A decline needs a base.** The method could count a decline and could not
+  know what it was a decline out of — an idea taken up becomes whatever the
+  next altitude down needs it to be; an idea refused becomes nothing unless
+  somebody happened to write a decision about it. Five declines against six
+  proposals is a boundary doing heavy work; five against five hundred is a
+  boundary that stopped almost nothing, and the record could not tell the two
+  apart. See HM-B-012 and HM-BV-012.4.
+  - **`specs/proposal.yml` — a candidate sitting one altitude below the Coda
+    it is weighed against**, because settling what belongs at that next
+    altitude down is exactly the question its resolution answers. Carries no
+    Coda of its own, no scope, no versions: everything its outcome can hold
+    that a Proposal cannot is what accepting one produces — and that outcome
+    need not be a built capability at all; adopting a standing decision with
+    nothing built resolves a Proposal just as fully. See HM-N-144.
+  - **Four terminal states, and only one counts as evidence.** `open`,
+    `accepted`, `declined`, `withdrawn` — `withdrawn` is reported beside a
+    decline's count and never folded into it, because nobody weighed that one
+    against the Coda and said no. The same distinction `specs/bar.yml` already
+    draws between a malformed tree and a team that has not gotten to something
+    yet. See HM-N-145.
+  - **Reasoning is a Note's job, not a field's**, from the start rather than
+    found later — the same discipline `specs/beat-version.yml` and
+    `specs/revision.yml` already hold their own `withdrawn` values to.
+    Acceptance carries no reference to what it became; that citation, if
+    wanted, runs from the new entity back to the Proposal, in prose, the
+    direction every other citation in this method already runs.
+  - **`specs/note.yml`'s `attached_to` widens to name Proposal directly** — a
+    candidate under active consideration accumulates the same deliberation a
+    Beat does, and without this the decision Note a decline requires would
+    have nowhere conformant to attach.
+  - **`root-coda-quality-check` reads the rate where the entity is used**: how
+    many proposals against a Coda have resolved, how many of those declined.
+    The band is unchanged — a resolved Proposal is still the organization's
+    own account of its own conduct, `record` and no higher. What changes is
+    the denominator existing at all. `root-coda-composing`'s exclusion step
+    asks for the same record where an organization keeps one.
+  - The worked example gains three proposals — declined, withdrawn, accepted —
+    and a decision Note on the declined one. Six failure paths exercised
+    across the entity and its Notes before any of it was trusted.
+  - Out and stated: computing the rate into a judgement — a threshold, a
+    trend, a rollup. The instrument reports a count where one exists; turning
+    it into a verdict is the arithmetic every implementation already owns.
+  - The spec set takes a minor step.
+
 - **A Revision can outrun the plan that was supposed to precede it.** Harmonica's
   own reference implementation ships a Revision without a Beat Version — a
   hotfix, a dependency bump, something that could not wait for a planning

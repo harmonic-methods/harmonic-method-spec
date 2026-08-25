@@ -145,6 +145,7 @@ possible to say which of the five nobody is currently holding.
 | --- | --- |
 | [specs/coda.yml](specs/coda.yml) | the strategic outcome an entity serves |
 | [specs/beat.yml](specs/beat.yml) | a durable capability |
+| [specs/proposal.yml](specs/proposal.yml) | a candidate capability, weighed and not yet one |
 | [specs/beat-version.yml](specs/beat-version.yml) | a planned step in a Beat's evolution |
 | [specs/revision.yml](specs/revision.yml) | a tracked change executing a Beat Version |
 | [specs/note.yml](specs/note.yml) | typed knowledge attached to what it informs |
@@ -231,7 +232,15 @@ separates them. The instrument reads those decisions from wherever they are
 already kept — it names no artifact, because `specs/note.yml` enumerates no
 subtypes and a decline is an ordinary decision that will already be written down.
 A decline counts only if it was recorded before the reading, and a Coda with none
-is reported as having untested exclusions rather than failed.
+is reported as having untested exclusions rather than failed. Where an
+organization tracks proposals as their own record (`specs/proposal.yml`), the
+instrument reads the rate rather than only the fact: how many resolved against
+this Coda, how many of those were declined — a decline read without that base
+cannot tell a boundary doing heavy work from one that stopped almost nothing.
+`withdrawn` proposals are reported alongside the count and never folded into
+it, since nobody weighed those and said no. The band a decline reaches does
+not move for having a base to sit against — a resolved proposal is still the
+organization's own account of its own conduct.
 
 How well a statement is written and what stands behind it are separate readings,
 so the instrument reports a score and a warrant band and never combines them. The
@@ -264,6 +273,8 @@ of it is edited without acknowledgement.
 
     harmonic-method/coda.yml                                    the root Coda
     harmonic-method/notes/*.yml                                 what the root is held to
+    harmonic-method/proposals/<slug>/proposal.yml               a candidate, weighed and not yet a Beat
+    harmonic-method/proposals/<slug>/notes/*.yml                its deliberation
     harmonic-method/beats/<slug>/beat.yml                       a Beat
     harmonic-method/beats/<slug>/notes/*.yml                    its knowledge
     harmonic-method/beats/<slug>/versions/<v>/version.yml       a planned step

@@ -76,9 +76,12 @@ only meaningful once the ledgers it is measured on exist.
    organizations have refused more than they can recite, and the refusals are the
    sharper source: an exclusion someone can name from memory is often the one
    they find comfortable to say, while the record holds the ones that cost
-   something. Where a decline is not covered by the draft, that is either a
-   missing clause or a decision nobody stands behind any more — put it back to
-   them as the question it is, and do not resolve it yourself.
+   something. If they track proposals as their own record, ask for the resolved
+   ones — declined and withdrawn together — since a decline read next to
+   everything else that was weighed says more than a decline read alone. Where
+   a decline is not covered by the draft, that is either a missing clause or a
+   decision nobody stands behind any more — put it back to them as the
+   question it is, and do not resolve it yourself.
 6. **Provide for what comes after.** What share is defended for the next thing,
    and under what condition the current thing ends. Both are usually missing and
    neither is optional: succession funded out of surplus is succession that never

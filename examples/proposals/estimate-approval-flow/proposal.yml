@@ -1,0 +1,11 @@
+# Example — an accepted Proposal. Carries no reference to the Beat it became:
+# see the rule in specs/proposal.yml on why that citation runs the other way,
+# if it runs at all.
+proposal:
+  id: EX-P-003
+  coda: EX-SYS-CODA
+  summary: >
+    Replace the email-thread approval process with an in-record approve or
+    decline, so an estimate's status and who decided it live against the
+    engagement instead of in an inbox.
+  status: accepted

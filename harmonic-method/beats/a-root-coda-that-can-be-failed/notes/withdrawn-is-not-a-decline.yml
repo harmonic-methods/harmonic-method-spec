@@ -1,0 +1,30 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-145
+  type: decision
+  attached_to: HM-B-012
+  beat_version: HM-BV-012.4
+  content: >
+    `withdrawn` is a fourth Proposal status, distinct from `declined`, even
+    though [HM-N-132] committed only to three states — accepted, declined,
+    still open. It is reported beside a decline's count in
+    `root-coda-quality-check` and never folded into it.
+  rationale: >
+    The Note that first sketched this entity said plainly that its specifics
+    were not decided, and this is the specific that needed deciding rather
+    than copied. Two things end a Proposal without it becoming its outcome,
+    and they are not the same fact. One is the Coda actively rejecting it — the
+    idea was weighed and the answer was no. The other is nobody finishing the
+    weighing at all — the proposer moved on, priorities shifted, attention
+    went elsewhere. Forcing the second into `declined` would credit a
+    boundary for a decision nobody made; forcing it into `open` forever
+    would misstate a plain fact, that consideration has stopped.
+
+    This is the same distinction `specs/bar.yml` already draws between a
+    malformed tree and a team that has not gotten to something yet — a period
+    that closed with no anchor is reported and not failed, because the two
+    cases mean different things and collapsing them into one signal would
+    lose the difference that matters. A `withdrawn` Proposal counted as a
+    decline would inflate exactly the rate this entity exists to make honest,
+    which would be worse than not having the entity at all: a wrong number
+    with the appearance of rigor behind it.

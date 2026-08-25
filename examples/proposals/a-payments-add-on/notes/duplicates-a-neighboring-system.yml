@@ -1,0 +1,19 @@
+# Example — a decision Note attached to a declined Proposal, showing that the
+# reasoning lives here and not on the proposal's own status field. See
+# specs/note.yml and specs/proposal.yml.
+note:
+  id: EX-N-003
+  type: decision
+  attached_to: EX-P-001
+  content: >
+    Declined. Taking payment is a capability of the billing system this
+    engagement already uses, not of estimate approval.
+  rationale: >
+    The system Coda is about the estimate being generated, approved, and
+    traceable — not about money changing hands. Adding a payment step here
+    would duplicate ground a neighboring system already covers, and would tie
+    this system's boundary to a second system's own compliance obligations
+    (card handling, refunds) that have nothing to do with what this Coda
+    promises. If payment status ever needs to be visible here, that is a
+    reference to the billing system's own record, not a capability of this
+    one.
