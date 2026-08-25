@@ -36,6 +36,16 @@ beat_version:
     a live claim of the one that replaced it. The question the Note raised is
     moot rather than answered, and it is superseded rather than left standing
     as an open question about a statement nobody can read anymore.
+
+    Also closed in the same step, once review reached this draft: the first
+    pass of `beat-version-composing` carried a baseline-drafting step written
+    by extending `beat-version-quality-check`'s own, then-stale carve-out for
+    a "baseline Beat Version" — never checked against `specs/downbeat.yml`,
+    which already stated a Downbeat "is not a Beat Version" and "records what
+    was true, not what is intended." Both the drafting step and the check
+    rule it was extended from are corrected here, together, rather than
+    leaving the published rubric to contradict the spec it should have
+    conformed to in the first place. [HM-N-142] records the decision.
   scope: >
     In: `skills/beat-version-composing/SKILL.md`; the README and llms.txt
     entries naming it under Producing, with the stated count moving from four
@@ -46,11 +56,16 @@ beat_version:
     In also: closing the step whose work has reached the trunk, which
     [HM-N-055] puts in the next substantive step's scope.
 
-    Out: any change to `specs/beat-version.yml` or
-    `skills/beat-version-quality-check/SKILL.md`. Both were already complete;
-    what was missing was an instrument that produces what the second one
-    grades, which is the same finding this Beat's first step made for the
-    Composer's rubric and nothing new about either published surface.
+    Out: any change to `specs/beat-version.yml`. It was already complete and
+    nothing here revisits it.
+
+    In (revised): a correction to `skills/beat-version-quality-check/SKILL.md`
+    was originally scoped out, on the finding that it was already complete —
+    that finding held for the entity's fields but not for its baseline
+    carve-out, which review of this same draft surfaced as contradicting
+    `specs/downbeat.yml`. Fixed here rather than deferred to a second step,
+    since both the drafting text and the check rule it was drawn from share
+    one defect and one fix.
 
     Out: a clarifying instrument for the Orchestrator. `beat-clarifying`
     earned its place by a demonstrated need once `beat-composing` had shipped

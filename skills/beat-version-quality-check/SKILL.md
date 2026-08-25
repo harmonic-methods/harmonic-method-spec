@@ -189,9 +189,12 @@ Dimension order: scoped, directional, testable, traceable, assignable, riskAware
   Scope are precise and self-contained.
 - Suggestions must be actionable — "add explicit scope boundaries for what's
   deferred to v2" not "improve scope".
-- A baseline Beat Version (v1 representing work that already exists) should be
-  evaluated differently: Scoped is less relevant; Traceable and Testable still
-  matter.
+- **A Beat Version never represents work that already happened.** That record
+  is a Downbeat's job — `specs/downbeat.yml` states plainly that a Downbeat
+  "is not a Beat Version" and "records what was true, not what is intended."
+  If asked to score something offered as a baseline of existing work, say
+  that this is not what the entity is for and point at
+  `skills/downbeat-taking/SKILL.md` rather than score it leniently.
 - **Name the version you scored against.** Read `spec_version` from
   `specs/spec-set.yml` and report it with the result. A score is a claim about an
   entity measured against a rubric, and rubrics move — without the version a

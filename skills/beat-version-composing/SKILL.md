@@ -97,11 +97,13 @@ than whatever closes the most ground.
    graph changes, and the summary is not the place structured relationships
    belong.
 
-**If this step represents work that already happened** — a baseline capturing
-what already exists rather than a step still to be done — say so plainly in
-the draft. The rubric scores a baseline differently, and drafting it as though
-scope boundaries still need to prevent creep in future work would be scoring
-against the wrong shape before anyone else gets the chance to.
+**If what is being asked for is a record of work that already happened**, this
+is not a Beat Version to draft. `specs/downbeat.yml` is explicit that a
+Downbeat "is not a Beat Version" and "records what was true, not what is
+intended" — a baseline is exactly that record, and belongs to
+`skills/downbeat-taking/SKILL.md`, not here. Say so, and point at that
+instrument instead of drafting a plan for something that has already
+happened.
 
 ## Asking rather than assuming
 

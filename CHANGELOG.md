@@ -33,8 +33,18 @@
     complete a pattern rather than answer one. The Promoter's absence is a
     standing decision about evidentiary immaturity and nothing here revisits
     it.
-  - No spec or rubric changed. The published surfaces move from four producing
-    skills to five; the spec set version does not move.
+  - **A baseline is not a Beat Version — corrected in the published rubric,
+    too.** The first draft of `beat-version-composing` gave baseline-recording
+    work its own drafting step, extending a carve-out already sitting in
+    `skills/beat-version-quality-check/SKILL.md` that scored a "baseline Beat
+    Version" leniently rather than declining to score one at all. Neither text
+    had been checked against `specs/downbeat.yml`, which already says a
+    Downbeat "is not a Beat Version" and "records what was true, not what is
+    intended." Both texts now redirect a baseline to
+    `skills/downbeat-taking/SKILL.md` instead. This edits the published
+    standard — the rubric's check rules — so the spec set version moves,
+    1.9.0 -> 1.10.0, a minor step: the permitted shape of a baseline case
+    changed, no consumer field or entity did. See HM-N-142.
 
 - **A Revision can outrun the plan that was supposed to precede it.** Harmonica's
   own reference implementation ships a Revision without a Beat Version — a
