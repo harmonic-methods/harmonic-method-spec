@@ -2,6 +2,27 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A colon could turn a rule into a mapping, and nothing said so.** The hazard
+  was met three times while authoring and misread each time as friction: a colon
+  on a continuation line of a wrapped rule raises a scanner error, the checker
+  reports a line and a column, the sentence gets rewritten. The loud case is not
+  the dangerous one. A rule short enough to fit on one line silently becomes a
+  mapping instead — `- A Beat without a Coda is stuck: it cannot be decomposed`
+  parses to a key and a value, the file stays valid, the other rules are
+  unaffected, and `npm run validate` prints `conformant` while a published rule is
+  no longer a rule. Verified by producing it. Forty-five rule items across nine
+  spec files are now block scalars, which makes a colon legal and closes the
+  trapdoor rather than guarding it, and a check asserts both that every rule
+  parses to a string and that every item keeps the form. Both halves were made to
+  fail before being believed. See HM-BV-007.4 and HM-N-148.
+  - **No published text moved**, and that was checked rather than reviewed: every
+    spec file was parsed before and after and the parsed values compared. The
+    strip form was chosen over the clip form for exactly that reason — clip
+    appends a newline to every value it touches.
+  - The eleven rules already using the clip form keep their trailing newline and
+    are left alone. Normalising them would move published strings for a cosmetic
+    gain; the difference is recorded rather than fixed or ignored.
+
 - **The altitudes get specs.** Three specs already depended on entities this
   repository never defined: `specs/coda.yml` declared
   `attached_to: [portfolio, system, beat]`, `specs/bar.yml` attached a cadence
@@ -23,7 +44,7 @@
     and needs no Portfolio invented to hold it. `specs/coda.yml` says so
     directly now, and this repository's own tree is a root System — the rule
     that would have wrapped it was refused for exactly that reason. See
-    HM-N-148.
+    HM-N-149.
   - **The checker walks the tree recursively**, reading which kind a node is
     from its directories rather than from a declaration that would be a second
     copy. Four new rules, each made to fail against the worked example before
@@ -33,7 +54,7 @@
     is exercised rather than described. Its second System's counterparty is the
     practice itself, which cannot leave — the shape
     `skills/root-coda-quality-check/SKILL.md` already names as generating no
-    signal. See HM-N-149 and HM-N-150.
+    signal. See HM-N-150 and HM-N-151.
   - Out: any dependency relation, at any altitude. Nesting is containment, and
     using it to record a dependency puts a capability where it does not belong.
     The spec says where one belongs if an implementation adds it — between the

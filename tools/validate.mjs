@@ -872,6 +872,57 @@ function checkIllustrationsRun() {
 }
 
 /**
+ * Every published rule is a string, and every rule item is written as a block
+ * scalar.
+ *
+ * A rule written as a plain scalar with a colon in it does not fail — it
+ * silently becomes a mapping. `- A Beat is stuck: it cannot be decomposed`
+ * parses to `{'A Beat is stuck': 'it cannot be decomposed'}`, the file stays
+ * valid YAML, and this checker reported conformant with a corrupted rule on the
+ * normative surface. That is the failure this exists to catch, and it was found
+ * by producing it.
+ *
+ * The multi-line case fails loudly instead, which is how the hazard was noticed
+ * at all — three times while authoring, each reported with a line and column.
+ * The single-line case is the dangerous one precisely because nothing reports it.
+ *
+ * Both halves are asserted. The type check catches the corruption whatever the
+ * formatting; the block-scalar check keeps the form that makes a colon legal, so
+ * the trapdoor is not rebuilt by the next contributor who writes a short rule.
+ * Scoped to `specs/` on purpose, like the retired-altitude sweep: this is a
+ * convention this repository keeps on its own normative files, not something an
+ * adopter's tree is measured against.
+ */
+function checkRuleScalars() {
+  console.log('== rule scalars ==');
+  const before = failures;
+  let n = 0;
+  for (const f of ls('specs')) {
+    const p = `specs/${f}`;
+    let doc;
+    try { doc = load(p); } catch { continue; }
+    const rules = doc?.rules;
+    if (!Array.isArray(rules)) continue;
+    rules.forEach((r, i) => {
+      n++;
+      if (typeof r !== 'string') {
+        fail(`${p}: rules[${i}] parsed as ${Array.isArray(r) ? 'a list' : typeof r} — a colon in a plain scalar silently becomes a mapping; write the rule as '- >-'`);
+      }
+    });
+    let inRules = false;
+    read(p).split('\n').forEach((line, idx) => {
+      if (/^rules:/.test(line)) { inRules = true; return; }
+      if (line && !/^\s/.test(line)) inRules = false;
+      const st = line.trimStart();
+      if (inRules && /^-\s/.test(st) && !/^-\s*[>|]/.test(st)) {
+        fail(`${p}:${idx + 1}: rule item is a plain scalar — write it as '- >-' so a colon cannot turn it into a mapping`);
+      }
+    });
+  }
+  if (failures === before) console.log(`  ${n} rules, each a string written as a block scalar`);
+}
+
+/**
  * Retired altitude names, rejected on the normative surface only.
  *
  * The altitudes are portfolio, system, and beat. "Organization" was retired as an
@@ -919,6 +970,7 @@ if (TARGET) {
   }
 } else {
   checkSpecs();
+  checkRuleScalars();
   checkEnumDeclarations();
   checkRetiredAltitudes();
   checkRubricFingerprints();

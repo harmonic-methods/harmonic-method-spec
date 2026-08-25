@@ -50,15 +50,20 @@ fields:
       Who took the reading. A person, or an agent operating under a named
       person's accountability — the same rule that governs who holds a function.
 rules:
-  - A Downbeat is immutable. A newer reading is a new Downbeat; correcting one
+  - >-
+    A Downbeat is immutable. A newer reading is a new Downbeat; correcting one
     by editing it destroys the evidence the anchor exists to provide.
-  - Downbeats are additive. Taking one never removes or supersedes a prior one,
+  - >-
+    Downbeats are additive. Taking one never removes or supersedes a prior one,
     and the latest is simply the one taken most recently.
-  - A Downbeat is not a Beat Version. It carries no plan, no scope, no quality
+  - >-
+    A Downbeat is not a Beat Version. It carries no plan, no scope, no quality
     grade, and no Revisions — it records what was true, not what is intended.
-  - Drift is the difference between the latest Downbeat and the present. A Coda
+  - >-
+    Drift is the difference between the latest Downbeat and the present. A Coda
     that has changed since the anchor was taken is the signal the Conductor
     exists to surface.
-  - Crossing a Bar boundary produces one Downbeat per capability in view. One
+  - >-
+    Crossing a Bar boundary produces one Downbeat per capability in view. One
     occasion, many anchors — a single reading across a portfolio would average
     away the only thing worth knowing.

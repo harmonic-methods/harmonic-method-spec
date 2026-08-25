@@ -34,7 +34,10 @@ fields:
       root: it is a position in the tree rather than a kind of entity, so a
       System with nothing above it is as legitimately root as a Portfolio is.
 rules:
-  - A Beat without a Coda cannot be decomposed into Beat Versions.
-  - Alignment ("harmonization") is assessed against the Coda chain, not against
+  - >-
+    A Beat without a Coda cannot be decomposed into Beat Versions.
+  - >-
+    Alignment ("harmonization") is assessed against the Coda chain, not against
     individual documents.
-  - Changing a Coda is a recorded decision; the prior statement is preserved.
+  - >-
+    Changing a Coda is a recorded decision; the prior statement is preserved.

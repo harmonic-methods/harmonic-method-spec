@@ -40,26 +40,32 @@ fields:
       Candidates weighed against this Portfolio's Coda, which acceptance may
       turn into a System or a Portfolio one level down. See proposal.yml.
 rules:
-  - A Portfolio's children may be Systems, Portfolios, or a mix of both. The
+  - >-
+    A Portfolio's children may be Systems, Portfolios, or a mix of both. The
     distinction between the two is not depth but whether Beats attach, so
     branches of different depths sitting side by side is the ordinary case.
     Requiring one kind of child would require every branch to reach the same
     depth, which no real subject does.
-  - A Portfolio holds no Beats. A capability that wants to attach directly to a
+  - >-
+    A Portfolio holds no Beats. A capability that wants to attach directly to a
     Portfolio is telling you a System is missing between them, and adding it is
     the fix rather than relaxing this rule.
-  - Do not create a Portfolio to hold a single child. Its Coda would either
+  - >-
+    Do not create a Portfolio to hold a single child. Its Coda would either
     restate the child's or be invented to fill the slot, and a statement written
     to satisfy a structure is the one kind this method has no use for. Let the
     child be root, or leave it where it is.
-  - A Portfolio may be root, and only the entity with no parent is. Every other
+  - >-
+    A Portfolio may be root, and only the entity with no parent is. Every other
     Portfolio in a tree has one and is measured against it exactly as a System
     or a Beat would be.
-  - Nesting expresses containment and nothing else. A dependency between two
+  - >-
+    Nesting expresses containment and nothing else. A dependency between two
     Systems is real but is not a nesting relationship and does not justify one;
     nesting one System under another to record that it depends on it puts a
     capability at an altitude it does not belong to.
-  - This method defines no dependency relation at any altitude. An
+  - >-
+    This method defines no dependency relation at any altitude. An
     implementation needing one should carry it between the Beats that depend on
     each other rather than between their Systems, and derive any System-level
     view from those rather than storing it alongside them — a coarser record

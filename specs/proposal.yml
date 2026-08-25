@@ -53,29 +53,35 @@ fields:
         weighed this against the Coda and said no, so it is reported beside a
         decline and never counted as one.
 rules:
-  - A Proposal ladders to the Coda it names directly. It has no `parent` of its
+  - >-
+    A Proposal ladders to the Coda it names directly. It has no `parent` of its
     own to omit or supply, because it has no Coda embedded in it the way a Beat
     does — the ladder is the one thing a Proposal is answering, not a fact it
     states in advance.
-  - Why a Proposal was declined or withdrawn is rationale and belongs in a
+  - >-
+    Why a Proposal was declined or withdrawn is rationale and belongs in a
     decision Note, not in this field — the same discipline `specs/beat-version.yml`
     and `specs/revision.yml` already hold their own `withdrawn` value to.
-  - Acceptance carries no reference to what it became. That thing — whatever
+  - >-
+    Acceptance carries no reference to what it became. That thing — whatever
     altitude it landed at — is the durable record from that point on; a
     Proposal and its outcome are not two accounts of the same thing, and a
     citation running from the new entity back to the Proposal it came from —
     in a Note, if the lineage is worth keeping — costs nothing this field
     would not also cost, without asking the entity that is finished to carry
     a pointer to the one that supersedes it in substance.
-  - Acceptance does not require a capability-shaped outcome. Some Proposals
+  - >-
+    Acceptance does not require a capability-shaped outcome. Some Proposals
     are settled by adopting a standing decision rather than building
     anything — a policy, a constraint, a practice going forward — and that is
     recorded as a decision Note the same way a decline's rationale already
     is. A reader must not assume every `accepted` Proposal has a System, Beat,
     Beat Version, or Revision somewhere that resulted from it.
-  - A Proposal carries no scope, no versions, and no lifecycle beyond the four
+  - >-
+    A Proposal carries no scope, no versions, and no lifecycle beyond the four
     values above. Everything its outcome can hold that a Proposal cannot is
     exactly what accepting it produces.
-  - Declined and withdrawn Proposals are not deleted or moved. A Coda's
+  - >-
+    Declined and withdrawn Proposals are not deleted or moved. A Coda's
     excluded ground is legible only if what it excluded is still there to
     read.
