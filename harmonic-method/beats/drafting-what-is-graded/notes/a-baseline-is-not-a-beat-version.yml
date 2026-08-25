@@ -1,0 +1,43 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-142
+  type: decision
+  attached_to: HM-B-009
+  beat_version: HM-BV-009.3
+  content: >
+    `skills/beat-version-composing/SKILL.md`'s first draft carried a step for
+    the case where what is being asked for is a record of work that already
+    happened — a baseline. That step was written by extending language
+    already sitting in `skills/beat-version-quality-check/SKILL.md`'s check
+    rules, which said a "baseline Beat Version (v1 representing work that
+    already exists)" should be scored "differently," with Scoped waived and
+    Traceable and Testable still applied. Neither text was checked against
+    `specs/downbeat.yml`, which already states plainly that a Downbeat "is
+    not a Beat Version" and "records what was true, not what is intended."
+    A baseline is exactly that record. Both texts are corrected: a baseline
+    is not drafted as a Beat Version and not scored as one either — it is
+    redirected to `skills/downbeat-taking/SKILL.md`, the instrument the spec
+    already names for it.
+  rationale: >
+    The quality-check rule is the older of the two texts and the one that
+    should have caught this — it predates `specs/downbeat.yml` and was never
+    revisited once the Downbeat entity gave baselines a home of their own.
+    The composing skill's first draft inherited the mistake by extending the
+    stale rule rather than checking it against the spec, which is the failure
+    mode `skills/beat-version-quality-check/SKILL.md`'s own check rules warn
+    against elsewhere in this same file: judge against what the spec
+    currently says, not against a rule that has gone stale since it was
+    written.
+
+    Fixed as one step rather than two, on instruction, because both texts
+    share one defect (treating a baseline as a kind of Beat Version) and the
+    same fix (pointing at the Downbeat instead). Splitting the correction
+    across two Beat Versions — one for the still-open draft, one for the
+    already-published rubric — would have left the rubric wrong for longer
+    with no reason beyond which PR happened to be open first.
+
+    This is a correction to already-merged, fingerprinted canonical text, not
+    only to an unmerged draft. `npm run fingerprint` was re-run and the spec
+    set version moved (1.9.0 -> 1.10.0, a minor step per `AGENTS.md` — the
+    permitted shape of a baseline case changed, not a new field or entity)
+    because the published standard changed, not just the number.

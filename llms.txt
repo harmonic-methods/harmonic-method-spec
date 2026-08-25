@@ -73,7 +73,7 @@ dimensions of the Beat rubric, and this applies them across the set.
   the useful part
 
 ## Producing
-Four skills produce rather than assess. None carries dimensions or a scale,
+Five skills produce rather than assess. None carries dimensions or a scale,
 none is covered by the digest because there is nothing normative in any of them
 to guard, and each defers every judgement it needs to an instrument above by
 pointing at the file.
@@ -86,6 +86,13 @@ pointing at the file.
   rubric's own text at the moment of asking rather than from a stored mapping,
   each carrying a proposed default. Revision fixes what is badly written;
   clarification asks for what nobody has decided
+- skills/beat-version-composing/SKILL.md: Orchestrator — draft a Beat Version from
+  a description of what should happen next against an existing, scored Beat,
+  reading the gap between current state and Coda before writing so the step
+  proposed is the highest-impact one available rather than the easiest to
+  describe. Requires the Beat already stand on its own; points at beat-composing
+  rather than drafting one itself. Scores with beat-version-quality-check read as
+  written, revises the same two-loop way
 - skills/downbeat-taking/SKILL.md: Conductor — take an immutable anchor on one
   capability: the Coda frozen verbatim, and a reading of how far the work had
   converged toward it. Defines no scale, because downbeat.yml leaves computation

@@ -1,6 +1,6 @@
 # Harmonic Method spec — Revision
 entity: revision
-spec_version: 1.9.0
+spec_version: 1.10.0
 summary: >
   A tracked change to a Beat. Medium-agnostic: a code change with a linked pull
   request, a process change with a linked procedure, a document change with a
