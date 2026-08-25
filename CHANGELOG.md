@@ -34,9 +34,11 @@
     practice itself, which cannot leave — the shape
     `skills/root-coda-quality-check/SKILL.md` already names as generating no
     signal. See HM-N-149 and HM-N-150.
-  - Out: any dependency relation at the System altitude. Nesting is
-    containment; the enablement relation already runs between Beats and a
-    System-level view is read upward rather than stored.
+  - Out: any dependency relation, at any altitude. Nesting is containment, and
+    using it to record a dependency puts a capability where it does not belong.
+    The spec says where one belongs if an implementation adds it — between the
+    Beats that depend on each other, with any System-level view derived rather
+    than stored — and stops there rather than specifying the relation.
   - The spec set takes a minor step.
 
 - **A recorded source has to be reachable.** The legibility bound covers a Note

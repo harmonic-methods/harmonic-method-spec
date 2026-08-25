@@ -56,6 +56,13 @@ rules:
     Portfolio in a tree has one and is measured against it exactly as a System
     or a Beat would be.
   - Nesting expresses containment and nothing else. A dependency between two
-    Systems is not a nesting relationship and does not justify one — that
-    relation is carried between the Beats that actually enable one another, and
-    read upward from them.
+    Systems is real but is not a nesting relationship and does not justify one;
+    nesting one System under another to record that it depends on it puts a
+    capability at an altitude it does not belong to.
+  - This method defines no dependency relation at any altitude. An
+    implementation needing one should carry it between the Beats that depend on
+    each other rather than between their Systems, and derive any System-level
+    view from those rather than storing it alongside them — a coarser record
+    stored beside a finer one is a second source of truth that goes stale when
+    the finer one moves, and it cannot say which capabilities the dependency is
+    actually about.

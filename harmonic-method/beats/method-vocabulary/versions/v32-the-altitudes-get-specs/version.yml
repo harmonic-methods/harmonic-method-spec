@@ -44,10 +44,14 @@ beat_version:
     which [HM-N-055] puts in the next substantive step's scope. Four is already
     a backlog; the habit is being caught up rather than deferred again.
 
-    Out: any dependency relation at the System altitude. Nesting is containment
-    and a dependency is a graph between peers; the enablement relation already
-    exists between Beats, and a System-level view of it is read upward rather
-    than stored. [HM-N-150] records why the field was refused.
+    Out: any dependency relation, at any altitude. Nesting is containment and a
+    dependency is a graph between peers, so using the first to record the second
+    puts a capability where it does not belong. `specs/portfolio.yml` says where
+    one belongs if an implementation adds it — between the Beats that depend on
+    each other, with any System-level view derived rather than stored — and
+    stops there rather than specifying the relation itself. [HM-N-150] records
+    why the field was refused, and corrects a draft of itself that had asserted
+    the relation as though this method already carried it.
 
     Out: extending cadence to nested nodes. `specs/bar.yml` attaches a Bar to a
     portfolio or a system, and a tree may now have many of both, but the
