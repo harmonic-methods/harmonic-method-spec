@@ -1,0 +1,28 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-150
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.32
+  content: >
+    Nesting expresses containment only. A dependency between two Systems is not
+    a nesting relationship, does not justify one, and gets no field of its own
+    at the System altitude — it is carried between the Beats that enable one
+    another and read upward from them.
+  rationale: >
+    Three relations were separated deliberately here, because collapsing any two
+    of them is how the model goes wrong. Nesting is containment: a Beat lives
+    inside exactly one System. Layers are classification: a thing is scored
+    against many and belongs to none. Dependency is a graph: it runs between
+    peers and respects no boundary.
+
+    Giving Systems a dependency field would have been a second source of truth
+    for a fact the Beat-level enablement graph already carries, and a stored
+    System dependency goes stale the moment the Beats beneath it change while
+    a derived one cannot. Reading it upward also answers why — naming the Beats
+    that actually enable each other — where a stored edge only asserts that.
+
+    Recorded as a decision rather than left implicit because the pressure to add
+    the field will recur every time someone meets a genuine cross-System
+    dependency, and the answer is that the relation already exists one altitude
+    down rather than that the dependency is not real.

@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.30
   beat: HM-B-003
   title: Preservation begins at publication
-  status: active
+  status: delivered
   summary: >
     The preservation rule was written from the git case and assumed it without
     saying so. A Note drafted in a working tree is edited freely and becomes a

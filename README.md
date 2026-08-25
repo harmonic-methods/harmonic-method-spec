@@ -144,6 +144,8 @@ possible to say which of the five nobody is currently holding.
 | Spec | Entity |
 | --- | --- |
 | [specs/coda.yml](specs/coda.yml) | the strategic outcome an entity serves |
+| [specs/portfolio.yml](specs/portfolio.yml) | a grouping of Systems and Portfolios, nesting without limit |
+| [specs/system.yml](specs/system.yml) | the altitude where Beats attach |
 | [specs/beat.yml](specs/beat.yml) | a durable capability |
 | [specs/proposal.yml](specs/proposal.yml) | a candidate capability, weighed and not yet one |
 | [specs/beat-version.yml](specs/beat-version.yml) | a planned step in a Beat's evolution |

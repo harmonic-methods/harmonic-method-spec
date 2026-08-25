@@ -1,0 +1,56 @@
+# Harmonic Method spec — System
+entity: system
+spec_version: 1.11.0
+summary: >
+  The altitude where Beats attach. A System is a Coda and the set of Beats that
+  ladder to it — the smallest container that holds capability rather than
+  holding other containers. Everything above a System is a Portfolio; everything
+  below a Beat is that Beat's own decomposition. This is the one entity whose
+  definition fixes where the container chain stops.
+fields:
+  id:
+    type: string
+    required_when: another entity references it
+    description: >
+      Addressable identifier. A System nothing points at — the only one in a
+      tree, with no siblings and no Portfolio above it — is identified by the
+      tree it is.
+  coda:
+    type: coda
+    required: true
+    description: >
+      What this System is for. Omits `parent` when the System is root; names its
+      Portfolio's Coda otherwise. See coda.yml.
+  beats:
+    type: list<beat>
+    description: >
+      The capabilities that ladder to this System's Coda. The directory is the
+      list. See beat.yml.
+  notes:
+    type: list<note>
+    description: >
+      Knowledge held at the System rather than at any one Beat. See note.yml.
+  proposals:
+    type: list<proposal>
+    description: >
+      Candidates weighed against this System's Coda, which acceptance may turn
+      into Beats. See proposal.yml.
+rules:
+  - A System holds Beats and never other Systems. A System that appears to
+    contain a smaller System is a Portfolio holding two Systems, and naming it
+    correctly is what keeps "System" meaning one thing — the altitude where
+    Beats attach.
+  - Split a System when its Coda can no longer be stated without enumerating its
+    parts. Size is not the test and neither is team shape; a Coda doing a table
+    of contents' job is the signal that the parts hold separate intent and want
+    Codas of their own.
+  - Never split a System along a layer. If each resulting part's Beats can only
+    ship in lockstep with a sibling part's, the boundary is a way of describing
+    the work rather than a division of it, and every Beat beneath then ladders
+    to a Coda that nothing of that shape could fail.
+  - A System may be root. Root is the absence of a parent, not a kind of entity,
+    so a tree whose top is a single System is well formed and needs no Portfolio
+    invented above it to hold it.
+  - A System's Coda is scored against the same rubric as any other Coda with a
+    parent, and against the root rubric when it has none. The altitude does not
+    select the instrument; the presence of a parent does.

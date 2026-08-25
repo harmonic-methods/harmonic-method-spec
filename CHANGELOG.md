@@ -2,6 +2,43 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **The altitudes get specs.** Three specs already depended on entities this
+  repository never defined: `specs/coda.yml` declared
+  `attached_to: [portfolio, system, beat]`, `specs/bar.yml` attached a cadence
+  to a portfolio or a system, and `specs/note.yml` let knowledge belong to one.
+  Only `beat` had a file. `specs/system.yml` and `specs/portfolio.yml` close
+  the gap. See HM-B-003 and HM-BV-003.32.
+  - **A System is the altitude where Beats attach** — the one entity whose
+    definition fixes where the container chain stops. It holds Beats and never
+    other Systems; what looks like a nested System is a Portfolio holding two.
+    Split one when its Coda can no longer be stated without enumerating its
+    parts, and never along a layer: if the parts' Beats can only ship in
+    lockstep, the boundary describes the work rather than dividing it.
+  - **A Portfolio is every altitude above that**, holding Systems, Portfolios,
+    or a mix, recursing without limit. Requiring one kind of child would
+    require every branch to reach the same depth, which no real subject does.
+    It holds no Beats, and holding a single child is a defect — that Coda
+    either restates its child's or was invented to fill the slot.
+  - **Root is a position, not a kind.** A System with nothing above it is root
+    and needs no Portfolio invented to hold it. `specs/coda.yml` says so
+    directly now, and this repository's own tree is a root System — the rule
+    that would have wrapped it was refused for exactly that reason. See
+    HM-N-148.
+  - **The checker walks the tree recursively**, reading which kind a node is
+    from its directories rather than from a declaration that would be a second
+    copy. Four new rules, each made to fail against the worked example before
+    being trusted: a Portfolio holding Beats, a Portfolio holding one child, a
+    non-root node declaring `bars/`, and a non-root Coda that does not ladder.
+  - **The worked example is now a Portfolio over two Systems**, so the nesting
+    is exercised rather than described. Its second System's counterparty is the
+    practice itself, which cannot leave — the shape
+    `skills/root-coda-quality-check/SKILL.md` already names as generating no
+    signal. See HM-N-149 and HM-N-150.
+  - Out: any dependency relation at the System altitude. Nesting is
+    containment; the enablement relation already runs between Beats and a
+    System-level view is read upward rather than stored.
+  - The spec set takes a minor step.
+
 - **A recorded source has to be reachable.** The legibility bound covers a Note
   cited as lineage by a reader who cannot open it. It did not cover a *source*
   cited by a Note that reader can open — which fails the same way and for the

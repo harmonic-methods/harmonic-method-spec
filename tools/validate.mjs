@@ -304,25 +304,92 @@ function readNotes(dir, ownerId, noteIds, bvRefs, supersedesRefs) {
 function checkTree(root) {
   console.log(`== ${root}/ ==`);
 
+  // Identifiers are unique across the whole tree, not per node: a Note may
+  // supersede one written anywhere, and a Beat Version reference resolves
+  // tree-wide, so the sets outlive any single node and are threaded down.
+  const ctx = {
+    beatIds: new Set(),
+    bvIds: new Set(),
+    noteIds: new Set(),
+    revIds: new Set(),
+    downbeatIds: new Set(),
+    bvRefs: [],
+    barRefs: [],
+    supersedesRefs: [],
+  };
+
+  checkNode(root, null, ctx);
+
+  // Resolved last, so a Note may reference any Beat Version in the tree.
+  for (const { nPath, ref } of ctx.bvRefs) {
+    if (!ctx.bvIds.has(ref)) fail(`${nPath}: beat_version '${ref}' does not resolve`);
+  }
+
+  // Resolved last for the same reason — a Note may supersede one written
+  // anywhere else in the tree, including one not yet seen when it was read.
+  for (const { nPath, id, ref } of ctx.supersedesRefs) {
+    if (!ctx.noteIds.has(ref)) fail(`${nPath}: '${id}' supersedes '${ref}', which does not resolve`);
+  }
+
+  checkCadence(root, ctx.barRefs);
+}
+
+/**
+ * One node of the tree, which is a System or a Portfolio.
+ *
+ * Which one is read from the directory rather than declared, because a
+ * declaration would be a second copy of what the layout already says. A node
+ * holding `beats/` is a System; one holding `systems/` or `portfolios/` is a
+ * Portfolio. Holding both fails: `specs/portfolio.yml` puts capability at the
+ * System altitude and nowhere else, so a Beat hanging off a Portfolio means a
+ * System is missing between them.
+ *
+ * `parentCodaId` is null for the tree root and the Coda id of the container
+ * otherwise — which is the whole of what root means here. `specs/coda.yml`
+ * makes root a position rather than a kind, so a tree whose top is a single
+ * System is well formed and this function does not care which it walked into.
+ */
+function checkNode(root, parentCodaId, ctx) {
+  const { beatIds, bvIds, noteIds, revIds, downbeatIds, bvRefs, barRefs, supersedesRefs } = ctx;
+  const isRoot = parentCodaId === null;
+
   let coda;
   try { coda = treeLoad(`${root}/coda.yml`)?.coda; } catch (e) { fail(`${root}/coda.yml: ${e.message}`); }
   const codaId = coda?.id;
-  if (codaId === undefined) fail(`${root}/coda.yml: a Coda with Beats beneath it needs an id for them to ladder to`);
+  if (codaId === undefined) fail(`${root}/coda.yml: a Coda with children beneath it needs an id for them to ladder to`);
   if (!coda?.statement) fail(`${root}/coda.yml: statement missing`);
-  if (coda?.parent !== undefined) fail(`${root}/coda.yml: a root Coda omits parent`);
+  if (isRoot) {
+    if (coda?.parent !== undefined) fail(`${root}/coda.yml: a root Coda omits parent`);
+  } else if (coda?.parent !== parentCodaId) {
+    fail(`${root}/coda.yml: coda.parent '${coda?.parent}' does not ladder to ${parentCodaId}`);
+  }
 
-  const beatIds = new Set();
-  const bvIds = new Set();
-  const noteIds = new Set();
-  const revIds = new Set();
-  const downbeatIds = new Set();
-  const bvRefs = [];
-  const barRefs = [];
-  const supersedesRefs = [];
+  const systemSlugs = treeLs(`${root}/systems`);
+  const portfolioSlugs = treeLs(`${root}/portfolios`);
+  const beatSlugs = treeLs(`${root}/beats`);
+  const isPortfolio = systemSlugs.length > 0 || portfolioSlugs.length > 0;
 
-  const rootNotes = readNotes(`${root}/notes`, codaId, noteIds, bvRefs, supersedesRefs);
-  console.log(`  ${codaId ?? '(root)'}  root Coda`);
-  console.log(`    notes:    ${rootNotes.join(', ') || '(none)'}`);
+  if (isPortfolio && beatSlugs.length > 0) {
+    fail(`${root}/: holds beats/ alongside systems/ or portfolios/ — specs/portfolio.yml: a Portfolio holds no Beats, and a capability wanting to attach here means a System is missing between them`);
+  }
+
+  // specs/portfolio.yml: a Portfolio holding one child has a Coda that either
+  // restates that child's or was invented to fill the slot. Structure is the
+  // proxy a checker can see for a statement written to satisfy a shape.
+  if (isPortfolio && systemSlugs.length + portfolioSlugs.length === 1) {
+    fail(`${root}/: a Portfolio holding a single child — specs/portfolio.yml: let the child be root or leave it where it is, rather than inventing a Coda to sit above it`);
+  }
+
+  // Cadence is declared once, at the tree root. A nested node carrying bars/
+  // would be silently ignored by checkCadence, so it fails here instead.
+  if (!isRoot && treeLs(`${root}/bars`).length > 0) {
+    fail(`${root}/bars/: cadence is declared at the tree root, and bars here would not be read`);
+  }
+
+  const label = isPortfolio ? 'Portfolio' : 'System';
+  const nodeNotes = readNotes(`${root}/notes`, codaId, noteIds, bvRefs, supersedesRefs);
+  console.log(`  ${codaId ?? '(root)'}  ${isRoot ? 'root ' : ''}${label}${isRoot ? ' Coda' : ` — ${root}/`}`);
+  console.log(`    notes:    ${nodeNotes.join(', ') || '(none)'}`);
 
   // Proposals sit beside beats/, not beneath one — a candidate capability is
   // not yet owned by any Beat, which is exactly the question its resolution
@@ -351,6 +418,14 @@ function checkTree(root) {
     proposals.push(`${p.id} ${p.status}${pNotes.length ? ` [${pNotes.join(', ')}]` : ''}`);
   }
   if (proposals.length) console.log(`  proposals: ${proposals.join(', ')}`);
+
+  // A Portfolio's work is its children's. Recurse and stop — everything below
+  // here reads Beats, which a Portfolio does not have.
+  if (isPortfolio) {
+    for (const s of systemSlugs) checkNode(`${root}/systems/${s}`, codaId, ctx);
+    for (const p of portfolioSlugs) checkNode(`${root}/portfolios/${p}`, codaId, ctx);
+    return;
+  }
 
   for (const slug of treeLs(`${root}/beats`)) {
     const beatPath = `${root}/beats/${slug}/beat.yml`;
@@ -463,18 +538,6 @@ function checkTree(root) {
     if (anchors.length) console.log(`    anchors:  ${anchors.join(', ')}`);
   }
 
-  // Resolved last, so a Note may reference any Beat Version in the tree.
-  for (const { nPath, ref } of bvRefs) {
-    if (!bvIds.has(ref)) fail(`${nPath}: beat_version '${ref}' does not resolve`);
-  }
-
-  // Resolved last for the same reason — a Note may supersede one written
-  // anywhere else in the tree, including one not yet seen when it was read.
-  for (const { nPath, id, ref } of supersedesRefs) {
-    if (!noteIds.has(ref)) fail(`${nPath}: '${id}' supersedes '${ref}', which does not resolve`);
-  }
-
-  checkCadence(root, barRefs);
 }
 
 /**
@@ -569,12 +632,29 @@ function checkCadence(root, barRefs) {
  * spec here defines them. Skills are excluded: they cite the reference
  * implementation's vocabulary deliberately.
  */
+/**
+ * Every node path in a tree, root first — the same descent checkNode makes.
+ *
+ * The sweep below builds paths rather than walking directories, so nesting
+ * would silently take files out of its reach: restructuring the worked example
+ * into a Portfolio dropped its coverage by seven files before this existed,
+ * with nothing failing to say so. A sweep that quietly checks less is worse
+ * than one that never ran.
+ */
+function treeNodes(root) {
+  return [
+    root,
+    ...ls(`${root}/systems`).flatMap((s) => treeNodes(`${root}/systems/${s}`)),
+    ...ls(`${root}/portfolios`).flatMap((p) => treeNodes(`${root}/portfolios/${p}`)),
+  ];
+}
+
 function checkVocabulary(roots) {
   console.log('== vocabulary ==');
   const stray = /\b(project|movement|drop)s?\b/i;
   const files = [
     ...ls('specs').map((f) => `specs/${f}`),
-    ...roots.flatMap((root) => [
+    ...roots.flatMap(treeNodes).flatMap((root) => [
       `${root}/coda.yml`,
       ...ls(`${root}/notes`).map((f) => `${root}/notes/${f}`),
       ...ls(`${root}/proposals`).flatMap((pslug) => [

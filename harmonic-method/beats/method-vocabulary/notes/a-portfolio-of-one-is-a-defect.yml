@@ -1,0 +1,25 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-149
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.32
+  content: >
+    A Portfolio's children may be Systems, Portfolios, or both, and a Portfolio
+    holding exactly one child fails the check.
+  rationale: >
+    Homogeneity was the tempting rule and it is wrong: requiring every child to
+    be the same kind requires every branch to reach the same depth, since a
+    branch needing more depth would force its siblings to be wrapped to match.
+    No real subject is shaped that way. A simple engagement is one System and a
+    complex one is a Portfolio of three, and they sit side by side.
+
+    The single-child failure is the same argument from the other end. A wrapper
+    holding one child has a Coda that either restates its child's or was written
+    to satisfy a structure, and a statement produced to fill a slot is the one
+    kind this method has no use for. Structure is a proxy a checker can see for
+    a defect that is really about meaning, which is why the rule fails on the
+    count rather than trying to judge the text.
+
+    The rule was made to fail before it was trusted: removing the second System
+    from the worked example produces the failure, and restoring it clears it.

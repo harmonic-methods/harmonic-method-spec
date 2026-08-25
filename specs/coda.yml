@@ -1,11 +1,12 @@
 # Harmonic Method spec — Coda
 entity: coda
-spec_version: 1.10.0
+spec_version: 1.11.0
 summary: >
-  The strategic outcome an entity exists to serve. Codas form a hierarchy:
-  a portfolio Coda, system Codas beneath it, and Beat Codas beneath those — so
-  every step of work provably ladders up to strategy. The hierarchy recurses:
-  a portfolio of portfolios is a portfolio at a higher altitude.
+  The strategic outcome an entity exists to serve. Codas form a hierarchy —
+  Portfolio Codas above System Codas above Beat Codas — so every step of work
+  provably ladders up to strategy. The Portfolio layer recurses without limit,
+  so the chain is as deep as its subject requires rather than three levels
+  fixed: see portfolio.yml and system.yml for what sits at each altitude.
 attached_to: [portfolio, system, beat]
 fields:
   id:
@@ -27,8 +28,11 @@ fields:
     type: reference
     required: false
     description: >
-      The Coda one level up (a Beat Coda points to its system Coda; a system
-      Coda points to its portfolio Coda). Root Codas omit this.
+      The Coda one level up — a Beat's to its System's, a System's to the
+      Portfolio holding it, a Portfolio's to the Portfolio holding that. Root
+      Codas omit this, and having no parent is the whole of what makes a Coda
+      root: it is a position in the tree rather than a kind of entity, so a
+      System with nothing above it is as legitimately root as a Portfolio is.
 rules:
   - A Beat without a Coda cannot be decomposed into Beat Versions.
   - Alignment ("harmonization") is assessed against the Coda chain, not against

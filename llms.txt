@@ -11,11 +11,25 @@
 
 ## Specs
 - specs/coda.yml: Coda — the strategic outcome an entity exists to serve
+- specs/portfolio.yml: Portfolio — a Coda and the containers beneath it, which may
+  be Systems, other Portfolios, or a mix. Recurses without limit, so a tree reaches
+  whatever depth its subject has rather than three levels fixed. Holds no Beats:
+  a capability wanting to attach here means a System is missing between them.
+  Holding a single child is a defect, because that Coda either restates the child's
+  or was invented to fill the slot
+- specs/system.yml: System — the altitude where Beats attach, and the one entity
+  whose definition fixes where the container chain stops. A System holds Beats and
+  never other Systems; what looks like a nested System is a Portfolio holding two.
+  Split one when its Coda can no longer be stated without enumerating its parts,
+  and never along a layer — if the parts' Beats can only ship in lockstep, the
+  boundary describes the work rather than dividing it
 - specs/beat.yml: Beat — a durable capability or process, laddering to a Coda
-- specs/proposal.yml: Proposal — a candidate capability weighed against a Coda,
-  resolving to open, accepted, declined, or withdrawn. Sits at the same altitude as
-  a Beat because becoming one is the question it answers; carries no Coda of its
-  own, no scope, no versions. Gives Discriminating a base: a decline counted
+- specs/proposal.yml: Proposal — a candidate weighed against a Coda, resolving to
+  open, accepted, declined, or withdrawn. Sits one altitude below the Coda it is
+  weighed against, because settling what belongs at that next altitude down is the
+  question it answers; carries no Coda of its own, no scope, no versions. Accepting
+  one need not produce a capability at all — adopting a standing decision resolves
+  it as fully. Gives Discriminating a base: a decline counted
   without knowing how many proposals it was one of cannot say whether a boundary
   did work or stopped almost nothing
 - specs/beat-version.yml: Beat Version — a planned step in a Beat's evolution
