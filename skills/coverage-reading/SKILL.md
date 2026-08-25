@@ -16,8 +16,8 @@ it can start. No per-entity score detects that — a set of individually excelle
 Beats can be an unnavigable system.
 
 **This defines nothing new.** Two dimensions published in
-`skills/beat-coda-quality-check/SKILL.md` already carry everything needed:
-*Distinctive*, which is about overlap with sibling Beats, and *Strategically
+`skills/coda-quality-check/SKILL.md` already carry everything needed:
+*Distinctive*, which is about overlap with siblings, and *Strategically
 Aligned*, which is about serving the Coda above. Read that file for what they
 mean. This instrument applies them across the set instead of one at a time, and
 adds no dimension, no scale, and no threshold of its own.

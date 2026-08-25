@@ -1,0 +1,80 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-002.10
+  beat: HM-B-002
+  title: One instrument for every Coda with a parent
+  status: active
+  summary: >
+    The previous step defined the two altitudes above a Beat and had
+    `specs/system.yml` assert that a System's Coda is scored against the same
+    rubric as any other Coda with a parent — that the altitude does not select
+    the instrument, the presence of a parent does. It then deferred building
+    the instrument that could do it, so the spec named a capability the
+    repository did not have.
+
+    `skills/beat-coda-quality-check` becomes `skills/coda-quality-check` and
+    scores a Beat's, a System's, or a Portfolio's Coda. The seven dimensions
+    keep their names and identifiers. What moved is the referent of "sibling"
+    and of "what sits beneath", which the instrument now states as a table
+    across the three altitudes instead of assuming one — a Beat's siblings are
+    the other Beats in its System, a System's are the other children under its
+    Portfolio; a Beat evolves through Beat Versions, a System through its
+    Beats, a Portfolio through its Systems.
+
+    Two things came out of the generalisation rather than being planned into
+    it. Neither instrument checked which Coda it had been handed. The non-root
+    one told an evaluator to score Strategically Aligned as 3 when no parent
+    existed, quietly accepting a root Coda and giving it a number from
+    dimensions whose referent is absent; the root one had no rule at all, and
+    would have scored a Beat Coda against Discriminating and Reciprocal without
+    complaint. Both now refuse and route, so whichever file an operator opens
+    is the one that decides. And `README.md` still sent a new reader's first
+    command at
+    `examples/beats/client-estimate-approval/beat.yml`, a path the previous
+    step moved — whose own risk note asserted that nothing in this repository
+    pointed there.
+
+    Done when: no surface names the old instrument, the rubric identifier moves
+    with it in `specs/beat.yml`, both new specs name the instrument that scores
+    them, the quickstart resolves, and the digest is regenerated from the
+    changed text after the decision is recorded rather than before.
+  scope: >
+    In: the instrument's rename and generalisation, including the altitude
+    table, a routing rule in each instrument refusing the Coda the other one
+    scores, and the terminology rule extended so that naming the wrong
+    altitude's child is caught the same way
+    saying "Revision" already was; the `rubric:` value in `specs/beat.yml`;
+    `quality:` blocks in `specs/system.yml` and `specs/portfolio.yml` naming
+    both instruments; the six cross-references in other skills and on the two
+    published surfaces; the broken quickstart path; the spec set minor step;
+    the decision Note; and the regenerated digest.
+    In also: the mirror rule in `skills/root-coda-quality-check/SKILL.md`, whose
+    digest moves with it — the only normative edit here outside the renamed
+    instrument, and the reason the spec set does not move a second time: the
+    version tracks the step, not the file count.
+    In also: marking [HM-BV-003.32] delivered, which [HM-N-055] puts in the
+    next substantive step's scope.
+
+    Out: the dimensions themselves. None was added, removed, renamed, or
+    reweighted, and the identifiers an implementation persists per dimension
+    are untouched — only the rubric identifier above them moves. A step that
+    generalises a referent and changes what is measured in the same pass leaves
+    no way to tell which of the two a later score difference came from.
+
+    Out: the root instrument's six dimensions. Its routing rule is in — the
+    partition between the two instruments is what this step is making true, and
+    a partition only one side enforces is not one — but nothing it measures is
+    touched. Its digest moves for a check rule, not for an anchor.
+
+    Out: reconciling the reference implementation. It persists
+    `beat_coda_quality` and must alias it, as it already aliases `beat_quality`
+    and `plan_quality`. That work belongs on its side of the boundary, and this
+    repository going first is the direction AGENTS.md describes.
+
+    Risks stated: this is the first rename here that leads the reference
+    implementation rather than following one, so a stored score keyed to the
+    old identifier resolves to nothing until that alias exists — named in
+    [HM-N-152] rather than discovered there. And the instrument now instructs
+    an evaluator to confirm a parent before scoring, which is a refusal a
+    caller has to handle; it fails loudly by design, because the behaviour it
+    replaces was to return a number that read as a judgement and was not one.

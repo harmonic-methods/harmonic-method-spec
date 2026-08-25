@@ -85,7 +85,7 @@ applies.
 
 ## Scoring the draft
 
-Score the finished draft with **`skills/beat-coda-quality-check/SKILL.md`** —
+Score the finished draft with **`skills/coda-quality-check/SKILL.md`** —
 read that file and follow it as written. Do not reproduce its dimensions, its
 anchors, or its thresholds here, and do not score from memory of them. It is
 canonical; this file is not, and a score produced from a paraphrase does not

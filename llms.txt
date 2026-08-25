@@ -54,7 +54,7 @@
 ## Instruments
 Each serves one of the five functions. A digest over each one's normative text
 guards it against an unacknowledged edit.
-- skills/beat-coda-quality-check/SKILL.md: Composer — score a Beat 1-5 across seven dimensions
+- skills/coda-quality-check/SKILL.md: Composer — score a Coda that has a parent — a Beat, a System, or a Portfolio — 1-5 across seven dimensions
 - skills/beat-version-quality-check/SKILL.md: Orchestrator — score a Beat Version plan 1-5 across six dimensions
 - skills/coda-alignment-check/SKILL.md: Conductor — reconcile a Coda chain across nine checks, reported as findings rather than a score
 - skills/root-coda-quality-check/SKILL.md: Producer — score a root Coda 1-5 across six dimensions
@@ -101,7 +101,7 @@ to guard, and each defers every judgement it needs to an instrument above by
 pointing at the file.
 - skills/beat-composing/SKILL.md: Composer — compose a Beat and its Coda from a
   plain description, ask for what is missing rather than inventing it, score the
-  draft with beat-coda-quality-check read as written, then revise from that score
+  draft with coda-quality-check read as written, then revise from that score
   and from the author's feedback
 - skills/beat-clarifying/SKILL.md: Composer — turn the dimensions that scored low
   into the few questions their author has to answer, each derived from the

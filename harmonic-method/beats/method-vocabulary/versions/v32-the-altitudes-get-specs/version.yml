@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.32
   beat: HM-B-003
   title: The altitudes get specs
-  status: active
+  status: delivered
   summary: >
     Three specs already depended on entities this repository never defined.
     `specs/coda.yml` declared `attached_to: [portfolio, system, beat]` and

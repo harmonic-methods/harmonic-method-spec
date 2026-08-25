@@ -1,6 +1,6 @@
 # Harmonic Method spec — Beat
 entity: beat
-spec_version: 1.11.0
+spec_version: 1.12.0
 summary: >
   The canonical unit of capability. A Beat names a durable capability or
   process of the system being improved — medium-agnostic: software capability,
@@ -32,7 +32,7 @@ fields:
     type: list<note>
     description: The typed knowledge attached to this capability. See note.yml.
 quality:
-  rubric: beat_coda_quality  # see skills/beat-coda-quality-check/SKILL.md
+  rubric: coda_quality  # see skills/coda-quality-check/SKILL.md
   dimensions: [Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Outcome-Oriented]
   scale: 1-5 per dimension
   reference_gate: >

@@ -29,8 +29,9 @@ might be a pull request, a procedure document, or a runbook diff.
 
 Then point any agent at a rubric and a file:
 
-    Read skills/beat-coda-quality-check/SKILL.md and score the Beat in
-    examples/beats/client-estimate-approval/beat.yml against it.
+    Read skills/coda-quality-check/SKILL.md and score the Beat in
+    examples/systems/client-commitments/beats/client-estimate-approval/beat.yml
+    against it.
 
 You get seven scores with rationale, the single highest-leverage improvement, and
 a pass/fail against the reference threshold. Swap in your own Beat — or just a
@@ -44,7 +45,7 @@ follow it. Native placement is an optimization, not a requirement:
 
 | Agent | Where the file goes |
 | --- | --- |
-| Claude Code | `.claude/skills/beat-coda-quality-check/SKILL.md` |
+| Claude Code | `.claude/skills/coda-quality-check/SKILL.md` |
 | Cursor, Windsurf | `.cursor/rules/` |
 | GitHub Copilot | referenced from `.github/copilot-instructions.md` |
 | Anything else | anywhere — "read this file and follow it" |
@@ -164,7 +165,7 @@ function, and each is written to be read literally by an agent.
 
 | Instrument | Function | What it asks |
 | --- | --- | --- |
-| [beat-coda-quality-check](skills/beat-coda-quality-check/SKILL.md) | Composer | Is this capability well defined? Seven dimensions, 1-5: Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Outcome-Oriented. |
+| [coda-quality-check](skills/coda-quality-check/SKILL.md) | Composer | Is this Beat, System, or Portfolio well defined? Seven dimensions, 1-5: Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, Outcome-Oriented. |
 | [beat-version-quality-check](skills/beat-version-quality-check/SKILL.md) | Orchestrator | Is this plan well formed? Six dimensions, 1-5: Scoped, Directional, Testable, Traceable, Assignable, Risk-aware. |
 | [coda-alignment-check](skills/coda-alignment-check/SKILL.md) | Conductor | Is what we decided still true? Nine checks over a Coda chain, reported as findings rather than a score. |
 | [root-coda-quality-check](skills/root-coda-quality-check/SKILL.md) | Producer | Is the statement everything ladders to worth laddering to? Six dimensions, 1-5: Discriminating, Attributed, Reciprocal, Bounded, Generative, Consequential — reported with a warrant band that is not one of them. |
