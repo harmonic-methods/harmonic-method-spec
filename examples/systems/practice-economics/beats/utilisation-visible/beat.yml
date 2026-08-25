@@ -1,0 +1,20 @@
+# Example Beat — conformant to specs/beat.yml.
+beat:
+  id: EX-B-002
+  title: Delivered cost of an engagement is visible while it can still change
+  status: open
+  coda:
+    statement: >
+      Anyone weighing a new engagement can read what the closest previous one
+      cost to deliver — hours actually worked against hours sold — while the
+      commitment is still open rather than in a retrospective nobody acts on.
+    parent: EX-INT-CODA  # the System Coda this ladders to
+  description: >
+    The capability by which effort spent on an engagement is readable against
+    what was sold, early enough to change the commitment. Covers the comparison
+    itself and the moment it is surfaced; excludes how hours are captured, which
+    the practice already does elsewhere and this Beat reads rather than replaces.
+
+    Deliberately not a report. A number produced monthly and read quarterly is
+    the state this Beat exists to end, so surfacing it at the moment a
+    commitment is being made is the capability rather than a presentation of it.

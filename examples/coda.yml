@@ -1,8 +1,13 @@
-# Example — the system Coda the example Beat ladders to.
-# Conformant to specs/coda.yml. Root Coda: omits parent.
+# Example — the Portfolio Coda the example Systems ladder to.
+# Conformant to specs/coda.yml and specs/portfolio.yml. Root Coda: omits parent.
+#
+# This node holds no beats/ of its own. specs/portfolio.yml puts capability at
+# the System altitude and nowhere else, and the checker fails a node that holds
+# both.
 coda:
-  id: EX-SYS-CODA
+  id: EX-PORT-CODA
   statement: >
-    Every commitment made to a client — what was scoped, what it costs, who
-    approved it — is generated from one governed record and traceable back to
-    the decisions that shaped it.
+    What this practice commits to, and what it charges for, are decided the same
+    way whoever is paying — a client buying delivery, or the practice funding its
+    own operation. Neither side's record is reconstructed from the other's after
+    the fact.

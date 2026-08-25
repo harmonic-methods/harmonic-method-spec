@@ -1,0 +1,72 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-003.32
+  beat: HM-B-003
+  title: The altitudes get specs
+  status: active
+  summary: >
+    Three specs already depended on entities this repository never defined.
+    `specs/coda.yml` declared `attached_to: [portfolio, system, beat]` and
+    described a Beat Coda pointing at a system Coda pointing at a portfolio
+    Coda; `specs/bar.yml` attached a cadence to a portfolio or a system;
+    `specs/note.yml` let knowledge belong to one. Only `beat` had a file. The
+    two altitudes above it were load-bearing in the prose and absent from the
+    tree — the exact drift this repository exists to prevent, sitting inside
+    the specs themselves.
+
+    `specs/system.yml` and `specs/portfolio.yml` close it. A System is the
+    altitude where Beats attach and the one entity whose definition fixes where
+    the container chain stops; a Portfolio is every altitude above that, holding
+    Systems or Portfolios or both, recursing without limit. Root becomes a
+    position rather than a kind, which is what lets this repository's own tree
+    stay what it already is — a root System — instead of being wrapped in a
+    Portfolio holding one child.
+
+    The checker walks the tree recursively rather than assuming one level.
+    Which kind a node is gets read from its directories rather than declared,
+    because a declaration would be the second copy the layout exists to remove:
+    a node holding `beats/` is a System, one holding `systems/` or
+    `portfolios/` is a Portfolio, and holding both fails. Four new rules, each
+    made to fail against the worked example before being trusted.
+  scope: >
+    In: `specs/system.yml` and `specs/portfolio.yml`; generalising
+    `specs/coda.yml`'s summary and `parent` description from three fixed levels
+    to unbounded nesting, and stating there that root is a position; the
+    checker's recursive node walk, with tree-wide identifier sets threaded
+    through it so a Note may still supersede one written anywhere; four checked
+    rules — a Portfolio holding Beats, a Portfolio holding one child, a
+    non-root node declaring `bars/`, and a non-root Coda that does not ladder;
+    the worked example restructured into a Portfolio over two Systems so the
+    nesting is exercised rather than described; both published surfaces; and
+    the spec set minor step.
+    In also: marking [HM-BV-003.30], [HM-BV-003.31], [HM-BV-009.3] and
+    [HM-BV-012.4] delivered — four steps whose work has reached the trunk,
+    which [HM-N-055] puts in the next substantive step's scope. Four is already
+    a backlog; the habit is being caught up rather than deferred again.
+
+    Out: any dependency relation, at any altitude. Nesting is containment and a
+    dependency is a graph between peers, so using the first to record the second
+    puts a capability where it does not belong. `specs/portfolio.yml` says where
+    one belongs if an implementation adds it — between the Beats that depend on
+    each other, with any System-level view derived rather than stored — and
+    stops there rather than specifying the relation itself. [HM-N-151] records
+    why the field was refused, and corrects a draft of itself that had asserted
+    the relation as though this method already carried it.
+
+    Out: extending cadence to nested nodes. `specs/bar.yml` attaches a Bar to a
+    portfolio or a system, and a tree may now have many of both, but the
+    checker resolves cadence once at the tree root. Rather than let a nested
+    `bars/` be silently ignored, it fails with that reason — the gap is named
+    and closed against surprise rather than left open.
+
+    Out: generalising `beat-coda-quality-check` to non-root Codas. The rubric
+    is already almost altitude-generic and a System Coda now has somewhere to
+    be scored, but editing a fingerprinted instrument is its own step with its
+    own decision.
+
+    Risks stated: the worked example moved, so any external link into
+    `examples/beats/...` breaks. Nothing in this repository points there and
+    the checker's own path cases still resolve, but a reader's bookmark does
+    not. And the Portfolio-of-one rule fails on a count where the defect is
+    really about meaning — a tree mid-restructure, legitimately holding one
+    child for an afternoon, has to finish before it validates.

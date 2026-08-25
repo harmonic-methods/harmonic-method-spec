@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-009.3
   beat: HM-B-009
   title: The Orchestrator's first draft
-  status: active
+  status: delivered
   summary: >
     Four of the five instrumented functions had a producing skill and the
     Orchestrator had none — an asymmetry named as owed when this Beat's first

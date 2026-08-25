@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-012.4
   beat: HM-B-012
   title: A decline needs a base
-  status: active
+  status: delivered
   summary: >
     [HM-N-132] found the gap the step before this one left open: the method
     can count a decline and cannot know what it is a decline out of. An idea

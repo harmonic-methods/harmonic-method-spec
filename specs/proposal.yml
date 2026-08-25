@@ -1,6 +1,6 @@
 # Harmonic Method spec — Proposal
 entity: proposal
-spec_version: 1.10.0
+spec_version: 1.11.0
 summary: >
   A candidate thing, weighed against a Coda and not yet durable in its own
   right. It sits one altitude below whatever Coda it is weighed against — a

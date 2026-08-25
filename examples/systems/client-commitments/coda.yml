@@ -1,0 +1,10 @@
+# Example — the System Coda the example Beat ladders to.
+# Conformant to specs/coda.yml and specs/system.yml. Not root: names its
+# Portfolio's Coda as parent.
+coda:
+  id: EX-SYS-CODA
+  statement: >
+    Every commitment made to a client — what was scoped, what it costs, who
+    approved it — is generated from one governed record and traceable back to
+    the decisions that shaped it.
+  parent: EX-PORT-CODA

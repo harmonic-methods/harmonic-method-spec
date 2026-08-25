@@ -1,0 +1,16 @@
+# Example — a second System under the same Portfolio, so the tree demonstrates
+# what specs/portfolio.yml permits: sibling Systems with different Codas, each
+# scored against the Portfolio above rather than against each other.
+#
+# Its counterparty is the practice itself, which cannot take its business
+# elsewhere. skills/root-coda-quality-check/SKILL.md names that shape directly —
+# a counterparty who cannot leave generates no signal — so a Coda here is
+# structurally capped on Reciprocal. That is information about the arrangement,
+# not a defect in the statement.
+coda:
+  id: EX-INT-CODA
+  statement: >
+    Whoever is deciding what the practice takes on can see what the last
+    comparable engagement actually cost to run, before they commit to the next
+    one rather than after it has closed.
+  parent: EX-PORT-CODA

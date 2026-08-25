@@ -1,0 +1,41 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-151
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.32
+  content: >
+    Nesting expresses containment only, and this method defines no dependency
+    relation at any altitude. `specs/portfolio.yml` says where one belongs if an
+    implementation adds it — between the Beats that depend on each other, with
+    any System-level view derived rather than stored — and stops there rather
+    than specifying the relation itself.
+  rationale: >
+    Three relations were separated deliberately here, because collapsing any two
+    of them is how the model goes wrong. Nesting is containment: a Beat lives
+    inside exactly one System. Classification is a lens: a thing is scored
+    against many and belongs to none. Dependency is a graph: it runs between
+    peers and respects no containment boundary. Nesting one System under another
+    to record a dependency uses the first to say the third, and puts a
+    capability at an altitude it does not belong to.
+
+    A System-altitude dependency field was considered and refused. Stored beside
+    a Beat-altitude record it would be a second source of truth that goes stale
+    the moment the Beats beneath it move, and it could not say which
+    capabilities the dependency is actually about — where a derived view names
+    them. That argument holds whatever an implementation calls its relation, so
+    the guidance is stated in terms of altitude and derivation rather than of
+    any particular edge.
+
+    Guidance rather than a spec, deliberately. The reference implementation does
+    model a Beat-to-Beat relation of this kind, but as an extension: `AGENTS.md`
+    is explicit that an implementation defines entities this repository does
+    not, and that is not a conformance problem. Publishing a dependency entity
+    here on the strength of one implementation having one would invert the
+    direction conformance runs — an earlier draft of this Note asserted the
+    relation as though the method already carried it, which was simply false and
+    is corrected here.
+
+    Recorded because the pressure to add the field will recur every time someone
+    meets a genuine cross-System dependency. The answer is not that the
+    dependency is unreal; it is that containment is the wrong instrument for it.

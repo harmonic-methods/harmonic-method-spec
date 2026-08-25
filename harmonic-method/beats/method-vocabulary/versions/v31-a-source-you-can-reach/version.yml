@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.31
   beat: HM-B-003
   title: A source you can reach
-  status: active
+  status: delivered
   summary: >
     The legibility bound covers a Note cited as lineage by a reader who cannot
     open it. It does not cover a source cited by a Note that reader can open,

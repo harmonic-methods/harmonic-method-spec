@@ -1,0 +1,26 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-149
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.32
+  content: >
+    Root is the absence of a parent, not a kind of entity. A System with nothing
+    above it is root and needs no Portfolio invented to hold it, and the checker
+    decides which rubric applies from whether a parent exists rather than from
+    the altitude it found.
+  rationale: >
+    The alternative — requiring the top of every tree to be a Portfolio — was
+    considered and refused because this repository's own tree would fail it on
+    the day it shipped. `harmonic-method/` is one Coda and a set of Beats, which
+    is exactly a System, and wrapping it in a Portfolio holding one child would
+    have produced a Coda that either restated the System's or was invented to
+    fill a slot. A method whose worked example violates its own structural rule
+    has the rule wrong.
+
+    This also keeps the two rubrics partitioned on the thing that actually
+    distinguishes them. `skills/root-coda-quality-check/SKILL.md` explains that
+    a root Coda cannot be scored on service to the Coda above because that
+    referent is absent — the split is parent-presence, and altitude never
+    entered it. Naming root a position rather than a type says in the spec what
+    that instrument had been saying alone.
