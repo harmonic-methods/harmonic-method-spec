@@ -1,0 +1,34 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-141
+  type: decision
+  attached_to: HM-B-009
+  beat_version: HM-BV-009.3
+  supersedes: HM-N-100
+  content: >
+    [HM-N-100] asked whether the system Coda's promise covered a production
+    capability, since the statement it was read against listed reading the
+    entity model, naming the functions, and assessing work against the
+    published instruments — and did not name production. That statement no
+    longer exists. [HM-N-119] replaced the root Coda entirely, and the
+    question is superseded rather than answered, because the thing it asked
+    about is gone.
+  rationale: >
+    Re-reading the question against the new statement rather than simply
+    letting it lapse, because the honest close is to say what happened to it,
+    not to leave a decision Note standing that questions a Coda nobody can
+    read anymore. The new statement is broader than the old one on exactly the
+    axis that mattered — "intent survives decomposition into capabilities,
+    steps and changes" names decomposition directly, where the old statement
+    had to be read generously to reach it at all. The coverage reading run
+    against the current Coda already places this Beat against that claim
+    without needing the generous reading [HM-N-100] worried was doing too much
+    work.
+
+    This is the first use of `supersedes` on a Note that was not itself about
+    the field's own design — the retrofit onto [HM-N-125] over [HM-N-116] was
+    the mechanism proving itself; this is the mechanism doing the job it was
+    built for. A stale decision Note sitting unmarked in the tree is exactly
+    the exposure [HM-N-133] described, found here in the form of a question
+    about a document that changed out from under it rather than a ceiling
+    that was reversed.
