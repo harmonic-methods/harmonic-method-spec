@@ -1,0 +1,67 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-152
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.10
+  content: >
+    `skills/beat-coda-quality-check` becomes `skills/coda-quality-check`, and the
+    rubric identifier `beat_coda_quality` becomes `coda_quality`. The instrument
+    scores any Coda that has a parent — a Beat's, a System's, or a Portfolio's.
+    The seven dimensions keep their names and their identifiers; what changed is
+    the referent of "sibling" and of "what sits beneath", which the instrument now
+    states as a table across the three altitudes rather than assuming one of them.
+    Distinctive, Harmonious, Substantial, Durable and Outcome-Oriented each gained
+    the two readings they did not have; Clear and Strategically Aligned were
+    already altitude-neutral and are unchanged. A new check rule refuses a Coda
+    with no parent instead of scoring it. The spec set takes a minor step, and
+    `specs/system.yml` and `specs/portfolio.yml` name both instruments in a
+    `quality:` block.
+  rationale: >
+    The specs asserted this before the instrument could do it. `specs/system.yml`
+    shipped saying a System's Coda is scored against the same rubric as any other
+    Coda with a parent, and that the altitude does not select the instrument — the
+    presence of a parent does. Nothing published here could carry that out. The
+    only non-root instrument was written end to end about Beats: its subject, its
+    spec reference, its inputs, five of its seven anchors, and its terminology
+    rule. A spec that names an instrument the repository does not have is the same
+    drift as a spec depending on an entity it never defined, which is what the
+    previous step in this cycle existed to close.
+
+    The name had to move with the content. Leaving `beat-` on an instrument that
+    scores Portfolios would have contradicted the sentence in `specs/system.yml`
+    that this step exists to satisfy, and this repository has spent two cycles
+    arguing that a name which selects the wrong thing is a defect rather than a
+    cosmetic complaint — that argument is the whole of why System and Portfolio
+    are separate entities. An instrument named for one altitude, applied at three,
+    would have been the same error inside the skills directory.
+
+    Generalising was the cheaper of the two available shapes. The alternative was
+    a second instrument for System and Portfolio Codas, and it fails on the
+    reasoning `root-coda-quality-check` already published: the altitude recursion
+    holds for the entity, and breaks only for a dimension whose referent is
+    absent. Every dimension here has its referent at all three altitudes, so a
+    second instrument would have been the same seven dimensions with the nouns
+    changed — two copies to keep in agreement, and no question one could answer
+    that the other could not. The split that earns its own instrument is
+    parent-presence, and that one already exists.
+
+    The refusal rule is a defect this step found rather than a decision it made.
+    The instrument previously told an evaluator to score Strategically Aligned as
+    3 when no parent Coda existed, which quietly accepted a root Coda and returned
+    a number for it. Two dimensions here measure service to the Coda above;
+    against an absent parent they are not weak, they are unanswerable, and
+    averaging an unanswerable dimension in as though it had been answered produces
+    a figure that reads as a judgement and is not one. A root Coda now routes to
+    the instrument built for it and nothing is scored here.
+
+    The cost is named rather than glossed. `beat_coda_quality` is a value an
+    implementation persists, and renaming it breaks every stored score keyed to
+    it, exactly as the rename recorded in HM-N-027 did. That one followed the
+    reference implementation; this one leads it, which is the direction AGENTS.md
+    describes and the first time this repository has gone first. The spec set
+    stays in the 1.x line while the method is stabilizing, so breaking a permitted
+    value takes a minor step — but the question that decides the cost is which
+    consumer breaks, not whether a tag exists, and here one does: an
+    implementation carrying the old identifier must alias it, as it already
+    aliases two others.

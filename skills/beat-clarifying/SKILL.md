@@ -24,7 +24,7 @@ gap.
 
 ## When to use this
 
-After `beat-coda-quality-check` has produced a score and revision has not moved
+After `coda-quality-check` has produced a score and revision has not moved
 a dimension. The composing instrument stops rewording when a dimension resists
 twice; this is what happens at that stop.
 
@@ -35,7 +35,7 @@ never settled.
 
 **Read the rubric.** For each dimension that scored low, read its definition, its
 red flag, and the anchor one band above where it landed, in
-`skills/beat-coda-quality-check/SKILL.md`. Those three say what is absent. Your
+`skills/coda-quality-check/SKILL.md`. Those three say what is absent. Your
 job is to turn that into a question its author can answer.
 
 Derive every question from that text at the time you ask it. Do not work from a

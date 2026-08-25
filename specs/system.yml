@@ -1,6 +1,6 @@
 # Harmonic Method spec — System
 entity: system
-spec_version: 1.11.0
+spec_version: 1.12.0
 summary: >
   The altitude where Beats attach. A System is a Coda and the set of Beats that
   ladder to it — the smallest container that holds capability rather than
@@ -35,6 +35,10 @@ fields:
     description: >
       Candidates weighed against this System's Coda, which acceptance may turn
       into Beats. See proposal.yml.
+quality:
+  # The presence of a parent selects the instrument, not the altitude.
+  rubric: coda_quality            # see skills/coda-quality-check/SKILL.md
+  root_rubric: root_coda_quality  # see skills/root-coda-quality-check/SKILL.md
 rules:
   - >-
     A System holds Beats and never other Systems. A System that appears to

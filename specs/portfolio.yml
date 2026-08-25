@@ -1,6 +1,6 @@
 # Harmonic Method spec — Portfolio
 entity: portfolio
-spec_version: 1.11.0
+spec_version: 1.12.0
 summary: >
   A Coda and the containers beneath it. A Portfolio holds Systems, other
   Portfolios, or both, and recurses without limit — which is what lets a tree
@@ -39,6 +39,10 @@ fields:
     description: >
       Candidates weighed against this Portfolio's Coda, which acceptance may
       turn into a System or a Portfolio one level down. See proposal.yml.
+quality:
+  # The presence of a parent selects the instrument, not the altitude.
+  rubric: coda_quality            # see skills/coda-quality-check/SKILL.md
+  root_rubric: root_coda_quality  # see skills/root-coda-quality-check/SKILL.md
 rules:
   - >-
     A Portfolio's children may be Systems, Portfolios, or a mix of both. The

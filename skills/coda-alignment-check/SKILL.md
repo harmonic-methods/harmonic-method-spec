@@ -10,7 +10,7 @@ You are reconciling a **Coda chain** against what is actually true. Specs:
 
 This instrument serves the **Conductor** — the accountability that decisions
 stay in force. The other two published instruments ask how well something is
-*written*: `beat-coda-quality-check` grades a capability's definition, and
+*written*: `coda-quality-check` grades an entity's definition, and
 `beat-version-quality-check` grades a plan. This one asks a different kind of
 question: **is what we decided still true?** Answer it factually. Do not
 convert it into a score.

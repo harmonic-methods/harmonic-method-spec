@@ -22,7 +22,7 @@
 #
 # Read against github/spec-kit at main, 23 August 2026.
 declaration:
-  spec_version: 1.11.0
+  spec_version: 1.12.0
   implementation: >-
     GitHub Spec Kit — a third-party reading, NOT a claim by its maintainers
   divergences:

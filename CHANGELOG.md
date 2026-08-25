@@ -62,6 +62,45 @@
     than stored — and stops there rather than specifying the relation.
   - The spec set takes a minor step.
 
+- **One instrument for every Coda with a parent.** The previous entry had
+  `specs/system.yml` assert that a System's Coda is scored against the same
+  rubric as any other Coda with a parent — that the altitude does not select the
+  instrument, the presence of a parent does — and then deferred building an
+  instrument that could do it. The only non-root instrument was written end to
+  end about Beats, so the spec named a capability this repository did not have.
+  **`skills/beat-coda-quality-check` → `skills/coda-quality-check`**, and the
+  rubric identifier `beat_coda_quality` → `coda_quality`, following in
+  `specs/beat.yml`. See HM-B-002, HM-BV-002.10 and HM-N-152.
+  - **No dimension was added, removed, renamed, or reweighted**, and the
+    identifier an implementation persists per dimension is untouched. What moved
+    is the referent of "sibling" and of "what sits beneath", which the instrument
+    now states as a table across the three altitudes instead of assuming one: a
+    Beat's siblings are the other Beats in its System, a System's are the other
+    children under its Portfolio; a Beat evolves through Beat Versions, a System
+    through its Beats, a Portfolio through its Systems.
+  - **A parentless Coda is now refused rather than scored.** The instrument had
+    said to score Strategically Aligned as 3 when no parent Coda existed, which
+    quietly accepted a root Coda and returned a number for it. Two dimensions
+    here measure service to the Coda above; against an absent parent they are not
+    weak but unanswerable, and averaging one in as though it had been answered
+    produces a figure that reads as a judgement and is not one. It routes to
+    `skills/root-coda-quality-check/SKILL.md` instead.
+  - The terminology rule grew the altitude above it. Suggesting a System be
+    decomposed into Beat Versions is the same error one level up as suggesting a
+    Beat be decomposed into Revisions, and both are now named.
+  - `specs/system.yml` and `specs/portfolio.yml` gain a `quality:` block naming
+    both instruments and the condition that selects between them.
+  - **The quickstart pointed at a file that no longer exists.** `README.md` sent
+    a new reader's first command at `examples/beats/client-estimate-approval/`,
+    which the previous entry moved — and whose risk note asserted that nothing in
+    this repository pointed there. It resolves again.
+  - Anyone who vendored the instrument at its old path, including the
+    `.claude/skills/` placement README recommends, must re-copy. An
+    implementation persisting `beat_coda_quality` must alias it, as it already
+    aliases `beat_quality` and `plan_quality` — this is the first rename here
+    that leads the reference implementation rather than following one.
+  - The spec set takes a minor step.
+
 - **A recorded source has to be reachable.** The legibility bound covers a Note
   cited as lineage by a reader who cannot open it. It did not cover a *source*
   cited by a Note that reader can open — which fails the same way and for the
