@@ -1,6 +1,6 @@
 # Harmonic Method spec — Function
 concept: function
-spec_version: 1.12.0
+spec_version: 1.13.0
 summary: >
   A function is an accountability the method names: one of the five things
   someone has to answer for if work is to succeed. Functions are not entities —
@@ -32,7 +32,9 @@ functions:
       That work moves — sequencing, coordination, and the handoffs between
       everyone and everything doing the work. Where some of the work is done by
       agents, this function owns what runs unattended, what runs supervised,
-      and what waits for a person.
+      and what waits for a person. Its decisions are about what forces the work
+      needs and how it will be routed to them, taken before and between the
+      doing rather than during it.
     fails_when: >
       Every piece is sound and nothing ships. Work queues behind unclear
       ownership, handoffs are lost silently, and capacity sits idle while deadlines
@@ -44,6 +46,10 @@ functions:
     owns: >
       That decisions stay in force. The gap between what was decided and what
       is actually true, reconciled and surfaced while correcting it is cheap.
+      This is held with the work rather than over it: the function stands where
+      the work is happening and closes the gap in the moment, which is what
+      keeps correction cheap. Periodic checking is the floor of the practice,
+      not the whole of it.
     fails_when: >
       Decisions get rediscovered rather than recalled. The same question is
       re-litigated months later, a constraint everyone agreed to is quietly
@@ -53,7 +59,11 @@ functions:
       Reconciliation as routine rather than as crisis response, which takes
       both a record and a rhythm. Notes carry what was decided and why; Bars and
       Downbeats make the checking regular, so divergence surfaces as a finding
-      on a known occasion rather than as a discovery under pressure.
+      on a known occasion rather than as a discovery under pressure. The record
+      is shared ground that every function reads and writes; what this function
+      owns is that it stays true. A lineage everyone uses and nobody answers for
+      is an unstaffed accountability in the ordinary sense, and it rots the
+      same way.
   producer:
     owns: >
       The relationship between what is spent and what it is worth. Whether the

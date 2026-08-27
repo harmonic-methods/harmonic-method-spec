@@ -1,0 +1,29 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-005.3
+  beat: HM-B-005
+  title: Say when a decision belongs to the Orchestrator and when to the Conductor
+  status: active
+  summary: >
+    Two functions were being applied interchangeably. Orchestrator is published
+    through sequencing and handoffs, Conductor through Notes, Bars and
+    Downbeats — descriptions that are both true and neither of which says which
+    function owns a given decision, so the same work was filed under either
+    name depending on the reader. The distinguishing axis is timing: the
+    Orchestrator decides ahead of the doing what forces the work needs and how
+    it is routed to them; the Conductor holds the work while it happens and
+    closes the gap between decided and actual in the moment. Each definition
+    gains a sentence naming its side of that line. The step also settles where
+    decision lineage sits: shared ground every function reads and writes, whose
+    integrity the Conductor still answers for.
+  scope: >
+    In: the `owns` text of orchestrator and conductor and the `discipline` text
+    of conductor in specs/function.yml; the spec set version, which moves
+    because the normative surface moved; and the decision Note carrying the
+    reasoning, since the reading being closed off is one a careful reader
+    reached honestly and will reach again.
+    Out: the set of five functions, which is closed and unchanged; any
+    reassignment of what a function owns, since this step names an existing
+    boundary rather than moving one; and any entity field for lineage — the
+    record stays what specs/note.yml already defines, and no entity gains an
+    accountable-function field, which [HM-N-020] settled.

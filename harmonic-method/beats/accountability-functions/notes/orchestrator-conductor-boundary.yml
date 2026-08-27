@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-153
+  type: decision
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.3
+  content: >
+    The boundary between Orchestrator and Conductor is when the decision is
+    taken, not what it is about. Orchestrator decides what forces the work needs
+    and how it is routed to them — ahead of the doing and between its parts.
+    Conductor holds the work while it happens, closing the gap between what was
+    decided and what is actually true in the moment. Both definitions gain a
+    sentence saying so; neither function changes hands.
+    Decision lineage is settled in the same step: the record is shared ground
+    that every function reads and writes, and the accountability that it stays
+    true remains the Conductor's. The store is common; the integrity is owned.
+  rationale: >
+    The two functions were being read as interchangeable by people applying
+    them, and the published definitions could not settle it — Orchestrator was
+    described through sequencing and handoffs, Conductor through Notes, Bars and
+    Downbeats. Both descriptions are true and neither says which function a
+    given decision belongs to, so the same work landed under either name
+    depending on who was reading. Naming the axis as timing resolves it without
+    moving any accountability: allocation is orchestration whether it concerns a
+    person or an agent, and correction during the work is conducting whether it
+    is logged or not. The musical reading agrees, which is the reason the words
+    were chosen: orchestration assigns the lines before the performance, and the
+    conductor stands with the players during it.
+    The lineage half is recorded here because the tempting answer is wrong in a
+    way this method already names. Making the record foundation that every
+    function taps is right — bottlenecking it behind one accountability would
+    force the others to ask permission to know what was decided. But foundation
+    with no owner is precisely an unnamed function, and this specification
+    already holds that an unnamed function is an unstaffed one that fails
+    quietly. Universal access and owned integrity are not in tension; conflating
+    them is how a lineage everyone depends on becomes one nobody maintains.
