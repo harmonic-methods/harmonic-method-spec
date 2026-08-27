@@ -2,6 +2,27 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A divergence the declaration form could not state.** `specs/conformance.yml`
+  puts two things in the same `binding_and_comparable` category — the fields an
+  entity declares and which are required, and the identifiers each instrument
+  scores. The first lives in `specs/`, the second in `skills/`, and the
+  declaration checker accepted a divergence only where its `spec` named a file in
+  `specs/`. So a real contradiction against a published rubric had nowhere
+  conformant to be filed, and one filed anyway was reported as a malformed claim
+  — pressure toward deleting a true divergence or misfiling it under a spec file
+  the implementation does not actually contradict. A checker with a gap is worse
+  than honest when the gap pushes claims away from the truth. `skills/` is now
+  read through the instrument definition the rubric digest already uses, so the
+  two cannot disagree about what an instrument is, and the failure message no
+  longer names the accepted set. Verified by making all three cases fail first.
+  **The spec set does not move**: nothing published changed, and the checker now
+  reaches what `specs/conformance.yml` already said binds. See HM-BV-006.9 and
+  HM-N-154.
+  - **Still loose, and recorded as a choice.** A divergence naming an instrument
+    must name the instrument and not a dimension it scores. Comparing `field`
+    against the identifiers a SKILL.md publishes would close that; the gap being
+    fixed here is a target that could not be named at all.
+
 - **Two functions that could not be told apart.** Orchestrator is published
   through sequencing and handoffs, Conductor through Notes, Bars and Downbeats.
   Both descriptions are true, and neither says which function owns a given

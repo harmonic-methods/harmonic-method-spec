@@ -1,0 +1,51 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-154
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.9
+  content: >
+    A divergence may name an instrument in `skills/` as well as a file in
+    `specs/`. Both directories are read rather than enumerated, and the
+    instrument definition is the one already used for the rubric digest — a
+    skill carrying at least one normative section — so the two checks cannot
+    disagree about what an instrument is.
+
+    The failure message changed with the rule. It said a target was "not a file
+    in specs/", which stated the accepted set and would have gone stale the
+    moment the set widened.
+  rationale: >
+    The normative surface lives in two directories and the check reached one. That
+    was invisible while every declared divergence happened to be about an entity,
+    and it surfaced the way [HM-N-063] predicts: the binding and comparable
+    category contains both the fields an entity declares and the identifiers each
+    instrument scores, and nothing said the checker only covered half of it.
+
+    What makes this worth a decision Note rather than a quiet fix is the direction
+    the error pointed. A well-formed claim about a rubric was reported as a
+    malformed claim. An implementation reading that output would conclude its
+    declaration was wrong and either delete a true divergence or file it under a
+    spec file it does not actually contradict — so the check was not merely
+    missing a case, it was applying pressure toward a less accurate declaration.
+    A check that pushes claims away from the truth is worse than one with a gap,
+    because the gap is at least honest about itself.
+
+    Reading the directory rather than listing names follows [HM-N-095] and is the
+    same rule the rest of the repository already follows. Reusing
+    `normativeSkills()` matters more than the line it saves: a second definition
+    of "instrument" would let the digest guard and the declaration check drift
+    apart, and each would keep passing while they disagreed.
+
+    Deliberately not done: comparing a divergence's `field` against the dimension
+    identifiers a SKILL.md actually publishes. That would make an instrument
+    divergence as checkable as an entity one, and it is a larger change than the
+    one this step is about — a target that could not be named at all. Naming it
+    here so the remaining looseness is a recorded choice rather than an oversight.
+
+    The version gate was left alone, and the reason belongs beside this. It
+    refuses to judge a claim pinned to a spec set the checker does not ship, which
+    looks like the same class of over-strictness and is not: the checker holds one
+    set of specs, and judging a 1.12.0 claim against 1.13.0 specs would report
+    conformance against definitions the claim was never made against. That is the
+    failure specs/conformance.yml closes with "conformance is claimed against a
+    version, never against the trunk".
