@@ -2,6 +2,31 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Two functions that could not be told apart.** Orchestrator is published
+  through sequencing and handoffs, Conductor through Notes, Bars and Downbeats.
+  Both descriptions are true, and neither says which function owns a given
+  decision — so the same work was filed under either name depending on who was
+  reading, and the words themselves do not settle it, because orchestrating and
+  conducting both plainly mean making the work go. The distinguishing axis is
+  **when the decision is taken**: the Orchestrator decides ahead of the doing
+  what forces the work needs and how it is routed to them; the Conductor holds
+  the work while it happens and closes the gap between decided and actual in
+  the moment. Each definition gains a sentence naming its side of that line. No
+  accountability moves and the set stays closed at five — this names a boundary
+  that was already there rather than drawing a new one. The musical reading
+  agrees, which is why the words were chosen: orchestration assigns the lines
+  before the performance, the conductor stands with the players during it. Spec
+  set moves to 1.13.0. See HM-BV-005.3 and HM-N-153.
+  - **Decision lineage is shared ground with an owner.** Settled in the same
+    step, because the tempting answer fails in a way this specification already
+    names. Every function reads and writes the record — bottlenecking it behind
+    one accountability would make the others ask permission to know what was
+    decided. But foundation with nobody answering for it is an unnamed
+    function, and an unnamed function is an unstaffed one that fails quietly.
+    Universal access and owned integrity are not in tension; conflating them is
+    how a lineage everyone depends on becomes one nobody maintains. The
+    Conductor keeps the integrity; no entity gains a field.
+
 - **A colon could turn a rule into a mapping, and nothing said so.** The hazard
   was met three times while authoring and misread each time as friction: a colon
   on a continuation line of a wrapped rule raises a scanner error, the checker
