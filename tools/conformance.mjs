@@ -19,6 +19,8 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
+import { normativeSkills } from './rubric-fingerprint.mjs';
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SEMVER = /^\d+\.\d+\.\d+$/;
 const EXTENSION_KINDS = ['entity', 'field', 'child_type', 'enum_value', 'dimension', 'computed'];
@@ -86,14 +88,21 @@ export function checkDeclaration(path) {
   if (!Array.isArray(d.divergences)) {
     fail("no 'divergences' list — an empty list is the strong claim, and omitting it is not the same as making it");
   } else {
-    const files = new Set(specFiles());
+    // A divergence names what it contradicts, and there are two kinds of thing
+    // to contradict. specs/conformance.yml puts the fields an entity declares
+    // and the identifiers an instrument scores in the same binding_and_comparable
+    // category, so a declaration able to point only at specs/ cannot state half
+    // of what binds — and the half it cannot state was reported as malformed
+    // rather than as unsupported, which reads as the declaration's fault. Both
+    // sides read their directory rather than a list written here; see HM-N-095.
+    const targets = new Set([...specFiles(), ...normativeSkills()]);
     d.divergences.forEach((v, i) => {
       const at = `divergences[${i}]`;
       for (const k of DIVERGENCE_KEYS) {
         if (v?.[k] === undefined) fail(`${at}: missing '${k}'`);
       }
-      if (v?.spec !== undefined && !files.has(String(v.spec))) {
-        fail(`${at}: spec '${v.spec}' is not a file in specs/`);
+      if (v?.spec !== undefined && !targets.has(String(v.spec))) {
+        fail(`${at}: spec '${v.spec}' is neither a file in specs/ nor an instrument in skills/`);
       }
     });
   }

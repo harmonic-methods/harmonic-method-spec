@@ -1,0 +1,58 @@
+# Beat Version — conformant to specs/beat.yml
+beat_version:
+  id: HM-BV-006.9
+  beat: HM-B-006
+  title: A divergence the form could not state
+  status: active
+  summary: >
+    The declaration checker accepted a divergence only where its `spec` named a
+    file in `specs/`. Half of what binds cannot be named that way.
+    specs/conformance.yml puts two things in the same binding_and_comparable
+    category: the fields an entity declares and which are required, and the
+    identifiers each instrument scores. The first lives in `specs/` and the
+    second lives in `skills/`, and only the first could be pointed at.
+
+    So an implementation carrying a real contradiction against a published rubric
+    had nowhere conformant to file it. The reference implementation carries three
+    and filed them anyway, and the checker reported each as a malformed claim —
+    which reads as the declaring implementation's fault when it is the form's.
+    That is the failure mode this Beat exists to prevent arriving from the
+    inside: not a claim without a check, but a check that cannot express what the
+    method says binds, while reporting the gap as somebody else's error.
+
+    The fix is one set union, and the reach is what matters: `skills/` is read as
+    a directory through the instrument definition that already exists in
+    `tools/rubric-fingerprint.mjs` — an instrument is a skill carrying a
+    normative section — rather than through a list of names written into the
+    checker. [HM-N-095] settled that a file name inside a checker is the same
+    kind of second copy as an inline `notes:` field.
+
+    Done when: a divergence naming an instrument is well formed; a divergence
+    naming a spec file still is; a name that is neither is still rejected; and
+    all three were made to fail before being believed.
+  scope: >
+    In: the divergence target check in tools/conformance.mjs, and the failure
+    message, which named only `specs/` and so described the accepted set
+    incorrectly once the set widened.
+
+    Out: the spec set version. This does not move the normative surface —
+    specs/conformance.yml already put instrument identifiers in the comparable
+    category, and this step makes the checker reach what was already published.
+    A checker fix must never bump what an implementation pins.
+    Out also: the version gate, which refuses a claim pinned to a spec set this
+    checker does not ship. That refusal is the design working; loosening it would
+    let a claim be judged against specs it was never made against.
+    Out also: anything about whether an implementation behaves as it claims. The
+    checker reads a declaration and nothing else, and specs/conformance.yml is
+    explicit that a declaration is checked for its form and never for its truth.
+
+    Owed, not done: no released artifact ships a spec set below 1.13.0, and this
+    repository carries no tags, so a claim pinned to an earlier set cannot be
+    judged by any checker an adopter can obtain. That is a release-process gap
+    rather than a checker defect, and it is named here rather than fixed.
+
+    Risks stated: widening the accepted set weakens the check slightly — a
+    divergence naming an instrument no longer has to name a field the instrument
+    actually scores, only the instrument. Comparing against the dimension
+    identifiers inside a SKILL.md would close that, and is not attempted here;
+    the gap being fixed is a target that could not be named at all.
