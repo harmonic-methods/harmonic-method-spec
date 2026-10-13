@@ -21,12 +21,14 @@ beat_version:
     before the Bar is closed. The order at a boundary becomes Cutoff, Tie off,
     Downbeat. The Downbeat itself is unchanged.
   scope: >
-    In: `specs/bar.yml` — `starts` and `ends` move from `date` to `timestamp`,
-    with a date-only value read as the start of that day in the cadence owner's
-    time zone so no stored value becomes invalid; `ends` is described as the
+    In: `specs/bar.yml` — `starts` and `ends` move from `date` to `timestamp`
+    and must carry a time of day and an explicit UTC offset, both the cadence
+    owner's, so a date-only value is no longer valid; `ends` is described as the
     Cutoff; `status` says a Bar past its Cutoff stays open until its Tie off
     finishes; three rules for the half-open window, the Tie off, and the order
-    at a boundary. The worked example's two Bars restated as half-open windows.
+    at a boundary. A checker rule rejecting a date-only or zoneless `starts` or
+    `ends`. The worked example's two Bars restated as half-open windows with
+    full instants.
     The cadence paragraph in `README.md` and the Bar line in `llms.txt`. A
     decision Note, a changelog entry, and the spec set minor step.
 
@@ -38,13 +40,15 @@ beat_version:
     asked for. Out: which Bar a boundary Downbeat names in its `bar` field; the
     order is stated, the reference is left as `specs/downbeat.yml` has it.
 
-    Out: a checker change. The sibling-overlap check already compares a start
-    against the previous Cutoff with a strict inequality, which is the half-open
-    reading; it was made to fail by moving a sibling's start one day before its
-    predecessor's Cutoff before being relied on.
+    No change to the sibling-overlap check. It already compares a start against
+    the previous Cutoff with a strict inequality, which is the half-open
+    reading; it was made to fail by moving a sibling's start before its
+    predecessor's Cutoff before being relied on. The new instant rule was made
+    to fail first against a temporary Bar with a date-only `ends` and another
+    with a zoneless one.
 
-    Risks stated: a tree that wrote `ends` as an inclusive last day now reads one
-    day short, and nothing can detect that, because both readings parse. The
-    worked example was in exactly that state. The cost falls on adopters with
-    recorded cadences; the changelog says so plainly rather than leaving them to
-    find it.
+    Risks stated: every Bar recorded with dates is invalid under this step and
+    has to be restated by its adopter, including the worked example. The break
+    is loud by design — a refused value is fixed once, where the alternative of
+    reading a date as the start of its day would have moved every inclusive
+    last day silently. The changelog says so plainly.

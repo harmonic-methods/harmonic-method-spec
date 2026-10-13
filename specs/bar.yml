@@ -23,16 +23,20 @@ fields:
     description: >
       The instant the Bar opens — the first instant inside its window. Where a
       sibling precedes it without a gap, this is the same instant as that
-      sibling's Cutoff.
+      sibling's Cutoff. It carries a time of day and an explicit UTC offset,
+      both the cadence owner's — for example 2026-10-21T09:00:00-07:00. A
+      date alone, or a time of day with no offset, is not a valid value.
   ends:
     type: timestamp
     required: true
     description: >
       The Cutoff — the instant the Bar ends, and the first instant outside its
-      window. An instant, a time of day in the time zone of whoever owns the
-      cadence, not a calendar date. A value carrying only a date names the
-      start of that day there, so a date-only Cutoff names the day after the
-      last full day of work, never the last day itself.
+      window. Like `starts`, it carries a time of day and an explicit UTC
+      offset, both the cadence owner's. A date alone is not a valid value: a
+      date names a day rather than an instant, and a day cannot be the
+      boundary between two Bars without belonging to one of them. A time with
+      no offset is not valid either, because it means a different instant to
+      each reader.
   status:
     type: enum [open, closed]
     required: true

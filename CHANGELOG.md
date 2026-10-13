@@ -17,20 +17,26 @@
   and no field carries it. At a boundary the order is Cutoff, Tie off,
   Downbeat; the Downbeat is unchanged. Spec set moves to 1.14.0. See
   HM-BV-003.33 and HM-N-155.
-  - **`starts` and `ends` move from `date` to `timestamp`.** A Cutoff is a time
-    of day in the cadence owner's time zone, because a date cannot be the
-    boundary between two Bars without belonging to one of them. The type is
-    widened rather than narrowed: a date-only value stays valid and names the
-    start of that day there.
-  - **What this costs.** A tree that wrote `ends` as an inclusive last day now
-    reads one day short, and nothing can detect it, because both readings
-    parse. Restate such a Cutoff as the day after the last full day of work.
-    The worked example was in exactly that state and has been restated.
-  - **The checker already held this.** Its sibling-overlap check compares a
-    start against the previous Bar's end with a strict inequality, which is
-    the half-open reading; the published rule had simply never said so.
-    Verified by moving a sibling's start one day before its predecessor's
-    Cutoff and watching the check fail.
+  - **`starts` and `ends` move from `date` to `timestamp`, and must carry a
+    time of day and an explicit UTC offset** — both the cadence owner's, as in
+    `2026-10-21T09:00:00-07:00`. A date names a day, not an instant, and a day
+    cannot be the boundary between two Bars without belonging to one of them.
+    Requiring the time removes the inclusive-last-day ambiguity outright rather
+    than reinterpreting dates; requiring the offset keeps two values comparable
+    across zones. The checker rejects a date-only value and a zoneless one.
+  - **What this costs.** Every Bar recorded with dates is now invalid, and every
+    adopter holding one has to restate it — the Cutoff as the instant the next
+    Bar starts, not the last day of this one. The worked example has been
+    restated. This breaks a permitted value, and under the 1.x rule that is a
+    minor step rather than a major: the method is still stabilizing, and the
+    consumer most likely to hold recorded Bars is the reference implementation,
+    which asked for these terms. A refused value is the cheaper break — it is
+    fixed once, where a silently reinterpreted one stays wrong unnoticed.
+  - **Verified by making it fail first.** The instant rule failed against a
+    temporary Bar with a date-only `ends` and another with a zoneless one, and
+    passed once both carried an offset. The sibling-overlap check already held
+    the half-open reading with a strict inequality; it failed when a sibling
+    started before its predecessor's Cutoff.
   - Out: a name or an enum for what becomes of an unfinished item. No spec
     records items against a Bar, so there is nowhere for one to live.
 
