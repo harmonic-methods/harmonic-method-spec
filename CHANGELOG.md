@@ -2,6 +2,49 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A Bar ends at an instant, and its unfinished work is tied off.**
+  `specs/bar.yml` gave a Bar a boundary at each end and never said which side
+  owned it: `starts` and `ends` were dates with no stated inclusivity, so a
+  cadence shown as two date ranges sharing a day at both ends could not say
+  which Bar the shared day belonged to. The end boundary is now the **Cutoff**,
+  and a Bar's window is half-open — it includes its start and excludes its
+  Cutoff, so one Bar's Cutoff and the next Bar's start are the same instant and
+  no moment belongs to both. Work before the Cutoff belongs to the outgoing Bar;
+  at or after it, to the incoming one. A Cutoff is shown as an instant, never as
+  an inclusive last day. The **Tie off** is named alongside it: the ceremony,
+  held by the Conductor at or after the Cutoff, that settles every unfinished
+  item in the Bar before the Bar is closed. It is a ceremony and not an entity,
+  and no field carries it. An item that continues into the next Bar is **tied
+  across**, named for the musical tie that carries a note across the barline,
+  so "Tie off" names the ceremony and "tie across" the carry, and no one term
+  means both. At a boundary the order is Cutoff, Tie off, Downbeat; the
+  Downbeat is unchanged. Spec set moves to 1.14.0. See
+  HM-BV-003.33 and HM-N-155.
+  - **`starts` and `ends` move from `date` to `timestamp`, and must carry a
+    time of day and an explicit UTC offset** — both the cadence owner's, as in
+    `2026-10-21T09:00:00-07:00`. A date names a day, not an instant, and a day
+    cannot be the boundary between two Bars without belonging to one of them.
+    Requiring the time removes the inclusive-last-day ambiguity outright rather
+    than reinterpreting dates; requiring the offset keeps two values comparable
+    across zones. The checker rejects a date-only value and a zoneless one.
+  - **What this costs.** Every Bar recorded with dates is now invalid, and every
+    adopter holding one has to restate it — the Cutoff as the instant the next
+    Bar starts, not the last day of this one. The worked example has been
+    restated. This breaks a permitted value, and under the 1.x rule that is a
+    minor step rather than a major: the method is still stabilizing, and the
+    consumer most likely to hold recorded Bars is the reference implementation,
+    which asked for these terms. A refused value is the cheaper break — it is
+    fixed once, where a silently reinterpreted one stays wrong unnoticed.
+  - **Verified by making it fail first.** The instant rule failed against a
+    temporary Bar with a date-only `ends` and another with a zoneless one, and
+    passed once both carried an offset. The sibling-overlap check already held
+    the half-open reading with a strict inequality; it failed when a sibling
+    started before its predecessor's Cutoff.
+  - **Tie across is prose, not a model.** No field, enum, or entity records
+    which items were tied across; no spec records items against a Bar, so an
+    implementation decides how it keeps that. Modelling item outcomes would be
+    its own step.
+
 - **A divergence the declaration form could not state.** `specs/conformance.yml`
   puts two things in the same `binding_and_comparable` category — the fields an
   entity declares and which are required, and the identifiers each instrument

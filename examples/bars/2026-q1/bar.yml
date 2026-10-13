@@ -1,7 +1,9 @@
-# Example — the enclosing period. See specs/bar.yml.
+# Example — the enclosing period. Its Cutoff falls after the change to daylight
+# time, so its offset differs from its start's: the offset is the cadence
+# owner's at that instant, not a constant. See specs/bar.yml.
 bar:
   id: EX-BAR-2026-Q1
   attached_to: EX-SYS-CODA
-  starts: 2026-01-01
-  ends: 2026-03-31
+  starts: 2026-01-01T09:00:00-08:00
+  ends: 2026-04-01T09:00:00-07:00
   status: open

@@ -1,0 +1,76 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-155
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.33
+  content: >
+    Two terms join the method's cadence vocabulary. The Cutoff is the instant a
+    Bar ends: its window is half-open, including its start and excluding its
+    Cutoff, so the previous Bar's Cutoff and the next Bar's start are the same
+    instant. Work before the Cutoff belongs to the outgoing Bar; at or after it,
+    to the incoming one. A Cutoff is an instant, not a calendar date:
+    `starts` and `ends` move from `date` to `timestamp` and must carry a time
+    of day and an explicit UTC offset, both the cadence owner's. A date-only
+    value and a time with no offset are no longer valid, and the checker
+    rejects both. The Tie
+    off is the ceremony, held by the Conductor at or after the Cutoff, that
+    settles every unfinished item in the Bar before the Bar is closed. It is a
+    ceremony, not an entity, and gains no field. An item that continues into
+    the next Bar is tied across, a prose term with no recorded outcome. At a boundary the order is
+    Cutoff, Tie off, Downbeat; the Downbeat is unchanged. The spec set takes a
+    minor step.
+  rationale: >
+    The need surfaced in practice: a cadence displayed as two date ranges that
+    shared a day at both ends prompted the question every such display invites —
+    which Bar owns the shared day — and the specification could not answer it.
+    `ends` was a date with no stated inclusivity, so the honest answer was that
+    it depended on the reader. The checker had already chosen the half-open
+    reading without saying so. Naming the boundary and fixing its side settles
+    the question once rather than at every boundary.
+
+    An instant rather than a date because a date names a day, and a day cannot
+    be the boundary between two Bars without belonging to one of them. A draft
+    of this decision kept date-only values valid and read them as the start of
+    that day. That would have reinterpreted every `ends` written as an inclusive
+    last day, silently and a day short, with nothing able to detect it because
+    both readings parse. Requiring the time of day removes the ambiguity
+    outright instead: a value that does not say which instant it means is
+    refused, so no old value is quietly read a new way. The offset is required
+    for the same reason — a time with none means a different instant to each
+    reader, and two such values compare wrongly across zones.
+
+    The cost is that every Bar recorded with dates is now invalid and has to be
+    restated by its adopter. That is a change breaking a permitted value, and
+    under the 1.x rule it takes a minor step: the spec set stays in the 1.x line
+    while the method is stabilizing, and what would cost a major is a consumer
+    who can be broken. The consumer most likely to hold recorded Bars is the
+    reference implementation, which asked for these terms and is moving to
+    instants itself; this repository records no cadence of its own, and its
+    worked example was restated in the same step. A loud failure at upgrade is
+    also the cheaper break — a refused value is fixed once, where a reinterpreted
+    one is wrong without anyone knowing.
+
+    Cutoff is the conductor's gesture that ends a phrase, and fits the method's
+    vocabulary for the same reason the other cadence words do. Tie off was
+    chosen over three names already spent or misleading. "Bar Transition"
+    collides with the language of state changes and names the passage of time
+    rather than the settling of work. "Cadence" is already the schedule itself.
+    "Release" already names a grouping of delivered work in implementations, the
+    same collision that kept "group" out of the cadence vocabulary.
+
+    An unfinished item that continues into the next Bar is tied across, named
+    for the musical tie that carries a note across the barline. Naming it gives
+    the carry a word of its own, so "tie" covers the ceremony (Tie off) and the
+    carry (tie across) without one word meaning both. It is published as a prose term in the Tie off rule and
+    deliberately not as an outcome model: no field, enum, or entity is added,
+    because no spec records items against a Bar and so there is nowhere for an
+    outcome to live. Implementations decide how they record which items were
+    tied across. Modelling item outcomes — carried, finished late, abandoned —
+    would be its own step with its own decision, not a rider on this one.
+
+    The Tie off is the Conductor's because the Conductor holds the work while it
+    happens and closes the gap between what was decided and what is true — a
+    Bar's unfinished work is that gap at the moment it is cheapest to close.
+    Changing the cadence is decided ahead of the doing and stays with the
+    Orchestrator, which is the axis the two functions were separated by.

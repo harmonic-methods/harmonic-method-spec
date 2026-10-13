@@ -584,11 +584,21 @@ function checkCadence(root, barRefs) {
   console.log(`  cadence: ${bars.size} bar(s)`);
   const day = (v) => new Date(`${v}`).getTime();
 
+  // A boundary is an instant, so it carries a time of day and an explicit UTC
+  // offset. A date names a day, not an instant, and cannot be a Cutoff without
+  // belonging to one of the two Bars it divides; a zoneless time is read in
+  // whatever zone the reader happens to be in, so two of them compare wrongly.
+  const INSTANT = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/;
   for (const bar of bars.values()) {
-    if (Number.isNaN(day(bar.starts)) || Number.isNaN(day(bar.ends))) {
-      fail(`${bar.path}: starts/ends must be dates`);
-      continue;
+    let malformed = false;
+    for (const f of ['starts', 'ends']) {
+      if (bar[f] === undefined) continue;
+      if (!INSTANT.test(`${bar[f]}`) || Number.isNaN(day(bar[f]))) {
+        fail(`${bar.path}: ${f} '${bar[f]}' is not an instant — give a time of day and a UTC offset, e.g. 2026-01-15T09:00:00-08:00`);
+        malformed = true;
+      }
     }
+    if (malformed) continue;
     if (day(bar.ends) < day(bar.starts)) fail(`${bar.path}: ends before it starts`);
     if (bar.parent === undefined) continue;
 
