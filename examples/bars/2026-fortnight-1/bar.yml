@@ -1,11 +1,13 @@
 # Example — a shorter period inside the quarter, showing that a longer cadence is
 # a Bar with children rather than a second entity. Nesting is a reference, not a
-# directory: the parent contains this one in time at the same altitude.
+# directory: the parent contains this one in time at the same altitude. The
+# window is half-open, so `ends` is the Cutoff — the first instant outside the
+# Bar — and a date-only Cutoff names the day after the last full day of work.
 # See specs/bar.yml.
 bar:
   id: EX-BAR-2026-F1
   attached_to: EX-SYS-CODA
   starts: 2026-01-01
-  ends: 2026-01-14
+  ends: 2026-01-15
   status: closed
   parent: EX-BAR-2026-Q1

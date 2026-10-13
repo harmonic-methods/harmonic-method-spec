@@ -1,0 +1,56 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-155
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.33
+  content: >
+    Two terms join the method's cadence vocabulary. The Cutoff is the instant a
+    Bar ends: its window is half-open, including its start and excluding its
+    Cutoff, so the previous Bar's Cutoff and the next Bar's start are the same
+    instant. Work before the Cutoff belongs to the outgoing Bar; at or after it,
+    to the incoming one. A Cutoff is an instant in the cadence owner's time
+    zone, not a calendar date, and `starts` and `ends` move from `date` to
+    `timestamp`, with a date-only value read as the start of that day. The Tie
+    off is the ceremony, held by the Conductor at or after the Cutoff, that
+    settles every unfinished item in the Bar before the Bar is closed. It is a
+    ceremony, not an entity, and gains no field. At a boundary the order is
+    Cutoff, Tie off, Downbeat; the Downbeat is unchanged. The spec set takes a
+    minor step.
+  rationale: >
+    The need surfaced in practice: a cadence displayed as two date ranges that
+    shared a day at both ends prompted the question every such display invites —
+    which Bar owns the shared day — and the specification could not answer it.
+    `ends` was a date with no stated inclusivity, so the honest answer was that
+    it depended on the reader. The checker had already chosen the half-open
+    reading without saying so. Naming the boundary and fixing its side settles
+    the question once rather than at every boundary.
+
+    An instant rather than a date because a date cannot be the boundary between
+    two Bars without belonging to one of them, and because teams spanning time
+    zones disagree about when a date ends. Widening the type rather than
+    narrowing it keeps every stored value valid; what moves is the reading of a
+    date-only `ends` that was meant as an inclusive last day, which now falls a
+    day short. That is a break for a consumer who wrote one, nothing can detect
+    it, and so it is said in the changelog rather than left to be discovered.
+    Under the 1.x rule a change breaking a permitted reading takes a minor step,
+    and the reference implementation, the consumer most likely to hold recorded
+    Bars, is the one that asked for the term.
+
+    Cutoff is the conductor's gesture that ends a phrase, and fits the method's
+    vocabulary for the same reason the other cadence words do. Tie off was
+    chosen over three names already spent or misleading. "Bar Transition"
+    collides with the language of state changes and names the passage of time
+    rather than the settling of work. "Cadence" is already the schedule itself.
+    "Release" already names a grouping of delivered work in implementations, the
+    same collision that kept "group" out of the cadence vocabulary. Carrying an
+    item forward across a boundary would naturally be named for the musical tie
+    across a barline, which is why "tie" is kept to the ceremony rather than
+    also used for an outcome; no outcome is named here because no spec records
+    items against a Bar.
+
+    The Tie off is the Conductor's because the Conductor holds the work while it
+    happens and closes the gap between what was decided and what is true — a
+    Bar's unfinished work is that gap at the moment it is cheapest to close.
+    Changing the cadence is decided ahead of the doing and stays with the
+    Orchestrator, which is the axis the two functions were separated by.

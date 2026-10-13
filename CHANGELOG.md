@@ -2,6 +2,38 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A Bar ends at an instant, and its unfinished work is tied off.**
+  `specs/bar.yml` gave a Bar a boundary at each end and never said which side
+  owned it: `starts` and `ends` were dates with no stated inclusivity, so a
+  cadence shown as two date ranges sharing a day at both ends could not say
+  which Bar the shared day belonged to. The end boundary is now the **Cutoff**,
+  and a Bar's window is half-open — it includes its start and excludes its
+  Cutoff, so one Bar's Cutoff and the next Bar's start are the same instant and
+  no moment belongs to both. Work before the Cutoff belongs to the outgoing Bar;
+  at or after it, to the incoming one. A Cutoff is shown as an instant, never as
+  an inclusive last day. The **Tie off** is named alongside it: the ceremony,
+  held by the Conductor at or after the Cutoff, that settles every unfinished
+  item in the Bar before the Bar is closed. It is a ceremony and not an entity,
+  and no field carries it. At a boundary the order is Cutoff, Tie off,
+  Downbeat; the Downbeat is unchanged. Spec set moves to 1.14.0. See
+  HM-BV-003.33 and HM-N-155.
+  - **`starts` and `ends` move from `date` to `timestamp`.** A Cutoff is a time
+    of day in the cadence owner's time zone, because a date cannot be the
+    boundary between two Bars without belonging to one of them. The type is
+    widened rather than narrowed: a date-only value stays valid and names the
+    start of that day there.
+  - **What this costs.** A tree that wrote `ends` as an inclusive last day now
+    reads one day short, and nothing can detect it, because both readings
+    parse. Restate such a Cutoff as the day after the last full day of work.
+    The worked example was in exactly that state and has been restated.
+  - **The checker already held this.** Its sibling-overlap check compares a
+    start against the previous Bar's end with a strict inequality, which is
+    the half-open reading; the published rule had simply never said so.
+    Verified by moving a sibling's start one day before its predecessor's
+    Cutoff and watching the check fail.
+  - Out: a name or an enum for what becomes of an unfinished item. No spec
+    records items against a Bar, so there is nowhere for one to live.
+
 - **A divergence the declaration form could not state.** `specs/conformance.yml`
   puts two things in the same `binding_and_comparable` category — the fields an
   entity declares and which are required, and the identifiers each instrument

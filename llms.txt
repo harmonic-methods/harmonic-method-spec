@@ -47,7 +47,7 @@
   the superseder does not reopen what it closed.
 - specs/conformance.yml: Conformance — which contents bind an implementation, which of those a tool can compare, and the declaration an implementation writes. Extensions conform; contradictions do not. A claim is made against a spec set version, never against the trunk.
 - specs/spec-set.yml: the one version of the normative surface; every spec repeats it as a parsed spec_version field and the checker enforces agreement. Pin this number, not the repository tag — package.json versions the checker separately.
-- specs/bar.yml: Bar — the recurring cadence period work is planned and delivered within; nests temporally via an optional parent, so a longer cadence is a Bar with children rather than a second entity
+- specs/bar.yml: Bar — the recurring cadence period work is planned and delivered within; nests temporally via an optional parent, so a longer cadence is a Bar with children rather than a second entity. Its window is half-open and its end is the Cutoff, an instant rather than an inclusive last day; the Tie off is the Conductor's ceremony settling the Bar's unfinished work after the Cutoff and before the Downbeat — a ceremony, not an entity
 - specs/downbeat.yml: Downbeat — an immutable anchor recording where a capability stood and what it was converging toward; sits at beat altitude, so one Bar boundary yields one Downbeat per capability in view
 - specs/function.yml: Function — the five accountabilities (Composer, Orchestrator, Conductor, Producer, Promoter); a concept, not an instantiable entity, and not a field on any entity
 

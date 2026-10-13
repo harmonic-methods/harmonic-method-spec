@@ -3,5 +3,5 @@ bar:
   id: EX-BAR-2026-Q1
   attached_to: EX-SYS-CODA
   starts: 2026-01-01
-  ends: 2026-03-31
+  ends: 2026-04-01
   status: open

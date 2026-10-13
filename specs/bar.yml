@@ -1,11 +1,13 @@
 # Harmonic Method spec — Bar
 entity: bar
-spec_version: 1.13.0
+spec_version: 1.14.0
 summary: >
   The recurring period work is planned and delivered within — the regular
   cadence a Conductor reconciles against. A Bar is a span of time with a
   boundary at each end; crossing a boundary is the routine occasion for taking
-  a Downbeat on each capability in view.
+  a Downbeat on each capability in view. The instant a Bar ends is its
+  Cutoff, and the ceremony that settles the Bar's unfinished work after it
+  is its Tie off.
 attached_to: [portfolio, system]
 fields:
   id: {type: string, required: true}
@@ -15,14 +17,30 @@ fields:
     description: >
       The portfolio or system whose cadence this Bar belongs to. Altitude is
       recursion, so a portfolio of portfolios runs its own Bars.
-  starts: {type: date, required: true}
-  ends: {type: date, required: true}
+  starts:
+    type: timestamp
+    required: true
+    description: >
+      The instant the Bar opens — the first instant inside its window. Where a
+      sibling precedes it without a gap, this is the same instant as that
+      sibling's Cutoff.
+  ends:
+    type: timestamp
+    required: true
+    description: >
+      The Cutoff — the instant the Bar ends, and the first instant outside its
+      window. An instant, a time of day in the time zone of whoever owns the
+      cadence, not a calendar date. A value carrying only a date names the
+      start of that day there, so a date-only Cutoff names the day after the
+      last full day of work, never the last day itself.
   status:
     type: enum [open, closed]
     required: true
     additions: none
     children: none
-    description: Binary — open (the current or a future period) or closed (elapsed).
+    description: >
+      Binary — open (the current or a future period, or one past its Cutoff
+      whose Tie off has not finished) or closed (elapsed and tied off).
   parent:
     type: reference
     required: false
@@ -38,6 +56,26 @@ rules:
   - >-
     Bars sharing a parent do not overlap. Overlapping periods make "which Bar
     are we in" unanswerable, which defeats the purpose of having one.
+  - >-
+    A Bar's window is half-open: it includes its start and excludes its Cutoff.
+    One Bar's Cutoff and the next Bar's start may be the same instant, which
+    leaves no gap, no overlap, and no moment both could claim. Work done before
+    the Cutoff belongs to the outgoing Bar; work done at or after it belongs to
+    the incoming one. Where a Bar's window is shown, the Cutoff is shown as an
+    instant rather than as an inclusive last day — a pair of date ranges that
+    share a day at both ends invites the question of which Bar owns it.
+  - >-
+    The Tie off is the ceremony, held at or after the Cutoff, that settles every
+    unfinished item in the Bar before the Bar is closed. It is held by the
+    Conductor, because it closes the gap between what the Bar was planned to
+    deliver and what it did. It is a ceremony and not an entity — nothing
+    records it as a record of its own and no field carries it; its outcome is
+    the Bar's move to closed. Changing the cadence itself is a different
+    decision, taken ahead of the doing, and is not part of a Tie off.
+  - >-
+    At a boundary the order is Cutoff, then Tie off, then Downbeat. A Downbeat
+    taken before the Tie off records a Bar whose unfinished work is still
+    unsettled.
   - >-
     A Bar's boundary is the occasion for a Downbeat, not a substitute for one.
     A period that elapses without an anchor being taken leaves nothing to
