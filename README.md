@@ -137,7 +137,8 @@ then measurable rather than remembered. The instant a Bar ends is its **Cutoff**
 a window includes its start and excludes its Cutoff, so one Bar's Cutoff and the
 next Bar's start are the same instant and no moment belongs to both. The
 Conductor's **Tie off** follows it — the ceremony that settles every unfinished
-item in the Bar before the Bar is closed — and the Downbeat comes after that.
+item in the Bar before the Bar is closed; an item that continues into the next
+Bar is *tied across* it — and the Downbeat comes after that.
 
 Cutting across all of it are the five **functions** — Composer, Orchestrator,
 Conductor, Producer, Promoter. They are accountabilities rather than titles: one

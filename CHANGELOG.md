@@ -14,8 +14,11 @@
   an inclusive last day. The **Tie off** is named alongside it: the ceremony,
   held by the Conductor at or after the Cutoff, that settles every unfinished
   item in the Bar before the Bar is closed. It is a ceremony and not an entity,
-  and no field carries it. At a boundary the order is Cutoff, Tie off,
-  Downbeat; the Downbeat is unchanged. Spec set moves to 1.14.0. See
+  and no field carries it. An item that continues into the next Bar is **tied
+  across**, named for the musical tie that carries a note across the barline,
+  so "Tie off" names the ceremony and "tie across" the carry, and no one term
+  means both. At a boundary the order is Cutoff, Tie off, Downbeat; the
+  Downbeat is unchanged. Spec set moves to 1.14.0. See
   HM-BV-003.33 and HM-N-155.
   - **`starts` and `ends` move from `date` to `timestamp`, and must carry a
     time of day and an explicit UTC offset** — both the cadence owner's, as in
@@ -37,8 +40,10 @@
     passed once both carried an offset. The sibling-overlap check already held
     the half-open reading with a strict inequality; it failed when a sibling
     started before its predecessor's Cutoff.
-  - Out: a name or an enum for what becomes of an unfinished item. No spec
-    records items against a Bar, so there is nowhere for one to live.
+  - **Tie across is prose, not a model.** No field, enum, or entity records
+    which items were tied across; no spec records items against a Bar, so an
+    implementation decides how it keeps that. Modelling item outcomes would be
+    its own step.
 
 - **A divergence the declaration form could not state.** `specs/conformance.yml`
   puts two things in the same `binding_and_comparable` category — the fields an

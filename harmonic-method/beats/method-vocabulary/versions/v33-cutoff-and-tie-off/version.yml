@@ -33,11 +33,12 @@ beat_version:
     decision Note, a changelog entry, and the spec set minor step.
 
     Out: a field or an entity for the Tie off. It is a ceremony; its outcome is
-    the Bar's move to closed, which `status` already carries. Out: a name or an
-    enum for what happens to an unfinished item — carried forward, dropped,
-    finished late. No spec here records items against a Bar, so there is nowhere
-    for such an outcome to live, and inventing one would publish a field nobody
-    asked for. Out: which Bar a boundary Downbeat names in its `bar` field; the
+    the Bar's move to closed, which `status` already carries. In: "tied
+    across" as a prose term in the Tie off rule for an unfinished item that
+    continues into the next Bar. Out: any field, enum, or entity for what
+    becomes of an unfinished item — carried, finished late, abandoned. No spec
+    here records items against a Bar, so there is nowhere for such an outcome
+    to live; modelling one would be its own step. Out: which Bar a boundary Downbeat names in its `bar` field; the
     order is stated, the reference is left as `specs/downbeat.yml` has it.
 
     No change to the sibling-overlap check. It already compares a start against

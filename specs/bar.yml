@@ -74,8 +74,13 @@ rules:
     Conductor, because it closes the gap between what the Bar was planned to
     deliver and what it did. It is a ceremony and not an entity — nothing
     records it as a record of its own and no field carries it; its outcome is
-    the Bar's move to closed. Changing the cadence itself is a different
-    decision, taken ahead of the doing, and is not part of a Tie off.
+    the Bar's move to closed. An unfinished item that continues into the next
+    Bar is tied across it, named for the musical tie that carries a note
+    across the barline, so "Tie off" names the ceremony and "tie across" the
+    carry, and no one term means both. The method records no item outcomes — it adds no
+    field, enum, or entity for them — and how an implementation records which
+    items were tied across is its own choice. Changing the cadence itself is a
+    different decision, taken ahead of the doing, and is not part of a Tie off.
   - >-
     At a boundary the order is Cutoff, then Tie off, then Downbeat. A Downbeat
     taken before the Tie off records a Bar whose unfinished work is still

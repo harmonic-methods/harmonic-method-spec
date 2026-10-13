@@ -16,7 +16,8 @@ note:
     rejects both. The Tie
     off is the ceremony, held by the Conductor at or after the Cutoff, that
     settles every unfinished item in the Bar before the Bar is closed. It is a
-    ceremony, not an entity, and gains no field. At a boundary the order is
+    ceremony, not an entity, and gains no field. An item that continues into
+    the next Bar is tied across, a prose term with no recorded outcome. At a boundary the order is
     Cutoff, Tie off, Downbeat; the Downbeat is unchanged. The spec set takes a
     minor step.
   rationale: >
@@ -56,11 +57,17 @@ note:
     collides with the language of state changes and names the passage of time
     rather than the settling of work. "Cadence" is already the schedule itself.
     "Release" already names a grouping of delivered work in implementations, the
-    same collision that kept "group" out of the cadence vocabulary. Carrying an
-    item forward across a boundary would naturally be named for the musical tie
-    across a barline, which is why "tie" is kept to the ceremony rather than
-    also used for an outcome; no outcome is named here because no spec records
-    items against a Bar.
+    same collision that kept "group" out of the cadence vocabulary.
+
+    An unfinished item that continues into the next Bar is tied across, named
+    for the musical tie that carries a note across the barline. Naming it gives
+    the carry a word of its own, so "tie" covers the ceremony (Tie off) and the
+    carry (tie across) without one word meaning both. It is published as a prose term in the Tie off rule and
+    deliberately not as an outcome model: no field, enum, or entity is added,
+    because no spec records items against a Bar and so there is nowhere for an
+    outcome to live. Implementations decide how they record which items were
+    tied across. Modelling item outcomes — carried, finished late, abandoned —
+    would be its own step with its own decision, not a rider on this one.
 
     The Tie off is the Conductor's because the Conductor holds the work while it
     happens and closes the gap between what was decided and what is true — a
