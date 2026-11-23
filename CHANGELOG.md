@@ -2,6 +2,20 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A Beat's full name is Capability Beat.** A musical beat is the shortest
+  span in the score and sits inside a bar; a Beat here is a durable capability
+  that outlasts every period it is worked in. HM-N-039 accepted that gap when
+  Bars were made to nest, and the cadence vocabulary has grown since — Bar,
+  Downbeat, and now Cutoff, Tie off, and tied across — so "Beat" reads more and
+  more like a slot of time. The full name puts the meaning in the word:
+  `specs/beat.yml`, the model in `README.md`, and the Beat line in `llms.txt`
+  now introduce a **Capability Beat**, or **Beat** for short, and say the name
+  sets no delivery interval. Beat stays the word after that. **The spec set does
+  not move**: the entity key, the `beats/` directory, the reference fields, the
+  identifiers, the altitude, the skill names, and Beat Version are unchanged, and
+  no field, enum, dimension, or anchor differs. An implementation may use the
+  full name or not. See HM-BV-003.34 and HM-N-156.
+
 - **A Bar ends at an instant, and its unfinished work is tied off.**
   `specs/bar.yml` gave a Bar a boundary at each end and never said which side
   owned it: `starts` and `ends` were dates with no stated inclusivity, so a

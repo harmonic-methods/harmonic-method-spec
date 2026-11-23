@@ -2,9 +2,12 @@
 entity: beat
 spec_version: 1.14.0
 summary: >
-  The canonical unit of capability. A Beat names a durable capability or
-  process of the system being improved — medium-agnostic: software capability,
-  operational process, or organizational practice.
+  The canonical unit of capability. A Capability Beat, or Beat for short, names
+  a durable capability or process of the system being improved —
+  medium-agnostic: software capability, operational process, or organizational
+  practice. The full name is the one to introduce it by, because the musical
+  word alone reads as a unit of time: a Beat sets no delivery interval, and it
+  outlasts every Bar it is worked in rather than sitting inside one.
 fields:
   id: {type: string, required: true}
   title:

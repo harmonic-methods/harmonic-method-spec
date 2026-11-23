@@ -1,0 +1,52 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-156
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.34
+  content: >
+    The Beat's full name is Capability Beat, and Beat is its short form. A
+    Beat is introduced by the full name where a newcomer first meets it — the
+    summary in `specs/beat.yml`, the model in `README.md`, and the Beat line in
+    `llms.txt` — together with the statement that the name sets no delivery
+    interval, and is called Beat after that. Nothing else changes: the entity
+    key, the `beats/` directory, the reference fields, the identifiers, the
+    altitude, the skill names, and the name Beat Version all stay. An
+    implementation may use the full name or not. The spec set does not move.
+  rationale: >
+    [HM-N-039] accepted a little musical literalism so that Bars could nest: a
+    musical beat is atomic and sits inside a bar, where a Beat here is a durable
+    capability that outlasts many. That was the right call for Bars and it is
+    not reopened. What it did not price is that the cost compounds. Every term
+    the method has added for its cadence since — Bar, Downbeat, and in
+    HM-BV-003.33 Cutoff, Tie off, and tied across — is a word about time, and
+    each one makes "Beat" read more like a unit of time inside a Bar. The word
+    that most needs to read as durable is the one the metaphor pulls toward the
+    shortest span.
+
+    The fix goes where the defect is. The confusion is in how the word is read
+    on first meeting, not in any identifier, so the remedy is a full name at
+    the places it is first read rather than a rename of the entity. Renaming
+    would move the entity key, the directory, the reference fields in three
+    specs, the altitude name, the identifier prefix, and every implementation's
+    identifiers — all for a reader who never sees any of them — and would pull
+    Beat Version toward a longer name that helps no one. A full name costs
+    nothing anyone conforms to, which is why the spec set does not move.
+
+    Capability rather than another qualifier because the definition already
+    said it. The summary called a Beat the canonical unit of capability and the
+    title field asked it to name the capability and not a task; the word was in
+    the definition and missing from the name.
+
+    Now rather than after evidence, because the evidence bar in [HM-N-079] is
+    for primitives, and this adds none. The reference implementation's public
+    method documentation already introduces a Capability Beat on its
+    introductory pages, as a pilot with a reader test prepared and not yet run.
+    This repository is where the method's vocabulary is canonical. Staying
+    silent would not have avoided the commitment; it would have left the
+    method's public explainer using a name its canonical specification does not
+    define, which is an implementation deciding what it conforms to. If the
+    reader test finds the full name does not help newcomers — that Beat still
+    suggests a fixed interval, or the added word teaches nothing "capability"
+    alone did not — a superseding Note withdraws it, and the prose is three
+    edits.
