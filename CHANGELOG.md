@@ -8,9 +8,11 @@
   Bars were made to nest, and the cadence vocabulary has grown since — Bar,
   Downbeat, and now Cutoff, Tie off, and tied across — so "Beat" reads more and
   more like a slot of time. The full name puts the meaning in the word:
-  `specs/beat.yml`, the model in `README.md`, and the Beat line in `llms.txt`
-  now introduce a **Capability Beat**, or **Beat** for short, and say the name
-  sets no delivery interval. Beat stays the word after that. **The spec set does
+  `specs/beat.yml`, the model in `README.md`, the Beat line in `llms.txt`, and
+  the `beat-composing` skill now introduce a **Capability Beat**, or **Beat**
+  for short, and say the name sets no delivery interval; the skill introduces a
+  Beat it drafts that way, outside the Beat's title. Beat stays the word after
+  that. **The spec set does
   not move**: the entity key, the `beats/` directory, the reference fields, the
   identifiers, the altitude, the skill names, and Beat Version are unchanged, and
   no field, enum, dimension, or anchor differs. An implementation may use the

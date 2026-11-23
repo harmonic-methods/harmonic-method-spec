@@ -7,8 +7,9 @@ note:
   content: >
     The Beat's full name is Capability Beat, and Beat is its short form. A
     Beat is introduced by the full name where a newcomer first meets it — the
-    summary in `specs/beat.yml`, the model in `README.md`, and the Beat line in
-    `llms.txt` — together with the statement that the name sets no delivery
+    summary in `specs/beat.yml`, the model in `README.md`, the Beat line in
+    `llms.txt`, and the `beat-composing` skill, which is where an agent first
+    hands a Beat to a person — together with the statement that the name sets no delivery
     interval, and is called Beat after that. Nothing else changes: the entity
     key, the `beats/` directory, the reference fields, the identifiers, the
     altitude, the skill names, and the name Beat Version all stay. An
@@ -26,7 +27,10 @@ note:
 
     The fix goes where the defect is. The confusion is in how the word is read
     on first meeting, not in any identifier, so the remedy is a full name at
-    the places it is first read rather than a rename of the entity. Renaming
+    the places it is first read rather than a rename of the entity. Those
+    places include the composing skill, because many people meet the word
+    first in a draft an agent hands them; the specification's own summary is
+    read by the agent, not by them. Renaming
     would move the entity key, the directory, the reference fields in three
     specs, the altitude name, the identifier prefix, and every implementation's
     identifiers — all for a reader who never sees any of them — and would pull
@@ -48,5 +52,5 @@ note:
     define, which is an implementation deciding what it conforms to. If the
     reader test finds the full name does not help newcomers — that Beat still
     suggests a fixed interval, or the added word teaches nothing "capability"
-    alone did not — a superseding Note withdraws it, and the prose is three
+    alone did not — a superseding Note withdraws it, and the prose is a few
     edits.
