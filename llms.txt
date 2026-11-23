@@ -23,7 +23,9 @@
   Split one when its Coda can no longer be stated without enumerating its parts,
   and never along a layer — if the parts' Beats can only ship in lockstep, the
   boundary describes the work rather than dividing it
-- specs/beat.yml: Beat — a durable capability or process, laddering to a Coda
+- specs/beat.yml: Capability Beat, or Beat for short — a durable capability or
+  process, laddering to a Coda. The name sets no delivery interval; a Beat
+  outlasts any period it is worked in
 - specs/proposal.yml: Proposal — a candidate weighed against a Coda, resolving to
   open, accepted, declined, or withdrawn. Sits one altitude below the Coda it is
   weighed against, because settling what belongs at that next altitude down is the

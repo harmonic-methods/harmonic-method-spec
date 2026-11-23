@@ -1,0 +1,47 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-003.34
+  beat: HM-B-003
+  title: A Beat's full name is Capability Beat
+  status: active
+  summary: >
+    A musical beat is the shortest span in the score and sits inside a bar. A
+    Beat here is a durable capability that outlasts every period it is worked
+    in. [HM-N-039] accepted that gap when Bars were made to nest, and the
+    cadence vocabulary has grown since: Bar, Downbeat, and in the previous step
+    Cutoff, Tie off, and tied across. Every one of those words is about time,
+    and the more the method names time, the more "Beat" reads as a slot inside a
+    Bar — a sprint, a release, a delivery interval — which is the one reading a
+    durable capability must not get.
+
+    This step gives the Beat a full name, Capability Beat, and keeps Beat as the
+    short form used everywhere after it is introduced. The definition already
+    said capability — the summary calls a Beat the canonical unit of capability
+    and the title field asks it to name the capability, not a task — and the
+    name did not. Nothing an implementation conforms to changes.
+  scope: >
+    In: the summary in `specs/beat.yml`, the Beat paragraph of the model in
+    `README.md`, and the Beat line in `llms.txt`, each introducing a Capability
+    Beat, or Beat for short, and saying the name sets no delivery interval. A
+    decision Note and a changelog entry. Marking HM-BV-003.33 delivered, since
+    its work has merged. The `beat-composing` skill, which is where an agent
+    first hands a Beat to a person: its description and opening use the full
+    name, and its output introduces the drafted Beat by it, outside the Beat's
+    title.
+
+    Out: renaming the entity. The entity key `beat`, the `beats/` directory, the
+    `beat` and `beat_version` reference fields, the `HM-B-` identifiers, the
+    beat altitude, and the skill names all stay, and Beat Version keeps its
+    name. Out: every other skill. The rubric sections the fingerprint guards
+    stay as they are, and `beat-version-composing` starts from a Beat that
+    already exists, so it is not where the term is first met. Out: a
+    machine-readable display-name field in the spec format —
+    prose names the entity and nothing has needed more. Out: any requirement
+    that an implementation use the full name. The spec set does not move.
+
+    Risks stated: two names for one thing can read as two things. Every
+    introduction pairs them in one phrase, and there is still one entity key.
+    The full name is also already public in the reference implementation's
+    method documentation, as a pilot whose reader test has not yet run; if
+    that test finds the name does not help, withdrawing it is a superseding
+    Note and the prose edits listed under In.

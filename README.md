@@ -118,8 +118,11 @@ A **Coda** is the outcome an entity exists to serve, written as a resolved
 future state. Codas nest — portfolio, system, Beat — so every step of work
 ladders up to strategy.
 
-A **Beat** is a durable capability. It is never rewritten wholesale; it evolves
-through **Beat Versions**, each a bounded, testable step toward the Coda. A
+A **Capability Beat**, or **Beat** for short, is a durable capability. The full
+name keeps the musical word from reading as a unit of time: a Beat sets no
+delivery interval and outlasts any period it is worked in. It is never rewritten
+wholesale; it evolves through **Beat Versions**, each a bounded, testable step
+toward the Coda. A
 Beat Version is delivered by one or more **Revisions**, the tracked changes that
 actually execute it. **Notes** carry the typed knowledge — background,
 constraints, guidance, decisions — that explains why any of it is the way it is.

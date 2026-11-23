@@ -1,12 +1,13 @@
 ---
 name: beat-composing
-description: Draft a conformant Harmonic Method Beat and its Coda from a plain description of a capability, score the draft against the published Beat rubric, and revise it from that score and from the author's feedback until they are satisfied. Use when asked to compose, write, draft, create, or start a Beat — or when someone has described something they want to build and needs it expressed as a capability rather than a task.
+description: Draft a conformant Harmonic Method Capability Beat (Beat for short) and its Coda from a plain description of a capability, score the draft against the published Beat rubric, and revise it from that score and from the author's feedback until they are satisfied. Use when asked to compose, write, draft, create, or start a Beat — or when someone has described something they want to build and needs it expressed as a capability rather than a task.
 ---
 
 # Beat Composing
 
-You are drafting a **Beat** — a durable capability — and the **Coda** it serves,
-from whatever the person in front of you can already say about it. Specs:
+You are drafting a **Capability Beat**, or **Beat** for short — a durable
+capability — and the **Coda** it serves, from whatever the person in front of
+you can already say about it. Specs:
 `specs/beat.yml` and `specs/coda.yml`.
 
 This serves the **Composer** — the accountability for architectural coherence:
@@ -131,6 +132,11 @@ drafts and does not amend records, and stop.
 ## Output format
 
 - The Coda, then the Beat, ready to be pasted or saved as they stand.
+- The full name the first time you name what you drafted: a Capability Beat, or
+  Beat for short. The person may be meeting the word here first, and the musical
+  word alone reads as a slot of time, so say the name sets no delivery interval.
+  The full name belongs in what you say, not in the Beat's title, which names
+  the capability.
 - Every assumption you marked, as a list, each phrased as the question a person
   could answer.
 - The score, exactly as the quality instrument specifies it, including the spec

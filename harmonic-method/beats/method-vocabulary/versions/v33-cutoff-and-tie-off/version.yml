@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.33
   beat: HM-B-003
   title: A Bar ends at an instant, and its unfinished work is tied off
-  status: active
+  status: delivered
   summary: >
     `specs/bar.yml` gave a Bar a boundary at each end and never said which side
     of the boundary owned it. `starts` and `ends` were dates, nothing stated
