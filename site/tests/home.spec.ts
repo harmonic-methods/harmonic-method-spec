@@ -9,11 +9,12 @@ test('homepage loads its assets and links to the docs without optional credentia
   });
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Build software where intent survives the handoff.');
+  await expect(page.locator('body')).not.toContainText(/five functions/i);
   await expect(page.locator('#blog, #videos, #community, #agents')).toHaveCount(0);
   await expect(page.locator('#functions .hm-fn-card__role')).toHaveText([
     'Director', 'Composer', 'Orchestrator', 'Conductor', 'Producer', 'Promoter',
   ]);
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\/harmonicmethods\.com\/?$/);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\/www\.harmonicmethods\.com\/?$/);
   for (const image of await page.locator('.hm-home img:visible').all()) {
     await expect(image).toHaveJSProperty('complete', true);
     expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
@@ -24,9 +25,9 @@ test('homepage loads its assets and links to the docs without optional credentia
   await page.getByRole('link', { name: 'The Harmonic Method Docs', exact: true }).click();
   await expect(page).toHaveURL(/\/$/);
   const sitemap = await request.get('/sitemap.xml');
-  expect(await sitemap.text()).toContain('<loc>https://harmonicmethods.com</loc>');
+  expect(await sitemap.text()).toContain('<loc>https://www.harmonicmethods.com</loc>');
   const robots = await request.get('/robots.txt');
-  expect(await robots.text()).toContain('https://harmonicmethods.com/sitemap.xml');
+  expect(await robots.text()).toContain('https://www.harmonicmethods.com/sitemap.xml');
   expect(errors).toEqual([]);
 });
 

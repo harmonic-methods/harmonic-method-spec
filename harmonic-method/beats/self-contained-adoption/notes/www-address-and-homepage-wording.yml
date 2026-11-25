@@ -1,0 +1,15 @@
+note:
+  id: HM-N-206
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.35
+  content: >
+    Use the www public origin throughout the site's canonical and discovery
+    surfaces. Remove the five-functions wording from the homepage while
+    retaining its role cards and documentation links.
+  rationale: >
+    The owner moved the official domain to the new site and asked for canonicals
+    to match its www redirect destination, and for the homepage reference to
+    five functions to be removed. This is a presentation correction rather than
+    a change to the method's published role definitions. Keep the edit separate
+    from ongoing local documentation and specification work.
