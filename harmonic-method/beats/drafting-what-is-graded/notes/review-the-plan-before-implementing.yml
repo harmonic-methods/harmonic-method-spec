@@ -1,0 +1,16 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-158
+  type: decision
+  attached_to: HM-B-009
+  beat_version: HM-BV-009.4
+  content: >
+    Point contributors to the existing Beat Version quality check before they
+    implement a new or materially revised plan. Record consequential changes
+    to the plan and their rationale in the pull request.
+  rationale: >
+    Earlier pull requests show that reviewing a plan can uncover gaps even
+    when the overall score is strong. The published rubric supplies the
+    judgment and the contributor guide supplies the timing. Keep the result
+    advisory so the findings remain useful without making a score an approval
+    requirement.

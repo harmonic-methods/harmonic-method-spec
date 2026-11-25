@@ -106,6 +106,12 @@ Substantive work gets a Beat Version under the Beat it serves; decisions get a
 Note with its rationale. The reasoning behind past choices lives in
 `harmonic-method/beats/*/notes/` — read it before reversing one.
 
+Before implementing a new or materially revised Beat Version, assess its
+written plan with the [Beat Version quality check](skills/beat-version-quality-check/SKILL.md).
+Use the findings to sharpen acceptance criteria and surface unresolved
+dependencies. Treat the assessment as advisory. If it changes the plan,
+summarize what changed and why in the pull request.
+
 **Do not write Revision files here.** In a git-hosted system the commit is the
 Revision. Bind the change to its plan by naming the Beat Version in the commit
 message instead:
