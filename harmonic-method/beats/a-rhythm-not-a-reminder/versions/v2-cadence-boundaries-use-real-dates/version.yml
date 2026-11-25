@@ -1,0 +1,29 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-010.2
+  beat: HM-B-010
+  title: Reject impossible calendar dates in Bar boundaries
+  status: active
+  summary: |
+    A Bar boundary with an impossible calendar date can pass validation
+    because the runtime normalizes it into another day. That silently
+    changes the time the checker uses for containment and overlap.
+    Reject an impossible calendar date on either boundary before using
+    the timestamp for comparisons.
+
+    Compare the written calendar portion independently of the offset.
+    A real boundary can legitimately fall on another UTC day, and
+    comparing its converted UTC date to the written date would reject it.
+    HM-N-161 records this distinction.
+  scope: |
+    In: calendar-date validation and diagnostics for Bar starts and
+    Cutoffs in the existing tree checker.
+    Out: changes to the Bar spec, timestamp syntax, cadence ownership,
+    Tie off, and the half-open interval rules.
+
+    Done when the checker rejects February 30, February 29 in a non-leap
+    year, and April 31, identifies a bad start or Cutoff in the diagnostic,
+    and accepts a valid leap day and an offset that crosses a UTC date
+    boundary. Verify the failure against the old checker first, then run
+    the same cases and repository conformance with the fix. Date-only and
+    zoneless boundaries must still fail.

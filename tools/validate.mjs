@@ -582,44 +582,55 @@ function checkCadence(root, barRefs) {
   }
 
   console.log(`  cadence: ${bars.size} bar(s)`);
-  const day = (v) => new Date(`${v}`).getTime();
-
   // A boundary is an instant, so it carries a time of day and an explicit UTC
   // offset. A date names a day, not an instant, and cannot be a Cutoff without
   // belonging to one of the two Bars it divides; a zoneless time is read in
   // whatever zone the reader happens to be in, so two of them compare wrongly.
   const INSTANT = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/;
+  const boundaryTime = (value) => {
+    const timestamp = String(value);
+    if (!INSTANT.test(timestamp)) return NaN;
+
+    // Validate the written date at midnight before applying its time or offset.
+    // Date.parse can normalize February 30, and a valid offset can cross a day.
+    const date = timestamp.slice(0, 10);
+    const calendarDay = new Date(`${date}T00:00:00Z`).toJSON();
+    return calendarDay?.slice(0, 10) === date ? Date.parse(timestamp) : NaN;
+  };
+  const validBars = [];
   for (const bar of bars.values()) {
     let malformed = false;
     for (const f of ['starts', 'ends']) {
-      if (bar[f] === undefined) continue;
-      if (!INSTANT.test(`${bar[f]}`) || Number.isNaN(day(bar[f]))) {
-        fail(`${bar.path}: ${f} '${bar[f]}' is not an instant — give a time of day and a UTC offset, e.g. 2026-01-15T09:00:00-08:00`);
+      if (Number.isNaN(boundaryTime(bar[f]))) {
         malformed = true;
+        if (bar[f] !== undefined) {
+          fail(`${bar.path}: ${f} '${bar[f]}' is not an instant — give a valid calendar date, time of day, and UTC offset, e.g. 2026-01-15T09:00:00-08:00`);
+        }
       }
     }
     if (malformed) continue;
-    if (day(bar.ends) < day(bar.starts)) fail(`${bar.path}: ends before it starts`);
+    validBars.push(bar);
+    if (boundaryTime(bar.ends) < boundaryTime(bar.starts)) fail(`${bar.path}: ends before it starts`);
     if (bar.parent === undefined) continue;
 
     const parent = bars.get(bar.parent);
     if (parent === undefined) { fail(`${bar.path}: parent '${bar.parent}' does not resolve`); continue; }
-    if (day(bar.starts) < day(parent.starts) || day(bar.ends) > day(parent.ends)) {
+    if (boundaryTime(bar.starts) < boundaryTime(parent.starts) || boundaryTime(bar.ends) > boundaryTime(parent.ends)) {
       fail(`${bar.path}: not contained by parent '${parent.id}' — a parent Bar contains its children in time`);
     }
   }
 
   // Siblings, including the set with no parent, must not overlap.
   const byParent = new Map();
-  for (const bar of bars.values()) {
+  for (const bar of validBars) {
     const key = bar.parent ?? '(root)';
     if (!byParent.has(key)) byParent.set(key, []);
     byParent.get(key).push(bar);
   }
   for (const [key, group] of byParent) {
-    const sorted = [...group].sort((a, b) => day(a.starts) - day(b.starts));
+    const sorted = [...group].sort((a, b) => boundaryTime(a.starts) - boundaryTime(b.starts));
     for (let i = 1; i < sorted.length; i++) {
-      if (day(sorted[i].starts) < day(sorted[i - 1].ends)) {
+      if (boundaryTime(sorted[i].starts) < boundaryTime(sorted[i - 1].ends)) {
         fail(`${sorted[i].path}: overlaps '${sorted[i - 1].id}' under ${key} — Bars sharing a parent do not overlap`);
       }
     }

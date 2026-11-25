@@ -2,6 +2,11 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Bar boundaries reject impossible calendar dates.** The tree checker
+  checks the date as written before applying its offset, so it can reject
+  dates such as February 30 while accepting valid boundaries that cross a
+  UTC day. See HM-BV-010.2.
+
 - **A rubric divergence names a published dimension.** The declaration checker
   now verifies the identifier when the target instrument publishes identifiers.
   Findings-only instruments keep target validation. See HM-BV-006.10.
