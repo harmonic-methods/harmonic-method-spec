@@ -1,0 +1,15 @@
+# Example — a third System under the same Portfolio, demonstrating the Beads
+# interoperability pattern. The system Coda ladders to the Portfolio Coda above.
+#
+# This system is about change provenance: when the practice delivers work via
+# AI agent sessions, those sessions leave discoverable traces connecting each
+# change back to the commitment it served, so the work record is not
+# reconstructed after the fact from memory or session transcripts.
+coda:
+  id: EX-WP-CODA
+  statement: >
+    Everything this practice builds for a commitment can be traced from the
+    change that landed it back to the capability step that planned it — so
+    what was delivered against each commitment is a matter of record, not
+    reconstruction from memory or session transcripts after the fact.
+  parent: EX-PORT-CODA

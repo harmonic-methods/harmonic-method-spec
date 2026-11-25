@@ -1,0 +1,26 @@
+# Example — a decision Note explaining the mapping choice that makes the
+# interoperability pattern coherent. See specs/note.yml.
+#
+# This note states the decision once, clearly, with rationale — so an agent
+# working from this Beat does not arrive at the false equivalence independently.
+note:
+  id: EX-N-010
+  type: decision
+  attached_to: EX-B-003
+  beat_version: EX-BV-003.1
+  content: >
+    A task-tracker work item (such as a Beads bead) maps to a Revision, not to
+    a Beat.
+  rationale: >
+    A Beat is a durable capability that persists and evolves through many work
+    increments over years. A task-tracker work item is session-scoped: it is
+    opened for a specific piece of work, executed, and closed. The two concepts
+    address different questions — "what value does this system deliver?" versus
+    "what task is the agent doing right now?" — and conflating them would map a
+    task item onto a capability unit, making a Beat appear complete when the
+    work item is done rather than when the capability the Beat names is delivered.
+
+    The right mapping is work item → Revision: both are tracked changes at the
+    same altitude. A work item can be the evidence for a Revision; it cannot be
+    a Beat. One Beat Version may be executed across many sessions with many work
+    items; marking each work item done does not deliver the Beat Version.

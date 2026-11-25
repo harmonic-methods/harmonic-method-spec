@@ -1,0 +1,38 @@
+# Example — a background Note explaining the stable-ID cross-reference pattern.
+# See specs/note.yml.
+#
+# This note is the background context any agent needs to apply the convention
+# correctly. It lives on the Beat, not on a Beat Version, so it is available
+# across all future versions of this capability.
+note:
+  id: EX-N-011
+  type: background
+  attached_to: EX-B-003
+  content: >
+    The cross-reference convention uses stable IDs to link the work-item record
+    and the Harmonic Revision without either side overwriting the other.
+
+    When an agent opens a work item to execute a known Beat Version, it records
+    the Beat Version ID in the work item's title or description — for example,
+    "EX-BV-003.1: define and adopt cross-reference convention". When the
+    corresponding Revision is written, its evidence field names the work item by
+    its task-tracker ID — for example, "beads#42". Both references survive the
+    session. Neither side is the authority for the other's record.
+
+    GitHub is the authority for Harmonic artifacts. Beat Versions, Revisions, and
+    Notes are defined in the repository tree. A work item's reference to a Beat
+    Version ID is a stable string reference into that tree, not a live link to any
+    hosted record. Read-only sync from this repository to a hosted implementation
+    is a future capability; nothing in this Beat depends on it.
+
+    Limitations of this pattern:
+    - Work items in a local task tracker (such as Beads, which stores state in
+      .beads/issues.jsonl) are only as durable as the repository they live in.
+      If the .beads/ directory is not committed and pushed, the reference in the
+      Revision's evidence field cannot be resolved by a future reader.
+    - The cross-reference is by string convention, not by schema enforcement.
+      Nothing in the method's validator checks that a Revision's evidence field
+      names a resolvable work item.
+    - A work item's reference to a Beat Version ID is advisory, not binding. The
+      Beat Version's scope and status are authoritative; the work item's title is
+      a convenience for the agent that opens it.

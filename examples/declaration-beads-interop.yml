@@ -1,0 +1,147 @@
+# A conformance reading of Beads (by Steve Yegge) — conformant to specs/conformance.yml
+#
+# READ THIS FIRST. specs/conformance.yml says a declaration is "the
+# implementation's own claim about itself". This file is not that. The Beads
+# maintainers have made no claim about this method, and nothing here should be
+# read as one. It is a third-party reading: what a declaration would have to say
+# if they wrote one, produced by reading the published tooling, skill files, and
+# schema (Beads v1, October 2025, steveyegge/beads at main as of that date).
+#
+# BEADS IS NOT A CAPABILITY MANAGEMENT SYSTEM. It is a git-backed, local-first
+# issue tracker designed for AI agents: it stores work items as JSON Lines in
+# .beads/issues.jsonl, models task dependencies as a directed acyclic graph
+# (DAG), and provides `bd ready --json` so an agent can query its next unblocked
+# task. It is explicitly task-first. A bead is a work item opened for a concrete
+# piece of work, executed, and closed. It is not a durable capability and makes
+# no claim to be.
+#
+# THE CRITICAL DISTINCTION: the concept a bead most closely approaches is the
+# method's Revision — a tracked change — not its Beat. Mapping bead→Beat would
+# conflate a session-scoped work item with a durable capability that evolves
+# through many such items over years. This is the false equivalence the working
+# example (examples/systems/agent-change-provenance/) exists to avoid.
+#
+# No `resolving:` key appears on any divergence below. That field says what the
+# implementation intends to do about a contradiction, and only its authors can
+# say. Guessing would be the overreach this whole framing exists to avoid.
+#
+# Read against steveyegge/beads at main, October 2025.
+declaration:
+  spec_version: 1.16.0
+  implementation: >-
+    Beads (by Steve Yegge) — a third-party reading, NOT a claim by its maintainers
+  divergences:
+    - spec: coda.yml
+      field: statement
+      published: >
+        Required. The outcome an entity exists to serve, written as a resolved
+        future state, with Codas nesting so every step ladders up to strategy.
+      actual: >
+        No Coda and no outcome chain. Beads organizes work as a dependency graph
+        of tasks, not as a hierarchy of resolved future states. There is nothing
+        for a bead to ladder to, and no chain through which a session-scoped work
+        item connects back to the purpose of the system it serves. A bead title
+        states what should be done; whether it serves a durable capability is not
+        a question Beads tracks.
+
+    - spec: beat.yml
+      field: >-
+        rule — a Beat is a durable capability, never rewritten wholesale
+      published: >
+        The canonical unit is a capability that persists and evolves through
+        Beat Versions, carrying its own Coda, description, and open/closed
+        lifecycle.
+      actual: >
+        The unit is a bead — a task opened for a specific piece of work, closed
+        when done. Beads are not revisited as capabilities; a later change to the
+        same area opens a new bead with a dependency on the earlier one if
+        relevant. The durable capability layer does not exist in Beads. The
+        nearest concept Beads offers is the method's Revision, not its Beat: a
+        bead is a tracked work item, not an enduring capability. One Beat may be
+        served by many beads across many sessions and versions; none of that
+        dissolves the distinction.
+
+    - spec: beat-version.yml
+      field: status
+      published: >
+        Required, one of active, delivered, withdrawn, carried on the entity in
+        every medium.
+      actual: >
+        No Beat Version layer. Beads has no step that plans and scopes a
+        capability increment before work begins; a bead is opened for immediate
+        work rather than decomposed from a durable capability. The status values
+        Beads carries (open, done, blocked) address a task's current blocking
+        state, not a planned step's lifecycle. A bead marked done does not make
+        a Beat Version delivered: the two concepts answer different questions.
+
+    - spec: note.yml
+      field: type
+      published: >
+        Required, one of background, constraint, guidance, decision. Additions
+        none, children allowed.
+      actual: >
+        No typed knowledge entity. Beads carries a free-text description field on
+        each work item and a comments field for session notes. No distinction is
+        made between background context, constraints, guidance, and decisions;
+        decisions carry no rationale field. What a bead cannot do is accumulate
+        typed knowledge that outlives the bead itself — the knowledge lineage the
+        method requires is not represented.
+
+    - spec: bar.yml
+      field: starts
+      published: >
+        Required. A Bar is the recurring period work is planned and delivered
+        within, and its boundary is the occasion for taking an anchor.
+      actual: >
+        No cadence entity and no time axis. Beads organizes work as a dependency
+        DAG: the question it answers is which tasks are unblocked now, not which
+        period the work falls within. A bead may carry a due date as free text,
+        but there is no recurring period, no boundary event, and no anchor.
+
+    - spec: function.yml
+      field: >-
+        rule — each function is held by someone identifiable
+      published: >
+        Five accountabilities — Composer, Orchestrator, Conductor, Producer,
+        Promoter — constant at every altitude, each held by a person or by an
+        agent under a named person's accountability.
+      actual: >
+        No accountability model. Beads records assigned_to on a bead but defines
+        no named functions. The five accountabilities are not represented, and
+        there is no way to ask which of them nobody is holding, which is the
+        purpose of naming them.
+
+  extensions:
+    - kind: entity
+      name: bead
+      why: >
+        The work item — a task with id, title, description, status (open/done/
+        blocked), priority (1=critical to 4=low), assigned_to, and a dependency
+        list. It occupies a layer the method leaves empty: closer to a Revision
+        than a Beat, since it represents a tracked change rather than a durable
+        capability. The method names nothing at this layer, so the entity is an
+        extension and not a renaming of anything published here.
+
+    - kind: entity
+      name: dependency
+      why: >
+        A first-class directed edge between two beads, with blocking semantics:
+        a bead with unsatisfied dependencies does not appear in bd ready output.
+        The method names no dependency relationship between tracked changes, so
+        this fills a layer the specs leave empty without contradicting anything
+        they define.
+
+    - kind: computed
+      name: ready set
+      why: >
+        The subset of open beads with all dependencies satisfied, derived by
+        walking the dependency DAG. `bd ready --json` surfaces this set for an
+        agent to consume. The method requires that a reading be taken and
+        preserved and leaves computation to an implementation; this computation
+        contradicts nothing defined here.
+
+  mappings:
+    - theirs: A bead (issue in .beads/issues.jsonl)
+      ours: revision
+    - theirs: The git repository containing .beads/
+      ours: system
