@@ -1,6 +1,6 @@
 # Harmonic Method spec — Conformance
 concept: conformance
-spec_version: 1.14.0
+spec_version: 1.15.0
 summary: >
   What conforming to this method involves, and what an implementation states
   about itself in order to be checked. Conformance is a claim an implementation
@@ -59,10 +59,12 @@ declaration:
       type: list
       description: >
         Every contradiction the implementation knows it carries, each naming the
-        spec file, the field or rule, what this repository publishes, and what the
-        implementation does instead. May be empty, and an empty list is the whole
-        point of the field — it is the strong claim, that nothing published here
-        is contradicted, and it is what makes the declaration falsifiable.
+        spec file or instrument, the field or rule, what this repository
+        publishes, and what the implementation does instead. Use the published
+        identifier when naming a dimension or check that has one. A divergence
+        about a rubric rule or its scope can identify that subject in prose.
+        An empty list is the strong claim that nothing published here is
+        contradicted, which makes the declaration falsifiable.
         Omitting the list is not the same as declaring it empty.
   optional:
     extensions:
@@ -115,11 +117,13 @@ rules:
     own claim is for its own tests to establish. Two links, each verifiable by
     whoever owns it.
   - >
-    A recorded score names the spec set version it was produced under, and the
-    state of what it judged. Staleness has two sides — the thing scored can change
-    after the score and so can the rubric — and an implementation that gates on a
-    score has to be able to detect both. Detecting only the first leaves a passing
-    result standing against definitions it was never produced against.
+    A recorded score names the spec set version and identifies the state of the
+    subject and material context actually evaluated, such as the Coda chain,
+    sibling entities, or Notes used in the assessment. A result saved after an
+    edit remains attached to the state it evaluated. An implementation that
+    gates on a score must be able to detect changes to the rubric, the subject,
+    and material context. When the evaluated state cannot be verified, the
+    score cannot satisfy a gate that requires a current assessment.
   - >
     A declaration lists every contradiction its author knows about. Declaring one
     does not make it conformant, and describing it as a simplification instead of

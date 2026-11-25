@@ -1,0 +1,27 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-165
+  type: decision
+  attached_to: HM-B-002
+  beat_version: HM-BV-002.12
+  content: >
+    Adopt the reference implementation's portable assessment guidance.
+    Compare the outcomes siblings promise, use the immediate parent as
+    the alignment target, audit the context the score used, and issue an
+    overall verdict only when every published dimension is scored once.
+  rationale: >
+    The reference implementation encountered real cases where an edited
+    Coda, changed sibling or Note, or a plan edit during evaluation left
+    a score looking current against inputs it had not seen. An earlier
+    result can remain useful as history when it identifies the exact
+    inputs judged. A partial set of dimensions can also produce a
+    plausible but incomparable average. The published method can state
+    both requirements without prescribing cache keys, storage or product
+    policies. HM-N-036 still places delivery completeness outside plan
+    quality. The published routing and the full scoring range for
+    internal outcomes also still apply.
+
+    The reference declaration also names differences in rubric scope and
+    check rules in prose. Those reports need to remain readable alongside
+    field-level comparisons. Validate bare identifiers as dimensions and
+    retain prose and qualified references for review by a reader.

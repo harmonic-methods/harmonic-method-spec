@@ -26,6 +26,7 @@ const SEMVER = /^\d+\.\d+\.\d+$/;
 const EXTENSION_KINDS = ['entity', 'field', 'child_type', 'enum_value', 'dimension', 'computed'];
 const ALTITUDES = ['portfolio', 'system', 'beat'];
 const DIVERGENCE_KEYS = ['spec', 'field', 'published', 'actual'];
+const BARE_IDENTIFIER = /^[A-Za-z][\w-]*$/;
 
 const specFiles = () => readdirSync(join(ROOT, 'specs'));
 const loadSpec = (f) => parse(readFileSync(join(ROOT, 'specs', f), 'utf8'));
@@ -106,8 +107,14 @@ export function checkDeclaration(path) {
         fail(`${at}: spec '${v.spec}' is neither a file in specs/ nor an instrument in skills/`);
       }
       const identifiers = instruments.get(String(v?.spec));
-      if (identifiers?.length && v?.field !== undefined && !identifiers.includes(v.field)) {
-        fail(`${at}: field '${v.field}' is not an identifier published by instrument '${v.spec}'`);
+      if (identifiers?.length && v?.field !== undefined) {
+        const field = v.field;
+        // Free-text rule and scope references are for a reader to assess.
+        if (typeof field !== 'string' || !field.trim()) {
+          fail(`${at}: field must name a dimension or describe a rule of instrument '${v.spec}'`);
+        } else if (BARE_IDENTIFIER.test(field.trim()) && !identifiers.includes(field)) {
+          fail(`${at}: field '${field}' is not an identifier published by instrument '${v.spec}'`);
+        }
       }
     });
   }
