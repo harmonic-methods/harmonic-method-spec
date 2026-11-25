@@ -18,7 +18,7 @@ beat_version:
     private UI and theme imports with local styles and publicly available fonts;
     document development, licensing and later cutover; keep site dependencies
     out of the published checker package. Default local builds require no credentials.
-    In also: the requested Vercel Git project setup and a preview of the extraction
+    In also: the requested Vercel Git deployment setup and a preview of the extraction
     branch, with the build root and Node runtime aligned to CI.
 
     Out: production domain cutover, changing repository visibility, removing the existing app, and a broader
