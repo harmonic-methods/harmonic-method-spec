@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-003.35
+  beat: HM-B-003
+  title: A Bar starts at Cutoff while its handoff may finish later
+  status: active
+  summary: >
+    The Bar specification orders Cutoff, Tie off, and Downbeat but leaves a
+    reader to infer whether a delayed ceremony postpones the incoming window.
+    Clarify that contiguous Bars share the Cutoff instant, Tie off may finish
+    later, and Downbeat follows the completed Tie off. This makes cadence
+    ownership independent of ceremony timing, as recorded in HM-N-175.
+  scope: |
+    In: explicit timing in specs/bar.yml, a decision Note, a changelog entry,
+    and a spec set patch step for the clarification. Mark the previous merged
+    vocabulary step delivered.
+    Out: changing timestamp syntax, Account schedule configuration, Bar status
+    values, item outcomes, checker logic, or Downbeat fields and immutability.
+
+    Done when a reader can classify work before and exactly at Cutoff, see
+    that the incoming Bar starts while the outgoing Bar can still be open,
+    and see that a later Downbeat records its actual taking time. Review the
+    wording against the Downbeat spec and run repository conformance.
+
+    Risk: calling Downbeat the opening instant conflates an anchor with a
+    calendar boundary. Explicitly state that neither a later Tie off nor a
+    later Downbeat shifts the windows or changes which Bar owns work.

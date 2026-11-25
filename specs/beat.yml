@@ -1,6 +1,6 @@
 # Harmonic Method spec — Beat
 entity: beat
-spec_version: 1.14.0
+spec_version: 1.14.1
 summary: >
   The canonical unit of capability. A Capability Beat, or Beat for short, names
   a durable capability or process of the system being improved —

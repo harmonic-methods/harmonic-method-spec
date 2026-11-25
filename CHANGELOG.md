@@ -2,6 +2,11 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A Bar's start does not wait for Tie off.** In a continuous cadence the
+  incoming Bar starts at the outgoing Cutoff. Tie off may finish later;
+  Downbeat follows its completion and records the actual taking time.
+  Neither ceremony shifts the windows or work ownership. See HM-BV-003.35.
+
 - **Bar boundaries reject impossible calendar dates.** The tree checker
   checks the date as written before applying its offset, so it can reject
   dates such as February 30 while accepting valid boundaries that cross a
