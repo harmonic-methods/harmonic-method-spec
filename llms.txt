@@ -75,7 +75,7 @@ guards it against an unacknowledged edit.
   alongside the fact — how many resolved, how many of those declined, withdrawn
   reported separately and never counted as a decline — at the same record band;
   and where a measure is well formed but nobody has been shown the thing, the
-  finding is routed to the Promoter rather than read as weak value modelling. The
+  finding is routed to the Promoter rather than read as weak value modeling. The
   instrument declines to stand in for the counterparty
 The Promoter has no instrument yet, deliberately. The Producer's scores the
 statement Value Velocity would be measured against rather than computing the rate,
@@ -99,7 +99,7 @@ dimensions of the Beat rubric, and this applies them across the set.
 ## Producing
 Five skills produce rather than assess. None carries dimensions or a scale,
 none is covered by the digest because there is nothing normative in any of them
-to guard, and each defers every judgement it needs to an instrument above by
+to guard, and each defers every judgment it needs to an instrument above by
 pointing at the file.
 - skills/beat-composing/SKILL.md: Composer — compose a Beat and its Coda from a
   plain description, ask for what is missing rather than inventing it, score the
@@ -143,7 +143,7 @@ Version they arose from via the optional beat_version field.
   attached_to names the root Coda. The instrument scoring a root Coda reads these
   alongside the statement and reports which of the two carried each dimension —
   a bound kept in a contributor document counts for nothing, however reliably it
-  is honoured
+  is honored
 - harmonic-method/proposals/<slug>/proposal.yml: a candidate weighed against the
   root Coda, not yet a Beat
 - harmonic-method/proposals/<slug>/notes/: deliberation on that candidate — why it

@@ -1,0 +1,14 @@
+note:
+  id: HM-N-211
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.40
+  content: >
+    Use US English in public introductory and website copy, including practice
+    as both a noun and a verb. Keep the correction in a separate review request.
+  rationale: >
+    The owner identified practise it on the homepage and requested a search for
+    other British English examples. Apply spelling corrections without changing
+    the method, canonical rubric wording, historical records or program names.
+    A later question about retiring legacy sections needs its own decision and
+    must not broaden this editorial request.

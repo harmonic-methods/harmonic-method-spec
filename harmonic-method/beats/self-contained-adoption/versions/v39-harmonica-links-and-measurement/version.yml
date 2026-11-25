@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.39
   beat: HM-B-004
   title: Readers can follow and measure interest in Harmonica
-  status: active
+  status: delivered
   summary: >
     Link Harmonica references in homepage and documentation body text to Codazen,
     and distinguish those clicks from general stewardship links. HM-N-210 records

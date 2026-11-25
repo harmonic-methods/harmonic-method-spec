@@ -1,7 +1,7 @@
 import { HARMONICA_URL, SPEC_REPOSITORY_URL } from '@/lib/links';
 
 const SPEC_BLURB =
-  'The specification and agent skills: the entity specs, the quality rubrics, and the skills that apply them. Open to practise with any tools.';
+  'The specification and agent skills: the entity specs, the quality rubrics, and the skills that apply them. Open to practice with any tools.';
 
 function Spec({ released }: { released: boolean }) {
   const tag = <div className="cajon-concept-card__tag">Open source</div>;

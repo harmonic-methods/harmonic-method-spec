@@ -39,7 +39,7 @@ export function DocsGrid() {
       <div className="hm-wrap">
         <div className="hm-shead">
           <span className="cajon-overline">Documentation</span>
-          <h2>Everything needed to practise it</h2>
+          <h2>Everything needed to practice it</h2>
           <p>
             The method is published in full: its primitives, its quality model, and the structures
             the work is arranged against.
