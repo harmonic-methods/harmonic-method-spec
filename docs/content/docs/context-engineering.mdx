@@ -1,0 +1,79 @@
+---
+title: Context Engineering
+description: 'Context engineering is the discipline of structuring the reasoning behind software — decisions, constraints, assumptions — so people and AI coding agents can act on it. In Harmonic Methods that discipline is made concrete through Notes.'
+---
+
+<span className="cajon-overline">Reference</span>
+
+# Context Engineering
+
+<p className="cajon-page-lead">Context engineering is the discipline of capturing and structuring the reasoning behind a system — its decisions, constraints, and assumptions — so that both people and AI coding agents can reason about it later, not just read it. It is what turns scattered intent into something durable enough to build against.</p>
+
+<div className="cajon-def-box">
+  <div className="cajon-def-box__label">Definition</div>
+  <p><strong>Context engineering</strong> is the practice of making a system's context explicit, structured, and durable — so it survives handoffs and remains usable by whoever (or whatever) needs it next. For teams working with AI coding agents, context engineering is the difference between an agent that guesses at intent and one that can reason against it.</p>
+</div>
+
+## Why context engineering matters now
+
+For most of software's history, context lived in people's heads, in chat threads, and in documents that drifted out of date. Teams rebuilt it continuously — slowly enough to absorb the cost. AI coding agents change the economics: an agent without structured context doesn't slow down, it builds fast in the wrong direction. The faster execution gets, the more expensive un-engineered context becomes.
+
+Context engineering is the response. It treats context not as documentation written after the fact, but as a first-class, structured input to the work — captured as it is formed, typed by what it is, and preserved so it can be reasoned about, not just retrieved.
+
+## What makes context engineerable
+
+There is a difference between context an agent can *read* and context an agent can *reason about*. A paragraph in a doc is readable. A typed, versioned, anchored record of *why* a decision was made is reasonable-about — an agent can check whether that reasoning still applies in a new situation.
+
+Engineerable context has three properties:
+
+<div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Explicit</div>
+    <p>Captured deliberately as the work happens, not reconstructed later from memory.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Typed</div>
+    <p>Classified by what it is — context, constraint, guidance, decision — so its role is unambiguous.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Durable</div>
+    <p>Versioned and preserved so it survives team changes and informs future reasoning.</p>
+  </div>
+</div>
+
+## How Harmonic Methods does context engineering: Notes
+
+In Harmonic Composition, context engineering is made concrete through [Notes](/docs/composition/notes). A Note is the universal container for the reasoning behind the work, and every Note has a type — Context, Constraint, Guidance, Decision, or Document — so its role in the system is explicit.
+
+Notes don't just record *what* was decided; they record *why*. A constraint Note doesn't only state that something is off-limits — it captures the reasoning, so an agent can later determine whether that constraint still applies in a new context. This is context engineering in practice: the corpus of Notes grows with every Revision, and each addition makes future reasoning — by people and by [AI coding agents](/docs/ai-coding-agents) — more accurate.
+
+<div className="cajon-callout">
+  Context engineering turns institutional memory from something that lives in a few people's heads into something that lives in the system — available to whoever, or whatever, needs it next.
+</div>
+
+## Frequently asked questions
+
+export const contextEngineeringFaqs = [
+  {
+    question: 'What is context engineering?',
+    answer:
+      'Context engineering is the discipline of capturing and structuring the reasoning behind a system — its decisions, constraints, and assumptions — so that people and AI coding agents can reason about it later, not just read it. It treats context as a first-class, structured input to the work rather than documentation written after the fact.',
+  },
+  {
+    question: 'Why does context engineering matter for AI coding agents?',
+    answer:
+      'AI coding agents execute against whatever context they are given. Without structured context, an agent does not slow down — it builds fast in the wrong direction, because it fills the gaps itself. Context engineering gives agents explicit, typed, durable context they can reason about, so they can tell whether a past decision still applies. The faster agents execute, the more valuable engineered context becomes.',
+  },
+  {
+    question: 'How do you do context engineering in practice?',
+    answer:
+      'Capture context as it forms rather than reconstructing it later; type each piece by what it is (context, constraint, guidance, decision); and version it so it stays durable across handoffs. In Harmonic Methods this is done with Notes — typed, versioned records that capture not just what was decided but why, so the reasoning remains usable by whoever or whatever needs it next.',
+  },
+];
+
+<FaqSection entries={contextEngineeringFaqs} label="Context engineering questions" />
+
+<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
+  <a className="cajon-learn-more" href="/docs/composition/notes">How Notes work →</a>
+  <a className="cajon-learn-more" href="/docs/ai-coding-agents">A Delivery Method Built for AI Coding Agents →</a>
+</div>

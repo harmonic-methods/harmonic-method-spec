@@ -1,0 +1,88 @@
+---
+title: Software Development Methodology
+description: 'A software development methodology is the system of principles, practices, and primitives a team uses to plan, build, and evolve software. Harmonic Methods is a modern methodology built for the AI era, where agents execute and intent must be explicit.'
+---
+
+<span className="cajon-overline">Reference</span>
+
+# A Software Development Methodology for the AI Era
+
+<p className="cajon-page-lead">A software development methodology is the system of principles, practices, and primitives a team uses to plan, build, and evolve software. Harmonic Methods is a modern software development methodology built for a world where AI coding agents do most of the execution and the scarce resource is clear, structured intent.</p>
+
+<div className="cajon-def-box">
+  <div className="cajon-def-box__label">Definition</div>
+  <p>A <strong>software development methodology</strong> is a structured approach to building software — the primitives, practices, and quality standards that govern how work is planned, executed, and evolved over time. Traditional methodologies (Waterfall, Scrum, SAFe) were designed around human execution. Harmonic Methods is an <strong>AI development methodology</strong>: a software delivery framework whose primitives are designed for teams working alongside AI coding agents.</p>
+</div>
+
+## What is a software development methodology?
+
+A methodology answers three questions for a team: how do we decide what to build, how do we build it, and how do we know it is good? It supplies the vocabulary (epics, stories, sprints — or Codas, Beats, Notes), the cadence, and the quality bar.
+
+Methodologies are not interchangeable with tools or process ceremonies. A tool stores the work; a ceremony coordinates the people; the methodology defines what the work units *are* and what makes them good. That distinction matters more than ever now that execution is cheap and the definition of the work is the bottleneck.
+
+## What changes in the AI era
+
+Every dominant methodology — Waterfall, Agile, Scrum, scaled frameworks like SAFe — was built around the assumption that humans write the code, so its primitives divide work into human-sized pieces and track their completion. When [AI coding agents](/docs/ai-coding-agents) can write production code faster than any team, that assumption breaks: execution is no longer the constraint.
+
+A methodology fit for the AI era has to optimize for something else — the clarity and durability of intent that an agent can reason about. That means:
+
+<div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Durable work units</div>
+    <p>Capabilities that persist and evolve, not tickets that close and lose their context.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Explicit destination</div>
+    <p>A stated end-state every decision can be checked against, so agents and people stay aligned.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Preserved reasoning</div>
+    <p>Structured, machine-readable context so decisions survive handoffs and inform future work.</p>
+  </div>
+</div>
+
+## How Harmonic Methods works as a methodology
+
+Harmonic Composition — the founding framework of Harmonic Methods — replaces the traditional methodology's primitives with ones designed for durable intent:
+
+- **[Beats](/docs/composition/beats)** are the unit of work: durable, outcome-oriented capabilities, not disposable tickets.
+- **The [Coda](/docs/composition/coda)** is the destination: the resolved end-state the system converges toward for a phase.
+- **[Notes](/docs/composition/notes)** preserve reasoning: explicit, versioned, typed context (Context, Constraint, Guidance, Decision, Document).
+- **[Quality gates](/docs/composition/quality-gates)** define the bar: six dimensions every Beat must satisfy before work begins.
+
+Together these give a team — and the AI coding agents working alongside it — a methodology where the definition of the work is as rigorous as the execution has become fast.
+
+## A software delivery framework for AI-native teams
+
+As a **software delivery framework**, Harmonic Methods is designed to be adopted incrementally: it coexists with the ceremonies and cadence a team already runs (see [how it compares to Scrum](/docs/comparisons)), adding the planning and context layer those processes leave open. It is the methodology layer for [AI-native software delivery](/docs/ai-coding-agents) — the operating model for teams building with AI coding agents.
+
+<div className="cajon-callout">
+  A methodology built for the AI era is not a faster version of the old one. It optimizes for a different scarce resource: structured intent that both people and agents can reason about.
+</div>
+
+## Frequently asked questions
+
+export const methodologyFaqs = [
+  {
+    question: 'What is a software development methodology?',
+    answer:
+      'A software development methodology is the system of principles, practices, and primitives a team uses to plan, build, and evolve software — the work units, the cadence, and the quality standards that govern how software gets made. Examples include Waterfall, Agile, Scrum, and SAFe, all designed around human execution, and Harmonic Methods, designed for teams working alongside AI coding agents.',
+  },
+  {
+    question: 'What is the best software development methodology for AI coding agents?',
+    answer:
+      'A methodology built for AI coding agents must supply durable capability definitions, an explicit destination, and preserved reasoning agents can act on — because once agents make execution cheap, the bottleneck moves to the clarity of intent. Traditional ticket-based methodologies give agents words but not a structured model of the system. Harmonic Methods is purpose-built for this: Beats define capabilities, the Coda defines the destination, Notes preserve reasoning, and quality gates set the bar.',
+  },
+  {
+    question: 'Is Harmonic Methods a methodology or a software delivery framework?',
+    answer:
+      'Both. Harmonic Methods is an AI development methodology — a system of primitives (Coda, Beats, Notes) and quality gates for building software — delivered as a software delivery framework that teams can adopt incrementally alongside their existing process. Harmonic Composition is its founding framework for a single system.',
+  },
+];
+
+<FaqSection entries={methodologyFaqs} label="Software development methodology questions" />
+
+<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
+  <a className="cajon-learn-more" href="/docs/ai-coding-agents">A Delivery Method Built for AI Coding Agents →</a>
+  <a className="cajon-learn-more" href="/docs/composition">Explore Harmonic Composition →</a>
+</div>

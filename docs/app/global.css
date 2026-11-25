@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+@import './theme.css';
+
+/* Tailwind Typography sets heading size/weight but no family, so headings fall through to body's sans. */
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--cajon-font-display);
+}
+
+
+/* Docs nav brand — mark, wordmark, then a muted "Docs" qualifier. The mark
+ * strokes from the theme's --brand-mark register, so it is deep azure in light
+ * and white in dark without any rule here. */
+.hm-docs-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  /* The sidebar is ~268px wide and also holds the collapse control, so the
+   * brand has to stay on one line rather than wrap and orphan "Docs". */
+  white-space: nowrap;
+  font-family: var(--cajon-font-display);
+  font-size: 14.5px;
+  letter-spacing: -0.02em;
+}
+.hm-docs-brand__name {
+  font-weight: 600;
+  color: var(--cajon-text-primary);
+}
+.hm-docs-brand__docs {
+  font-weight: 500;
+  color: var(--cajon-text-muted);
+}

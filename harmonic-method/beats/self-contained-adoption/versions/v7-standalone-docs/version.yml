@@ -1,0 +1,28 @@
+beat_version:
+  id: HM-BV-004.7
+  beat: HM-B-004
+  title: Documentation that builds from the specification repository
+  status: active
+  summary: >
+    A contributor can read, edit, build and test the documentation application
+    alongside the specification using public dependencies alone. The documentation
+    remains at its existing URL paths and can be deployed independently of the
+    privately held marketing website.
+
+    Done when a clean npm install builds the documentation, browser checks cover
+    reading and navigation, search, Markdown exports and missing pages, and CI
+    runs those checks without private registry access or deployment credentials.
+  scope: >
+    In: extract the documentation content, renderer, search and Markdown endpoints;
+    replace private UI and theme imports with a local documentation theme; isolate
+    asset and search paths; document development, licensing and later cutover;
+    keep documentation dependencies out of the published checker package.
+
+    Out: the marketing homepage, its components and flags, deploying the app,
+    changing repository visibility, removing the existing app, and a broader
+    editorial reconciliation of the imported documentation with the specification.
+
+    Risk: the two deployments will temporarily contain the same documentation.
+    Before cutover, reconcile intervening edits and switch routing before retiring
+    the previous copy. The extracted styling must remain readable in both themes
+    without importing any private design-system package.

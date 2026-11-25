@@ -1,0 +1,100 @@
+/* Standalone documentation theme. The cajon-* class names are retained for
+ * imported MDX compatibility; no private design-system package is required. */
+:root {
+  --cajon-font-display: system-ui, -apple-system, sans-serif;
+  --cajon-text-primary: #172b45;
+  --cajon-text-muted: #5b6981;
+  --cajon-color-bg-paper: #ffffff;
+  --hm-accent: #1f5eaf;
+  --hm-surface: #f4f6f9;
+  --hm-border: #d3dbe7;
+  --brand-mark: #1a4b8b;
+  --color-fd-primary: #1f5eaf;
+  --color-fd-primary-foreground: #ffffff;
+  --color-fd-ring: #1f5eaf;
+}
+
+.dark {
+  --cajon-text-primary: #eef2f8;
+  --cajon-text-muted: #a8b6cb;
+  --cajon-color-bg-paper: #16253a;
+  --hm-accent: #8ab3eb;
+  --hm-surface: #101c2e;
+  --hm-border: #41536d;
+  --brand-mark: #ffffff;
+  --color-fd-primary: #8ab3eb;
+  --color-fd-primary-foreground: #101c2e;
+  --color-fd-ring: #8ab3eb;
+}
+
+.cajon-overline {
+  color: var(--hm-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cajon-page-lead { font-size: 1.125rem; line-height: 1.75; }
+.cajon-methods-grid, .cajon-card-grid, .cajon-quality-grid, .cajon-hub-ref-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+.cajon-method-card, .cajon-concept-card, .cajon-card-link,
+.cajon-quality-item, .cajon-hub-ref-card, .cajon-def-box {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid var(--hm-border);
+  border-radius: 0.5rem;
+  background: var(--cajon-color-bg-paper);
+  color: var(--cajon-text-primary);
+}
+a.cajon-method-card, a.cajon-card-link, a.cajon-hub-ref-card { text-decoration: none; }
+.cajon-method-card:hover, .cajon-card-link:hover, .cajon-hub-ref-card:hover { border-color: var(--hm-accent); }
+.cajon-method-card__name, .cajon-quality-item__name, .cajon-def-box__label,
+.cajon-faq-question, .cajon-glossary-term { font-weight: 650; }
+.cajon-method-card__tag, .cajon-concept-card__tag, .cajon-hub-ref-card__label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--cajon-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.cajon-method-card__tag--active, .cajon-method-card__cta, .cajon-learn-more { color: var(--hm-accent); }
+.cajon-method-card__desc { font-size: 0.875rem; }
+.cajon-callout {
+  margin-block: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--hm-accent);
+  background: var(--hm-surface);
+}
+.cajon-glossary-list, .cajon-faq-list, .cajon-steps-list { list-style: none; padding: 0; }
+.cajon-glossary-entry, .cajon-faq-item { padding-block: 1rem; border-bottom: 1px solid var(--hm-border); }
+.cajon-glossary-term, .cajon-glossary-def { display: block; }
+.cajon-glossary-def { margin-top: 0.5rem; }
+.cajon-step-item { display: flex; gap: 1rem; padding-block: 1rem; }
+.cajon-step-num {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--hm-accent);
+  color: var(--color-fd-primary-foreground);
+  font-weight: 700;
+}
+.cajon-step-body { min-width: 0; }
+.hm-article-meta, .cajon-article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-block: 1.5rem; }
+.hm-meta-field, .cajon-meta-field { display: grid; gap: 0.25rem; }
+.hm-meta-label, .cajon-meta-label { color: var(--cajon-text-muted); font-size: 0.75rem; }
+.hm-meta-value, .cajon-meta-value { font-size: 0.875rem; }
+.cajon-btn { display: inline-flex; align-items: center; padding: 0.5rem 1rem; border: 1px solid var(--hm-accent); border-radius: 0.25rem; }
+.cajon-btn--contained { background: var(--hm-accent); color: var(--color-fd-primary-foreground); }
+.cajon-btn--outlined { color: var(--hm-accent); }
+
+@media (max-width: 640px) {
+  /* Older MDX pages set column counts inline. Keep those pages readable on mobile. */
+  .cajon-quality-grid { grid-template-columns: 1fr !important; }
+}

@@ -13,6 +13,8 @@ systems); altitude is recursion, not a different method, so these specs
 and rubrics apply there too, unchanged.
 
 Full documentation is at [harmonicmethods.com](https://harmonicmethods.com).
+Its standalone application lives in [docs/](docs/README.md), alongside the
+specification; see that guide to run it locally or contribute documentation.
 Harmonica ([harmonica.io](https://harmonica.io)), by Codazen, is the reference
 implementation.
 
@@ -351,7 +353,9 @@ Copyright 2026 Codazen, Inc.
 - **The method** — `specs/`, `skills/`, `examples/`, `harmonic-method/`, and the
   documentation — is licensed under [CC-BY-4.0](LICENSE-CONTENT). Practice it,
   adapt it, build on it; attribute it.
-- **The tooling** — `tools/` — is licensed under [Apache-2.0](LICENSE).
+- **The tooling** — `tools/` and the application code, configuration, and styles
+  in `docs/` — is licensed under [Apache-2.0](LICENSE). Documentation prose,
+  including `docs/content/`, remains under CC-BY-4.0.
 
 Neither grants any right to the marks. See [TRADEMARKS.md](TRADEMARKS.md) before
 naming a product, service, or credential with them.
