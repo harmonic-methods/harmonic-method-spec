@@ -69,5 +69,7 @@ test('signed flags control sections while newsletter requires a real action', as
   await page.goto('/');
   for (const id of ['blog', 'videos', 'community', 'agents']) await expect(page.locator(`#${id}`)).toBeVisible();
   await expect(page.getByRole('link', { name: /The Harmonic Method specification/ })).toHaveAttribute('href', 'https://github.com/harmonic-methods/harmonic-method-spec');
+  await expect(page.locator('#harmonica-home')).toHaveAttribute('href', 'https://codazen.com');
+  await expect(page.locator('#harmonica-home')).toContainText('Harmonica');
   await expect(page.getByRole('button', { name: 'Subscribe' })).toHaveCount(0);
 });

@@ -1,0 +1,14 @@
+note:
+  id: HM-N-210
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.39
+  content: >
+    Point Harmonica body references and its homepage card to Codazen. Give those
+    links stable identifiers and measure them with a dedicated Analytics event.
+    Verify all requested custom event names through real site interactions.
+  rationale: >
+    The owner requested Codazen as the destination for Harmonica references and
+    asked to verify the custom events in Analytics. A Harmonica-specific link
+    identifier separates product interest from ordinary Codazen stewardship
+    clicks while preserving the existing outbound measurement implementation.

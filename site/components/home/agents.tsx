@@ -1,4 +1,4 @@
-import { SPEC_REPOSITORY_URL } from '@/lib/links';
+import { HARMONICA_URL, SPEC_REPOSITORY_URL } from '@/lib/links';
 
 const SPEC_BLURB =
   'The specification and agent skills: the entity specs, the quality rubrics, and the skills that apply them. Open to practise with any tools.';
@@ -43,15 +43,15 @@ export function Agents({ specReleased }: { specReleased: boolean }) {
         </div>
         <div className="cajon-card-grid">
           <Spec released={specReleased} />
-          {/* Harmonica has no public page yet, so this card carries no link. */}
-          <div className="cajon-concept-card">
+          <a href={HARMONICA_URL} id="harmonica-home" target="_blank" rel="noopener noreferrer" className="cajon-concept-card">
             <div className="cajon-concept-card__tag">Platform</div>
             <h3>Harmonica</h3>
             <p>
               The reference implementation, for teams that want the method operated rather than
               assembled.
             </p>
-          </div>
+            <span className="cajon-card-link">Learn more at Codazen →</span>
+          </a>
         </div>
       </div>
     </section>
