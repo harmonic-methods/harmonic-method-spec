@@ -40,7 +40,7 @@ test('read docs and follow a documentation link with working assets', async ({ p
   expect(failures).toEqual([]);
 });
 
-test('the Get Started link reaches the pending kit walkthrough and both prompts', async ({ page }) => {
+test('Getting started leads with the sample review and links to the full pathway', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Getting started' }).click();
   await expect(page).toHaveURL(/\/docs\/getting-started$/);
@@ -51,7 +51,18 @@ test('the Get Started link reaches the pending kit walkthrough and both prompts'
     'review-a-capability.md',
     'skills/coda-quality-check/SKILL.md',
   ]);
+  await expect(page.locator('article').getByRole('heading', { level: 3 })).toHaveText([
+    /^Review one document in chat/,
+    /^Work with a local folder/,
+    /^Continue after the sample review/,
+  ]);
+  await expect(page.locator('article #steps')).toHaveCount(0);
   await page.screenshot({ path: test.info().outputPath('starter-kit-desktop.png'), fullPage: true });
+  const pathwayLink = page.locator('article').getByRole('link', { name: 'Apply the method to a new initiative' });
+  await pathwayLink.click();
+  await expect(page).toHaveURL(/\/docs\/method\/apply-to-an-initiative$/);
+  await expect(page.locator('article ol li')).toHaveCount(5);
+  await expect(page.locator('article #functions')).toBeVisible();
 });
 
 test('search finds documentation through the isolated API', async ({ request }) => {
@@ -76,7 +87,7 @@ test('readers can search and open a result', async ({ page }) => {
 });
 
 test('Markdown exports and sitemap retain public document URLs', async ({ request }) => {
-  for (const path of ['/docs.md', '/docs/getting-started.md', '/docs/method/quality.md', '/docs/composition/beats.md']) {
+  for (const path of ['/docs.md', '/docs/getting-started.md', '/docs/method/apply-to-an-initiative.md', '/docs/method/quality.md', '/docs/composition/beats.md']) {
     const response = await request.get(path);
     expect(response.status(), path).toBe(200);
     expect(response.headers()['content-type']).toContain('text/markdown');

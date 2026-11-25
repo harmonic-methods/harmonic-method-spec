@@ -7,9 +7,12 @@ note:
   content: >
     Use the supplied method navigation and article design in the standalone
     site. Describe the starter kit as pending and publish the preview
-    instructions on the getting-started page.
+    instructions on the getting-started page. Lead with the sample
+    document review and link to the five-step pathway in the Method docs.
   rationale: >
     Readers need a path from learning about the method to trying it on
     their own work. The guide now gives that path to readers who have a
-    preview ZIP, and the site's existing navigation, search, and Markdown
-    exports keep the rest of the documentation reachable.
+    preview ZIP. They can see a rubric in use before learning the
+    vocabulary and decisions involved in applying the method to an
+    initiative. Existing navigation, search, and Markdown exports keep
+    the rest of the documentation reachable.
