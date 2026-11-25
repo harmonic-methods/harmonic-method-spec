@@ -7,3 +7,6 @@ next-env.d.ts
 *.tsbuildinfo
 playwright-report/
 test-results/
+
+# Generated from the canonical starter-kit builder.
+/public/downloads/starter-kit/
