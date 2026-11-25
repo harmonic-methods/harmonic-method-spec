@@ -1,0 +1,36 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-003.36
+  beat: HM-B-003
+  title: Repository changes require owner review
+  status: active
+  summary: >
+    Complete owner-gated merging for the repository that publishes the method.
+    Publish a CODEOWNERS file assigning all paths, including the ownership list,
+    to Mike Merchant and William Chu, bind the change to this plan, and verify
+    that the active main ruleset requires an approving code-owner review and
+    dismisses stale approvals after new commits. HM-N-183 records the decision
+    and the already-enabled ruleset as context; publishing the ownership list
+    and completing the review handoff remain to be done.
+  scope: |
+    In: the repository-wide ownership file, this plan and its decision Note,
+    the request binding, verification of the existing main ruleset and both
+    owners' repository permissions, and the handoff for independent review.
+    Mark the preceding merged vocabulary step delivered.
+    Out: changing method definitions, rubric anchors, contributor permissions,
+    other branches, status-check requirements, or adding bypass actors.
+
+    Done when the request has exactly one Beat-Version binding resolving to
+    this active plan; repository validation passes with its request metadata;
+    CODEOWNERS on main assigns every path to @mike-merchant and @wchu-codazen;
+    and a read-back of the active ruleset confirms an approving review is
+    required, code-owner review is required, new commits dismiss approvals,
+    and the bypass list is empty. Until the ownership file merges, report
+    owner-specific enforcement as pending. The request author cannot approve
+    their own change; the other owner supplies the review.
+
+    One repository administrator can complete the configuration and verification
+    in a day, with the other owner's availability the external dependency.
+    Both owners must retain write access. Configuration read-back confirms the
+    settings, not an observed rejected merge; do not attempt an unauthorized
+    merge as a test. Do not mark this step delivered before its change merges.

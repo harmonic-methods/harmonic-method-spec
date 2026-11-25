@@ -1,0 +1,36 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-183
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.36
+  content: >
+    Mike Merchant and William Chu are the repository-wide code owners, identified
+    in CODEOWNERS as @mike-merchant and @wchu-codazen. Require approval from an
+    eligible owner before merging to main, dismiss stale approvals after new
+    commits, and provide no bypass actors. Either owner's approval suffices;
+    a request author cannot approve their own request.
+
+    The main ruleset was enabled before this plan was recorded. The ownership
+    file has been proposed but is not yet on main, so owner-specific enforcement
+    remains pending its merge. This Note preserves that sequence rather than
+    presenting a newly written plan as preceding the configuration change.
+  rationale: >
+    The repository already binds each request to its intended step, but that
+    establishes traceability rather than authority to accept a change. Owner
+    review adds an accountable acceptance boundary around the vocabulary agents
+    consume. The user requested both named owners and approval from either one.
+
+    A CODEOWNERS file alone requests reviewers without blocking merges; a
+    code-owner requirement without an ownership file cannot identify them.
+    Both surfaces must agree, including ownership of the ownership file itself.
+    HM-N-042 supplies the existing principle that a guard must enforce in the
+    context where it runs. This is repository policy, not a new conformance
+    requirement for adopters. Contributors may still propose requests and commit
+    to their branches; review governs acceptance into main.
+
+    Both accounts were verified to have administrator access. Review availability
+    remains a dependency: the other owner must review an owner's own request.
+    Read the live ruleset back after edits and check the ownership list on main
+    after merge. Preserve the distinction between verified configuration and an
+    observed denied merge.
