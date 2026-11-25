@@ -19,9 +19,9 @@ beat_version:
   scope: |
     In: homepage navigation and content links, the documentation hub and
     ordered Method pages, reference pages supplied in the design, and
-    getting-started instructions drawn from the starter kit, the four
-    beginner guides, and the implementation page for Beat Versions and
-    Revisions.
+    getting-started instructions for approved AI chat, the starter kit,
+    the four beginner guides including a worked prompt for drafting
+    Notes, and the implementation page for Beat Versions and Revisions.
     Out: deploying or publishing the kit, moving the domain, draft blog
     and video content without destinations, and changing method specs.
 

@@ -44,6 +44,11 @@ test('Getting started includes the sample review and a walkthrough leading to im
   await page.goto('/');
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Getting started' }).click();
   await expect(page).toHaveURL(/\/docs\/getting-started$/);
+  const article = page.locator('article');
+  await expect(article.getByRole('heading', { level: 2 }).first()).toContainText('Set up your LLM');
+  for (const provider of ['Microsoft', 'Anthropic', 'OpenAI', 'Google']) {
+    await expect(article.getByRole('link', { name: `${provider} instructions` })).toBeVisible();
+  }
   await expect(page.locator('#starter-kit')).toContainText('Try the open spec kit');
   await expect(page.locator('article')).toContainText('START_HERE.md');
   await expect(page.locator('article')).toContainText('pending public release');
@@ -58,7 +63,6 @@ test('Getting started includes the sample review and a walkthrough leading to im
   ]);
   await expect(page.locator('article #steps')).toHaveCount(0);
   await page.screenshot({ path: test.info().outputPath('starter-kit-desktop.png'), fullPage: true });
-  const article = page.locator('article');
   const lessons = [
     ['Capture Notes', '/docs/getting-started/capture-notes'],
     ['Define a Coda', '/docs/getting-started/define-a-coda'],
@@ -71,6 +75,10 @@ test('Getting started includes the sample review and a walkthrough leading to im
     await expect(page).toHaveURL(path);
     await expect(article.getByRole('heading', { name: title, exact: true, level: 1 })).toBeVisible();
     await expect(article.getByRole('heading', { name: /Worked example/ })).toBeVisible();
+    if (title === 'Capture Notes') {
+      await expect(article.locator('pre')).toContainText('Draft Harmonic Method Notes');
+      await expect(article.getByRole('row', { name: /Decision Start with one team/ })).toBeVisible();
+    }
   }
 });
 
