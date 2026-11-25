@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.35
   beat: HM-B-003
   title: A Bar starts at Cutoff while its handoff may finish later
-  status: active
+  status: delivered
   summary: >
     The Bar specification orders Cutoff, Tie off, and Downbeat but leaves a
     reader to infer whether a delayed ceremony postpones the incoming window.
