@@ -1,28 +1,30 @@
 beat_version:
   id: HM-BV-004.7
   beat: HM-B-004
-  title: Documentation that builds from the specification repository
+  title: Website and documentation that build from the specification repository
   status: active
   summary: >
-    A contributor can read, edit, build and test the documentation application
-    alongside the specification using public dependencies alone. The documentation
-    remains at its existing URL paths and can be deployed independently of the
-    privately held marketing website.
+    A contributor can read, edit, build and test the website and documentation
+    alongside the specification using public dependencies alone. The homepage
+    and documentation remain at their existing URL paths in one application.
+    The expanded scope follows the owner's decision recorded in HM-N-158.
 
-    Done when a clean npm install builds the documentation, browser checks cover
-    reading and navigation, search, Markdown exports and missing pages, and CI
+    Done when a clean npm install builds the site, browser checks cover homepage
+    navigation, mobile disclosure, reading, search, Markdown exports and missing pages, and CI
     runs those checks without private registry access or deployment credentials.
   scope: >
-    In: extract the documentation content, renderer, search and Markdown endpoints;
-    replace private UI and theme imports with a local documentation theme; isolate
-    asset and search paths; document development, licensing and later cutover;
-    keep documentation dependencies out of the published checker package.
+    In: extract the homepage and its components, optional service integrations,
+    documentation, renderer, search, brand assets and Markdown endpoints; replace
+    private UI and theme imports with local styles and publicly available fonts;
+    document development, licensing and later cutover; keep site dependencies
+    out of the published checker package. Default local builds require no credentials.
+    In also: the requested Vercel Git project setup and a preview of the extraction
+    branch, with the build root and Node runtime aligned to CI.
 
-    Out: the marketing homepage, its components and flags, deploying the app,
-    changing repository visibility, removing the existing app, and a broader
+    Out: production domain cutover, changing repository visibility, removing the existing app, and a broader
     editorial reconciliation of the imported documentation with the specification.
 
-    Risk: the two deployments will temporarily contain the same documentation.
+    Risk: the two source locations will temporarily contain the same site.
     Before cutover, reconcile intervening edits and switch routing before retiring
     the previous copy. The extracted styling must remain readable in both themes
     without importing any private design-system package.

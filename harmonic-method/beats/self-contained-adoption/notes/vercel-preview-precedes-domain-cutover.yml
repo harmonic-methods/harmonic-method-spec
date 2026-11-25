@@ -1,0 +1,17 @@
+note:
+  id: HM-N-159
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.7
+  content: >
+    The combined site is linked to a separate Vercel project with site/ as its
+    build root. The extraction branch is deployed as a preview so its rendered
+    result can be reviewed before the existing production domain is moved.
+    Preview protection stays enabled. Optional services can be configured later;
+    no credentials from the previous deployment are copied into source.
+  rationale: >
+    The owner requested Vercel setup for the new repository. A separate project
+    verifies the standalone build and Git connection without changing the
+    existing website's source connection or production traffic. Matching the CI
+    Node runtime avoids testing one runtime and deploying another. Domain
+    cutover and repository visibility remain distinct from this setup.

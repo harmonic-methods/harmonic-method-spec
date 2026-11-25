@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://harmonicmethods.com/sitemap.xml
+
+# LLM-friendly endpoints
+Allow: /llms.txt
+Allow: /llms-full.txt
