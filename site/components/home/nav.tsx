@@ -25,11 +25,11 @@ export function HomeNav({ links }: { links: HomeNavLink[] }) {
             </Link>
           ))}
           <Link
-            href="/docs"
+            href="/docs/getting-started"
             className="cajon-btn cajon-btn--contained cajon-btn--sm"
             onClick={() => setOpen(false)}
           >
-            Read the docs
+            Getting started
           </Link>
         </div>
         <button

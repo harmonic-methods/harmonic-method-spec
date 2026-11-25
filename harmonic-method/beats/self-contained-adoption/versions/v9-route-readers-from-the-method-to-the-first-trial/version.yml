@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-004.9
+  beat: HM-B-004
+  title: Route readers from the method to a first trial
+  status: active
+  summary: |
+    Bring the supplied website design into the standalone site so readers
+    can navigate the method by topic and reach a practical first review.
+    The getting-started page gives holders of the preview kit both
+    workflows from its guide.
+
+    The design archive includes draft release claims and placeholder
+    material. Keep links to the public specification gated and describe
+    the preview workflow while public access is pending. Preserve existing
+    documentation URLs, search, and Markdown export.
+  scope: |
+    In: homepage navigation and content links, the documentation hub and
+    ordered Method pages, reference pages supplied in the design, and
+    getting-started instructions drawn from the starter kit.
+    Out: deploying or publishing the kit, moving the domain, draft blog
+    and video content without destinations, and changing method specs.
+
+    Done when the homepage and sidebar lead to the new Method pages,
+    getting started explains both starter kit workflows, and the published
+    documentation URLs still resolve. Verify the mobile menu, search,
+    Markdown exports, and method links against a production build.

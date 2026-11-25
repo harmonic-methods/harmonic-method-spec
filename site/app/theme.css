@@ -132,7 +132,77 @@ a.cajon-method-card, a.cajon-card-link, a.cajon-hub-ref-card { text-decoration: 
 .cajon-btn--contained { background: var(--hm-accent); color: var(--color-fd-primary-foreground); }
 .cajon-btn--outlined { color: var(--hm-accent); }
 
+.hm-docs-content :is(h2, h3) {
+  font-family: var(--cajon-font-display);
+  letter-spacing: -0.02em;
+}
+.hm-docs-content .cajon-concept-card {
+  text-decoration: none;
+}
+.hm-docs-content :is(.cajon-concept-card, .cajon-hub-ref-card) h3 {
+  margin-block: 0 0.5rem;
+}
+.hm-docs-content :is(.cajon-concept-card, .cajon-hub-ref-card) p {
+  margin-block: 0 0.75rem;
+}
+.hm-docs-content :is(.cajon-concept-card, .hm-fn-card) .cajon-card-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--hm-accent);
+  font-weight: 600;
+}
+.hm-docs-content .hm-fn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 1.75rem;
+}
+.hm-docs-content .hm-fn-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--hm-border);
+  border-top: 3px solid var(--hm-accent);
+  border-radius: var(--cajon-radius-md);
+  background: var(--cajon-color-bg-paper);
+  text-decoration: none;
+}
+.hm-docs-content .hm-fn-card:last-child { grid-column: 1 / -1; }
+.hm-docs-content .hm-fn-card:hover { border-color: var(--hm-accent); }
+.hm-docs-content .hm-fn-card__verb {
+  color: var(--hm-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.hm-docs-content .hm-fn-card__role {
+  color: var(--cajon-text-primary);
+  font-family: var(--cajon-font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.hm-docs-content .hm-fn-card p { margin: 0; }
+.hm-docs-content .hm-docs-table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.hm-docs-content .hm-table { width: 100%; }
+.hm-docs-content .hm-table :is(th, td) {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--hm-border);
+  text-align: start;
+  vertical-align: top;
+}
+.hm-docs-content .hm-mono-block {
+  padding: 1rem;
+  border-radius: var(--cajon-radius-md);
+  background: var(--hm-surface);
+  font-family: var(--cajon-font-mono);
+}
+
 @media (max-width: 640px) {
   /* Older MDX pages set column counts inline. Keep those pages readable on mobile. */
   .cajon-quality-grid { grid-template-columns: 1fr !important; }
+  .hm-docs-content .hm-fn-grid { grid-template-columns: 1fr; }
 }

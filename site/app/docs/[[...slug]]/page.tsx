@@ -41,7 +41,7 @@ export default async function Page({ params }: PageProps) {
       <JsonLd data={articleSchema} />
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody>
+      <DocsBody className="hm-docs-content">
         <MDX
           components={getMDXComponents({
             a: createRelativeLink(source, page),

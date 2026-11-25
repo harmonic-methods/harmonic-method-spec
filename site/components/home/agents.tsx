@@ -35,16 +35,10 @@ export function Agents({ specReleased }: { specReleased: boolean }) {
         <div className="hm-shead">
           <span className="cajon-overline">Agents and tooling</span>
           <h2>Rubrics that name the function they serve</h2>
-          {/* Three instruments, not one per function. The specification states
-           * the two absences rather than filling them, on the grounds that an
-           * instrument built to complete the set would imply evidence that is
-           * not there — so this copy must not imply a complete set either. */}
           <p>
-            Three published rubrics, each naming the function it serves: the Beat rubric for the
-            Composer, the Beat Version rubric for the Orchestrator, and Coda reconciliation for the
-            Conductor. The Producer and the Promoter have none — a stated gap rather than a filled
-            one. Each rubric assesses; none of them enforces, and the judgment stays with whoever
-            holds the function.
+            Agents can draft a capability, check a plan, reconcile a Coda chain, or assess a root
+            Coda. The published instruments make the reasoning visible so the person accountable
+            for the work can decide what to do with it.
           </p>
         </div>
         <div className="cajon-card-grid">

@@ -1,0 +1,65 @@
+---
+title: "Primitives"
+description: "Note, Coda, Beat, Beat Version, and Revision — the self-similar primitives of The Harmonic Method."
+---
+
+<p className="cajon-page-lead">The primitives are self-similar: the same evaluation applies at Beat, system, and portfolio altitude. That is what lets the five functions operate at any altitude without a separate vocabulary for each.</p>
+
+## Note [#note]
+
+<p>Explicit, versioned, discoverable context that preserves the reasoning behind the work. Every Note carries a type classifying its role.</p>
+
+<ul>
+        <li><strong>Background</strong>: domain knowledge and context. Facts and conditions that inform the work without being rules or choices.</li>
+        <li><strong>Constraint</strong>: non-negotiable rules the system must satisfy. Hard boundaries — technical, legal, organizational, architectural.</li>
+        <li><strong>Guidance</strong>: directional preferences, important but not absolute. How the team prefers to approach a problem without mandating a solution.</li>
+        <li><strong>Decision</strong>: a recorded choice with rationale — what was decided, why, and under what conditions.</li>
+      </ul>
+
+<p>The most significant source of waste in delivery is not incomplete work — it is lost context. Notes make the conditions behind a decision permanent and retrievable. A Note attaches to the Portfolio, System, Proposal, or Beat it informs. A Beat Note can reference the Beat Version that prompted it.</p>
+
+<blockquote><p>Notes are not a substitute for real-time communication. They are the residue of communication — the part worth keeping because it will matter later.</p></blockquote>
+
+## Coda [#coda]
+
+<div className="cajon-def-box">
+        <div className="cajon-def-box__label">Definition</div>
+        <p>The resolved outcome an entity serves. Codas form a chain, with a parent Coda providing direction for the one below it.</p>
+      </div>
+
+<p>Delivery without a defined destination is not delivery, it is indefinite work. The Coda gives every subsequent decision a reference point: does this advance us toward it, or away from it? It is <strong>specific</strong> — a concrete state, not an aspiration — and <strong>resolved</strong>: evaluated, discussed, accepted.</p>
+
+<p>A Coda can change as understanding deepens. Record the decision and preserve the prior statement.</p>
+
+<p>A Beat that does not contribute to the current Coda does not belong in the current phase. A Coda that cannot be supported by the Beats in the system signals the Beats are incomplete or mis-scoped.</p>
+
+## Capability Beat [#beat]
+
+<div className="cajon-def-box">
+        <div className="cajon-def-box__label">Definition</div>
+        <p>A durable, outcome-oriented capability the system must possess. A Beat describes what a system must be <em>able to do</em>, not what must be built by a date.</p>
+      </div>
+
+<p>Tasks and features close when they ship. A capability continues to matter long after its first version. Conflating the two is a common source of fragility: when capabilities are expressed as tickets they get closed, archived, and forgotten while the underlying need remains. A Beat stays open as long as the system depends on what it describes.</p>
+
+<p>A Beat is <code>open</code> or <code>closed</code>. Its progress is expressed through its Beat Versions.</p>
+
+## Beat Version and Revision [#beat-versions]
+
+<p>A <strong>Beat Version</strong> is the planning increment — a planned slice of the Beat's capability, carrying description, scope, and acceptance criteria. It answers "what are we trying to accomplish?"</p>
+
+<p>A <strong>Revision</strong> is a tracked change that executes some or all of a Beat Version. It may be a pull request, a procedure update, or another change artifact.</p>
+
+<div className="hm-mono-block">Beat  →  Beat Version  →  Revision<br />durable capability  →  planned increment  →  delivered work</div>
+
+<p>Beat Versions and Revisions use <code>active</code>, <code>delivered</code>, or <code>withdrawn</code>. A decision Note can preserve the reason for withdrawal.</p>
+
+<p><strong>Orphan Revisions</strong> record changes such as small operational fixes that have no Beat Version. Their description carries the work the change serves.</p>
+
+<blockquote><p>One Beat Version owns the why and what; one or more Revisions own the how and when.</p></blockquote>
+
+## Which function owns what [#ownership]
+
+<p>The Composer owns the Coda, the Beats, and the Notes that explain them — intent and the quality bar. The Orchestrator decides which forces carry which Beat Versions. The Conductor watches whether the Revisions coming back still serve the Coda. The Producer decides whether the capability earned its place at all.</p>
+
+<p><a className="cajon-learn-more" href="/docs/method/quality">Read the quality model →</a></p>

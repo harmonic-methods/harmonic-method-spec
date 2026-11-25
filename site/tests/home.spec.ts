@@ -8,7 +8,7 @@ test('homepage loads its assets and links to the docs without optional credentia
     if (/\/(?:_next|brand)\//.test(response.url()) && !response.ok()) errors.push(response.url());
   });
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Systems where intent survives the handoff.');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Build software where intent survives the handoff.');
   await expect(page.locator('#blog, #videos, #community, #agents')).toHaveCount(0);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\/harmonicmethods\.com\/?$/);
   for (const image of await page.locator('.hm-home img:visible').all()) {
@@ -16,7 +16,7 @@ test('homepage loads its assets and links to the docs without optional credentia
     expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
   }
   await page.screenshot({ path: test.info().outputPath('homepage-desktop.png'), fullPage: true });
-  await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Read the docs' }).click();
+  await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Docs', exact: true }).click();
   await expect(page).toHaveURL(/\/docs$/);
   await page.getByRole('link', { name: 'The Harmonic Method Docs', exact: true }).click();
   await expect(page).toHaveURL(/\/$/);
@@ -27,7 +27,7 @@ test('homepage loads its assets and links to the docs without optional credentia
   expect(errors).toEqual([]);
 });
 
-test('mobile menu opens, follows a section link and closes in dark mode', async ({ page }) => {
+test('mobile menu opens and follows the method link in dark mode', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('/');
@@ -39,10 +39,10 @@ test('mobile menu opens, follows a section link and closes in dark mode', async 
   await expect(menu).toHaveAttribute('aria-expanded', 'true');
   await expect(method).toBeVisible();
   await method.click();
-  await expect(page).toHaveURL(/\/#functions$/);
-  await expect(menu).toHaveAttribute('aria-expanded', 'false');
+  await expect(page).toHaveURL(/\/docs\/method\/overview$/);
+  await expect(page.getByRole('heading', { name: 'Overview', exact: true })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
-  await page.screenshot({ path: test.info().outputPath('homepage-mobile-dark.png'), fullPage: true });
+  await page.screenshot({ path: test.info().outputPath('method-mobile-dark.png'), fullPage: true });
 });
 
 test('signed flags control sections while newsletter requires a real action', async ({ page, context }) => {

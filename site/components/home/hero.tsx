@@ -7,14 +7,17 @@ export function Hero() {
       <div className="hm-hero__inner">
         <div>
           <span className="hm-hero__eyebrow">The Harmonic Method</span>
-          <h1>Systems where intent survives the handoff.</h1>
+          <h1>Build software where intent survives the handoff.</h1>
           <p className="hm-hero__lead">
-            A method for building and operating software that humans and agents run together.
+            Keep intent explicit and durable across handoffs from strategy to product, product to
+            engineering, and people to agents.
           </p>
           <div className="hm-hero__actions">
-            {/* Use the documentation until the repository is publicly reachable. */}
             <Link href="/docs" className="cajon-btn cajon-btn--contained cajon-btn--lg">
-              Read the specification
+              Read the docs
+            </Link>
+            <Link href="/docs/method/roles" className="cajon-btn cajon-btn--outlined cajon-btn--lg">
+              See the five functions →
             </Link>
           </div>
         </div>

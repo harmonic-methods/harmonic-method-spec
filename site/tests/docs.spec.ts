@@ -31,13 +31,27 @@ test('read docs and follow a documentation link with working assets', async ({ p
     if (response.url().includes('/_next/') && !response.ok()) failures.push(response.url());
   });
   await page.goto('/docs');
-  await expect(page.getByRole('heading', { name: 'A connected approach to software delivery' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Where to start' })).toBeVisible();
   await page.screenshot({ path: test.info().outputPath('docs-desktop.png'), fullPage: true });
-  await page.locator('a.cajon-method-card[href="/docs/composition"]').click();
-  await expect(page).toHaveURL(/\/docs\/composition$/);
-  await expect(page.locator('article')).toContainText('Composition');
+  await page.locator('a.cajon-concept-card[href="/docs/method/roles"]').click();
+  await expect(page).toHaveURL(/\/docs\/method\/roles$/);
+  await expect(page.locator('#promoter')).toContainText('Promoter');
   await expect(page.locator('html')).toHaveClass(/light|dark/);
   expect(failures).toEqual([]);
+});
+
+test('the Get Started link reaches the pending kit walkthrough and both prompts', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Getting started' }).click();
+  await expect(page).toHaveURL(/\/docs\/getting-started$/);
+  await expect(page.locator('#starter-kit')).toContainText('Try the open spec kit');
+  await expect(page.locator('article')).toContainText('START_HERE.md');
+  await expect(page.locator('article')).toContainText('pending public release');
+  await expect(page.locator('article blockquote')).toContainText([
+    'review-a-capability.md',
+    'skills/coda-quality-check/SKILL.md',
+  ]);
+  await page.screenshot({ path: test.info().outputPath('starter-kit-desktop.png'), fullPage: true });
 });
 
 test('search finds documentation through the isolated API', async ({ request }) => {
@@ -62,13 +76,14 @@ test('readers can search and open a result', async ({ page }) => {
 });
 
 test('Markdown exports and sitemap retain public document URLs', async ({ request }) => {
-  for (const path of ['/docs.md', '/docs/composition.md', '/docs/composition/beats.md']) {
+  for (const path of ['/docs.md', '/docs/getting-started.md', '/docs/method/quality.md', '/docs/composition/beats.md']) {
     const response = await request.get(path);
     expect(response.status(), path).toBe(200);
     expect(response.headers()['content-type']).toContain('text/markdown');
     const body = await response.text();
     expect(body).toMatch(/^# /);
     expect(body).not.toContain('className=');
+    if (path === '/docs/getting-started.md') expect(body).toContain('START_HERE.md');
   }
   const index = await request.get('/llms.txt');
   expect(await index.text()).toContain('https://harmonicmethods.com/docs/composition/beats.md');
@@ -90,6 +105,9 @@ test('docs remain readable on mobile in dark mode', async ({ page }) => {
   await page.goto('/docs/composition/beat-arc');
   await expect(page.locator('html')).toHaveClass(/dark/);
   await expect(page.getByRole('heading', { name: 'The three states' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
+  await page.goto('/docs/method/roles#promoter');
+  await expect(page.locator('#promoter')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
   await page.screenshot({ path: test.info().outputPath('docs-mobile-dark.png'), fullPage: true });
 });
