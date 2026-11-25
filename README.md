@@ -28,7 +28,7 @@ might be a pull request, a procedure document, or a runbook diff.
 
 Download `harmonic-method-starter-kit.zip` from a successful
 [validation run on `main`](https://github.com/harmonic-methods/harmonic-method-spec/actions/workflows/validate.yml?query=branch%3Amain).
-Unzip it and open `START HERE.md`. You can try the sample in your organization's
+Unzip it and open `START_HERE.md`. You can try the sample in your organization's
 approved AI chat or open the folder in an approved desktop AI app with folder
 access. Once you have the ZIP, the trial needs no Git setup or plugin.
 

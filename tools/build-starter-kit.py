@@ -58,7 +58,7 @@ def build(output):
     (output / REVIEW_NAME).write_text(review, encoding="utf-8")
     (output / SAMPLE_NAME).write_text(sample, encoding="utf-8")
     with ZipFile(output / f"{KIT_NAME}.zip", "w", compression=ZIP_DEFLATED) as archive:
-        archive.write(ROOT / "starter-kit/START HERE.md", f"{KIT_NAME}/START HERE.md")
+        archive.write(ROOT / "starter-kit/START_HERE.md", f"{KIT_NAME}/START_HERE.md")
         archive.writestr(f"{KIT_NAME}/{REVIEW_NAME}", review)
         archive.writestr(f"{KIT_NAME}/{SAMPLE_NAME}", sample)
         archive.mkdir(f"{KIT_NAME}/your-files/")
