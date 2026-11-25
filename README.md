@@ -2,7 +2,7 @@
 
 The open specification and agent skills for **the Harmonic Method**. It helps
 people and AI agents keep work connected to its purpose through explicit
-outcomes, preserved context, and decision rationale. Practise it with your
+outcomes, preserved context, and decision rationale. Practice it with your
 existing tools.
 
 A **Capability Beat**, or **Beat** for short, describes a durable capability
@@ -282,7 +282,7 @@ rises whenever the Coda is widened and no capability is added.
 [examples/coverage/](examples/coverage/) shows the same two questions answered
 arithmetically where an adopter has embeddings; the two disagree usefully.
 
-Five skills produce rather than assess, and none defines any judgement of its
+Five skills produce rather than assess, and none defines any judgment of its
 own — which is what keeps a production aid from becoming a second standard.
 
 [beat-composing](skills/beat-composing/SKILL.md) serves the Composer: give it a
@@ -324,7 +324,7 @@ adopt it.
 
 The Producer's instrument scores the root Coda rather than computing Value
 Velocity, which is what had kept the slot empty: a rate needs a realized figure,
-and the figure is not available at the moment anyone needs the judgement. What is
+and the figure is not available at the moment anyone needs the judgment. What is
 available is the statement the rate would be measured against — whose benefit is
 claimed, on what evidence, inside what bounds — so the instrument asks whether
 that statement can be failed, and leaves the arithmetic to the implementation as
@@ -368,7 +368,7 @@ The dimension definitions and anchors are canonical here, so a score means the
 same thing wherever it is produced. Each instrument tells the reader not to
 paraphrase them, because that is how a definition quietly stops meaning the same
 thing. A digest over each one's normative text fails the conformance check if any
-of it is edited without acknowledgement.
+of it is edited without acknowledgment.
 
 ## Laying out a system
 

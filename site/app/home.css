@@ -206,7 +206,7 @@
   padding: 34px 0;
   border-bottom: 1px solid var(--cajon-color-border-default, rgba(23, 43, 69, 0.12));
 }
-/* Caption and lockup share one centred line. */
+/* Caption and lockup share one centered line. */
 .hm-logos__inner {
   display: flex;
   flex-wrap: wrap;
@@ -466,7 +466,7 @@ a.hm-fn-card:hover {
   );
   background-size: 14px 14px;
 }
-/* Video cards put a play button dead centre, so their label sits top-left
+/* Video cards put a play button dead center, so their label sits top-left
  * instead — clear of both the play button and the duration chip. */
 .hm-media-ph--corner {
   place-items: start;

@@ -1,0 +1,23 @@
+beat_version:
+  id: HM-BV-004.40
+  beat: HM-B-004
+  title: Public introductory copy consistently uses US English
+  status: active
+  summary: >
+    Use US English in the website and introductory repository copy, including
+    practice as a verb. HM-N-211 records the requested editorial convention.
+
+    Done when the identified public-copy occurrences of practise, centre,
+    authorise, recognise, modelling, honoured, judgement and acknowledgement use US spellings without
+    changing their meaning. Conformance, site typecheck, production build and
+    existing browser checks must pass. Open a separate review request.
+  scope: >
+    In: website prose and comments, README and agent-facing overview spelling,
+    targeted scan results and marking the merged Harmonica-link step delivered.
+    One maintainer can own this small editorial correction.
+
+    Out: normative instruments and specifications, historical decision records,
+    changelog history, code identifiers, copied sample artifacts, dependency
+    changes and retiring legacy sections. Review replacements in context so
+    proper names and programming terms remain correct. Section retirement is a
+    separate information-architecture decision.
