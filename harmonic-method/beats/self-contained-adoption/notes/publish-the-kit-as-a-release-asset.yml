@@ -1,0 +1,14 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-168
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.10
+  content: >
+    Publish the starter kit from main as a versioned GitHub Release asset
+    once the repository is public. Continue using the validation artifact
+    for internal previews.
+  rationale: >
+    Readers can download the kit without signing in. The release records
+    the spec set and source commit and preserves earlier downloads as the
+    kit changes.

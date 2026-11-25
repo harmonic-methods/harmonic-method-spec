@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   conformance:
@@ -35,3 +36,9 @@ jobs:
           HM_PR_NUMBER: ${{ github.event.pull_request.number }}
           HM_PR_TITLE: ${{ github.event.pull_request.title }}
           HM_REQUIRE_BINDING: ${{ github.event_name == 'pull_request' && '1' || '' }}
+      - run: python3 tools/build-starter-kit.py "$RUNNER_TEMP/starter-kit"
+      - uses: actions/upload-artifact@v7
+        with:
+          path: ${{ runner.temp }}/starter-kit/harmonic-method-starter-kit.zip
+          archive: false
+          if-no-files-found: error
