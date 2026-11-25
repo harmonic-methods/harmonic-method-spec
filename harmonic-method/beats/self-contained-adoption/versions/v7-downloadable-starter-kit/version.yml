@@ -1,0 +1,17 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-004.7
+  beat: HM-B-004
+  title: Try the method with a document or folder
+  status: active
+  summary: >
+    The first rubric review currently starts with a repository checkout. Give
+    a newcomer a sample and a paste-ready prompt for the AI workspace their
+    organization already uses. A standalone rubric serves the first document
+    review, and a downloadable folder carries the skills and specs for
+    continued practice. Both carry the canonical material from the same tree.
+  scope: >
+    In: the generated starter ZIP, standalone chat attachments, download
+    instructions, and build verification. Keep the worked example and rubric
+    sourced from their canonical paths.
+    Out: plugin packaging and changes to the specification or rubrics.

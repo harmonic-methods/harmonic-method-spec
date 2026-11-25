@@ -1,0 +1,14 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-157
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.7
+  content: >
+    Generate a standalone document review and a folder kit from the source
+    tree. Keep the skills and specs at their original paths in the folder.
+  rationale: >
+    A first document review can run in an approved chat workspace with two
+    attachments. Folder access removes repeated uploads for people working with
+    several files. Generating both forms from the same tree keeps the rubric
+    and spec set together and avoids a separate copy that can drift.
