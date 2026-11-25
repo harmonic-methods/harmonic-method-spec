@@ -10,6 +10,9 @@ test('homepage loads its assets and links to the docs without optional credentia
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Build software where intent survives the handoff.');
   await expect(page.locator('#blog, #videos, #community, #agents')).toHaveCount(0);
+  await expect(page.locator('#functions .hm-fn-card__role')).toHaveText([
+    'Director', 'Composer', 'Orchestrator', 'Conductor', 'Producer', 'Promoter',
+  ]);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\/harmonicmethods\.com\/?$/);
   for (const image of await page.locator('.hm-home img:visible').all()) {
     await expect(image).toHaveJSProperty('complete', true);

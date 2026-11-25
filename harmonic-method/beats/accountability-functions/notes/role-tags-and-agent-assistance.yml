@@ -1,0 +1,19 @@
+note:
+  id: HM-N-182
+  type: decision
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.5
+  content: >
+    Show accountable and supporting role tags on documentation about method
+    practices, with links to their definitions. These describe accountability
+    for applying the practice, not ownership of editing the page. Broad overview
+    pages can name all six; pages without a specific practice need no assignment.
+    Recommend explicit agent skills for each role, distinguishing published
+    skills from team-defined recommendations. Skills describe inputs, outputs,
+    quality checks, permissions and escalation to the accountable person.
+  rationale: >
+    The owner requested role responsibility tags and an explanation of agent
+    assistance and recommended skills. Visible role associations help readers
+    apply the six-role model. Agent assistance scales preparation and execution
+    without transferring human accountability or implying unpublished skills
+    already exist.

@@ -10,6 +10,7 @@ import { notFound } from 'next/navigation';
 
 import { JsonLd, SITE_URL } from '@/components/json-ld';
 import { getMDXComponents } from '@/components/mdx';
+import { RoleTags } from '@/components/role-tags';
 import { source } from '@/lib/source';
 
 interface PageProps {
@@ -41,6 +42,7 @@ export default async function Page({ params }: PageProps) {
       <JsonLd data={articleSchema} />
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
+      <RoleTags accountable={page.data.accountableRoles} supporting={page.data.supportingRoles} />
       <DocsBody className="hm-docs-content">
         <MDX
           components={getMDXComponents({

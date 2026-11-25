@@ -1,0 +1,40 @@
+beat_version:
+  id: HM-BV-005.5
+  beat: HM-B-005
+  title: Six roles distinguish strategic direction from system definition and investment
+  status: active
+  summary: >
+    Publish Director within one Harmonic Method and present the accountabilities
+    as Harmonic Method roles. HM-N-181 records the owner's decision to expand
+    the set and the boundaries it requires. Conductor leads day-to-day execution
+    within agreed scope, capacity and authority; Orchestrator owns the arrangement
+    and resource allocation beyond that envelope.
+
+    Done when the roles page names all six roles, distinguishes Director's
+    strategic validity from Composer's system coherence and Producer's investment
+    judgment, and maps Conductor to day-to-day leadership including tech leads.
+    The canonical function concept and conformance prose must agree, with a
+    minor spec-set bump. Current overview, glossary, homepage and documentation
+    summaries must no longer claim five roles. Existing anchors remain stable.
+    Repository validation, site build, typecheck and browser checks must pass,
+    including six-role navigation and desktop/mobile rendering. Documentation
+    practice pages show accountable and supporting role tags linking to the role
+    definitions. Agent guidance distinguishes existing published skills from
+    recommended team-defined skills and preserves human decision authority.
+  scope: >
+    In: roles page, canonical role definitions, live summaries and related
+    boundary explanations, the accountability Beat description, a decision Note,
+    spec-set version alignment, role metadata and linked tags on method and
+    practice documentation, agent skill guidance, and focused browser verification.
+    HM-N-182 records the requested responsibility and assistance guidance.
+    One contributor can deliver this change without service dependencies.
+
+    Out: a separate business method, new entities or staffing fields, new agent
+    skills or rubric changes, reference implementation code or remote Notes,
+    deployment and historical rewrites. The prior accountability step stays
+    active because its merge has not been established.
+
+    Risks: Director could duplicate Composer or Producer; distinguish failure
+    modes and decision rights explicitly. A new role changes the standard, so
+    record that change and bump the spec set without changing checker versions
+    or rubric fingerprints. Role ownership does not grant agents new authority.

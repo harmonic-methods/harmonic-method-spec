@@ -2,10 +2,17 @@ import Link from 'next/link';
 
 const FUNCTIONS = [
   {
-    verb: 'Establishes intent',
+    verb: 'Owns strategic direction',
+    role: 'Director',
+    blurb:
+      'Sets direction and tests whether its assumptions still hold as needs and conditions change.',
+    href: '/docs/method/roles#director',
+  },
+  {
+    verb: 'Defines the system and its intent',
     role: 'Composer',
     blurb:
-      'Defines what must become true and why, and the constraints that bound it. Owns the North Star and the definition of the work.',
+      'Defines coherent systems, capabilities, outcomes, and constraints that serve the strategic direction.',
     href: '/docs/method/roles#composer',
   },
   {
@@ -16,16 +23,16 @@ const FUNCTIONS = [
     href: '/docs/method/roles#orchestrator',
   },
   {
-    verb: 'Holds coherence during execution',
+    verb: 'Leads day-to-day execution',
     role: 'Conductor',
     blurb:
-      'Real-time judgment when reality diverges from the plan. Detects drift and reanchors the work to intent.',
+      'Coordinates people and agents, resolves blockers, and keeps decisions in force within agreed boundaries.',
     href: '/docs/method/roles#conductor',
   },
   {
-    verb: 'Owns value',
+    verb: 'Owns investment and value',
     role: 'Producer',
-    blurb: 'Decides whether the work earns its keep: what gets funded, and what gets made.',
+    blurb: 'Judges value against cost and decides what to fund, continue, reshape, or stop.',
     href: '/docs/method/roles#producer',
   },
   {
@@ -43,11 +50,10 @@ export function Functions() {
       <div className="hm-wrap">
         <div className="hm-shead">
           <span className="cajon-overline">Structure of the method</span>
-          <h2>Five functions that act on intent</h2>
+          <h2>Six Harmonic Method roles</h2>
           <p>
-            The functions are constant. What varies is the altitude at which a given function is
-            scoped. They are functions, not headcount — in a small organization one person may hold
-            three of them.
+            Each role carries a distinct accountability at the scope of the work.
+            One person may hold several roles.
           </p>
         </div>
         <div className="hm-fn-grid">
@@ -56,13 +62,13 @@ export function Functions() {
               <span className="hm-fn-card__verb">{fn.verb}</span>
               <span className="hm-fn-card__role">{fn.role}</span>
               <p>{fn.blurb}</p>
-              <span className="cajon-card-link">Read the function →</span>
+              <span className="cajon-card-link">Read the role →</span>
             </Link>
           ))}
         </div>
         <div className="cajon-callout">
           The diagnostic value of the method is not in creating new job titles. It is in revealing
-          which function is currently unowned — unowned functions are where decision debt
+          which role is currently unowned — unowned accountabilities are where decision debt
           accumulates.
         </div>
       </div>

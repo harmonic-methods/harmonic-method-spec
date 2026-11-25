@@ -51,10 +51,10 @@
 - specs/spec-set.yml: the one version of the normative surface; every spec repeats it as a parsed spec_version field and the checker enforces agreement. Pin this number, not the repository tag — package.json versions the checker separately.
 - specs/bar.yml: Bar — the recurring cadence period work is planned and delivered within; nests temporally via an optional parent, so a longer cadence is a Bar with children rather than a second entity. Its window is half-open and its end is the Cutoff, an instant with a time of day and UTC offset rather than an inclusive last day; the Tie off is the Conductor's ceremony settling the Bar's unfinished work after the Cutoff and before the Downbeat — a ceremony, not an entity; an item continuing into the next Bar is tied across, a prose term with no recorded outcome
 - specs/downbeat.yml: Downbeat — an immutable anchor recording where a capability stood and what it was converging toward; sits at beat altitude, so one Bar boundary yields one Downbeat per capability in view
-- specs/function.yml: Function — the five accountabilities (Composer, Orchestrator, Conductor, Producer, Promoter); a concept, not an instantiable entity, and not a field on any entity
+- specs/function.yml: Function — the six accountabilities (Director, Composer, Orchestrator, Conductor, Producer, Promoter); a concept, not an instantiable entity, and not a field on any entity
 
 ## Instruments
-Each serves one of the five functions. A digest over each one's normative text
+Each serves one of the six roles. A digest over each one's normative text
 guards it against an unacknowledged edit.
 - skills/coda-quality-check/SKILL.md: Composer — score a Coda that has a parent — a Beat, a System, or a Portfolio — 1-5 across seven dimensions
 - skills/beat-version-quality-check/SKILL.md: Orchestrator — score a Beat Version plan 1-5 across six dimensions
