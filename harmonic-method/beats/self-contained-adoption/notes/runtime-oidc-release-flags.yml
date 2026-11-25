@@ -1,0 +1,17 @@
+note:
+  id: HM-N-205
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.34
+  content: >
+    Select the Vercel flag adapter for Vercel deployments as well as explicit
+    local provider credentials. Preserve the disabled fallback for local work
+    without provider access.
+  rationale: >
+    The owner authorized publishing the starter kit and updating the new site's
+    links, then explicitly approved deployment OIDC and redeployment. The deployed
+    download works, but the enabled release card remains hidden. The SDK obtains
+    runtime OIDC from request context before falling back to the environment;
+    checking only the environment can incorrectly select the local fallback.
+    Keep deployment protection and domain assignments intact, and deploy the small
+    source repair with a review request so the source remains inspectable.

@@ -1,0 +1,26 @@
+beat_version:
+  id: HM-BV-004.34
+  beat: HM-B-004
+  title: Published source links resolve through deployment flags
+  status: active
+  summary: >
+    Readers of the deployed site can reach the public specification and released
+    starter kit. Recognize Vercel deployments when choosing the flag adapter,
+    because runtime OIDC credentials can arrive through request context rather
+    than process environment. HM-N-205 records the deployment finding.
+
+    Done when the enabled tooling and release flags render the specification
+    GitHub card, the getting-started download targets the verified release asset,
+    and local builds without provider credentials retain disabled optional
+    sections. Repository conformance, site typecheck and production build must
+    pass. Verify the deployed links before claiming completion.
+  scope: >
+    In: correct provider detection, preserve credential-free local behavior,
+    verify the configured release links, and mark the merged runnable-example
+    plan delivered. One maintainer can own this small repair end to end.
+
+    Out: normative changes, dependency upgrades, domain cutover, protection
+    changes, new credentials, and unfinished homepage sections. The deployment
+    depends on the owner's approved deployment OIDC identity and enabled release
+    flags. If provider access still fails, report the failure rather than
+    exposing secrets or weakening access controls.
