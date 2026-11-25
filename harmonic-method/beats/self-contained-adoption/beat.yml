@@ -5,14 +5,16 @@ beat:
   status: open
   coda:
     statement: >
-      A newcomer who lands on this repository understands what the Harmonic Method
-      is, applies one of its rubrics to their own work, and decides whether to
-      go further — all without leaving the repository or talking to anyone.
+      A newcomer can decide whether the Harmonic Method fits their work after
+      trying it on one of their own capabilities and seeing what the result
+      would help them improve. They can reach that decision without an account
+      with the method's publisher or a guided introduction.
     parent: HM-CODA
   description: >
-    The capability by which the repository explains and demonstrates itself:
-    what the method is for, what each spec and skill does, a worked example to
-    pattern-match against, and an honest account of where this repository stops and a
-    system of record begins.
+    The self-service path from a first encounter to an informed adoption
+    decision. It gives newcomers an orientation, a worked example, and enough
+    guidance to try a published rubric on their own work and decide whether
+    to continue. Ongoing assessments of capabilities, plans, and whether
+    intent still holds belong to Account-free quality scoring.
   # notes: see ./notes/ — the directory is the list.
   # versions: see ./versions/ — the directory is the list.

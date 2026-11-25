@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-005.3
   beat: HM-B-005
   title: Say when a decision belongs to the Orchestrator and when to the Conductor
-  status: active
+  status: delivered
   summary: >
     Two functions were being applied interchangeably. Orchestrator is published
     through sequencing and handoffs, Conductor through Notes, Bars and

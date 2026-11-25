@@ -1,0 +1,19 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-162
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.8
+  content: >
+    Revise the adoption Coda to describe a newcomer's decision after trying
+    the method on their work. Preserve the previous statement:
+
+    A newcomer who lands on this repository understands what the Harmonic Method
+    is, applies one of its rubrics to their own work, and decides whether to
+    go further — all without leaving the repository or talking to anyone.
+  rationale: >
+    A download or an approved AI workspace can support the same first trial
+    as a repository checkout. The durable outcome is an informed adoption
+    decision without depending on the publisher. The assessment capability
+    owns the recurring judgments a newcomer can continue making after that
+    decision, so the adoption description now makes the handoff explicit.

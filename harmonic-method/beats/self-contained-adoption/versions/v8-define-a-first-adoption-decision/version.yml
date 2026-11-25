@@ -1,0 +1,25 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-004.8
+  beat: HM-B-004
+  title: Define the newcomer's adoption decision
+  status: active
+  summary: |
+    Tie this capability to a newcomer's decision after a real trial.
+    Its current Coda ties that outcome to staying in one repository, and
+    its description gives no handoff to the ongoing assessment capability.
+
+    Keep the self-service promise. A trial can use an approved AI
+    workspace without requiring an account with the method's publisher
+    or a guided introduction.
+  scope: |
+    In: the adoption Beat's statement and description, and a decision
+    Note preserving the prior statement and why it changed.
+    Out: new distribution channels, changes to the starter kit, and
+    changes to the assessment rubrics.
+
+    Done when the statement describes a first adoption decision,
+    the description distinguishes that decision from ongoing assessment,
+    and the original statement can be recovered verbatim from the Note.
+    Rescore the Beat against its siblings and parent and run repository
+    conformance.
