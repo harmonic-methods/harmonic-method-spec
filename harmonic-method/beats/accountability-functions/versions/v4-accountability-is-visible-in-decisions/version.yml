@@ -1,0 +1,27 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-005.4
+  beat: HM-B-005
+  title: Make decision accountability visible
+  status: active
+  summary: |
+    Make the outcome of naming the method's functions concrete. A team
+    should be able to find who answers for decisions about the purpose,
+    delivery, continuing value, and adoption of the work, and spot
+    decisions that have no owner.
+
+    The wording could be mistaken for a central staffing record. Keep
+    assignments with the team and use the existing function definitions
+    to describe which decisions need an accountable person.
+  scope: |
+    In: the accountability Beat's Coda and description, a decision Note
+    preserving the previous statement, and marking the previous shipped
+    step delivered.
+    Out: changes to the functions, their responsibilities, or the
+    entity model. Team-specific assignments remain with the team.
+
+    Done when the statement connects ownership to the decisions it
+    enables, the description can be read alongside the published five
+    functions, and the Note retains the previous statement verbatim.
+    Rescore the Beat against its siblings and parent and run repository
+    conformance.
