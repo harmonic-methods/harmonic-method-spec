@@ -1,0 +1,23 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-175
+  type: decision
+  attached_to: HM-B-003
+  beat_version: HM-BV-003.35
+  content: >
+    In a continuous cadence the incoming Bar starts at the outgoing Bar's
+    Cutoff. Tie off is held at or after Cutoff and can finish later, leaving
+    the outgoing Bar open while the incoming window has already begun.
+    Downbeat follows the completed Tie off and records the capability's state
+    at its actual taking time. Neither a later Tie off nor a later Downbeat
+    shifts the windows or changes which Bar owns work. This clarifies the
+    sequence recorded in HM-N-155 without changing timestamp syntax, status
+    values, or Downbeat fields. The spec set takes a patch step.
+  rationale: >
+    Calling Downbeat the opening instant conflates a scheduled boundary with
+    an anchor taken after unfinished work is settled. If Tie off finishes
+    late, those cannot be the same instant. Keeping the next start at Cutoff
+    preserves the half-open ownership rule, while taking Downbeat afterward
+    preserves an honest anchor of the settled state. The existing rules
+    already require this order and permit Tie off after Cutoff; the patch
+    makes their relationship explicit rather than adding a new constraint.

@@ -1,6 +1,6 @@
 # Harmonic Method spec — Bar
 entity: bar
-spec_version: 1.15.0
+spec_version: 1.15.1
 summary: >
   The recurring period work is planned and delivered within — the regular
   cadence a Conductor reconciles against. A Bar is a span of time with a
@@ -23,7 +23,9 @@ fields:
     description: >
       The instant the Bar opens — the first instant inside its window. Where a
       sibling precedes it without a gap, this is the same instant as that
-      sibling's Cutoff. It carries a time of day and an explicit UTC offset,
+      sibling's Cutoff. The Bar starts then even if the preceding Bar's Tie off
+      has not finished; neither Tie off nor Downbeat determines its start.
+      It carries a time of day and an explicit UTC offset,
       both the cadence owner's — for example 2026-10-21T09:00:00-07:00. A
       date alone, or a time of day with no offset, is not a valid value.
   ends:
@@ -82,9 +84,14 @@ rules:
     items were tied across is its own choice. Changing the cadence itself is a
     different decision, taken ahead of the doing, and is not part of a Tie off.
   - >-
-    At a boundary the order is Cutoff, then Tie off, then Downbeat. A Downbeat
-    taken before the Tie off records a Bar whose unfinished work is still
-    unsettled.
+    At a boundary the order is Cutoff, then Tie off, then Downbeat. Where the
+    cadence is continuous, the incoming Bar starts at the outgoing Bar's
+    Cutoff, even while the outgoing Bar remains open awaiting Tie off. Tie off
+    may finish later; Downbeat follows the completed Tie off and records the
+    capability's state at its actual taking time. Neither a later Tie off nor
+    a later Downbeat shifts the Bar windows or changes which Bar owns work.
+    A Downbeat taken before Tie off finishes records a Bar whose unfinished
+    work is still unsettled.
   - >-
     A Bar's boundary is the occasion for a Downbeat, not a substitute for one.
     A period that elapses without an anchor being taken leaves nothing to

@@ -1,6 +1,6 @@
 # Harmonic Method spec — Conformance
 concept: conformance
-spec_version: 1.15.0
+spec_version: 1.15.1
 summary: >
   What conforming to this method involves, and what an implementation states
   about itself in order to be checked. Conformance is a claim an implementation

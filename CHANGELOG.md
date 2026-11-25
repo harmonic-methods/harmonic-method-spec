@@ -2,6 +2,11 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A Bar's start does not wait for Tie off.** In a continuous cadence the
+  incoming Bar starts at the outgoing Cutoff. Tie off may finish later;
+  Downbeat follows its completion and records the actual taking time.
+  Neither ceremony shifts the windows or work ownership. See HM-BV-003.35.
+
 - **Coda and plan assessments identify what they judged.** Coda checks compare
   sibling promises and use the immediate parent for alignment. Plan checks
   explain which part of the Beat Coda the plan advances. Both disclose missing

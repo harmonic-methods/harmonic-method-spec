@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-003.34
   beat: HM-B-003
   title: A Beat's full name is Capability Beat
-  status: active
+  status: delivered
   summary: >
     A musical beat is the shortest span in the score and sits inside a bar. A
     Beat here is a durable capability that outlasts every period it is worked
