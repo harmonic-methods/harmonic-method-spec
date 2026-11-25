@@ -1,0 +1,32 @@
+# Example — a Beat for the agent-change-provenance system.
+# Conformant to specs/beat.yml.
+#
+# This Beat is about provenance linkage: the capability by which changes
+# produced in an agent session remain traceable to the Beat Version that
+# planned them and the work item that tracked the session.
+beat:
+  id: EX-B-003
+  title: Agent work items have a discoverable link to their planning context
+  status: open
+  coda:
+    statement: >
+      Any agent session that produces a change has also written a stable
+      cross-reference — from the work item to the Beat Version it executes and
+      from the Revision to the work item — so a reviewer can walk the chain in
+      either direction without reading a session transcript.
+    parent: EX-WP-CODA
+  description: >
+    The capability by which changes produced in an agent session are connected to
+    the Harmonic Beat Version that planned them and to the specific work item that
+    tracked the session. The linkage runs in both directions using stable IDs: the
+    work item names its Beat Version, and the Revision names the work item as
+    evidence. Neither side rewrites the other's record; both survive the session
+    that produced them.
+
+    Scope of this Beat: the cross-reference convention and the discipline of
+    applying it. Out of scope: how work items are structured within any particular
+    task tracker, how Beat Versions are assessed or scored, and read-only sync
+    from this repository to any hosted implementation — that sync is a future
+    capability, not a current requirement.
+  # notes: see ./notes/ — the directory is the list.
+  # versions: see ./versions/ — the directory is the list.

@@ -1,0 +1,21 @@
+# Example — a conformant Beat Version showing the first planned step of the
+# cross-reference capability. See specs/beat-version.yml.
+beat_version:
+  id: EX-BV-003.1
+  beat: EX-B-003
+  title: Cross-reference convention defined and adopted
+  status: delivered
+  summary: >
+    Agent instructions are updated to include the Beat Version ID in each work
+    item's title on creation, and each Revision's evidence field names the work
+    item by its task-tracker ID. The convention is documented as a background Note
+    on this Beat so future agents can apply it without reading session history.
+    A decision Note records why work items map to Revisions rather than to Beats.
+  scope: >
+    In: a written convention that agents follow when creating work items for work
+    executing a known Beat Version; a Revision demonstrating the pattern with a
+    real work-item reference in evidence; two Notes on the Beat (one decision, one
+    background) that make the convention self-contained.
+    Out: automated enforcement of the convention, task-tracker integration tooling,
+    and read-only sync from this repository to any hosted implementation.
+  # revisions: see ./revisions/ — the directory is the list.

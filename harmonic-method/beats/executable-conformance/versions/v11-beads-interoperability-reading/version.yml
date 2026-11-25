@@ -1,0 +1,31 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-006.11
+  beat: HM-B-006
+  title: Third-party reading of a task-tracker tool as an interoperability example
+  status: active
+  summary: >
+    A third-party conformance reading of Beads (by Steve Yegge, October 2025) is
+    added as a worked example of the declaration form, alongside a worked example
+    system showing how a task-tracker work item links to a Harmonic Beat Version
+    and Revision by stable ID without false equivalence. The critical mapping
+    decision — a bead maps to a Revision, not to a Beat — is stated as a decision
+    Note with rationale so agents applying the pattern cannot arrive at the wrong
+    mapping independently.
+
+    Done when the declaration lists all divergences, extensions, and mappings for
+    Beads; the example system validates; the two Notes carry the distinction and
+    the cross-reference pattern; and npm run validate prints conformant.
+  scope: >
+    In: declaration-beads-interop.yml showing all divergences (coda chain, durable
+    capability layer, beat version lifecycle, typed knowledge, cadence, accountability
+    functions), extensions (bead entity, dependency entity, ready-set computation),
+    and mappings (bead → revision, repository → system); a new example system
+    (agent-change-provenance) with one Beat, two Notes (decision and background),
+    one Beat Version, and one Revision demonstrating the stable-ID cross-reference
+    pattern; a README for the example system documenting limitations and clean-
+    checkout commands.
+    Out: normative changes to the method, changes to the declaration checker or
+    validator, automation of the cross-reference convention, and read-only sync
+    from this repository to any hosted implementation.
+  # revisions: see ./revisions/ — the directory is the list.

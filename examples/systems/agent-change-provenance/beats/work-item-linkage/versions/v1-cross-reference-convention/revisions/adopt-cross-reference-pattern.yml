@@ -1,0 +1,29 @@
+# Example — a conformant Revision demonstrating the Beads cross-reference
+# pattern. The evidence field names the Beads bead whose execution produced
+# this change. See specs/revision.yml.
+#
+# This Revision is the working example the declaration and Notes describe: a
+# Harmonic Revision that references a Beads work item (bead#42) as its evidence,
+# with the Beat Version ID written into the bead's title on the other side.
+revision:
+  id: EX-R-010
+  beat: EX-B-003
+  beat_version: EX-BV-003.1
+  title: Agent instructions updated to include Beat Version ID and work-item ID
+  status: delivered
+  description: >
+    Added a cross-reference paragraph to the team's agent instructions: when an
+    agent opens a Beads work item for work that executes a known Beat Version, it
+    records the Beat Version ID in the bead's title or description; when the
+    Revision is written, its evidence field names the bead by its Beads ID. This
+    creates a bidirectional stable reference without modifying either artifact's
+    authoritative record.
+
+    The reasoning for the convention is here rather than only in the bead: a bead
+    is closed when the work is done and may not be readable long after the session
+    ends, while the Revision's description outlives it. The two Notes attached to
+    this Beat (EX-N-010 and EX-N-011) carry the decision and the background that
+    make the convention reproducible for future agents.
+  evidence: >
+    Beads bead#42 — "EX-BV-003.1: define and adopt cross-reference convention"
+    (.beads/issues.jsonl, committed to the team repository alongside this change)
