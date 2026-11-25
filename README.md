@@ -26,7 +26,7 @@ might be a pull request, a procedure document, or a runbook diff.
 
 ### Try the starter kit
 
-Download `harmonic-method-starter-kit.zip` from a successful
+For an internal preview, download `harmonic-method-starter-kit.zip` from a successful
 [validation run on `main`](https://github.com/harmonic-methods/harmonic-method-spec/actions/workflows/validate.yml?query=branch%3Amain).
 Unzip it and open `START_HERE.md`. You can try the sample in your organization's
 approved AI chat or open the folder in an approved desktop AI app with folder
@@ -35,6 +35,8 @@ access. Once you have the ZIP, the trial needs no Git setup or plugin.
 If the artifact has expired, rerun the workflow or build the download locally with
 `python3 tools/build-starter-kit.py /path/to/output`. The output also includes
 the two Markdown attachments for the chat trial.
+
+Public downloads use the [starter kit release workflow](starter-kit/RELEASING.md).
 
 ### 1. Score something, with nothing installed
 

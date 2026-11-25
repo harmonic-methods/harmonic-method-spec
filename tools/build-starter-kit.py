@@ -2,7 +2,7 @@
 
 import argparse
 from pathlib import Path
-from zipfile import ZIP_DEFLATED, ZipFile
+from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 KIT_NAME = "harmonic-method-starter-kit"
@@ -19,6 +19,14 @@ def source(path):
 
 def yaml_section(path):
     return f"## `{path}`\n\n```yaml\n{source(path)}\n```\n"
+
+
+def write_entry(archive, path, content):
+    # Fixed timestamps and permissions keep repeat builds byte-for-byte equal.
+    entry = ZipInfo(f"{KIT_NAME}/{path}")
+    entry.create_system = 3
+    entry.external_attr = 0o100644 << 16
+    archive.writestr(entry, content, compress_type=ZIP_DEFLATED)
 
 
 def build(output):
@@ -58,16 +66,16 @@ def build(output):
     (output / REVIEW_NAME).write_text(review, encoding="utf-8")
     (output / SAMPLE_NAME).write_text(sample, encoding="utf-8")
     with ZipFile(output / f"{KIT_NAME}.zip", "w", compression=ZIP_DEFLATED) as archive:
-        archive.write(ROOT / "starter-kit/START_HERE.md", f"{KIT_NAME}/START_HERE.md")
-        archive.writestr(f"{KIT_NAME}/{REVIEW_NAME}", review)
-        archive.writestr(f"{KIT_NAME}/{SAMPLE_NAME}", sample)
-        archive.mkdir(f"{KIT_NAME}/your-files/")
+        write_entry(archive, "START_HERE.md", (ROOT / "starter-kit/START_HERE.md").read_bytes())
+        write_entry(archive, REVIEW_NAME, review)
+        write_entry(archive, SAMPLE_NAME, sample)
+        archive.mkdir(f"{KIT_NAME}/your-files/", mode=0o755)
         for path in ("LICENSE", "LICENSE-CONTENT", "TRADEMARKS.md"):
-            archive.write(ROOT / path, f"{KIT_NAME}/{path}")
+            write_entry(archive, path, (ROOT / path).read_bytes())
         for directory in ("skills", "specs", "examples"):
             for path in sorted((ROOT / directory).rglob("*")):
                 if path.is_file():
-                    archive.write(path, f"{KIT_NAME}/{path.relative_to(ROOT).as_posix()}")
+                    write_entry(archive, path.relative_to(ROOT).as_posix(), path.read_bytes())
 
 
 if __name__ == "__main__":

@@ -18,8 +18,8 @@ beat_version:
     where the workspace permits it.
   scope: |
     In: the generated starter ZIP, standalone chat attachments, download
-    instructions, and build verification. Keep the worked example and rubric
-    sourced from their canonical paths.
+    instructions, build verification, and a manual public release workflow.
+    Keep the worked example and rubric sourced from their canonical paths.
     Out: plugin packaging and changes to the specification or rubrics.
 
     Done when both sample workflows have been exercised in approved apps.
@@ -28,4 +28,5 @@ beat_version:
     Each review reports all rubric scores, reasons, the overall verdict, and
     the spec set version. The folder review leaves source files unchanged.
     The guide directs readers to the attachment path if folder access is
-    unavailable.
+    unavailable. The release workflow verifies that the public download
+    matches the archive it built.

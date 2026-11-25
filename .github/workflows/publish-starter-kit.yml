@@ -1,0 +1,73 @@
+name: Publish starter kit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check repository visibility
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          visibility="$(gh api "repos/$GITHUB_REPOSITORY" --jq .visibility)"
+          if [[ "$visibility" != public ]]; then
+            echo "The repository must be public to publish a sign-in-free download."
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+        env:
+          HM_BASE_REF: origin/main
+          HM_REQUIRE_BASE: '1'
+      - name: Build the release archive
+        run: |
+          python3 tools/build-starter-kit.py "$RUNNER_TEMP/starter-kit"
+          python3 -m zipfile --test "$RUNNER_TEMP/starter-kit/harmonic-method-starter-kit.zip"
+      - name: Publish and verify the download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          archive="$RUNNER_TEMP/starter-kit/harmonic-method-starter-kit.zip"
+          spec_version="$(node --input-type=module -e 'import fs from "node:fs"; import YAML from "yaml"; console.log(YAML.parse(fs.readFileSync("specs/spec-set.yml", "utf8")).spec_version)')"
+          tag="starter-kit-v$spec_version-${GITHUB_SHA:0:12}"
+          url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$tag/harmonic-method-starter-kit.zip"
+          checksum="$(sha256sum "$archive" | cut -d ' ' -f 1)"
+          notes="$RUNNER_TEMP/starter-kit-release-notes.md"
+          {
+            printf 'Unzip the starter kit and open `START_HERE.md`.\n\n'
+            printf -- '- Spec set %s\n' "$spec_version"
+            printf -- '- Source commit `%s`\n' "$GITHUB_SHA"
+            printf -- '- SHA-256 `%s`\n' "$checksum"
+          } > "$notes"
+
+          if ! gh release view "$tag" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            gh release create "$tag" "$archive" --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" --latest=false --title "Starter kit for spec set $spec_version" \
+              --notes-file "$notes"
+          fi
+
+          download="$RUNNER_TEMP/published-starter-kit.zip"
+          curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' \
+            --retry 5 --retry-all-errors --max-time 30 --output "$download" "$url"
+          cmp "$archive" "$download"
+          {
+            printf '## Starter kit published\n\n'
+            printf -- '- Download %s\n' "$url"
+            printf -- '- SHA-256 `%s`\n' "$checksum"
+          } >> "$GITHUB_STEP_SUMMARY"
