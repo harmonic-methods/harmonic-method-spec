@@ -1,0 +1,27 @@
+beat_version:
+  id: HM-BV-004.39
+  beat: HM-B-004
+  title: Readers can follow and measure interest in Harmonica
+  status: active
+  summary: >
+    Link Harmonica references in homepage and documentation body text to Codazen,
+    and distinguish those clicks from general stewardship links. HM-N-210 records
+    the requested destination and measurement boundary.
+
+    Done when the homepage card and documentation references point to Codazen
+    with stable Harmonica link identifiers, and Analytics receives a dedicated
+    Harmonica click event. Verify the named starter-kit and specification events
+    as well. Conformance, typecheck, production build and browser checks must
+    pass; distinguish saved event rules from observed event receipt.
+  scope: >
+    In: Harmonica body links and homepage card, stable measurement identifiers,
+    Analytics event configuration and live verification, and marking the merged
+    specification-navigation step delivered. One maintainer owns this small
+    public navigation and measurement change.
+
+    Out: normative changes, advertising configuration, new credentials, consent
+    settings, release assets and unrelated local edits. Preserve existing
+    human accountability and public source links. Provider propagation can delay
+    event receipt; report a pending verification accurately rather than claiming
+    that a saved rule proves delivery. Download measurement records link clicks,
+    not completed file transfers.

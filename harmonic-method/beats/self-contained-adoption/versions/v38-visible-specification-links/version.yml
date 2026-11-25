@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.38
   beat: HM-B-004
   title: Readers can reach the specification from site navigation
-  status: active
+  status: delivered
   summary: >
     Make the public specification repository directly discoverable from the
     homepage navigation and footer and from documentation navigation. HM-N-209

@@ -24,6 +24,18 @@ test('every imported document renders and local links point to included pages', 
   }
 });
 
+test('Harmonica references link to Codazen with distinct measurement identifiers', async ({ page }) => {
+  for (const path of ['/docs/about', '/docs/method/tooling', '/docs/glossary', '/docs/implementation/create-a-pull-request']) {
+    await page.goto(path);
+    const references = page.locator('article a[id^="harmonica-"]');
+    expect(await references.count(), path).toBeGreaterThan(0);
+    for (const reference of await references.all()) {
+      await expect(reference).toHaveAttribute('href', 'https://codazen.com');
+      await expect(reference).toHaveText('Harmonica');
+    }
+  }
+});
+
 test('the retired metaphor page redirects to useful glossary definitions', async ({ page, request }) => {
   for (const [oldPath, destination] of [
     ['/docs/method/metaphor', '/docs/glossary'],
