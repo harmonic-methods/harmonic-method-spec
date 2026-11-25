@@ -1,8 +1,8 @@
 note:
-  id: HM-N-170
+  id: HM-N-172
   type: decision
   attached_to: HM-B-004
-  beat_version: HM-BV-004.10
+  beat_version: HM-BV-004.11
   content: >
     The standalone site's package engine, local version-manager hint and CI
     select Node 26 explicitly. Vercel uses the package engine when it overrides

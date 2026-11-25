@@ -7,7 +7,7 @@ beat_version:
     A contributor can read, edit, build and test the website and documentation
     alongside the specification using public dependencies alone. The homepage
     and documentation remain at their existing URL paths in one application.
-    The expanded scope follows the owner's decision recorded in HM-N-168.
+    The expanded scope follows the owner's decision recorded in HM-N-158.
 
     Done when a clean npm install builds the site, browser checks cover homepage
     navigation, mobile disclosure, reading, search, Markdown exports and missing pages, and CI

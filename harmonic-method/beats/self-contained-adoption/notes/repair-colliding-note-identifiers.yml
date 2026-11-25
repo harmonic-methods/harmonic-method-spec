@@ -1,8 +1,8 @@
 note:
-  id: HM-N-171
+  id: HM-N-173
   type: decision
   attached_to: HM-B-004
-  beat_version: HM-BV-004.10
+  beat_version: HM-BV-004.11
   content: >
     The website-source and Vercel-preview decisions are assigned HM-N-168 and
     HM-N-169. The extraction plan's website-source citation follows that rename.

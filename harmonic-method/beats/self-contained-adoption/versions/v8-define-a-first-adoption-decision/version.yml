@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.8
   beat: HM-B-004
   title: Define the newcomer's adoption decision
-  status: active
+  status: delivered
   summary: |
     Tie this capability to a newcomer's decision after a real trial.
     Its current Coda ties that outcome to staying in one repository, and
