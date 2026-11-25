@@ -4,14 +4,28 @@ beat_version:
   beat: HM-B-004
   title: Try the method with a document or folder
   status: active
-  summary: >
+  summary: |
     The first rubric review currently starts with a repository checkout. Give
     a newcomer a sample and a paste-ready prompt for the AI workspace their
     organization already uses. A standalone rubric serves the first document
     review, and a downloadable folder carries the skills and specs for
     continued practice. Both carry the canonical material from the same tree.
-  scope: >
+
+    The chat trial depends on the approved workspace accepting Markdown
+    attachments. The folder trial also depends on the approved desktop app
+    allowing access to the extracted folder. Verify these capabilities in the
+    pilot workspace. If folder access is unavailable, use the attachment path
+    where the workspace permits it.
+  scope: |
     In: the generated starter ZIP, standalone chat attachments, download
     instructions, and build verification. Keep the worked example and rubric
     sourced from their canonical paths.
     Out: plugin packaging and changes to the specification or rubrics.
+
+    Done when both sample workflows have been exercised in approved apps.
+    For chat, attach only the bundled rubric and sample and follow the guide.
+    For desktop, open the extracted ZIP as a folder and follow its prompt.
+    Each review reports all rubric scores, reasons, the overall verdict, and
+    the spec set version. The folder review leaves source files unchanged.
+    The guide directs readers to the attachment path if folder access is
+    unavailable.

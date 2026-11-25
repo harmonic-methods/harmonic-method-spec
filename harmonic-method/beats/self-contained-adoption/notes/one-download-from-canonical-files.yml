@@ -12,3 +12,6 @@ note:
     attachments. Folder access removes repeated uploads for people working with
     several files. Generating both forms from the same tree keeps the rubric
     and spec set together and avoids a separate copy that can drift.
+    Defer plugin packaging until repeat use warrants workspace setup and
+    ongoing distribution. Both trial paths use tools the organization already
+    approves.

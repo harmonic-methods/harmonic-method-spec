@@ -23,8 +23,12 @@ you have it so the review can assess strategic alignment.
 
 ## Work with files in a folder
 
-1. Open this unzipped folder in your approved desktop AI app if it supports
-   folder access. Grant access to this folder.
+If your approved desktop AI app cannot open a local folder, use
+[Review one document in chat](#review-one-document-in-chat) in an approved
+workspace that allows attachments.
+
+1. Open this unzipped folder in your approved desktop AI app. Grant access to
+   this folder.
 2. Paste this prompt.
 
    > Read skills/coda-quality-check/SKILL.md and follow it to review the
