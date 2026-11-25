@@ -1,0 +1,25 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-002.11
+  beat: HM-B-002
+  title: Route readers of the instance guide to the published rubrics
+  status: active
+  summary: |
+    The instance guide still names the retired Beat Coda skill. A reader
+    acting on that pointer cannot reach the published rubric and can miss
+    the separate check for a root Coda. Make the guide point directly to
+    the canonical files and follow the routing decision in HM-N-152.
+
+    Resolve the links relative to the instance guide. The risk of sending
+    a reader to the wrong instrument is addressed by making the parent
+    distinction explicit beside the links.
+  scope: |
+    In: the scoring instructions in the instance guide. Link the checks
+    for a Coda with a parent, a root Coda, and a Beat Version. Mark the
+    previous shipped step delivered.
+    Out: changes to rubric text, scoring logic, or other guide sections.
+
+    Done when the retired reference is absent, the three links resolve
+    from the instance guide, and the guide routes each case to the skill
+    that describes it. Verify those routes against the skills and run
+    repository conformance.

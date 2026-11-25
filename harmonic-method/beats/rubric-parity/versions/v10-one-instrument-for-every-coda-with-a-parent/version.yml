@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-002.10
   beat: HM-B-002
   title: One instrument for every Coda with a parent
-  status: active
+  status: delivered
   summary: >
     The previous step defined the two altitudes above a Beat and had
     `specs/system.yml` assert that a System's Coda is scored against the same

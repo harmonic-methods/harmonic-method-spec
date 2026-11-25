@@ -1,0 +1,25 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-009.4
+  beat: HM-B-009
+  title: Review written Beat Version plans before implementation
+  status: active
+  summary: |
+    Contributors already get instructions for recording a Beat Version.
+    Extend those instructions with a review step so an agent can use the
+    published planning rubric before it begins implementation.
+
+    A score requirement could turn a judgment aid into an approval rule.
+    Keep the review advisory and record changes to the plan in the pull
+    request so reviewers can see what the assessment changed.
+  scope: |
+    In: contributor guidance to assess new or materially revised plans with
+    the existing rubric, use the findings to improve the plan, and summarize
+    material changes and reasons in the pull request.
+    Out: edits to the rubric, automated enforcement, and rewrites of plans
+    whose work has shipped.
+
+    Done when the Recording work section says when to assess a plan, links
+    to the canonical skill, and specifies what to carry into the pull
+    request. Check that the prose treats the review as advisory. Verify
+    the skill link and run repository conformance.

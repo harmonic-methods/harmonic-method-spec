@@ -1,0 +1,17 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-159
+  type: decision
+  attached_to: HM-B-006
+  beat_version: HM-BV-006.10
+  content: >
+    Require a rubric divergence to use an identifier published by the
+    named instrument when that instrument publishes dimension identifiers.
+    Keep target-only validation for findings instruments without published
+    identifiers and preserve the handling of spec-file targets.
+  rationale: >
+    HM-N-154 left a declaration able to name a rubric without establishing
+    that the rubric scores the field being declared. The published identifier
+    is comparable, and reading it from the rubric avoids a second vocabulary.
+    Findings labels and numbered positions have no declared identifier
+    contract, so imposing one here would make the checker define the standard.

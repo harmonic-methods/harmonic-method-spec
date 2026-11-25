@@ -25,6 +25,9 @@ import { fileURLToPath } from 'node:url';
 
 export const KIT_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
+const DIMENSIONS_HEADING = /^## The \w+ dimensions/m;
+const CHECKS_HEADING = /^## The checks/m;
+
 /**
  * Headings whose content is normative. Order is fixed so a digest is stable.
  * Adding an instrument with a differently named normative section means adding
@@ -33,8 +36,8 @@ export const KIT_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
  */
 const NORMATIVE_SECTIONS = [
   /^## Scoring scale/m,
-  /^## The \w+ dimensions/m,
-  /^## The checks/m,
+  DIMENSIONS_HEADING,
+  CHECKS_HEADING,
   /^## Check rules/m,
 ];
 
@@ -67,6 +70,14 @@ export function normativeText(skill) {
   const body = readFileSync(join(KIT_ROOT, 'skills', skill, 'SKILL.md'), 'utf8');
   const parts = NORMATIVE_SECTIONS.map((p) => section(body, p)).filter((x) => x !== null);
   return parts.length === 0 ? null : parts.join('');
+}
+
+/** Explicit identifiers on numbered dimensions or checks, in published order. */
+export function instrumentIdentifiers(skill) {
+  const body = readFileSync(join(KIT_ROOT, 'skills', skill, 'SKILL.md'), 'utf8');
+  const items = [section(body, DIMENSIONS_HEADING), section(body, CHECKS_HEADING)].join('\n');
+  const identifiers = items.matchAll(/^\d+\.\s+\*\*[^\n]+?\*\*\s+\(`([^`\s]+)`\)/gm);
+  return [...identifiers].map((item) => item[1]);
 }
 
 export function digest(text) {

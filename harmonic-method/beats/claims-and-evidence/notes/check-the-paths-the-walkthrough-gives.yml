@@ -1,0 +1,15 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-160
+  type: decision
+  attached_to: HM-B-007
+  beat_version: HM-BV-007.5
+  content: >
+    Check file references from the first README scoring prompt as part of
+    repository self-validation. Require both inputs to the walkthrough.
+  rationale: >
+    A previous example move left the first scoring prompt pointing at its
+    old path. The README prompt is where a newcomer copies the claim, so
+    reading that prompt avoids a second list that could pass while the
+    published walkthrough breaks. This check belongs to the repository
+    because an adopter's tree has no obligation to carry its README.

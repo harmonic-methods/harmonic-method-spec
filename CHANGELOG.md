@@ -2,6 +2,10 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **A rubric divergence names a published dimension.** The declaration checker
+  now verifies the identifier when the target instrument publishes identifiers.
+  Findings-only instruments keep target validation. See HM-BV-006.10.
+
 - **A Beat's full name is Capability Beat.** A musical beat is the shortest
   span in the score and sits inside a bar; a Beat here is a durable capability
   that outlasts every period it is worked in. HM-N-039 accepted that gap when

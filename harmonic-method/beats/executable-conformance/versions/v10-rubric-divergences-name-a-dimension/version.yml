@@ -1,0 +1,32 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-006.10
+  beat: HM-B-006
+  title: Verify the dimension named in a rubric divergence
+  status: active
+  summary: |
+    A declaration can name a real rubric and still pass with a made-up
+    dimension. Close that gap so an adopter can use the checker to verify
+    that a declared rubric divergence points to something comparable.
+    The remaining looseness is recorded in HM-N-154.
+
+    Read identifiers from the published instrument text. Some instruments
+    report findings without publishing stable identifiers. Keep their
+    target-only validation, and check the field for rubrics with named
+    dimensions. Declarations that used a display label for a named
+    dimension must use the published identifier when checked by this tool.
+  scope: |
+    In: validate the field of a divergence against the named dimension
+    identifiers published by its rubric and give a diagnostic for unknown
+    identifiers. Show the identifier form in the worked declaration.
+    Mark the previous shipped step delivered.
+    Out: changes to published specs and rubrics, schema changes,
+    verification of implementation behavior, and stricter handling of
+    divergences that target spec files.
+
+    Done when a known dimension passes, a misspelling fails with a
+    diagnostic naming the rubric and field, and an identifier published
+    only by a different rubric fails. A findings-only instrument and a spec
+    file with a prose rule reference still pass their existing checks.
+    Verify the failure against the existing checker first, then run the
+    same cases against the amended checker and run repository conformance.

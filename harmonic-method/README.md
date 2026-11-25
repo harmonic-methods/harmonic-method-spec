@@ -49,5 +49,9 @@ judged — it would look authoritative while quietly going stale.
 It has no audit trail either: no history of who changed a Beat or when. Both
 belong to a system of record; this is a published spec artifact, not one.
 
-To see the rubrics applied, score any `beat.yml` with `skills/beat-coda-quality-check`
-and any file under a `versions/` directory with `skills/beat-version-quality-check`.
+To see the rubrics applied, use the [Coda quality check](../skills/coda-quality-check/SKILL.md)
+for a Beat or any other Coda with a parent. Use the
+[root Coda quality check](../skills/root-coda-quality-check/SKILL.md) for a
+Coda with no parent, and the
+[Beat Version quality check](../skills/beat-version-quality-check/SKILL.md)
+for a plan under a `versions/` directory.
