@@ -1,46 +1,82 @@
 ---
-title: "Getting started"
-description: "Review a sample document or follow four short guides to apply the method to your work."
+title: Getting started
+description: Try a sample review, choose one initiative, then work with documents or save structured records in a repository.
 ---
 
-Need help choosing a chat tool or reusing method skills? See [Set up your LLM](/docs/appendix/llm-setup).
+Start with an AI assistant your organization approves, such as ChatGPT, Microsoft 365 Copilot, Claude, or Gemini. [Set up your AI assistant](/docs/appendix/llm-setup) if you need help attaching files or reusing instructions.
 
-## Try the open spec kit [#starter-kit]
+## Start with the basics [#starter-kit]
 
 <StarterKitDownload />
 
-Once you have the ZIP, unzip it and open `START_HERE.md`. The worked example takes you through a proposed capability and returns a score for each dimension, an overall verdict, and one practical improvement.
+Once you have the ZIP, unzip it and open `START_HERE.md`.
 
-### Review one document in chat
+### 1. Try the sample review
 
-1. Attach `review-a-capability.md` and `sample-capability.md` to a new chat.
-2. Paste the prompt below. To review your own work, attach your document in place of the sample. Include the broader outcome it serves if you have it.
+Attach `review-a-capability.md` and `sample-capability.md` to a new chat, then paste this prompt. You get a score and reason for each dimension, an overall verdict, and one practical improvement.
 
-> Follow the Harmonic Method rubric in review-a-capability.md to assess the proposed capability in the other attachment. Cite the document in your reasons and recommend the single most useful improvement. Flag missing context instead of making it up.
+```text title="Prompt: Review a document"
+Follow the Harmonic Method rubric in review-a-capability.md to assess the proposed capability in the other attachment. Cite the document in your reasons and recommend the single most useful improvement. Flag missing context instead of making it up.
+```
 
-### Work with a local folder
+<details>
+<summary>Using an AI assistant that can read a folder?</summary>
 
-If your approved desktop AI app can read local folders, you can run the same review from the extracted kit.
+Open the extracted kit in your approved AI app and grant it access to that folder. You can run the same review with this prompt:
 
-1. Open the extracted folder in your approved desktop AI app and grant it access to the folder.
-2. Paste the prompt below. To review your own work, put copies in `your-files/` and name the document you want reviewed.
+```text title="Prompt: Review a local file"
+Read skills/coda-quality-check/SKILL.md and follow it to review the capability in sample-capability.md. Read the referenced specs, report the rubric's results, and recommend the single most useful improvement. Leave the source files as they are.
+```
 
-> Read skills/coda-quality-check/SKILL.md and follow it to review the capability in sample-capability.md. Read the referenced specs, report the rubric's results, and recommend the single most useful improvement. Leave the source files as they are.
+</details>
 
-Decisions and approvals stay with the people responsible for the work.
+### 2. Choose one initiative
 
-### Continue after the sample review
+Pick a real piece of work and bring a brief, meeting recap, or short description of the problem. Identify who should benefit and what you want to improve. You can also continue with the client estimate example used in the guides.
+
+<CalloutContainer type="idea" role="note" aria-label="Tip: Start with one capability">
+  <CalloutTitle>Tip: Start with one capability</CalloutTitle>
+  <CalloutDescription>Use the sample review to understand the method, then apply it to one capability from your own work before changing the team's workflow.</CalloutDescription>
+</CalloutContainer>
+
+## Choose how to save your work [#choose-path]
+
+Both paths use the same four guides. The difference is where you keep the output. Each guide starts with document instructions and offers an expandable repository option.
+
+<div className="cajon-card-grid">
+  <a className="cajon-concept-card" href="/docs/getting-started/capture-notes" aria-label="Work with documents">
+    <div className="cajon-concept-card__tag">Recommended starting point</div>
+    <h3>Work with documents</h3>
+    <p>Use a document, Markdown file, or existing assistant workspace. Save useful Notes, a Coda, a Capability Beat draft, and its review. No Git setup is required.</p>
+    <span className="cajon-card-link">Start with documents →</span>
+  </a>
+  <a className="cajon-concept-card" href="/docs/implementation/use-a-repository" aria-label="Use a repository">
+    <div className="cajon-concept-card__tag">For versioned method records</div>
+    <h3>Use a repository</h3>
+    <p>Have a coding agent create structured files from the published specs. Validate the records, review the diff, and commit through your team's normal workflow.</p>
+    <span className="cajon-card-link">Set up the repository path →</span>
+  </a>
+</div>
+
+You can start in documents and convert confirmed material to repository records later. Decisions and approvals stay with the people responsible for the work.
+
+## Apply the method to your initiative [#walkthrough]
+
+1. [Capture Notes](/docs/getting-started/capture-notes): save the facts, constraints, guidance, and decisions you know.
+2. [Define a Coda](/docs/getting-started/define-a-coda): save the broader outcome the initiative serves.
+3. [Define a Capability Beat](/docs/getting-started/define-a-beat): save one durable capability, its outcome, and its connection to the System Coda.
+4. [Run a Coda check](/docs/getting-started/run-a-coda-check): save the assessment and decide what to improve.
+
+Each guide tells you what to bring, what to do, and how to save its output in either path.
+
+## Keep the method in your assistant's instructions [#assistant-instructions]
+
+For recurring work, you can save a short instruction in your assistant workspace or a repository's `AGENTS.md`. [Use the copyable setup instructions](/docs/appendix/llm-setup#method-instructions) and provide the relevant method files and initiative context.
+
+## Continue with published skills [#skills]
 
 | What you want to do next | Skill in the kit |
 | --- | --- |
 | Turn a rough idea into a capability and a clear outcome | `skills/beat-composing/SKILL.md` |
+| Review the plan for the next step | `skills/beat-version-quality-check/SKILL.md` |
 | Check whether decisions still support the intended outcome | `skills/coda-alignment-check/SKILL.md` |
-
-## Apply the method to a new initiative [#walkthrough]
-
-Follow the same client estimate example across all four guides, or apply each step to your own initiative.
-
-1. [Capture Notes](/docs/getting-started/capture-notes) about what you know, the boundaries you face, and the decisions you've made.
-2. [Define a Coda](/docs/getting-started/define-a-coda) that describes what success looks like.
-3. [Define a Beat](/docs/getting-started/define-a-beat) that makes part of that outcome possible.
-4. [Run a Coda check](/docs/getting-started/run-a-coda-check) to decide what to improve.

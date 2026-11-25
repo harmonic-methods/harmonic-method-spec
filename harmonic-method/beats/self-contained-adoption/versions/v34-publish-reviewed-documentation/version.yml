@@ -1,0 +1,34 @@
+beat_version:
+  id: HM-BV-004.34
+  beat: HM-B-004
+  title: Publish the reviewed practical documentation as one coherent adoption path
+  status: active
+  summary: >
+    Reconcile the reviewed local documentation drafts against the latest main
+    branch and prepare a reviewable publication request. HM-N-205 records the
+    requested split between canonical role definitions and reader-facing
+    publication. This step publishes and verifies the source bundle; it does
+    not claim that its earlier drafting work began here.
+
+    Done when the final source includes the concise overview, intended benefits,
+    document-first onboarding with a repository alternative, practical role
+    guidance, restrained callouts, copyable prompts, capability terminology and
+    the walkthrough referencing the merged example. Remove obsolete metaphor
+    and implementation-only pages while retaining useful generic guidance and
+    working redirects. Preserve real screenshot and download bytes. Build,
+    conformance, kit packaging, desktop/mobile browser checks and downloads
+    must pass against the exact publication branch. Open the request without
+    merging it, stacked on the canonical roles change.
+  scope: >
+    In: reconciling the approved website and documentation drafts, README and
+    kit introduction, their source records and rationale, source/download
+    consistency, publication validation and a focused request for review.
+    One contributor can prepare the publication in one session.
+    Out: further normative changes, private application content, new product
+    behavior, automatic merges, production deployment and unrelated owner work.
+
+    Risks: the dirty workspace contains work already merged elsewhere; assemble
+    from a fresh main checkout and compare file contents before including it.
+    Reader-facing role changes depend on the canonical roles request. Keep
+    draft history as context, preserve the merged example snapshot, verify the
+    final combined branch and state the dependency in the request description.

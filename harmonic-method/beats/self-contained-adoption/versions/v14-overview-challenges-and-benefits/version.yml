@@ -1,0 +1,35 @@
+beat_version:
+  id: HM-BV-004.14
+  beat: HM-B-004
+  title: Give newcomers one concise overview of the method and its benefits
+  status: active
+  summary: >
+    A newcomer can connect familiar delivery challenges to the method's
+    practices and intended benefits before reading its structural vocabulary.
+    HM-N-178 records the owner's requested emphasis and the claims boundary;
+    HM-N-179 records the request to combine the introduction and overview.
+
+    Done when /docs is the single concise overview, pairing challenges with practices and intended
+    benefits, leads with clearer goals, less wasted human and AI effort, and
+    continuity across handoffs, and explicitly treats token efficiency as an
+    intended benefit without promising measured savings. The old overview and
+    Markdown URLs must redirect to their equivalents, including browser fragments;
+    navigation, search and sitemap must use the combined page. Verify the site build,
+    typecheck, browser suite and repository validator; distinguish
+    existing failures from regressions.
+  scope: >
+    In: combine and condense the docs introduction and method overview at /docs;
+    retain challenges, intended benefits, functions and the getting-started
+    path. Remove internal branding discussion as requested in HM-N-180.
+    Remove the duplicate document and sidebar item, update incoming links,
+    redirect the old page and Markdown URL, and verify navigation and redirects.
+    One contributor can complete this change.
+
+    Out: normative definitions, homepage content beyond link targets, efficiency benchmarks,
+    deployment and unrelated validation repairs. The release-preparation work
+    remains active because its merge has not been established.
+
+    Risk: explanatory copy could imply proven savings. Label benefits as
+    intended and explain that context preparation and review also consume
+    tokens. Redirects could break bookmarks or exports; verify both old routes
+    and a fragment in the browser. Do not publish duplicate content in search.

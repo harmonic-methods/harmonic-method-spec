@@ -1,0 +1,17 @@
+note:
+  id: HM-N-189
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.20
+  content: >
+    Use local-time prose in Cadence examples instead of UTC offsets and raw
+    timestamps. Keep exact record encoding in the canonical specifications.
+    Rewrite Value and selection as a Producer decision guide covering evidence,
+    remaining costs, alternatives, all four investment choices and follow-up.
+    Keep role boundaries explicit and retain existing URLs and anchors.
+  rationale: >
+    The owner found the timestamp detail difficult to read and requested a
+    practical Producer guide matching the recent Conductor pages. Readers need
+    to understand the decision and its consequences before record syntax.
+    Illustrative examples make the choices concrete without claiming measured
+    outcomes or prescribing a new financial model.

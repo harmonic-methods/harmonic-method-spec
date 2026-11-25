@@ -1,0 +1,27 @@
+beat_version:
+  id: HM-BV-004.25
+  beat: HM-B-004
+  title: Introduce Capability Beats before using Beats as shorthand
+  status: active
+  summary: >
+    Introduce the full Capability Beat term at documentation entry points and
+    the first substantive mention on standalone pages. Use natural definitions
+    such as Capability Beat, or Beat for short. Keep the naming convention in
+    authoring guidance. HM-N-195 records the clarified editorial boundary.
+
+    Done when the overview, getting-started guides, primitive and composition
+    references, glossary and README establish the full term before shorthand;
+    the capability guide title and incoming labels agree; URLs and anchors stay
+    stable; and Beat Version remains unchanged. Verify build, typecheck,
+    existing browser suite, documentation links and exports, validation and
+    whitespace. One contributor can deliver this editorial change.
+  scope: >
+    In: first-mention wording, key definitions, navigation labels and authoring
+    guidance. Out: entity renaming, paths, specification fields, identifiers,
+    rubric changes, rewriting historical records and deployment. The canonical
+    Beat definition already supports the full term, so no spec change is needed.
+    Earlier steps stay active because their merges have not been established.
+
+    Risk: indiscriminate replacement could create Capability Beat Version or
+    alter copy-ready prompts. Keep established compound terms and prompt text
+    intact; introduce the full name in the surrounding explanation instead.

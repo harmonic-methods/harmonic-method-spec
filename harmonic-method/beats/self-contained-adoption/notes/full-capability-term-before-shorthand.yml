@@ -1,0 +1,16 @@
+note:
+  id: HM-N-194
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.25
+  content: >
+    Use Capability Beat or Capability Beats at first introduction, then
+    recommend Beat or Beats as shorthand once the meaning is established.
+    Apply the convention to entry points and standalone documentation pages,
+    with explicit explanations in the overview, onboarding and references.
+    Keep Beat Version, entity names, identifiers, URLs and anchors unchanged.
+  rationale: >
+    The owner requested consistent use of the full term before recommending
+    shorthand. The canonical Beat specification already defines this usage.
+    Introducing capability first makes the durable concept clear to new readers
+    without burdening later prose with repeated full names.

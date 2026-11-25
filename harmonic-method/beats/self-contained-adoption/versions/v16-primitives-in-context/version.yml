@@ -1,0 +1,29 @@
+beat_version:
+  id: HM-BV-004.16
+  beat: HM-B-004
+  title: Explain primitive progression and responsibility in context
+  status: active
+  summary: >
+    A newcomer can read the Beat to Beat Version to Revision progression as
+    a flowchart with plain-language captions, and find responsibility beside
+    each primitive rather than in a separate ownership section. HM-N-185
+    records the requested presentation change.
+
+    Done when the primitives page shows three connected nodes with captions,
+    stacks them legibly on mobile, exposes the sequence without relying on
+    arrows alone, and preserves node names and captions in Markdown exports.
+    Inline linked role callouts must explain Notes, Codas, Beats, planning and
+    execution consistently with the six-role model. Remove the standalone
+    ownership heading. Verify site build, typecheck, browser rendering and
+    exports, repository validation and whitespace.
+  scope: >
+    In: primitives-page content, scoped flowchart and callout styles, and a
+    focused browser check. One contributor can complete this change.
+    Out: normative definitions, other diagrams, new dependencies, new role
+    assignments in the data model, deployment and unrelated edits. Earlier
+    steps remain active because their merges have not been established.
+
+    Risk: a Revision can be active or withdrawn, so its plain-language caption
+    must say tracked change rather than imply every Revision is delivered.
+    Notes are shared across roles; make Conductor's integrity accountability
+    explicit without making that role the only author.

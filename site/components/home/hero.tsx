@@ -17,7 +17,7 @@ export function Hero() {
               Read the docs
             </Link>
             <Link href="/docs/method/roles" className="cajon-btn cajon-btn--outlined cajon-btn--lg">
-              See the five functions →
+              Explore the six roles →
             </Link>
           </div>
         </div>

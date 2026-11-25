@@ -1,0 +1,25 @@
+beat_version:
+  id: HM-BV-004.29
+  beat: HM-B-004
+  title: Use familiar naming for the delivery container
+  status: active
+  summary: >
+    Replace the musical name for the commercial engagement container with
+    familiar delivery terminology in the public delivery guide and glossary.
+    HM-N-199 records the owner's naming decision. This helps newcomers understand
+    how commercial delivery relates to capabilities without learning another metaphor.
+
+    Done when the guide heading, description, relationships, glossary term and
+    glossary link use the new name consistently; the old section bookmark still
+    resolves; and rendered content and Markdown exports agree.
+  scope: >
+    In: public delivery terminology, its glossary definition and links, and a
+    focused check of the new and legacy section anchors. One contributor can
+    complete this small editorial increment in one session.
+    Out: formal entity definitions, schemas, historical records and unrelated
+    uses of ordinary words. Earlier work remains active pending established merges.
+
+    Risk: readers could confuse the commercial engagement container with the
+    formal system level. Retain the explicit distinction and the explanation
+    that these delivery structures describe one implementation. Preserve the old
+    bookmark as a hidden alias while directing new links to the new heading.

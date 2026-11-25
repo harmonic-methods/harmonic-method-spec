@@ -1,0 +1,28 @@
+beat_version:
+  id: HM-BV-004.20
+  beat: HM-B-004
+  title: Explain Producer decisions and simplify cadence time examples
+  status: active
+  summary: >
+    Make Value and selection a practical guide to funding, continuing,
+    reshaping and stopping work, and simplify the Cadence page's time notation.
+    HM-N-189 records the owner's requested editorial changes.
+
+    Done when Producer guidance identifies evidence, remaining cost,
+    alternatives, decision rationale and review triggers, with illustrative
+    examples for all four choices and explicit role boundaries. Cadence uses
+    readable local times without UTC offsets or timestamp strings, retaining
+    fixed boundaries and actual Downbeat taking time. Preserve URLs and section
+    anchors. Verify build, typecheck, existing browser suite, Markdown exports,
+    repository validation and whitespace. One contributor can deliver this.
+  scope: >
+    In: Value and selection rewrite, Cadence time wording and directly related
+    Producer glossary wording. Out: normative definitions, real funding
+    decisions, invented value formulas or scores, agent skills, deployment and
+    unrelated edits. Prior steps stay active because merges are not established.
+
+    Risks: illustrative results could read as measured claims, funding advice
+    could redefine strategy, or simpler time wording could erase boundaries.
+    Label examples as hypothetical, preserve role decision rights and the
+    Cutoff to Tie off to Downbeat sequence, and keep record-format requirements
+    in the canonical specs.

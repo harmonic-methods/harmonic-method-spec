@@ -1,0 +1,33 @@
+beat_version:
+  id: HM-BV-004.33
+  beat: HM-B-004
+  title: Teach the repository workflow with a real example and clear documentation boundaries
+  status: active
+  summary: >
+    Add an Implementation walkthrough using the runnable estimate approval
+    example, with copyable prompts, actual source downloads and screenshots of
+    its real request. HM-N-203 records the public versus internal boundary.
+    Readers should be able to reproduce the local example without GitHub access,
+    then adapt the workflow to a repository they can publish to.
+
+    Done when the guide connects context, plan assessment, implementation,
+    tests, diff review and opening a draft request; source downloads match the
+    example; screenshots show the real request; and the method site no longer
+    defines implementation-specific delivery containers. Preserve generic
+    coordination guidance and migrate application-specific material to the
+    owner's internal documentation repository through a separate review request. Reference the accepted example
+    and distinguish historical screenshots from the merged state. Mark the
+    example-delivery plan delivered once its request is observed merged.
+  scope: >
+    In: walkthrough, navigation, source downloads, real request screenshots,
+    public glossary and link cleanup, and migration of implementation-specific
+    guides into the named internal documentation app. One contributor can own
+    the documentation end to end over a short session.
+    Out: normative changes, runtime implementation changes in the internal app,
+    automatic merges, production deployment, and unrelated workspace edits.
+
+    Risks: GitHub access differs between readers; include a complete local ZIP
+    and label repository access requirements. Screenshot and source drift is
+    limited by recording the exact example commit. Migration could leave stale
+    links; validate source links and compatibility redirects, and keep the
+    destination in a reviewable branch until its maintainers accept it.

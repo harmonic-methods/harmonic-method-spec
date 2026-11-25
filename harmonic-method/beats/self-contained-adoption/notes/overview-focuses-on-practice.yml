@@ -1,0 +1,14 @@
+note:
+  id: HM-N-180
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.14
+  content: >
+    Remove the Naming and method-versus-framework discussion from the merged
+    overview. Keep its introduction free of the phrase single named, which was
+    already removed during consolidation. Removed sections no longer retain
+    their anchors; bookmarks to the old overview still redirect to /docs.
+  rationale: >
+    The owner identified the naming sections as internal branding discussion
+    and requested their removal. The public overview should explain the method,
+    its intended benefits and how to start practising it.

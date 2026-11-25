@@ -1,0 +1,16 @@
+note:
+  id: HM-N-187
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.18
+  content: >
+    Retain the listening page as a practical guide to observing and leading
+    execution. Explain signals through evidence, next actions, named owners
+    and escalation, with a short review routine and worked example. Keep the
+    URL and existing anchors, and replace directly linked metaphorical wording.
+  rationale: >
+    The owner requested less abstract, metaphor-driven guidance and offered
+    removing the page if it had no practical purpose. An execution guide adds
+    something the role definition alone does not: how a Conductor notices and
+    responds to problems during the work. It should help a tech lead act without
+    requiring the reader to translate musical terminology first.

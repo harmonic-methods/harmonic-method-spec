@@ -1,0 +1,24 @@
+beat_version:
+  id: HM-BV-004.31
+  beat: HM-B-004
+  title: Keep definitions accessible without a separate metaphor explanation
+  status: active
+  summary: >
+    Remove the musical rationale page so newcomers can follow practical guidance
+    without interpreting an analogy. HM-N-201 records the owner's approval.
+    Preserve useful definitions in the glossary using plain language.
+
+    Done when the page is absent from navigation, footer, search and exported
+    documentation; internal links point to relevant surviving explanations;
+    System and Layer definitions are practical and Notes explain their scope;
+    and old page and Markdown URLs redirect to the glossary. Verify the build,
+    local links, glossary exports, redirects and browser suite.
+  scope: >
+    In: page removal, navigation, footer, glossary definitions and links, and
+    compatibility redirects. One contributor can complete this in one session.
+    Out: normative definitions, role names, other musical terms and historical
+    records. Earlier work stays active pending established merges.
+
+    Risks: useful definitions could be lost or bookmarks could break. Compare
+    the removed content with existing definitions, retain missing practical
+    distinctions, and route legacy URLs to the surviving reference page.

@@ -5,7 +5,7 @@ accountableRoles: [Composer]
 supportingRoles: [Conductor]
 ---
 
-Run a quality check once you have a draft Coda. In this walkthrough, you'll check the estimate approval status Beat and see what would make its promise clearer.
+Run a quality check once you have a draft Coda. In this walkthrough, you'll check the estimate approval status Capability Beat and see what would make its promise clearer.
 
 ## Run the review
 
@@ -16,6 +16,27 @@ Run a quality check once you have a draft Coda. In this walkthrough, you'll chec
 
 ## Worked example
 
-Bring the Beat and its parent Coda from the earlier steps, along with the Note about the designated approver. For **Clarity**, look at the phrase “current approval state.” A reader may still wonder how to tell whether an estimate has been approved. One revision is to say that account leads can tell from the estimate record whether approval is pending, granted, or declined. Ask about any sibling Beats you haven't seen before drawing a conclusion about overlap.
+Bring the Beat and its parent Coda from the earlier steps, along with the Note about the designated approver. Assess the title, Coda, and description together.
+
+For **Clear**, the Coda's phrase “current approval state” is broad, but the description already defines pending, granted, and declined. Naming those states in the Coda could make the outcome easier to read on its own.
+
+For **Substantial**, ask whether approval-status visibility is a meaningful capability in its own right or part of a broader approval capability. Compare sibling outcomes before deciding. If it belongs within a broader Beat, plan the visibility improvement as a Beat Version there. The walkthrough supplies no sibling list, so overlap and fit remain provisional.
+
+## Save your output [#save-output]
+
+### Work with documents — recommended [#save-documents]
+
+Save the assessment beside the draft it reviewed, for example in `coda-review.md`. Include the rubric and spec set used, the inputs and missing context, the scores or findings, and the improvement you chose. Update the draft with approved changes and record the reasoning. Recheck it after a material change.
+
+<details id="save-repository">
+<summary>Save in a repository</summary>
+
+Save the assessment as a Markdown review outside the validated entity tree, such as `reviews/estimate-approval.md`. This is a review document, not a new method entity.
+
+Apply approved changes to the Coda or Beat files. Record material decisions in Notes, preserving earlier Coda statements and superseding published Notes when their meaning changes. Run the conformance checker, review the diff and new files, and commit through your team's normal workflow. A passing structural check does not replace the quality review.
+
+[See validation and commit instructions](/docs/implementation/use-a-repository#validate).
+
+</details>
 
 When you're ready to deliver the capability, [plan Beat Versions and deliver Revisions](/docs/implementation/plan-beat-versions).

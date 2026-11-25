@@ -1,0 +1,34 @@
+beat_version:
+  id: HM-BV-004.28
+  beat: HM-B-004
+  title: Offer document-first onboarding and an explicit repository path
+  status: active
+  summary: >
+    Give readers two shared introductory steps, then a choice between working
+    with documents by default and maintaining structured files in a repository.
+    HM-N-198 records the approved split. Keep one conceptual walkthrough and add
+    concrete saving instructions to each guide, with repository details optional.
+
+    Done when Getting started introduces sample review and one initiative before
+    the choice; the document path requires no Git; the repository path explains
+    spec-kit inputs, structured output, validation and review before committing;
+    and each guide identifies its saved output for both paths. Include optional
+    persistent instructions for an assistant workspace and repository AGENTS.md,
+    using real local references and existing permission rules. Preserve existing
+    routes, prompt text and sample promises. Align the kit introduction and README.
+    Verify both navigation paths, copy controls, export content, file-layout
+    guidance, build, typecheck, browser suite, validation and mobile readability.
+  scope: >
+    In: Getting started, save sections in its four guides and the next planning
+    guide, a repository setup page, copyable persistent-assistant instructions,
+    starter-kit introduction, README links and
+    focused browser checks. One contributor can deliver this documentation work.
+    Out: new method fields, automatic GitHub writes, actual adopter records,
+    mandatory integrations, deployment and normative changes. Prior work stays
+    active because its merges are not established.
+
+    Risks: premature Note files can lack attachment targets; Markdown parent
+    links differ from structured identifiers; and the ZIP contains no checker.
+    Keep initial capture in a working document until an attachment target exists,
+    explain both parent representations, and distinguish the kit's specs and
+    examples from the separately available conformance checker.

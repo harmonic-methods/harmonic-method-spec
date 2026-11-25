@@ -1,0 +1,28 @@
+beat_version:
+  id: HM-BV-004.24
+  beat: HM-B-004
+  title: Separate Note capture from review and preserve visible prompt spacing
+  status: active
+  summary: >
+    Remove the misleading single-role label from Note capture and explain
+    shared capture, content validation, Composer review of capability implications
+    and Conductor escalation of conflicts inline. HM-N-193 records the boundary.
+    Preserve the prompt's blank lines visually as well as on the clipboard.
+
+    Done when Note guidance distinguishes those responsibilities consistently,
+    capture and reference pages omit blanket ownership tags, prompt paragraphs
+    have visible spacing, and copying preserves the exact text and blank lines.
+    Verify source-to-clipboard equality, empty-line height, desktop/mobile
+    appearance, build, typecheck, browser suite, validation and whitespace.
+  scope: >
+    In: Note capture guide, directly related Note reference and primitives
+    guidance, shared code-block blank-line styling and focused browser checks.
+    One contributor can deliver this change. Out: normative responsibility
+    changes, new validation states, exclusive Composer approval over all facts
+    or decisions, new agent skills and deployment. Earlier steps remain active
+    because their merges have not been established.
+
+    Risk: the word validation could imply one role approves every Note.
+    Separate factual and decision confirmation by the relevant owner from
+    Composer's review of capability implications; preserve Conductor's record
+    integrity accountability and escalation to the actual decision owner.

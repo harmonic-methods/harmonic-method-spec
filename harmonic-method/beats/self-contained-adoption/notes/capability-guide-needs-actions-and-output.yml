@@ -1,0 +1,16 @@
+note:
+  id: HM-N-197
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.27
+  content: >
+    Explain what readers should prepare, write, save and take into review.
+    Provide a copyable working template, explicit parent-Coda instructions,
+    and a worked example showing that larger outcome alongside the existing
+    title, Coda and description. Keep the assessed example wording unchanged.
+  rationale: >
+    The owner questioned whether the page tells a newcomer what to do,
+    especially the instruction to use a System Coda as a parent. Naming the
+    relationship alone assumes tool and method knowledge. A concrete draft,
+    plain explanation of how to link it, and an explicit review handoff let a
+    reader complete the exercise using their existing document or workspace.

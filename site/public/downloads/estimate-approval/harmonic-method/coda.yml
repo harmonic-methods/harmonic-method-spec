@@ -1,0 +1,5 @@
+coda:
+  id: DEMO-CODA
+  statement: >
+    Account leads can tell whether a client estimate is ready to send by looking
+    at its record. They can act on approved estimates without chasing a status update.

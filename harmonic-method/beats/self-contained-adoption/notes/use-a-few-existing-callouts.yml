@@ -1,0 +1,16 @@
+note:
+  id: HM-N-190
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.21
+  content: >
+    Use the existing Fumadocs callout components for four focused highlights:
+    starting small, reviewing execution evidence, keeping Bar boundaries fixed,
+    and judging future investment independently of past spending. Use explicit
+    Info, Tip or Warning labels and preserve titles as child content for exports.
+  rationale: >
+    The owner requested a few styled info, tip or warning callouts without
+    overdoing them. The renderer already exposes suitable components, so new
+    styling or a parallel card system is unnecessary. Restricting the additions
+    to one per selected page gives important advice emphasis without making
+    every paragraph compete for attention.

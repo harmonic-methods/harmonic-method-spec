@@ -1,0 +1,17 @@
+note:
+  id: HM-N-192
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.23
+  content: >
+    Remove the obsolete design-system name from repository source and remove
+    the requested method-name glossary entries. Use titled text or Markdown
+    fenced blocks for reusable prompts and examples; the existing renderer
+    supplies copy controls. Preserve raw syntax and line breaks on copying,
+    wrap long prose prompts for readability, and retain ordinary quotations.
+  rationale: >
+    The owner requested glossary cleanup and a consistent copy-paste container
+    supporting Markdown. Reusing the existing code-block component avoids a
+    second clipboard system while distinguishing reusable instructions from
+    explanatory quotations. Source text is the appropriate copy format for
+    Markdown instructions pasted into an AI assistant.

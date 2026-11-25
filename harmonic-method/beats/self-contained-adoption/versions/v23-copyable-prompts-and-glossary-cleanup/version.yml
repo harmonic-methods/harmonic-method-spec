@@ -1,0 +1,29 @@
+beat_version:
+  id: HM-BV-004.23
+  beat: HM-B-004
+  title: Make reusable instructions easy to copy and remove obsolete glossary entries
+  status: active
+  summary: >
+    Remove the obsolete design-system reference throughout repository source
+    and the two requested method-name glossary entries. Present copy-ready
+    prompts and examples in consistent titled containers with copy buttons,
+    reusing the existing code-block renderer. HM-N-192 records the request.
+
+    Done when source search finds no obsolete design-system references,
+    requested glossary entries are absent, all copy-ready onboarding prompts
+    use titled text or Markdown blocks, and clipboard output preserves raw
+    Markdown and line breaks without UI labels. Long prompts must wrap on
+    mobile. Verify actual clipboard behavior, exports, light/dark rendering,
+    build, typecheck, existing browser suite, validation and whitespace.
+  scope: >
+    In: glossary cleanup, repository source search, onboarding prompt containers,
+    wrapping styles, authoring guidance and focused browser verification.
+    One contributor can deliver the change. Out: git-history rewriting,
+    dependency changes, new clipboard implementations, normative changes,
+    ordinary quotations, provider instruction changes and deployment. Prior
+    steps stay active because their merges are not established.
+
+    Risks: copy controls could include labels or lose formatting, and turning
+    all quotations into code blocks would confuse examples with commentary.
+    Convert reusable material only, preserve prompt wording, and compare the
+    clipboard directly with the source including multiline Markdown.

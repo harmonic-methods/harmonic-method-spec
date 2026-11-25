@@ -1,0 +1,17 @@
+note:
+  id: HM-N-196
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.26
+  content: >
+    Assess the example as written, with its immediate System Coda and available
+    walkthrough Notes, and report the reading to the owner. Preserve its title,
+    Coda and description in a field-value table. Correct the following review
+    guide to consider the description's existing state definitions. Do not infer
+    sibling capabilities or silently rewrite the assessed text.
+  rationale: >
+    The owner requested an actual rubric assessment and clearer presentation.
+    Separating assessment from rewriting keeps the result attributable to the
+    text the owner selected. A table makes the fields legible while the review
+    can identify uncertainties and recommended changes without claiming that
+    unseen sibling or implementation evidence has been examined.

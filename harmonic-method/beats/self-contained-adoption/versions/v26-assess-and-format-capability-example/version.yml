@@ -1,0 +1,24 @@
+beat_version:
+  id: HM-BV-004.26
+  beat: HM-B-004
+  title: Assess the capability example and make its fields easier to read
+  status: active
+  summary: >
+    Assess the existing estimate approval status example with the published Coda
+    quality skill, using the prior System Coda and walkthrough Notes. Report the
+    assessment to the owner, disclose missing siblings, and present the unchanged
+    example fields in a compact table. HM-N-196 records the scope.
+
+    Done when the assessment covers all published dimensions with rationale and
+    improvements, names the spec set and Beat altitude, and distinguishes the
+    reference passing threshold from a method requirement. The page's example
+    table preserves its title, Coda and description. The next review guide must
+    acknowledge the description's existing state definitions. Verify build,
+    typecheck, browser suite, mobile table readability, exports and validation.
+  scope: >
+    In: assessing the existing example, formatting its fields, linking the review
+    guidance and correcting that guidance's reading of the supplied description.
+    Out: inventing sibling capabilities, silently replacing the assessed example,
+    storing a formal Check or score fields, rubric changes and deployment.
+    One contributor can complete this change. Previous steps stay active because
+    their merges have not been established.

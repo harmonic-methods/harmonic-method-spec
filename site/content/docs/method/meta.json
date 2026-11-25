@@ -1,4 +1,14 @@
 {
   "title": "The Harmonic Method",
-  "pages": ["overview", "roles", "primitives", "quality", "delivery", "coordination", "cadence", "listening", "value", "metaphor", "tooling", "apply-to-an-initiative"]
+  "pages": [
+    "roles",
+    "primitives",
+    "quality",
+    "coordination",
+    "cadence",
+    "listening",
+    "value",
+    "tooling",
+    "apply-to-an-initiative"
+  ]
 }

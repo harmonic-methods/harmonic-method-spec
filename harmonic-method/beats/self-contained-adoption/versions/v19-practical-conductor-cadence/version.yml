@@ -1,0 +1,26 @@
+beat_version:
+  id: HM-BV-004.19
+  beat: HM-B-004
+  title: Explain how Conductors use Bars and Downbeats in delivery
+  status: active
+  summary: >
+    Replace musical cadence explanations with practical guidance for setting
+    a planning window, handling its Cutoff and Tie off, and recording per-capability
+    Downbeats. HM-N-188 records the owner's requested practical treatment.
+
+    Done when the page provides a usable Conductor routine and worked examples,
+    distinguishes the fixed Bar window from later reconciliation, and shows
+    what a Downbeat records and how it informs subsequent decisions. Preserve
+    the URL and existing anchors, align directly linked glossary entries, and
+    verify validation, build, typecheck, existing browser suite and Markdown
+    export. One contributor can complete this editorial change.
+  scope: >
+    In: cadence page and its directly related glossary entries.
+    Out: normative definitions, new workflow states, mandatory period lengths,
+    actual Bar or Downbeat records, new agent skills, deployment and unrelated
+    edits. Earlier steps remain active because their merges are not established.
+
+    Risks: a late review could appear to move the next Bar's start; a Downbeat
+    could be mistaken for a plan or arbitrary score. Preserve Cutoff, Tie off,
+    Downbeat ordering, actual taking time, immutable readings per capability,
+    and the distinction between observed evidence and reported status.

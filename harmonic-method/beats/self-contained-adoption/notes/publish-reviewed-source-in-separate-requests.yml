@@ -1,0 +1,16 @@
+note:
+  id: HM-N-205
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.34
+  content: >
+    Prepare review requests to publish the accumulated approved changes. Keep
+    canonical role definitions and spec-set alignment in their existing role
+    plan; publish the reconciled practical documentation in a dependent request.
+    Preserve earlier drafting plans and Notes as context, without treating this
+    publication step as a retrospective plan for work already performed.
+  rationale: >
+    The owner requested publication requests after authorizing the example and
+    internal-docs merges. Separate review boundaries make the method change
+    distinguishable from its adoption guidance while allowing the final site
+    and examples to be validated together before acceptance.

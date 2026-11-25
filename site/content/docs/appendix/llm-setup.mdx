@@ -1,11 +1,11 @@
 ---
-title: "Set up your LLM"
-description: "Choose an approved chat tool and reuse Harmonic Method skills in a managed workspace."
+title: "Set up your AI assistant"
+description: "Use an approved AI assistant to review work and reuse Harmonic Method instructions."
 ---
 
-## Start with an approved chat tool
+## Start with an approved AI assistant
 
-Choose one AI chat tool your organization has approved. These options show how to start a chat and add a file from your device.
+Use an AI assistant your organization has approved, such as ChatGPT, Microsoft 365 Copilot, Claude, or Gemini. The guide below helps you attach a document, apply method instructions, and save a reusable reviewer where supported.
 
 - **Microsoft 365 Copilot Chat.** Sign in with your Microsoft 365 work account and open Chat. For a local file, choose **Upload images and files** from the attachment menu. [Microsoft instructions](https://support.microsoft.com/en-au/microsoft-365-copilot/add-content-to-microsoft-365-copilot-chat-prompts)
 - **Claude.** Open a new chat in your approved Claude workspace. Use the attachment button to choose a file from your device. [Anthropic instructions](https://support.claude.com/en/articles/8241126-upload-files-to-claude)
@@ -22,9 +22,68 @@ For a first review, use the self-contained `review-a-capability.md` from the [op
 
 For another skill, provide its `SKILL.md` and any specification files it references. Ask the chat to identify missing references rather than substitute a rubric of its own. A link alone is not enough if the tool cannot open it.
 
+## Use the method in recurring work [#method-instructions]
+
+You can save the following instructions in your assistant workspace or project so you do not have to explain the method each time. Provide the initiative's current documents and the published skills and specifications needed for the task. A product name or a link the assistant cannot open does not supply that context.
+
+### Instructions for a document workspace [#workspace-instructions]
+
+```markdown title="Instructions: Use the Harmonic Method with documents"
+## Working method
+
+Use the Harmonic Method for this initiative. Read the supplied System
+Coda, relevant Capability Beats and Notes before proposing changes.
+A Capability Beat is a durable capability; use Beat for short.
+
+Help me make outcomes explicit, preserve decision rationale, and plan
+bounded steps toward the outcome. Separate facts, assumptions, options
+and confirmed decisions. Ask for missing context rather than inventing it.
+
+For drafting or assessment, use the supplied Harmonic Method skill and
+its referenced specs as written. Cite the evidence, disclose missing
+inputs and identify the rubric version used when reporting an assessment.
+
+Keep drafts, open questions and review results together in our initiative
+documents. Surface conflicting decisions or constraints and identify
+whose decision is needed. Follow the workspace's permissions and the
+team's existing approval rules.
+```
+
+### Instructions for a repository's AGENTS.md [#repository-instructions]
+
+Add a section to your existing `AGENTS.md` if your coding agent reads it. Other assistants may use a different instruction file or workspace setting. Replace the kit-path placeholder before using this template, and reconcile it with the repository's existing instructions.
+
+```markdown title="Instructions: Use the Harmonic Method in a repository"
+## Harmonic Method
+
+Use the Harmonic Method for work in this repository. The published specs,
+skills and examples are available at [actual path to the spec kit].
+
+Read harmonic-method/coda.yml and the relevant Beat, plan and active
+Notes before planning or executing related changes. If records do not
+exist yet, use the approved initiative draft to create them from the
+published specs. Ask for missing facts or decisions.
+
+Use the relevant published skills for composing capabilities, planning
+Beat Versions and assessing quality or alignment. Apply their definitions
+as written and report missing context and the rubric version used.
+
+Maintain structured records under harmonic-method/ with stable IDs,
+valid Coda parent references and valid Note attachments. Keep unresolved
+capture in a working document until its attachment target is known.
+Preserve published Notes and prior Coda statements when decisions change.
+
+Validate generated records, review new and changed files, and report
+which checks actually ran. Follow this repository's existing permissions,
+contribution process and approval rules. Surface conflicting intent and
+constraints to the responsible decision owner.
+```
+
+These instructions help an assistant apply the method consistently. They do not install the kit, create records on their own, or expand the agent's permissions. [Follow the repository setup](/docs/implementation/use-a-repository) when you want versioned files.
+
 ## Save a reusable skill or assistant
 
-Often, employees can save the same workflow inside their existing LLM workspace. Availability depends on the product, license, and permissions your administrator has enabled.
+Often, employees can save the same workflow inside their existing AI workspace. Availability depends on the product, license, and permissions your administrator has enabled.
 
 | Approved tool | Reusable option | What may need administrator approval |
 | --- | --- | --- |
@@ -41,7 +100,16 @@ Copilot agents, Gemini Gems, and project instructions are ways to reuse a workfl
 2. Put the workflow instructions in the skill or assistant's instruction field. Add the rubric and its referenced specifications as supporting files, adjusting file references to match that tool's layout. Keep the published dimensions and scoring anchors unchanged.
 3. Tell it when to use the rubric and how to handle missing context. For example:
 
-   > When I ask for a capability review, read and follow the supplied Harmonic Method skill and its referenced specifications. Use its published dimensions, scoring anchors, and output format. Cite evidence from the document. If a required file or context is missing, identify it and ask for it instead of inventing it. Recommend the single most useful improvement.
+   ```markdown title="Reusable reviewer instructions"
+   ## Capability review
+
+   When I ask for a capability review, read and follow the supplied Harmonic Method skill and its referenced specifications.
+
+   - Use its published dimensions, scoring anchors, and output format.
+   - Cite evidence from the document.
+   - If a required file or context is missing, identify it and ask for it instead of inventing it.
+   - Recommend the single most useful improvement.
+   ```
 
 4. Try the kit's sample capability before using your own work. Check that the result uses the published rubric and supports its judgments with evidence.
 

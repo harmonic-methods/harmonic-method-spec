@@ -42,8 +42,8 @@ test('mobile menu opens and follows the method link in dark mode', async ({ page
   await expect(menu).toHaveAttribute('aria-expanded', 'true');
   await expect(method).toBeVisible();
   await method.click();
-  await expect(page).toHaveURL(/\/docs\/method\/overview$/);
-  await expect(page.getByRole('heading', { name: 'Overview', exact: true })).toBeVisible();
+  await expect(page).toHaveURL(/\/docs$/);
+  await expect(page.getByRole('heading', { name: 'The Harmonic Method', exact: true })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
   await page.screenshot({ path: test.info().outputPath('method-mobile-dark.png'), fullPage: true });
 });

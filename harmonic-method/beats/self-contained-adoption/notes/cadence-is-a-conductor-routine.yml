@@ -1,0 +1,18 @@
+note:
+  id: HM-N-188
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.19
+  content: >
+    Explain cadence through the Conductor's actions: agree explicit Bar
+    boundaries, monitor execution, settle unfinished work at Tie off, then take
+    one Downbeat per capability in view. Include illustrative Bar timing and a
+    capability reading, and explain how evidence informs the next plan without
+    changing past records. Retain existing links and remove metaphorical wording
+    from the directly related glossary entries.
+  rationale: >
+    The owner requested the same practical treatment as the listening page,
+    with examples of Bars and Downbeats. These terms become useful when readers
+    can tell what to do, what to record and what the record supports. The
+    canonical distinction between fixed time windows and later reconciliation
+    is especially important to preserve in a simplified explanation.

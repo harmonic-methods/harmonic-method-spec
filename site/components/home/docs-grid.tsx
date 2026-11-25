@@ -5,15 +5,15 @@ const DOC_CARDS = [
     tag: 'Overview',
     title: 'What the method is',
     blurb:
-      'The problem it addresses, why "method" rather than "framework", and how the functions fit together.',
+      'The challenges it addresses, intended benefits, and how the six roles fit together.',
     cta: 'Read the overview →',
-    href: '/docs/method/overview',
+    href: '/docs',
   },
   {
     tag: 'Foundation',
     title: 'Primitives',
     blurb:
-      'Note, Coda, Beat, Beat Version, and Revision — the self-similar objects every function acts on.',
+      'Note, Coda, Capability Beat, Beat Version, and Revision — the concepts used to describe the work.',
     cta: 'Explore the concepts →',
     href: '/docs/method/primitives',
   },

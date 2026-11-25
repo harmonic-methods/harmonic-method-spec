@@ -1,0 +1,76 @@
+---
+title: Use a repository
+description: Save Harmonic Method records as structured files, validate them, and review changes before committing.
+---
+
+Choose this path when you want to maintain the method alongside your code or other versioned work. Start with the same [sample review and initiative](/docs/getting-started#starter-kit) as the document path. You can work in a local Git repository or one hosted on GitHub.
+
+## Prepare the workspace [#setup]
+
+1. Open your existing repository in an approved coding agent or editor and use your normal branch workflow.
+2. Make the extracted spec kit available to the agent. It contains `specs/`, `skills/`, and `examples/`. Tell the agent the kit's actual path.
+3. Keep the initiative's generated records under `harmonic-method/` in your repository. Use the kit as a reference when creating files; preserve existing records and identifiers when updating them.
+
+The ZIP supplies definitions, skills, and examples. The conformance checker is separate from the ZIP; see the validation step below.
+
+## Follow the shared guides [#guides]
+
+Read the common drafting steps, then open **Save in a repository** in each guide.
+
+| Guide | Repository output |
+| --- | --- |
+| [Capture Notes](/docs/getting-started/capture-notes) | Initial capture in `working-notes.md`; confirmed Note files after their attachment target exists. |
+| [Define a Coda](/docs/getting-started/define-a-coda) | `harmonic-method/coda.yml` and confirmed System Notes under `harmonic-method/notes/`. |
+| [Define a Capability Beat](/docs/getting-started/define-a-beat) | `harmonic-method/beats/<capability>/beat.yml` and capability-specific Notes in its `notes/` directory. |
+| [Run a Coda check](/docs/getting-started/run-a-coda-check) | A review document, approved changes to the records, and decision Notes explaining material changes. |
+
+Initial capture can precede the System Coda. Keep it in a working document until you know what each Note informs. A structured Note needs a valid attachment target.
+
+## Ask your agent to save structured records [#generate]
+
+Replace the bracketed paths and provide the material you reviewed in the guides.
+
+```text title="Prompt: Save Harmonic Method records"
+Read the Harmonic Method kit at [actual path to the extracted kit].
+Use its specs/coda.yml, specs/system.yml, specs/beat.yml and
+specs/note.yml as the definitions for this repository's records.
+
+Read the supplied initiative draft and any existing harmonic-method/
+records. Create or update the appropriate files under harmonic-method/.
+Preserve existing identifiers and published Notes. Use valid references
+for Coda parents and Note attachments. Keep unresolved capture in a
+working document until its attachment target is known.
+
+Use the approved content. Ask about missing decisions rather than
+inventing facts, outcomes or approvals. Show the generated paths and
+diff, and report which validation checks ran and their results.
+Follow this repository's contribution and approval rules.
+```
+
+A document may link to its parent Coda or include the statement. In a structured Beat record, `beat.coda.parent` references the System Coda's stable identifier. The agent should use the field definitions and existing examples to make that connection.
+
+## Validate, review, and commit [#validate]
+
+With Node.js and access to the published checker, run this from your own repository:
+
+```bash title="Validate the generated method records"
+npx harmonic-method validate ./harmonic-method
+```
+
+If you are working from a clone of the spec repository instead, install its dependencies with `npm install`, then run its checker against your records:
+
+```bash title="Validate with a local spec-repository clone"
+node /path/to/harmonic-method-spec/tools/validate.mjs /path/to/your-repository/harmonic-method
+```
+
+Read the exit status and resolve reported conformance errors. Validation checks record structure and references; use the published quality skills to assess the written outcomes and plans.
+
+Review new and changed files, confirm the intended decisions with their owners, and commit through your team's normal process. Use the same reviewed source for future work so the documents and repository do not become competing accounts.
+
+## Keep instructions with the repository [#agent-instructions]
+
+You can add a short Harmonic Method section to your existing `AGENTS.md`, adapted to the paths and rules in this repository. [Copy the persistent agent instructions](/docs/appendix/llm-setup#repository-instructions).
+
+Continue with [Capture Notes](/docs/getting-started/capture-notes).
+
+For a complete coding example, [follow the estimate approval change through to a real PR](/docs/implementation/create-a-pull-request).

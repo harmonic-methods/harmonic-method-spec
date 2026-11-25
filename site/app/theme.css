@@ -73,6 +73,54 @@
   text-transform: uppercase;
 }
 .cajon-page-lead { font-size: 1.125rem; line-height: 1.75; }
+.hm-role-tags { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-block: -0.75rem 1.5rem; font-size: 0.8125rem; }
+.hm-role-tags__group { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
+.hm-role-tags__label { color: var(--cajon-text-muted); font-weight: 600; }
+.hm-role-tags ul { display: flex; flex-wrap: wrap; gap: 0.375rem; list-style: none; margin: 0; padding: 0; }
+.hm-role-tags a { display: inline-block; padding: 0.25rem 0.625rem; border: 1px solid var(--hm-border); border-radius: var(--cajon-radius-pill); color: var(--hm-accent); }
+.hm-role-tags a:hover { background: var(--cajon-color-primary-hover); }
+.hm-role-tags a:focus-visible { outline: 2px solid var(--hm-accent); outline-offset: 2px; }
+.hm-docs-content .hm-primitive-owner {
+  margin-block: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--hm-accent);
+  background: var(--hm-surface);
+  font-size: 0.875rem;
+}
+.hm-docs-content .hm-primitive-owner p { margin: 0; line-height: 1.9; }
+.hm-docs-content .hm-inline-role {
+  display: inline-block;
+  padding: 0 0.5rem;
+  border: 1px solid var(--hm-border);
+  border-radius: var(--cajon-radius-pill);
+  color: var(--hm-accent);
+  text-decoration: none;
+}
+.hm-docs-content .hm-inline-role:hover { background: var(--cajon-color-primary-hover); }
+.hm-docs-content .hm-inline-role:focus-visible { outline: 2px solid var(--hm-accent); outline-offset: 2px; }
+.hm-docs-content .hm-primitive-flow { margin-block: 1.75rem; }
+.hm-docs-content .hm-primitive-flow ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hm-docs-content .hm-primitive-flow li { position: relative; margin: 0; padding: 0; text-align: center; }
+.hm-primitive-flow__node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid var(--hm-accent);
+  border-radius: var(--cajon-radius-md);
+  background: var(--hm-surface);
+  line-height: 1.4;
+}
+.hm-docs-content .hm-primitive-flow p { margin: 0.5rem 0 0; color: var(--cajon-text-muted); font-size: 0.8125rem; }
+.hm-primitive-flow__arrow { position: absolute; top: 0.75rem; right: -1.625rem; color: var(--hm-accent); font-size: 1.5rem; line-height: 2rem; }
 .cajon-methods-grid, .cajon-card-grid, .cajon-quality-grid, .cajon-hub-ref-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
@@ -201,16 +249,19 @@ a.cajon-method-card, a.cajon-card-link, a.cajon-hub-ref-card { text-decoration: 
   font-family: var(--cajon-font-mono);
 }
 
+/* Prose prompts wrap visually; clipboard text retains its original line breaks. */
+.hm-docs-content .shiki pre {
+  width: 100%;
+  min-width: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.hm-docs-content .shiki code > .line { min-block-size: 1lh; }
+
 @media (max-width: 640px) {
+  .hm-docs-content .hm-primitive-flow ol { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hm-primitive-flow__arrow { top: auto; right: calc(50% - 0.75rem); bottom: -2.25rem; transform: rotate(90deg); }
   /* Older MDX pages set column counts inline. Keep those pages readable on mobile. */
   .cajon-quality-grid { grid-template-columns: 1fr !important; }
   .hm-docs-content .hm-fn-grid { grid-template-columns: 1fr; }
 }
-
-.hm-role-tags { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-block: -0.75rem 1.5rem; font-size: 0.8125rem; }
-.hm-role-tags__group { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-.hm-role-tags__label { color: var(--cajon-text-muted); font-weight: 600; }
-.hm-role-tags ul { display: flex; flex-wrap: wrap; gap: 0.375rem; list-style: none; margin: 0; padding: 0; }
-.hm-role-tags a { display: inline-block; padding: 0.25rem 0.625rem; border: 1px solid var(--hm-border); border-radius: var(--cajon-radius-pill); color: var(--hm-accent); }
-.hm-role-tags a:hover { background: var(--cajon-color-primary-hover); }
-.hm-role-tags a:focus-visible { outline: 2px solid var(--hm-accent); outline-offset: 2px; }

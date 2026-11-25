@@ -1,0 +1,26 @@
+beat_version:
+  id: HM-BV-004.17
+  beat: HM-B-004
+  title: Show responsibility tags only when a practice has a distinct owner
+  status: active
+  summary: >
+    General documentation and onboarding pages stop listing all roles as
+    accountable. HM-N-186 records why blanket accountability is unhelpful.
+    Keep page-level responsibility tags only where one role clearly owns the
+    practice; explain mixed responsibilities beside their specific subject.
+
+    Done when general and mixed-practice pages have no blanket responsibility
+    row in the browser or Markdown export, specific practices retain their
+    accountable role and supporting roles, and the content schema rejects
+    multiple accountable roles on one page. Update authoring guidance and
+    existing browser expectations. Run validation, build, typecheck, the browser
+    suite and a negative schema check. One contributor can complete this change.
+  scope: >
+    In: remove ambiguous page metadata, retain useful specific ownership,
+    constrain accountable metadata, update guidance and existing checks.
+    Out: role definitions, staffing rules, inline primitive callouts, new
+    dependencies, deployment and unrelated edits. Previous steps remain active
+    because their merges have not been established.
+
+    Risk: removing blanket tags could hide useful ownership. Preserve tags on
+    single-practice pages and the inline callouts that distinguish decisions.

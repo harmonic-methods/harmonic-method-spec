@@ -1,0 +1,15 @@
+note:
+  id: HM-N-179
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.14
+  content: >
+    Combine the docs introduction and method overview into a concise page at
+    /docs. Redirect the old overview and Markdown URLs, retain existing section
+    anchors, and update incoming links and sidebar navigation. Preserve the
+    intended-benefits qualification while shortening the copy.
+  rationale: >
+    After reviewing the expanded overview, the owner requested condensed wording
+    and a merged docs landing page. A single introduction removes an extra
+    navigation step and duplicate search results. Redirects preserve bookmarks
+    and exports without maintaining a second copy.

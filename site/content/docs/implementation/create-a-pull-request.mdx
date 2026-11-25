@@ -1,0 +1,156 @@
+---
+title: Create a pull request with an AI assistant
+description: Follow the estimate approval status example from method records and a bounded plan to tested code and a real pull request.
+---
+
+Use the Harmonic Method to give a coding assistant a clear outcome, preserve the decisions behind it, and review what it delivers. This walkthrough uses the same **Estimate approval status** Capability Beat as Getting started.
+
+The result is a small, read-only page showing Pending, Approved, or Declined on fictional estimate records. You can run it locally, inspect the actual files, then reproduce the change in a repository you control.
+
+[Download the complete example](/downloads/estimate-approval.zip) · [View the merged example PR #87](https://github.com/harmonic-methods/harmonic-method-spec/pull/87)
+
+The example was accepted and merged in PR #87. The download matches the [merged source files](https://github.com/harmonic-methods/harmonic-method-spec/tree/0170637aeb4f57d817ce8127cac406daecaf6274/tutorials/estimate-approval). The source repository currently requires organization access; the download lets you follow the example without that access. Screenshots capture the actual PR during planning and review, before merge.
+
+## 1. Run the example locally [#run-example]
+
+You need Node.js 22 or later for the tests and Python 3 for the local server. For the later PR step, use Git and a GitHub repository you can contribute to. No AI API key or Harmonica account is needed to run the supplied files.
+
+1. Download and unzip the example.
+2. Open a terminal in the extracted `estimate-approval` folder.
+3. Run the tests, then start the page:
+
+```bash title="Test and run the downloaded example"
+node --test status.test.mjs
+python3 -m http.server 3510 --bind 127.0.0.1
+```
+
+Open [the local example](http://127.0.0.1:3510). You should see four estimates: Pending, Approved, Declined, and Pending. The last record has a decision from someone other than the designated approver, so it stays Pending. Stop the server with Ctrl-C when finished.
+
+<CalloutContainer type="info" role="note" aria-label="This increment displays decisions">
+  <CalloutTitle>This increment displays decisions</CalloutTitle>
+  <CalloutDescription>The example does not approve or send estimates. Its fixtures stand in for already-recorded decisions. Approval entry, authentication, notifications, and production integration need their own decisions and implementation work.</CalloutDescription>
+</CalloutContainer>
+
+## 2. Read the context before writing code [#context]
+
+The method records explain what the implementation must serve. Open these files in the download:
+
+| File | What it contributes |
+| --- | --- |
+| [System Coda](/downloads/estimate-approval/harmonic-method/coda.yml) | Account leads can tell whether an estimate is ready to send without chasing a status update. |
+| [Capability Beat](/downloads/estimate-approval/harmonic-method/beats/estimate-approval/beat.yml) | The lasting ability to see approval status on the estimate record. |
+| [Decision Note](/downloads/estimate-approval/harmonic-method/beats/estimate-approval/notes/display-boundary.yml) | Only the designated approver's recorded decision determines approval; missing or unknown data must not imply approval. |
+| [Beat Version](/downloads/estimate-approval/harmonic-method/beats/estimate-approval/versions/v1-show-status/version.yml) | This increment's scope, observable behavior, exclusions, and risks. |
+
+These are supplied decisions for a fictional scenario. In your own work, confirm them with the relevant people before treating them as approved constraints.
+
+To recreate the change, open a repository you control in your coding assistant. Keep the extracted example available as a reference. Give the assistant the actual path to it and the [spec kit](/docs/implementation/use-a-repository#setup).
+
+```text title="Prompt: Prepare the estimate approval change"
+Read this repository's contribution instructions first.
+The extracted example is at [actual path to estimate-approval].
+The Harmonic Method kit is at [actual path to the spec kit].
+
+Create a new branch using this repository's naming convention.
+Use a new estimate-approval-demo/ folder for this fictional exercise.
+Copy only the example's harmonic-method/ records into that folder.
+Do not overwrite existing records or reuse the DEMO identifiers for real work.
+
+Read the System Coda, Capability Beat, decision Note and Beat Version.
+Explain the behavior this increment must deliver, what is excluded,
+and which acceptance criteria need verification. Flag conflicts with
+this repository's existing instructions before changing application code.
+```
+
+The saved output at this point is the method-record tree in your exercise folder, on a new branch. The downloaded implementation remains available for comparison.
+
+## 3. Review the plan [#review-plan]
+
+Assess the Beat Version before implementation. The published plan-quality skill considers scope, direction, testability, traceability, ownership, and risks. The conformance checker separately checks the structure and references of the YAML files.
+
+```text title="Prompt: Review the estimate status plan"
+Read skills/beat-version-quality-check/SKILL.md in the Harmonic Method kit
+at [actual path to the spec kit]. Follow it to assess the Beat Version in
+estimate-approval-demo/harmonic-method/beats/estimate-approval/versions/
+v1-show-status/version.yml.
+
+Include its parent Beat, System Coda and decision Note as context.
+Report each rubric dimension with evidence, the rubric's spec-set version,
+and any recommended plan changes. Do not invent missing business decisions.
+Do not implement the code yet. Show proposed changes for review first.
+```
+
+Check that the plan covers no decision, approval, decline, a decision from another actor, and missing or unknown data. Review any suggested scope changes before continuing. Save approved changes to `version.yml`; preserve the rationale for material decisions in Notes attached to the Beat.
+
+The example's plan is preserved in the merged PR. This screenshot shows it during review:
+
+[![The real PR diff showing the example Beat Version's scope, acceptance criteria and exclusions](/images/walkthrough/estimate-plan.jpg)](/images/walkthrough/estimate-plan.jpg)
+
+## 4. Implement the bounded change [#implement]
+
+Give the assistant the reviewed plan rather than asking for an unspecified approval system.
+
+```text title="Prompt: Implement the reviewed estimate status plan"
+Implement the reviewed Beat Version in estimate-approval-demo/.
+Use its System Coda, Beat and decision Note as the source of intent.
+
+Write meaningful status tests first and run them before implementing.
+Build a dependency-free, read-only page with fictional estimate records.
+Show Pending without a decision from the designated approver, and Approved
+or Declined only for that approver's recorded decision. Unknown outcomes
+or missing approver data must display Unavailable, never Approved.
+Use text labels as well as color. Render record text safely.
+
+Do not add approval writes, login, notifications, sending or deployment.
+Run the tests and report the exact commands and results. Show the diff,
+map the changes to the acceptance criteria, and flag unresolved questions.
+Do not commit or open a PR until I have reviewed the result.
+```
+
+The supplied implementation uses [status.mjs](/downloads/estimate-approval/status.mjs) for the display rules, [app.mjs](/downloads/estimate-approval/app.mjs) to render records, [index.html](/downloads/estimate-approval/index.html) for the page, and [estimates.json](/downloads/estimate-approval/estimates.json) for fictional input. [status.test.mjs](/downloads/estimate-approval/status.test.mjs) exercises the decision boundaries.
+
+[![The real PR diff showing the status implementation and its tests](/images/walkthrough/estimate-diff.jpg)](/images/walkthrough/estimate-diff.jpg)
+
+## 5. Verify the result and review the diff [#verify]
+
+From your exercise folder, run the tests and view the page as in step 1. Check the visible labels against the recorded decisions. Also verify that changing fixture titles does not cause HTML to be interpreted as page content.
+
+With a local clone of the spec repository, install its dependencies there once. Then run its checker against your exercise's method records, replacing the paths below:
+
+```bash title="Validate the exercise's method records"
+node /path/to/harmonic-method-spec/tools/validate.mjs /path/to/your-repository/estimate-approval-demo/harmonic-method
+```
+
+The checker should report `conformant`. That result verifies record structure and references; it does not establish that the code delivers the outcome. Keep both the tests and the human review.
+
+Review `git diff` and `git status --short`. New files do not appear in an unstaged `git diff`, so open them too. Confirm that the branch contains only this exercise's files, that the tests cover the plan, and that the assistant has not expanded the scope.
+
+## 6. Save the change and open a draft PR [#open-pr]
+
+After reviewing the result, ask the assistant to commit the intended files and open a draft PR in your repository:
+
+```text title="Prompt: Commit the reviewed change and open a draft PR"
+I have reviewed the estimate approval exercise and its diff.
+Commit only its intended files, following this repository's rules.
+Push the exercise branch and open a draft PR against the appropriate base.
+
+Describe the problem, resulting behavior, scope exclusions and verification.
+Link the Beat Version file and relevant decision Note. Use this repository's
+convention for binding the PR to its plan; do not invent a required method field.
+List unresolved review questions honestly. Leave the PR unmerged.
+Return its URL and confirm the files in the published diff match this change.
+```
+
+In the spec repository, a `Beat-Version:` trailer binds a PR to its plan. That is a repository convention. The teaching PR uses `HM-BV-004.32` because it delivers the example; the nested `DEMO-BV-001.1` file is the fictional adopter's plan. In your repository, link your own plan using your team's convention.
+
+[![PR 87 during its initial draft stage, before it was reviewed and merged](/images/walkthrough/estimate-pr.jpg)](/images/walkthrough/estimate-pr.jpg)
+
+PR #87 is now merged; the screenshot above preserves its earlier draft stage. The files in the download preserve the planning snapshot that was submitted, including the then-active sample Beat Version. In an ongoing repository, record its delivery after the increment ships.
+
+The PR is the tracked **Revision** for this workflow. Resolve review feedback, complete the required checks, and merge through your team's normal process once the change is accepted. Keep the Beat Version active while the work is unmerged; record delivery when the intended increment has actually shipped under your team's process. A screenshot of an open PR is not delivery evidence.
+
+## Adapt it to your own capability [#next]
+
+Replace the fictional records with your agreed System Coda, Capability Beat, Notes, and next Beat Version. Preserve the sequence: understand the context, review a bounded plan, implement, verify, inspect the diff, and open a reviewable PR.
+
+Continue with [planning Beat Versions](/docs/implementation/plan-beat-versions) or [repository setup](/docs/implementation/use-a-repository).

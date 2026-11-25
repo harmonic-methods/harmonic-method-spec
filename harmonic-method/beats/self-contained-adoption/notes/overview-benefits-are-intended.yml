@@ -1,0 +1,17 @@
+note:
+  id: HM-N-178
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.14
+  content: >
+    The overview will pair common delivery challenges with the practices that
+    address them and their intended benefits. Lead with clearer goals, less
+    wasted human and AI effort, and continuity across people, agents and
+    sessions. Describe token efficiency as intended rather than measured or
+    guaranteed; context preparation and review also consume tokens.
+  rationale: >
+    The owner requested this emphasis after reviewing a proposed challenges
+    and benefits section. Connecting practices to familiar problems helps a
+    newcomer assess fit. No efficiency measurements were supplied, so the
+    wording must preserve the distinction between the method's mechanisms
+    and demonstrated results.

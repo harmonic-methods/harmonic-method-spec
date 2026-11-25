@@ -39,7 +39,7 @@ export default async function HomePage() {
 
   const newsletterEnabled = showNewsletter && !!process.env.NEXT_PUBLIC_NEWSLETTER_ACTION;
   const navLinks: HomeNavLink[] = [
-    { label: 'The method', href: '/docs/method/overview' },
+    { label: 'The method', href: '/docs' },
     { label: 'Docs', href: '/docs' },
     ...(showTooling ? [{ label: 'Tooling', href: '#agents' }] : []),
     ...(showBlog ? [{ label: 'Blog', href: '#blog' }] : []),

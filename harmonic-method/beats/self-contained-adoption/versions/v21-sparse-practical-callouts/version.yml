@@ -1,0 +1,25 @@
+beat_version:
+  id: HM-BV-004.21
+  beat: HM-B-004
+  title: Highlight a few practical decisions with existing styled callouts
+  status: active
+  summary: >
+    Add four restrained info, tip or warning callouts using the documentation
+    library's existing components. HM-N-190 records the presentation choice.
+    One each on Getting started, Listening, Cadence and Value and selection
+    highlights advice worth noticing while retaining normal prose elsewhere.
+
+    Done when the four callouts have clear labels and readable light and dark
+    styling, their titles and content survive Markdown export, and touched pages
+    have no more than one new callout each. Verify build, typecheck, existing
+    browser suite, mobile layout, repository validation and whitespace.
+  scope: >
+    In: four MDX callouts, reusing or replacing nearby prose, and a short
+    authoring note. One contributor can deliver this presentation change.
+    Out: new components or dependencies, wholesale conversion of existing
+    callouts, normative changes, deployment and unrelated edits. Earlier work
+    remains active because its merges have not been established.
+
+    Risk: callouts can become clutter or lose prop-based titles in Markdown.
+    Keep the count deliberately small and render labels and titles as child
+    content using the existing composable callout elements.

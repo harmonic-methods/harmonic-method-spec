@@ -1,0 +1,27 @@
+beat_version:
+  id: HM-BV-004.18
+  beat: HM-B-004
+  title: Make listening a practical guide to leading execution
+  status: active
+  summary: >
+    Replace the listening page's musical explanation with actionable Conductor
+    guidance: what to inspect, how to respond, what to record and when to
+    escalate. HM-N-187 records why the page is retained as a practical guide.
+
+    Done when readers can run a short execution review using observable signals,
+    respond within the agreed envelope, distinguish drift correction from changes
+    needing another role's decision, and follow a concrete example. Agent help
+    must preserve human accountability. Keep the existing URL and section anchors,
+    update direct link labels and the drift glossary entry, and verify repository
+    validation, build, typecheck, existing browser suite and Markdown export.
+  scope: >
+    In: listening page title and content, the directly related cadence link label
+    and drift glossary entry. One contributor can deliver this editorial change.
+    Out: normative definitions, a rewrite of cadence, mandatory meetings or new
+    workflow states, new skills, deployment and unrelated edits. Prior steps stay
+    active because their merges have not been established.
+
+    Risks: advice could grant Conductor authority over strategy or investment,
+    or make a suggested review cadence mandatory. Use the published role
+    boundaries, identify escalation owners, and present the review as adaptable
+    practice rather than a new requirement.
