@@ -1,0 +1,12 @@
+beat:
+  id: DEMO-B-001
+  title: Estimate approval status
+  status: open
+  coda:
+    statement: >
+      Account leads can see the current approval state on the estimate record
+      before deciding whether to send it.
+    parent: DEMO-CODA
+  description: >
+    The estimate record shows whether approval is pending, granted, or declined.
+    It reflects the designated approver's decision when one is recorded.

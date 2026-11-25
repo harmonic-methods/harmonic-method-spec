@@ -1,0 +1,19 @@
+beat_version:
+  id: DEMO-BV-001.1
+  beat: DEMO-B-001
+  title: Display recorded approval status on the estimate record
+  status: active
+  summary: >
+    Let account leads read Pending, Approved or Declined on each estimate record.
+    DEMO-N-001 defines the display boundary. No recorded decision from the
+    designated approver means Pending. Only that approver's approved or declined
+    decision changes the state; an unknown outcome or missing approver means
+    Unavailable. Verify all cases with tests and view the fictional fixture page.
+  scope: >
+    In: a read-only page, fictional fixtures, status derivation and tests. One
+    developer owns this small increment and reviews the assistant's output.
+    Out: approval writes, authentication, notifications, estimate sending, backend
+    integration and production deployment. It can be delivered in one session.
+    Risks: arbitrary actors and unknown outcomes must never imply approval.
+    Resolve states from the designated approver's recorded decision and show
+    Unavailable for malformed supported records. Keep the example labelled.

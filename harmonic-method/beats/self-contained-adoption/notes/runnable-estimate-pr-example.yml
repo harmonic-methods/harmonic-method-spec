@@ -1,0 +1,14 @@
+note:
+  id: HM-N-202
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.32
+  content: >
+    Create a real draft pull request with a fictional, runnable estimate approval
+    status example, using the existing onboarding scenario. Include the method
+    records and tests as actual files and use the request as evidence in a
+    later walkthrough with copyable prompts and screenshots. Leave it unmerged.
+  rationale: >
+    The owner approved a practical walkthrough showing how intent and a bounded
+    plan lead to implementation, verification and a reviewable request. Isolating
+    the example avoids publishing unrelated workspace edits or real client data.
