@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { BrandMark } from '@/components/brand-mark';
+import { SPEC_REPOSITORY_URL } from '@/lib/links';
 
 const FOOTER_COLUMNS = [
   {
@@ -16,6 +17,7 @@ const FOOTER_COLUMNS = [
     heading: 'Docs',
     links: [
       { label: 'All documentation', href: '/docs' },
+      { label: 'Specification on GitHub', href: SPEC_REPOSITORY_URL },
       { label: 'Getting started', href: '/docs/getting-started' },
       { label: 'Glossary', href: '/docs/glossary' },
       { label: 'FAQ', href: '/docs/faq' },

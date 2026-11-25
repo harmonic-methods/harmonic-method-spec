@@ -1,0 +1,13 @@
+note:
+  id: HM-N-209
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.38
+  content: >
+    Link the public specification repository from the homepage and documentation
+    navigation, with an explicit GitHub label and a shared destination.
+  rationale: >
+    The owner asked to point to the specification repository on the homepage and
+    within the docs. The existing specification card is lower on the page and
+    behind optional section flags. Direct navigation links make the source easy
+    to find without changing the documentation, starter kit or release settings.

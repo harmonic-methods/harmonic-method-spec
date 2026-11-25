@@ -1,4 +1,4 @@
-const SPEC_URL = 'https://github.com/harmonic-methods/harmonic-method-spec';
+import { SPEC_REPOSITORY_URL } from '@/lib/links';
 
 const SPEC_BLURB =
   'The specification and agent skills: the entity specs, the quality rubrics, and the skills that apply them. Open to practise with any tools.';
@@ -19,7 +19,7 @@ function Spec({ released }: { released: boolean }) {
   }
 
   return (
-    <a href={SPEC_URL} target="_blank" rel="noopener noreferrer" className="cajon-concept-card">
+    <a href={SPEC_REPOSITORY_URL} target="_blank" rel="noopener noreferrer" className="cajon-concept-card">
       {tag}
       <h3>The Harmonic Method specification</h3>
       <p>{SPEC_BLURB}</p>

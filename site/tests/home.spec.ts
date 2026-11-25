@@ -10,6 +10,10 @@ test('homepage loads its assets and links to the docs without optional credentia
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Build software where intent survives the handoff.');
   await expect(page.locator('body')).not.toContainText(/five functions/i);
+  const specification = page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Specification on GitHub', exact: true });
+  await expect(specification).toBeVisible();
+  await expect(specification).toHaveAttribute('href', 'https://github.com/harmonic-methods/harmonic-method-spec');
+  await expect(page.locator('footer').getByRole('link', { name: 'Specification on GitHub', exact: true })).toHaveAttribute('href', 'https://github.com/harmonic-methods/harmonic-method-spec');
   await expect(page.locator('#blog, #videos, #community, #agents')).toHaveCount(0);
   await expect(page.locator('#functions .hm-fn-card__role')).toHaveText([
     'Director', 'Composer', 'Orchestrator', 'Conductor', 'Producer', 'Promoter',
@@ -42,6 +46,9 @@ test('mobile menu opens and follows the method link in dark mode', async ({ page
   await menu.click();
   await expect(menu).toHaveAttribute('aria-expanded', 'true');
   await expect(method).toBeVisible();
+  const specification = page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Specification on GitHub', exact: true });
+  await expect(specification).toBeVisible();
+  await expect(specification).toHaveAttribute('href', 'https://github.com/harmonic-methods/harmonic-method-spec');
   await method.click();
   await expect(page).toHaveURL(/\/docs$/);
   await expect(page.getByRole('heading', { name: 'The Harmonic Method', exact: true })).toBeVisible();
