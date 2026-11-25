@@ -1,0 +1,17 @@
+note:
+  id: HM-N-208
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.37
+  content: >
+    Link tracked method files and named skills to current repository source,
+    keep walkthrough examples pinned to the merged source snapshot, and offer
+    generated chat attachments as direct Markdown downloads. Preserve literal
+    paths in copyable prompts and commands and keep hypothetical adopter output
+    names distinct from published files.
+  rationale: >
+    The owner approved linking file references throughout the docs and requested
+    a pull request. Some named kit files are generated rather than tracked, so
+    genuine downloads are more useful than nonexistent GitHub URLs. Concurrent
+    canonical-site and identifier repairs are preserved from main. New planning
+    identifiers remain distinct from those already published records.

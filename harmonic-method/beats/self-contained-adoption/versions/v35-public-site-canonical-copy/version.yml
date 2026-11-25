@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.35
   beat: HM-B-004
   title: Public site identity matches its official address
-  status: active
+  status: delivered
   summary: >
     Readers and crawlers encounter the same www address in canonical metadata,
     structured data, sitemap, robots and the AI documentation index. The homepage

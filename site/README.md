@@ -142,3 +142,9 @@ published checker package.
 ### Estimate approval walkthrough assets
 
 The runnable source lives in `tutorials/estimate-approval/`. After changing it, run `python3 tools/build-estimate-example.py` from the repository root to refresh the downloadable files and ZIP. The docs browser suite checks that served source files match the example. PR screenshots in `site/public/images/walkthrough/` are historical captures; the walkthrough links their source commit.
+
+### Links to method files
+
+Link named tracked files and skills to their GitHub source; use the current source on `main` for general method references and the recorded merged commit for walkthrough examples. Keep paths inside commands and copyable prompts literal. Filenames for documents a reader creates are examples, not links to a file in this repository.
+
+`review-a-capability.md` and `sample-capability.md` are generated chat attachments, not tracked source files. The site build and dev hooks run `tools/build-doc-file-downloads.py`, which uses the canonical kit builder to expose them at `/downloads/starter-kit/`. Do not hand-edit these generated downloads.

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const contentRoot = join(process.cwd(), 'content/docs');
@@ -70,6 +70,27 @@ test('the PR walkthrough provides real screenshots, copyable prompts and matchin
   for (const term of ['Project', 'Track', 'Work Item', 'Drop', 'Claim', 'Layer']) {
     await expect(page.locator('.cajon-glossary-term').filter({ hasText: new RegExp(`^${term}$`) })).toHaveCount(0);
   }
+});
+
+test('published file links resolve to source paths and generated attachments contain canonical content', async ({ page, request }) => {
+  const repoRoot = join(process.cwd(), '..');
+  for (const file of contentFiles) {
+    const text = readFileSync(join(contentRoot, file), 'utf8');
+    for (const match of text.matchAll(/https:\/\/github\.com\/harmonic-methods\/harmonic-method-spec\/(?:blob|tree)\/main\/([^\s)#"<>]+)/g)) {
+      expect(existsSync(join(repoRoot, match[1])), `${file}: ${match[1]}`).toBeTruthy();
+    }
+  }
+  await page.goto('/docs/getting-started');
+  await expect(page.locator('article').getByRole('link', { name: 'START_HERE.md', exact: true })).toHaveAttribute('href', 'https://github.com/harmonic-methods/harmonic-method-spec/blob/main/starter-kit/START_HERE.md');
+  const review = await request.get('/downloads/starter-kit/review-a-capability.md');
+  expect(review.ok()).toBeTruthy();
+  const reviewText = await review.text();
+  for (const file of ['skills/coda-quality-check/SKILL.md', ...['spec-set', 'coda', 'beat', 'system', 'portfolio'].map((name) => `specs/${name}.yml`)]) {
+    expect(reviewText).toContain(readFileSync(join(repoRoot, file), 'utf8').trimEnd());
+  }
+  const sample = await request.get('/downloads/starter-kit/sample-capability.md');
+  expect(sample.ok()).toBeTruthy();
+  expect(await sample.text()).toContain(readFileSync(join(repoRoot, 'examples/systems/client-commitments/beats/client-estimate-approval/beat.yml'), 'utf8').trimEnd());
 });
 
 test('read docs and follow a documentation link with working assets', async ({ page }) => {

@@ -1,0 +1,31 @@
+beat_version:
+  id: HM-BV-004.37
+  beat: HM-B-004
+  title: Make published documentation file references directly usable
+  status: active
+  summary: >
+    Link named repository sources and skills to their real GitHub files and
+    supply direct downloads for the kit's generated chat attachments. Keep
+    walkthrough examples pinned to their merged snapshot and preserve literal
+    file paths inside commands and copyable prompts. HM-N-208 records the choice.
+
+    Done when published source references throughout the docs open an existing
+    file or directory; generated attachments download as actual Markdown built
+    from the canonical kit builder; illustrative output paths remain clear;
+    and the walkthrough's existing download links retain their source fidelity.
+    Verify mapped paths, unchanged prompt contents, generated attachment content,
+    build, browser checks and conformance before opening a focused request.
+  scope: >
+    In: prose references, named skill links, generated attachment downloads and
+    build integration, a link-authoring convention and focused verification.
+    Mark the observed merged canonical-site and role plans delivered. One
+    contributor can complete this in one session.
+    Out: normative definitions, rubric edits, changing assistant prompts, new
+    release tags, repository visibility, approval settings and automatic merging.
+
+    Risks: generated attachments have no tracked GitHub file; build them with
+    the existing kit generator instead of inventing blob URLs. Current released
+    kit source predates the merged docs, so use current main for tracked source
+    and immutable commits for walkthrough examples. Link code paths with MDX-safe
+    markup. Preserve concurrent canonical-site and identifier repairs from main
+    and allocate this work identifiers distinct from those published records.

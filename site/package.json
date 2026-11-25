@@ -7,7 +7,9 @@
     "start": "next start --port 3500",
     "typecheck": "fumadocs-mdx && next typegen && tsc --noEmit",
     "test": "playwright test",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "prebuild": "python3 ../tools/build-doc-file-downloads.py",
+    "predev": "python3 ../tools/build-doc-file-downloads.py"
   },
   "dependencies": {
     "fumadocs-core": "16.15.14",
