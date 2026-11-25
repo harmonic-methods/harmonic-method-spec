@@ -8,8 +8,9 @@ beat_version:
     Bring the supplied website design into the standalone site so readers
     can navigate the method by topic and reach a practical first review.
     The getting-started page gives holders of the preview kit both
-    workflows from its guide. It leads with the sample document review
-    and links to the five-step pathway in the Method docs.
+    workflows from its guide. A short documentation intro leads to
+    Getting started, where readers can try the sample review or work
+    through four guides. Implementation has its own section.
 
     The design archive includes draft release claims and placeholder
     material. Keep links to the public specification gated and describe
@@ -18,12 +19,15 @@ beat_version:
   scope: |
     In: homepage navigation and content links, the documentation hub and
     ordered Method pages, reference pages supplied in the design, and
-    getting-started instructions drawn from the starter kit.
+    getting-started instructions drawn from the starter kit, the four
+    beginner guides, and the implementation page for Beat Versions and
+    Revisions.
     Out: deploying or publishing the kit, moving the domain, draft blog
     and video content without destinations, and changing method specs.
 
     Done when the homepage and sidebar lead to the new Method pages,
-    getting started leads with the sample document review, the local
-    folder option and full pathway are reachable from that page, and the
-    published documentation URLs still resolve. Verify the mobile menu,
-    search, Markdown exports, and method links against a production build.
+    the docs intro leads to Getting started, and both sample workflows
+    remain reachable. Verify that a reader can move from capturing Notes
+    through checking a Coda and then into implementation. Verify the
+    mobile menu, search, Markdown exports, and existing documentation
+    links against a production build.

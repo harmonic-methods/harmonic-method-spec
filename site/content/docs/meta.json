@@ -4,9 +4,12 @@
   "pages": [
     "---Overview---",
     "index",
-    "getting-started",
+    "---Getting started---",
+    "...getting-started",
     "---The Harmonic Method---",
     "...method",
+    "---Implementation---",
+    "...implementation",
     "---Reference---",
     "glossary",
     "faq",

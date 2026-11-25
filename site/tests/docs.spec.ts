@@ -31,16 +31,16 @@ test('read docs and follow a documentation link with working assets', async ({ p
     if (response.url().includes('/_next/') && !response.ok()) failures.push(response.url());
   });
   await page.goto('/docs');
-  await expect(page.getByRole('heading', { name: 'Where to start' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'The Harmonic Method', exact: true })).toBeVisible();
   await page.screenshot({ path: test.info().outputPath('docs-desktop.png'), fullPage: true });
-  await page.locator('a.cajon-concept-card[href="/docs/method/roles"]').click();
-  await expect(page).toHaveURL(/\/docs\/method\/roles$/);
-  await expect(page.locator('#promoter')).toContainText('Promoter');
+  await page.locator('article').getByRole('link', { name: 'Getting started', exact: true }).click();
+  await expect(page).toHaveURL(/\/docs\/getting-started$/);
+  await expect(page.locator('#walkthrough')).toBeVisible();
   await expect(page.locator('html')).toHaveClass(/light|dark/);
   expect(failures).toEqual([]);
 });
 
-test('Getting started leads with the sample review and links to the full pathway', async ({ page }) => {
+test('Getting started includes the sample review and a walkthrough leading to implementation', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Getting started' }).click();
   await expect(page).toHaveURL(/\/docs\/getting-started$/);
@@ -58,11 +58,20 @@ test('Getting started leads with the sample review and links to the full pathway
   ]);
   await expect(page.locator('article #steps')).toHaveCount(0);
   await page.screenshot({ path: test.info().outputPath('starter-kit-desktop.png'), fullPage: true });
-  const pathwayLink = page.locator('article').getByRole('link', { name: 'Apply the method to a new initiative' });
-  await pathwayLink.click();
-  await expect(page).toHaveURL(/\/docs\/method\/apply-to-an-initiative$/);
-  await expect(page.locator('article ol li')).toHaveCount(5);
-  await expect(page.locator('article #functions')).toBeVisible();
+  const article = page.locator('article');
+  const lessons = [
+    ['Capture Notes', '/docs/getting-started/capture-notes'],
+    ['Define a Coda', '/docs/getting-started/define-a-coda'],
+    ['Define a Beat', '/docs/getting-started/define-a-beat'],
+    ['Run a Coda check', '/docs/getting-started/run-a-coda-check'],
+    ['Plan Beat Versions and deliver Revisions', '/docs/implementation/plan-beat-versions'],
+  ];
+  for (const [title, path] of lessons) {
+    await article.getByRole('link', { name: new RegExp(`^${title}$`, 'i') }).click();
+    await expect(page).toHaveURL(path);
+    await expect(article.getByRole('heading', { name: title, exact: true, level: 1 })).toBeVisible();
+    await expect(article.getByRole('heading', { name: /Worked example/ })).toBeVisible();
+  }
 });
 
 test('search finds documentation through the isolated API', async ({ request }) => {
@@ -87,7 +96,7 @@ test('readers can search and open a result', async ({ page }) => {
 });
 
 test('Markdown exports and sitemap retain public document URLs', async ({ request }) => {
-  for (const path of ['/docs.md', '/docs/getting-started.md', '/docs/method/apply-to-an-initiative.md', '/docs/method/quality.md', '/docs/composition/beats.md']) {
+  for (const path of ['/docs.md', '/docs/getting-started.md', '/docs/getting-started/run-a-coda-check.md', '/docs/method/apply-to-an-initiative.md', '/docs/method/quality.md', '/docs/composition/beats.md']) {
     const response = await request.get(path);
     expect(response.status(), path).toBe(200);
     expect(response.headers()['content-type']).toContain('text/markdown');
