@@ -1,25 +1,44 @@
 # Harmonic Method spec — Function
 concept: function
-spec_version: 1.15.1
+spec_version: 1.16.0
 summary: >
-  A function is an accountability the method names: one of the five things
+  A function is an accountability the method names: one of the six things
   someone has to answer for if work is to succeed. Functions are not entities —
   nothing instantiates a Function, and no record here carries one as a field.
   They are the accountability vocabulary the entities are worked through.
+  Public guidance calls these Harmonic Method roles; a role carries a function,
+  not a required job title or a new entity.
 holders: >
   A function is held by a person, or by an agent operating under a named
   person's accountability. One holder may hold several functions. What the
   method requires is that each function is held by someone identifiable — an
   unnamed function is an unstaffed one, and unstaffed functions fail quietly.
 altitude: >
-  The five functions are constant at every altitude — system, beat/track, and
+  The six functions are constant at every altitude — system, beat/track, and
   portfolio. Altitude changes the scope a function answers for, never the set.
 functions:
+  director:
+    owns: >
+      Strategic direction and its continued validity. Whom the work serves,
+      which outcomes matter, and whether the assumptions behind that direction
+      still hold as conditions change. Sets or revises the strategic Coda in
+      its scope and the priorities that guide system definition and investment.
+    fails_when: >
+      Work is coherent, well executed and justified against its local costs,
+      while pursuing a strategy whose assumptions no longer hold.
+    discipline: >
+      Making strategic assumptions explicit, reading evidence from the people
+      served and the environment, and changing direction on the record. Composer
+      defines coherent systems and capabilities serving that direction; Producer
+      judges whether their investment earns its keep. Neither a coherent design
+      nor a positive local return alone establishes that the direction is valid.
   composer:
     owns: >
       Architectural coherence — that the system holds together as one
       intelligible thing rather than one that merely works. What the system is
-      for, what belongs inside it, and where its boundaries fall.
+      for, what belongs inside it, and where its boundaries fall. Defines the
+      system or capability Coda and constraints that serve the Director's
+      strategic direction; surfaces conflicts rather than silently changing it.
     fails_when: >
       The system still functions and nobody can explain it as a whole.
       Capabilities overlap, boundaries blur, and every new piece of work
@@ -34,7 +53,8 @@ functions:
       agents, this function owns what runs unattended, what runs supervised,
       and what waits for a person. Its decisions are about what forces the work
       needs and how it will be routed to them, taken before and between the
-      doing rather than during it.
+      doing rather than during it. Designs workflows and assignment policies;
+      decides allocation changes when execution exceeds the agreed envelope.
     fails_when: >
       Every piece is sound and nothing ships. Work queues behind unclear
       ownership, handoffs are lost silently, and capacity sits idle while deadlines
@@ -44,7 +64,10 @@ functions:
       being honest about which constraints are real rather than habitual.
   conductor:
     owns: >
-      That decisions stay in force. The gap between what was decided and what
+      Day-to-day execution within agreed scope, capacity and authority, and
+      that decisions stay in force. Applies assignment policies, coordinates
+      people and agents, resolves blockers and escalates changes beyond that
+      envelope to the appropriate role. The gap between what was decided and what
       is actually true, reconciled and surfaced while correcting it is cheap.
       This is held with the work rather than over it: the function stands where
       the work is happening and closes the gap in the moment, which is what
@@ -68,7 +91,9 @@ functions:
     owns: >
       The relationship between what is spent and what it is worth. Whether the
       investment is returning, and whether the work should continue at its
-      current shape and cost.
+      current shape and cost. Selects, funds, reshapes or stops investment
+      against the strategic direction. Evidence that challenges that direction
+      goes to Director; a funding decision does not silently redefine strategy.
     fails_when: >
       Work proceeds because it is interesting, urgent, or already started, and
       nobody is accountable for whether it is worth what it costs — so nothing
@@ -109,5 +134,5 @@ rules:
     A function that appears unheld at one altitude is often delegated rather
     than absent. The signal to read is span of control, not the empty slot.
   - >-
-    The set is closed at five. A sixth accountability is a claim about the
+    The set is closed at six. An additional accountability is a claim about the
     method and belongs in a decision, not in a local variant.

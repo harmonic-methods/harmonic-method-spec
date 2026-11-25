@@ -1,6 +1,6 @@
 # Harmonic Method spec — Conformance
 concept: conformance
-spec_version: 1.15.1
+spec_version: 1.16.0
 summary: >
   What conforming to this method involves, and what an implementation states
   about itself in order to be checked. Conformance is a claim an implementation
@@ -17,7 +17,7 @@ surface:
     The rules carried by each entity spec, the relationships these specs state —
     which entity a Note attaches to, which Beat a Beat Version belongs to, which
     Beat Version a Revision executes, which Coda a Coda ladders to — the binding
-    between a change and the step it executes, and the five functions. Each of
+    between a change and the step it executes, and the six functions. Each of
     these binds an implementation as much as a field does, and none of them
     reduces to a comparison — they are read and followed, and a tool that reported
     on them would be reporting on prose. An implementation is not less conformant

@@ -66,6 +66,10 @@ export async function getLLMText(page: Page): Promise<string> {
   const title = page.data.title ?? '';
   const description = page.data.description ?? '';
   const header = `# ${title}\nURL: ${page.url}${description ? `\n\n> ${description}` : ''}`;
+  const roles = [
+    page.data.accountableRoles?.length ? `Accountable: ${page.data.accountableRoles.join(', ')}` : '',
+    page.data.supportingRoles?.length ? `Supporting: ${page.data.supportingRoles.join(', ')}` : '',
+  ].filter(Boolean).join('\n');
 
-  return `${header}\n\n${body}\n`;
+  return `${header}${roles ? `\n\n${roles}` : ''}\n\n${body}\n`;
 }

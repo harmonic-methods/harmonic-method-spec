@@ -4,7 +4,7 @@ The specification and agent skills for **the Harmonic Method** — a single
 method for improving systems with explicit intent, preserved context, and
 decision lineage. Open to practice with any tools.
 
-The method defines five functions that act on intent — Composer, Orchestrator,
+The method defines six roles that act on intent — Director, Composer, Orchestrator,
 Conductor, Producer, Promoter — each scoped to an altitude rather than split
 into separate frameworks. This repository covers those functions and the entity model
 at system altitude: Coda, Beats, Beat Versions, Revisions, and Notes. The same primitives recur at beat/
@@ -159,7 +159,7 @@ Conductor's **Tie off** follows it — the ceremony that settles every unfinishe
 item in the Bar before the Bar is closed; an item that continues into the next
 Bar is *tied across* it — and the Downbeat comes after that.
 
-Cutting across all of it are the five **functions** — Composer, Orchestrator,
+Cutting across all of it are the five **functions** — Director, Composer, Orchestrator,
 Conductor, Producer, Promoter. They are accountabilities rather than titles: one
 person may hold several, an agent may hold one under a named person's
 accountability, and the set does not change with altitude. Nothing instantiates
@@ -178,7 +178,7 @@ possible to say which of the five nobody is currently holding.
 | [specs/note.yml](specs/note.yml) | typed knowledge attached to what it informs |
 | [specs/bar.yml](specs/bar.yml) | the recurring period work is planned within |
 | [specs/downbeat.yml](specs/downbeat.yml) | an immutable anchor of where a capability stood |
-| [specs/function.yml](specs/function.yml) | the five accountabilities the work is held through |
+| [specs/function.yml](specs/function.yml) | the six accountabilities the work is held through |
 | [specs/conformance.yml](specs/conformance.yml) | what conforming involves, and what an implementation declares |
 | [specs/spec-set.yml](specs/spec-set.yml) | the version of the set above, which an implementation pins |
 

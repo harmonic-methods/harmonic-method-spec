@@ -1,0 +1,31 @@
+note:
+  id: HM-N-181
+  type: decision
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.5
+  supersedes: [HM-N-018]
+  content: >
+    Keep one Harmonic Method with six roles: Director, Composer, Orchestrator,
+    Conductor, Producer and Promoter. Public documentation calls them Harmonic
+    Method roles; function remains the formal term for the accountability each
+    role holds. They remain constant across altitude, and one person can hold
+    several. Director owns strategic direction and whether its assumptions still
+    hold as conditions change. Composer defines coherent systems and capabilities
+    serving that direction. Producer judges investment against value and cost.
+
+    Conductor leads day-to-day execution within agreed scope, capacity and
+    authority, applying assignment policies, coordinating handoffs and resolving
+    blockers while keeping decisions in force. Orchestrator designs the work's
+    arrangement and policies and decides allocation changes beyond that envelope.
+    HM-N-153's planning-versus-execution distinction and lineage accountability
+    remain in force. No new role grants an agent independent human accountability.
+  rationale: >
+    The owner chose one method with six roles after reviewing the earlier
+    proposal for a separate business method and the implementation Notes about
+    operational leadership. Director has a distinct failure mode: work can be
+    coherent, well executed and worth its local cost while pursuing a strategy
+    whose assumptions no longer hold. Naming strategic validity separately
+    prevents it being presumed covered by system design or investment review.
+    This supersedes the five-function enumeration, retaining Promoter's adoption
+    accountability and the single-method, altitude-independent model. The
+    canonical set and responsibility changes warrant a minor spec-set bump.

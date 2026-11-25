@@ -297,22 +297,12 @@ html.dark .hm-logo__mark--dark {
 }
 
 /* ── Function cards ────────────────────────────────────────── */
-/* Five cards on a 6-column track: three across the first row, then the
- * remaining two centred as a pair (cards 4 and 5 span cols 2-4 and 4-6). */
+/* Six role cards, three across on wide screens. */
 .hm-fn-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin: 28px 0;
-}
-.hm-fn-grid > * {
-  grid-column: span 2;
-}
-.hm-fn-grid > :nth-child(4) {
-  grid-column: 2 / 4;
-}
-.hm-fn-grid > :nth-child(5) {
-  grid-column: 4 / 6;
 }
 .hm-fn-card {
   background: var(--cajon-color-bg-paper, #fff);
@@ -753,13 +743,6 @@ a.hm-fn-card:hover {
   .hm-fn-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .hm-fn-grid > *,
-  .hm-fn-grid > :nth-child(4) {
-    grid-column: auto;
-  }
-  .hm-fn-grid > :nth-child(5) {
-    grid-column: 1 / -1;
-  }
 }
 @media (max-width: 960px) {
   .hm-hero__inner {
@@ -827,9 +810,6 @@ a.hm-fn-card:hover {
   .hm-footer__top,
   .hm-fn-grid {
     grid-template-columns: 1fr;
-  }
-  .hm-fn-grid > :nth-child(5) {
-    grid-column: auto;
   }
   .hm-news__form {
     flex-direction: column;

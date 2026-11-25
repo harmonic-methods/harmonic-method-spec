@@ -1,6 +1,6 @@
 # Harmonic Method spec — System
 entity: system
-spec_version: 1.15.1
+spec_version: 1.16.0
 summary: >
   The altitude where Beats attach. A System is a Coda and the set of Beats that
   ladder to it — the smallest container that holds capability rather than
