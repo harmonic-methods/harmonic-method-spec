@@ -6,7 +6,7 @@ dependencies, without access to the original monorepo or its private packages.
 
 ## Develop and verify
 
-Use Node.js 22 or later. From this directory:
+Use Node.js 26.x (the major in `.nvmrc`). From this directory:
 
 ```sh
 npm ci
@@ -75,9 +75,9 @@ checks and does not deploy. The canonical public origin stays
 
 The [harmonic-methods-site Vercel project](https://vercel.com/codazen/harmonic-methods-site)
 is linked to this repository under the Codazen team, with `site` as the root and
-Node.js 22 matching CI. Git integration supplies branch previews and production
-builds from `main` once the extraction merges. The current extraction is reviewed
-on its branch preview before any custom domain is moved.
+Node.js selected by the package engine, matching CI. Git integration supplies
+branch previews and production builds from `main`. Review changes on their
+branch preview before merging or moving any custom domain.
 
 The app owns the homepage, docs, brand assets, robots policy and sitemap. It
 uses ordinary `/_next/` assets and keeps `/api/docs/search` for docs search.

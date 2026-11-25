@@ -1,0 +1,15 @@
+note:
+  id: HM-N-174
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.11
+  supersedes: [HM-N-173]
+  content: >
+    The runtime change leaves the website-source and Vercel-preview decisions
+    at their original identifiers. The proposed renumbering is set aside.
+  rationale: >
+    Concurrent work merged a repair for the duplicate identifiers while the
+    runtime change was in flight, assigning fresh identifiers to the other
+    records. Repeating the proposed repair would create new collisions with
+    the starter-kit decisions. Rebase onto that repair and keep only the runtime
+    alignment; preserve this reasoning and the superseded proposal in history.

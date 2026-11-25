@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-004.9
   beat: HM-B-004
   title: Route readers from the method to a first trial
-  status: active
+  status: delivered
   summary: |
     Bring the supplied website design into the standalone site so readers
     can navigate the method by topic and reach a practical first review.

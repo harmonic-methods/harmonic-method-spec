@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.7
   beat: HM-B-004
   title: Website and documentation that build from the specification repository
-  status: active
+  status: delivered
   summary: >
     A contributor can read, edit, build and test the website and documentation
     alongside the specification using public dependencies alone. The homepage

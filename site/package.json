@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3500",
-    "build": "next build",
+    "build": "node --version && next build",
     "start": "next start --port 3500",
     "typecheck": "fumadocs-mdx && next typegen && tsc --noEmit",
     "test": "playwright test",
@@ -40,6 +40,6 @@
   },
   "license": "SEE LICENSE IN README.md",
   "engines": {
-    "node": ">=22"
+    "node": "26.x"
   }
 }
