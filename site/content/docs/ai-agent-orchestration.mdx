@@ -1,0 +1,79 @@
+---
+title: AI Agent Orchestration
+description: 'AI agent orchestration is the coordination of multiple AI agents — and the people directing them — toward a shared outcome. Harmonic Orchestration is the framework that keeps that coordination aligned across systems, teams, and contexts.'
+---
+
+<span className="cajon-overline">Harmonic Methods</span>
+
+# AI Agent Orchestration
+
+<p className="cajon-page-lead">AI agent orchestration is the practice of coordinating multiple AI agents — and the people directing them — so that distributed work stays aligned to a shared outcome. As teams move from a single coding agent to many working in parallel, orchestration becomes the difference between compounding leverage and compounding chaos.</p>
+
+<div className="cajon-def-box">
+  <div className="cajon-def-box__label">Definition</div>
+  <p><strong>AI agent orchestration</strong> is the coordination layer that sequences work across multiple AI agents, resolves dependencies between them, shares context so they don't conflict, and keeps their combined output converging on a shared destination. It is what scales <a href="/docs/ai-coding-agents">AI coding agents</a> from one assistant to a coordinated system.</p>
+</div>
+
+## What is AI agent orchestration?
+
+A single agent working against well-structured context is powerful. The harder problem appears with many agents — and many humans directing them — touching the same system at once. Without coordination, parallel agents duplicate work, overwrite each other's assumptions, and drift away from the destination, each locally reasonable but collectively incoherent.
+
+Agent orchestration addresses that interface: which agent does what, in what order, with which shared context, and how their outputs are reconciled. It is less about making any one agent smarter and more about keeping a fleet of them aligned.
+
+## Why orchestration is the next bottleneck
+
+The first bottleneck AI removed was execution speed. The second — the one teams hit as they scale agent usage — is coordination. Ten agents that each build the right thing in isolation can still produce a system that doesn't cohere, because no one held the relationships between their work.
+
+Coordinating agents at scale requires the same foundation a single agent needs, applied across boundaries:
+
+<div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Shared destination</div>
+    <p>One destination every agent's work is checked against, so parallel efforts converge instead of diverge.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Dependency sequencing</div>
+    <p>Explicit ordering of work so agents build on each other rather than colliding.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Shared context</div>
+    <p>One corpus of reasoning all agents draw from, so a decision made by one is visible to the rest.</p>
+  </div>
+</div>
+
+## How Harmonic Orchestration approaches it
+
+[Harmonic Orchestration](/docs/orchestration) is the framework within Harmonic Methods for coordinating delivery across multiple systems, teams, and agents. It assumes [Harmonic Composition](/docs/composition) is running within each system — so each unit already has a clear destination ([Coda](/docs/composition/coda)), durable capabilities ([Beats](/docs/composition/beats)), and preserved reasoning ([Notes](/docs/composition/notes)) — and addresses the interface *between* those units: shared context, dependency sequencing, and alignment recovery when threads drift.
+
+The insight is that you cannot orchestrate what is not individually coherent. Agent orchestration works when each agent is operating against well-structured intent; Harmonic Orchestration provides the layer that keeps those structured units aligned with one another.
+
+<div className="cajon-callout">
+  Harmonic Orchestration is in active development. This page describes the approach; the framework documentation will expand as it matures.
+</div>
+
+## Frequently asked questions
+
+export const orchestrationFaqs = [
+  {
+    question: 'What is AI agent orchestration?',
+    answer:
+      'AI agent orchestration is the coordination of multiple AI agents — and the people directing them — toward a shared outcome. It sequences work across agents, resolves dependencies between them, shares context so they do not conflict, and keeps their combined output converging on one destination. It is what scales AI coding agents from a single assistant into a coordinated system.',
+  },
+  {
+    question: 'How do you coordinate multiple AI coding agents at scale?',
+    answer:
+      'Coordinating multiple AI coding agents requires a shared destination every agent is checked against, explicit dependency sequencing so agents build on rather than collide with each other, and a shared corpus of context so a decision made by one agent is visible to the rest. You cannot orchestrate what is not individually coherent, so each agent must first operate against well-structured intent — then an orchestration layer keeps those units aligned.',
+  },
+  {
+    question: 'How does Harmonic Orchestration relate to agent orchestration?',
+    answer:
+      'Harmonic Orchestration is the framework within Harmonic Methods for agent orchestration across multiple systems, teams, and agents. It assumes Harmonic Composition runs within each system (giving each unit a Coda, Beats, and Notes) and coordinates the interface between them — shared context, dependency sequencing, and alignment recovery. It is in active development.',
+  },
+];
+
+<FaqSection entries={orchestrationFaqs} label="AI agent orchestration questions" />
+
+<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
+  <a className="cajon-learn-more" href="/docs/ai-coding-agents">A Delivery Method Built for AI Coding Agents →</a>
+  <a className="cajon-learn-more" href="/docs/orchestration">Explore Harmonic Orchestration →</a>
+</div>

@@ -1,0 +1,82 @@
+---
+title: Vibe Coding
+description: 'Vibe coding means building software by prompting AI agents conversationally rather than writing code by hand. It is fast for prototypes — but at enterprise scale it needs structure. Harmonic Methods is how enterprises keep the speed without losing control.'
+---
+
+<span className="cajon-overline">Reference</span>
+
+# Vibe Coding — and What It Takes at Enterprise Scale
+
+<p className="cajon-page-lead">Vibe coding is building software by describing what you want to an AI agent in natural language and letting it write the code, rather than authoring it by hand. It is remarkably fast for prototypes and demos. The open question — the one that matters for any larger company — is what happens when you try to do it at enterprise scale.</p>
+
+<div className="cajon-def-box">
+  <div className="cajon-def-box__label">Definition</div>
+  <p><strong>Vibe coding</strong> is a conversational, prompt-driven style of software development where a person steers an AI coding agent toward a result instead of writing the implementation directly. It optimizes for speed and flow. <strong>Enterprise vibe coding</strong> is the same speed applied inside organizations that also require durability, governance, and shared context — which raw prompting alone does not provide.</p>
+</div>
+
+## Why vibe coding works — and where it breaks
+
+Vibe coding is genuinely powerful: a single person can go from idea to working software in an afternoon. For a prototype, a side project, or a throwaway tool, that is often all you need.
+
+The break point appears at scale. A prompt is ephemeral — it captures intent for one moment and then disappears. There is no durable record of *why* the system is the way it is, no shared destination multiple people (and agents) can align to, and no check that the thing being built is coherent with everything else. At the scale of a real enterprise system — many capabilities, many contributors, many months — vibe coding alone produces fast output and slow, expensive incoherence.
+
+## What enterprise vibe coding requires
+
+Doing vibe coding at scale doesn't mean slowing down. It means giving the speed something to build against:
+
+<div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Durability</div>
+    <p>Capability definitions that persist beyond a single prompt, so the system has a memory.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Governance</div>
+    <p>A quality bar and an explicit destination, so output is checked against intent — not just shipped fast.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Preserved context</div>
+    <p>The reasoning behind decisions, captured so it survives handoffs across people and agents.</p>
+  </div>
+</div>
+
+## How Harmonic Methods makes vibe coding enterprise-ready
+
+Harmonic Methods keeps the speed of vibe coding while adding the structure enterprises need. Instead of replacing conversational, agent-driven development, it gives that development something durable to build against:
+
+- **A [Coda](/docs/composition/coda)** so every prompt-driven session is steering toward the same destination.
+- **[Beats](/docs/composition/beats)** so capabilities are durable definitions, not one-off prompts — the structured spec behind [spec-driven development](/docs/spec-driven-development).
+- **[Notes](/docs/composition/notes)** so the reasoning behind decisions is preserved, not lost when the chat closes.
+- **[Quality gates](/docs/composition/quality-gates)** so coherence is checked before work proceeds, providing the governance enterprises require.
+
+The result is what larger companies actually want from the trend: the speed of [AI coding agents](/docs/ai-coding-agents) without the chaos that ad-hoc prompting creates at scale.
+
+<div className="cajon-callout">
+  Vibe coding is the prototype. Enterprise vibe coding is the production discipline — same speed, with the durability, governance, and context a real system demands.
+</div>
+
+## Frequently asked questions
+
+export const vibeCodingFaqs = [
+  {
+    question: 'What is vibe coding?',
+    answer:
+      'Vibe coding is building software by describing what you want to an AI coding agent in natural language and letting it write the code, rather than authoring the implementation by hand. It optimizes for speed and flow and is especially effective for prototypes and demos.',
+  },
+  {
+    question: 'Does vibe coding work for enterprises?',
+    answer:
+      'Vibe coding is fast but ephemeral: a prompt captures intent for one moment and then disappears, with no durable record of why the system is the way it is. At enterprise scale — many capabilities, contributors, and months — that produces fast output and slow, expensive incoherence. Enterprise vibe coding keeps the speed but adds durability, governance, and preserved context so the output stays coherent.',
+  },
+  {
+    question: 'How do you do vibe coding at enterprise scale?',
+    answer:
+      'Give the speed something durable to build against: an explicit destination (a Coda), capability definitions that persist beyond a single prompt (Beats), preserved reasoning (Notes), and a quality bar that checks coherence before work proceeds (quality gates). Harmonic Methods provides exactly this layer, so larger companies get the speed of AI coding agents without the chaos ad-hoc prompting creates at scale.',
+  },
+];
+
+<FaqSection entries={vibeCodingFaqs} label="Vibe coding questions" />
+
+<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
+  <a className="cajon-learn-more" href="/docs/ai-coding-agents">A Delivery Method Built for AI Coding Agents →</a>
+  <a className="cajon-learn-more" href="/docs/spec-driven-development">Spec-Driven Development →</a>
+</div>

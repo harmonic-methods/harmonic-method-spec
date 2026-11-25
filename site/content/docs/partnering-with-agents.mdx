@@ -1,0 +1,137 @@
+---
+title: Partnering with AI Agents
+description: How structured context transforms AI from a fast executor into a genuine product thinking partner — and the super-human PM capabilities that become possible when the two work together.
+---
+
+<span className="cajon-overline">Harmonic Methods</span>
+
+# Partnering with AI Agents
+
+<p className="cajon-page-lead">The question most teams are asking about AI is how fast it can go. The more important question is how to ensure it goes in the right direction — and what becomes possible when it does.</p>
+
+## The context problem at AI speeds
+
+Context has always degraded across handoffs. As work moves from conversation to document to ticket to code review and back again, the reasoning behind decisions gets lost. Teams rebuilt it continuously — from documentation, from memory, from institutional knowledge that lived in a few people's heads. The waste was real but slow enough to absorb.
+
+AI changes the math. An agent executing without context doesn't work slowly in the wrong direction — it works fast. The faster the execution, the more expensive the missing context becomes. Every team that has tried to accelerate delivery with AI eventually discovers this: speed is easy. Direction is hard.
+
+The answer is not to slow down. It is to structure context so agents can reason about it rather than guess at it. This is the core discipline of building with <a href="/docs/ai-coding-agents">AI coding agents</a> — where agents handle execution and the delivery method's job is to supply intent they can act on.
+
+---
+
+## What structured context actually enables
+
+There is a meaningful difference between context that agents can *read* and context that agents can *reason about systematically*.
+
+Documents and tickets give agents words. An agent reading an epic or a Jira ticket can summarize it, reference it, and act on explicit instructions. But it cannot reason about how that item relates to fifty others, whether it overlaps with existing capabilities, or whether it conflicts with a decision made six months ago.
+
+[Beats](/docs/composition/beats), [Notes](/docs/composition/notes), and a [Coda](/docs/composition/coda) give agents concepts. When capabilities are defined as Beats — durable, outcome-oriented, non-overlapping — and decisions are captured as Notes with explicit types and anchored reasoning, and the destination is stated as a Coda, agents have something they can reason against. Not just read.
+
+This distinction is the foundation of everything that follows.
+
+---
+
+## What the partnership looks like in practice
+
+Partnering with agents in this model is not "give the agent a task and check the output." It is a structured division of work built on each party's actual strengths.
+
+<div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(2, 1fr)'}}>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">People bring</div>
+    <p>Intent. Judgment. Domain knowledge. The ability to decide what the system should become and why — the <a href="/docs/composition/coda">Coda</a>. The authority to make tradeoffs that require context beyond the corpus.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Agents bring</div>
+    <p>Breadth. Consistency. The ability to hold the entire corpus simultaneously and reason across all of it at once — something no individual human can do at scale.</p>
+  </div>
+</div>
+
+The loop looks like this: people define the destination and identify initial capabilities as Beats. Agents evaluate them for quality, surface overlap, and map interactions across the full corpus. People review findings and make judgment calls. Agents execute Revisions against well-defined [Beat Versions](/docs/composition/key-concepts#beat-versions). Each Revision adds to the corpus; each addition makes future agent reasoning more accurate.
+
+Neither is doing the other's job. The corpus grows richer over time, and the partnership gets stronger as it does.
+
+---
+
+## How the discipline gets absorbed
+
+The most common objection to methodology formalism — Notes to file, quality gates to pass, Revision IDs to track — is that it costs human time to maintain. In Scrum, ceremonies are forcing functions: the standup happens daily whether the team wants it or not. Someone is accountable for the backlog because the framework names them. The discipline is enforced by the process.
+
+Harmonic Composition works differently. The discipline overhead is absorbed by the agent, not the team.
+
+**The accountability check fires before any code is touched.** A hook runs at the start of every agent turn. Before the agent writes a line or edits a file, it checks that an active Revision exists for the work. No Revision, no code. The gate is automatic — it requires nothing from the human other than the judgment call that preceded it.
+
+**Notes get filed by the agent, not because a human remembered.** When a decision is made, a constraint surfaces, or context matters to future reasoning, the agent files the Note as part of the turn. The corpus grows with every session because accumulating context is part of what the agent does — not an optional documentation step layered on top of the work.
+
+**Quality gate evaluation takes seconds, not meetings.** Six quality dimensions per Beat, six plan quality dimensions per Beat Version — this resembles a human review committee on paper. In practice, an LLM evaluates all six dimensions in under a minute and returns a scorecard with specific remediation steps. What would cost a team a planning ceremony costs an agent a single tool call.
+
+The result is a methodology that is more rigorous than most backlog-driven processes but less demanding on human time. The formalism that makes Harmonic Composition effective is largely invisible to the team because the agent handles it. Humans provide the judgment that no agent can supply — the Coda, the tradeoffs, the domain authority. Agents handle the mechanical compliance that no human team maintains consistently.
+
+<div className="cajon-callout">
+  The discipline overhead that kills most context-preservation systems is solved by architecture, not willpower.
+</div>
+
+---
+
+## Super-human product management
+
+This is where the capability becomes genuinely new.
+
+A human PM working with a product corpus can hold roughly twenty or thirty capabilities in working memory at once. They develop intuitions about the system over time, but those intuitions are personal, opaque, and leave when they do. At a certain scale — fifty Beats, a hundred, more — the system becomes too large for any individual to reason about with precision.
+
+An agent working with a well-structured Harmonic corpus holds all of it simultaneously.
+
+When a new capability is proposed, an agent with access to the full Beat set can:
+
+<ul className="cajon-steps-list" aria-label="Agent capabilities for new feature placement" style={{marginTop: '16px'}}>
+  <li className="cajon-step-item">
+    <span className="cajon-step-num" aria-hidden="true">1</span>
+    <div className="cajon-step-body">
+      <strong>Check for overlap across the entire corpus</strong>
+      <p>Not just semantic similarity, but whether the proposed capability represents the same outcome as an existing <a href="/docs/composition/beats">Beat</a> when described at the level a stakeholder would discuss it. Flag merges, scope adjustments, or redundancies before any planning work begins.</p>
+    </div>
+  </li>
+  <li className="cajon-step-item">
+    <span className="cajon-step-num" aria-hidden="true">2</span>
+    <div className="cajon-step-body">
+      <strong>Map interactions with existing Beats</strong>
+      <p>Identify which capabilities the new feature depends on, modifies, extends, or constrains. Surface those relationships explicitly so they can be planned for — not discovered during implementation.</p>
+    </div>
+  </li>
+  <li className="cajon-step-item">
+    <span className="cajon-step-num" aria-hidden="true">3</span>
+    <div className="cajon-step-body">
+      <strong>Propagate relevant Notes</strong>
+      <p>Find <a href="/docs/composition/notes">Notes</a> across the corpus that apply: constraints that limit what is possible, decisions that set relevant precedent, context that shapes how this capability fits into the system. Bring them forward without requiring anyone to remember they exist.</p>
+    </div>
+  </li>
+  <li className="cajon-step-item">
+    <span className="cajon-step-num" aria-hidden="true">4</span>
+    <div className="cajon-step-body">
+      <strong>Place the capability precisely</strong>
+      <p>Propose whether the new feature belongs as a <a href="/docs/composition/beat-versions">Beat Version</a> under an existing Beat, a refinement of one that already exists, or a new Beat with its own arc — and explain the reasoning. Evaluate whether the proposed scope is right-sized, or too thin or broad for a single capability.</p>
+    </div>
+  </li>
+</ul>
+
+<div className="cajon-callout">
+  This is not faster product management. It is product management at a fidelity that individual humans cannot achieve at scale — because no person has the working memory to hold fifty Beats and reason precisely about where something new fits without any gaps or overlap.
+</div>
+
+---
+
+## The precondition
+
+All of this depends on the corpus being structured in a way agents can reason about. The capability above does not exist when work is tracked in epics, stories, and Jira tickets — because those primitives were designed to manage scope, not to represent a system's capability space in a form that supports systematic reasoning.
+
+Epics give agents words. [Beats](/docs/composition/beats) give agents concepts.
+
+[Notes](/docs/composition/notes) give agents the reasoning behind decisions, not just the decisions themselves. A constraint Note does not just record that something is off-limits — it records why, so agents can determine whether that constraint still applies in a new context.
+
+A [Coda](/docs/composition/coda) gives every evaluation a reference point. Overlap, interaction, fit — all of these are relative to where the system is headed. Without a stated destination, no agent can assess whether a proposed capability actually belongs.
+
+Harmonic Methods is the structure that makes the partnership possible. The Beats define the capability space. The Notes preserve the reasoning. The Coda gives every evaluation a reference point. Together, they give agents something worth working with — and something that grows more valuable with every Revision that ships.
+
+<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
+  <a className="cajon-learn-more" href="/docs/about">← About Harmonic Methods</a>
+  <a className="cajon-learn-more" href="/docs/composition">Explore Harmonic Composition →</a>
+</div>

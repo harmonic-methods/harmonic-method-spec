@@ -1,0 +1,31 @@
+{
+  "title": "Harmonic Methods",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "---Getting started---",
+    "...getting-started",
+    "---The Harmonic Method---",
+    "...method",
+    "---Implementation---",
+    "...implementation",
+    "---Reference---",
+    "glossary",
+    "faq",
+    "about",
+    "---Further reading---",
+    "composition",
+    "orchestration",
+    "portfolio",
+    "ai-coding-agents",
+    "ai-native-software-delivery",
+    "ai-agent-orchestration",
+    "partnering-with-agents",
+    "software-development-methodology",
+    "spec-driven-development",
+    "context-engineering",
+    "vibe-coding",
+    "comparisons"
+  ]
+}

@@ -1,0 +1,18 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-167
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.9
+  supersedes: [HM-N-166]
+  content: >
+    Use the supplied navigation and article design with a shorter docs
+    introduction that points to Getting started. Keep the starter kit
+    sample review available and put the four guides for Notes, Codas,
+    Beats, and Coda checks under Getting started. Move Beat Version
+    planning and Revision delivery to Implementation.
+  rationale: >
+    Readers can build up a single example one step at a time, including
+    while the preview kit is unavailable to them. Keeping delivery in its
+    own section lets readers first work out what the capability should
+    achieve and how to assess its Coda.

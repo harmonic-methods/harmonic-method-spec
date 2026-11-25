@@ -1,0 +1,21 @@
+note:
+  id: HM-N-158
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.7
+  supersedes: [HM-N-157]
+  content: >
+    The website and documentation share the standalone application in site/.
+    Both sources are included for eventual public contribution. The homepage,
+    documentation, search, assets and Markdown exports can run from this
+    repository using public dependencies. Optional service credentials remain
+    outside the repository. Source inclusion does not deploy the site or change
+    repository visibility.
+  rationale: >
+    The owner has chosen to include the website source alongside the docs.
+    The confidentiality boundary that required separate applications no longer
+    applies, and keeping a shared renderer avoids duplicate navigation, styling
+    and cross-deployment routing. Application code and styles use the existing
+    tooling license, prose uses the content license, and trademark rights remain
+    reserved. Unfinished homepage sections remain gated even though their source
+    is available. Private monorepo libraries and history are not imported.

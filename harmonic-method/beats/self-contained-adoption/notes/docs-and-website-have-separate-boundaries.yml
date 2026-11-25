@@ -1,0 +1,17 @@
+note:
+  id: HM-N-157
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.7
+  content: >
+    The documentation application lives in docs/ with its own package and lockfile,
+    using public dependencies and a local stylesheet. The marketing website stays
+    outside this repository. Extraction prepares an independently runnable app;
+    production routing and repository publication are subsequent operations.
+  rationale: >
+    Repository visibility applies to the whole repository, so private website
+    source cannot share the documentation's eventual public repository. Keeping
+    the renderer next to the specification makes contribution possible without
+    access to private packages. An independent package preserves the checker's
+    lightweight install and publication boundary. Namespaced assets and search
+    allow a later shared-origin deployment while retaining existing document URLs.

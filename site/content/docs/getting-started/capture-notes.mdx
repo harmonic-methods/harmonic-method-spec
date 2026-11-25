@@ -1,0 +1,52 @@
+---
+title: Capture Notes
+description: Record the facts, boundaries, and decisions that shape the work.
+---
+
+Start with a short meeting recap. In this worked example, a team wants to reduce delays in approving client estimates.
+
+## Worked example with an LLM
+
+Open a new chat in the [AI tool you set up](/docs/getting-started#llm-setup) and paste this prompt. It includes a fictional recap you can use before trying your own material.
+
+```text
+Draft Harmonic Method Notes from the meeting recap below.
+Write one Note per item and quote the phrase that supports each Note.
+
+Use Background for facts or assumptions, Constraint for a boundary
+that must be respected, Guidance for advice, and Decision for a
+choice that was made. For each Decision, include the reason given.
+If the reason is missing, flag it for me to confirm.
+
+List suggestions and unanswered questions separately. Mark assumptions
+as unconfirmed. Use only the recap and leave the source as it is.
+
+Meeting recap
+In a review of recent estimates, account leads had to ask for approval
+status in chat. Only the designated approver may approve an estimate.
+We recommend using the same status names in the estimate record and in
+messages to account leads. We agreed to start with one team so we can
+see where approval stalls before expanding. Someone suggested automatic
+reminders. We left that idea open.
+```
+
+### What a draft could look like
+
+| Type | Note |
+| --- | --- |
+| Background | In a review of recent estimates, account leads had to ask for approval status in chat. |
+| Constraint | Only the designated approver may approve an estimate. |
+| Guidance | Use the same status names in the estimate record and in messages to account leads. |
+| Decision | Start with one team so we can see where the approval process stalls before expanding. |
+
+Automatic reminders would appear as an open suggestion. For the Decision, check that the draft points to “We agreed to start with one team” and captures the stated reason.
+
+## Review and save the Notes
+
+1. Compare each draft Note with the recap. Confirm constraints and decisions with the people who own them. Keep unconfirmed assumptions visible.
+2. Keep each confirmed Note with the work it informs. Start with the System for context that affects the whole initiative. Attach narrower Notes to the relevant Beat once it exists.
+3. Keep a reference to the recap where readers can access it. If a shared Note changes in substance later, record a new Note that supersedes it so readers can trace the change.
+
+To try your own material, replace the sample recap with a permitted excerpt or attach an approved file and ask the tool to use it as the recap. You can also write Notes by hand using the same four types and review steps.
+
+Next, [define a Coda](/docs/getting-started/define-a-coda) using the Notes you just captured. See the [Note reference](/docs/method/primitives#note) for the formal definition.

@@ -1,0 +1,91 @@
+---
+title: AI Coding Agents
+description: 'AI coding agents made execution cheap — but speed without direction just builds the wrong thing faster. Harmonic Methods is the delivery method built for AI coding agents — an explicit destination, durable capabilities, and preserved context agents can reason about.'
+---
+
+<span className="cajon-overline">Harmonic Methods</span>
+
+# A Delivery Method Built for AI Coding Agents
+
+<p className="cajon-page-lead">To manage AI coding agents at scale, give them three things their speed cannot supply on its own: an explicit destination, durable capability definitions, and preserved context they can reason about. Harmonic Methods is the delivery method built to provide exactly that — so agents build the right thing, not just the next thing quickly.</p>
+
+<div className="cajon-def-box">
+  <div className="cajon-def-box__label">What AI coding agents need from a delivery method</div>
+  <p><strong>AI coding agents</strong> can write, test, and revise production code faster than any human team — which moves the bottleneck upstream from execution to intent. A delivery method for agents must therefore supply a clear destination, capabilities defined as durable outcomes rather than disposable tickets, and the reasoning behind past decisions in a structured, machine-readable form. This is the foundation of <strong>AI-native software delivery</strong>.</p>
+</div>
+
+## What are AI coding agents?
+
+AI coding agents are autonomous or semi-autonomous systems that carry out software implementation — reading a codebase, writing and editing code, running tests, and opening changes for review — with limited step-by-step human direction. Modern coding agents operate across whole repositories and can hold far more of a system in working context than a person can.
+
+Their strength is also their risk. An agent given an ambiguous instruction does not slow down and ask; it proceeds, fast, in whatever direction the gaps in its context happen to point. The faster coding agents execute, the more expensive missing or contradictory context becomes.
+
+## Why AI coding agents need a different delivery method
+
+The traditional software development lifecycle was designed around the assumption that humans write the code. Its planning artifacts — epics, user stories, tickets — divide work into human-sized pieces and track their completion. They give an agent words to act on, but not a structured representation of the system it can reason across.
+
+An agent reading a Jira ticket cannot reliably tell whether the work overlaps an existing capability, conflicts with a decision made six months ago, or depends on something elsewhere in the system. Those judgments require a model of the whole — which ticket-based planning was never built to provide. Managing AI coding agents at scale means replacing that gap with structure.
+
+## What AI coding agents need: destination, durable capabilities, preserved context
+
+<div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">An explicit destination</div>
+    <p>A stated end-state every decision can be checked against, so an agent can assess whether proposed work actually belongs. In Harmonic Methods this is the <a href="/docs/composition/coda">Coda</a>.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Durable capabilities</div>
+    <p>Outcome-oriented capabilities that persist and evolve — <a href="/docs/composition/beats">Beats</a> — rather than tickets that close and lose their context, so agents reason about what the system does, not just what a ticket says.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Preserved context</div>
+    <p>Decisions, constraints, and assumptions captured as <a href="/docs/composition/notes">Notes</a> — explicit, versioned, discoverable context that survives handoffs and lets an agent tell whether a past constraint still applies.</p>
+  </div>
+</div>
+
+## How Harmonic Methods supports AI coding agents
+
+[Harmonic Composition](/docs/composition) is the methodology for running AI-native software delivery within a single system. Its primitives map directly onto what coding agents need:
+
+- **[Beats](/docs/composition/beats)** define the capability space — durable, outcome-oriented, non-overlapping — so agents can reason about the system, not just parse a ticket.
+- **[Notes](/docs/composition/notes)** preserve the reasoning behind decisions, the discipline often called *context engineering* — so an agent can determine whether a past constraint still applies in a new situation.
+- **The [Coda](/docs/composition/coda)** gives every evaluation a reference point: overlap, fit, and alignment are all judged relative to where the system is headed.
+- **[Quality gates](/docs/composition/quality-gates)** let an agent evaluate definitions and plans in seconds, replacing the review ceremonies human teams struggle to maintain.
+
+Crucially, the discipline this requires is absorbed by the agent, not the team. An accountability check fires before any code is written; Notes are filed as part of the agent's turn; quality evaluation is a tool call rather than a meeting. The result is a delivery method more rigorous than most backlog-driven processes, yet less demanding of human time. See [Partnering with AI Agents](/docs/partnering-with-agents) for how that division of labor works in practice.
+
+<div className="cajon-callout">
+  Managing AI coding agents is not faster ticket-pushing. It is a different operating model — one where the scarce resource is structured intent, and the delivery method's job is to produce it.
+</div>
+
+## Frequently asked questions about AI coding agents
+
+export const aiCodingAgentsFaqs = [
+  {
+    question: 'How do you manage AI coding agents at scale?',
+    answer:
+      'Give AI coding agents the context their speed cannot supply: a Coda (an explicit destination every decision is checked against), Beats (durable, outcome-oriented capability definitions instead of disposable tickets), and Notes (versioned, structured reasoning behind past decisions). With that structure, agents can reason about whether proposed work overlaps, conflicts, or depends on something else in the system — so they build the right thing rather than just building quickly. Harmonic Methods supplies these primitives and absorbs the discipline overhead into the agent rather than the team.',
+  },
+  {
+    question: 'What do AI coding agents need from a delivery method?',
+    answer:
+      'AI coding agents need an explicit destination, durable capability definitions, and preserved context they can reason about. Epics, stories, and tickets give an agent words but not a structured representation of the system, so the agent cannot reliably judge overlap, conflict, or dependency. A delivery method built for coding agents replaces that gap with durable capabilities (Beats), an explicit destination (Coda), and machine-readable reasoning (Notes).',
+  },
+  {
+    question: 'What is AI-native software delivery?',
+    answer:
+      'AI-native software delivery is an approach to building software where AI coding agents handle most execution against an explicit, structured representation of intent, while people own the destination, tradeoffs, and review. Because execution is no longer the bottleneck, the delivery method optimizes for clarity of intent and preserved context rather than for dividing work into human-sized tickets. Harmonic Methods is the methodology for it.',
+  },
+  {
+    question: 'How do you preserve context for AI coding agents?',
+    answer:
+      'Preserve context as explicit, versioned, discoverable Notes rather than leaving it in chat logs, documents, or people’s heads. In Harmonic Methods every Note has a type — Context, Constraint, Guidance, Decision, or Document — and records not just what was decided but why, so an agent can determine whether a past decision still applies in a new situation. This is the discipline of context engineering applied to a team working alongside coding agents.',
+  },
+];
+
+<FaqSection entries={aiCodingAgentsFaqs} label="AI coding agents questions" />
+
+<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
+  <a className="cajon-learn-more" href="/docs/partnering-with-agents">Partnering with AI Agents →</a>
+  <a className="cajon-learn-more" href="/docs/composition">Explore Harmonic Composition →</a>
+</div>

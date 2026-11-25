@@ -1,0 +1,78 @@
+---
+title: Beat Versions & Revisions
+description: The planning and delivery increments that advance a Beat toward its goal — how capability evolves without losing continuity.
+---
+
+<span className="cajon-overline">Key Concepts</span>
+
+# Beat Versions &amp; Revisions
+
+<p className="cajon-page-lead">Beat Versions plan the work; Revisions deliver it. Together they form the execution layer of Harmonic Composition — the mechanism by which a durable capability evolves incrementally without losing continuity or context.</p>
+
+<div className="cajon-def-box">
+  <div className="cajon-def-box__label">Definition</div>
+  <p>A <strong>Beat Version</strong> is the planning increment of a Beat — a planned slice of its capability, carrying the description, scope, and acceptance criteria for a unit of work. Each Beat Version is delivered through one or more <strong>Revisions</strong>, which are the PR-level execution units.</p>
+</div>
+
+A [Capability Beat](/docs/composition/beats), or Beat, is the lasting capability. Beat Versions are successive planned increments that advance it; Revisions deliver those increments. The Beat keeps its identity across versions, and each improvement must remain coherent with the capabilities around it. Beat Versions can progress at different paces; the word Beat does not set a delivery interval.
+
+## The chain
+
+Every capability delivery follows the same chain:
+
+<div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Beat</div>
+    <p>Defines the durable capability. Persists across the life of the system. Written in outcome-first language at the level a stakeholder would discuss it.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Beat Version</div>
+    <p>Defines a planned increment of the capability. Carries the description, scope, acceptance criteria, and rationale. The plan, not the work.</p>
+  </div>
+  <div className="cajon-quality-item">
+    <div className="cajon-quality-item__name">Revision</div>
+    <p>Delivers the Beat Version. One pull request. Inherits context from the parent Beat Version so the plan doesn't get duplicated across PRs.</p>
+  </div>
+</div>
+
+This separation keeps the long-lived definition of the capability distinct from the near-term planning of its delivery and the delivery itself.
+
+## What Beat Versions carry
+
+A Beat Version is the plan. It answers "what are we trying to accomplish?" with:
+
+- **Description** — the full narrative of what this increment delivers and why
+- **Scope** — what is and is not included, with explicit boundaries
+- **Acceptance criteria** — the binary-testable conditions that define completion
+- **Change summary** — why this increment now, and what it advances
+
+Beat Version quality is judged by `beat_version_quality` — a check across six dimensions (Scoped, Directional, Testable, Traceable, Assignable, Risk-aware). Whether a passing check is required before the first Revision is a gate a tool may choose to enforce; the method publishes the rubric, not the gate.
+
+## What Revisions carry
+
+A Revision is the delivery. It has almost no planning content of its own — it inherits meaning from the parent Beat Version so the plan doesn't get duplicated across PRs. Its status is `active`, `delivered` or `withdrawn` — whether the work shipped or was set down. Where it sits in a pull request pipeline (`draft`, `open`, `merged`) is tracked separately by the tool hosting the change, not by the method.
+
+<div className="cajon-callout">One Beat Version owns the why and what; one or more Revisions own the how and when.</div>
+
+## Continuity over pivoting
+
+A key function of Revisions is to preserve continuity. When understanding changes — and it always does — the instinct is often to discard what exists and start fresh. Revisions offer a different path: acknowledge the change, refine the direction, and advance from where the system actually is.
+
+A well-sequenced series of Revisions tells the story of how a capability developed — not just where it ended up. That story is part of the corpus that future team members and agents use to understand the system.
+
+## How Beat Versions relate to the Beat arc
+
+A Beat moves through three states: `composing` → `composed` → `live`. Beat Versions are how that movement happens. Once a Beat is `composed` (quality-gated), Beat Versions are created to plan specific increments. Revisions deliver each increment. As Revisions ship and the capability matures, the Beat moves toward `live`.
+
+See the [Beat arc](/docs/composition/beat-arc) for the full per-Beat lifecycle.
+
+## Orphan Revisions
+
+Hotfixes and small operational fixes — bug fixes, dependency bumps, config tweaks — skip the Beat Version entirely. An orphan Revision carries its own description since there is no Beat Version context to inherit, and no quality-check guards apply.
+
+Orphan Revisions are only valid when the change is operational rather than a new capability, and there are no acceptance criteria worth grading.
+
+<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
+  <a className="cajon-learn-more" href="/docs/composition/beats">← Beats</a>
+  <a className="cajon-learn-more" href="/docs/composition/beat-arc">See the Beat arc →</a>
+</div>
