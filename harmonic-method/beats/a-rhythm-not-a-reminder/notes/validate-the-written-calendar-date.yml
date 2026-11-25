@@ -1,0 +1,14 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-161
+  type: decision
+  attached_to: HM-B-010
+  beat_version: HM-BV-010.2
+  content: >
+    Validate the written calendar date independently of the time and
+    offset before using a Bar boundary as an instant.
+  rationale: >
+    The runtime can parse an impossible date by advancing it into the
+    next month. Compare only the written calendar portion against its
+    midnight representation so normalization is detected without
+    rejecting a legitimate instant whose offset crosses a UTC day.
