@@ -1,9 +1,9 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-157
+  id: HM-N-169
   type: decision
   attached_to: HM-B-004
-  beat_version: HM-BV-004.7
+  beat_version: HM-BV-004.10
   content: >
     Generate a standalone document review and a folder kit from the source
     tree. Keep the skills and specs at their original paths in the folder.

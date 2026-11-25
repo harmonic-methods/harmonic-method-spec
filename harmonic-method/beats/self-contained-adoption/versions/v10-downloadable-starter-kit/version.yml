@@ -1,6 +1,6 @@
 # Beat Version — conformant to specs/beat-version.yml
 beat_version:
-  id: HM-BV-004.7
+  id: HM-BV-004.10
   beat: HM-B-004
   title: Try the method with a document or folder
   status: active
