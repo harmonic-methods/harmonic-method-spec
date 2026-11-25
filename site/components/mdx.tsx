@@ -5,6 +5,7 @@ import { ArticleMeta } from './article-meta';
 import { FaqSection } from './faq-section';
 import { JsonLd } from './json-ld';
 import { MermaidDiagram } from './mermaid-diagram';
+import { StarterKitDownload } from './starter-kit-download';
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
@@ -13,6 +14,7 @@ export function getMDXComponents(components?: MDXComponents) {
     FaqSection,
     JsonLd,
     MermaidDiagram,
+    StarterKitDownload,
     ...components,
   } satisfies MDXComponents;
 }

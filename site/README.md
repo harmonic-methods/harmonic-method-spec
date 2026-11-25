@@ -58,6 +58,9 @@ Copy `.env.example` to `.env.local` only if configuring these integrations:
   subscription endpoint; the form stays hidden without it even if its flag is on.
 - The specification link retains its separate release flag until the repository
   is publicly reachable. Source inclusion does not change repository visibility.
+- Set `STARTER_KIT_DOWNLOAD_URL` to the verified HTTPS ZIP URL from the
+  **Publish starter kit** workflow and rebuild the site to show the download
+  link. Leave it unset until a kit has been published.
 
 Credentials belong in local environment files or the deployment's secret store.
 Only `.env.example`, with empty values, is committed. No subscriber data or
