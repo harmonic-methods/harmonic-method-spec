@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://harmonicmethods.com';
+export const SITE_URL = 'https://www.harmonicmethods.com';
 
 /**
  * Server-rendered JSON-LD <script> block. Emitted into the page markup so

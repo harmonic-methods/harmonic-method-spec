@@ -1,0 +1,29 @@
+beat_version:
+  id: HM-BV-004.35
+  beat: HM-B-004
+  title: Public site identity matches its official address
+  status: active
+  summary: >
+    Readers and crawlers encounter the same www address in canonical metadata,
+    structured data, sitemap, robots and the AI documentation index. The homepage
+    describes functions without the five-functions phrase. HM-N-206 records the
+    owner's requested presentation change.
+
+    Done when home and documentation canonicals use the official www origin,
+    discovery URLs agree, and the rendered homepage contains no five-functions
+    wording. Preserve role cards and their links. Conformance, site typecheck,
+    production build and existing browser checks must pass; verify the deployed
+    metadata and homepage before claiming the public update is complete.
+  scope: >
+    In: canonical origin and its discovery surfaces, verification of the newly merged homepage role wording, updated browser
+    expectations, and marking the merged runtime
+    flag repair and documentation publication delivered. Give the newer
+    documentation records unique identifiers where parallel merges reused
+    existing ones. One maintainer can own this small site correction.
+
+    Out: normative definitions, documentation role taxonomy, domain assignments,
+    protection settings, dependencies and unrelated local edits. Deployment
+    depends on the six-role source change, existing Vercel identity and public
+    domain routing. Director and its definition remain owned by that preceding
+    change. A failure
+    must be reported without weakening protection or altering DNS.

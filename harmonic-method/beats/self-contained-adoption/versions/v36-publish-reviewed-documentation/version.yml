@@ -1,11 +1,11 @@
 beat_version:
-  id: HM-BV-004.34
+  id: HM-BV-004.36
   beat: HM-B-004
   title: Publish the reviewed practical documentation as one coherent adoption path
-  status: active
+  status: delivered
   summary: >
     Reconcile the reviewed local documentation drafts against the latest main
-    branch and prepare a reviewable publication request. HM-N-205 records the
+    branch and prepare a reviewable publication request. HM-N-207 records the
     requested split between canonical role definitions and reader-facing
     publication. This step publishes and verifies the source bundle; it does
     not claim that its earlier drafting work began here.
