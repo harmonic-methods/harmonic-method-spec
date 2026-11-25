@@ -21,8 +21,9 @@ clear, executable unit of work?
 
 ## Inputs
 The Beat Version's title, summary, and Scope; its parent Beat (title, Coda,
-description); sibling Beat Versions; the parent Coda or strategy; and any
-attached Notes (constraints and decisions matter most here).
+description); sibling Beat Versions; the System Coda and relevant ancestors
+or stated strategy; and applicable Notes (constraints and decisions matter
+most here). Say which material context was unavailable or omitted.
 
 The Beat Version's summary and Scope are the canonical source of what gets done.
 Score against them — not against any external task list, work-item breakdown, or
@@ -166,10 +167,15 @@ Dimension order: scoped, directional, testable, traceable, assignable, riskAware
 ## Check rules
 
 - Score each dimension independently with evidence from the Beat Version content.
+- Report one score per published dimension. If a complete set of scores
+  cannot be produced, name the dimensions still unscored and withhold the
+  overall score and verdict.
 - Be specific in rationale — cite exact phrases from the Beat Version's title,
   summary, and Scope.
-- Compare the Beat Version scope against the parent Beat Coda — does the Beat
-  Version carve out a clear subset?
+- Compare the Beat Version scope against the parent Beat Coda. For
+  **Directional**, identify the specific part of that Coda the plan advances.
+  Use the System Coda and any relevant ancestors to explain constraints
+  and dependencies on that step.
 - **The summary describes the increment, not its relationships:** a Beat Version
   summary that enumerates the specific child or pipeline entity instances it
   contains or sits in — its own Revision IDs, sibling Beat Version numbers, or

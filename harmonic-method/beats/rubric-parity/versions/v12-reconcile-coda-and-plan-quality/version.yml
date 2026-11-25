@@ -1,0 +1,35 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-002.12
+  beat: HM-B-002
+  title: Make Coda and plan assessments comparable across context changes
+  status: active
+  summary: |
+    The reference implementation has demonstrated how context changes
+    invalidate an otherwise unchanged assessment, and how a partial
+    dimension set can produce a misleading verdict. Bring those lessons
+    into the Coda and Beat Version rubrics so a local assessment can
+    describe what it used and report the same kind of score.
+
+    Missing optional context should remain visible. The evaluation uses
+    the available evidence and identifies material omissions. When a
+    published dimension cannot be scored, the partial result carries no
+    overall verdict.
+  scope: |
+    In: assessment guidance for sibling outcomes and parent context,
+    complete published dimension sets, and the provenance of recorded
+    scores. Preserve declaration support for divergences stated about
+    rubric rules or scope, alongside validation of dimension identifiers.
+    Record the adoption decision, move the spec set version, and regenerate
+    the affected fingerprints.
+    Out: changes to dimensions, anchors, gates, scoring weights, storage
+    formats, and implementation-specific evidence probes.
+
+    Done when a reader can distinguish shared subject matter from the
+    same promised outcome, tell which Coda a plan serves, and know how
+    missing context and incomplete scores are reported. Verify that
+    changing the assessed plan, applicable Coda, or material Notes
+    invalidates reuse of a prior score as current. Verify fingerprint
+    drift before regeneration. Verify that a declared rubric rule passes
+    and a mistyped dimension identifier still fails. Run repository
+    conformance.

@@ -44,10 +44,10 @@ question the other two altitudes are asked in the same words.
 
 ## Inputs
 The entity's title, Coda, and description. If available: its sibling entities
-(for Distinctive and Harmonious), the parent Coda (for Strategically Aligned),
-and any Notes attached to the entity. If siblings or parent Coda are
-unavailable, score those dimensions from the entity alone and say the context
-was missing.
+(for Distinctive and Harmonious), the immediate parent Coda and relevant
+ancestors (for Strategically Aligned), and applicable Notes. If sibling or
+parent context is unavailable, score from the available evidence and say
+which context was missing. Disclose any material context you had to omit.
 
 ## Scoring scale
 
@@ -127,6 +127,13 @@ For each dimension: score, one-sentence justification, and (for any score below
   become unanswerable, and an unanswerable dimension averaged in as though it
   were answered produces a number that reads as a judgement and is not one.
 - Score each dimension independently with evidence from the entity's content.
+- For **Distinctive**, compare the outcomes promised by sibling entities.
+  Shared subject matter alone is insufficient evidence of duplication. If
+  two siblings promise the same outcome to the people they serve, cite the
+  overlapping promise and identify where a clearer boundary would help.
+- Report one score per published dimension. If a complete set of scores
+  cannot be produced, name the dimensions still unscored and withhold the
+  overall score and verdict.
 - Be specific in rationale — cite exact phrases from the title/description.
 - **Descriptions describe the entity, not its relationships:** a description
   that names the specific child or pipeline entity instances it contains or sits
@@ -141,8 +148,10 @@ For each dimension: score, one-sentence justification, and (for any score below
   description.
 - Suggestions must be actionable — "rewrite the title to lead with the outcome"
   not "improve clarity".
-- If a parent Coda or stated strategy is provided, Strategically Aligned must
-  reference its specific goals.
+- For **Strategically Aligned**, state which goals of the immediate parent
+  the entity serves and cite any applicable constraints or refusals in
+  the Coda chain. Use a stated strategy where it is the only available
+  alignment context and identify that basis for the score.
 - **Terminology (hard requirement):** When suggesting that the entity be broken
   down or that work be planned in stages, name the altitude directly beneath it
   — a Beat decomposes into **Beat Versions**, a System into **Beats**, a
