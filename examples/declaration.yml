@@ -4,7 +4,7 @@
 # its records in a spreadsheet and a folder of documents, which is exactly the
 # case the encoding rule exists to permit.
 declaration:
-  spec_version: 1.14.0
+  spec_version: 1.15.0
   implementation: Estimating Desk
   divergences:
     - spec: revision.yml
@@ -26,6 +26,14 @@ declaration:
       actual: >
         The spreadsheet records whether a plan has a review date, without
         checking whether its acceptance criteria can be verified.
+    - spec: beat-version-quality-check
+      field: check rules — incomplete assessment verdict
+      published: >
+        Report an overall score and verdict only when every published
+        dimension has a score.
+      actual: >
+        The spreadsheet averages whichever dimension scores have been entered,
+        so a plan can appear to pass before its review is complete.
   extensions:
     - kind: child_type
       enum: note.type

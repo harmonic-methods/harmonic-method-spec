@@ -2,6 +2,15 @@
 
 ## v1.4.0 — 2026-08-21 (unreleased)
 
+- **Coda and plan assessments identify what they judged.** Coda checks compare
+  sibling promises and use the immediate parent for alignment. Plan checks
+  explain which part of the Beat Coda the plan advances. Both disclose missing
+  material context and give an overall verdict only after every published
+  dimension is scored. Recorded scores identify the subject and context
+  actually assessed so an edit cannot make a historical score look current.
+  Declarations can identify differences in rubric rules or scope in prose.
+  The spec set moves to 1.15.0. See HM-BV-002.12 and HM-N-165.
+
 - **Bar boundaries reject impossible calendar dates.** The tree checker
   checks the date as written before applying its offset, so it can reject
   dates such as February 30 while accepting valid boundaries that cross a

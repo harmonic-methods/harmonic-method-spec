@@ -1,6 +1,6 @@
 # Harmonic Method spec — Portfolio
 entity: portfolio
-spec_version: 1.14.0
+spec_version: 1.15.0
 summary: >
   A Coda and the containers beneath it. A Portfolio holds Systems, other
   Portfolios, or both, and recurses without limit — which is what lets a tree
