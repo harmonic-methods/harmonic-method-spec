@@ -1,0 +1,17 @@
+note:
+  id: HM-N-177
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.13
+  content: >
+    Prepare publication by correcting imported documentation against the
+    canonical specifications and recording a reproducible release sequence.
+    Keep repository publication, starter-kit release and website cutover as
+    distinct operations. Preserve existing deployment access and domains.
+  rationale: >
+    The owner requested public-release preparation. The repository is still
+    internal, the public starter-kit release does not yet exist, and imported
+    documentation contradicts the canonical Note taxonomy and quality model.
+    Correcting those contradictions is useful before launch; changing audience
+    or traffic before historical surfaces and the final build are reviewed
+    would turn preparation into publication.

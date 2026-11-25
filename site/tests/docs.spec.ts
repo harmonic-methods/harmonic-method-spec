@@ -138,7 +138,7 @@ test('docs remain readable on mobile in dark mode', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('/docs/composition/beat-arc');
   await expect(page.locator('html')).toHaveClass(/dark/);
-  await expect(page.getByRole('heading', { name: 'The three states' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'An illustrative delivery workflow' })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
   await page.goto('/docs/method/roles#promoter');
   await expect(page.locator('#promoter')).toBeVisible();

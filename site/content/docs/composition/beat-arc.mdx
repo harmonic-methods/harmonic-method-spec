@@ -9,14 +9,14 @@ description: How a single Beat progresses from initial identification through qu
 
 <p className="cajon-page-lead">Every Beat has its own lifecycle arc. Understanding that arc is how the method works in practice: not as a project-level phase a team enters and exits, but as a progression that each capability follows independently, at its own pace.</p>
 
-## The three states
+## An illustrative delivery workflow
 
-A Beat moves through three states from first identification to active delivery.
+A Beat's published lifecycle is `open` or `closed`. The labels below describe an illustrative workflow within an open Beat, not additional status values. An implementation may display these labels and choose its own assessment gates. See the [published primitives](/docs/method/primitives#beat) for the entity lifecycle.
 
 <div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">composing</div>
-    <p>The Beat is being defined and refined. Its title and description are being sharpened, <a href="/docs/composition/key-concepts#notes">Notes</a> are being captured, and the Beat is being evaluated against the <a href="/docs/composition/quality-gates">six quality dimensions</a>. A Beat stays in this state until it satisfies all six.</p>
+    <p>The Beat is being defined and refined. Its title and description are being sharpened, <a href="/docs/composition/key-concepts#notes">Notes</a> are being captured, and the Beat is being evaluated against the <a href="/docs/composition/quality-gates">seven quality dimensions</a>. A Beat stays in this state until it satisfies all seven.</p>
   </div>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">composed</div>
@@ -51,7 +51,7 @@ A Beat moves through three states from first identification to active delivery.
     <span className="cajon-step-num" aria-hidden="true">3</span>
     <div className="cajon-step-body">
       <strong>Quality evaluation runs</strong>
-      <p>The Beat is evaluated against the <a href="/docs/composition/quality-gates">six quality dimensions</a>. A Beat that fails a dimension is not discarded — it is revised until it can stand on all six.</p>
+      <p>The Beat is evaluated against the <a href="/docs/composition/quality-gates">seven quality dimensions</a>. A Beat that fails a dimension is not discarded — it is revised until it can stand on all seven.</p>
     </div>
   </li>
   <li className="cajon-step-item">
@@ -91,8 +91,8 @@ When Harmonic Composition is introduced to a project that is already in flight, 
 
 - Create Beats for capabilities that exist but are not yet documented in the system. Focus on outcome-oriented names — what the system does for its users, not what was built.
 - Capture [Notes](/docs/composition/key-concepts#notes) for decisions already made: constraints that shaped the work, choices that were taken, context that future contributors will need. These Notes do not need to reconstruct every historical detail — they need to capture what matters going forward.
-- Run quality evaluation against each Beat and refine until it passes the six dimensions. A baselined Beat earns <code>composed</code> status the same way a new Beat does.
-- Create [Beat Versions](/docs/composition/key-concepts#beat-versions) that document increments already delivered, so the record reflects what has actually shipped.
+- Run quality evaluation against each Beat and refine until it passes the seven dimensions. A baselined Beat earns <code>composed</code> status the same way a new Beat does.
+- Take a [Downbeat](/docs/method/cadence) to anchor the capability as it stands. Create [Beat Versions](/docs/composition/key-concepts#beat-versions) for future planned increments; do not create retrospective plans to stand in for delivered history.
 
 **Where a baselined Beat enters the arc** depends on its current state. A capability that has already shipped enters at <code>live</code>. One that exists but has never had a Revision shipped enters at <code>composed</code> once its first Beat Version is planned. One that is only partially defined may still be in <code>composing</code>. The arc applies going forward — baselining is not a requirement to reconstruct the full history of every past decision.
 
