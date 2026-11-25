@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
-import { normativeSkills } from './rubric-fingerprint.mjs';
+import { instrumentIdentifiers, normativeSkills } from './rubric-fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SEMVER = /^\d+\.\d+\.\d+$/;
@@ -95,7 +95,8 @@ export function checkDeclaration(path) {
     // of what binds — and the half it cannot state was reported as malformed
     // rather than as unsupported, which reads as the declaration's fault. Both
     // sides read their directory rather than a list written here; see HM-N-095.
-    const targets = new Set([...specFiles(), ...normativeSkills()]);
+    const instruments = new Map(normativeSkills().map((skill) => [skill, instrumentIdentifiers(skill)]));
+    const targets = new Set([...specFiles(), ...instruments.keys()]);
     d.divergences.forEach((v, i) => {
       const at = `divergences[${i}]`;
       for (const k of DIVERGENCE_KEYS) {
@@ -103,6 +104,10 @@ export function checkDeclaration(path) {
       }
       if (v?.spec !== undefined && !targets.has(String(v.spec))) {
         fail(`${at}: spec '${v.spec}' is neither a file in specs/ nor an instrument in skills/`);
+      }
+      const identifiers = instruments.get(String(v?.spec));
+      if (identifiers?.length && v?.field !== undefined && !identifiers.includes(v.field)) {
+        fail(`${at}: field '${v.field}' is not an identifier published by instrument '${v.spec}'`);
       }
     });
   }

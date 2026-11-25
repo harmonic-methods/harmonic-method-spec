@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-006.9
   beat: HM-B-006
   title: A divergence the form could not state
-  status: active
+  status: delivered
   summary: >
     The declaration checker accepted a divergence only where its `spec` named a
     file in `specs/`. Half of what binds cannot be named that way.

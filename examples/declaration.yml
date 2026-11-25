@@ -18,6 +18,14 @@ declaration:
         Owed. A third value is being added; until it exists this is a
         contradiction and is declared as one rather than described as a
         simplification.
+    - spec: beat-version-quality-check
+      field: testable
+      published: >
+        Score whether a plan states acceptance criteria that can be verified
+        without ambiguity.
+      actual: >
+        The spreadsheet records whether a plan has a review date, without
+        checking whether its acceptance criteria can be verified.
   extensions:
     - kind: child_type
       enum: note.type
