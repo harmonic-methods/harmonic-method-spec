@@ -100,6 +100,9 @@ test('read docs and follow a documentation link with working assets', async ({ p
     if (response.url().includes('/_next/') && !response.ok()) failures.push(response.url());
   });
   await page.goto('/docs');
+  const specification = page.getByRole('link', { name: 'Specification on GitHub', exact: true }).filter({ visible: true }).first();
+  await expect(specification).toBeVisible();
+  await expect(specification).toHaveAttribute('href', 'https://github.com/harmonic-methods/harmonic-method-spec');
   await expect(page.getByRole('heading', { name: 'The Harmonic Method', exact: true })).toBeVisible();
   await page.screenshot({ path: test.info().outputPath('docs-desktop.png'), fullPage: true });
   await page.locator('article').getByRole('link', { name: 'Getting started', exact: true }).click();

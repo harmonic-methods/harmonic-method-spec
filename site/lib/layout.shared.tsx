@@ -1,9 +1,13 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
 import { BrandMark } from '@/components/brand-mark';
+import { SPEC_REPOSITORY_URL } from '@/lib/links';
 
 export function baseOptions(): BaseLayoutProps {
   return {
+    links: [
+      { text: 'Specification on GitHub', url: SPEC_REPOSITORY_URL, external: true },
+    ],
     nav: {
       title: (
         <span className="hm-docs-brand">

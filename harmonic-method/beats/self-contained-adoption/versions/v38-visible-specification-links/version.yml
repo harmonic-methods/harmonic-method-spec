@@ -1,0 +1,25 @@
+beat_version:
+  id: HM-BV-004.38
+  beat: HM-B-004
+  title: Readers can reach the specification from site navigation
+  status: active
+  summary: >
+    Make the public specification repository directly discoverable from the
+    homepage navigation and footer and from documentation navigation. HM-N-209
+    records the requested public-source entry points.
+
+    Done when a reader can find a labeled specification link on desktop and
+    mobile home navigation and in the documentation layout, all pointing to
+    the public specification repository. Existing documentation and starter-kit
+    links must continue to work. Conformance, typecheck, production build and
+    browser checks must pass; verify the deployed links before completion.
+  scope: >
+    In: shared repository destination, labeled public-source navigation links,
+    reuse by the existing specification card, focused browser assertions, and
+    marking the merged canonical-address step delivered. One maintainer owns
+    this small navigation change end to end.
+
+    Out: normative definitions, new sections, dependency upgrades, release assets,
+    access controls and domain assignments. The repository is already public;
+    navigation must not depend on optional homepage section flags. Preserve the
+    mobile menu and documentation navigation behavior.

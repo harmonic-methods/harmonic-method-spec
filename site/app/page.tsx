@@ -1,4 +1,5 @@
 import { evaluate } from 'flags/next';
+import { SPEC_REPOSITORY_URL } from '@/lib/links';
 import { Agents } from '@/components/home/agents';
 import { Altitude } from '@/components/home/altitude';
 import { Blog } from '@/components/home/blog';
@@ -41,6 +42,7 @@ export default async function HomePage() {
   const navLinks: HomeNavLink[] = [
     { label: 'The method', href: '/docs' },
     { label: 'Docs', href: '/docs' },
+    { label: 'Specification on GitHub', href: SPEC_REPOSITORY_URL },
     ...(showTooling ? [{ label: 'Tooling', href: '#agents' }] : []),
     ...(showBlog ? [{ label: 'Blog', href: '#blog' }] : []),
     ...(showVideos ? [{ label: 'Videos', href: '#videos' }] : []),
