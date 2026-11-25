@@ -1,0 +1,19 @@
+# Note — conformant to specs/note.yml
+note:
+  id: HM-N-163
+  type: decision
+  attached_to: HM-B-005
+  beat_version: HM-BV-005.4
+  content: >
+    Revise the Coda to describe the decisions a team can assign and the
+    gaps it can spot. Preserve the previous statement:
+
+    A team reading this repository can name the five accountabilities that
+    determine whether work succeeds, and use them to find the ones their own
+    setup has left unassigned.
+  rationale: >
+    Naming the functions is useful when a team can tell who is accountable
+    for keeping work aligned with purpose and deciding whether it should
+    continue. HM-N-153 gives a concrete example of a distinction people
+    struggled to apply. The Coda now gives the existing functions a
+    practical outcome while leaving staffing decisions with each team.

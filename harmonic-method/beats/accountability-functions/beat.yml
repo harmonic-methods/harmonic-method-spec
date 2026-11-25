@@ -5,17 +5,17 @@ beat:
   status: open
   coda:
     statement: >
-      A team reading this repository can name the five accountabilities that
-      determine whether work succeeds, and use them to find the ones their own
-      setup has left unassigned.
+      A team can identify who answers for what each capability serves, how its
+      work is planned and carried out, whether it still earns what it costs,
+      and how useful practices reach others. Unassigned decisions are visible
+      early enough for the team to act.
     parent: HM-CODA
   description: >
-    The capability by which the method's accountability model is published
-    alongside its entity model: the five functions — Composer, Orchestrator,
-    Conductor, Producer, Promoter — each with what it owns, how it fails, and
-    the discipline it requires. Functions are accountabilities rather than
-    titles, held by people or by agents under a person's accountability, and
-    constant across altitude. They are deliberately not fields on any entity;
-    this Beat publishes the vocabulary, not a staffing record.
+    The five functions give a team a common way to assign decisions about
+    intent, planning, reconciliation, value, and adoption. Each function
+    defines what it owns, how it fails, and what discipline it requires.
+    The same functions apply across altitudes. A person can hold a function
+    directly or answer for an agent holding it. Each team owns its
+    assignments.
   # notes: see ./notes/ — the directory is the list.
   # versions: see ./versions/ — the directory is the list.
