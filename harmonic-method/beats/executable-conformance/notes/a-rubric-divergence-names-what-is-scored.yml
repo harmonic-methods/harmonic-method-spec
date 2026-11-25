@@ -1,6 +1,6 @@
 # Note — conformant to specs/note.yml
 note:
-  id: HM-N-159
+  id: HM-N-171
   type: decision
   attached_to: HM-B-006
   beat_version: HM-BV-006.10
