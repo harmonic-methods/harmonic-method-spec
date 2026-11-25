@@ -1,0 +1,29 @@
+beat_version:
+  id: HM-BV-004.32
+  beat: HM-B-004
+  title: Demonstrate an estimate-status change in a real pull request
+  status: active
+  summary: >
+    Publish an isolated, runnable estimate approval status example with its
+    System Coda, Capability Beat, decision Note and bounded Beat Version.
+    HM-N-202 records the approved teaching example. A newcomer can inspect the
+    actual implementation, tests and pull request rather than infer the workflow.
+
+    Done when the read-only example shows Pending with no recorded decision,
+    Approved or Declined for the designated approver's recorded decision, and
+    never presents an unauthorized or unknown decision as approval. Tests cover
+    those boundaries, method records validate, and an unmerged draft request
+    contains the example and its plan without unrelated workspace edits.
+  scope: >
+    In: a dependency-free fictional example under tutorials/, its method records,
+    tests, local run instructions and CI verification, plus an isolated draft
+    request against the spec repository's main branch. One contributor can
+    deliver this teaching example in one session.
+    Out: real client data, approval mutation, authentication, production deployment,
+    merging, and unrelated documentation edits. Earlier work stays active until
+    its merges are established.
+
+    Risks: a read-only fixture can be mistaken for a production approval system;
+    call out its boundary. Keep tests and recorded decisions explicit. The repo
+    is internal, so later teaching material must include actual source downloads
+    and screenshots instead of requiring readers to access the request.

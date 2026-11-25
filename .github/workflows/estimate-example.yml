@@ -1,0 +1,19 @@
+name: Estimate approval example
+on:
+  pull_request:
+    paths:
+      - 'tutorials/estimate-approval/**'
+      - '.github/workflows/estimate-example.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node --test tutorials/estimate-approval/status.test.mjs
+      - run: node tools/validate.mjs tutorials/estimate-approval/harmonic-method

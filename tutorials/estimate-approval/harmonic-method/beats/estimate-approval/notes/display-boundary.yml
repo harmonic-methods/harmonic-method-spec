@@ -1,0 +1,13 @@
+note:
+  id: DEMO-N-001
+  type: decision
+  attached_to: DEMO-B-001
+  beat_version: DEMO-BV-001.1
+  content: >
+    Show Pending when no decision from the designated approver exists. Show
+    Approved or Declined only for that approver's recorded decision. Missing
+    approver data or an unknown outcome is Unavailable. The example is read-only.
+  rationale: >
+    Displaying another person's decision as approval would mislead the account
+    lead. This increment demonstrates status visibility, not approval entry,
+    authorization, sending, notifications, or a production integration.
