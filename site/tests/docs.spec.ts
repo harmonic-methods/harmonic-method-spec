@@ -104,6 +104,7 @@ test('read docs and follow a documentation link with working assets', async ({ p
   await page.screenshot({ path: test.info().outputPath('docs-desktop.png'), fullPage: true });
   await page.locator('article').getByRole('link', { name: 'Getting started', exact: true }).click();
   await expect(page).toHaveURL(/\/docs\/getting-started$/);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://www.harmonicmethods.com/docs/getting-started');
   await expect(page.locator('#walkthrough')).toBeVisible();
   await expect(page.locator('html')).toHaveClass(/light|dark/);
   expect(failures).toEqual([]);
@@ -122,7 +123,7 @@ test('the merged overview preserves bookmarks and Markdown exports', async ({ pa
   await expect(page).toHaveURL('/docs#challenges-and-benefits');
   await expect(page.locator('#challenges-and-benefits')).toBeInViewport();
   await expect(page.locator('article')).toContainText('More efficient token usage is an intended benefit.');
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://harmonicmethods.com/docs');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://www.harmonicmethods.com/docs');
   const markdown = await request.get('/docs/method/overview.md');
   expect(markdown.headers()['content-type']).toContain('text/markdown');
   expect(await markdown.text()).toContain('Common challenges and intended benefits');
@@ -328,11 +329,11 @@ test('Markdown exports and sitemap retain public document URLs', async ({ reques
     if (path === '/docs/getting-started.md') expect(body).toContain('START_HERE.md');
   }
   const index = await request.get('/llms.txt');
-  expect(await index.text()).toContain('https://harmonicmethods.com/docs/composition/beats.md');
+  expect(await index.text()).toContain('https://www.harmonicmethods.com/docs/composition/beats.md');
   const corpus = await request.get('/llms-full.txt');
   expect(await corpus.text()).toContain('Capability Beat');
   const sitemap = await request.get('/sitemap.xml');
-  expect(await sitemap.text()).toContain('https://harmonicmethods.com/docs/composition/beats');
+  expect(await sitemap.text()).toContain('https://www.harmonicmethods.com/docs/composition/beats');
 });
 
 test('unknown docs and Markdown return 404', async ({ request }) => {

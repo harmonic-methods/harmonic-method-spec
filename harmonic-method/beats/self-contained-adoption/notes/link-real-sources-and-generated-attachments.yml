@@ -1,24 +1,17 @@
 note:
-  id: HM-N-207
+  id: HM-N-208
   type: decision
   attached_to: HM-B-004
-  beat_version: HM-BV-004.36
+  beat_version: HM-BV-004.37
   content: >
     Link tracked method files and named skills to current repository source,
     keep walkthrough examples pinned to the merged source snapshot, and offer
     generated chat attachments as direct Markdown downloads. Preserve literal
     paths in copyable prompts and commands and keep hypothetical adopter output
     names distinct from published files.
-
-    Repair the publication-specific identifier collision by assigning its plan
-    HM-BV-004.35 and its decision HM-N-206, leaving the independent runtime plan
-    and decision unchanged. These are the same publication records, not new work.
-    The earlier merged publication request used the now-ambiguous identifiers;
-    this Note records their disambiguation without changing their meaning.
   rationale: >
     The owner approved linking file references throughout the docs and requested
     a pull request. Some named kit files are generated rather than tracked, so
-    genuine downloads are more useful than nonexistent GitHub URLs. A fresh
-    checkout exposed duplicate identifiers on main that prevent conformance;
-    resolving the pair introduced by the publication preserves both decisions
-    and restores validation before this documentation change is proposed.
+    genuine downloads are more useful than nonexistent GitHub URLs. Concurrent
+    canonical-site and identifier repairs are preserved from main. New planning
+    identifiers remain distinct from those already published records.

@@ -1,10 +1,9 @@
 import type { InferPageType } from 'fumadocs-core/source';
 
+import { SITE_URL } from '@/components/json-ld';
 import { source } from '@/lib/source';
 
 type Page = InferPageType<typeof source>;
-
-const SITE_URL = 'https://harmonicmethods.com';
 
 export const dynamic = 'force-static';
 

@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.34
   beat: HM-B-004
   title: Published source links resolve through deployment flags
-  status: active
+  status: delivered
   summary: >
     Readers of the deployed site can reach the public specification and released
     starter kit. Recognize Vercel deployments when choosing the flag adapter,

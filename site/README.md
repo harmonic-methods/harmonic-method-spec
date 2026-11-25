@@ -102,7 +102,7 @@ service credentials are included in this application.
 Deploy this directory as one Next.js application: project root `site`, install
 `npm ci`, build `npm run build`, output `.next`. The committed workflow runs
 checks and does not deploy. The canonical public origin stays
-`https://harmonicmethods.com`; previews should retain that canonical origin.
+`https://www.harmonicmethods.com`; previews should retain that canonical origin.
 
 The [harmonic-methods-site Vercel project](https://vercel.com/codazen/harmonic-methods-site)
 is linked to this repository under the Codazen team, with `site` as the root and
