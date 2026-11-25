@@ -1,0 +1,14 @@
+note:
+  id: HM-N-171
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.10
+  content: >
+    The website-source and Vercel-preview decisions are assigned HM-N-168 and
+    HM-N-169. The extraction plan's website-source citation follows that rename.
+    Other Notes keep their identifiers, and the decision text is preserved.
+  rationale: >
+    Parallel work allocated the same identifiers to unrelated Notes and the
+    merged tree fails conformance. Distinct identifiers restore unambiguous
+    references without retiring or rewriting the decisions. The old identifiers
+    and the narrow repair remain recoverable in Git history.

@@ -1,0 +1,33 @@
+beat_version:
+  id: HM-BV-004.10
+  beat: HM-B-004
+  title: Site development and deployment use the same Node runtime
+  status: active
+  summary: >
+    Contributors and CI verify the website on the same Node major that Vercel
+    selects for deployments. The owner requested Node 26. The package engine
+    must select that major explicitly rather than permit a newer major silently.
+    HM-N-170 records the runtime decision.
+
+    Done when a clean site install, production build, typecheck and existing
+    browser suite pass on Node 26, CI uses that major, and a Git preview of this
+    change is READY. Confirm the engine selected in Vercel's build logs. Report
+    any dashboard-only setting that remains blocked by authentication rather
+    than claiming it changed. The dashboard connector cannot select this major
+    and the browser is signed out; package engines take precedence for builds.
+  scope: >
+    In: site package engine and lockfile metadata, site CI runtime, development
+    guidance and a local version-manager hint; attempt to align Vercel's saved
+    runtime setting without changing protection or custom domains. Mark the
+    merged extraction and site-navigation steps delivered. Repair the existing
+    duplicate Note identifiers with narrow reference updates so conformance
+    verification can run, preserving the Notes' choices and rationale.
+
+    Out: changing the checker package's supported runtime, dependency upgrades,
+    production domain cutover, repository visibility, or broad editorial work.
+
+    Risks: newer Node behavior can affect server rendering and dependencies;
+    validate the complete site on the target runtime before pushing. The saved
+    dashboard setting may require user sign-in; the explicit package engine
+    still controls deployments. Note identifier repairs must leave unrelated
+    records and citations unchanged, and remain visible in Git history.
