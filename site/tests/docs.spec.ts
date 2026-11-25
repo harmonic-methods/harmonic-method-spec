@@ -45,10 +45,16 @@ test('Getting started includes the sample review and a walkthrough leading to im
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Getting started' }).click();
   await expect(page).toHaveURL(/\/docs\/getting-started$/);
   const article = page.locator('article');
-  await expect(article.getByRole('heading', { level: 2 }).first()).toContainText('Set up your LLM');
+  await expect(article.getByRole('heading', { level: 2 }).first()).toContainText('Try the open spec kit');
+  await article.getByRole('link', { name: 'Set up your LLM', exact: true }).click();
+  await expect(page).toHaveURL('/docs/appendix/llm-setup');
   for (const provider of ['Microsoft', 'Anthropic', 'OpenAI', 'Google']) {
     await expect(article.getByRole('link', { name: `${provider} instructions` })).toBeVisible();
   }
+  await expect(article.getByRole('heading', { name: 'Use a skill without installing anything' })).toBeVisible();
+  await expect(article.getByRole('heading', { name: 'Save a reusable skill or assistant' })).toBeVisible();
+  await page.goBack();
+  await expect(page).toHaveURL('/docs/getting-started');
   await expect(page.locator('#starter-kit')).toContainText('Try the open spec kit');
   await expect(page.locator('article')).toContainText('START_HERE.md');
   await expect(page.locator('article')).toContainText('pending public release');

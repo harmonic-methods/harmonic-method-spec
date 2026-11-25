@@ -1,0 +1,28 @@
+beat_version:
+  id: HM-BV-004.12
+  beat: HM-B-004
+  title: Getting started links to optional setup guidance
+  status: active
+  summary: >
+    A newcomer can begin the sample review or walkthrough without reading
+    provider setup instructions first. Move the LLM setup guidance to an appendix
+    and keep a short reference in Getting started. The appendix gives general
+    chat and attachment guidance without singling out the Capture Notes example
+    or the unexplained cloud-processing statement. Include researched options
+    for reusing method skills in managed workspaces and a chat-only fallback.
+    HM-N-176 records the choice.
+  scope: >
+    In: the appendix page and sidebar entry, a short Getting started link,
+    updating Capture Notes' existing setup link, provider-specific skill and
+    reusable-instruction options with official documentation links, and adapting the existing
+    navigation check. Mark the merged runtime step delivered.
+    Out: provisioning user accounts or skills, enabling restricted workspace
+    features, changing the sample workflow, or changing method specs.
+
+    Done when the site builds, the existing reader journey can open the
+    appendix and return to Getting started, provider links remain in the
+    appendix, reusable options distinguish native skills from assistant instructions
+    and name workspace restrictions, and no internal link points to the removed
+    setup section.
+    Risk: moving a section can strand links; check references to its old anchor
+    and run the existing documentation link and navigation checks.

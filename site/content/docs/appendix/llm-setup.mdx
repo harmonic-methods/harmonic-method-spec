@@ -1,0 +1,48 @@
+---
+title: "Set up your LLM"
+description: "Choose an approved chat tool and reuse Harmonic Method skills in a managed workspace."
+---
+
+## Start with an approved chat tool
+
+Choose one AI chat tool your organization has approved. These options show how to start a chat and add a file from your device.
+
+- **Microsoft 365 Copilot Chat.** Sign in with your Microsoft 365 work account and open Chat. For a local file, choose **Upload images and files** from the attachment menu. [Microsoft instructions](https://support.microsoft.com/en-au/microsoft-365-copilot/add-content-to-microsoft-365-copilot-chat-prompts)
+- **Claude.** Open a new chat in your approved Claude workspace. Use the attachment button to choose a file from your device. [Anthropic instructions](https://support.claude.com/en/articles/8241126-upload-files-to-claude)
+- **ChatGPT.** Switch to your approved ChatGPT workspace and open a new chat. Use the attachment menu to choose a file from your device. [OpenAI instructions](https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt)
+- **Gemini.** Open the Gemini web app with your Google Workspace account. Select **Add files**, then **Upload files**. [Google instructions](https://support.google.com/gemini/answer/14903178)
+
+Use work files or excerpts only where your organization permits them. If the attachment option is unavailable, you can paste a permitted excerpt.
+
+## Use a skill without installing anything
+
+A Harmonic Method skill is a set of written instructions. You can ask an approved chat tool to follow those instructions without installing an extension, connecting another service, or obtaining an API key.
+
+For a first review, use the self-contained `review-a-capability.md` from the [open spec kit](/docs/getting-started#starter-kit). Attach it and the document you want reviewed, then ask the chat to follow the rubric. If permitted attachments are unavailable, paste the instructions and a permitted excerpt instead.
+
+For another skill, provide its `SKILL.md` and any specification files it references. Ask the chat to identify missing references rather than substitute a rubric of its own. A link alone is not enough if the tool cannot open it.
+
+## Save a reusable skill or assistant
+
+Often, employees can save the same workflow inside their existing LLM workspace. Availability depends on the product, license, and permissions your administrator has enabled.
+
+| Approved tool | Reusable option | What may need administrator approval |
+| --- | --- | --- |
+| **ChatGPT** | Where available, open **Plugins → Skills → Create** to create or upload a skill. A **Project** can also keep instructions and reference files together for recurring chats. [Skills guide](https://help.openai.com/en/articles/20001066-skills-in-chatgpt) · [Projects guide](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) | Creating, uploading, using, and sharing skills have separate workspace permissions. Projects and file access also follow workspace settings. |
+| **Claude** | Create or upload a custom skill through **Customize → Skills**. Uploads use a ZIP containing a skill folder. Owners can provision an approved skill for the organization. [Skills guide](https://support.claude.com/en/articles/12512180-use-skills-in-claude) | Native Skills require both Skills and code execution/file creation to be enabled. Creation and sharing can be restricted by policy or role. |
+| **Microsoft 365 Copilot** | If **New agent** is available, use Agent Builder to save instructions and approved knowledge sources for a recurring review. [Agent Builder guide](https://learn.microsoft.com/en-us/plugins/agent-builder-build-agents) | Agent access, knowledge sources, sharing, and available capabilities depend on tenant settings and licensing. |
+| **Gemini for Google Workspace** | Where **Gems** are available, create a Gem with instructions and add the rubric and supporting files as knowledge. [Gems guide](https://support.google.com/gemini/answer/15146780?hl=en) | Feature access and sharing depend on Workspace settings. [Gem sharing controls](https://support.google.com/gemini/answer/16504957?hl=en) |
+
+Copilot agents, Gemini Gems, and project instructions are ways to reuse a workflow; they do not necessarily import a `SKILL.md` package directly. If a feature is disabled, use the approved chat-only approach or ask your administrator for the supported route.
+
+### Create a Harmonic Method reviewer
+
+1. Start with one task, such as reviewing a capability with `skills/coda-quality-check/SKILL.md` from the kit.
+2. Put the workflow instructions in the skill or assistant's instruction field. Add the rubric and its referenced specifications as supporting files, adjusting file references to match that tool's layout. Keep the published dimensions and scoring anchors unchanged.
+3. Tell it when to use the rubric and how to handle missing context. For example:
+
+   > When I ask for a capability review, read and follow the supplied Harmonic Method skill and its referenced specifications. Use its published dimensions, scoring anchors, and output format. Cite evidence from the document. If a required file or context is missing, identify it and ask for it instead of inventing it. Recommend the single most useful improvement.
+
+4. Try the kit's sample capability before using your own work. Check that the result uses the published rubric and supports its judgments with evidence.
+
+For a team, keep an approved copy in a shared internal location with a named maintainer. Use one release of the kit, and update its instructions and references together. Keep confidential work in the approved chat rather than embedding it in a skill shared with colleagues. Native skill installation can have additional platform requirements even when the method's workflow only reads text.

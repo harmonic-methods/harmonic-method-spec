@@ -1,0 +1,19 @@
+note:
+  id: HM-N-176
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.12
+  content: >
+    LLM setup guidance lives in the appendix, reached by a short link from
+    Getting started and the existing setup reference in Capture Notes. The
+    appendix does not point to a specific exercise and omits the unexplained
+    cloud-processing sentence. It explains using skill text in chat, native
+    skills where supported, and reusable assistant instructions where enabled.
+  rationale: >
+    The owner requested setup as supporting reference rather than the first
+    step of the guide. General setup guidance applies to either sample path;
+    coupling it to Capture Notes distracts from that purpose. Keep the approved
+    tool and permitted-material guidance while removing the unclear aside. The
+    owner also asked for practical reuse in restricted corporate environments;
+    distinguish the options and their administrator requirements rather than
+    assuming every approved chat supports skill installation.

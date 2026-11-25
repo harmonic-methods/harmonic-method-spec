@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.11
   beat: HM-B-004
   title: Site development and deployment use the same Node runtime
-  status: active
+  status: delivered
   summary: >
     Contributors and CI verify the website on the same Node major that Vercel
     selects for deployments. The owner requested Node 26. The package engine
