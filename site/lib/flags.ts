@@ -2,8 +2,9 @@ import { vercelAdapter } from '@flags-sdk/vercel';
 import { flag } from 'flags/next';
 
 // Local development and public CI need no provider credentials. Deployments may
-// opt into the existing Vercel flags using OIDC or a server-side SDK key.
-const adapter = process.env.FLAGS || process.env.VERCEL_OIDC_TOKEN
+// use OIDC from Vercel's request context or a server-side SDK key. Runtime OIDC
+// need not be present in process.env when this module is first loaded.
+const adapter = process.env.VERCEL === '1' || process.env.FLAGS || process.env.VERCEL_OIDC_TOKEN
   ? vercelAdapter<boolean, Record<string, never>>()
   : { decide: () => false };
 

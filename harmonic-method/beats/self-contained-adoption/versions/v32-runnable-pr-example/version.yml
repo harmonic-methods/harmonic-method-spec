@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.32
   beat: HM-B-004
   title: Demonstrate an estimate-status change in a real pull request
-  status: active
+  status: delivered
   summary: >
     Publish an isolated, runnable estimate approval status example with its
     System Coda, Capability Beat, decision Note and bounded Beat Version.
