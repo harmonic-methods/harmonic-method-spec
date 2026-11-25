@@ -21,7 +21,7 @@
  *
  * Run with: npm run validate
  */
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { spawnSync, execFileSync } from 'node:child_process';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -826,6 +826,28 @@ function checkCommandRuns() {
   console.log('  parses, and --version reports both streams');
 }
 
+/** Resolve the repository file paths a newcomer copies from the first scoring prompt. */
+function checkScoringWalkthrough() {
+  console.log('== scoring walkthrough ==');
+  const step = read('README.md').split(/^### /m).find((section) => section.startsWith('1. ')) ?? '';
+  const prompt = (step.match(/^ {4}\S.*$/gm) ?? []).join('\n');
+  const paths = [...prompt.matchAll(/(?:^|\s)((?:skills|examples)\/[\w./-]+)(?=\s|$)/g)]
+    .map((match) => match[1]);
+  const before = failures;
+  if (!paths.some((path) => path.startsWith('skills/'))) {
+    fail('README.md: missing skill file in the first scoring walkthrough');
+  }
+  if (!paths.some((path) => path.startsWith('examples/'))) {
+    fail('README.md: missing example file in the first scoring walkthrough');
+  }
+  for (const path of paths) {
+    if (!statSync(join(ROOT, path), { throwIfNoEntry: false })?.isFile()) {
+      fail(`README.md: scoring walkthrough file '${path}' does not resolve`);
+    }
+  }
+  if (failures === before) console.log('  skill and example file paths resolve');
+}
+
 /**
  * The published instruction is an absolute path, so an absolute path has to work.
  *
@@ -985,6 +1007,7 @@ if (TARGET) {
   checkRetiredAltitudes();
   checkRubricFingerprints();
   checkPublishedCounts();
+  checkScoringWalkthrough();
   checkToolingVersion();
   checkCommandRuns();
   checkTreeArgumentResolves();

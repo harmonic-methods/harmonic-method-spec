@@ -1,0 +1,32 @@
+# Beat Version — conformant to specs/beat-version.yml
+beat_version:
+  id: HM-BV-007.5
+  beat: HM-B-007
+  title: Verify the paths in the first scoring walkthrough
+  status: active
+  summary: |
+    The first scoring walkthrough in README.md names a rubric and a
+    worked example. A previous move left its example path stale while
+    repository validation still passed. Make the repository check report
+    a stale path before a newcomer copies the walkthrough.
+
+    Read the paths from the walkthrough itself so a file move can be
+    made by updating the prompt. The check relies on the first numbered
+    step displaying an indented prompt with a skill and an example.
+    If that structure changes, report the missing input so the check
+    cannot pass silently.
+  scope: |
+    In: repository self-validation of the skill and example file paths
+    in the first README scoring walkthrough. Mark the previous shipped
+    step delivered.
+    Out: checking other README examples, external URLs, running an AI
+    review, changing the published rubric, and checking an adopter's tree
+    for this repository's walkthrough.
+
+    Done when the current walkthrough passes, a nonexistent skill or
+    example file fails with the exact path, and deleting either reference
+    fails with a diagnostic naming the missing input. Switching the prompt
+    to another existing example passes without a checker change. Show that
+    a stale path slipped through before the change and fails afterward.
+    Run repository conformance and verify that a separate tree validation
+    leaves the walkthrough check out.

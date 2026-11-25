@@ -3,7 +3,7 @@ beat_version:
   id: HM-BV-007.4
   beat: HM-B-007
   title: A rule that was not a rule
-  status: active
+  status: delivered
   summary: >
     A colon in a rule broke this repository's spec files three times while
     authoring. Each time it was read as friction — the parser reports a line and
