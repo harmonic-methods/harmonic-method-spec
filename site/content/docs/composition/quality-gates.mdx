@@ -1,13 +1,13 @@
 ---
 title: Quality Gates
-description: The seven quality dimensions a Beat must satisfy in Harmonic Composition — Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, and Outcome-Oriented.
+description: Assess a Beat across seven published quality dimensions. Implementations choose how to act on the results.
 ---
 
 <span className="cajon-overline">The Framework</span>
 
 # Quality Gates
 
-<p className="cajon-page-lead">Every <a href="/docs/composition/key-concepts#beats">Beat</a> must satisfy seven quality dimensions before it transitions from <code>composing</code> to <code>composed</code> in <a href="/docs/composition/beat-arc">the Beat arc</a>. These dimensions are not a checklist — they are a lens for evaluating whether a Beat is genuinely ready to be advanced.</p>
+<p className="cajon-page-lead">Assess a <a href="/docs/composition/key-concepts#beats">Beat</a> across seven published Coda quality dimensions. The rubric makes strengths and gaps visible; implementations choose thresholds and workflow gates. The method does not install or enforce a gate.</p>
 
 <div className="cajon-quality-grid">
   <div className="cajon-quality-item">
@@ -44,7 +44,7 @@ description: The seven quality dimensions a Beat must satisfy in Harmonic Compos
 
 ## How the gates are applied
 
-Quality evaluation is how a Beat moves from `composing` to `composed` in [the Beat arc](/docs/composition/beat-arc). Each Beat is assessed against all seven dimensions. A Beat that fails one or more dimensions is not discarded — it is refined. The evaluation identifies what is missing or unclear, and the Beat is revised until it can stand on all seven.
+Each Beat is assessed against all seven dimensions. The reference implementation requires a fresh passing assessment before decomposition, using a 4.0 threshold. That threshold and its enforcement are implementation choices. The [Beat arc](/docs/composition/beat-arc) illustrates one delivery workflow; the published Beat status remains `open` or `closed`. Use the findings to identify what is missing or unclear and decide how to refine the capability.
 
 The dimensions are also applied at the system level: a set of individually well-formed Beats can still fail the Harmonious dimension when considered together, or leave the Coda under-supported when examined for collective coverage.
 
@@ -69,6 +69,8 @@ Quality evaluation is a diagnostic, not a rejection. When a Beat fails one or mo
 **Fails Clear** — The title or description requires context to understand. Rewrite from the perspective of someone unfamiliar with the project: what does a team member understand from reading this Beat's title and description alone? Remove jargon, resolve ambiguous scope, and prefer concrete outcomes over abstract framing.
 
 **Fails Strategically Aligned** — The Beat addresses a priority from a prior phase or anticipates a future one. Defer it to the phase where it belongs, revise it to address what the current Coda actually requires, or remove it if the current phase cannot justify its existence.
+
+**Fails Outcome-Oriented** — The Beat names work or an implementation rather than a durable result. State what a stakeholder will be able to do or experience, independent of the mechanism used to deliver it.
 
 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
   <a className="cajon-learn-more" href="/docs/composition">← Harmonic Composition</a>

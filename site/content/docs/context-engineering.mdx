@@ -33,7 +33,7 @@ Engineerable context has three properties:
   </div>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">Typed</div>
-    <p>Classified by what it is — context, constraint, guidance, decision — so its role is unambiguous.</p>
+    <p>Classified by what it is — background, constraint, guidance, decision — so its role is unambiguous.</p>
   </div>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">Durable</div>
@@ -43,7 +43,7 @@ Engineerable context has three properties:
 
 ## How Harmonic Methods does context engineering: Notes
 
-In Harmonic Composition, context engineering is made concrete through [Notes](/docs/composition/notes). A Note is the universal container for the reasoning behind the work, and every Note has a type — Context, Constraint, Guidance, Decision, or Document — so its role in the system is explicit.
+In Harmonic Composition, context engineering is made concrete through [Notes](/docs/composition/notes). A Note is the universal container for the reasoning behind the work, and every Note has a type — Background, Constraint, Guidance, and Decision — so its role in the system is explicit.
 
 Notes don't just record *what* was decided; they record *why*. A constraint Note doesn't only state that something is off-limits — it captures the reasoning, so an agent can later determine whether that constraint still applies in a new context. This is context engineering in practice: the corpus of Notes grows with every Revision, and each addition makes future reasoning — by people and by [AI coding agents](/docs/ai-coding-agents) — more accurate.
 
@@ -67,7 +67,7 @@ export const contextEngineeringFaqs = [
   {
     question: 'How do you do context engineering in practice?',
     answer:
-      'Capture context as it forms rather than reconstructing it later; type each piece by what it is (context, constraint, guidance, decision); and version it so it stays durable across handoffs. In Harmonic Methods this is done with Notes — typed, versioned records that capture not just what was decided but why, so the reasoning remains usable by whoever or whatever needs it next.',
+      'Capture context as it forms rather than reconstructing it later; type each piece by what it is (background, constraint, guidance, decision); and version it so it stays durable across handoffs. In Harmonic Methods this is done with Notes — typed, versioned records that capture not just what was decided but why, so the reasoning remains usable by whoever or whatever needs it next.',
   },
 ];
 

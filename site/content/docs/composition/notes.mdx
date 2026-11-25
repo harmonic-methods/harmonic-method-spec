@@ -14,14 +14,14 @@ description: Explicit, versioned, discoverable context that preserves the reason
   <p>Explicit, versioned, discoverable context that preserves the reasoning behind the work. Every Note has a type that classifies its role, making it easier to find, evaluate, and apply at any point in the delivery lifecycle.</p>
 </div>
 
-## The five Note types
+## The four Note types
 
-Every Note carries a type that classifies its role in the system.
+Every Note is context; its type names the kind of knowledge it carries. File-derived material uses the appropriate published type, optionally narrowed by a subtype. Document is not a top-level Note type.
 
 <div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(2, 1fr)'}}>
   <div className="cajon-quality-item">
-    <div className="cajon-quality-item__name">Context</div>
-    <p>Confirmed domain knowledge and background. Context Notes document what the team knows about the problem space — the facts and conditions that inform the work without being rules or choices in themselves.</p>
+    <div className="cajon-quality-item__name">Background</div>
+    <p>Confirmed domain knowledge and background. Background Notes document what the team knows about the problem space — the facts and conditions that inform the work without being rules or choices in themselves.</p>
   </div>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">Constraint</div>
@@ -35,17 +35,13 @@ Every Note carries a type that classifies its role in the system.
     <div className="cajon-quality-item__name">Decision</div>
     <p>Recorded choices with rationale. Decision Notes document what was decided, why, and under what conditions — making the reasoning available to anyone who needs to understand or revisit a choice.</p>
   </div>
-  <div className="cajon-quality-item">
-    <div className="cajon-quality-item__name">Document</div>
-    <p>Content extracted from uploaded files. Document Notes bring external material — briefs, specifications, reference documents — into the system as structured, discoverable context.</p>
-  </div>
 </div>
 
 ## Why Notes matter
 
 The most significant source of waste in delivery is not incomplete work — it is lost context. When a decision is made, the conditions that produced it are rarely written down. As teams change and time passes, those conditions become invisible. Notes make them permanent and retrievable.
 
-Notes are **versioned**: they accumulate as the system evolves, building a record of how understanding developed over time. They are **discoverable**: structured so anyone working in the system can find and read them, not only those who were present when they were written.
+Notes are **preserved** once published: a new decision Note supersedes an earlier Note by referencing it in `supersedes`, leaving the earlier record readable. They accumulate as the system evolves, building a record of how understanding developed over time. They are **discoverable**: structured so anyone working in the system can find and read them, not only those who were present when they were written.
 
 <div className="cajon-callout">
   Notes are not a substitute for real-time communication. They are the residue of communication — the part worth keeping because it will matter later.
@@ -53,7 +49,7 @@ Notes are **versioned**: they accumulate as the system evolves, building a recor
 
 ## Where Notes live
 
-Notes can be scoped to the project as a whole or to a specific [Beat](/docs/composition/beats). Project-level Notes capture cross-cutting context — decisions and constraints that affect multiple capabilities. Beat-level Notes capture context specific to a single capability and travel with it through its lifecycle.
+A Note attaches to the Portfolio, System, Proposal, or [Beat](/docs/composition/beats) it informs. System Notes capture cross-cutting decisions and constraints. Beat Notes travel with the capability through its lifecycle. A Note never attaches to a Beat Version; its optional `beat_version` reference records the step that prompted it.
 
 ## Notes in the delivery lifecycle
 

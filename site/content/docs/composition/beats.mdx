@@ -50,7 +50,7 @@ The task framing closes. The Beat framing persists and evolves. The capability d
 
 ## Quality evaluation
 
-Before a Beat can be considered ready for delivery, it must satisfy [six quality dimensions](/docs/composition/quality-gates): Distinctive, Harmonious, Substantial, Durable, Clear, and Strategically Aligned. This evaluation ensures the Beat is well-formed before [Revisions](/docs/composition/beat-versions) begin.
+Assess a Beat using [seven quality dimensions](/docs/composition/quality-gates): Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, and Outcome-Oriented. This evaluation ensures the Beat is well-formed before [Revisions](/docs/composition/beat-versions) begin.
 
 The dimensions assess whether the Beat:
 - stands apart from other Beats without overlap (Distinctive)
@@ -59,10 +59,11 @@ The dimensions assess whether the Beat:
 - will remain relevant through the current phase and beyond (Durable)
 - can be understood by anyone working in the system (Clear)
 - advances the system toward the current [Coda](/docs/composition/coda) (Strategically Aligned)
+- names an outcome that survives a change in implementation (Outcome-Oriented)
 
 ## Beat lifecycle
 
-Beats begin in `composing` state — identified but not yet quality-gated. Once a Beat satisfies all six quality dimensions, it transitions to `composed`, and [Beat Versions](/docs/composition/beat-versions) can begin. As Revisions ship and the capability matures, the Beat transitions to `live`. It remains active for as long as the capability it describes is relevant to the current [Coda](/docs/composition/coda).
+A Beat is `open` or `closed`. It stays open while the capability is being developed or operated. [Beat Versions](/docs/composition/beat-versions) express its planned evolution, and Revisions deliver the changes. Workflow labels such as composing or live are implementation-owned descriptions, not additional Beat status values. The reference implementation gates decomposition on a fresh passing assessment; the method publishes the rubric and leaves enforcement to implementations.
 
 When a capability is no longer relevant — because the Coda has changed, the system has moved on, or the need no longer exists — the Beat can be retired. A retired Beat is not deleted; it becomes part of the record of what the system was and what it needed at a prior stage.
 

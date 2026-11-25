@@ -1,0 +1,31 @@
+beat_version:
+  id: HM-BV-004.13
+  beat: HM-B-004
+  title: Readers encounter consistent guidance at public release
+  status: active
+  summary: >
+    A newcomer reading the site encounters the published Note taxonomy and
+    Coda quality dimensions consistently. Maintainers can follow an explicit
+    release sequence separating repository publication, starter-kit downloads,
+    and website cutover. HM-N-177 records the preparation boundary.
+
+    Done when obsolete Beat dimension counts and top-level Note types are
+    corrected in the imported documentation, quality enforcement is identified
+    as implementation-owned, and a release runbook states verification,
+    remaining review, and rollback steps. Repository conformance, the site
+    production build, typecheck and existing browser suite must pass. Record
+    any unavailable verification rather than implying it passed.
+  scope: >
+    In: targeted documentation corrections, a maintainer release runbook,
+    package and starter-kit inspection and Python compatibility repair,
+    read-only deployment and repository
+    readiness checks. Mark the already merged runtime step delivered.
+
+    Out: merging concurrent onboarding work, changing normative definitions,
+    dependency upgrades, repository visibility, publication, release tagging,
+    changing domains, history rewriting, and a comprehensive editorial rewrite.
+
+    One maintainer can own this preparation. Publication still depends on
+    reviewing historical GitHub surfaces for confidential material and choosing
+    the final merged source. Automated scans cannot establish confidentiality;
+    the runbook must retain that review as an open launch condition.

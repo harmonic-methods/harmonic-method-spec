@@ -69,7 +69,12 @@ def build(output):
         write_entry(archive, "START_HERE.md", (ROOT / "starter-kit/START_HERE.md").read_bytes())
         write_entry(archive, REVIEW_NAME, review)
         write_entry(archive, SAMPLE_NAME, sample)
-        archive.mkdir(f"{KIT_NAME}/your-files/", mode=0o755)
+        # ZipFile.mkdir requires Python 3.11; keep the documented python3
+        # command usable with older Python 3 installations as well.
+        directory = ZipInfo(f"{KIT_NAME}/your-files/")
+        directory.create_system = 3
+        directory.external_attr = (0o40755 << 16) | 0x10
+        archive.writestr(directory, b"")
         for path in ("LICENSE", "LICENSE-CONTENT", "TRADEMARKS.md"):
             write_entry(archive, path, (ROOT / path).read_bytes())
         for directory in ("skills", "specs", "examples"):

@@ -37,10 +37,12 @@ for both surfaces, including the existing `cajon-*` classes. Fonts are self-host
 from public Fontsource packages, whose bundled licenses apply to those fonts.
 
 The specification and instrument definitions in the parent directory remain
-canonical. The extraction retains existing prose; broader editorial
-reconciliation is separate work. Some imported content still describes six
-quality dimensions, implementation-specific gates or Note types, or outdated
-instrument coverage. Compare against `../specs/` and `../skills/` when revising.
+canonical. The imported documentation has been reconciled for Beat quality
+dimensions,
+Note types, and the distinction between assessment and enforcement. Broader
+editorial review remains separate work. Compare against `../specs/` and
+`../skills/` when revising. Follow [the release runbook](../RELEASING.md) before
+repository publication or production cutover.
 
 ## Optional services
 
