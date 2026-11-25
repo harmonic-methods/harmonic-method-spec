@@ -1,11 +1,11 @@
 ---
 title: Plan Beat Versions and deliver Revisions
-description: Choose the next increment of a Beat and verify what the work delivers.
+description: Choose the next increment of a Capability Beat and verify what the work delivers.
 accountableRoles: [Orchestrator]
 supportingRoles: [Composer, Conductor]
 ---
 
-Start with the [Beat and its Coda](/docs/getting-started/define-a-beat). A [Beat Version](/docs/method/primitives#beat-versions) describes the next increment toward that outcome. One or more Revisions deliver it.
+Start with the [Capability Beat and its Coda](/docs/getting-started/define-a-beat). A [Beat Version](/docs/method/primitives#beat-versions) describes the next increment toward that outcome. One or more Revisions deliver it.
 
 ## Plan the next increment
 
@@ -17,6 +17,21 @@ Start with the [Beat and its Coda](/docs/getting-started/define-a-beat). A [Beat
 
 Start with showing approval status on the estimate record. Leave status notifications for a later increment. Verify that a recorded approval or decline by the designated approver changes the displayed state and that an estimate awaiting a decision remains pending.
 
-See the [Beat Versions reference](/docs/composition/beat-versions) and [delivery structure](/docs/method/delivery) as the work grows.
+## Save your output [#save-output]
+
+### Work with documents — recommended [#save-documents]
+
+Save the planned step with the capability draft: its scope, intended improvement, acceptance criteria, owner, dependencies, and open questions. Keep evidence of delivered changes and the resulting decisions with the work as it proceeds.
+
+<details id="save-repository">
+<summary>Save in a repository</summary>
+
+Ask your coding agent to create the next `harmonic-method/beats/<capability>/versions/<step>/version.yml` using the kit's Beat Version spec and plan-quality skill. Reference the Beat's identifier and keep rationale in Notes attached to that Beat. Link delivery changes to the plan using your repository's contribution conventions.
+
+Validate the records and review the diff before committing. [See the repository workflow](/docs/implementation/use-a-repository#validate).
+
+</details>
+
+See the [Beat Versions reference](/docs/composition/beat-versions), or [follow the estimate example through to a pull request](/docs/implementation/create-a-pull-request).
 
 The starter kit includes the plan review skill at `skills/beat-version-quality-check/SKILL.md`.

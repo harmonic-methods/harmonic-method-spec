@@ -1,47 +1,80 @@
 ---
-title: "Value and selection"
-description: "The Producer's function: selection, funding, and whether the work lands — asked at system and portfolio altitude."
+title: Value and selection
+description: How a Producer uses evidence, cost, and alternatives to decide what to fund, continue, reshape, or stop.
 accountableRoles: [Producer]
 supportingRoles: [Director, Composer, Orchestrator]
 ---
 
-<p className="cajon-page-lead">The Producer's function. It covers selection and funding — what gets made, and whether it earns its keep. Whether the work then reaches its audience belongs to the <a href="/docs/method/roles#promoter">Promoter</a>.</p>
+The Producer decides whether work is worth the resources it requires. That includes choosing what to start, reviewing work already underway, and making an explicit decision when its expected value changes.
 
-## The question [#question]
+The question is: **Given what we know now, is this the best use of the next investment?**
 
-<p>Does this earn its keep? What gets funded, and what gets made?</p>
+## Review the investment case [#question]
 
-<p>The other functions assume the work is worth doing and ask how to do it well. The Producer is the function that can decline. Without it, a portfolio accumulates capabilities that are individually well-built and collectively unjustified.</p>
+Before committing more time or money, ask:
 
-## At each altitude [#altitudes]
+1. **Who benefits, and how?** Name the outcome: fewer approval delays, less manual handling, lower operational risk, or another result the people affected recognize.
+2. **What evidence supports it?** Review user feedback, usage, observed outcomes, a demo, or a small trial. Separate what has been demonstrated from what is still assumed.
+3. **What will it cost from here?** Include remaining delivery effort, support, maintenance, adoption work, and the work it would displace.
+4. **What are the alternatives?** Consider a smaller change, an existing tool, a manual process, deferral, or stopping.
+5. **What would change the decision?** Identify the assumption to test, an acceptable investment limit, and the evidence or event that should trigger another review.
 
-<p>Altitude is a property of the work, not of the role, so the Producer's question is the same at every level and only the unit changes.</p>
+<CalloutContainer type="warning" role="note" aria-label="Warning: Past spending does not justify more investment">
+  <CalloutTitle>Warning: Past spending does not justify more investment</CalloutTitle>
+  <CalloutDescription>Compare the remaining cost with the expected benefit and alternatives. Continuing needs a current reason, even when the team has already invested heavily.</CalloutDescription>
+</CalloutContainer>
 
-<div className="hm-docs-table" tabIndex={0} role="region" aria-label="Comparison table">
-<table className="hm-table">
-        <thead><tr><th>Altitude</th><th>The Producer's question</th></tr></thead>
-        <tbody>
-          <tr><td>System</td><td>Does this system earn its keep — does the capability it provides justify its continued cost and attention?</td></tr>
-          <tr><td>Portfolio</td><td>Which capabilities exist, where do they overlap, and does the collective effort advance strategic intent?</td></tr>
-        </tbody>
-      </table>
-</div>
+For required work, such as meeting a contractual or regulatory obligation, compare viable ways to satisfy the constraint. Stopping cannot mean silently abandoning the obligation.
 
-<p>The portfolio question is the one no individual team can answer from inside their own system. Without a shared map, teams optimize locally while the portfolio drifts.</p>
+## Choose an action [#decisions]
 
-## What portfolio altitude makes visible [#portfolio]
+| Decision | When it fits | What to make explicit |
+| --- | --- | --- |
+| **Fund** | The expected benefit justifies a bounded first investment, or a small trial can resolve a consequential uncertainty. | What is funded, the limit, the evidence expected, and who owns the next step. |
+| **Continue** | Evidence still supports the outcome and the remaining investment is justified against alternatives. | What has been learned, what remains, and when to review again. |
+| **Reshape** | The outcome still matters, but the current scope, approach, or cost no longer makes sense. | What changes, what is excluded, and which commitments need to be renegotiated. |
+| **Stop** | The benefit no longer justifies further investment, another option is better, or a critical assumption has failed. | What ends, why, and how users, obligations, and ongoing support will be handled. |
 
-<ul>
-        <li>Which capabilities exist across the portfolio, and where they overlap or conflict.</li>
-        <li>How current initiatives relate to strategic priorities — and how much of the portfolio is misaligned.</li>
-        <li>When a new initiative is proposed: where it fits, what it depends on, and what it affects.</li>
-        <li>How resources get allocated when every team has legitimate competing claims.</li>
-      </ul>
+## Examples at capability and system scope [#altitudes]
 
-## Selection is a standing function, not a planning event [#standing]
+These examples are hypothetical; they illustrate decisions rather than measured results.
 
-<p>Funding decisions made once a year and revisited only under pressure are not selection — they are budgeting. The Producer function is continuous for the same reason the Conductor's is: the conditions that justified a capability change while the work is underway, and the decision to keep going is a decision whether or not anyone makes it deliberately.</p>
+### Fund a small approval trial
 
-<div className="cajon-callout">How Producer decisions are measured is being defined separately, and will be recorded here once settled.</div>
+A team proposes client estimate approval. Interviews suggest that email follow-ups delay decisions, but the benefit of a new workflow is uncertain.
 
-<p><a className="cajon-learn-more" href="/docs/method/metaphor">Read the metaphor →</a></p>
+Producer funds a limited trial with a few clients, with a cap on effort. The team will compare approval delays and manual follow-up work with the current process before asking for a larger investment.
+
+### Continue when evidence supports the next step
+
+Suppose the trial is being used and shows fewer follow-ups, while approval history remains incomplete. Producer reviews the evidence and the cost of finishing that capability. If the remaining investment is justified, fund the next bounded step and define the evidence to review afterward.
+
+### Reshape an approach that is becoming too expensive
+
+Suppose every client requests a custom approval path. Delivery and support costs are growing faster than the expected benefit.
+
+Producer asks for options within a smaller investment limit. Composer defines a simpler capability around a shared approval path; Orchestrator revises the delivery arrangement. Exceptional cases may stay manual if that is acceptable. The decision preserves the useful outcome while changing how much is being funded.
+
+### Stop a duplicate reporting system
+
+Suppose a second reporting system has little use and an existing service already meets the need. Producer compares the remaining cost with migration and retirement costs, then decides whether to stop further development.
+
+Stopping includes an agreed transition for users, data, and support. Record the decision so the same proposal is not restarted later without addressing its rationale.
+
+## Compare competing investments [#portfolio]
+
+Across several systems, consider what each option displaces. A useful improvement can still be a lower priority than fixing a costly operational failure elsewhere.
+
+Ask Orchestrator for realistic capacity and dependency options, Composer for scope alternatives, Conductor for delivery evidence, and Promoter for adoption evidence. Compare the options against the strategic priorities and make the tradeoff visible.
+
+Director owns strategic direction and whether its assumptions still hold. Producer judges investment within that direction. Evidence that challenges the strategy goes to Director; a funding decision should not quietly redefine it.
+
+## Record the decision and revisit it [#standing]
+
+Capture the choice and rationale in a decision Note attached to what it informs. Include the evidence, assumptions, investment limits, accountable person, and review trigger. Confirm that the plan and owners reflect the decision.
+
+Review at the agreed cadence and when material evidence changes—for example, a cost increase, failed trial, changed customer need, or new alternative. Use [Downbeats](/docs/method/cadence#downbeat) as preserved capability evidence alongside cost and adoption information.
+
+Measures such as Value Velocity can support the review where an implementation defines them and has reliable inputs. The method does not prescribe a universal formula or threshold. A quality score describes the statement or plan assessed; investment judgment still needs evidence about expected value and cost.
+
+The published `root-coda-composing` and `root-coda-quality-check` skills can help an agent draft and assess the value claims. The Producer checks the evidence and owns the investment decision. [See the available skills](/docs/method/tooling#role-skills).

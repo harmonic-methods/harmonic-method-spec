@@ -5,11 +5,24 @@ description: Record the facts, boundaries, and decisions that shape the work.
 
 Start with a short meeting recap. In this worked example, a team wants to reduce delays in approving client estimates.
 
-## Worked example with an LLM
+## Who captures and reviews Notes? [#responsibilities]
+
+Everyone captures relevant facts, assumptions, constraints, guidance, and decisions as they learn them. Review has different owners depending on what needs confirming:
+
+| Responsibility | Who handles it |
+| --- | --- |
+| Capture the knowledge and preserve its source | Anyone doing or learning about the work, with agent assistance where useful. |
+| Confirm accuracy and authority | The author checks the draft against its source; the relevant fact, constraint, or decision owner confirms the content. Keep unconfirmed assumptions visible. |
+| Review capability implications and attachment | **Composer** decides what the knowledge means for the capability, its boundaries, and its Coda, and where it belongs. |
+| Surface conflicts and follow through | **Conductor** identifies contradictory or outdated Notes, escalates to the relevant decision owner, and follows the resolution into the record. |
+
+Composer's review concerns the definition of the work. Decisions about strategy, investment, or allocation still need confirmation from the role that owns them. Conductor keeps the shared record aligned with reality; that does not make Conductor the author of every Note.
+
+## Worked example with an AI assistant
 
 Open a new chat in the [AI tool you set up](/docs/appendix/llm-setup) and paste this prompt. It includes a fictional recap you can use before trying your own material.
 
-```text
+```text title="Prompt: Draft Notes from a recap"
 Draft Harmonic Method Notes from the meeting recap below.
 Write one Note per item and quote the phrase that supports each Note.
 
@@ -22,6 +35,7 @@ List suggestions and unanswered questions separately. Mark assumptions
 as unconfirmed. Use only the recap and leave the source as it is.
 
 Meeting recap
+
 In a review of recent estimates, account leads had to ask for approval
 status in chat. Only the designated approver may approve an estimate.
 We recommend using the same status names in the estimate record and in
@@ -41,11 +55,26 @@ reminders. We left that idea open.
 
 Automatic reminders would appear as an open suggestion. For the Decision, check that the draft points to “We agreed to start with one team” and captures the stated reason.
 
-## Review and save the Notes
+## Review the Notes
 
 1. Compare each draft Note with the recap. Confirm constraints and decisions with the people who own them. Keep unconfirmed assumptions visible.
-2. Keep each confirmed Note with the work it informs. Start with the System for context that affects the whole initiative. Attach narrower Notes to the relevant Beat once it exists.
+2. Keep each confirmed Note with the work it informs. Start with the System for context that affects the whole initiative. Attach narrower Notes to the relevant Capability Beat once it exists.
 3. Keep a reference to the recap where readers can access it. If a shared Note changes in substance later, record a new Note that supersedes it so readers can trace the change.
+
+## Save your output [#save-output]
+
+### Work with documents — recommended [#save-documents]
+
+Save the reviewed Notes in your initiative document or a file such as `notes.md`. Keep each Note's type, content, what it informs, and source together; include the rationale for decisions. Keep unresolved questions and unconfirmed assumptions identifiable. Bring this document to the next guide.
+
+<details id="save-repository">
+<summary>Save in a repository</summary>
+
+At this first step, save capture in `working-notes.md` outside `harmonic-method/`. After you [define the System Coda](/docs/getting-started/define-a-coda#save-output), ask your coding agent to create one confirmed Note per YAML file under `harmonic-method/notes/`, using `specs/note.yml` from the kit and valid attachment identifiers. Capability-specific Notes can be created under the Beat once it exists. Preserve existing published Notes.
+
+[Prepare the repository workflow](/docs/implementation/use-a-repository) if you have not done so.
+
+</details>
 
 To try your own material, replace the sample recap with a permitted excerpt or attach an approved file and ask the tool to use it as the recap. You can also write Notes by hand using the same four types and review steps.
 

@@ -1,0 +1,29 @@
+beat_version:
+  id: HM-BV-004.30
+  beat: HM-B-004
+  title: Explain delivery relationships and coordination in practical terms
+  status: active
+  summary: >
+    Help newcomers connect delivery planning to durable capabilities through a
+    labelled diagram and a concrete example. Replace the standalone artifact
+    definition with a short callout and replace orchestral staffing language
+    with people and AI agents. HM-N-200 records the requested clarification.
+
+    Done when the delivery diagram distinguishes containment from an optional
+    capability-plan link; a text explanation survives Markdown export; the
+    artifact distinction is a callout rather than a heading or listed entity;
+    and coordination explains selection, ownership, active work and handoffs
+    without relying on musical metaphors. Preserve earlier section bookmarks
+    and align related glossary links. Verify rendering, mobile readability,
+    exports, browser checks and conformance.
+  scope: >
+    In: delivery and coordination guides, related glossary and FAQ wording,
+    an accessible diagram with a text equivalent, and focused browser checks.
+    One contributor can complete this editorial increment in one session.
+    Out: formal schemas, new entities, implementation behavior and deployment.
+    Prior work stays active pending established merges.
+
+    Risks: a diagram can imply mandatory capability links or lose meaning in
+    exports. Label the optional connection explicitly, illustrate work without
+    such a link, and include the same relationships in adjacent prose. Preserve
+    legacy anchors while using plain labels for new headings and links.

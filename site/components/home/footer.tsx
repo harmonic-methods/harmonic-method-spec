@@ -6,11 +6,10 @@ const FOOTER_COLUMNS = [
   {
     heading: 'The method',
     links: [
-      { label: 'Overview', href: '/docs/method/overview' },
-      { label: 'The five functions', href: '/docs/method/roles' },
+      { label: 'Overview', href: '/docs' },
+      { label: 'Harmonic Method Roles', href: '/docs/method/roles' },
       { label: 'Primitives', href: '/docs/method/primitives' },
       { label: 'The quality model', href: '/docs/method/quality' },
-      { label: 'The metaphor', href: '/docs/method/metaphor' },
     ],
   },
   {

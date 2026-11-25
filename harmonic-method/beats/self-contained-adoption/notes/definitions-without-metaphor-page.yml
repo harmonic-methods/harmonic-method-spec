@@ -1,0 +1,13 @@
+note:
+  id: HM-N-201
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.31
+  content: >
+    Remove the separate musical rationale page and references to it. Retain useful
+    definitions in the glossary, expressed through their practical meaning.
+    Redirect earlier page and Markdown URLs to the glossary.
+  rationale: >
+    The owner approved removal because the page defends naming rather than
+    helping readers apply the method. Definitions and contextual explanations
+    should let readers use the method without understanding its musical analogy.

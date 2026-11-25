@@ -1,32 +1,76 @@
 ---
-title: "Cadence"
-description: "Bar, Downbeat, and Cadence Config — the shared sense of time a distributed ensemble has to agree in advance."
+title: Cadence
+description: How a Conductor uses Bars to organize delivery and Downbeats to record progress against the intended outcome.
 accountableRoles: [Conductor]
 supportingRoles: [Orchestrator, Producer]
 ---
 
-<p className="cajon-page-lead">Delivery needs a rhythm, not only a structure. An ensemble that cannot hear each other still needs a shared sense of time, and tempo is the part of coherence that can be agreed in advance rather than negotiated in the moment.</p>
+Cadence gives the team regular occasions to compare planned work with actual results. The Conductor uses a **Bar** as the planning period and a **Downbeat** as a preserved reading of a capability's state.
 
-## Bar [#bar]
+## Use a Bar to organize the work [#bar]
 
-<p>The recurring planning window a team delivers within. Its start and Cutoff are explicit instants. Crossing the Cutoff is the occasion for the Conductor to tie off unfinished work before a Downbeat is taken.</p>
+A Bar has an agreed start and end in the team’s shared timezone. Its end is the **Cutoff**. Work before the Cutoff belongs to the outgoing Bar; work at or after it belongs to the incoming one.
 
-<p>In music, "bar" and "measure" are the same word, and a measure is never defined by its bar lines — only by what sounds inside them. Two windows of identical length are entirely different music depending on their content, which is the argument against comparing time-boxes as if they were units of anything.</p>
+Before the Bar starts, the Conductor works with Orchestrator to confirm the planned work, owners, capacity, and dependencies. During the Bar, the Conductor coordinates execution, resolves blockers within agreed authority, and surfaces changes that threaten the plan. [Use the execution checks](/docs/method/listening) throughout the period.
 
-## Downbeat [#downbeat]
+### Example: a two-week delivery period
 
-<p>The recalibration anchor: an honest, frozen reading of where the work actually stands against its destination, set at a Bar boundary.</p>
+For illustration, a team uses a two-week Bar, starting at **9 a.m. on Monday** and ending at **9 a.m. on Monday two weeks later**, in the team’s local time.
 
-<p>A conductor does not restart the piece to fix drifting tempo; they mark the next downbeat and everyone lands together on it. Recalibration is additive and non-destructive, because the passage already played still happened.</p>
+The team plans estimate approval and approval-history work. Midway through, a dependency threatens the history work. The Conductor makes the risk visible and asks Orchestrator to resolve any allocation change beyond the agreed capacity.
 
-## Set your cadence [#config]
+## Settle unfinished work at the Cutoff [#tie-off]
 
-<p>Choose a cadence that fits the work. Longer periods can contain shorter Bars, and an implementation can offer settings for additional progress reviews.</p>
+At or after the Cutoff, the Conductor holds a **Tie off**: a review that settles every unfinished item before closing the outgoing Bar.
 
-<p>Set once and held, so the pulse belongs to the ensemble rather than being renegotiated each cycle.</p>
+1. Confirm what was delivered, using the work and its evidence.
+2. For each unfinished item, agree whether it continues, changes, or stops. Work continuing into the next Bar is **tied across**; confirm its owner and remaining work.
+3. Get decisions from the appropriate role for changes outside your authority, and preserve the rationale in Notes.
+4. Once every unfinished item is settled, close the outgoing Bar and take the Downbeats.
 
-## Why tempo is set in advance [#why-advance]
+Record these outcomes in the team's existing work records. Tie off does not add a new entity or prescribe item status labels.
 
-<p>Recalibration that only happens when a deadline forces it is not recalibration — it is escalation. Fixing the cadence ahead of time means the honest reading arrives on a schedule the team chose, while there is still room to act on what it says.</p>
+<CalloutContainer type="info" role="note" aria-label="Info: Keep the Bar boundaries fixed">
+  <CalloutTitle>Info: Keep the Bar boundaries fixed</CalloutTitle>
+  <CalloutDescription>In the example, the next Bar starts at 9 a.m. even if Tie off finishes at 9:15 a.m. Approval-history work tied across remains visible in the next plan. The previous Bar's dates stay unchanged.</CalloutDescription>
+</CalloutContainer>
 
-<p><a className="cajon-learn-more" href="/docs/method/listening">Read about listening →</a></p>
+## Take a Downbeat after Tie off [#downbeat]
+
+A Downbeat preserves where **one Capability Beat** stood when the reading was taken. Take one for each capability in view after Tie off. Record:
+
+- The capability and its Coda, copied exactly as it stands.
+- How far the capability has progressed toward that outcome, grounded in evidence.
+- The actual taking time, who answers for the reading, and the Bar whose boundary prompted it.
+- What you examined directly, what you accepted from the record, and what remains unknown.
+
+Use the team's established progress scale, or a prose reading if there is no scale. A Downbeat carries no quality grade or plan. Preserve earlier readings unchanged; a correction is a new Downbeat.
+
+### Example: a capability reading
+
+Continuing the example, the Conductor takes a Downbeat at 9:30 a.m., after Tie off:
+
+| Part of the reading | Illustrative record |
+| --- | --- |
+| Beat | Client estimate approval |
+| Coda, copied exactly | “Clients can approve an estimate and see who approved it and when.” |
+| Progress toward the Coda | Approval works in the reviewed build. Approval history remains incomplete. This is a prose reading. |
+| Evidence examined | Approval demo and related changes; no completed history view available for review. |
+| Reported but not verified | The engineer reports that history storage is implemented. |
+| Time and accountability | Monday, 9:30 a.m.; the named Conductor taking the reading. |
+
+The reading describes the capability when it was taken, at **9:30 a.m.** Work done from the 9 a.m. Cutoff onward belongs to the incoming Bar.
+
+## Choose a cadence that fits the work [#config]
+
+Agree the period length, timezone, review timing, and capabilities in view before starting. A fortnight may suit one team; another may use a different interval. Longer Bars can contain shorter ones, such as a quarter containing delivery periods. Record cadence changes explicitly rather than moving boundaries to make unfinished work appear on time.
+
+## Use the reading to decide what happens next [#why-advance]
+
+At the next review, compare current evidence and the current Coda with the last Downbeat. Has the capability advanced? Has the intended outcome changed? Which assumptions no longer hold? With no prior reading, establish a baseline and say that drift cannot yet be assessed.
+
+In the example, the reading makes the incomplete approval history visible. Orchestrator can plan the remaining work, while Producer can evaluate its cost and value. If the Coda now requires additional approval stages, the Conductor surfaces that change for Composer to reconcile against the agreed intent.
+
+Keep the next plan in a Beat Version and the rationale in Notes. The Downbeat remains the evidence those decisions used. Urgent issues are handled when they arise; they do not wait for the next boundary.
+
+The `downbeat-taking` skill can help prepare a reading and separate verified evidence from reported status under a named person's accountability. [See the available skills](/docs/method/tooling#role-skills).

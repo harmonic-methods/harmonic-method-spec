@@ -1,6 +1,6 @@
 const ALTITUDES = [
   {
-    altitude: 'Beat or track',
+    altitude: 'Capability Beat or track',
     unit: 'A discrete piece of work',
     question: 'Is this capability distinct, coherent, and aimed at the Coda?',
   },

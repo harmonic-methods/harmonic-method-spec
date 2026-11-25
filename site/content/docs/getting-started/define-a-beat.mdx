@@ -1,31 +1,88 @@
 ---
-title: Define a Beat
-description: Name one lasting capability that supports the outcome.
+title: Define a Capability Beat
+description: Draft one lasting capability, connect it to the System's outcome, and prepare it for review.
 accountableRoles: [Composer]
 supportingRoles: [Director, Conductor]
 ---
 
-A [Beat](/docs/method/primitives#beat) is a capability the System needs. A Beat has its own Coda that serves the System Coda you just drafted.
+A [Capability Beat](/docs/method/primitives#beat), or **Beat** for short, is a durable capability the System needs. In this exercise, you'll create one draft that describes the capability, its intended outcome, and the broader outcome it supports.
 
-## Draft one capability
+## Before you start
 
-1. **Pick one part of the System Coda.** Ask what the System has to be able to do repeatedly for that outcome to hold.
-2. **Name the capability.** Use a title that will still make sense if the team changes how it builds or operates the capability.
-3. **Write the Beat Coda and a short description.** Say what will be true, who benefits, and what belongs inside this capability.
-4. **Check it against the other Beats.** Look for overlapping promises and ask whether any part of the System Coda is still uncovered.
+Have these materials available:
+
+- Your **System Coda** from [Define a Coda](/docs/getting-started/define-a-coda). This is the broader outcome the capability will help achieve.
+- Relevant **Notes**, including facts, constraints, and decisions that affect the capability.
+- Any other Beats already defined for the System, so you can check for overlap. If none are available, record that this comparison has not been done.
+
+You can follow the client estimate example below or use your own work.
+
+## 1. Start a draft
+
+Open a document or create a draft record in the tool your team already uses. Copy this template and replace the bracketed text. It is a working aid; you can use your tool's equivalent fields.
+
+```markdown title="Template: Capability Beat draft"
+# [Capability title]
+
+## Parent System Coda
+[Paste the System Coda or link to its existing record.]
+
+## Beat Coda
+[Describe what will be true for the people this capability serves.]
+
+## Description
+[Explain what the capability covers and any important boundaries.]
+
+## Relevant Notes
+[Link or include the facts, constraints, and decisions used.]
+
+## Related Beats and open questions
+[List possible overlap and questions to resolve, or state what context is missing.]
+```
+
+## 2. Fill in the draft
+
+1. **Choose one capability.** Read the System Coda and ask what the System needs to be able to do repeatedly. In the example, account leads need reliable visibility of estimate approval status.
+2. **Write the title.** Give that capability a short name, such as “Estimate approval status.”
+3. **Write the Beat Coda.** Describe the outcome for the people using the capability. What can they reliably do or know once it exists?
+4. **Write the description.** Explain what is included and which constraints apply. In the example, name the possible approval states and explain that they reflect the designated approver's decision.
+5. **Connect it to the System Coda.** Put the broader System Coda in the template's parent section. “Parent” means the larger outcome this capability supports. If your tool has a parent-Coda field, select that existing Coda; otherwise keep its statement or link with the draft.
+6. **Add the supporting context.** Include the relevant Notes and identify any other Beat that seems to promise the same outcome. Record uncertainty for review rather than filling gaps with assumptions.
 
 ## Worked example
 
-**Title**
+| Field | Example |
+| --- | --- |
+| **Parent System Coda** | Account leads can tell whether a client estimate is ready to send by looking at its record. They can act on approved estimates without chasing a status update. |
+| **Title** | Estimate approval status |
+| **Beat Coda** | Account leads can see the current approval state on the estimate record before deciding whether to send it. |
+| **Description** | The estimate record shows whether approval is pending, granted, or declined. It reflects the designated approver's decision when one is recorded. |
+| **Relevant Note** | Only the designated approver may approve an estimate. |
+| **Open question** | Does approval-status visibility warrant its own Beat, or does it belong within a broader approval capability? The example supplies no sibling Beats to compare. |
 
-Estimate approval status
+The parent describes the broader result: account leads can judge readiness without chasing updates. This Beat contributes the approval information they need for that decision.
 
-**Beat Coda**
+## 3. Review and save the draft
 
-Account leads can see the current approval state on the estimate record before deciding whether to send it.
+Read it with someone who knows the work. Can they explain what the capability enables, how it supports the System Coda, and where its boundaries fall? Compare its promised outcome with any known sibling Beats and note possible duplication.
 
-**Description**
+### Work with documents — recommended [#save-documents]
 
-The estimate record shows whether approval is pending, granted, or declined. It reflects the designated approver's decision when one is recorded.
+Save the completed template in your initiative document or a file such as `estimate-approval.md`. Keep the parent System Coda's statement or link and the relevant Notes with it. Leave unresolved questions in the draft so the reviewer can see what still needs deciding.
 
-Use the System Coda from the previous page as this Beat Coda's parent. Next, [run a Coda check](/docs/getting-started/run-a-coda-check) on the Beat.
+<details id="save-repository">
+<summary>Save in a repository</summary>
+
+Ask your coding agent to save the capability as `harmonic-method/beats/estimate-approval/beat.yml`, using `specs/beat.yml` from the kit. Use a stable Beat identifier and set `beat.coda.parent` to the System Coda's identifier from `harmonic-method/coda.yml`.
+
+Create any new capability-specific Notes in that Beat's `notes/` directory, attached to the Beat's identifier. Keep broader System Notes with the System. Preserve published Notes and record later changes through decision Notes. Keep open questions in a working document rather than inventing new entity fields.
+
+[Validate and review the generated files](/docs/implementation/use-a-repository#validate) before committing them.
+
+</details>
+
+## 4. Take the draft into a quality check
+
+Continue to [Run a Coda check](/docs/getting-started/run-a-coda-check). Bring the draft's **title, Beat Coda, and description**, the **parent System Coda**, and the **Notes and sibling Beats** you used. State any missing context.
+
+The next step assesses this material against the published rubric and helps you decide what to improve before planning delivery.

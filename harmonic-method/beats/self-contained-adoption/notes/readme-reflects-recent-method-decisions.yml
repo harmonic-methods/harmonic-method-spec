@@ -1,0 +1,18 @@
+note:
+  id: HM-N-184
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.15
+  content: >
+    Refresh the README to reflect the approved overview, six-role model,
+    responsibility tags and agent skill guidance. Keep it an introduction for
+    people adopting the method, with practical links to the detailed docs and
+    existing skill descriptions. Do not reintroduce internal naming discussion
+    or promise measured efficiency gains.
+  rationale: >
+    The owner requested that the spec repository README reflect the recent
+    updates. HM-N-178 establishes the intended-benefits boundary, HM-N-180 keeps
+    branding discussion out of the overview, HM-N-181 defines the six roles and
+    HM-N-182 explains role tags and agent assistance. Bringing those decisions
+    into the repository entry point helps newcomers assess fit without having
+    to reconstruct the documentation changes.

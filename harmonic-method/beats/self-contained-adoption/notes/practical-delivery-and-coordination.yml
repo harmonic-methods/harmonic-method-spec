@@ -1,0 +1,16 @@
+note:
+  id: HM-N-200
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.30
+  content: >
+    Explain the relationship between commercial delivery and capability plans
+    visually and with an example. Present the distinction between handed-over
+    artifacts and durable capabilities as a short callout rather than a listed
+    entity. Use people and AI agents in place of orchestral staffing vocabulary,
+    and explain coordination through concrete actions and responsibilities.
+  rationale: >
+    The owner found the artifact section misleading as a definition, the
+    relationship section confusing, and the staffing term unfamiliar. Practical
+    language and explicit links reduce the need to interpret the musical metaphor.
+    These are explanatory changes to implementation guidance, not formal schemas.

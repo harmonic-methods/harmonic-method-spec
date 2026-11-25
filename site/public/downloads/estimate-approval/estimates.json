@@ -1,0 +1,6 @@
+[
+  {"id":"EST-101","title":"Discovery workshop","designatedApproverId":"approver-1"},
+  {"id":"EST-102","title":"Approval workflow","designatedApproverId":"approver-1","decision":{"actorId":"approver-1","outcome":"approved"}},
+  {"id":"EST-103","title":"Reporting expansion","designatedApproverId":"approver-1","decision":{"actorId":"approver-1","outcome":"declined"}},
+  {"id":"EST-104","title":"Training session","designatedApproverId":"approver-1","decision":{"actorId":"someone-else","outcome":"approved"}}
+]

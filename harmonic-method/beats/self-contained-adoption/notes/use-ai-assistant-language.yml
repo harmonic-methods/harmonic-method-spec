@@ -1,0 +1,13 @@
+note:
+  id: HM-N-191
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.22
+  content: >
+    Call the onboarding guide Set up your AI assistant, use familiar product
+    examples in its introduction, and replace related reader-facing LLM labels.
+    Keep the existing route and provider instructions unchanged.
+  rationale: >
+    The owner asked whether a CEO or COO would recognize LLM as the ChatGPT or
+    Copilot tool they use. AI assistant names the reader's application directly
+    and avoids implying that the guide requires configuring a language model.

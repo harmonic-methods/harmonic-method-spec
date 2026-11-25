@@ -1,0 +1,23 @@
+beat_version:
+  id: HM-BV-004.27
+  beat: HM-B-004
+  title: Give readers concrete steps for drafting and reviewing one capability
+  status: active
+  summary: >
+    Clarify the inputs, actions, saved output and next step on Define a
+    Capability Beat. HM-N-197 records the onboarding gap. Explain the parent
+    relationship in plain language and provide a copyable working template.
+
+    Done when a reader can start a draft in an existing document or tool,
+    fill its fields, connect it to the System Coda, check known overlaps, save
+    it and bring the right inputs to the next quality review. Preserve the
+    assessed title, Coda and description, show the parent Coda in the example,
+    and keep existing URLs. Verify template copying, walkthrough navigation,
+    mobile readability, exports, build, typecheck, validation and browser suite.
+  scope: >
+    In: the capability drafting page and focused checks within the existing
+    browser suite. One contributor can deliver this editorial change.
+    Out: new method fields, mandatory tools, new accounts, rewriting the assessed
+    example's promise, rubric changes and deployment. Prior steps remain active
+    because their merges have not been established. The template is a working
+    document aid, not a new required record encoding.

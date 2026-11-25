@@ -1,0 +1,22 @@
+note:
+  id: HM-N-193
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.24
+  content: >
+    Explain Note capture as shared work rather than labeling Conductor the
+    accountable author. Authors check captured material against the source;
+    the relevant fact, constraint or decision owner confirms its content.
+    Composer reviews what the knowledge implies for capabilities and where it
+    belongs, as the Note spec requires. Conductor identifies conflicts, escalates
+    to the relevant decision owner and follows resolution while keeping the
+    record aligned with reality. Show this split inline on Note guidance.
+    Preserve existing blank lines in displayed copy-ready blocks.
+  rationale: >
+    The owner questioned the single-role label and suggested distinguishing
+    Composer validation from Conductor conflict escalation. That distinction
+    is useful when validation's meaning is explicit; Composer does not gain
+    approval authority over every role's decisions or domain facts. HM-N-153
+    already makes the record shared and its integrity Conductor-owned, and the
+    Note spec assigns capability implications to Composer. The prompt already
+    contained blank lines, but empty highlighted lines collapsed visually.

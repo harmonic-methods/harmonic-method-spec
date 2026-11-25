@@ -45,6 +45,24 @@ To review your own files, put copies in `your-files/` and replace
 | Review the plan for the next step | `skills/beat-version-quality-check/SKILL.md` |
 | Check whether decisions still support the intended outcome | `skills/coda-alignment-check/SKILL.md` |
 
+## Choose how to save your work
+
+After trying the sample, choose one initiative and follow the shared guides at
+[Getting started](https://harmonicmethods.com/docs/getting-started).
+
+- **Work with documents (recommended).** Save Notes, the System Coda, a
+  Capability Beat draft and its review in a document or Markdown files. The
+  guides explain what to save at each step. No Git setup is required.
+- **Use a repository.** Give a coding agent access to this kit's specs, skills
+  and examples. Follow [the repository guide](https://harmonicmethods.com/docs/implementation/use-a-repository)
+  to create structured records under `harmonic-method/`, validate them with the
+  separately available checker, review the changes and commit through your
+  team's normal process. Initial unattached capture stays in a working document.
+
+You can move confirmed document content into repository records later. Optional
+[assistant and AGENTS.md instructions](https://harmonicmethods.com/docs/appendix/llm-setup#method-instructions)
+help keep the method available for recurring work.
+
 Treat the review as advice. Decisions and approvals stay with the people
 responsible for the work.
 

@@ -1,0 +1,24 @@
+note:
+  id: HM-N-198
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.28
+  content: >
+    Start with a sample review and one initiative, then offer Work with documents
+    as the default and Use a repository as an optional path. Share the four
+    conceptual guides. Each guide explains its document output first and keeps
+    repository saving instructions expandable. Add a repository setup guide for
+    conformant YAML, identifiers, validation and reviewed commits. Align the kit
+    and README. Keep GitHub optional; local repository work is sufficient.
+    Include optional workspace and AGENTS.md instructions that reference the
+    current initiative context and published specs and skills, while preserving
+    the team's existing permission and contribution rules.
+  rationale: >
+    The owner approved support for executives seeking immediate value in their
+    documents and development leads maintaining versioned files, and suggested
+    branching after basic introductory steps. A shared learning sequence avoids
+    duplicate explanations while explicit persistence instructions resolve the
+    prior ambiguity about what to create and where a parent Coda is recorded.
+    Unattached capture stays a working draft until the relevant entity exists.
+    During the work, the owner also asked for a section encouraging persistent
+    Harmonic Method instructions in AGENTS.md or an AI assistant workspace.

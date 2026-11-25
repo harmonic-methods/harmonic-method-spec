@@ -1,0 +1,18 @@
+beat_version:
+  id: HM-BV-004.22
+  beat: HM-B-004
+  title: Use familiar AI assistant language in onboarding
+  status: active
+  summary: >
+    Replace reader-facing LLM setup language with AI assistant terminology and
+    recognizable product examples. HM-N-191 records the audience concern.
+    Done when the setup title, incoming labels, introduction and worked-example
+    heading use plain language, existing URLs still work, and navigation and
+    exports pass the existing browser checks, build, typecheck and validation.
+  scope: >
+    In: onboarding wording, related README and tooling links, and the existing
+    navigation assertion. One contributor can complete this small editorial
+    change. Out: URL changes, product-specific instruction changes, new tool
+    recommendations, normative edits and deployment. Prior steps remain active
+    because their merges are not established. Preserve the old route to avoid
+    breaking bookmarks while improving its displayed title.

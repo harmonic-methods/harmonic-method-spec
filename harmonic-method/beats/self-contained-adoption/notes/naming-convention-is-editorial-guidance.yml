@@ -1,0 +1,17 @@
+note:
+  id: HM-N-195
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.25
+  supersedes: [HM-N-194]
+  content: >
+    Introduce Capability Beat through a natural definition, such as a Capability
+    Beat, or Beat for short, and use the shorter term afterward. The convention
+    belongs in authoring guidance; public prose must not instruct readers to
+    introduce names or choose shorthand. Keep full-term first mentions, existing
+    compound terms, identifiers, URLs and anchors.
+  rationale: >
+    The owner clarified that the previous naming request was an internal
+    editorial instruction. The prior decision was interpreted too literally
+    and placed that instruction into public documentation. This supersedes its
+    wording direction while preserving the intended full-term introduction.

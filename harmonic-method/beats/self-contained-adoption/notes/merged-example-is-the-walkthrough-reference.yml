@@ -1,0 +1,17 @@
+note:
+  id: HM-N-204
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.33
+  content: >
+    Use the accepted, merged example request as the walkthrough reference rather
+    than keeping an open teaching draft indefinitely. Preserve the screenshots
+    as historical captures of planning and review, and pin downloads to the
+    merged source snapshot. The owner authorized merging the example and the
+    internal documentation migration before updating this reference.
+  rationale: >
+    A maintained example on the main branch is a durable teaching resource.
+    Historical screenshots remain useful when their stage is explicit; they
+    must not imply that an open draft is a permanent delivery outcome. The
+    sample files preserve their submitted planning state rather than rewriting
+    an immutable source snapshot after acceptance.

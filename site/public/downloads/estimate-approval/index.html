@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estimate approval status · Harmonic Method example</title>
+  <style>
+    :root { color-scheme: light; font: 16px/1.6 system-ui, sans-serif; color: #172c46; background: #f4f6f8; }
+    body { max-width: 900px; margin: 48px auto; padding: 0 24px; }
+    h1 { font-size: 32px; line-height: 1.2; margin-bottom: 12px; }
+    h2 { font-size: 18px; margin: 0; }
+    .eyebrow { font-size: 13px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: #3163a8; }
+    #estimates { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 28px 0; }
+    article { padding: 24px; border: 1px solid #d4dce5; background: white; border-radius: 12px; }
+    article p:last-child { font-size: 14px; color: #526075; margin-bottom: 0; }
+    .status { display: inline-block; padding: 3px 12px; border-radius: 18px; font-weight: 650; }
+    .approved { background: #e2f3e8; color: #185a31; }
+    .declined { background: #fbe7e7; color: #8a2525; }
+    .pending, .unavailable { background: #fff1d5; color: #714600; }
+    aside { border-left: 3px solid #3163a8; padding-left: 16px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <p class="eyebrow">Harmonic Method · Worked example</p>
+  <h1>Estimate approval status</h1>
+  <p>Account leads can see the current approval state on the estimate record before deciding whether to send it.</p>
+  <main id="estimates" aria-label="Estimate records" aria-live="polite"></main>
+  <aside>Fictional, read-only records. Only the designated approver's recorded decision changes the displayed state. This example does not grant approval, send estimates, or implement authentication.</aside>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

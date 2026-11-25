@@ -1,0 +1,17 @@
+note:
+  id: HM-N-186
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.17
+  content: >
+    Remove page-level responsibility rows from general orientation and pages
+    spanning several accountabilities. Use an accountable tag only when one
+    role owns the practice, with supporting roles where useful. Describe mixed
+    ownership beside the relevant topic instead. Reject multiple accountable
+    roles in page metadata; browser and Markdown exports must agree.
+  rationale: >
+    The owner pointed out that listing everyone as accountable identifies
+    nobody. This revises the documentation presentation allowed by HM-N-182:
+    broad pages no longer list all roles, while specific practices still show
+    ownership. It does not change the method's role definitions or prevent one
+    person from holding several roles.

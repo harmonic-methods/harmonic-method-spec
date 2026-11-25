@@ -1,0 +1,17 @@
+note:
+  id: HM-N-185
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.16
+  content: >
+    Replace the primitives page's monospace progression with a responsive
+    flowchart: Beat, Beat Version and Revision as nodes, with durable capability,
+    planned increment and tracked change as captions. Replace the separate
+    ownership section with linked role callouts beside each definition.
+  rationale: >
+    The owner requested a flowchart with plain-language translations and
+    ownership guidance inline. Pairing the guidance with its subject removes
+    a separate lookup and accommodates the six-role model. Semantic HTML and
+    CSS keep the diagram readable without client rendering and preserve its
+    text in Markdown exports. Tracked change reflects the Revision definition
+    without implying every change has already been delivered.

@@ -1,18 +1,25 @@
 # The Harmonic Method
 
-The specification and agent skills for **the Harmonic Method** — a single
-method for improving systems with explicit intent, preserved context, and
-decision lineage. Open to practice with any tools.
+The open specification and agent skills for **the Harmonic Method**. It helps
+people and AI agents keep work connected to its purpose through explicit
+outcomes, preserved context, and decision rationale. Practise it with your
+existing tools.
 
-The method defines six roles that act on intent — Director, Composer, Orchestrator,
-Conductor, Producer, Promoter — each scoped to an altitude rather than split
-into separate frameworks. This repository covers those functions and the entity model
-at system altitude: Coda, Beats, Beat Versions, Revisions, and Notes. The same primitives recur at beat/
-track altitude (a discrete piece of work) and portfolio altitude (the set of
-systems); altitude is recursion, not a different method, so these specs
-and rubrics apply there too, unchanged.
+A **Capability Beat**, or **Beat** for short, describes a durable capability
+the system needs. Each Beat evolves through planned **Beat Versions**.
 
-Full documentation is at [harmonicmethods.com](https://harmonicmethods.com).
+One method connects strategic direction, system definition, planning,
+day-to-day execution, investment, and adoption through six roles. Its primitives
+and roles apply at capability, system, and portfolio scope; only the scope of
+the work changes.
+
+Start with the [overview](https://harmonicmethods.com/docs), then explore
+[Harmonic Method Roles](site/content/docs/method/roles.mdx) or
+[getting started](site/content/docs/getting-started/index.mdx). Practice pages
+with a distinct owner use an **Accountable** tag, with **Supporting** tags for
+contributors. General pages omit them; mixed responsibilities are explained
+inline. The tags link to role definitions, not the page's author or maintainer.
+
 The website and documentation application lives in [site/](site/README.md),
 alongside the specification; see that guide to run it locally or contribute.
 Harmonica ([harmonica.io](https://harmonica.io)), by Codazen, is the reference
@@ -22,7 +29,85 @@ Everything here is medium-agnostic. A capability might be a software feature, an
 operational process, or an organizational practice; the change that delivers it
 might be a pull request, a procedure document, or a runbook diff.
 
+## Challenges and intended benefits
+
+The method aims to make goals clearer, reduce wasted human and AI effort, and
+preserve continuity across handoffs.
+
+| Common challenge | Method practice | Intended benefit |
+| --- | --- | --- |
+| Different interpretations of success | Explicit outcomes, constraints, and testable steps | Clearer goals and less rework |
+| Context lost between people, agents, and sessions | Durable Notes preserving context and rationale | Continuity across handoffs |
+| Repeated explanations and rediscovery | Reusable context attached to the work | Less human time and AI effort spent rebuilding understanding |
+| Changes in direction go unnoticed | Regular alignment reviews and recorded reference points | Earlier drift detection and fewer surprises |
+| Repeated debate or unclear ownership | Recorded decisions and named role holders | Faster decisions and fewer coordination gaps |
+| Activity disconnected from value | Work traced to the outcome it serves | Clearer priorities and reasons to continue, change, or stop |
+
+These are intended benefits, not measured or guaranteed results. **More
+efficient token usage is an intended benefit:** reusable context aims to reduce
+speculative attempts and correction loops, but preparing and reviewing that
+context also costs tokens. Savings need measurement per accepted outcome.
+
+## Harmonic Method roles
+
+Each role carries a distinct accountability, called a **function** in the
+specification. One person may hold several roles. Each needs an identifiable
+person who answers for its decisions.
+
+| Role | Accountability |
+| --- | --- |
+| **Director** | Sets strategic direction and tests whether its assumptions still hold as needs and conditions change. |
+| **Composer** | Defines coherent systems and capabilities, with outcomes, constraints, and boundaries that serve the strategic direction. |
+| **Orchestrator** | Arranges work, dependencies, capacity, workflows, and assignment policies across people and agents. |
+| **Conductor** | Leads day-to-day execution within agreed scope, capacity, and authority; coordinates handoffs, resolves blockers, and keeps decisions in force. |
+| **Producer** | Judges value against cost and decides which investments to fund, continue, reshape, or stop. |
+| **Promoter** | Helps the intended audience understand and adopt what was built, and checks whether it is being used. |
+
+Director owns whether the direction still makes sense. Composer defines the
+systems and capabilities that serve it. Producer judges whether their
+investment earns its keep: a strategically aligned investment can cost too
+much, and a profitable system can still serve an outdated strategy.
+
+Orchestrator sets the execution arrangement; Conductor leads the work within
+it. A tech lead or delivery lead often holds Conductor. Changes beyond the
+agreed envelope go to the role that owns the decision rather than being
+absorbed into daily execution.
+
+The [role definitions](specs/function.yml) are canonical. The
+[roles guide](site/content/docs/method/roles.mdx) explains decision boundaries,
+scope, and mappings to conventional job titles. Roles are accountability
+vocabulary, not new entities or required fields on every record.
+
+## Agents and skills
+
+Agents can assist every role with research, drafting, assessment, monitoring,
+and delegated execution under a named person's accountability. Role names and
+skills grant no permission by themselves; the accountable person defines the
+agent's decision limits and approval requirements.
+
+We recommend explicit skills for the work an agent performs. Define the
+context it must read, outputs it should produce, quality checks it should
+apply, actions it may take, and when it must ask the accountable person.
+
+The [published skills](#the-instruments) support Composer, Orchestrator,
+Conductor, and Producer. Director and Promoter have no dedicated published
+skills yet. Teams can define skills for strategic assumption reviews, business
+signal monitoring, communication, or adoption reviews; those are recommended
+extensions, not existing instruments. Producer's root Coda skills assess value
+claims without replacing Director's judgment about strategic direction.
+
+See [recommended skills by role](site/content/docs/method/tooling.mdx#role-skills)
+and the [AI assistant setup guide](site/content/docs/appendix/llm-setup.mdx) for how to use
+a published skill or save a team-specific assistant.
+
 ## Getting started
+
+Start with the [shared sample review and initiative](site/content/docs/getting-started/index.mdx),
+then choose **Work with documents** (recommended) or
+[**Use a repository**](site/content/docs/implementation/use-a-repository.mdx).
+The guides share the same concepts and explain how to save each output in the
+chosen format. Optional [persistent assistant instructions](site/content/docs/appendix/llm-setup.mdx#method-instructions)
+can go in an assistant workspace or your repository's `AGENTS.md`.
 
 ### Try the starter kit
 
@@ -159,13 +244,6 @@ Conductor's **Tie off** follows it — the ceremony that settles every unfinishe
 item in the Bar before the Bar is closed; an item that continues into the next
 Bar is *tied across* it — and the Downbeat comes after that.
 
-Cutting across all of it are the five **functions** — Director, Composer, Orchestrator,
-Conductor, Producer, Promoter. They are accountabilities rather than titles: one
-person may hold several, an agent may hold one under a named person's
-accountability, and the set does not change with altitude. Nothing instantiates
-a function and no entity carries one as a field; naming them is what makes it
-possible to say which of the five nobody is currently holding.
-
 | Spec | Entity |
 | --- | --- |
 | [specs/coda.yml](specs/coda.yml) | the strategic outcome an entity serves |
@@ -285,10 +363,6 @@ measures service to the Coda above, and a root Coda has none, so the dimension
 carrying the most weight elsewhere has no referent here and no rewording gives it
 one. These six score the statement's own properties and its relation outward, to
 the parties it serves and the alternatives they hold.
-
-The Promoter still has no instrument, deliberately: adoption rests on the newest
-and thinnest evidence of the five, and should not carry more apparatus than the
-others until that changes.
 
 The dimension definitions and anchors are canonical here, so a score means the
 same thing wherever it is produced. Each instrument tells the reader not to

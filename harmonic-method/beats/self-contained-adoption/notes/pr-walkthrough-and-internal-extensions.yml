@@ -1,0 +1,16 @@
+note:
+  id: HM-N-203
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.33
+  content: >
+    Add a practical Implementation walkthrough using the estimate approval
+    example's real draft request, source files and screenshots. Keep method
+    documentation tool-agnostic. Move application-specific delivery definitions
+    and coordination mechanics into the owner's named internal documentation
+    repository, retaining generic coordination practices on the method site.
+  rationale: >
+    The owner approved the real-request walkthrough and supplied the internal
+    documentation destination. Method adopters should not have to learn one
+    application's commercial containers, release groupings or activity claims.
+    The internal request is documentation-only and follows its own charter.

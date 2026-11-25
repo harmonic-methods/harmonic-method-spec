@@ -1,46 +1,52 @@
 ---
 title: "Coordination"
-description: "Forces, Sections, Assignment, Claim, handoff, and dependency sequencing — the Orchestrator function in its strictest sense."
+description: "Choose people and AI agents, assign ownership, coordinate active work, and make handoffs explicit."
 accountableRoles: [Orchestrator]
 supportingRoles: [Conductor]
 ---
 
-<p className="cajon-page-lead">Parts have to reach performers. This is the Orchestrator's function in its strictest sense: deciding which forces carry which material, and in what order.</p>
+The Orchestrator plans who will do the work, what they need, and which dependencies must be resolved first. The Conductor uses that plan to lead day-to-day execution, resolve blockers within agreed authority, and escalate changes to scope or capacity.
 
-Tools can represent assignments, temporary claims, and sequencing in different ways. The practices below illustrate one way to make coordination visible.
+The practices below can be supported by a shared task board, documents, or a coordination tool. Use enough detail to prevent duplicate work and lost context.
 
-## Forces [#forces]
+<span id="forces" aria-hidden="true" />
 
-<p>The performers available, human and AI. Not interchangeable, and the difference is not skill.</p>
+## People and AI agents [#people-and-agents]
 
-<p>A human handed a part in the wrong key will usually stop and ask. An agent will sight-read it fluently and hand back confident, well-made work that does not belong. Assignment has to account for which failure mode it is inviting.</p>
+Choose who can perform each planned change based on the skills, context, access, and review it needs. Name a person who remains accountable when an AI agent assists.
 
-## Sections [#sections]
+**Example:** An agent drafts a change to the estimate status display. A developer reviews the implementation, and the designated approver confirms that it represents their decisions correctly. Give the agent the Beat Version, relevant Notes, allowed actions, and acceptance criteria before it starts.
 
-<p>The Layers a part is scored for — grouped by architectural role rather than technology, the way an orchestra groups by family rather than by manufacturer. A part written for three sections is still one part.</p>
+## Group related work [#sections]
 
-## Assignment [#assignment]
+Group planned changes by the responsibility they serve, such as the customer interface, approval rules, or reporting. If a change touches several areas, identify the reviewers and dependencies rather than treating each area as unrelated work.
 
-<p>Durable ownership — who is responsible, however long it takes. A question about accountability rather than activity. It survives someone being on holiday.</p>
+## Assign an owner [#assignment]
 
-## Claim [#claim]
+Record who is responsible for seeing a planned change through to acceptance. That responsibility remains clear when someone else contributes or temporarily takes over the work.
 
-<p>Who has the stand <em>right now</em>. Heartbeat-backed and auto-released when stale — the live signal that someone is actively playing this passage, so concurrent actors see it is taken before starting duplicate work.</p>
+**Example:** The developer owns the status-display change even while an agent drafts it. The owner arranges review, follows up on corrections, and confirms the acceptance criteria are met.
 
-<p>The Claim is the clearest illustration of what distributed delivery has to reconstruct. <strong>An orchestra has no need for one</strong> — you can see who has their instrument up. Where performers cannot see each other, two actors picking up the same work stays invisible until both have finished and only one result is usable.</p>
+## Show who is working now [#claim]
 
-<blockquote><p>Assignment and claiming answer different questions, and collapsing them is a common and expensive mistake. "Who owns this?" and "who is playing it right now?" have different answers most of the time, and a system that records only one will be wrong about the other.</p></blockquote>
+Ownership and current activity answer different questions. Before starting, make it visible that someone is working on the item so another person or agent does not duplicate it.
 
-## Handoff [#handoff]
+Use an in-progress status with a named contributor, or a short update in the shared work record. When work stops or changes hands, update that signal so it stays useful. The specific tool is your choice.
 
-<p>Passing work between agents, or between an agent and a human, without losing the context that explains why it looks the way it does so far. The seam where context degrades if nothing is holding it.</p>
+## Pass on the context [#handoff]
 
-## Dependency sequencing [#sequencing]
+A handoff should include the planned change, its linked Beat Version if any, the current output, decisions and constraints, checks already run, and unresolved questions. Name the next person or agent and the action expected of them.
 
-<p>Explicit ordering across agents working related Work Items, so they build on each other's output instead of colliding or overwriting shared assumptions.</p>
+**Example:** “The status display is ready for review. Pending, granted, and declined are covered; the no-decision case still needs confirmation. Review the approver's Note before changing that behavior.”
 
-## Why this is explicit [#why-explicit]
+## Sequence dependencies [#sequencing]
 
-<p>A co-located ensemble gets most of this for free: who is playing, who just changed something, what everyone else is doing. A distributed ensemble of humans and agents gets none of it. Every coordination element here exists because a signal that is ambient in a rehearsal room has to be deliberately constructed in a distributed one.</p>
+Record what must be available before another planned change can proceed. Where possible, agree on an interface or input that lets work continue independently.
 
-<p><a className="cajon-learn-more" href="/docs/method/cadence">Read about cadence →</a></p>
+**Example:** Confirm the approval states before implementing the display. Once those states are agreed, the interface and reporting work can proceed in parallel. If the states change, the Conductor checks the impact and escalates any change beyond the agreed plan.
+
+## Keep coordination current [#why-explicit]
+
+During execution, the Conductor checks for blocked items, out-of-date activity updates, missing handoff context, and decisions that affect other work. Update the shared record when something changes. Bring capacity or sequencing changes beyond the agreed plan back to the Orchestrator.
+
+[Read about cadence →](/docs/method/cadence)

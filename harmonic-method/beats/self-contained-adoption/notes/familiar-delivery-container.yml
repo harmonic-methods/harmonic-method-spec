@@ -1,0 +1,14 @@
+note:
+  id: HM-N-199
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.29
+  content: >
+    Use familiar engagement terminology instead of the musical name for the
+    commercial delivery container throughout the public documentation. Update
+    the glossary and new links together, preserving the earlier section bookmark.
+    This changes reader-facing implementation terminology, not formal entities.
+  rationale: >
+    The owner requested the rename while reviewing Delivery structure. A familiar
+    term reduces metaphor overhead while the existing separation between
+    commercial arrangements and durable capabilities remains useful.

@@ -1,0 +1,30 @@
+beat_version:
+  id: HM-BV-004.15
+  beat: HM-B-004
+  title: Bring the README introduction in line with the current method
+  status: active
+  summary: >
+    A newcomer reading the repository README sees the current six-role model,
+    intended benefits and agent assistance guidance before trying the method.
+    HM-N-184 records the editorial scope and its connection to recent decisions.
+
+    Done when the README emphasizes clearer goals, less wasted human and AI
+    effort and continuity across handoffs; qualifies token efficiency as an
+    intended benefit; distinguishes Director, Composer and Producer; describes
+    Conductor's day-to-day execution leadership; explains role tags and explicit
+    agent skills under human accountability; and links to the merged overview
+    and detailed guidance. Existing quick-start commands and canonical skill
+    descriptions remain usable. Check local links, repository validation and
+    whitespace. One contributor can complete this documentation change.
+  scope: >
+    In: README introduction, concise challenges and roles summaries, agent
+    assistance guidance and documentation links; remove the redundant roles
+    paragraph from the entity model section. Record the plan and decision.
+    Out: normative definitions, new agent skills, benchmarks, site changes,
+    remote writes, publication and unrelated repository edits. Prior steps stay
+    active because their merges have not been established.
+
+    Risks: summarizing roles can blur decision rights, and efficiency copy can
+    imply measured savings. Use the canonical function definition and existing
+    benefits decision as the sources; distinguish intended results from evidence
+    and published skills from team-defined recommendations.

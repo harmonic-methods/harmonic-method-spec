@@ -36,6 +36,35 @@ Shared MDX renderers live in `components/`. `app/theme.css` supplies local style
 for both surfaces, including the existing `cajon-*` classes. Fonts are self-hosted
 from public Fontsource packages, whose bundled licenses apply to those fonts.
 
+Practice pages can declare `accountableRoles` and `supportingRoles` arrays in
+frontmatter using the names in `lib/roles.ts`. Accountable tags name who answers
+for applying the practice; supporting tags name contributors. These tags link to
+the role definitions and appear in Markdown exports. The content schema rejects
+unknown names, duplicates, multiple accountable roles, and roles assigned to both
+groups on one page. Use an accountable tag only when one role clearly owns the
+practice. Omit page-level tags on general orientation or mixed-practice pages;
+explain distinct responsibilities inline instead. Tags do not designate the
+page's author or maintainer.
+
+Use the existing `CalloutContainer`, `CalloutTitle` and `CalloutDescription`
+MDX components sparingly for advice readers could otherwise miss. Types `info`,
+`idea` (tip) and `warning` provide styled treatments. Put an explicit Info, Tip
+or Warning label in the title, and use child content so titles survive Markdown
+export. Prefer at most one new callout on a page; keep ordinary explanations
+in the body text.
+
+Introduce **Capability Beat** or **Capability Beats** at first mention on a
+standalone page, with natural wording such as “a Capability Beat, or Beat for
+short.” Use the shorter form afterward. Keep editorial naming instructions out
+of reader-facing prose. Keep compound terms such
+as **Beat Version**, entity fields, identifiers and routes unchanged.
+
+Put copy-ready prompts, commands and reusable examples in fenced code blocks
+with a descriptive `title`. The shared renderer supplies a copy button. Use
+`text` for plain instructions or `markdown` for content with headings and lists;
+copying preserves the source syntax and line breaks. Text and Markdown blocks
+wrap long lines for readability. Keep explanatory quotations as quotations.
+
 The specification and instrument definitions in the parent directory remain
 canonical. The imported documentation has been reconciled for Beat quality
 dimensions,
@@ -109,3 +138,7 @@ Copyright 2026 Codazen, Inc.
 See the parent [README](../README.md#license) for the repository licensing
 boundary. The site has its own package and lockfile and is excluded from the
 published checker package.
+
+### Estimate approval walkthrough assets
+
+The runnable source lives in `tutorials/estimate-approval/`. After changing it, run `python3 tools/build-estimate-example.py` from the repository root to refresh the downloadable files and ZIP. The docs browser suite checks that served source files match the example. PR screenshots in `site/public/images/walkthrough/` are historical captures; the walkthrough links their source commit.
