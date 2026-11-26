@@ -18,7 +18,7 @@ export async function GET() {
     '## Start here',
     '',
     `- [A Delivery Method Built for AI Coding Agents](${SITE_URL}/docs/ai-coding-agents.md): What AI coding agents need from a delivery method, how to manage them at scale, and what AI-native software delivery means.`,
-    `- [Composition](${SITE_URL}/docs/composition.md): The founding area of the Harmonic Method — the methodology for AI-native software delivery within a single system.`,
+    `- [Primitives](${SITE_URL}/docs/method/primitives.md): Notes, Codas, Capability Beats, Beat Versions, and Revisions used across capability, system, and portfolio scope.`,
     `- [Partnering with AI Agents](${SITE_URL}/docs/partnering-with-agents.md): How people and agents divide the work, and what structured context makes possible.`,
     '',
     '## Documentation',

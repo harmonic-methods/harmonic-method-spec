@@ -18,6 +18,8 @@ description: "Note, Coda, Capability Beat, Beat Version, and Revision — the se
 
 <p>The most significant source of waste in delivery is not incomplete work — it is lost context. Notes make the conditions behind a decision permanent and retrievable. A Note attaches to the Portfolio, System, Proposal, or Beat it informs. A Beat Note can reference the Beat Version that prompted it.</p>
 
+<p>Preserve published reasoning when it changes. A new decision Note can reference an earlier one in <code>supersedes</code>, keeping the prior record readable. A Note never attaches to a Beat Version; the optional reference records which step prompted it.</p>
+
 <blockquote><p>Notes are not a substitute for real-time communication. They are the residue of communication — the part worth keeping because it will matter later.</p></blockquote>
 
 <aside className="hm-primitive-owner" aria-label="Note responsibilities">
@@ -51,6 +53,16 @@ description: "Note, Coda, Capability Beat, Beat Version, and Revision — the se
 <p>Tasks and features close when they ship. A capability continues to matter long after its first version. Conflating the two is a common source of fragility: when capabilities are expressed as tickets they get closed, archived, and forgotten while the underlying need remains. A Beat stays open as long as the system depends on what it describes.</p>
 
 <p>A Beat is <code>open</code> or <code>closed</code>. Its progress is expressed through its Beat Versions.</p>
+
+### From task to capability [#task-to-capability]
+
+| Task framing | Capability framing |
+| --- | --- |
+| Build the login page | Users can securely authenticate and access their accounts. |
+| Add an export button | Users can extract their data in formats their downstream tools can use. |
+| Fix search latency | Users can find relevant results quickly enough to continue their work. |
+
+The task can finish while the capability continues to evolve. [See the scheduling example](/docs/implementation/scheduling-example) for how a capability becomes a bounded plan and tracked changes.
 
 <aside className="hm-primitive-owner" aria-label="Beat responsibilities">
   <p><a className="hm-inline-role" href="/docs/method/roles#composer">Composer</a> defines the capability and its quality bar. <a className="hm-inline-role" href="/docs/method/roles#producer">Producer</a> judges whether it earns its investment; <a className="hm-inline-role" href="/docs/method/roles#promoter">Promoter</a> owns adoption by the intended audience.</p>

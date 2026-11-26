@@ -1,0 +1,29 @@
+beat_version:
+  id: HM-BV-004.41
+  beat: HM-B-004
+  title: Readers encounter one method across the documentation
+  status: active
+  summary: >
+    Retire the Composition, Orchestration and Portfolio Management section
+    framing while preserving useful examples and adoption guidance in the
+    current method and implementation docs. HM-N-212 records the consolidation.
+
+    Done when navigation, metadata, related articles and AI discovery describe
+    one method; retired HTML and Markdown URLs permanently redirect to relevant
+    current material; and retired URLs no longer appear in generated discovery
+    output. Preserve the scheduling example and guidance for existing work,
+    aligned with the published primitives and role boundaries. Conformance,
+    typecheck, build and browser checks must pass, including redirects, anchor
+    destinations, current internal links and desktop/mobile navigation.
+  scope: >
+    In: retired section source and navigation, targeted content consolidation,
+    redirects, internal references, metadata, discovery output and verification.
+    Mark the merged US English step delivered. One maintainer can own this
+    documentation and routing change end to end.
+
+    Out: normative specifications and rubrics, unrelated article rewrites,
+    release assets, new product claims, domain or access-control changes and
+    unrelated local work. Existing readers may use deep links and Markdown
+    exports; explicit redirects and target-anchor checks must preserve those
+    entry points. Historical framework and workflow claims must not be carried
+    into the current docs as requirements of the method.

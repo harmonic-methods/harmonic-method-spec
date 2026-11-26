@@ -1,13 +1,13 @@
 ---
 title: Spec-Driven Development
-description: 'Spec-driven development means giving AI coding agents a structured, durable specification to build against instead of ad-hoc prompts. Harmonic Composition provides that spec layer through Capability Beats and seven quality dimensions.'
+description: 'Spec-driven development means giving AI coding agents a structured, durable specification to build against instead of ad-hoc prompts. The Harmonic Method provides that spec layer through Capability Beats and seven quality dimensions.'
 ---
 
 <span className="cajon-overline">Reference</span>
 
 # Spec-Driven Development
 
-<p className="cajon-page-lead">Spec-driven development is the practice of giving AI coding agents a structured, durable specification to build against — rather than ad-hoc prompts or disposable tickets. In Harmonic Composition, that specification layer is made of Capability Beats (durable capability definitions) assessed across seven quality dimensions, so the spec is both rigorous and built to last.</p>
+<p className="cajon-page-lead">Spec-driven development is the practice of giving AI coding agents a structured, durable specification to build against — rather than ad-hoc prompts or disposable tickets. In the Harmonic Method, that specification layer is made of Capability Beats (durable capability definitions) assessed across seven quality dimensions, so the spec is both rigorous and built to last.</p>
 
 <div className="cajon-def-box">
   <div className="cajon-def-box__label">Definition</div>
@@ -22,10 +22,10 @@ The difficulty is that most "specs" in practice are ephemeral: a prompt, a ticke
 
 ## The spec layer: Beats + quality gates
 
-Harmonic Composition treats the specification as a durable artifact, not a throwaway instruction:
+The Harmonic Method treats the specification as a durable artifact, not a throwaway instruction:
 
-- **[Beats](/docs/composition/beats)** are the spec units — durable, outcome-oriented capability definitions that persist and evolve through Revisions rather than closing like tickets.
-- **[Quality gates](/docs/composition/quality-gates)** assess the spec across seven dimensions — Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, and Outcome-Oriented — before work begins. An agent can return a scorecard with improvement guidance. The rubric assesses; implementations choose whether and how to enforce a gate.
+- **[Beats](/docs/method/primitives#beat)** are the spec units — durable, outcome-oriented capability definitions that persist and evolve through Revisions rather than closing like tickets.
+- **[Quality gates](/docs/method/quality#dimensions)** assess the spec across seven dimensions — Distinctive, Harmonious, Substantial, Durable, Clear, Strategically Aligned, and Outcome-Oriented — before work begins. An agent can return a scorecard with improvement guidance. The rubric assesses; implementations choose whether and how to enforce a gate.
 
 Together these answer the question other spec-driven approaches leave open: a Beat is the spec, and the quality gates define what makes it good. An agent building against a quality-gated Beat is working from a specification that has already been checked for clarity, coherence, and fit.
 
@@ -63,18 +63,18 @@ export const specDrivenFaqs = [
   {
     question: 'How does spec-driven development work with AI coding agents?',
     answer:
-      'AI coding agents execute against whatever specification they are given, so the quality of the spec is the dominant variable in whether the output is correct. Spec-driven development gives agents a precise, durable specification instead of an ephemeral prompt. In Harmonic Composition, that spec is a Beat — a durable capability definition — assessed across seven quality dimensions. The team decides how the result affects its workflow.',
+      'AI coding agents execute against whatever specification they are given, so the quality of the spec is the dominant variable in whether the output is correct. Spec-driven development gives agents a precise, durable specification instead of an ephemeral prompt. In the Harmonic Method, that spec is a Beat — a durable capability definition — assessed across seven quality dimensions. The team decides how the result affects its workflow.',
   },
   {
     question: 'How does spec-driven development scale without specs going stale?',
     answer:
-      'Specs go stale when they are written once and archived. Harmonic Composition keeps the spec durable: Beats persist and evolve through Revisions rather than closing like tickets, quality gates re-evaluate them when they change, and every Beat is checked against the Coda (the destination) so the spec stays connected to where the system is headed. The spec evolves with the capability instead of drifting out of date.',
+      'Specs go stale when they are written once and archived. The Harmonic Method keeps the spec durable: Beats persist and evolve through Revisions rather than closing like tickets, quality gates re-evaluate them when they change, and every Beat is checked against the Coda (the destination) so the spec stays connected to where the system is headed. The spec evolves with the capability instead of drifting out of date.',
   },
 ];
 
 <FaqSection entries={specDrivenFaqs} label="Spec-driven development questions" />
 
 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
-  <a className="cajon-learn-more" href="/docs/composition/quality-gates">See the seven quality dimensions →</a>
+  <a className="cajon-learn-more" href="/docs/method/quality#dimensions">See the seven quality dimensions →</a>
   <a className="cajon-learn-more" href="/docs/ai-coding-agents">A Delivery Method Built for AI Coding Agents →</a>
 </div>

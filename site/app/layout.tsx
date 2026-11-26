@@ -14,7 +14,7 @@ import './global.css';
 const SITE_NAME = 'Harmonic Methods';
 const SITE_TAGLINE = 'Harmonic Methods — A Delivery Method Built for AI Coding Agents';
 const SITE_DESCRIPTION =
-  'Harmonic Methods — the delivery method built for AI coding agents and AI-native software delivery: Composition, Orchestration, and Portfolio frameworks for building software where intent is explicit, context is preserved, and people and agents stay aligned.';
+  'The Harmonic Method helps people and AI agents preserve intent, context, and accountability across software delivery, using shared primitives and roles at capability, system, and portfolio scope.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     'managing AI coding agents',
     'context engineering',
     'Harmonic Methods',
-    'Harmonic Composition',
+    'Harmonic Method',
   ],
   alternates: { canonical: '/' },
   openGraph: {
