@@ -6,9 +6,14 @@ note:
   content: >
     Open homepage links to the specification repository in a new tab with
     noopener and noreferrer, matching existing docs and repository-card links.
+    Apply the same behavior to the inline Markdown attachments linked from
+    Getting started and the AI setup guide.
   rationale: >
     The owner asked for repository links to open a new tab where useful.
     Inspecting the specification alongside the site benefits from preserving
-    the reader's place. Internal navigation and ZIP downloads serve different
+    the reader's place. The owner also highlighted the review and sample
+    attachments. Those same-site files are served inline, so ordinary links
+    can replace the instructions with raw Markdown. Open them alongside the
+    instructions as well. Internal navigation and ZIP downloads serve different
     actions and retain their existing behavior. Existing hrefs remain intact
     so outbound-link measurement continues to identify the same destinations.
