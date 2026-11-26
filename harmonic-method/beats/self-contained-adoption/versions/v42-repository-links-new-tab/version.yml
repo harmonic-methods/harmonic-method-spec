@@ -1,25 +1,30 @@
 beat_version:
   id: HM-BV-004.42
   beat: HM-B-004
-  title: Readers can inspect the repository without losing their place
+  title: Readers can inspect source and attachments without losing their place
   status: active
   summary: >
     Make homepage navigation and footer links to the specification repository
     open a new tab, consistent with the existing documentation links and
-    repository card. HM-N-213 records the choice.
+    repository card. Also open the inline Markdown attachments linked from
+    Getting started and the AI setup guide in new tabs. HM-N-213 records the
+    choice and the owner's clarification about these file links.
 
     Done when those links use a blank target with noopener and noreferrer,
     desktop and mobile activation preserve the originating page, and existing
     repository URLs and analytics identifiers remain intact. Verify the
-    existing docs behavior and unchanged internal navigation and download links.
+    existing docs behavior, new-tab activation for both Markdown attachments,
+    and unchanged internal navigation and ZIP download links.
     Repository conformance, site typecheck, build and browser checks must pass.
   scope: >
-    In: homepage navigation and footer link attributes and verification of
-    repository navigation across the site. Mark the merged documentation
+    In: homepage navigation and footer link attributes, the inline Markdown
+    attachment links in Getting started and the AI setup guide, and verification
+    of repository navigation across the site. Mark the merged documentation
     consolidation step delivered. One maintainer can complete this bounded
     change independently using the existing link components.
 
     Out: normative specifications, content rewrites, unrelated external links,
-    download behavior, analytics configuration and production deployment.
+    ZIP download behavior, file response headers, analytics configuration and
+    production deployment.
     Preserve normal anchor semantics and prevent the new tab from obtaining
     access to its opener. Do not broaden the behavior to internal links.
