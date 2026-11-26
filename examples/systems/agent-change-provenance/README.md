@@ -84,9 +84,6 @@ npm run validate
 # Validate only the examples tree
 node bin/hm.mjs validate examples
 
-# Validate only this system's tree
-node bin/hm.mjs validate examples/systems/agent-change-provenance
-
 # Check the Beads interoperability declaration in isolation
 node tools/conformance.mjs examples/declaration-beads-interop.yml
 ```

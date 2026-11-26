@@ -141,12 +141,12 @@ declaration:
       field: >-
         rule — each function is held by someone identifiable
       published: >
-        Five accountabilities — Composer, Orchestrator, Conductor, Producer,
-        Promoter — constant at every altitude, each held by a person or by an
-        agent under a named person's accountability.
+        Six accountabilities — Director, Composer, Orchestrator, Conductor,
+        Producer, Promoter — constant at every altitude, each held by a person
+        or by an agent under a named person's accountability.
       actual: >
         No accountability model. Beads records assigned_to on a bead but defines
-        no named functions. The five accountabilities are not represented, and
+        no named functions. The six accountabilities are not represented, and
         there is no way to ask which of them nobody is holding, which is the
         purpose of naming them.
 
