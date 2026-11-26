@@ -1,0 +1,14 @@
+note:
+  id: HM-N-213
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.42
+  content: >
+    Open homepage links to the specification repository in a new tab with
+    noopener and noreferrer, matching existing docs and repository-card links.
+  rationale: >
+    The owner asked for repository links to open a new tab where useful.
+    Inspecting the specification alongside the site benefits from preserving
+    the reader's place. Internal navigation and ZIP downloads serve different
+    actions and retain their existing behavior. Existing hrefs remain intact
+    so outbound-link measurement continues to identify the same destinations.
