@@ -98,6 +98,45 @@ declaration:
         period the work falls within. A bead may carry a due date as free text,
         but there is no recurring period, no boundary event, and no anchor.
 
+    - spec: revision.yml
+      field: beat
+      published: >
+        Required. The capability a Revision belongs to, named on every Revision
+        whether or not it executes a planned step — a change nobody can trace
+        back to a capability is not tracked, it is merely logged.
+      actual: >
+        No back-reference to a capability. A bead has no field naming the Beat
+        it serves; the mapping bead→revision therefore carries a contradiction
+        that the mapping alone does not resolve. A bead is opened for immediate
+        work and may reference another bead it depends on, but there is no layer
+        above the work item where a durable capability is named and held.
+
+    - spec: revision.yml
+      field: status
+      published: >
+        Required, one of active, delivered, withdrawn, carried on the entity in
+        every medium. Active means in flight; delivered means the change shipped;
+        withdrawn means it left flight without shipping.
+      actual: >
+        A bead carries open, done, and blocked. These address a task's blocking
+        state rather than a change's lifecycle: blocked is a temporary condition
+        a Revision has no equivalent for, and withdrawn — a planned change that
+        left flight without shipping — is not representable. Done and delivered
+        are the closest pairing but address different questions: done says the
+        agent finished the task, while delivered says the change shipped.
+
+    - spec: downbeat.yml
+      field: coda_state
+      published: >
+        Required. An immutable snapshot of the Coda as it stood when the anchor
+        was taken, sufficient to determine how far it has moved since and not
+        only that it has.
+      actual: >
+        No anchor mechanism. Beads has no concept of a point-in-time snapshot of
+        a capability's stated outcome; there is no Coda to snapshot and no event
+        that occasions one. The question of drift over time is not computable
+        because nothing is anchored and there is no baseline to reconcile against.
+
     - spec: function.yml
       field: >-
         rule — each function is held by someone identifiable
