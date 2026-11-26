@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import { BrandMark } from '@/components/brand-mark';
+import { SPEC_REPOSITORY_URL } from '@/lib/links';
 
 export type HomeNavLink = { label: string; href: string };
 
@@ -20,7 +21,13 @@ export function HomeNav({ links }: { links: HomeNavLink[] }) {
         </Link>
         <div className={open ? 'hm-nav__links open' : 'hm-nav__links'} id="hm-nav-links">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            <Link
+              key={link.href}
+              href={link.href}
+              target={link.href === SPEC_REPOSITORY_URL ? '_blank' : undefined}
+              rel={link.href === SPEC_REPOSITORY_URL ? 'noopener noreferrer' : undefined}
+              onClick={() => setOpen(false)}
+            >
               {link.label}
             </Link>
           ))}

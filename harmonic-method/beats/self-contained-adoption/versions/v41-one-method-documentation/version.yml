@@ -2,7 +2,7 @@ beat_version:
   id: HM-BV-004.41
   beat: HM-B-004
   title: Readers encounter one method across the documentation
-  status: active
+  status: delivered
   summary: >
     Retire the Composition, Orchestration and Portfolio Management section
     framing while preserving useful examples and adoption guidance in the

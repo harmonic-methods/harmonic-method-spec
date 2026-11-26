@@ -52,7 +52,12 @@ export function Footer() {
             <div className="hm-fcol" key={column.heading}>
               <h4>{column.heading}</h4>
               {column.links.map((link) => (
-                <Link key={link.label} href={link.href}>
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target={link.href === SPEC_REPOSITORY_URL ? '_blank' : undefined}
+                  rel={link.href === SPEC_REPOSITORY_URL ? 'noopener noreferrer' : undefined}
+                >
                   {link.label}
                 </Link>
               ))}
