@@ -334,7 +334,7 @@ test('readers can search and open a result', async ({ page }) => {
 });
 
 test('Markdown exports and sitemap retain public document URLs', async ({ request }) => {
-  for (const path of ['/docs.md', '/docs/getting-started.md', '/docs/getting-started/run-a-coda-check.md', '/docs/method/apply-to-an-initiative.md', '/docs/method/quality.md', '/docs/composition/beats.md']) {
+  for (const path of ['/docs.md', '/docs/getting-started.md', '/docs/getting-started/run-a-coda-check.md', '/docs/method/apply-to-an-initiative.md', '/docs/method/quality.md', '/docs/method/primitives.md', '/docs/implementation/scheduling-example.md']) {
     const response = await request.get(path);
     expect(response.status(), path).toBe(200);
     expect(response.headers()['content-type']).toContain('text/markdown');
@@ -344,11 +344,11 @@ test('Markdown exports and sitemap retain public document URLs', async ({ reques
     if (path === '/docs/getting-started.md') expect(body).toContain('START_HERE.md');
   }
   const index = await request.get('/llms.txt');
-  expect(await index.text()).toContain('https://www.harmonicmethods.com/docs/composition/beats.md');
+  expect(await index.text()).toContain('https://www.harmonicmethods.com/docs/method/primitives.md');
   const corpus = await request.get('/llms-full.txt');
   expect(await corpus.text()).toContain('Capability Beat');
   const sitemap = await request.get('/sitemap.xml');
-  expect(await sitemap.text()).toContain('https://www.harmonicmethods.com/docs/composition/beats');
+  expect(await sitemap.text()).toContain('https://www.harmonicmethods.com/docs/method/primitives');
 });
 
 test('unknown docs and Markdown return 404', async ({ request }) => {
@@ -360,12 +360,74 @@ test('unknown docs and Markdown return 404', async ({ request }) => {
 test('docs remain readable on mobile in dark mode', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark' });
-  await page.goto('/docs/composition/beat-arc');
+  await page.goto('/docs/implementation/scheduling-example');
   await expect(page.locator('html')).toHaveClass(/dark/);
-  await expect(page.getByRole('heading', { name: 'An illustrative delivery workflow' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Scheduling example', exact: true })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
+  await page.screenshot({ path: test.info().outputPath('scheduling-mobile-dark.png'), fullPage: true });
   await page.goto('/docs/method/roles#promoter');
   await expect(page.locator('#promoter')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
   await page.screenshot({ path: test.info().outputPath('docs-mobile-dark.png'), fullPage: true });
+});
+
+const retiredMethodRoutes = [
+  ['/docs/composition', '/docs'],
+  ['/docs/composition/key-concepts', '/docs/method/primitives'],
+  ['/docs/composition/notes', '/docs/method/primitives#note'],
+  ['/docs/composition/coda', '/docs/method/primitives#coda'],
+  ['/docs/composition/beats', '/docs/method/primitives#beat'],
+  ['/docs/composition/beat-versions', '/docs/method/primitives#beat-versions'],
+  ['/docs/composition/beat-arc', '/docs/implementation/plan-beat-versions'],
+  ['/docs/composition/quality-gates', '/docs/method/quality#dimensions'],
+  ['/docs/composition/example', '/docs/implementation/scheduling-example'],
+  ['/docs/orchestration', '/docs/method/coordination'],
+  ['/docs/portfolio', '/docs/method/value#portfolio'],
+];
+
+test('retired section HTML and Markdown URLs redirect permanently to current material', async ({ request }) => {
+  for (const [source, destination] of retiredMethodRoutes) {
+    const response = await request.get(source, { maxRedirects: 0 });
+    expect(response.status(), source).toBe(308);
+    expect(response.headers().location, source).toBe(destination);
+    const currentPath = destination.split('#')[0];
+    expect((await request.get(currentPath)).status(), currentPath).toBe(200);
+    const markdown = await request.get(`${source}.md`, { maxRedirects: 0 });
+    expect(markdown.status(), `${source}.md`).toBe(308);
+    expect(markdown.headers().location).toBe(`${currentPath}.md`);
+    const currentMarkdown = await request.get(`${currentPath}.md`);
+    expect(currentMarkdown.status()).toBe(200);
+    expect(currentMarkdown.headers()['content-type']).toContain('text/markdown');
+  }
+});
+
+test('retired concept bookmarks land on existing anchors and navigation presents one method', async ({ page }) => {
+  for (const [source, destination] of retiredMethodRoutes.filter(([, target]) => target.includes('#'))) {
+    await page.goto(source);
+    await expect(page).toHaveURL(destination);
+    await expect(page.locator(`[id="${destination.split('#')[1]}"]`)).toBeInViewport();
+  }
+  await page.goto('/docs');
+  await expect(page.getByRole('link', { name: /Harmonic Composition|Harmonic Orchestration|Harmonic Portfolio Management/ })).toHaveCount(0);
+  await page.getByText('Further reading', { exact: true }).scrollIntoViewIfNeeded();
+  await page.locator('#nd-sidebar').screenshot({ path: test.info().outputPath('consolidated-navigation.png') });
+});
+
+test('discovery lists current docs and the preserved example without retired sections', async ({ request }) => {
+  for (const path of ['/sitemap.xml', '/llms.txt', '/llms-full.txt']) {
+    const response = await request.get(path);
+    expect(response.status()).toBe(200);
+    const body = await response.text();
+    expect(body).not.toMatch(/\/docs\/(?:composition|orchestration|portfolio)(?:[/.#\s<"')]|$)/);
+    expect(body).not.toMatch(/Harmonic Composition|Harmonic Orchestration|Harmonic Portfolio Management/);
+    expect(body).toContain('/docs/implementation/scheduling-example');
+  }
+  const example = await request.get('/docs/implementation/scheduling-example.md');
+  const text = await example.text();
+  expect(text).toContain('Vantage');
+  expect(text).toContain('read-only');
+  expect(text).toContain('Conflict Prevention');
+  expect(text).not.toContain('phase-scoped');
+  const adoption = await request.get('/docs/implementation/plan-beat-versions.md');
+  expect(await adoption.text()).toContain('Start from existing work');
 });

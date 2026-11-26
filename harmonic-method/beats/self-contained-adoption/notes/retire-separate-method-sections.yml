@@ -1,0 +1,17 @@
+note:
+  id: HM-N-212
+  type: decision
+  attached_to: HM-B-004
+  beat_version: HM-BV-004.41
+  content: >
+    Consolidate useful legacy material into the existing Harmonic Method docs
+    and retire the separate Composition, Orchestration and Portfolio Management
+    navigation sections. Redirect their former public URLs permanently.
+  rationale: >
+    The owner asked whether to retire the old sections and then requested that
+    work continue. Those pages describe other methods and promise separate
+    future frameworks, conflicting with the current single-method explanation.
+    Preserve the scheduling example and existing-work adoption guidance, but
+    use the canonical lifecycle and role definitions. Existing URLs should lead
+    to current explanations rather than disappear or remain indexed as competing
+    accounts of the method.

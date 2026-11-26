@@ -1,0 +1,74 @@
+---
+title: Scheduling example
+description: Follow a hypothetical scheduling capability from its Coda and Notes through a bounded Beat Version and tracked changes.
+accountableRoles: [Composer]
+supportingRoles: [Orchestrator, Conductor, Producer]
+---
+
+This example applies the [same primitives](/docs/method/primitives) used in the getting-started guides to staff scheduling. Vantage and the details below are fictional; they illustrate the method rather than measured results.
+
+## The scenario
+
+Vantage builds software for architecture firms. Customers use it for time tracking and billing, but still assign staff across active projects in spreadsheets.
+
+The team has started a scheduling feature. Its ticket board lists a calendar view, drag-and-drop, capacity warnings, and notifications. The product lead who defined the scope has left. A new engineer asks what the system must enable, and gets different answers from different people.
+
+## Establishing the Coda
+
+“Make scheduling better” leaves every contributor to decide what better means. Composer defines a System Coda that serves the strategic direction:
+
+> A project manager can assign staff across active projects, see capacity conflicts before they become scheduling errors, and understand changes that affect confirmed client commitments.
+
+This gives the capability definitions a shared reference point. It is not a requirement to finish every part in one delivery step. Review the Coda as understanding changes, recording the decision and preserving the earlier statement.
+
+## Capturing Notes
+
+The team captures the context that contributors were previously expected to remember:
+
+| Note type | Example knowledge |
+| --- | --- |
+| **Constraint** | A staff member cannot be double-booked without an authorized override. Changes that exceed available capacity must surface a warning before they are saved. |
+| **Decision** | Show capacity in hours per week rather than a day-level available/unavailable toggle. Record the user feedback that informed the choice. |
+| **Background** | Customers coordinate several active projects and currently compare separate spreadsheets to find capacity conflicts. Confirm the actual workflow with them. |
+| **Guidance** | Ask for explicit confirmation when a scheduling change affects a confirmed client commitment. |
+
+Attach each Note to what it informs. A capability-specific Note belongs with that Beat; a cross-cutting rule may belong with the System. A Note can reference the Beat Version that prompted it without attaching to the plan.
+
+## Defining Capability Beats [#defining-beats]
+
+Composer defines durable capabilities around the outcomes customers need:
+
+| Capability Beat | Outcome |
+| --- | --- |
+| **Scheduling View** | Project managers can understand staff allocation across active projects without reconstructing the picture from separate records. |
+| **Conflict Prevention** | Capacity conflicts are surfaced before a scheduling change puts a confirmed commitment at risk. |
+| **Change Awareness** | People responsible for a client commitment understand scheduling changes that affect it, with enough context to act. |
+
+“Build the calendar view” is an implementation task within Scheduling View. The capability remains relevant after that task ships and can evolve through later Beat Versions.
+
+Assess the Codas [individually and as a set](/docs/method/quality#dimensions): do their boundaries overlap, do they support one another, and do they cover the System Coda? A concrete screen design does not by itself establish a good capability boundary.
+
+## Planning a Beat Version
+
+Orchestrator plans a bounded first increment of Scheduling View:
+
+- **Title:** Project managers can inspect staff allocation across active projects.
+- **Scope:** Show current assignments and weekly capacity in a read-only grid. Leave reassignment, new conflict-detection behavior, notifications, and mobile editing for later plans.
+- **Acceptance criteria:** All active projects and their recorded assignments are visible; each staff row shows allocated and available weekly hours; the display agrees with the authoritative records; missing capacity data is explicit; the view does not change any assignments.
+- **Dependencies:** Confirm the source of assignment and capacity records, who may view them, and how current the displayed data must be.
+
+Review the [plan quality](/docs/method/quality#gates) before execution. Future editing steps must satisfy the double-booking constraint; calling a step small does not grant an exception to it.
+
+## Delivering Revisions
+
+Conductor coordinates the work and its review. Contributors deliver tracked changes under the Beat Version—for example, a pull request for the read-only view and a later correction found during acceptance review. Each change points to the plan it executes.
+
+Verify the display against the agreed records and acceptance criteria. Record consequential decisions as Notes. When the planned increment has shipped, mark its Beat Version delivered; the Scheduling View Beat stays open while its capability remains relevant.
+
+The existing tickets can still help arrange the work. They are not automatically Revisions: the tracked changes that deliver the plan are the Revisions. Closing a ticket does not erase the capability, its Coda, or its decision history.
+
+## The result
+
+The team now has a shared outcome, preserved reasoning, capability boundaries, and a testable next increment. Producer can judge the next investment against evidence of usefulness and cost. That judgment is separate from whether the plan and its wording score well.
+
+[Plan your next increment](/docs/implementation/plan-beat-versions), [follow a runnable change through a pull request](/docs/implementation/create-a-pull-request), or [start with the client estimate guides](/docs/getting-started).

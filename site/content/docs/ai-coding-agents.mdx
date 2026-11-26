@@ -31,26 +31,26 @@ An agent reading a Jira ticket cannot reliably tell whether the work overlaps an
 <div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)'}}>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">An explicit destination</div>
-    <p>A stated end-state every decision can be checked against, so an agent can assess whether proposed work actually belongs. In Harmonic Methods this is the <a href="/docs/composition/coda">Coda</a>.</p>
+    <p>A stated end-state every decision can be checked against, so an agent can assess whether proposed work actually belongs. In Harmonic Methods this is the <a href="/docs/method/primitives#coda">Coda</a>.</p>
   </div>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">Durable capabilities</div>
-    <p>Outcome-oriented capabilities that persist and evolve — <a href="/docs/composition/beats">Capability Beats</a> — rather than tickets that close and lose their context, so agents reason about what the system does, not just what a ticket says.</p>
+    <p>Outcome-oriented capabilities that persist and evolve — <a href="/docs/method/primitives#beat">Capability Beats</a> — rather than tickets that close and lose their context, so agents reason about what the system does, not just what a ticket says.</p>
   </div>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">Preserved context</div>
-    <p>Decisions, constraints, and assumptions captured as <a href="/docs/composition/notes">Notes</a> — explicit, versioned, discoverable context that survives handoffs and lets an agent tell whether a past constraint still applies.</p>
+    <p>Decisions, constraints, and assumptions captured as <a href="/docs/method/primitives#note">Notes</a> — explicit, versioned, discoverable context that survives handoffs and lets an agent tell whether a past constraint still applies.</p>
   </div>
 </div>
 
 ## How Harmonic Methods supports AI coding agents
 
-[Harmonic Composition](/docs/composition) is the methodology for running AI-native software delivery within a single system. Its primitives map directly onto what coding agents need:
+[The Harmonic Method](/docs) uses the same primitives at capability, system, and portfolio scope. They provide the structure coding agents need:
 
-- **[Beats](/docs/composition/beats)** define the capability space — durable, outcome-oriented, non-overlapping — so agents can reason about the system, not just parse a ticket.
-- **[Notes](/docs/composition/notes)** preserve the reasoning behind decisions, the discipline often called *context engineering* — so an agent can determine whether a past constraint still applies in a new situation.
-- **The [Coda](/docs/composition/coda)** gives every evaluation a reference point: overlap, fit, and alignment are all judged relative to where the system is headed.
-- **[Quality gates](/docs/composition/quality-gates)** let an agent evaluate definitions and plans in seconds, replacing the review ceremonies human teams struggle to maintain.
+- **[Beats](/docs/method/primitives#beat)** define the capability space — durable, outcome-oriented, non-overlapping — so agents can reason about the system, not just parse a ticket.
+- **[Notes](/docs/method/primitives#note)** preserve the reasoning behind decisions, the discipline often called *context engineering* — so an agent can determine whether a past constraint still applies in a new situation.
+- **The [Coda](/docs/method/primitives#coda)** gives every evaluation a reference point: overlap, fit, and alignment are all judged relative to where the system is headed.
+- **[Quality gates](/docs/method/quality#dimensions)** let an agent evaluate definitions and plans in seconds, replacing the review ceremonies human teams struggle to maintain.
 
 Crucially, the discipline this requires is absorbed by the agent, not the team. An accountability check fires before any code is written; Notes are filed as part of the agent's turn; quality evaluation is a tool call rather than a meeting. The result is a delivery method more rigorous than most backlog-driven processes, yet less demanding of human time. See [Partnering with AI Agents](/docs/partnering-with-agents) for how that division of labor works in practice.
 
@@ -87,5 +87,5 @@ export const aiCodingAgentsFaqs = [
 
 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
   <a className="cajon-learn-more" href="/docs/partnering-with-agents">Partnering with AI Agents →</a>
-  <a className="cajon-learn-more" href="/docs/composition">Explore Harmonic Composition →</a>
+  <a className="cajon-learn-more" href="/docs">Explore the Harmonic Method →</a>
 </div>

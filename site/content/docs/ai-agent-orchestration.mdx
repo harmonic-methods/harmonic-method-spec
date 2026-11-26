@@ -1,6 +1,6 @@
 ---
 title: AI Agent Orchestration
-description: 'AI agent orchestration is the coordination of multiple AI agents — and the people directing them — toward a shared outcome. Harmonic Orchestration is the framework that keeps that coordination aligned across systems, teams, and contexts.'
+description: 'AI agent orchestration is the coordination of multiple AI agents — and the people directing them — toward a shared outcome. The Harmonic Method connects that coordination to shared intent, explicit ownership, and preserved context.'
 ---
 
 <span className="cajon-overline">Harmonic Methods</span>
@@ -41,15 +41,13 @@ Coordinating agents at scale requires the same foundation a single agent needs, 
   </div>
 </div>
 
-## How Harmonic Orchestration approaches it
+## Coordination in the Harmonic Method
 
-[Harmonic Orchestration](/docs/orchestration) is the framework within Harmonic Methods for coordinating delivery across multiple systems, teams, and agents. It assumes [Harmonic Composition](/docs/composition) is running within each system — so each unit already has a clear destination ([Coda](/docs/composition/coda)), durable capabilities ([Capability Beats](/docs/composition/beats)), and preserved reasoning ([Notes](/docs/composition/notes)) — and addresses the interface *between* those units: shared context, dependency sequencing, and alignment recovery when threads drift.
+[Coordination](/docs/method/coordination) is part of the Harmonic Method at every scope. Orchestrator arranges work, resources, and dependencies. Conductor leads day-to-day execution, makes handoffs explicit, and escalates changes beyond agreed authority. Each participant needs the relevant [Coda](/docs/method/primitives#coda), [Capability Beat](/docs/method/primitives#beat), plan, and [Notes](/docs/method/primitives#note).
 
-The insight is that you cannot orchestrate what is not individually coherent. Agent orchestration works when each agent is operating against well-structured intent; Harmonic Orchestration provides the layer that keeps those structured units aligned with one another.
+Across systems, use those same responsibilities to share decisions and sequence dependencies. Coordination remains connected to the Codas it serves rather than becoming a separate method.
 
-<div className="cajon-callout">
-  Harmonic Orchestration is in active development. This page describes the approach; the framework documentation will expand as it matures.
-</div>
+[Read the coordination practices](/docs/method/coordination) for ownership, activity signals, handoffs, and dependency sequencing.
 
 ## Frequently asked questions
 
@@ -65,9 +63,9 @@ export const orchestrationFaqs = [
       'Coordinating multiple AI coding agents requires a shared destination every agent is checked against, explicit dependency sequencing so agents build on rather than collide with each other, and a shared corpus of context so a decision made by one agent is visible to the rest. You cannot orchestrate what is not individually coherent, so each agent must first operate against well-structured intent — then an orchestration layer keeps those units aligned.',
   },
   {
-    question: 'How does Harmonic Orchestration relate to agent orchestration?',
+    question: 'How does the Harmonic Method support agent orchestration?',
     answer:
-      'Harmonic Orchestration is the framework within Harmonic Methods for agent orchestration across multiple systems, teams, and agents. It assumes Harmonic Composition runs within each system (giving each unit a Coda, Beats, and Notes) and coordinates the interface between them — shared context, dependency sequencing, and alignment recovery. It is in active development.',
+      'The Harmonic Method applies shared primitives and roles across capability, system, and portfolio scope. Orchestrator arranges work and dependencies; Conductor coordinates execution and handoffs within agreed authority. People remain accountable when agents assist, and shared Notes keep decisions and constraints available across the work.',
   },
 ];
 
@@ -75,5 +73,5 @@ export const orchestrationFaqs = [
 
 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
   <a className="cajon-learn-more" href="/docs/ai-coding-agents">A Delivery Method Built for AI Coding Agents →</a>
-  <a className="cajon-learn-more" href="/docs/orchestration">Explore Harmonic Orchestration →</a>
+  <a className="cajon-learn-more" href="/docs/method/coordination">Read the coordination practices →</a>
 </div>

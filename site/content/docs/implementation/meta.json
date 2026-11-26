@@ -1,4 +1,9 @@
 {
   "title": "Implementation",
-  "pages": ["use-a-repository", "plan-beat-versions", "create-a-pull-request"]
+  "pages": [
+    "use-a-repository",
+    "plan-beat-versions",
+    "create-a-pull-request",
+    "scheduling-example"
+  ]
 }

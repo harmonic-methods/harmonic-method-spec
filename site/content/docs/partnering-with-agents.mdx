@@ -25,7 +25,7 @@ There is a meaningful difference between context that agents can *read* and cont
 
 Documents and tickets give agents words. An agent reading an epic or a Jira ticket can summarize it, reference it, and act on explicit instructions. But it cannot reason about how that item relates to fifty others, whether it overlaps with existing capabilities, or whether it conflicts with a decision made six months ago.
 
-[Capability Beats](/docs/composition/beats), [Notes](/docs/composition/notes), and a [Coda](/docs/composition/coda) give agents concepts. When capabilities are defined as Beats — durable, outcome-oriented, non-overlapping — and decisions are captured as Notes with explicit types and anchored reasoning, and the destination is stated as a Coda, agents have something they can reason against. Not just read.
+[Capability Beats](/docs/method/primitives#beat), [Notes](/docs/method/primitives#note), and a [Coda](/docs/method/primitives#coda) give agents concepts. When capabilities are defined as Beats — durable, outcome-oriented, non-overlapping — and decisions are captured as Notes with explicit types and anchored reasoning, and the destination is stated as a Coda, agents have something they can reason against. Not just read.
 
 This distinction is the foundation of everything that follows.
 
@@ -38,7 +38,7 @@ Partnering with agents in this model is not "give the agent a task and check the
 <div className="cajon-quality-grid" style={{gridTemplateColumns: 'repeat(2, 1fr)'}}>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">People bring</div>
-    <p>Intent. Judgment. Domain knowledge. The ability to decide what the system should become and why — the <a href="/docs/composition/coda">Coda</a>. The authority to make tradeoffs that require context beyond the corpus.</p>
+    <p>Intent. Judgment. Domain knowledge. The ability to decide what the system should become and why — the <a href="/docs/method/primitives#coda">Coda</a>. The authority to make tradeoffs that require context beyond the corpus.</p>
   </div>
   <div className="cajon-quality-item">
     <div className="cajon-quality-item__name">Agents bring</div>
@@ -46,7 +46,7 @@ Partnering with agents in this model is not "give the agent a task and check the
   </div>
 </div>
 
-The loop looks like this: people define the destination and identify initial capabilities as Beats. Agents evaluate them for quality, surface overlap, and map interactions across the full corpus. People review findings and make judgment calls. Agents execute Revisions against well-defined [Beat Versions](/docs/composition/key-concepts#beat-versions). Each Revision adds to the corpus; each addition makes future agent reasoning more accurate.
+The loop looks like this: people define the destination and identify initial capabilities as Beats. Agents evaluate them for quality, surface overlap, and map interactions across the full corpus. People review findings and make judgment calls. Agents execute Revisions against well-defined [Beat Versions](/docs/method/primitives#beat-versions). Each Revision adds to the corpus; each addition makes future agent reasoning more accurate.
 
 Neither is doing the other's job. The corpus grows richer over time, and the partnership gets stronger as it does.
 
@@ -56,7 +56,7 @@ Neither is doing the other's job. The corpus grows richer over time, and the par
 
 The most common objection to methodology formalism — Notes to file, quality gates to pass, Revision IDs to track — is that it costs human time to maintain. In Scrum, ceremonies are forcing functions: the standup happens daily whether the team wants it or not. Someone is accountable for the backlog because the framework names them. The discipline is enforced by the process.
 
-Harmonic Composition works differently. The discipline overhead is absorbed by the agent, not the team.
+The Harmonic Method works differently. The discipline overhead is absorbed by the agent, not the team.
 
 **An implementation can automate accountability checks.** A tool may check that a change serves an active plan before an agent edits a file. This repository does not install such a hook. In a Git-hosted workflow, the pull request can be the Revision; the method does not require a separate pre-existing Revision record.
 
@@ -64,7 +64,7 @@ Harmonic Composition works differently. The discipline overhead is absorbed by t
 
 **Agents can assist with quality evaluation.** The published rubrics assess seven Coda quality dimensions and six plan quality dimensions per Beat Version. An agent can return scores, reasons and improvement guidance. Review the evidence behind the assessment; completion time and reliability depend on the agent and inputs, and enforcement belongs to the implementation.
 
-The result is a methodology that is more rigorous than most backlog-driven processes but less demanding on human time. The formalism that makes Harmonic Composition effective is largely invisible to the team because the agent handles it. Humans provide the judgment that no agent can supply — the Coda, the tradeoffs, the domain authority. Agents handle the mechanical compliance that no human team maintains consistently.
+The result is a methodology that is more rigorous than most backlog-driven processes but less demanding on human time. The formalism that makes the Harmonic Method effective is largely invisible to the team because the agent handles it. Humans provide the judgment that no agent can supply — the Coda, the tradeoffs, the domain authority. Agents handle the mechanical compliance that no human team maintains consistently.
 
 <div className="cajon-callout">
   The discipline overhead that kills most context-preservation systems is solved by architecture, not willpower.
@@ -87,7 +87,7 @@ When a new capability is proposed, an agent with access to the full Beat set can
     <span className="cajon-step-num" aria-hidden="true">1</span>
     <div className="cajon-step-body">
       <strong>Check for overlap across the entire corpus</strong>
-      <p>Not just semantic similarity, but whether the proposed capability represents the same outcome as an existing <a href="/docs/composition/beats">Beat</a> when described at the level a stakeholder would discuss it. Flag merges, scope adjustments, or redundancies before any planning work begins.</p>
+      <p>Not just semantic similarity, but whether the proposed capability represents the same outcome as an existing <a href="/docs/method/primitives#beat">Beat</a> when described at the level a stakeholder would discuss it. Flag merges, scope adjustments, or redundancies before any planning work begins.</p>
     </div>
   </li>
   <li className="cajon-step-item">
@@ -101,14 +101,14 @@ When a new capability is proposed, an agent with access to the full Beat set can
     <span className="cajon-step-num" aria-hidden="true">3</span>
     <div className="cajon-step-body">
       <strong>Propagate relevant Notes</strong>
-      <p>Find <a href="/docs/composition/notes">Notes</a> across the corpus that apply: constraints that limit what is possible, decisions that set relevant precedent, context that shapes how this capability fits into the system. Bring them forward without requiring anyone to remember they exist.</p>
+      <p>Find <a href="/docs/method/primitives#note">Notes</a> across the corpus that apply: constraints that limit what is possible, decisions that set relevant precedent, context that shapes how this capability fits into the system. Bring them forward without requiring anyone to remember they exist.</p>
     </div>
   </li>
   <li className="cajon-step-item">
     <span className="cajon-step-num" aria-hidden="true">4</span>
     <div className="cajon-step-body">
       <strong>Place the capability precisely</strong>
-      <p>Propose whether the new feature belongs as a <a href="/docs/composition/beat-versions">Beat Version</a> under an existing Beat, a refinement of one that already exists, or a new Beat with its own arc — and explain the reasoning. Evaluate whether the proposed scope is right-sized, or too thin or broad for a single capability.</p>
+      <p>Propose whether the new feature belongs as a <a href="/docs/method/primitives#beat-versions">Beat Version</a> under an existing Beat, a refinement of one that already exists, or a new Beat with its own arc — and explain the reasoning. Evaluate whether the proposed scope is right-sized, or too thin or broad for a single capability.</p>
     </div>
   </li>
 </ul>
@@ -123,15 +123,15 @@ When a new capability is proposed, an agent with access to the full Beat set can
 
 All of this depends on the corpus being structured in a way agents can reason about. The capability above does not exist when work is tracked in epics, stories, and Jira tickets — because those primitives were designed to manage scope, not to represent a system's capability space in a form that supports systematic reasoning.
 
-Epics give agents words. [Beats](/docs/composition/beats) give agents concepts.
+Epics give agents words. [Beats](/docs/method/primitives#beat) give agents concepts.
 
-[Notes](/docs/composition/notes) give agents the reasoning behind decisions, not just the decisions themselves. A constraint Note does not just record that something is off-limits — it records why, so agents can determine whether that constraint still applies in a new context.
+[Notes](/docs/method/primitives#note) give agents the reasoning behind decisions, not just the decisions themselves. A constraint Note does not just record that something is off-limits — it records why, so agents can determine whether that constraint still applies in a new context.
 
-A [Coda](/docs/composition/coda) gives every evaluation a reference point. Overlap, interaction, fit — all of these are relative to where the system is headed. Without a stated destination, no agent can assess whether a proposed capability actually belongs.
+A [Coda](/docs/method/primitives#coda) gives every evaluation a reference point. Overlap, interaction, fit — all of these are relative to where the system is headed. Without a stated destination, no agent can assess whether a proposed capability actually belongs.
 
 Harmonic Methods is the structure that makes the partnership possible. The Beats define the capability space. The Notes preserve the reasoning. The Coda gives every evaluation a reference point. Together, they give agents something worth working with — and something that grows more valuable with every Revision that ships.
 
 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px'}}>
   <a className="cajon-learn-more" href="/docs/about">← About Harmonic Methods</a>
-  <a className="cajon-learn-more" href="/docs/composition">Explore Harmonic Composition →</a>
+  <a className="cajon-learn-more" href="/docs">Explore the Harmonic Method →</a>
 </div>
